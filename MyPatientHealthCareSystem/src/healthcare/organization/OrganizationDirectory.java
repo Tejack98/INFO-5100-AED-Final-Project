@@ -70,6 +70,11 @@ public class OrganizationDirectory {
                     organization = new SupplierOrganization();
                     this.organizationList.add(organization);
                     break;
+                    
+                case Vaccination:
+                    organization = new VaccinationOrganization();
+                    this.organizationList.add(organization);
+                    break;
                 
                 default:
                     break;

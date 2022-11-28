@@ -28,7 +28,8 @@ public class Enterprise extends Organization{
         Pharmacy("Pharmacy"),
         Lab("Lab"),
         EmergencyUnit("EmergencyUnit"),
-        SupplyChain("SupplyChain");
+        SupplyChain("SupplyChain"),
+        Vaccination("Vaccination");
         
         private String value;
         
