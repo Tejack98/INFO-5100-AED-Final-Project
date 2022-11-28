@@ -6,8 +6,12 @@ package healthcare.enterprises;
 
 /**
  *
- * @author Tejas
+ * @author Shriya
  */
-public class EmergencyUnitEnterprise {
+public class EmergencyUnitEnterprise extends Enterprise{
+
+    public EmergencyUnitEnterprise(String enterpriseName) {
+        super(enterpriseName, Enterprise.EnterpriseType.EmergencyUnit);
+    }
     
 }

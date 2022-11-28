@@ -6,8 +6,12 @@ package healthcare.enterprises;
 
 /**
  *
- * @author Tejas
+ * @author Shriya
  */
-public class PharmacyEnterprise {
+public class PharmacyEnterprise extends Enterprise {
+
+    public PharmacyEnterprise(String enterpriseName) {
+        super(enterpriseName,Enterprise.EnterpriseType.Pharmacy);
+    }
     
 }
