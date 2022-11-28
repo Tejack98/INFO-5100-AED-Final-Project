@@ -10,7 +10,8 @@ package healthcare.enterprises;
  */
 public class LabEnterprise extends Enterprise {
 
-    public LabEnterprise(String name) {
+    public LabEnterprise(String enterpriseName) {
+        super(enterpriseName, Enterprise.EnterpriseType.Lab);
     }
     
 }

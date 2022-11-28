@@ -10,8 +10,8 @@ package healthcare.enterprises;
  */
 public class HealthCareEnterprise extends Enterprise{
 
-    public HealthCareEnterprise(String name) {
+    public HealthCareEnterprise(String enterpriseName) {
+        super(enterpriseName,Enterprise.EnterpriseType.HealthCare);
     }
-
     
 }

@@ -10,7 +10,8 @@ package healthcare.enterprises;
  */
 public class DonorBankEnterprise extends Enterprise {
 
-    public DonorBankEnterprise(String name) {
+    public DonorBankEnterprise(String enterpriseName) {
+        super(enterpriseName,Enterprise.EnterpriseType.DonorBank);
     }
     
 }

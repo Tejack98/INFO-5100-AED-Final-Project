@@ -10,6 +10,13 @@ package healthcare.enterprises;
  */
 public class Enterprise {
     
+    String enterpriseName;
+    
+    public Enterprise(String enterpriseName,EnterpriseType enterpriseType){
+        this.enterpriseType = enterpriseType;
+        this.enterpriseName = enterpriseName;
+    }
+    
     private EnterpriseType enterpriseType;
     
     public enum EnterpriseType{
@@ -34,6 +41,10 @@ public class Enterprise {
         public String toString(){
             return value;
         }
+    }
+    
+    public EnterpriseType getEnterpriseType() {
+        return enterpriseType;
     }
     
     public void setEnterpriseType(EnterpriseType enterpriseType) {
