@@ -4,6 +4,9 @@
  */
 package healthcare.enterprises;
 
+import healthcare.role.Role;
+import java.util.ArrayList;
+
 /**
  *
  * @author Shriya
@@ -12,6 +15,11 @@ public class DonorBankEnterprise extends Enterprise {
 
     public DonorBankEnterprise(String enterpriseName) {
         super(enterpriseName,Enterprise.EnterpriseType.DonorBank);
+    }
+    
+    @Override
+    public ArrayList<Role> getSupportedRole() {
+        return null;
     }
     
 }
