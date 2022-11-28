@@ -2,21 +2,21 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package healthcare.enterprises;
+package healthcare.organization;
 
 import healthcare.role.Role;
 import java.util.ArrayList;
 
 /**
  *
- * @author Shriya
+ * @author Tejas
  */
-public class HealthCareEnterprise extends Enterprise{
+public class VaccinationOrganization extends Organization{
 
-    public HealthCareEnterprise(String enterpriseName) {
-        super(enterpriseName,Enterprise.EnterpriseType.HealthCare);
+    public VaccinationOrganization() {
+        super(Organization.OrganizationType.Vaccination.getValue());
     }
-    
+
     @Override
     public ArrayList<Role> getSupportedRole() {
         return null;

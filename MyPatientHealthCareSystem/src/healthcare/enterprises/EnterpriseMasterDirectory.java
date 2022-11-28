@@ -26,7 +26,7 @@ public class EnterpriseMasterDirectory {
         this.enterpriseList = new ArrayList<Enterprise>();
     }
     
-    public void deleteEnterprise(Enterprise enterprise) {
+    public void removeEnterprise(Enterprise enterprise) {
         enterpriseList.remove(enterprise);
     }
     
