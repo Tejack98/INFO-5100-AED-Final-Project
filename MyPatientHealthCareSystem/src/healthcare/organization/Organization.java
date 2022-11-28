@@ -5,7 +5,9 @@
 package healthcare.organization;
 
 import healthcare.enterprises.Enterprise;
+import healthcare.person.PersonDirectory;
 import healthcare.role.Role;
+import healthcare.userAccount.UserAccountDirectory;
 import java.util.ArrayList;
 
 /**
@@ -16,6 +18,8 @@ public abstract class Organization {
     
     private String organizationName;
     private int organizationId ;
+    private PersonDirectory personDirectory;
+    private UserAccountDirectory userAccountDirectory;
     private static int counter;
     
     static{
@@ -24,11 +28,33 @@ public abstract class Organization {
     
     public Organization(String organizationName) {
         this.organizationName = organizationName;
+        this.personDirectory = new PersonDirectory();
+        this.userAccountDirectory = new UserAccountDirectory();
         this.organizationId = counter;
         counter += 1;
     }
     
     public abstract ArrayList<Role> getSupportedRole();
+
+    public void setOrganizationName(String organizationName) {
+        this.organizationName = organizationName;
+    }
+
+    public PersonDirectory getPersonDirectory() {
+        return personDirectory;
+    }
+
+    public UserAccountDirectory getUserAccountDirectory() {
+        return userAccountDirectory;
+    }
+    
+    public int getOrganizationID() {
+        return organizationId;
+    }
+    
+    public String getOrganizationName() {
+        return organizationName;
+    }
     
     public enum OrganizationType {
         Administrator("Admin Organization", null),
@@ -59,13 +85,4 @@ public abstract class Organization {
             return enterprise;
         }
     }
-    
-    public int getOrganizationID() {
-        return organizationId;
-    }
-    
-    public String getOrganizationNameID() {
-        return organizationName;
-    }
-    
 }
