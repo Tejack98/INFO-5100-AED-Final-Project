@@ -5,6 +5,8 @@
 package healthcare.organization;
 
 import healthcare.enterprises.Enterprise;
+import healthcare.role.Role;
+import java.util.ArrayList;
 
 /**
  *
@@ -25,6 +27,8 @@ public abstract class Organization {
         this.organizationId = counter;
         counter += 1;
     }
+    
+    public abstract ArrayList<Role> getSupportedRole();
     
     public enum OrganizationType {
         Administrator("Admin Organization", null),

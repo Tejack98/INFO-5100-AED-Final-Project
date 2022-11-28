@@ -6,12 +6,14 @@ package healthcare.enterprises;
 
 import healthcare.organization.Organization;
 import healthcare.organization.OrganizationDirectory;
+import healthcare.role.Role;
+import java.util.ArrayList;
 
 /**
  *
  * @author Shriya
  */
-public class Enterprise extends Organization{
+public abstract class Enterprise extends Organization{
     
     private EnterpriseType enterpriseType;
     private OrganizationDirectory organizationDirectory;
@@ -21,7 +23,7 @@ public class Enterprise extends Organization{
         this.enterpriseType = enterpriseType;
         this.organizationDirectory = new OrganizationDirectory();
     }
-    
+
     public enum EnterpriseType{
         HealthCare("HealthCare"),
         DonorBank("DonorBank"),
@@ -58,7 +60,5 @@ public class Enterprise extends Organization{
     public OrganizationDirectory getOrganizationDirectory() {
         return organizationDirectory;
     }
-    
-    
      
 }

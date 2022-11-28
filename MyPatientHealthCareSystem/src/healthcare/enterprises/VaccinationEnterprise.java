@@ -4,6 +4,9 @@
  */
 package healthcare.enterprises;
 
+import healthcare.role.Role;
+import java.util.ArrayList;
+
 /**
  *
  * @author Tejas
@@ -12,5 +15,10 @@ public class VaccinationEnterprise extends Enterprise {
     
     public VaccinationEnterprise(String enterpriseName) {
         super(enterpriseName, Enterprise.EnterpriseType.SupplyChain);
+    }
+    
+    @Override
+    public ArrayList<Role> getSupportedRole() {
+        return null;
     }
 }

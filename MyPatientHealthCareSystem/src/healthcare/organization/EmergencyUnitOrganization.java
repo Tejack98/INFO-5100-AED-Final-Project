@@ -4,6 +4,9 @@
  */
 package healthcare.organization;
 
+import healthcare.role.Role;
+import java.util.ArrayList;
+
 /**
  *
  * @author Tejas
@@ -14,4 +17,8 @@ public class EmergencyUnitOrganization extends Organization {
         super(Organization.OrganizationType.EmergencyUnit.getValue());
     }
     
+    @Override
+    public ArrayList<Role> getSupportedRole() {
+        return null;
+    }
 }

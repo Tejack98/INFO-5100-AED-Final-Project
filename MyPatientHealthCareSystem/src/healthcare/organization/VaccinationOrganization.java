@@ -4,6 +4,9 @@
  */
 package healthcare.organization;
 
+import healthcare.role.Role;
+import java.util.ArrayList;
+
 /**
  *
  * @author Tejas
@@ -12,6 +15,11 @@ public class VaccinationOrganization extends Organization{
 
     public VaccinationOrganization() {
         super(Organization.OrganizationType.Vaccination.getValue());
+    }
+
+    @Override
+    public ArrayList<Role> getSupportedRole() {
+        return null;
     }
     
 }

@@ -4,6 +4,9 @@
  */
 package healthcare.enterprises;
 
+import healthcare.role.Role;
+import java.util.ArrayList;
+
 /**
  *
  * @author Shriya
@@ -12,6 +15,11 @@ public class HealthCareEnterprise extends Enterprise{
 
     public HealthCareEnterprise(String enterpriseName) {
         super(enterpriseName,Enterprise.EnterpriseType.HealthCare);
+    }
+    
+    @Override
+    public ArrayList<Role> getSupportedRole() {
+        return null;
     }
     
 }
