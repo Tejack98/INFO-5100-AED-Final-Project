@@ -82,17 +82,8 @@ public abstract class Organization {
             return value;
         }
 
-        public Enterprise.EnterpriseType getEType() {
+        public Enterprise.EnterpriseType getEnterpriseType() {
             return enterprise;
         }
-    }
-    
-    public int getOrganizationID() {
-        return organizationId;
-    }
-    
-    public String getOrganizationNameID() {
-        return organizationName;
-    }
- 
+    } 
 }
