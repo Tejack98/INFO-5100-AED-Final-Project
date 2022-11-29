@@ -16,15 +16,19 @@ public abstract class Role {
         Doctor("Doctor"),
         Patient("Patient"),
         Nurse("Nurse"),
-        HospitalAdmin("Hospital Admin"),
+        HealthCareAdmin("HealthCare Admin"),
         Donor("Donor"),
         DonorAdmin("Donor Admin"),
         SupplyManager("Supply Manager"),
         Handler("Handler"),
         VaccinationAdmin("Vaccination Admin"),
+        Vaccinator("Vaccinator"),
+        PharmacyAdmin("Pharmacy Admin"),
         Pharmacist("Pharmacist"),
         LabAdmin("Lab Admin"),
-        LabAssistant("Lab Assistant");
+        LabAssistant("Lab Assistant"),
+        EmergencyUnitAdmin("Emergency Unit Admin"),
+        AmbulanceManager("Ambulance Manager");
                
         private String value;
 

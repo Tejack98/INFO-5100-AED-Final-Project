@@ -4,7 +4,7 @@
  */
 package healthcare.network;
 
-import healthcare.enterprises.EnterpriseMasterDirectory;
+import healthcare.enterprise.EnterpriseMasterDirectory;
 
 /**
  *
