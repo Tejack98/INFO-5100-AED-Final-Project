@@ -8,6 +8,7 @@ import healthcare.enterprises.Enterprise;
 import healthcare.person.PersonDirectory;
 import healthcare.role.Role;
 import healthcare.userAccount.UserAccountDirectory;
+import healthcare.role.Role;
 import java.util.ArrayList;
 
 /**
@@ -85,4 +86,13 @@ public abstract class Organization {
             return enterprise;
         }
     }
+    
+    public int getOrganizationID() {
+        return organizationId;
+    }
+    
+    public String getOrganizationNameID() {
+        return organizationName;
+    }
+ 
 }
