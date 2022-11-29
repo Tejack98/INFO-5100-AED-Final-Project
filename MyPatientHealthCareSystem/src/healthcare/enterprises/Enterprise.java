@@ -4,10 +4,61 @@
  */
 package healthcare.enterprises;
 
+import healthcare.organization.Organization;
+import healthcare.organization.OrganizationDirectory;
+import healthcare.role.Role;
+import java.util.ArrayList;
+
 /**
  *
- * @author Tejas
+ * @author Shriya
  */
-public class Enterprise {
+public abstract class Enterprise extends Organization{
     
+    private EnterpriseType enterpriseType;
+    private OrganizationDirectory organizationDirectory;
+    
+    public Enterprise(String enterpriseName,EnterpriseType enterpriseType){
+        super(enterpriseName);
+        this.enterpriseType = enterpriseType;
+        this.organizationDirectory = new OrganizationDirectory();
+    }
+
+    public enum EnterpriseType{
+        HealthCare("HealthCare"),
+        DonorBank("DonorBank"),
+        Pharmacy("Pharmacy"),
+        Lab("Lab"),
+        EmergencyUnit("EmergencyUnit"),
+        SupplyChain("SupplyChain"),
+        Vaccination("Vaccination");
+        
+        private String value;
+        
+        private EnterpriseType(String value){
+            this.value=value;
+        }
+        
+        public String getValue() {
+            return value;
+        }
+        
+        @Override
+        public String toString(){
+            return value;
+        }
+    }
+    
+    public EnterpriseType getEnterpriseType() {
+        return enterpriseType;
+    }
+    
+    public void setEnterpriseType(EnterpriseType enterpriseType) {
+        this.enterpriseType = enterpriseType;
+    }
+    
+    public OrganizationDirectory getOrganizationDirectory() {
+        return organizationDirectory;
+    }
+     
 }

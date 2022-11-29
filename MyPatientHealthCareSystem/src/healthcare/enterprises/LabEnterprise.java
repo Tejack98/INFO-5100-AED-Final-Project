@@ -4,10 +4,22 @@
  */
 package healthcare.enterprises;
 
+import healthcare.role.Role;
+import java.util.ArrayList;
+
 /**
  *
- * @author Tejas
+ * @author Aditya
  */
-public class LabEnterprise {
+public class LabEnterprise extends Enterprise {
+
+    public LabEnterprise(String enterpriseName) {
+        super(enterpriseName, Enterprise.EnterpriseType.Lab);
+    }
+    
+    @Override
+    public ArrayList<Role> getSupportedRole() {
+        return null;
+    }
     
 }
