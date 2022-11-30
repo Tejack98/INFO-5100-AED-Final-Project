@@ -10,7 +10,7 @@ import healthcare.role.Role;
  *
  * @author Tejas
  */
-public class AmbulanceManagerRole extends Role {
+public class AmbulanceHandlerRole extends Role {
     
     
     @Override
