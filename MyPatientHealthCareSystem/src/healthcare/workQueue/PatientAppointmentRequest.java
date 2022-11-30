@@ -8,7 +8,7 @@ package healthcare.workQueue;
  *
  * @author Shriya
  */
-public class PatientAppointmentRequest extends workRequest {
+public class PatientAppointmentRequest extends WorkRequest {
     
     private String doctorMessage;
     private String appointmentDate;

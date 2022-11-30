@@ -14,6 +14,9 @@ import java.util.ArrayList;
  */
 public class SupplierOrganization extends Organization {
     
+    private ArrayList<HandlerRole> handler;
+    private ArrayList<Vehicle> vehicle;
+    
     public SupplierOrganization() {
         super(Organization.OrganizationType.Supplier.getValue());
     }
@@ -21,5 +24,21 @@ public class SupplierOrganization extends Organization {
     @Override
     public ArrayList<Role> getSupportedRole() {
         return null;
+    }
+
+    public ArrayList<HandlerRole> getHandler() {
+        return handler;
+    }
+
+    public void setHandler(ArrayList<HandlerRole> handler) {
+        this.handler = handler;
+    }
+
+    public ArrayList<Vehicle> getVehicle() {
+        return vehicle;
+    }
+
+    public void setVehicle(ArrayList<Vehicle> vehicle) {
+        this.vehicle = vehicle;
     }
 }

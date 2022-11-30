@@ -12,11 +12,18 @@ import healthcare.role.Role;
  */
 public class HandlerRole extends Role {
     
-    
+    private Vehicle vehicle;
     
     @Override
     public String toString() {
         return this.getClass().getName();
     }
     
+    public Vehicle getVehicle() {
+        return vehicle;
+    }
+
+    public void setVehicle(Vehicle vehicle) {
+        this.vehicle = vehicle;
+    }
 }

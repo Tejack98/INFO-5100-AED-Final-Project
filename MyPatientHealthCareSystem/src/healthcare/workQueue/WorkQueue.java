@@ -12,18 +12,26 @@ import java.util.ArrayList;
  */
 public class WorkQueue {
     
-    private ArrayList<workRequest> jobRequestList;
+    private ArrayList<WorkRequest> workRequestList;
     private ArrayList<PatientAppointmentRequest> patientAppointmentRequest;
     private ArrayList<DoctorLabRequest> doctorLabRequest;
+    private ArrayList<DonorBankRequest> donorBankRequest;
+    private ArrayList<EmergencyUnitRequest> emergencyUnitRequest;
+    private ArrayList<PharmacyRequest> pharmacyRequest;
+    private ArrayList<VaccinationRequest> vaccinationRequest;
 
     public WorkQueue() {
-        this.jobRequestList = new ArrayList<>();
+        this.workRequestList = new ArrayList<>();
         this.patientAppointmentRequest =  new ArrayList<>(); 
         this.doctorLabRequest = new ArrayList<>();
+        this.donorBankRequest = new ArrayList<>();
+        this.emergencyUnitRequest = new ArrayList<>();
+        this.pharmacyRequest = new ArrayList<>();
+        this.vaccinationRequest = new ArrayList<>();
     }
 
-    public ArrayList<workRequest> getJobRequestList() {
-        return jobRequestList;
+    public ArrayList<WorkRequest> getWorkRequestList() {
+        return workRequestList;
     }
 
     public ArrayList<PatientAppointmentRequest> getPatientAppointmentRequest() {
@@ -42,4 +50,36 @@ public class WorkQueue {
         this.doctorLabRequest = doctorLabRequest;
     }
 
-}
+    public ArrayList<DonorBankRequest> getDonorBankRequest() {
+        return donorBankRequest;
+    }
+
+    public void setDonorBankRequest(ArrayList<DonorBankRequest> donorBankRequest) {
+        this.donorBankRequest = donorBankRequest;
+    }
+
+    public ArrayList<EmergencyUnitRequest> getEmergencyUnitRequest() {
+        return emergencyUnitRequest;
+    }
+
+    public void setEmergencyUnitRequest(ArrayList<EmergencyUnitRequest> emergencyUnitRequest) {
+        this.emergencyUnitRequest = emergencyUnitRequest;
+    }
+
+    public ArrayList<PharmacyRequest> getPharmacyRequest() {
+        return pharmacyRequest;
+    }
+
+    public void setPharmacyRequest(ArrayList<PharmacyRequest> pharmacyRequest) {
+        this.pharmacyRequest = pharmacyRequest;
+    }
+
+    public ArrayList<VaccinationRequest> getVaccinationRequest() {
+        return vaccinationRequest;
+    }
+
+    public void setVaccinationRequest(ArrayList<VaccinationRequest> vaccinationRequest) {
+        this.vaccinationRequest = vaccinationRequest;
+    }
+    
+ }

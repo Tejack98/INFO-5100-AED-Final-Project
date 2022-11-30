@@ -8,7 +8,7 @@ package healthcare.workQueue;
  *
  * @author Tejas
  */
-public class LabReportToDoctorRequest extends workRequest{
+public class LabReportToDoctorRequest extends WorkRequest{
     
     private String patientName;
     private String patientGender;

@@ -8,7 +8,7 @@ package healthcare.workQueue;
  *
  * @author Shriya
  */
-public class DoctorLabRequest extends workRequest{
+public class DoctorLabRequest extends WorkRequest{
     
     //patient's data
     //general information 
