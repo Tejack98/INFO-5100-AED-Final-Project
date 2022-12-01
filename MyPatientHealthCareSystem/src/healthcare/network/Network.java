@@ -4,10 +4,36 @@
  */
 package healthcare.network;
 
+import healthcare.enterprise.EnterpriseMasterDirectory;
+
 /**
  *
  * @author Tejas
  */
 public class Network {
     
+    private String networkName;
+    private EnterpriseMasterDirectory enterpriseMasterList;
+
+    public Network() {
+        this.enterpriseMasterList = new EnterpriseMasterDirectory();
+    }
+
+    public EnterpriseMasterDirectory getEnterpriseMasterList() {
+        return enterpriseMasterList;
+    }
+
+    public String getNetworkName() {
+        return networkName;
+    }
+
+    public void setNetworkName(String networkName) {
+        this.networkName = networkName;
+    }
+
+    @Override
+    public String toString(){
+        return this.networkName;
+    }
+       
 }

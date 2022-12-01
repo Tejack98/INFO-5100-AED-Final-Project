@@ -4,7 +4,16 @@
  */
 package healthcare.organization;
 
-import healthcare.enterprises.EmergencyUnitEnterprise;
+import healthcare.enterprise.emergencyUnit.EmergencyUnitOrganization;
+import healthcare.enterprise.vaccination.VaccinationOrganization;
+import healthcare.enterprise.pharmacy.PharmacyOrganization;
+import healthcare.enterprise.supplyChain.SupplierOrganization;
+import healthcare.enterprise.lab.LabOrganization;
+import healthcare.Enterprise.donorBank.DonorBankOrganization;
+import healthcare.enterprise.healthCare.PatientOrganization;
+import healthcare.enterprise.healthCare.NurseOrganization;
+import healthcare.enterprise.healthCare.DoctorOrganization;
+import healthcare.enterprise.emergencyUnit.EmergencyUnitEnterprise;
 import healthcare.organization.Organization.OrganizationType;
 import java.util.ArrayList;
 

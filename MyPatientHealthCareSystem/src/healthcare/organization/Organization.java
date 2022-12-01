@@ -4,7 +4,7 @@
  */
 package healthcare.organization;
 
-import healthcare.enterprises.Enterprise;
+import healthcare.enterprise.Enterprise;
 import healthcare.person.PersonDirectory;
 import healthcare.role.Role;
 import healthcare.userAccount.UserAccountDirectory;
@@ -67,6 +67,7 @@ public abstract class Organization {
         Supplier("SupplyChain Organization", Enterprise.EnterpriseType.SupplyChain),
         Vehicle("Vehicle Organization",Enterprise.EnterpriseType.SupplyChain),
         EmergencyUnit("Emergency Unit Organization",Enterprise.EnterpriseType.EmergencyUnit),
+        Ambulance("Ambulance Organization",Enterprise.EnterpriseType.EmergencyUnit),
         DonorBank("DonorBank Organization",Enterprise.EnterpriseType.DonorBank),
         Vaccination("Vaccination Organization",Enterprise.EnterpriseType.Vaccination);
         
@@ -82,17 +83,8 @@ public abstract class Organization {
             return value;
         }
 
-        public Enterprise.EnterpriseType getEType() {
+        public Enterprise.EnterpriseType getEnterpriseType() {
             return enterprise;
         }
-    }
-    
-    public int getOrganizationID() {
-        return organizationId;
-    }
-    
-    public String getOrganizationNameID() {
-        return organizationName;
-    }
- 
+    } 
 }
