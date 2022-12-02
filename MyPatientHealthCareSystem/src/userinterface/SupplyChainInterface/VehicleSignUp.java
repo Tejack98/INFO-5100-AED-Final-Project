@@ -4,6 +4,11 @@
  */
 package userinterface.SupplyChainInterface;
 
+import java.awt.Color;
+import java.util.Random;
+import javax.swing.BorderFactory;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author adity
@@ -13,6 +18,8 @@ public class VehicleSignUp extends javax.swing.JPanel {
     /**
      * Creates new form VehicleSignUp
      */
+    boolean emptyValidationStatus = true;
+    boolean validationCheck = true;
     public VehicleSignUp() {
         initComponents();
     }
@@ -44,6 +51,11 @@ public class VehicleSignUp extends javax.swing.JPanel {
         lblVehicleType.setText("Vehicle Type");
 
         btnSignUp.setText("Sign Up");
+        btnSignUp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSignUpActionPerformed(evt);
+            }
+        });
 
         lblVehicleNumber.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         lblVehicleNumber.setText("Vehicle Number");
@@ -120,6 +132,96 @@ public class VehicleSignUp extends javax.swing.JPanel {
     private void txtVehicleTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtVehicleTypeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtVehicleTypeActionPerformed
+
+    private void btnSignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignUpActionPerformed
+        // TODO add your handling code here:
+        try{
+            if(EmpytyFieldValidation()){
+
+                if(RegexValidation()){
+
+                    String VehicleName = txtVehicleName.getText();
+                    String VehicleType = txtVehicleType.getText();
+                    String VehicleNumber = txtVehicleNumber.getText();
+                    String Description = txtDescription.getText();
+                    
+                    Random random=new Random();
+                    int VehicleID=random.nextInt((9999 - 100) + 1) + 10;
+
+                    String password = VehicleName + String.valueOf(random.nextInt((9999 - 100) + 1)+ 10);
+                    JOptionPane.showMessageDialog(this,"Vehicle Registered Successfully.Your New Vehicle Id is:"+VehicleID+" and password: "+password+",Please save this Id for furture reference.");
+
+                }
+                else{
+                    JOptionPane.showMessageDialog(this,"Some Error in entered data.Please check over the red fields to know more.");
+                    validationCheck=true;
+                }
+            }
+            else{
+                JOptionPane.showMessageDialog(this,"Some Error in entered data. Please check over the red fields to know more.");
+                emptyValidationStatus=true;
+            }
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(this,"Health Care Admin not registered, Try again");
+            System.out.println(e.toString());
+            emptyValidationStatus=true;
+        }
+    }                                               
+
+    private boolean RegexValidation() {
+        if(!txtVehicleName.getText().matches("^[a-zA-Z ]+$"))
+        {
+            txtVehicleName.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            txtVehicleName.setToolTipText("Please enter only characters and space.");
+            validationCheck=false;
+        }
+        
+       
+
+        return validationCheck;
+    }
+    
+    private boolean EmpytyFieldValidation() {
+        if(txtVehicleName.getText().equals(null) || txtVehicleName.getText().trim().isEmpty() )
+        {
+            txtVehicleName.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            txtVehicleName.setToolTipText("This Field Cannot be empty");
+            emptyValidationStatus= false;
+        }
+        if(!txtVehicleName.getText().equals(null) && !txtVehicleName.getText().trim().isEmpty() )
+        {
+            txtVehicleName.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        }
+       
+        
+         
+        
+        
+        
+        if(txtDescription.getText().equals(null)|| txtDescription.getText().trim().isEmpty())
+        {
+            txtDescription.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            txtDescription.setToolTipText("This Field Cannot be empty");
+            emptyValidationStatus= false;
+        }
+        if(!txtDescription.getText().equals(null) && !txtDescription.getText().trim().isEmpty())
+        {
+            txtDescription.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+           
+        }
+        if(txtVehicleNumber.getText().equals(null) || txtVehicleNumber.getText().trim().isEmpty())
+        {
+            txtVehicleNumber.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            txtVehicleNumber.setToolTipText("This Field Cannot be empty");
+            emptyValidationStatus=false;
+        }
+        if(!txtVehicleNumber.getText().equals(null) && !txtVehicleNumber.getText().trim().isEmpty())
+        {
+            txtVehicleNumber.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        }
+        return emptyValidationStatus;
+    }//GEN-LAST:event_btnSignUpActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

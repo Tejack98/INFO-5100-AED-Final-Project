@@ -4,15 +4,23 @@
  */
 package userinterface.LabInterface;
 
+import java.awt.Color;
+import java.util.Random;
+import javax.swing.BorderFactory;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author adity
  */
+
 public class LabTechnicianSignUp extends javax.swing.JPanel {
 
     /**
      * Creates new form LabTechnicianSignUp
      */
+    boolean emptyValidationStatus = true;
+    boolean validationCheck = true;
     public LabTechnicianSignUp() {
         initComponents();
     }
@@ -27,7 +35,6 @@ public class LabTechnicianSignUp extends javax.swing.JPanel {
     private void initComponents() {
 
         lblGender = new javax.swing.JLabel();
-        txtPassword = new javax.swing.JTextField();
         lblTitle = new javax.swing.JLabel();
         lblPhoneNo = new javax.swing.JLabel();
         txtDateOfBirth = new javax.swing.JTextField();
@@ -35,7 +42,6 @@ public class LabTechnicianSignUp extends javax.swing.JPanel {
         btnSignUp = new javax.swing.JButton();
         txtName = new javax.swing.JTextField();
         txtState = new javax.swing.JTextField();
-        lblPassword = new javax.swing.JLabel();
         txtAddress = new javax.swing.JTextField();
         txtPhoneNo = new javax.swing.JTextField();
         lblZipCode = new javax.swing.JLabel();
@@ -49,7 +55,7 @@ public class LabTechnicianSignUp extends javax.swing.JPanel {
         txtZipcode = new javax.swing.JTextField();
         lblUsername = new javax.swing.JLabel();
         lblName = new javax.swing.JLabel();
-        txtUsername = new javax.swing.JTextField();
+        txtEmail = new javax.swing.JTextField();
 
         lblGender.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         lblGender.setText("Gender");
@@ -65,15 +71,17 @@ public class LabTechnicianSignUp extends javax.swing.JPanel {
         lblAddress.setText("Address");
 
         btnSignUp.setText("Sign Up");
+        btnSignUp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSignUpActionPerformed(evt);
+            }
+        });
 
         txtState.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtStateActionPerformed(evt);
             }
         });
-
-        lblPassword.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
-        lblPassword.setText("Password");
 
         txtPhoneNo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -107,7 +115,7 @@ public class LabTechnicianSignUp extends javax.swing.JPanel {
         cboxLabName.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         lblUsername.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
-        lblUsername.setText("Username");
+        lblUsername.setText("Email");
 
         lblName.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         lblName.setText("Name");
@@ -126,7 +134,6 @@ public class LabTechnicianSignUp extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(lblName)
                             .addComponent(lblUsername)
-                            .addComponent(lblPassword)
                             .addComponent(lblLabName)
                             .addComponent(lblPhoneNo)
                             .addComponent(lblDateOfBirth)
@@ -138,8 +145,7 @@ public class LabTechnicianSignUp extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtName, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
-                            .addComponent(txtPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
-                            .addComponent(txtUsername, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
+                            .addComponent(txtEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
                             .addComponent(txtPhoneNo, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
                             .addComponent(txtDateOfBirth, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
                             .addComponent(cboxLabName, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -167,12 +173,8 @@ public class LabTechnicianSignUp extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblUsername)
-                    .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblPassword)
-                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(19, 19, 19)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblLabName)
                     .addComponent(cboxLabName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -204,7 +206,7 @@ public class LabTechnicianSignUp extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblZipCode)
                     .addComponent(txtZipcode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(59, 59, 59)
                 .addComponent(btnSignUp)
                 .addContainerGap(49, Short.MAX_VALUE))
         );
@@ -222,6 +224,143 @@ public class LabTechnicianSignUp extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCityActionPerformed
 
+    private void btnSignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignUpActionPerformed
+        // TODO add your handling code here:
+        try{
+            if(EmpytyFieldValidation()){
+
+                if(RegexValidation()){
+
+                    String name = txtName.getText();
+                    long cellPhoneNumber = Long.parseLong(txtPhoneNo.getText());
+                    String emailId = txtEmail.getText();
+                    String gender = cboxGender.getSelectedItem().toString();
+                    String LabName = cboxLabName.getSelectedItem().toString();
+                    String dob = txtDateOfBirth.getText();
+                    String Address = txtAddress.getText();
+                    String City = txtCity.getText();
+                    String State = txtState.getText();
+                    long Zipcode = Long.parseLong(txtZipcode.getText());
+                    
+                    Random random=new Random();
+                    int LabTechID=random.nextInt((9999 - 100) + 1) + 10;
+
+                    String password = name + String.valueOf(random.nextInt((9999 - 100) + 1)+ 10);
+                    JOptionPane.showMessageDialog(this,"Lab Technician Registered Successfully.Your New Id is:"+LabTechID+" and password: "+password+",Please save this Id for furture reference.");
+
+                }
+                else{
+                    JOptionPane.showMessageDialog(this,"Some Error in entered data.Please check over the red fields to know more.");
+                    validationCheck=true;
+                }
+            }
+            else{
+                JOptionPane.showMessageDialog(this,"Some Error in entered data. Please check over the red fields to know more.");
+                emptyValidationStatus=true;
+            }
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(this,"Lab Technician not registered, Try again");
+            System.out.println(e.toString());
+            emptyValidationStatus=true;
+        }
+    }                                               
+
+    private boolean RegexValidation() {
+        if(!txtName.getText().matches("^[a-zA-Z ]+$"))
+        {
+            txtName.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            txtName.setToolTipText("Please enter only characters and space.");
+            validationCheck=false;
+        }
+        
+        if(txtName.getText().matches("^[a-zA-Z ]+$"))
+        {
+            txtName.setBorder(BorderFactory.createLineBorder(Color.BLUE, 0));
+        }
+        
+        if(!txtEmail.getText().matches("^[A-Za-z0-9+_.-]+@(.+)$"))
+        {
+            txtEmail.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            txtEmail.setToolTipText("Please enter a valid Email Address in the form abc@xyy.com");
+            validationCheck=false;
+        }
+        
+        if(txtEmail.getText().matches("^[A-Za-z0-9+_.-]+@(.+)$"))
+        {
+            txtEmail.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        }
+        
+        if(!txtPhoneNo.getText().matches("^[0-9]{10}$"))
+        {
+            txtPhoneNo.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            txtPhoneNo.setToolTipText("Please enter a 10 digit number");
+            validationCheck=false;
+        }
+        
+        if(txtPhoneNo.getText().matches("^[0-9]{10}$"))
+        {
+            txtPhoneNo.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        }
+
+        return validationCheck;
+    }
+    
+    private boolean EmpytyFieldValidation() {
+        if(txtName.getText().equals(null) || txtName.getText().trim().isEmpty() )
+        {
+            txtName.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            txtName.setToolTipText("This Field Cannot be empty");
+            emptyValidationStatus= false;
+        }
+        if(!txtName.getText().equals(null) && !txtName.getText().trim().isEmpty() )
+        {
+            txtName.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        }
+       
+        
+         
+        
+        
+        
+        if(txtAddress.getText().equals(null)|| txtAddress.getText().trim().isEmpty())
+        {
+            txtAddress.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            txtAddress.setToolTipText("This Field Cannot be empty");
+            emptyValidationStatus= false;
+        }
+        if(!txtAddress.getText().equals(null) && !txtAddress.getText().trim().isEmpty())
+        {
+            txtAddress.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+           
+        }
+        
+        if(txtCity.getText().equals(null)|| txtCity.getText().trim().isEmpty())
+        {
+            txtCity.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            txtCity.setToolTipText("This Field Cannot be empty");
+            emptyValidationStatus= false;
+        }
+        if(!txtCity.getText().equals(null) && !txtCity.getText().trim().isEmpty())
+        {
+            txtCity.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+           
+        }
+        
+        if(txtPhoneNo.getText().equals(null) || txtPhoneNo.getText().trim().isEmpty())
+        {
+            txtPhoneNo.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            txtPhoneNo.setToolTipText("This Field Cannot be empty");
+            emptyValidationStatus=false;
+        }
+        if(!txtPhoneNo.getText().equals(null) && !txtPhoneNo.getText().trim().isEmpty())
+        {
+            txtPhoneNo.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        }
+        return emptyValidationStatus;
+    
+    }//GEN-LAST:event_btnSignUpActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSignUp;
@@ -233,7 +372,6 @@ public class LabTechnicianSignUp extends javax.swing.JPanel {
     private javax.swing.JLabel lblGender;
     private javax.swing.JLabel lblLabName;
     private javax.swing.JLabel lblName;
-    private javax.swing.JLabel lblPassword;
     private javax.swing.JLabel lblPhoneNo;
     private javax.swing.JLabel lblState;
     private javax.swing.JLabel lblTitle;
@@ -242,11 +380,10 @@ public class LabTechnicianSignUp extends javax.swing.JPanel {
     private javax.swing.JTextField txtAddress;
     private javax.swing.JTextField txtCity;
     private javax.swing.JTextField txtDateOfBirth;
+    private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtName;
-    private javax.swing.JTextField txtPassword;
     private javax.swing.JTextField txtPhoneNo;
     private javax.swing.JTextField txtState;
-    private javax.swing.JTextField txtUsername;
     private javax.swing.JTextField txtZipcode;
     // End of variables declaration//GEN-END:variables
 }

@@ -4,7 +4,13 @@
  */
 package healthcare.enterprise.emergencyUnit;
 
+import healthcare.Ecosystem;
+import healthcare.enterprise.Enterprise;
+import healthcare.network.Network;
+import healthcare.organization.Organization;
 import healthcare.role.Role;
+import healthcare.userAccount.UserAccount;
+import javax.swing.JPanel;
 
 /**
  *
@@ -17,4 +23,11 @@ public class AmbulanceHandlerRole extends Role {
     public String toString() {
         return this.getClass().getName();
     }
+    
+    @Override
+    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount userAccount, Organization organization, Enterprise enterprise, Ecosystem Ecosystem, Network network) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        //return new AdminWorkAreaJPanel(userProcessContainer, enterprise);       
+    }
+    
 }

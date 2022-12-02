@@ -4,6 +4,13 @@
  */
 package healthcare.role;
 
+import healthcare.Ecosystem;
+import healthcare.enterprise.Enterprise;
+import healthcare.network.Network;
+import healthcare.organization.Organization;
+import healthcare.userAccount.UserAccount;
+import javax.swing.JPanel;
+
 /**
  *
  * @author Tejas
@@ -47,5 +54,16 @@ public abstract class Role {
     
     }
     
+    public abstract JPanel createWorkArea(JPanel userProcessContainer,
+    UserAccount userAccount,
+    Organization organization,
+    Enterprise enterprise,
+    Ecosystem Ecosystem,
+    Network network);
+    
+    @Override
+    public String toString() {
+        return this.getClass().getName();
+    }
     
 }
