@@ -212,6 +212,7 @@ public class DoctorSignUp extends javax.swing.JPanel {
                     
                     Random random=new Random();
                     int doctorID=random.nextInt((9999 - 100) + 1) + 10;
+
                     String username = name.substring(0, 3) + String.valueOf(doctorID);
 
                     String password = name + String.valueOf(random.nextInt((9999 - 100) + 1)+ 10);
