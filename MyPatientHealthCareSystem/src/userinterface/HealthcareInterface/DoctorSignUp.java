@@ -213,8 +213,10 @@ public class DoctorSignUp extends javax.swing.JPanel {
                     Random random=new Random();
                     int doctorID=random.nextInt((9999 - 100) + 1) + 10;
 
+                    String username = name.substring(0, 3) + String.valueOf(doctorID);
+
                     String password = name + String.valueOf(random.nextInt((9999 - 100) + 1)+ 10);
-                    JOptionPane.showMessageDialog(this,"Doctor Registered Successfully.Your New Id is:"+doctorID+" and password: "+password+",Please save this Id for furture reference.");
+                    JOptionPane.showMessageDialog(this,"Doctor Registered Successfully.Your New Id Username:"+username+" and password: "+password+",Please save this Id for furture reference.");
 
                 }
                 else{
