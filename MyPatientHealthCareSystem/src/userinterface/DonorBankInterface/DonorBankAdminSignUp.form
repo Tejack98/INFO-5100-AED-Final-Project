@@ -27,7 +27,6 @@
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="lblName" alignment="1" min="-2" max="-2" attributes="0"/>
                           <Component id="lblUsername" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblPassword" alignment="1" min="-2" max="-2" attributes="0"/>
                           <Component id="lblPhoneNumber" alignment="1" min="-2" max="-2" attributes="0"/>
                           <Component id="lblAddress" alignment="1" min="-2" max="-2" attributes="0"/>
                           <Component id="lblCity" alignment="1" min="-2" max="-2" attributes="0"/>
@@ -37,9 +36,8 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="txtName" alignment="0" min="-2" pref="230" max="-2" attributes="0"/>
-                          <Component id="txtPhoneNumber" alignment="0" min="-2" pref="230" max="-2" attributes="0"/>
-                          <Component id="txtPassword" alignment="0" min="-2" pref="230" max="-2" attributes="0"/>
-                          <Component id="txtUsername" alignment="0" min="-2" pref="230" max="-2" attributes="0"/>
+                          <Component id="txtPhoneNo" alignment="0" min="-2" pref="230" max="-2" attributes="0"/>
+                          <Component id="txtEmail" alignment="0" min="-2" pref="230" max="-2" attributes="0"/>
                           <Component id="txtAddress" alignment="0" min="-2" pref="230" max="-2" attributes="0"/>
                           <Component id="txtCity" alignment="0" min="-2" pref="230" max="-2" attributes="0"/>
                           <Component id="txtState" alignment="0" min="-2" pref="230" max="-2" attributes="0"/>
@@ -70,17 +68,12 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblUsername" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtUsername" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtEmail" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lblPassword" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtPassword" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="lblPhoneNumber" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtPhoneNumber" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblPhoneNumber" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtPhoneNo" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -102,7 +95,7 @@
                   <Component id="lblZipCode" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtZipcode" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
               <Component id="btnSignUp" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="29" max="32767" attributes="0"/>
           </Group>
@@ -124,6 +117,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Sign Up"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSignUpActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lblState">
       <Properties>
@@ -143,7 +139,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="txtName">
     </Component>
-    <Component class="javax.swing.JTextField" name="txtUsername">
+    <Component class="javax.swing.JTextField" name="txtEmail">
     </Component>
     <Component class="javax.swing.JLabel" name="lblTitle">
       <Properties>
@@ -154,8 +150,6 @@
         <Property name="text" type="java.lang.String" value="Create Donor Admin Profile"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtPassword">
-    </Component>
     <Component class="javax.swing.JLabel" name="lblName">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -164,14 +158,14 @@
         <Property name="text" type="java.lang.String" value="Name"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtPhoneNumber">
+    <Component class="javax.swing.JTextField" name="txtPhoneNo">
     </Component>
     <Component class="javax.swing.JLabel" name="lblUsername">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Comic Sans MS" size="14" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Username"/>
+        <Property name="text" type="java.lang.String" value="Email"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtAddress">
@@ -188,14 +182,6 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtCityActionPerformed"/>
       </Events>
-    </Component>
-    <Component class="javax.swing.JLabel" name="lblPassword">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Comic Sans MS" size="14" style="0"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Password"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtState">
     </Component>
