@@ -11,6 +11,8 @@ import healthcare.organization.Organization;
 import healthcare.role.Role;
 import healthcare.userAccount.UserAccount;
 import javax.swing.JPanel;
+import userinterface.HealthcareInterface.doctor.DoctorDashboardPanel;
+import userinterface.HealthcareInterface.doctor.DoctorWorkArea;
 
 /**
  *
@@ -18,16 +20,34 @@ import javax.swing.JPanel;
  */
 public class DoctorRole extends Role {
     
+    private String speciality;
+    private String hospitalName;
+    
     
     @Override
     public String toString() {
-        return this.getClass().getName();
+        return String.valueOf("Doctor");
     }
     
     @Override
     public JPanel createWorkArea(UserAccount userAccount, Organization organization, Enterprise enterprise, Ecosystem Ecosystem, Network network) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-        //return new AdminWorkAreaJPanel(userProcessContainer, enterprise);       
+        return new DoctorDashboardPanel();       
+    }
+
+    public String getSpeciality() {
+        return speciality;
+    }
+
+    public void setSpeciality(String speciality) {
+        this.speciality = speciality;
+    }
+
+    public String getHospitalName() {
+        return hospitalName;
+    }
+
+    public void setHospitalName(String hospitalName) {
+        this.hospitalName = hospitalName;
     }
     
 }

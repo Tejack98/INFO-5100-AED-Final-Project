@@ -9,8 +9,14 @@ package healthcare.person;
  * @author Tejas
  */
 public class Person {
-    
+   
     private String personName;
+    private String address;
+    private String city;
+    private String state;
+    private long zipcode;
+    private long contactNumber;
+    
     int personId;
     private static int count;
     
@@ -30,6 +36,45 @@ public class Person {
     public String getPersonName() {
         return personName;
     }
-    
-    
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public long getZipcode() {
+        return zipcode;
+    }
+
+    public void setZipcode(long zipcode) {
+        this.zipcode = zipcode;
+    }
+
+    public long getContactNumber() {
+        return contactNumber;
+    }
+
+    public void setContactNumber(long contactNumber) {
+        this.contactNumber = contactNumber;
+    }
+     
 }

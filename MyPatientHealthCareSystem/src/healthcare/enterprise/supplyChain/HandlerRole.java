@@ -22,7 +22,7 @@ public class HandlerRole extends Role {
     
     @Override
     public String toString() {
-        return this.getClass().getName();
+        return String.valueOf("Handler");
     }
     
     public Vehicle getVehicle() {

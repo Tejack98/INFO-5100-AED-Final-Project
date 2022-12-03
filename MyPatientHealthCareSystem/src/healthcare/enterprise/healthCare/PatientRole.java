@@ -21,7 +21,7 @@ public class PatientRole extends Role {
     
     @Override
     public String toString() {
-        return this.getClass().getName();
+        return String.valueOf("Patient");
     }
     
     @Override

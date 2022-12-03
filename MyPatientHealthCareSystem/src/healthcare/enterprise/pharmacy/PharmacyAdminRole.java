@@ -20,7 +20,7 @@ public class PharmacyAdminRole extends Role {
     
     @Override
     public String toString() {
-        return this.getClass().getName();
+        return String.valueOf("Pharmacy Admin");
     }
     
     @Override

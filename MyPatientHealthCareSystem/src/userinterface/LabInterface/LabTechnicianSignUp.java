@@ -4,10 +4,15 @@
  */
 package userinterface.LabInterface;
 
+import healthcare.Ecosystem;
+import healthcare.enterprise.lab.LabAssistantRole;
+import healthcare.person.Person;
+import healthcare.userAccount.UserAccount;
 import java.awt.Color;
 import java.util.Random;
 import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
+import userinterface.SendMail;
 
 /**
  *
@@ -21,8 +26,10 @@ public class LabTechnicianSignUp extends javax.swing.JPanel {
      */
     boolean emptyValidationStatus = true;
     boolean validationCheck = true;
+    Ecosystem ecosystem;   
     public LabTechnicianSignUp() {
         initComponents();
+        this.ecosystem = Ecosystem.getEcosystemInstance();
     }
 
     /**
@@ -244,9 +251,17 @@ public class LabTechnicianSignUp extends javax.swing.JPanel {
                     
                     Random random=new Random();
                     int LabTechID=random.nextInt((9999 - 100) + 1) + 10;
+                    
+                    String username = name.substring(0, 3) + String.valueOf(LabTechID);
+                    String password = name + String.valueOf(random.nextInt((9999 - 100) + 1) + 10);
 
-                    String password = name + String.valueOf(random.nextInt((9999 - 100) + 1)+ 10);
+                    Person person = ecosystem.getPersonDirectory().createAndAddPerson(name,Address,City,State,Zipcode,cellPhoneNumber);
+                    UserAccount u = ecosystem.getUserAccountDirectory().createUserAccount(username, password, person, new LabAssistantRole(), emailId);
+                    
                     JOptionPane.showMessageDialog(this,"Lab Technician Registered Successfully.Your New Id is:"+LabTechID+" and password: "+password+",Please save this Id for furture reference.");
+                    
+                    SendMail s = new SendMail();
+                    s.sendUserRegisterEmail(emailId, username, password);
 
                 }
                 else{

@@ -21,7 +21,7 @@ public class SupplyManagerRole extends Role {
     
     @Override
     public String toString() {
-        return this.getClass().getName();
+        return String.valueOf("Supply Manager");
     }
     
     @Override

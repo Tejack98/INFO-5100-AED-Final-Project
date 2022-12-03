@@ -20,12 +20,11 @@ public class Configsystem {
         Ecosystem ecosystem = Ecosystem.getEcosystemInstance();   
   
         
-        Person person = ecosystem.getPersonDirectory().createAndAddPerson("tej");
-        Person person2 = ecosystem.getPersonDirectory().createAndAddPerson("shr");
+        Person person = ecosystem.getPersonDirectory().createAndAddPerson("tej","75 Saint Alphonso","Boston","MA",Long.parseLong("02120"),Long.parseLong("8576938034"));
+        Person person2 = ecosystem.getPersonDirectory().createAndAddPerson("Shr","75 Saint Alphonso","Boston","MA",Long.parseLong("02120"),Long.parseLong("8576938034"));
         UserAccount u = ecosystem.getUserAccountDirectory().createUserAccount("sys", "sys", person, new DoctorRole(),"t@g.com");
         UserAccount u2 = ecosystem.getUserAccountDirectory().createUserAccount("hadmin", "hadmin", person2, new HealthCareAdminRole(),"s@g.com");
-        
-        
+
         return ecosystem;
     }
     

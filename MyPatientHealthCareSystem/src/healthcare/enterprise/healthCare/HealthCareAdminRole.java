@@ -11,7 +11,7 @@ import healthcare.organization.Organization;
 import healthcare.role.Role;
 import healthcare.userAccount.UserAccount;
 import javax.swing.JPanel;
-import userinterface.HealthcareInterface.HealthCareAdminWorkPanel;
+import userinterface.HealthcareInterface.healthcareAdmin.HealthCareAdminWorkPanel;
 
 /**
  *
@@ -22,7 +22,7 @@ public class HealthCareAdminRole extends Role {
     
     @Override
     public String toString() {
-        return this.getClass().getName();
+        return String.valueOf("HealthCare Admin");
     }
     
     @Override
