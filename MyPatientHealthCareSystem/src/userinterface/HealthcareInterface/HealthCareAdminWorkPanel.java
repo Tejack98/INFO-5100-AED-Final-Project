@@ -8,12 +8,12 @@ package userinterface.HealthcareInterface;
  *
  * @author Tejas
  */
-public class HealthCareWorkPanel extends javax.swing.JPanel {
+public class HealthCareAdminWorkPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form HealthCareAdminWorkPanel
      */
-    public HealthCareWorkPanel() {
+    public HealthCareAdminWorkPanel() {
         initComponents();
     }
 
