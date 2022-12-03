@@ -8,6 +8,7 @@ import java.awt.Color;
 import java.util.Random;
 import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
+import userinterface.SendMail;
 
 /**
  *
@@ -217,6 +218,9 @@ public class DoctorSignUp extends javax.swing.JPanel {
 
                     String password = name + String.valueOf(random.nextInt((9999 - 100) + 1)+ 10);
                     JOptionPane.showMessageDialog(this,"Doctor Registered Successfully.Your New Id Username:"+username+" and password: "+password+",Please save this Id for furture reference.");
+                    
+                    SendMail s = new SendMail();
+                    s.sendUserRegisterEmail(emailId, username, password);
 
                 }
                 else{
