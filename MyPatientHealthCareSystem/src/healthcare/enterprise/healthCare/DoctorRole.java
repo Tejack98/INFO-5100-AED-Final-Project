@@ -11,7 +11,7 @@ import healthcare.organization.Organization;
 import healthcare.role.Role;
 import healthcare.userAccount.UserAccount;
 import javax.swing.JPanel;
-import userinterface.HealthcareInterface.doctor.DoctorDashboard;
+import userinterface.HealthcareInterface.doctor.DoctorDashboardPanel;
 import userinterface.HealthcareInterface.doctor.DoctorWorkArea;
 
 /**
@@ -31,7 +31,7 @@ public class DoctorRole extends Role {
     
     @Override
     public JPanel createWorkArea(UserAccount userAccount, Organization organization, Enterprise enterprise, Ecosystem Ecosystem, Network network) {
-        return new DoctorDashboard();       
+        return new DoctorDashboardPanel();       
     }
 
     public String getSpeciality() {

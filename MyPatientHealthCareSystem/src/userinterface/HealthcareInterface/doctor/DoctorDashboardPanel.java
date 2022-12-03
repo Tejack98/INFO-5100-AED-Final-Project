@@ -6,14 +6,14 @@ package userinterface.HealthcareInterface.doctor;
 
 /**
  *
- * @author adity
+ * @author Tejas
  */
-public class DoctorDashboard extends javax.swing.JPanel {
+public class DoctorDashboardPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form DoctorDashboard
      */
-    public DoctorDashboard() {
+    public DoctorDashboardPanel() {
         initComponents();
     }
 
@@ -27,14 +27,15 @@ public class DoctorDashboard extends javax.swing.JPanel {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        TabbedPanePatientList = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
+        TabbedPanePatientList = new javax.swing.JTabbedPane();
+        jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         btnAddDiagnosis = new javax.swing.JButton();
         txtDiagnosis = new javax.swing.JTextField();
         btnLogout = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
@@ -45,9 +46,9 @@ public class DoctorDashboard extends javax.swing.JPanel {
         btnAddStatus = new javax.swing.JButton();
         btnLogOut = new javax.swing.JButton();
 
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -62,18 +63,18 @@ public class DoctorDashboard extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(72, 50, 540, 200));
+        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(72, 50, 540, 200));
 
         btnAddDiagnosis.setText("Add Diagnosis");
-        jPanel2.add(btnAddDiagnosis, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 280, -1, -1));
-        jPanel2.add(txtDiagnosis, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 280, 400, -1));
+        jPanel3.add(btnAddDiagnosis, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 280, -1, -1));
+        jPanel3.add(txtDiagnosis, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 280, 400, -1));
 
         btnLogout.setText("Logout");
-        jPanel2.add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 340, -1, -1));
+        jPanel3.add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 340, -1, -1));
 
-        TabbedPanePatientList.addTab("Patient List", jPanel2);
+        TabbedPanePatientList.addTab("Patient List", jPanel3);
 
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -88,11 +89,11 @@ public class DoctorDashboard extends javax.swing.JPanel {
         ));
         jScrollPane2.setViewportView(jTable2);
 
-        jPanel3.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 660, 130));
+        jPanel4.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 660, 130));
 
         jLabel1.setText("Search By Name");
-        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(148, 210, 110, -1));
-        jPanel3.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 210, 190, -1));
+        jPanel4.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(148, 210, 110, -1));
+        jPanel4.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 210, 190, -1));
 
         btnSearch.setText("Search");
         btnSearch.addActionListener(new java.awt.event.ActionListener() {
@@ -100,11 +101,11 @@ public class DoctorDashboard extends javax.swing.JPanel {
                 btnSearchActionPerformed(evt);
             }
         });
-        jPanel3.add(btnSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 210, 80, -1));
+        jPanel4.add(btnSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 210, 80, -1));
 
         jLabel2.setText("Status");
-        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 260, -1, -1));
-        jPanel3.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 260, 190, -1));
+        jPanel4.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 260, -1, -1));
+        jPanel4.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 260, 190, -1));
 
         btnAddStatus.setText("Add Status");
         btnAddStatus.addActionListener(new java.awt.event.ActionListener() {
@@ -112,14 +113,29 @@ public class DoctorDashboard extends javax.swing.JPanel {
                 btnAddStatusActionPerformed(evt);
             }
         });
-        jPanel3.add(btnAddStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 260, -1, -1));
+        jPanel4.add(btnAddStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 260, -1, -1));
 
         btnLogOut.setText("Logout");
-        jPanel3.add(btnLogOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 320, -1, -1));
+        jPanel4.add(btnLogOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 320, -1, -1));
 
-        TabbedPanePatientList.addTab("Transplant History", jPanel3);
+        TabbedPanePatientList.addTab("Transplant History", jPanel4);
 
-        jPanel1.add(TabbedPanePatientList, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 1, 660, 410));
+        jPanel2.add(TabbedPanePatientList, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 1, 660, 410));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 660, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 411, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -127,13 +143,19 @@ public class DoctorDashboard extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 660, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 411, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -158,6 +180,7 @@ public class DoctorDashboard extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;

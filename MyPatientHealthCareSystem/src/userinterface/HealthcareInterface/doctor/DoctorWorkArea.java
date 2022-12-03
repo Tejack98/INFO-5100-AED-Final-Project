@@ -117,7 +117,7 @@ public class DoctorWorkArea extends javax.swing.JFrame {
 
     private void btnPatientsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPatientsActionPerformed
         // TODO add your handling code here:
-        DoctorDashboard docDash = new DoctorDashboard();
+        DoctorDashboardPanel docDash = new DoctorDashboardPanel();
         jSplitPaneSystem.setRightComponent(docDash);
     }//GEN-LAST:event_btnPatientsActionPerformed
 
