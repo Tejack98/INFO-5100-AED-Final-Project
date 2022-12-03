@@ -21,7 +21,7 @@ public class AdminMasterRole extends Role {
     
     @Override
     public String toString() {
-        return this.getClass().getName();
+        return String.valueOf("Administrator");
     }
 
     @Override

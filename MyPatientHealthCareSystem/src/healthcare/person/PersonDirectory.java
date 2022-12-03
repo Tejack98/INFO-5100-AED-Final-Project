@@ -18,9 +18,14 @@ public class PersonDirectory {
         this.personList = new ArrayList<>();
     }
     
-    public Person createAndAddPerson(String personName){
+    public Person createAndAddPerson(String personName, String address, String city, String state, long zipcode, long contactNumber){
         Person person = new Person();
         person.setPersonName(personName);
+        person.setAddress(address);
+        person.setCity(city);
+        person.setState(state);
+        person.setZipcode(zipcode);
+        person.setContactNumber(contactNumber);
         personList.add(person);
         return person;
     }

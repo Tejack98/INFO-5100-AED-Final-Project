@@ -20,7 +20,7 @@ public class VaccinationAdminRole extends Role {
     
     @Override
     public String toString() {
-        return this.getClass().getName();
+        return String.valueOf("Vaccination Admin");
     }
     
     @Override

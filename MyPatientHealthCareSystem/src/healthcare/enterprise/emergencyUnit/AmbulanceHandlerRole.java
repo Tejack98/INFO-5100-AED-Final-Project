@@ -21,7 +21,7 @@ public class AmbulanceHandlerRole extends Role {
     
     @Override
     public String toString() {
-        return this.getClass().getName();
+        return String.valueOf("Ambulance Handler");
     }
     
     @Override

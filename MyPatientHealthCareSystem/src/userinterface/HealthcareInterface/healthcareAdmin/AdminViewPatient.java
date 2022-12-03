@@ -2,18 +2,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package userinterface.HealthcareInterface;
+package userinterface.HealthcareInterface.healthcareAdmin;
 
 /**
  *
  * @author adity
  */
-public class AdminViewDoctor extends javax.swing.JPanel {
+public class AdminViewPatient extends javax.swing.JPanel {
 
     /**
-     * Creates new form AdminViewDoctor
+     * Creates new form AdminViewPatient
      */
-    public AdminViewDoctor() {
+    public AdminViewPatient() {
         initComponents();
     }
 
@@ -29,29 +29,29 @@ public class AdminViewDoctor extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        lblSearchDoctorByID = new javax.swing.JLabel();
-        txtSearchDoctorByID = new javax.swing.JTextField();
+        lblSearchNurseByID = new javax.swing.JLabel();
+        txtSearchPatientByID = new javax.swing.JTextField();
         btnSearch = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("View Doctor Information");
+        jLabel1.setText("View Patient Information");
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Name", "Email", "Hospital Name", "Speciality", "Address", "City", "State", "Zipcode", "Phone No."
+                "Name", "Email", "Hospital Name", "Gender", "Diagnosis", "Phone No.", "Date Of Birth", "Address", "City", "Zipcode"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        lblSearchDoctorByID.setText("Search Doctor By ID");
+        lblSearchNurseByID.setText("Search Patient By ID");
 
         btnSearch.setText("Search");
 
@@ -66,12 +66,12 @@ public class AdminViewDoctor extends javax.swing.JPanel {
                 .addComponent(jScrollPane1))
             .addGroup(layout.createSequentialGroup()
                 .addGap(113, 113, 113)
-                .addComponent(lblSearchDoctorByID)
+                .addComponent(lblSearchNurseByID)
                 .addGap(18, 18, 18)
-                .addComponent(txtSearchDoctorByID, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtSearchPatientByID, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnSearch)
-                .addGap(0, 95, Short.MAX_VALUE))
+                .addGap(0, 94, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnDelete))
@@ -86,14 +86,14 @@ public class AdminViewDoctor extends javax.swing.JPanel {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblSearchDoctorByID)
-                    .addComponent(txtSearchDoctorByID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblSearchNurseByID)
+                    .addComponent(txtSearchPatientByID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSearch))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnDelete)
-                .addContainerGap(143, Short.MAX_VALUE))
+                .addContainerGap(69, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -104,7 +104,7 @@ public class AdminViewDoctor extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JLabel lblSearchDoctorByID;
-    private javax.swing.JTextField txtSearchDoctorByID;
+    private javax.swing.JLabel lblSearchNurseByID;
+    private javax.swing.JTextField txtSearchPatientByID;
     // End of variables declaration//GEN-END:variables
 }
