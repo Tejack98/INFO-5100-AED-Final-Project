@@ -181,12 +181,8 @@ public class MainJFrame extends javax.swing.JFrame {
         } else {
             Role role = userAccount.getRole();
             JPanel jpanel = role.createWorkArea( userAccount, inOrganization, inEnterprise, ecosystem, inNetwork);
-            
-            HealthCareAdminWorkArea healthcareFrame2 = new HealthCareAdminWorkArea();
-            healthcareFrame2.setExtendedState(JFrame.MAXIMIZED_BOTH);
-            healthcareFrame2.setVisible(true);
-            
-            if(role.toString() == "DoctorRole"){
+                
+            if(Role.RoleType.Doctor.toString().equals("Doctor")){
                 HealthCareAdminWorkArea healthcareFrame = new HealthCareAdminWorkArea();
                 healthcareFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
                 healthcareFrame.setVisible(true);
