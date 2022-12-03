@@ -7,8 +7,8 @@ package userinterface;
 import healthcare.Ecosystem;
 import healthcare.db4oUtil.Db4oUtil;
 import javax.swing.JFrame;
-import userinterface.HealthcareInterface.HealthCareAdminWorkArea;
-import userinterface.HealthcareInterface.HealthCareAdminWorkPanel;
+import userinterface.HealthcareInterface.HealthCareWorkArea;
+import userinterface.HealthcareInterface.HealthCareWorkPanel;
 
 /**
  *
@@ -150,7 +150,7 @@ public class MainJFrame extends javax.swing.JFrame {
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         // TODO add your handling code here:
         
-        HealthCareAdminWorkArea communityFrame = new HealthCareAdminWorkArea();
+        HealthCareWorkArea communityFrame = new HealthCareWorkArea();
         communityFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
         communityFrame.setVisible(true);
 
