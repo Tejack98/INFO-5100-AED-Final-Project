@@ -6,6 +6,7 @@ package healthcare.userAccount;
 
 import healthcare.person.Person;
 import healthcare.role.Role;
+import healthcare.workQueue.WorkQueue;
 
 /**
  *
@@ -18,8 +19,10 @@ public class UserAccount {
     private String userEmail;
     private Person person;
     private Role role;
+    private WorkQueue workQueue;
 
     public UserAccount() {
+        workQueue = new WorkQueue();
     }
 
     public String getUserName() {
@@ -61,5 +64,13 @@ public class UserAccount {
     public void setRole(Role role) {
         this.role = role;
     }
-    
+
+    public WorkQueue getWorkQueue() {
+        return workQueue;
+    }
+
+    public void setWorkQueue(WorkQueue workQueue) {
+        this.workQueue = workQueue;
+    }
+       
 }

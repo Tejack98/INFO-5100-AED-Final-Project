@@ -11,6 +11,7 @@ import healthcare.organization.Organization;
 import healthcare.role.Role;
 import healthcare.userAccount.UserAccount;
 import javax.swing.JPanel;
+import userinterface.HealthcareInterface.HealthCareAdminWorkPanel;
 
 /**
  *
@@ -25,9 +26,8 @@ public class HealthCareAdminRole extends Role {
     }
     
     @Override
-    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount userAccount, Organization organization, Enterprise enterprise, Ecosystem Ecosystem, Network network) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-        //return new AdminWorkAreaJPanel(userProcessContainer, enterprise);       
+    public JPanel createWorkArea(UserAccount userAccount, Organization organization, Enterprise enterprise, Ecosystem Ecosystem, Network network) {
+        return new HealthCareAdminWorkPanel();
     }
     
 }

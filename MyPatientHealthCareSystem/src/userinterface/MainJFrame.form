@@ -84,12 +84,24 @@
     <Component class="javax.swing.JComboBox" name="comboBoxRole">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="5">
-            <StringItem index="0" value="System_Admin"/>
-            <StringItem index="1" value="Hospital_Admin"/>
-            <StringItem index="2" value="Community_Admin"/>
-            <StringItem index="3" value="Doctor"/>
-            <StringItem index="4" value="Patient"/>
+          <StringArray count="17">
+            <StringItem index="0" value="Administrator"/>
+            <StringItem index="1" value="Doctor"/>
+            <StringItem index="2" value="Patient"/>
+            <StringItem index="3" value="Nurse"/>
+            <StringItem index="4" value="HealthCareAdmin"/>
+            <StringItem index="5" value="Donor"/>
+            <StringItem index="6" value="DonorAdmin"/>
+            <StringItem index="7" value="SupplyManager"/>
+            <StringItem index="8" value="Handler"/>
+            <StringItem index="9" value="VaccinationAdmin"/>
+            <StringItem index="10" value="Vaccinator"/>
+            <StringItem index="11" value="PharmacyAdmin"/>
+            <StringItem index="12" value="Pharmacist"/>
+            <StringItem index="13" value="LabAdmin"/>
+            <StringItem index="14" value="LabAssistant"/>
+            <StringItem index="15" value="EmergencyUnitAdmin"/>
+            <StringItem index="16" value="AmbulanceHandler"/>
           </StringArray>
         </Property>
       </Properties>

@@ -17,6 +17,7 @@ public class UserAccountDirectory {
     private ArrayList<UserAccount> userAccountList;
 
     public UserAccountDirectory() {
+        this.userAccountList = new ArrayList<>();
     }
 
     public ArrayList<UserAccount> getUserAccountList() {
@@ -24,21 +25,24 @@ public class UserAccountDirectory {
     }
     
     public UserAccount authenticateUser(String userName, String userPassword){
-        for (UserAccount user : this.userAccountList)
+         
+        for (UserAccount user : this.userAccountList){
             if (user.getUserName().equals(userName) && user.getUserPassword().equals(userPassword)){
+                System.out.println(user);
                 return user;
             }
+        }
         return null;
     }
     
     public UserAccount createUserAccount(String userName, String userPassword, Person person, Role role, String userEmail){
         UserAccount userAccount = new UserAccount();
-        userAccount.setUserName(userEmail);
+        userAccount.setUserName(userName);
         userAccount.setUserPassword(userPassword);
         userAccount.setPerson(person);
         userAccount.setRole(role);
         userAccount.setUserEmail(userEmail);
-        this.userAccountList.add(userAccount);
+        userAccountList.add(userAccount);
         return userAccount;
     }
     
