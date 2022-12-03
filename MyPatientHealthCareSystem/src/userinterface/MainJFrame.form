@@ -26,17 +26,13 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace pref="202" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="lblRole" alignment="0" max="32767" attributes="0"/>
                   <Component id="lblUsername" alignment="0" pref="162" max="32767" attributes="0"/>
                   <Component id="lblPassword" alignment="1" max="32767" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="txtPassword" alignment="0" min="-2" pref="222" max="-2" attributes="0"/>
-                  <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="txtUsername" alignment="1" max="32767" attributes="0"/>
-                      <Component id="comboBoxRole" alignment="1" pref="222" max="32767" attributes="0"/>
-                  </Group>
+                  <Component id="txtUsername" alignment="0" min="-2" pref="222" max="-2" attributes="0"/>
                   <Component id="btnLogin" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="202" max="32767" attributes="0"/>
@@ -49,12 +45,7 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" pref="85" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="lblRole" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
-                  <Component id="comboBoxRole" alignment="0" min="-2" pref="38" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="112" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="lblUsername" alignment="0" min="-2" pref="37" max="-2" attributes="0"/>
                   <Component id="txtUsername" alignment="0" min="-2" pref="37" max="-2" attributes="0"/>
@@ -79,46 +70,6 @@
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="Welcome to Hospital Management System"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JComboBox" name="comboBoxRole">
-      <Properties>
-        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="17">
-            <StringItem index="0" value="Administrator"/>
-            <StringItem index="1" value="Doctor"/>
-            <StringItem index="2" value="Patient"/>
-            <StringItem index="3" value="Nurse"/>
-            <StringItem index="4" value="HealthCareAdmin"/>
-            <StringItem index="5" value="Donor"/>
-            <StringItem index="6" value="DonorAdmin"/>
-            <StringItem index="7" value="SupplyManager"/>
-            <StringItem index="8" value="Handler"/>
-            <StringItem index="9" value="VaccinationAdmin"/>
-            <StringItem index="10" value="Vaccinator"/>
-            <StringItem index="11" value="PharmacyAdmin"/>
-            <StringItem index="12" value="Pharmacist"/>
-            <StringItem index="13" value="LabAdmin"/>
-            <StringItem index="14" value="LabAssistant"/>
-            <StringItem index="15" value="EmergencyUnitAdmin"/>
-            <StringItem index="16" value="AmbulanceHandler"/>
-          </StringArray>
-        </Property>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="comboBoxRoleActionPerformed"/>
-      </Events>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-      </AuxValues>
-    </Component>
-    <Component class="javax.swing.JLabel" name="lblRole">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="14" style="1"/>
-        </Property>
-        <Property name="horizontalAlignment" type="int" value="11"/>
-        <Property name="text" type="java.lang.String" value="Role   :"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblUsername">
