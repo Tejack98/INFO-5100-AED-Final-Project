@@ -8,6 +8,8 @@ import healthcare.enterprise.healthCare.DoctorRole;
 import healthcare.enterprise.healthCare.HealthCareAdminRole;
 import healthcare.enterprise.healthCare.NurseRole;
 import healthcare.enterprise.healthCare.PatientRole;
+import healthcare.enterprise.lab.LabAdminRole;
+import healthcare.enterprise.lab.LabAssistantRole;
 import healthcare.person.Person;
 import healthcare.userAccount.UserAccount;
 
@@ -38,7 +40,17 @@ public class Configsystem {
         UserAccount u2 = ecosystem.getUserAccountDirectory().createUserAccount("hadmin", "hadmin", person2, new HealthCareAdminRole(),"s@g.com");
         UserAccount u3 = ecosystem.getUserAccountDirectory().createUserAccount("pat", "pat", person3, new PatientRole(),"s@g.com");
         UserAccount u4 = ecosystem.getUserAccountDirectory().createUserAccount("nurse", "nurse", person4, new NurseRole() ,"s@g.com");
-
+        
+        
+        //========================================Lab======================================
+        
+        Person labAdmin = ecosystem.getPersonDirectory().createAndAddPerson("Aditya","75 Saint Alphonso","Boston","MA",Long.parseLong("02120"),Long.parseLong("8576938034"));
+        LabAdminRole lar = new LabAdminRole();  
+        Person labAssist = ecosystem.getPersonDirectory().createAndAddPerson("Tejack","75 Saint Alphonso","Boston","MA",Long.parseLong("02120"),Long.parseLong("8576938034"));
+        LabAssistantRole lassistr = new LabAssistantRole();       
+        UserAccount la_user = ecosystem.getUserAccountDirectory().createUserAccount("ladmin", "ladmin", labAdmin, lar ,"labadmin@g.com");
+        UserAccount lassist = ecosystem.getUserAccountDirectory().createUserAccount("lassist", "lassist", labAssist, lassistr ,"labadmin@g.com");
+       
         return ecosystem;
     }
     

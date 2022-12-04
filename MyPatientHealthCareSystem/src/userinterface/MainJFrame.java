@@ -20,6 +20,8 @@ import userinterface.HealthcareInterface.healthcareAdmin.HealthCareAdminWorkArea
 import userinterface.HealthcareInterface.healthcareAdmin.HealthCareAdminWorkPanel;
 import userinterface.HealthcareInterface.nurse.NurseWorkArea;
 import userinterface.HealthcareInterface.patient.PatientWorkArea;
+import userinterface.LabInterface.LabAdminWorkArea;
+import userinterface.LabInterface.LabTechnicianWorkArea;
 
 /**
  *
@@ -185,11 +187,11 @@ public class MainJFrame extends javax.swing.JFrame {
             Role role = userAccount.getRole();
             System.out.println(Role.RoleType.HealthCareAdmin.toString());
             System.out.println(userAccount.getRole().toString());
-            JPanel jpanel = role.createWorkArea(userAccount, inOrganization, inEnterprise, ecosystem, inNetwork);
+            JFrame frame = role.createWorkArea(userAccount, inOrganization, inEnterprise, ecosystem, inNetwork);
 
 // ======================== HealthCare================================================================          
             if (Role.RoleType.HealthCareAdmin.toString().equals(userAccount.getRole().toString())) {
-                HealthCareAdminWorkArea healthcareFrame = new HealthCareAdminWorkArea(jpanel);
+                HealthCareAdminWorkArea healthcareFrame = (HealthCareAdminWorkArea) frame;
                 healthcareFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
                 healthcareFrame.setVisible(true);
             }
@@ -243,15 +245,15 @@ public class MainJFrame extends javax.swing.JFrame {
 // ===============================================================================================
 // ============================lab unit=======================================================  
             if (Role.RoleType.LabAdmin.toString().equals(userAccount.getRole().toString())) {
-//                DoctorWorkArea docFrame = new DoctorWorkArea();
-//                docFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
-//                docFrame.setVisible(true);
+                LabAdminWorkArea labAdminFrame = (LabAdminWorkArea) frame;
+                labAdminFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+                labAdminFrame.setVisible(true);
             }
 
             if (Role.RoleType.LabAssistant.toString().equals(userAccount.getRole().toString())) {
-//                DoctorWorkArea docFrame = new DoctorWorkArea();
-//                docFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
-//                docFrame.setVisible(true);
+                LabTechnicianWorkArea labTechFrame = (LabTechnicianWorkArea) frame;
+                labTechFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+                labTechFrame.setVisible(true);
             }
 
 // ===============================================================================================
