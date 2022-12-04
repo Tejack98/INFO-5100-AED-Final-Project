@@ -22,36 +22,36 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="lblTitle" max="32767" attributes="0"/>
                   </Group>
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="149" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="lblName" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblUsername" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblPhoneNumber" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblAddress" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblCity" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblState" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblZipCode" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="lblPhoneNumber" alignment="1" max="32767" attributes="0"/>
+                          <Component id="lblSpeciality" alignment="1" max="32767" attributes="0"/>
+                          <Component id="lblUsername" alignment="1" max="32767" attributes="0"/>
+                          <Component id="lblName" alignment="1" max="32767" attributes="0"/>
+                          <Component id="lblAddress" alignment="1" max="32767" attributes="0"/>
+                          <Component id="lblCity" alignment="1" max="32767" attributes="0"/>
+                          <Component id="lblState" alignment="1" max="32767" attributes="0"/>
+                          <Component id="lblZipCode" alignment="1" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="txtName" min="-2" pref="230" max="-2" attributes="0"/>
-                          <Component id="txtPhoneNo" min="-2" pref="230" max="-2" attributes="0"/>
-                          <Component id="txtEmail" min="-2" pref="230" max="-2" attributes="0"/>
-                          <Component id="txtAddress" min="-2" pref="230" max="-2" attributes="0"/>
-                          <Component id="txtCity" min="-2" pref="230" max="-2" attributes="0"/>
-                          <Component id="txtState" min="-2" pref="230" max="-2" attributes="0"/>
-                          <Component id="txtZipcode" min="-2" pref="230" max="-2" attributes="0"/>
+                          <Component id="btnSignUp" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="cboxSpeciality" max="32767" attributes="0"/>
+                              <Component id="txtName" pref="230" max="32767" attributes="0"/>
+                              <Component id="txtPhoneNo" pref="230" max="32767" attributes="0"/>
+                              <Component id="txtEmail" pref="230" max="32767" attributes="0"/>
+                              <Component id="txtAddress" pref="230" max="32767" attributes="0"/>
+                              <Component id="txtCity" pref="230" max="32767" attributes="0"/>
+                              <Component id="txtState" pref="230" max="32767" attributes="0"/>
+                              <Component id="txtZipcode" pref="230" max="32767" attributes="0"/>
+                          </Group>
                       </Group>
                       <EmptySpace min="0" pref="165" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-              <Component id="btnSignUp" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="251" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -70,7 +70,12 @@
                   <Component id="lblUsername" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtEmail" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="lblSpeciality" min="-2" max="-2" attributes="0"/>
+                  <Component id="cboxSpeciality" min="-2" pref="24" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblPhoneNumber" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtPhoneNo" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -95,9 +100,9 @@
                   <Component id="lblZipCode" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtZipcode" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="btnSignUp" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="17" max="32767" attributes="0"/>
+              <EmptySpace pref="46" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -192,6 +197,29 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSignUpActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblSpeciality">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Comic Sans MS" size="14" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Enterprise"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="cboxSpeciality">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="4">
+            <StringItem index="0" value="Item 1"/>
+            <StringItem index="1" value="Item 2"/>
+            <StringItem index="2" value="Item 3"/>
+            <StringItem index="3" value="Item 4"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
     </Component>
   </SubComponents>
 </Form>

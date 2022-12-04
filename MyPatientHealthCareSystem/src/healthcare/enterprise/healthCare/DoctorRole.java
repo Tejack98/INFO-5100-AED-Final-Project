@@ -30,7 +30,7 @@ public class DoctorRole extends Role {
     }
     
     @Override
-    public JPanel createWorkArea(UserAccount userAccount, Organization organization, Enterprise enterprise, Ecosystem Ecosystem, Network network) {
+    public JPanel createWorkArea(UserAccount userAccount, Organization organization, Enterprise enterprise, Ecosystem ecosystem, Network network) {
         return new DoctorDashboardPanel();       
     }
 

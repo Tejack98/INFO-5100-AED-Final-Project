@@ -26,8 +26,8 @@ public class HealthCareAdminRole extends Role {
     }
     
     @Override
-    public JPanel createWorkArea(UserAccount userAccount, Organization organization, Enterprise enterprise, Ecosystem Ecosystem, Network network) {
-        return new HealthCareAdminWorkPanel();
+    public JPanel createWorkArea(UserAccount userAccount, Organization organization, Enterprise enterprise, Ecosystem ecosystem, Network network) {
+        return new HealthCareAdminWorkPanel(ecosystem);
     }
     
 }

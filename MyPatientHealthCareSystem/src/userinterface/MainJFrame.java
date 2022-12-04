@@ -18,6 +18,8 @@ import javax.swing.JPanel;
 import userinterface.HealthcareInterface.doctor.DoctorWorkArea;
 import userinterface.HealthcareInterface.healthcareAdmin.HealthCareAdminWorkArea;
 import userinterface.HealthcareInterface.healthcareAdmin.HealthCareAdminWorkPanel;
+import userinterface.HealthcareInterface.nurse.NurseWorkArea;
+import userinterface.HealthcareInterface.patient.PatientWorkArea;
 
 /**
  *
@@ -187,7 +189,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
 // ======================== HealthCare================================================================          
             if (Role.RoleType.HealthCareAdmin.toString().equals(userAccount.getRole().toString())) {
-                HealthCareAdminWorkArea healthcareFrame = new HealthCareAdminWorkArea();
+                HealthCareAdminWorkArea healthcareFrame = new HealthCareAdminWorkArea(jpanel);
                 healthcareFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
                 healthcareFrame.setVisible(true);
             }
@@ -199,15 +201,15 @@ public class MainJFrame extends javax.swing.JFrame {
             }
 
             if (Role.RoleType.Nurse.toString().equals(userAccount.getRole().toString())) {
-//                DoctorWorkArea docFrame = new DoctorWorkArea();
-//                docFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
-//                docFrame.setVisible(true);
+                NurseWorkArea nurseFrame = new NurseWorkArea();
+                nurseFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+                nurseFrame.setVisible(true);
             }
 
             if (Role.RoleType.Patient.toString().equals(userAccount.getRole().toString())) {
-//                DoctorWorkArea docFrame = new DoctorWorkArea();
-//                docFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
-//                docFrame.setVisible(true);
+                PatientWorkArea patientFrame = new PatientWorkArea();
+                patientFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+                patientFrame.setVisible(true);
             }
 
 // ===============================================================================================
