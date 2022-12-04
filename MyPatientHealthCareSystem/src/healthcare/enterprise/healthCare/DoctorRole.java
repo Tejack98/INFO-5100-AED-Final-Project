@@ -10,6 +10,7 @@ import healthcare.network.Network;
 import healthcare.organization.Organization;
 import healthcare.role.Role;
 import healthcare.userAccount.UserAccount;
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 import userinterface.HealthcareInterface.doctor.DoctorDashboardPanel;
 import userinterface.HealthcareInterface.doctor.DoctorWorkArea;
@@ -30,8 +31,8 @@ public class DoctorRole extends Role {
     }
     
     @Override
-    public JPanel createWorkArea(UserAccount userAccount, Organization organization, Enterprise enterprise, Ecosystem ecosystem, Network network) {
-        return new DoctorDashboardPanel();       
+    public JFrame createWorkArea(UserAccount userAccount, Organization organization, Enterprise enterprise, Ecosystem ecosystem, Network network) {
+        return new DoctorWorkArea();       
     }
 
     public String getSpeciality() {

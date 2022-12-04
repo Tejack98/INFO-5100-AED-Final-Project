@@ -4,6 +4,8 @@
  */
 package userinterface.HealthcareInterface.Pharmacy;
 
+import healthcare.Ecosystem;
+
 /**
  *
  * @author adity
@@ -13,8 +15,10 @@ public class PharmacyAdminWorkArea extends javax.swing.JFrame {
     /**
      * Creates new form PharmacyAdminWorkArea
      */
-    public PharmacyAdminWorkArea() {
+    static Ecosystem ecosystem;
+    public PharmacyAdminWorkArea(Ecosystem ecosystem) {
         initComponents();
+        this.ecosystem = ecosystem;
     }
 
     /**
@@ -42,6 +46,11 @@ public class PharmacyAdminWorkArea extends javax.swing.JFrame {
         jLabel1.setText("Pharmacy Admin");
 
         btnCreatePharmacist.setText("Create Pharmacist");
+        btnCreatePharmacist.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCreatePharmacistActionPerformed(evt);
+            }
+        });
 
         btnUpdatePharmacist.setText("Update Pharmacist");
 
@@ -49,7 +58,7 @@ public class PharmacyAdminWorkArea extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(14, 14, 14)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -97,6 +106,11 @@ public class PharmacyAdminWorkArea extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnCreatePharmacistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreatePharmacistActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_btnCreatePharmacistActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -127,7 +141,7 @@ public class PharmacyAdminWorkArea extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new PharmacyAdminWorkArea().setVisible(true);
+                new PharmacyAdminWorkArea(ecosystem).setVisible(true);
             }
         });
     }

@@ -4,8 +4,6 @@
  */
 package userinterface.HealthcareInterface.Pharmacy;
 
-import userinterface.SupplyChainInterface.*;
-
 /**
  *
  * @author adity

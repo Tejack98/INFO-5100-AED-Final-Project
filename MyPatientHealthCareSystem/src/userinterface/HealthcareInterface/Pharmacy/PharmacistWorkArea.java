@@ -4,6 +4,8 @@
  */
 package userinterface.HealthcareInterface.Pharmacy;
 
+import healthcare.Ecosystem;
+
 /**
  *
  * @author adity
@@ -13,8 +15,10 @@ public class PharmacistWorkArea extends javax.swing.JFrame {
     /**
      * Creates new form PharmacistWorkArea
      */
-    public PharmacistWorkArea() {
+    static Ecosystem ecosystem;
+    public PharmacistWorkArea(Ecosystem ecosystem) {
         initComponents();
+        this.ecosystem = ecosystem;
     }
 
     /**
@@ -128,7 +132,7 @@ public class PharmacistWorkArea extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new PharmacistWorkArea().setVisible(true);
+                new PharmacistWorkArea(ecosystem).setVisible(true);
             }
         });
     }

@@ -10,7 +10,9 @@ import healthcare.network.Network;
 import healthcare.organization.Organization;
 import healthcare.role.Role;
 import healthcare.userAccount.UserAccount;
+import javax.swing.JFrame;
 import javax.swing.JPanel;
+import userinterface.HealthcareInterface.healthcareAdmin.HealthCareAdminWorkArea;
 import userinterface.HealthcareInterface.healthcareAdmin.HealthCareAdminWorkPanel;
 
 /**
@@ -26,8 +28,8 @@ public class HealthCareAdminRole extends Role {
     }
     
     @Override
-    public JPanel createWorkArea(UserAccount userAccount, Organization organization, Enterprise enterprise, Ecosystem ecosystem, Network network) {
-        return new HealthCareAdminWorkPanel(ecosystem);
+    public JFrame createWorkArea(UserAccount userAccount, Organization organization, Enterprise enterprise, Ecosystem ecosystem, Network network) {
+        return new HealthCareAdminWorkArea(ecosystem);
     }
     
 }
