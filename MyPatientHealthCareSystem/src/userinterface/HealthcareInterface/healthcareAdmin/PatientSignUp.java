@@ -272,7 +272,7 @@ public class PatientSignUp extends javax.swing.JPanel {
                     
                     PatientRole role = new PatientRole();                    
                     Person person = ecosystem.getPersonDirectory().createAndAddPerson(name,Address,City,State,Zipcode,cellPhoneNumber);
-                    UserAccount u = ecosystem.getUserAccountDirectory().createUserAccount(username, password, person, role, emailId);
+                    UserAccount u = ecosystem.getUserAccountDirectory().createUserAccount(PatientID,username, password, person, role, emailId);
                     
                     JOptionPane.showMessageDialog(this,"Patient Registered Successfully.Your New Patient Username is:"+username+" and password: "+password+",Please save this Patient Id for furture reference.");
                     
