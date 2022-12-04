@@ -230,7 +230,7 @@ public class NurseSignUp extends javax.swing.JPanel {
                     role.setHospitalName(HospitalName);
                     
                     Person person = ecosystem.getPersonDirectory().createAndAddPerson(name,Address,City,State,Zipcode,cellPhoneNumber);
-                    UserAccount u = ecosystem.getUserAccountDirectory().createUserAccount(username, password, person, role, emailId);
+                    UserAccount u = ecosystem.getUserAccountDirectory().createUserAccount(NurseID,username, password, person, role, emailId);
                     
                     JOptionPane.showMessageDialog(this,"Nurse Registered Successfully.Your New Username is:"+username+" and password: "+password+",Please save this Id for furture reference.");
                     

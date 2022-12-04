@@ -229,7 +229,7 @@ public class DoctorSignUp extends javax.swing.JPanel {
                     role.setSpeciality(Speciality);
 
                     Person person = ecosystem.getPersonDirectory().createAndAddPerson(name,Address,City,State,Zipcode,cellPhoneNumber);
-                    UserAccount u = ecosystem.getUserAccountDirectory().createUserAccount(username, password, person, role, emailId);
+                    UserAccount u = ecosystem.getUserAccountDirectory().createUserAccount(doctorID,username, password, person, role, emailId);
 
                     JOptionPane.showMessageDialog(this, "Doctor Registered Successfully.Your New Username:" + username + " and password: " + password + ",Please save this Id for furture reference.");
 
