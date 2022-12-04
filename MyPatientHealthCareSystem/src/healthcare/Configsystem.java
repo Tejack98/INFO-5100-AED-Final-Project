@@ -36,10 +36,10 @@ public class Configsystem {
         n1.setHospitalName("myHospital1");
         n1.setGender("Female");
         
-        UserAccount u = ecosystem.getUserAccountDirectory().createUserAccount("sys", "sys", person, d1,"t@g.com");
-        UserAccount u2 = ecosystem.getUserAccountDirectory().createUserAccount("hadmin", "hadmin", person2, new HealthCareAdminRole(),"s@g.com");
-        UserAccount u3 = ecosystem.getUserAccountDirectory().createUserAccount("pat", "pat", person3, new PatientRole(),"s@g.com");
-        UserAccount u4 = ecosystem.getUserAccountDirectory().createUserAccount("nurse", "nurse", person4, new NurseRole() ,"s@g.com");
+        UserAccount u = ecosystem.getUserAccountDirectory().createUserAccount(4444,"sys", "sys", person, d1,"t@g.com");
+        UserAccount u2 = ecosystem.getUserAccountDirectory().createUserAccount(1111,"hadmin", "hadmin", person2, new HealthCareAdminRole(),"s@g.com");
+        UserAccount u3 = ecosystem.getUserAccountDirectory().createUserAccount(2222,"pat", "pat", person3, new PatientRole(),"s@g.com");
+        UserAccount u4 = ecosystem.getUserAccountDirectory().createUserAccount(3333,"nurse", "nurse", person4, new NurseRole() ,"s@g.com");
         
         
         //========================================Lab======================================
@@ -48,8 +48,8 @@ public class Configsystem {
         LabAdminRole lar = new LabAdminRole();  
         Person labAssist = ecosystem.getPersonDirectory().createAndAddPerson("Tejack","75 Saint Alphonso","Boston","MA",Long.parseLong("02120"),Long.parseLong("8576938034"));
         LabAssistantRole lassistr = new LabAssistantRole();       
-        UserAccount la_user = ecosystem.getUserAccountDirectory().createUserAccount("ladmin", "ladmin", labAdmin, lar ,"labadmin@g.com");
-        UserAccount lassist = ecosystem.getUserAccountDirectory().createUserAccount("lassist", "lassist", labAssist, lassistr ,"labadmin@g.com");
+        UserAccount la_user = ecosystem.getUserAccountDirectory().createUserAccount(5555,"ladmin", "ladmin", labAdmin, lar ,"labadmin@g.com");
+        UserAccount lassist = ecosystem.getUserAccountDirectory().createUserAccount(6666,"lassist", "lassist", labAssist, lassistr ,"labadmin@g.com");
        
         return ecosystem;
     }
