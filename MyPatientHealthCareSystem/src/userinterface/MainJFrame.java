@@ -15,13 +15,22 @@ import healthcare.userAccount.UserAccount;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import userinterface.Administration.AdministratorWorkArea;
+import userinterface.DonorBankInterface.DonorWorkArea;
+import userinterface.DonorBankInterface.Logindetails.AdminLogin.DonorAdminWorkArea;
+import userinterface.EmergencyUnit.ambulanceHandler.AmbulanceHandlerWorkArea;
+import userinterface.EmergencyUnit.emergencyAdmin.EmergencyUnitAdminWorkArea;
+import userinterface.HealthcareInterface.Pharmacy.PharmacistWorkArea;
+import userinterface.HealthcareInterface.Pharmacy.PharmacyAdminWorkArea;
 import userinterface.HealthcareInterface.doctor.DoctorWorkArea;
 import userinterface.HealthcareInterface.healthcareAdmin.HealthCareAdminWorkArea;
 import userinterface.HealthcareInterface.healthcareAdmin.HealthCareAdminWorkPanel;
 import userinterface.HealthcareInterface.nurse.NurseWorkArea;
 import userinterface.HealthcareInterface.patient.PatientWorkArea;
-import userinterface.LabInterface.LabAdminWorkArea;
-import userinterface.LabInterface.LabTechnicianWorkArea;
+import userinterface.LabInterface.labAdmin.LabAdminWorkArea;
+import userinterface.LabInterface.labTech.LabTechnicianWorkArea;
+import userinterface.SupplyChainInterface.handler.HandlerWorkArea;
+import userinterface.SupplyChainInterface.supplyManger.SupplyManagerWorkArea;
 
 /**
  *
@@ -197,19 +206,19 @@ public class MainJFrame extends javax.swing.JFrame {
             }
 
             if (Role.RoleType.Doctor.toString().equals(userAccount.getRole().toString())) {
-                DoctorWorkArea docFrame = new DoctorWorkArea();
+                DoctorWorkArea docFrame = (DoctorWorkArea) frame;
                 docFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
                 docFrame.setVisible(true);
             }
 
             if (Role.RoleType.Nurse.toString().equals(userAccount.getRole().toString())) {
-                NurseWorkArea nurseFrame = new NurseWorkArea();
+                NurseWorkArea nurseFrame = (NurseWorkArea) frame;
                 nurseFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
                 nurseFrame.setVisible(true);
             }
 
             if (Role.RoleType.Patient.toString().equals(userAccount.getRole().toString())) {
-                PatientWorkArea patientFrame = new PatientWorkArea();
+                PatientWorkArea patientFrame = (PatientWorkArea) frame;
                 patientFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
                 patientFrame.setVisible(true);
             }
@@ -217,29 +226,29 @@ public class MainJFrame extends javax.swing.JFrame {
 // ===============================================================================================
 // ============================DonorBank==========================================================
             if (Role.RoleType.DonorAdmin.toString().equals(userAccount.getRole().toString())) {
-//                DoctorWorkArea docFrame = new DoctorWorkArea();
-//                docFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
-//                docFrame.setVisible(true);
+                DonorAdminWorkArea donorAdmin = (DonorAdminWorkArea) frame;
+                donorAdmin.setExtendedState(JFrame.MAXIMIZED_BOTH);
+                donorAdmin.setVisible(true);
             }
 
             if (Role.RoleType.Donor.toString().equals(userAccount.getRole().toString())) {
-//                DoctorWorkArea docFrame = new DoctorWorkArea();
-//                docFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
-//                docFrame.setVisible(true);
+                DonorWorkArea donor = (DonorWorkArea) frame;
+                donor.setExtendedState(JFrame.MAXIMIZED_BOTH);
+                donor.setVisible(true);
             }
 
 // ===============================================================================================
 // ============================Emergency unit======================================================
             if (Role.RoleType.EmergencyUnitAdmin.toString().equals(userAccount.getRole().toString())) {
-//                DoctorWorkArea docFrame = new DoctorWorkArea();
-//                docFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
-//                docFrame.setVisible(true);
+                EmergencyUnitAdminWorkArea emergencyAdminFrame =  (EmergencyUnitAdminWorkArea) frame;
+                emergencyAdminFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+                emergencyAdminFrame.setVisible(true);
             }
 
             if (Role.RoleType.AmbulanceHandler.toString().equals(userAccount.getRole().toString())) {
-//                DoctorWorkArea docFrame = new DoctorWorkArea();
-//                docFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
-//                docFrame.setVisible(true);
+                AmbulanceHandlerWorkArea ambHanlerFrame = (AmbulanceHandlerWorkArea) frame;
+                ambHanlerFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+                ambHanlerFrame.setVisible(true);
             }
 
 // ===============================================================================================
@@ -259,51 +268,36 @@ public class MainJFrame extends javax.swing.JFrame {
 // ===============================================================================================
 // ============================Pharmacy===========================================================  
             if (Role.RoleType.PharmacyAdmin.toString().equals(userAccount.getRole().toString())) {
-//                DoctorWorkArea docFrame = new DoctorWorkArea();
-//                docFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
-//                docFrame.setVisible(true);
+                PharmacyAdminWorkArea pharAdminFrame = (PharmacyAdminWorkArea) frame;
+                pharAdminFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+                pharAdminFrame.setVisible(true);
             }
 
             if (Role.RoleType.Pharmacist.toString().equals(userAccount.getRole().toString())) {
-//                DoctorWorkArea docFrame = new DoctorWorkArea();
-//                docFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
-//                docFrame.setVisible(true);
+                PharmacistWorkArea pharFrame = (PharmacistWorkArea) frame;
+                pharFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+                pharFrame.setVisible(true);
             }
 
 // ===============================================================================================
 // ============================SupplyChain===========================================================  
             if (Role.RoleType.Handler.toString().equals(userAccount.getRole().toString())) {
-//                DoctorWorkArea docFrame = new DoctorWorkArea();
-//                docFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
-//                docFrame.setVisible(true);
+                HandlerWorkArea hanFrame = (HandlerWorkArea) frame;
+                hanFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+                hanFrame.setVisible(true);
             }
 
             if (Role.RoleType.SupplyManager.toString().equals(userAccount.getRole().toString())) {
-//                DoctorWorkArea docFrame = new DoctorWorkArea();
-//                docFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
-//                docFrame.setVisible(true);
-
-// ===============================================================================================
-// ============================SupplyChain===========================================================  
-                if (Role.RoleType.Handler.toString().equals(userAccount.getRole().toString())) {
-//                DoctorWorkArea docFrame = new DoctorWorkArea();
-//                docFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
-//                docFrame.setVisible(true);
-                }
-
-                if (Role.RoleType.SupplyManager.toString().equals(userAccount.getRole().toString())) {
-//                DoctorWorkArea docFrame = new DoctorWorkArea();
-//                docFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
-//                docFrame.setVisible(true);
-
-                }
+                SupplyManagerWorkArea supplierFrame = (SupplyManagerWorkArea) frame;
+                supplierFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+                supplierFrame.setVisible(true);
                 
 // ===============================================================================================
 // ============================AdminMaster===========================================================  
                 if (Role.RoleType.Administrator.toString().equals(userAccount.getRole().toString())) {
-//                DoctorWorkArea docFrame = new DoctorWorkArea();
-//                docFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
-//                docFrame.setVisible(true);
+                    AdministratorWorkArea adminWA = (AdministratorWorkArea) frame;
+                    adminWA.setExtendedState(JFrame.MAXIMIZED_BOTH);
+                    adminWA.setVisible(true);
                 }
                 
             }

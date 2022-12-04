@@ -12,6 +12,7 @@ import healthcare.role.*;
 import healthcare.userAccount.UserAccount;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import userinterface.HealthcareInterface.Pharmacy.PharmacyAdminWorkArea;
 
 /**
  *
@@ -25,9 +26,8 @@ public class PharmacyAdminRole extends Role {
     }
     
     @Override
-    public JFrame createWorkArea( UserAccount userAccount, Organization organization, Enterprise enterprise, Ecosystem Ecosystem, Network network) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-        //return new AdminWorkAreaJPanel(userProcessContainer, enterprise);       
+    public JFrame createWorkArea( UserAccount userAccount, Organization organization, Enterprise enterprise, Ecosystem ecosystem, Network network) {
+        return new PharmacyAdminWorkArea(ecosystem);       
     }
     
 }

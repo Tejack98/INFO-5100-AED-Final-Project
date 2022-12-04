@@ -12,7 +12,7 @@ import healthcare.role.Role;
 import healthcare.userAccount.UserAccount;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import userinterface.LabInterface.LabTechnicianWorkArea;
+import userinterface.LabInterface.labTech.LabTechnicianWorkArea;
 
 /**
  *

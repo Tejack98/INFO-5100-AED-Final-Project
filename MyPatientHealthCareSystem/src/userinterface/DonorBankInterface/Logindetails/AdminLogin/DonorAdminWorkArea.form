@@ -23,7 +23,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jSplitPane1" alignment="0" pref="721" max="32767" attributes="0"/>
+          <Component id="jSplitPane1" alignment="0" pref="745" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -54,10 +54,10 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jLabel1" alignment="0" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="btnUpdatePharmacist" min="-2" pref="145" max="-2" attributes="0"/>
-                          <Component id="btnCreatePharmacist" min="-2" pref="145" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="btnAddAmbulanceHandler" min="-2" pref="157" max="-2" attributes="0"/>
+                          <Component id="btnAddAmbulance" min="-2" pref="157" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -66,12 +66,13 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="jLabel1" min="-2" pref="90" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabel1" min="-2" pref="75" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="btnCreatePharmacist" min="-2" pref="68" max="-2" attributes="0"/>
+                      <Component id="btnAddAmbulance" min="-2" pref="75" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="btnUpdatePharmacist" min="-2" pref="68" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="236" max="32767" attributes="0"/>
+                      <Component id="btnAddAmbulanceHandler" min="-2" pref="75" max="-2" attributes="0"/>
+                      <EmptySpace pref="246" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -80,24 +81,26 @@
             <Component class="javax.swing.JLabel" name="jLabel1">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="21" style="1"/>
+                  <Font name="Segoe UI" size="18" style="1"/>
                 </Property>
-                <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="Pharmacy Admin"/>
+                <Property name="text" type="java.lang.String" value="Emergency Unit Admin"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="btnCreatePharmacist">
+            <Component class="javax.swing.JButton" name="btnAddAmbulance">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Create Pharmacist"/>
+                <Property name="text" type="java.lang.String" value="Add Ambulance"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCreatePharmacistActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddAmbulanceActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="btnUpdatePharmacist">
+            <Component class="javax.swing.JButton" name="btnAddAmbulanceHandler">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Update Pharmacist"/>
+                <Property name="text" type="java.lang.String" value="Add Ambulance Handler"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddAmbulanceHandlerActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -111,12 +114,12 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="616" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="640" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="498" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="513" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>

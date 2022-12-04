@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package userinterface.LabInterface;
+package userinterface.LabInterface.labTech;
 
 import healthcare.Ecosystem;
 
@@ -113,7 +113,7 @@ public class LabTechnicianWorkArea extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSplitPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 731, Short.MAX_VALUE)
+            .addComponent(jSplitPane, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -132,7 +132,7 @@ public class LabTechnicianWorkArea extends javax.swing.JFrame {
 
     private void ViewLabDetails_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewLabDetails_btnActionPerformed
         // TODO add your handling code here:
-        LabTechnicianLoginScreen viewLabDetails =  new LabTechnicianLoginScreen();
+        LabTechnicianLabDetails viewLabDetails =  new LabTechnicianLabDetails();
         jSplitPane.setRightComponent(viewLabDetails);
     }//GEN-LAST:event_ViewLabDetails_btnActionPerformed
 

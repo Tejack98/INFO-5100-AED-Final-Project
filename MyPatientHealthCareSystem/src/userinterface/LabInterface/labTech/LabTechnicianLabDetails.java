@@ -2,18 +2,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package userinterface.LabInterface;
+package userinterface.LabInterface.labTech;
 
 /**
  *
  * @author adity
  */
-public class LabTechnicianLoginScreen extends javax.swing.JPanel {
+public class LabTechnicianLabDetails extends javax.swing.JPanel {
 
     /**
      * Creates new form LabTechnicianLoginScreen
      */
-    public LabTechnicianLoginScreen() {
+    public LabTechnicianLabDetails() {
         initComponents();
     }
 

@@ -12,7 +12,7 @@ import healthcare.role.Role;
 import healthcare.userAccount.UserAccount;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import userinterface.LabInterface.LabAdminWorkArea;
+import userinterface.LabInterface.labAdmin.LabAdminWorkArea;
 
 /**
  *
@@ -26,8 +26,8 @@ public class LabAdminRole extends Role {
     }
     
     @Override
-    public JFrame createWorkArea(UserAccount userAccount, Organization organization, Enterprise enterprise, Ecosystem Ecosystem, Network network) {
-        return new LabAdminWorkArea();       
+    public JFrame createWorkArea(UserAccount userAccount, Organization organization, Enterprise enterprise, Ecosystem ecosystem, Network network) {
+        return new LabAdminWorkArea(ecosystem);       
     }
     
 }
