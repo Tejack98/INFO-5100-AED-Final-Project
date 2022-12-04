@@ -5,9 +5,15 @@
 package userinterface.HealthcareInterface.healthcareAdmin;
 
 import healthcare.Ecosystem;
+import healthcare.enterprise.Enterprise;
+import healthcare.network.Network;
+import healthcare.organization.Organization;
+import healthcare.userAccount.UserAccount;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import userinterface.HealthcareInterface.healthcareAdmin.HealthCareAdminWorkPanel;
+import userinterface.HealthcareInterface.healthcareAdmin.doctor.HealthCareAdminDoctorPanel;
+import userinterface.HealthcareInterface.healthcareAdmin.nurse.HealthCareAdminNursePanel;
+import userinterface.HealthcareInterface.healthcareAdmin.patient.HealthCareAdminPatientPanel;
 
 /**
  *
@@ -18,10 +24,19 @@ public class HealthCareAdminWorkArea extends javax.swing.JFrame {
     /**
      * Creates new form HopsitalWorkArea
      */
+    static UserAccount userAccount;
+    static Organization organization;
+    static Enterprise enterprise;
     static Ecosystem ecosystem;
-    public HealthCareAdminWorkArea(Ecosystem ecosystem) {
+    static Network network;
+    
+    public HealthCareAdminWorkArea(UserAccount userAccount, Organization organization, Enterprise enterprise ,Ecosystem ecosystem, Network network) {
         initComponents();
+        this.userAccount = userAccount;
+        this.organization = organization;
+        this.enterprise = enterprise;
         this.ecosystem = ecosystem;
+        this.network = network;
     }
 
     /**
@@ -37,10 +52,10 @@ public class HealthCareAdminWorkArea extends javax.swing.JFrame {
         controlPanel = new javax.swing.JPanel();
         btnDoctors = new javax.swing.JButton();
         btnPatients = new javax.swing.JButton();
-        btnEncounters = new javax.swing.JButton();
+        btnNurse = new javax.swing.JButton();
         btnLogout = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        btnEncounters1 = new javax.swing.JButton();
+        btnAdmin = new javax.swing.JButton();
         workArea = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -62,10 +77,10 @@ public class HealthCareAdminWorkArea extends javax.swing.JFrame {
             }
         });
 
-        btnEncounters.setText("Nurse");
-        btnEncounters.addActionListener(new java.awt.event.ActionListener() {
+        btnNurse.setText("Nurse");
+        btnNurse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEncountersActionPerformed(evt);
+                btnNurseActionPerformed(evt);
             }
         });
 
@@ -81,10 +96,10 @@ public class HealthCareAdminWorkArea extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Hospital");
 
-        btnEncounters1.setText("Admin");
-        btnEncounters1.addActionListener(new java.awt.event.ActionListener() {
+        btnAdmin.setText("Admin");
+        btnAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEncounters1ActionPerformed(evt);
+                btnAdminActionPerformed(evt);
             }
         });
 
@@ -99,10 +114,10 @@ public class HealthCareAdminWorkArea extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, controlPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnEncounters, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnNurse, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnPatients, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnDoctors, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnEncounters1, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(14, 14, 14))
         );
@@ -112,13 +127,13 @@ public class HealthCareAdminWorkArea extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnEncounters1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnDoctors, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnPatients, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnEncounters, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnNurse, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 234, Short.MAX_VALUE)
                 .addComponent(btnLogout)
                 .addGap(15, 15, 15))
@@ -156,30 +171,30 @@ public class HealthCareAdminWorkArea extends javax.swing.JFrame {
     private void btnDoctorsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDoctorsActionPerformed
         // TODO add your handling code here:
         
-        HealthCareAdminWorkPanel healthCareAdmin = new HealthCareAdminWorkPanel(ecosystem);
-        jSplitPaneSystem.setRightComponent(healthCareAdmin);
+        HealthCareAdminDoctorPanel doc = new HealthCareAdminDoctorPanel(userAccount,organization,enterprise,ecosystem,network);
+        jSplitPaneSystem.setRightComponent(doc);
     }//GEN-LAST:event_btnDoctorsActionPerformed
 
     private void btnPatientsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPatientsActionPerformed
         // TODO add your handling code here:
-//        HospitalPatientWorkPanel hospitalPatient = new HospitalPatientWorkPanel(personDirectory, patientDirectory, community);
-//        jSplitPaneSystem.setRightComponent(hospitalPatient);
+        HealthCareAdminPatientPanel pat = new HealthCareAdminPatientPanel(userAccount,organization,enterprise,ecosystem,network);
+        jSplitPaneSystem.setRightComponent(pat);
     }//GEN-LAST:event_btnPatientsActionPerformed
 
-    private void btnEncountersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEncountersActionPerformed
+    private void btnNurseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNurseActionPerformed
         // TODO add your handling code here:
-//        HospitalEncountersWorkPanel hospitalEncounters = new HospitalEncountersWorkPanel(patientDirectory, doctorDirectory);
-//        jSplitPaneSystem.setRightComponent(hospitalEncounters);
-    }//GEN-LAST:event_btnEncountersActionPerformed
+        HealthCareAdminNursePanel nur = new HealthCareAdminNursePanel(userAccount,organization,enterprise,ecosystem,network);
+        jSplitPaneSystem.setRightComponent(nur);
+    }//GEN-LAST:event_btnNurseActionPerformed
 
     private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
         // TODO add your handling code here:
         dispose();
     }//GEN-LAST:event_btnLogoutActionPerformed
 
-    private void btnEncounters1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEncounters1ActionPerformed
+    private void btnAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnEncounters1ActionPerformed
+    }//GEN-LAST:event_btnAdminActionPerformed
 
     /**
      * @param args the command line arguments
@@ -226,7 +241,7 @@ public class HealthCareAdminWorkArea extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                HealthCareAdminWorkArea patientFrame = new HealthCareAdminWorkArea(ecosystem);
+                HealthCareAdminWorkArea patientFrame = new HealthCareAdminWorkArea(userAccount,organization,enterprise,ecosystem,network);
                 patientFrame.setExtendedState(JFrame.MAXIMIZED_BOTH); 
                 patientFrame.setVisible(true);
             }
@@ -234,10 +249,10 @@ public class HealthCareAdminWorkArea extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAdmin;
     private javax.swing.JButton btnDoctors;
-    private javax.swing.JButton btnEncounters;
-    private javax.swing.JButton btnEncounters1;
     private javax.swing.JButton btnLogout;
+    private javax.swing.JButton btnNurse;
     private javax.swing.JButton btnPatients;
     private javax.swing.JPanel controlPanel;
     private javax.swing.JLabel jLabel1;

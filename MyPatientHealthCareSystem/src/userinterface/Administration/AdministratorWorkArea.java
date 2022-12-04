@@ -8,7 +8,7 @@ import userinterface.HealthcareInterface.healthcareAdmin.*;
 import healthcare.Ecosystem;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import userinterface.HealthcareInterface.healthcareAdmin.HealthCareAdminWorkPanel;
+import userinterface.HealthcareInterface.healthcareAdmin.doctor.HealthCareAdminDoctorPanel;
 
 /**
  *
@@ -157,7 +157,7 @@ public class AdministratorWorkArea extends javax.swing.JFrame {
     private void btnDoctorsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDoctorsActionPerformed
         // TODO add your handling code here:
         
-//        HealthCareAdminWorkPanel healthCareAdmin = new HealthCareAdminWorkPanel(ecosystem);
+//        HealthCareAdminDoctorPanel healthCareAdmin = new HealthCareAdminDoctorPanel(ecosystem);
 //        jSplitPaneSystem.setRightComponent(healthCareAdmin);
     }//GEN-LAST:event_btnDoctorsActionPerformed
 

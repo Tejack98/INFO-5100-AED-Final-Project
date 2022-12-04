@@ -63,10 +63,10 @@
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="btnEncounters" min="-2" pref="102" max="-2" attributes="0"/>
+                          <Component id="btnNurse" min="-2" pref="102" max="-2" attributes="0"/>
                           <Component id="btnPatients" min="-2" pref="102" max="-2" attributes="0"/>
                           <Component id="btnDoctors" min="-2" pref="102" max="-2" attributes="0"/>
-                          <Component id="btnEncounters1" min="-2" pref="102" max="-2" attributes="0"/>
+                          <Component id="btnAdmin" min="-2" pref="102" max="-2" attributes="0"/>
                           <Component id="jLabel1" min="-2" pref="102" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
@@ -79,13 +79,13 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel1" min="-2" pref="42" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnEncounters1" min="-2" pref="55" max="-2" attributes="0"/>
+                      <Component id="btnAdmin" min="-2" pref="55" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="btnDoctors" min="-2" pref="55" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="btnPatients" min="-2" pref="55" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="btnEncounters" min="-2" pref="55" max="-2" attributes="0"/>
+                      <Component id="btnNurse" min="-2" pref="55" max="-2" attributes="0"/>
                       <EmptySpace pref="234" max="32767" attributes="0"/>
                       <Component id="btnLogout" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
@@ -110,12 +110,12 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPatientsActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="btnEncounters">
+            <Component class="javax.swing.JButton" name="btnNurse">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Nurse"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEncountersActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNurseActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnLogout">
@@ -138,12 +138,12 @@
                 <Property name="text" type="java.lang.String" value="Hospital"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="btnEncounters1">
+            <Component class="javax.swing.JButton" name="btnAdmin">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Admin"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEncounters1ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAdminActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>

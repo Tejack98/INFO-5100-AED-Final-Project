@@ -12,7 +12,7 @@ import healthcare.role.*;
 import healthcare.userAccount.UserAccount;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import userinterface.HealthcareInterface.Pharmacy.PharmacyAdminWorkArea;
+import userinterface.Pharmacy.PharmacyAdminWorkArea;
 
 /**
  *

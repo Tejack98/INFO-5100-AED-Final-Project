@@ -4,6 +4,12 @@
  */
 package userinterface.HealthcareInterface.patient;
 
+import healthcare.Ecosystem;
+import healthcare.enterprise.Enterprise;
+import healthcare.network.Network;
+import healthcare.organization.Organization;
+import healthcare.userAccount.UserAccount;
+
 /**
  *
  * @author shriyapandita
@@ -13,8 +19,18 @@ public class ViewAppointment extends javax.swing.JPanel {
     /**
      * Creates new form ViewAppointment
      */
-    public ViewAppointment() {
+    UserAccount userAccount;
+    Organization organization;
+    Enterprise enterprise;
+    Ecosystem ecosystem;
+    Network network;
+    public ViewAppointment(UserAccount userAccount, Organization organization, Enterprise enterprise, Ecosystem ecosystem, Network network) {
         initComponents();
+        this.userAccount = userAccount;
+        this.organization = organization;
+        this.enterprise = enterprise;
+        this.ecosystem = ecosystem;
+        this.network = network;
     }
 
     /**

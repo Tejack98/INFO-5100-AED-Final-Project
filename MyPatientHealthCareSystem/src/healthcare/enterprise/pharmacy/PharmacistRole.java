@@ -12,8 +12,8 @@ import healthcare.role.Role;
 import healthcare.userAccount.UserAccount;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import userinterface.HealthcareInterface.Pharmacy.PharmacistWorkArea;
-import userinterface.HealthcareInterface.Pharmacy.PharmacyAdminWorkArea;
+import userinterface.Pharmacy.PharmacistWorkArea;
+import userinterface.Pharmacy.PharmacyAdminWorkArea;
 
 /**
  *

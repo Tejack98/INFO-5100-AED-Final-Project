@@ -2,7 +2,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package userinterface.HealthcareInterface.healthcareAdmin;
+package userinterface.HealthcareInterface.healthcareAdmin.patient;
+
+import healthcare.Ecosystem;
+import healthcare.enterprise.healthCare.PatientRole;
+import healthcare.role.Role;
+import healthcare.userAccount.UserAccount;
+import healthcare.userAccount.UserAccountDirectory;
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -13,8 +21,11 @@ public class AdminViewPatient extends javax.swing.JPanel {
     /**
      * Creates new form AdminViewPatient
      */
-    public AdminViewPatient() {
+    Ecosystem ecosystem;
+    public AdminViewPatient(Ecosystem ecosystem) {
         initComponents();
+        this.ecosystem = ecosystem;
+        populateData();  
     }
 
     /**
@@ -28,7 +39,7 @@ public class AdminViewPatient extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        patientTable = new javax.swing.JTable();
         lblSearchNurseByID = new javax.swing.JLabel();
         txtSearchPatientByID = new javax.swing.JTextField();
         btnSearch = new javax.swing.JButton();
@@ -38,7 +49,7 @@ public class AdminViewPatient extends javax.swing.JPanel {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("View Patient Information");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        patientTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null, null},
@@ -49,7 +60,7 @@ public class AdminViewPatient extends javax.swing.JPanel {
                 "Name", "Email", "Hospital Name", "Gender", "Diagnosis", "Phone No.", "Date Of Birth", "Address", "City", "Zipcode"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(patientTable);
 
         lblSearchNurseByID.setText("Search Patient By ID");
 
@@ -97,14 +108,32 @@ public class AdminViewPatient extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void populateData(){
+        UserAccountDirectory userAccounts = ecosystem.getUserAccountDirectory();  
+        ArrayList<UserAccount> userList = userAccounts.getUserAccountList();
+        
+        DefaultTableModel model = (DefaultTableModel) patientTable.getModel();
+        model.setRowCount(0);
+        
+        for(UserAccount ua: userList){
+            
+            if(ua.getRole().toString().equals(Role.RoleType.Patient.toString())){     
+                PatientRole role = (PatientRole) ua.getRole();
+                model.addRow(new Object[]
+                {ua.getPerson().getPersonName(),ua.getUserEmail(),role.getGender(),role.getHospitalName(), String.valueOf(ua.getPerson().getContactNumber()), ua.getPerson().getAddress(), ua.getPerson().getCity(), ua.getPerson().getState(), String.valueOf(ua.getPerson().getZipcode())});
+            }
+            
+        }
+        
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnSearch;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JLabel lblSearchNurseByID;
+    private javax.swing.JTable patientTable;
     private javax.swing.JTextField txtSearchPatientByID;
     // End of variables declaration//GEN-END:variables
 }

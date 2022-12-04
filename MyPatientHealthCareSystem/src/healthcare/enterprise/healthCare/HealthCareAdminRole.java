@@ -13,7 +13,7 @@ import healthcare.userAccount.UserAccount;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import userinterface.HealthcareInterface.healthcareAdmin.HealthCareAdminWorkArea;
-import userinterface.HealthcareInterface.healthcareAdmin.HealthCareAdminWorkPanel;
+import userinterface.HealthcareInterface.healthcareAdmin.doctor.HealthCareAdminDoctorPanel;
 
 /**
  *
@@ -29,7 +29,7 @@ public class HealthCareAdminRole extends Role {
     
     @Override
     public JFrame createWorkArea(UserAccount userAccount, Organization organization, Enterprise enterprise, Ecosystem ecosystem, Network network) {
-        return new HealthCareAdminWorkArea(ecosystem);
+        return new HealthCareAdminWorkArea(userAccount, organization,enterprise,ecosystem, network);
     }
     
 }

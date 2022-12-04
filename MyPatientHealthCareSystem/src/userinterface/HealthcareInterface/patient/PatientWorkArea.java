@@ -4,8 +4,13 @@
  */
 package userinterface.HealthcareInterface.patient;
 
+import healthcare.Ecosystem;
+import healthcare.enterprise.Enterprise;
+import healthcare.network.Network;
+import healthcare.organization.Organization;
+import healthcare.userAccount.UserAccount;
 import userinterface.HealthcareInterface.doctor.*;
-import userinterface.HealthcareInterface.healthcareAdmin.HealthCareAdminWorkPanel;
+import userinterface.HealthcareInterface.healthcareAdmin.doctor.HealthCareAdminDoctorPanel;
 
 /**
  *
@@ -16,8 +21,18 @@ public class PatientWorkArea extends javax.swing.JFrame {
     /**
      * Creates new form HopsitalWorkArea
      */
-    public PatientWorkArea() {
+    static UserAccount userAccount;
+    static Organization organization;
+    static Enterprise enterprise;
+    static Ecosystem ecosystem;
+    static Network network;
+    public PatientWorkArea(UserAccount userAccount, Organization organization, Enterprise enterprise ,Ecosystem ecosystem, Network network) {
         initComponents();
+        this.userAccount = userAccount;
+        this.organization = organization;
+        this.enterprise = enterprise;
+        this.ecosystem = ecosystem;
+        this.network = network;
     }
 
     /**
@@ -31,12 +46,12 @@ public class PatientWorkArea extends javax.swing.JFrame {
 
         jSplitPaneSystem = new javax.swing.JSplitPane();
         controlPanel = new javax.swing.JPanel();
-        btnPatients = new javax.swing.JButton();
+        btnPatientDash = new javax.swing.JButton();
         btnLogout = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        btnPatients1 = new javax.swing.JButton();
-        btnPatients2 = new javax.swing.JButton();
-        btnPatients3 = new javax.swing.JButton();
+        btnViewDiag = new javax.swing.JButton();
+        btnBookApp = new javax.swing.JButton();
+        btnViewApp = new javax.swing.JButton();
         workArea = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -44,11 +59,11 @@ public class PatientWorkArea extends javax.swing.JFrame {
         controlPanel.setBackground(new java.awt.Color(153, 204, 255));
         controlPanel.setPreferredSize(new java.awt.Dimension(200, 600));
 
-        btnPatients.setBackground(new java.awt.Color(255, 204, 204));
-        btnPatients.setText("Dashboard");
-        btnPatients.addActionListener(new java.awt.event.ActionListener() {
+        btnPatientDash.setBackground(new java.awt.Color(255, 204, 204));
+        btnPatientDash.setText("Dashboard");
+        btnPatientDash.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPatientsActionPerformed(evt);
+                btnPatientDashActionPerformed(evt);
             }
         });
 
@@ -64,27 +79,27 @@ public class PatientWorkArea extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Patient");
 
-        btnPatients1.setBackground(new java.awt.Color(255, 204, 204));
-        btnPatients1.setText("View Diagnosis");
-        btnPatients1.addActionListener(new java.awt.event.ActionListener() {
+        btnViewDiag.setBackground(new java.awt.Color(255, 204, 204));
+        btnViewDiag.setText("View Diagnosis");
+        btnViewDiag.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPatients1ActionPerformed(evt);
+                btnViewDiagActionPerformed(evt);
             }
         });
 
-        btnPatients2.setBackground(new java.awt.Color(255, 204, 204));
-        btnPatients2.setText("Book Appointment");
-        btnPatients2.addActionListener(new java.awt.event.ActionListener() {
+        btnBookApp.setBackground(new java.awt.Color(255, 204, 204));
+        btnBookApp.setText("Book Appointment");
+        btnBookApp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPatients2ActionPerformed(evt);
+                btnBookAppActionPerformed(evt);
             }
         });
 
-        btnPatients3.setBackground(new java.awt.Color(255, 204, 204));
-        btnPatients3.setText("View Appointment");
-        btnPatients3.addActionListener(new java.awt.event.ActionListener() {
+        btnViewApp.setBackground(new java.awt.Color(255, 204, 204));
+        btnViewApp.setText("View Appointment");
+        btnViewApp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPatients3ActionPerformed(evt);
+                btnViewAppActionPerformed(evt);
             }
         });
 
@@ -92,7 +107,7 @@ public class PatientWorkArea extends javax.swing.JFrame {
         controlPanel.setLayout(controlPanelLayout);
         controlPanelLayout.setHorizontalGroup(
             controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btnPatients, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnPatientDash, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(controlPanelLayout.createSequentialGroup()
                 .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(controlPanelLayout.createSequentialGroup()
@@ -104,9 +119,9 @@ public class PatientWorkArea extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(controlPanelLayout.createSequentialGroup()
                 .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnPatients2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnPatients3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnPatients1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnBookApp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnViewApp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnViewDiag, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         controlPanelLayout.setVerticalGroup(
@@ -115,13 +130,13 @@ public class PatientWorkArea extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnPatients, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnPatientDash, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(53, 53, 53)
-                .addComponent(btnPatients2, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnBookApp, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(57, 57, 57)
-                .addComponent(btnPatients3, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnViewApp, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(49, 49, 49)
-                .addComponent(btnPatients1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnViewDiag, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(90, 90, 90)
                 .addComponent(btnLogout)
                 .addGap(42, 42, 42))
@@ -158,28 +173,34 @@ public class PatientWorkArea extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnPatientsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPatientsActionPerformed
+    private void btnPatientDashActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPatientDashActionPerformed
         // TODO add your handling code here:
-        PatientDashboard patientDash = new PatientDashboard();
+        PatientDashboard patientDash = new PatientDashboard(userAccount,organization,enterprise,ecosystem,network);
         jSplitPaneSystem.setRightComponent(patientDash);
-    }//GEN-LAST:event_btnPatientsActionPerformed
+    }//GEN-LAST:event_btnPatientDashActionPerformed
 
     private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
         // TODO add your handling code here:
         dispose();
     }//GEN-LAST:event_btnLogoutActionPerformed
 
-    private void btnPatients1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPatients1ActionPerformed
+    private void btnViewDiagActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewDiagActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnPatients1ActionPerformed
+       PatientViewDiagnosis pvd = new PatientViewDiagnosis(userAccount,organization,enterprise,ecosystem,network);
+       jSplitPaneSystem.setRightComponent(pvd);
+    }//GEN-LAST:event_btnViewDiagActionPerformed
 
-    private void btnPatients2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPatients2ActionPerformed
+    private void btnBookAppActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBookAppActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnPatients2ActionPerformed
+        BookAppointment ba = new BookAppointment(userAccount,organization,enterprise,ecosystem,network);
+        jSplitPaneSystem.setRightComponent(ba);
+    }//GEN-LAST:event_btnBookAppActionPerformed
 
-    private void btnPatients3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPatients3ActionPerformed
+    private void btnViewAppActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewAppActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnPatients3ActionPerformed
+        ViewAppointment vp = new ViewAppointment(userAccount,organization,enterprise,ecosystem,network);
+        jSplitPaneSystem.setRightComponent(vp);
+    }//GEN-LAST:event_btnViewAppActionPerformed
 
     /**
      * @param args the command line arguments
@@ -274,17 +295,17 @@ public class PatientWorkArea extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new PatientWorkArea().setVisible(true);
+                new PatientWorkArea(userAccount,organization,enterprise,ecosystem,network).setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBookApp;
     private javax.swing.JButton btnLogout;
-    private javax.swing.JButton btnPatients;
-    private javax.swing.JButton btnPatients1;
-    private javax.swing.JButton btnPatients2;
-    private javax.swing.JButton btnPatients3;
+    private javax.swing.JButton btnPatientDash;
+    private javax.swing.JButton btnViewApp;
+    private javax.swing.JButton btnViewDiag;
     private javax.swing.JPanel controlPanel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JSplitPane jSplitPaneSystem;
