@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package userinterface.HealthcareInterface.healthcareAdmin;
+package userinterface.HealthcareInterface.healthcareAdmin.nurse;
 
 import healthcare.Ecosystem;
 import healthcare.enterprise.healthCare.NurseRole;
@@ -26,7 +26,7 @@ public class NurseSignUp extends javax.swing.JPanel {
     boolean emptyValidationStatus = true;
     boolean validationCheck = true;
     Ecosystem ecosystem;   
-    public NurseSignUp() {
+    public NurseSignUp(Ecosystem ecosystem1) {
         initComponents();
         this.ecosystem = Ecosystem.getEcosystemInstance();
     }

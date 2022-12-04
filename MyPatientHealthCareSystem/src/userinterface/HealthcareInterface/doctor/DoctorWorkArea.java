@@ -4,7 +4,7 @@
  */
 package userinterface.HealthcareInterface.doctor;
 
-import userinterface.HealthcareInterface.healthcareAdmin.HealthCareAdminWorkPanel;
+import userinterface.HealthcareInterface.healthcareAdmin.doctor.HealthCareAdminDoctorPanel;
 
 /**
  *

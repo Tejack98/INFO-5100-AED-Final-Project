@@ -2,23 +2,38 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package userinterface.HealthcareInterface.healthcareAdmin;
+package userinterface.HealthcareInterface.healthcareAdmin.doctor;
 
+import userinterface.HealthcareInterface.healthcareAdmin.doctor.DoctorSignUp;
+import userinterface.HealthcareInterface.healthcareAdmin.doctor.AdminViewDoctor;
+import userinterface.HealthcareInterface.healthcareAdmin.doctor.AdminUpdateDoctor;
 import healthcare.Ecosystem;
+import healthcare.enterprise.Enterprise;
+import healthcare.network.Network;
+import healthcare.organization.Organization;
+import healthcare.userAccount.UserAccount;
 
 /**
  *
  * @author Tejas
  */
-public class HealthCareAdminWorkPanel extends javax.swing.JPanel {
+public class HealthCareAdminDoctorPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form HealthCareAdminWorkPanel
+     * Creates new form HealthCareAdminDoctorPanel
      */
+    UserAccount userAccount;
+    Organization organization;
+    Enterprise enterprise;
     Ecosystem ecosystem;
-    public HealthCareAdminWorkPanel(Ecosystem ecosystem) {
+    Network network;
+    public HealthCareAdminDoctorPanel(UserAccount userAccount, Organization organization, Enterprise enterprise ,Ecosystem ecosystem, Network network) {
         initComponents();
+        this.userAccount = userAccount;
+        this.organization = organization;
+        this.enterprise = enterprise;
         this.ecosystem = ecosystem;
+        this.network = network;
     }
 
     /**

@@ -4,6 +4,11 @@
  */
 package userinterface.HealthcareInterface.nurse;
 
+import healthcare.Ecosystem;
+import healthcare.enterprise.Enterprise;
+import healthcare.network.Network;
+import healthcare.organization.Organization;
+import healthcare.userAccount.UserAccount;
 import userinterface.HealthcareInterface.patient.*;
 
 /**
@@ -15,8 +20,18 @@ public class NurseDashboard extends javax.swing.JPanel {
     /**
      * Creates new form PatientDashboard
      */
-    public NurseDashboard() {
+    UserAccount userAccount;
+    Organization organization;
+    Enterprise enterprise;
+    Ecosystem ecosystem;
+    Network network;
+    public NurseDashboard(UserAccount userAccount, Organization organization, Enterprise enterprise, Ecosystem ecosystem, Network network) {
         initComponents();
+        this.userAccount = userAccount;
+        this.organization = organization;
+        this.enterprise = enterprise;
+        this.ecosystem = ecosystem;
+        this.network = network;
     }
 
     /**

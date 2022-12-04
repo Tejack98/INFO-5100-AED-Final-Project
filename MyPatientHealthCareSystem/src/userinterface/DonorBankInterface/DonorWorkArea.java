@@ -144,7 +144,6 @@ public class DonorWorkArea extends javax.swing.JFrame {
 
     private void btnPatientsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPatientsActionPerformed
         // TODO add your handling code here:
-      
     }//GEN-LAST:event_btnPatientsActionPerformed
 
     private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed

@@ -55,7 +55,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="btnPatients" alignment="1" max="32767" attributes="0"/>
+                  <Component id="btnPatientDash" alignment="1" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
@@ -71,9 +71,9 @@
                   </Group>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="btnPatients2" max="32767" attributes="0"/>
-                          <Component id="btnPatients3" max="32767" attributes="0"/>
-                          <Component id="btnPatients1" max="32767" attributes="0"/>
+                          <Component id="btnBookApp" max="32767" attributes="0"/>
+                          <Component id="btnViewApp" max="32767" attributes="0"/>
+                          <Component id="btnViewDiag" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
@@ -85,13 +85,13 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel1" min="-2" pref="42" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="btnPatients" min="-2" pref="55" max="-2" attributes="0"/>
+                      <Component id="btnPatientDash" min="-2" pref="55" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
-                      <Component id="btnPatients2" min="-2" pref="55" max="-2" attributes="0"/>
+                      <Component id="btnBookApp" min="-2" pref="55" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
-                      <Component id="btnPatients3" min="-2" pref="55" max="-2" attributes="0"/>
+                      <Component id="btnViewApp" min="-2" pref="55" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
-                      <Component id="btnPatients1" min="-2" pref="55" max="-2" attributes="0"/>
+                      <Component id="btnViewDiag" min="-2" pref="55" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
                       <Component id="btnLogout" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
@@ -100,7 +100,7 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JButton" name="btnPatients">
+            <Component class="javax.swing.JButton" name="btnPatientDash">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="cc" green="cc" red="ff" type="rgb"/>
@@ -108,7 +108,7 @@
                 <Property name="text" type="java.lang.String" value="Dashboard"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPatientsActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPatientDashActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnLogout">
@@ -131,7 +131,7 @@
                 <Property name="text" type="java.lang.String" value="Patient"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="btnPatients1">
+            <Component class="javax.swing.JButton" name="btnViewDiag">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="cc" green="cc" red="ff" type="rgb"/>
@@ -139,10 +139,10 @@
                 <Property name="text" type="java.lang.String" value="View Diagnosis"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPatients1ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnViewDiagActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="btnPatients2">
+            <Component class="javax.swing.JButton" name="btnBookApp">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="cc" green="cc" red="ff" type="rgb"/>
@@ -150,10 +150,10 @@
                 <Property name="text" type="java.lang.String" value="Book Appointment"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPatients2ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBookAppActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="btnPatients3">
+            <Component class="javax.swing.JButton" name="btnViewApp">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="cc" green="cc" red="ff" type="rgb"/>
@@ -161,7 +161,7 @@
                 <Property name="text" type="java.lang.String" value="View Appointment"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPatients3ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnViewAppActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>

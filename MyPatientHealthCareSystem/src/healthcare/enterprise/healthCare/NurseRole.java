@@ -30,8 +30,8 @@ public class NurseRole extends Role {
     }
     
     @Override
-    public JFrame createWorkArea( UserAccount userAccount, Organization organization, Enterprise enterprise, Ecosystem Ecosystem, Network network) {
-        return new NurseWorkArea();       
+    public JFrame createWorkArea( UserAccount userAccount, Organization organization, Enterprise enterprise, Ecosystem ecosystem, Network network) {
+        return new NurseWorkArea(userAccount, organization, enterprise, ecosystem, network);       
     }
 
     public String getGender() {

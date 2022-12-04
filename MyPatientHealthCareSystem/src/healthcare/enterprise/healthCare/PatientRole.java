@@ -21,6 +21,8 @@ import userinterface.HealthcareInterface.patient.PatientWorkArea;
  */
 public class PatientRole extends Role {
     
+    private String gender;
+    private String hospitalName;
     
     @Override
     public String toString() {
@@ -28,8 +30,24 @@ public class PatientRole extends Role {
     }
     
     @Override
-    public JFrame createWorkArea(UserAccount userAccount, Organization organization, Enterprise enterprise, Ecosystem Ecosystem, Network network) {    
-        return new PatientWorkArea();       
+    public JFrame createWorkArea(UserAccount userAccount, Organization organization, Enterprise enterprise, Ecosystem ecosystem, Network network) {    
+        return new PatientWorkArea(userAccount,organization,enterprise,ecosystem,network);       
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getHospitalName() {
+        return hospitalName;
+    }
+
+    public void setHospitalName(String hospitalName) {
+        this.hospitalName = hospitalName;
     }
     
 }

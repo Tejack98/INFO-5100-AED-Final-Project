@@ -2,7 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package userinterface.HealthcareInterface.healthcareAdmin;
+package userinterface.HealthcareInterface.healthcareAdmin.patient;
+
+import healthcare.Ecosystem;
 
 /**
  *
@@ -13,7 +15,7 @@ public class AdminUpdatePatient extends javax.swing.JPanel {
     /**
      * Creates new form AdminUpdatePatient
      */
-    public AdminUpdatePatient() {
+    public AdminUpdatePatient(Ecosystem ecosystem) {
         initComponents();
     }
 

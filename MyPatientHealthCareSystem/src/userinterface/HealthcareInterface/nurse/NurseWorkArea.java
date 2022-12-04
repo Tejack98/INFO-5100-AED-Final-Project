@@ -4,9 +4,14 @@
  */
 package userinterface.HealthcareInterface.nurse;
 
+import healthcare.Ecosystem;
+import healthcare.enterprise.Enterprise;
+import healthcare.network.Network;
+import healthcare.organization.Organization;
+import healthcare.userAccount.UserAccount;
 import userinterface.HealthcareInterface.patient.*;
 import userinterface.HealthcareInterface.doctor.*;
-import userinterface.HealthcareInterface.healthcareAdmin.HealthCareAdminWorkPanel;
+import userinterface.HealthcareInterface.healthcareAdmin.doctor.HealthCareAdminDoctorPanel;
 
 /**
  *
@@ -17,8 +22,18 @@ public class NurseWorkArea extends javax.swing.JFrame {
     /**
      * Creates new form HopsitalWorkArea
      */
-    public NurseWorkArea() {
+    static UserAccount userAccount;
+    static Organization organization;
+    static Enterprise enterprise;
+    static Ecosystem ecosystem;
+    static Network network;
+    public NurseWorkArea(UserAccount userAccount, Organization organization, Enterprise enterprise ,Ecosystem ecosystem, Network network) {
         initComponents();
+        this.userAccount = userAccount;
+        this.organization = organization;
+        this.enterprise = enterprise;
+        this.ecosystem = ecosystem;
+        this.network = network;
     }
 
     /**
@@ -32,9 +47,10 @@ public class NurseWorkArea extends javax.swing.JFrame {
 
         jSplitPaneSystem = new javax.swing.JSplitPane();
         controlPanel = new javax.swing.JPanel();
-        btnPatients = new javax.swing.JButton();
+        btnDash = new javax.swing.JButton();
         btnLogout = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        btnViewPres = new javax.swing.JButton();
         workArea = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -42,10 +58,10 @@ public class NurseWorkArea extends javax.swing.JFrame {
         controlPanel.setBackground(new java.awt.Color(100, 92, 170));
         controlPanel.setPreferredSize(new java.awt.Dimension(200, 600));
 
-        btnPatients.setText("Dashboard");
-        btnPatients.addActionListener(new java.awt.event.ActionListener() {
+        btnDash.setText("Dashboard");
+        btnDash.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPatientsActionPerformed(evt);
+                btnDashActionPerformed(evt);
             }
         });
 
@@ -59,7 +75,14 @@ public class NurseWorkArea extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Patient");
+        jLabel1.setText("Nurse");
+
+        btnViewPres.setText("View Prescription");
+        btnViewPres.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewPresActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout controlPanelLayout = new javax.swing.GroupLayout(controlPanel);
         controlPanel.setLayout(controlPanelLayout);
@@ -72,7 +95,8 @@ public class NurseWorkArea extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, controlPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnPatients, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnViewPres, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnDash, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(14, 14, 14))
         );
@@ -82,8 +106,10 @@ public class NurseWorkArea extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnPatients, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 441, Short.MAX_VALUE)
+                .addComponent(btnDash, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnViewPres, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 374, Short.MAX_VALUE)
                 .addComponent(btnLogout)
                 .addGap(15, 15, 15))
         );
@@ -117,16 +143,22 @@ public class NurseWorkArea extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnPatientsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPatientsActionPerformed
+    private void btnDashActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDashActionPerformed
         // TODO add your handling code here:
-        NurseDashboard nurseDash = new NurseDashboard();
+        NurseDashboard nurseDash = new NurseDashboard(userAccount,organization,enterprise,ecosystem,network);
         jSplitPaneSystem.setRightComponent(nurseDash);
-    }//GEN-LAST:event_btnPatientsActionPerformed
+    }//GEN-LAST:event_btnDashActionPerformed
 
     private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
         // TODO add your handling code here:
         dispose();
     }//GEN-LAST:event_btnLogoutActionPerformed
+
+    private void btnViewPresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewPresActionPerformed
+        // TODO add your handling code here:
+        NurseViewPatientPrescription nurseViewPres = new NurseViewPatientPrescription(userAccount,organization,enterprise,ecosystem,network);
+        jSplitPaneSystem.setRightComponent(nurseViewPres);
+    }//GEN-LAST:event_btnViewPresActionPerformed
 
     /**
      * @param args the command line arguments
@@ -285,14 +317,15 @@ public class NurseWorkArea extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new NurseWorkArea().setVisible(true);
+                new NurseWorkArea(userAccount,organization,enterprise,ecosystem,network).setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnDash;
     private javax.swing.JButton btnLogout;
-    private javax.swing.JButton btnPatients;
+    private javax.swing.JButton btnViewPres;
     private javax.swing.JPanel controlPanel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JSplitPane jSplitPaneSystem;

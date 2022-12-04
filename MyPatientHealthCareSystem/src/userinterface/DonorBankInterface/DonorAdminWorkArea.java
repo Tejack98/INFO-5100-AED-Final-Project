@@ -5,9 +5,6 @@
 package userinterface.DonorBankInterface;
 
 import healthcare.Ecosystem;
-import userinterface.HealthcareInterface.patient.*;
-import userinterface.HealthcareInterface.doctor.*;
-import userinterface.HealthcareInterface.healthcareAdmin.HealthCareAdminWorkPanel;
 
 /**
  *
@@ -175,8 +172,8 @@ public class DonorAdminWorkArea extends javax.swing.JFrame {
 
     private void btnPatientsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPatientsActionPerformed
         // TODO add your handling code here:
-        PatientDashboard patientDash = new PatientDashboard();
-        jSplitPaneSystem.setRightComponent(patientDash);
+//        PatientDashboard patientDash = new PatientDashboard();
+//        jSplitPaneSystem.setRightComponent(patientDash);
     }//GEN-LAST:event_btnPatientsActionPerformed
 
     private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
