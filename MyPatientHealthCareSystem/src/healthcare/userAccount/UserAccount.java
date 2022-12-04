@@ -14,6 +14,7 @@ import healthcare.workQueue.WorkQueue;
  */
 public class UserAccount {
     
+    private int userId;
     private String userName;
     private String userPassword;
     private String userEmail;
@@ -71,6 +72,14 @@ public class UserAccount {
 
     public void setWorkQueue(WorkQueue workQueue) {
         this.workQueue = workQueue;
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
        
 }
