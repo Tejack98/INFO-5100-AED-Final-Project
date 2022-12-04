@@ -10,8 +10,10 @@ import healthcare.network.Network;
 import healthcare.organization.Organization;
 import healthcare.role.Role;
 import healthcare.userAccount.UserAccount;
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 import userinterface.HealthcareInterface.nurse.NurseDashboard;
+import userinterface.HealthcareInterface.nurse.NurseWorkArea;
 
 /**
  *
@@ -28,8 +30,8 @@ public class NurseRole extends Role {
     }
     
     @Override
-    public JPanel createWorkArea( UserAccount userAccount, Organization organization, Enterprise enterprise, Ecosystem Ecosystem, Network network) {
-        return new NurseDashboard();       
+    public JFrame createWorkArea( UserAccount userAccount, Organization organization, Enterprise enterprise, Ecosystem Ecosystem, Network network) {
+        return new NurseWorkArea();       
     }
 
     public String getGender() {

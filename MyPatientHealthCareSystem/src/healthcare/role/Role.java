@@ -9,6 +9,7 @@ import healthcare.enterprise.Enterprise;
 import healthcare.network.Network;
 import healthcare.organization.Organization;
 import healthcare.userAccount.UserAccount;
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 /**
@@ -54,7 +55,7 @@ public abstract class Role {
     
     }
     
-    public abstract JPanel createWorkArea(
+    public abstract JFrame createWorkArea(
     UserAccount userAccount,
     Organization organization,
     Enterprise enterprise,

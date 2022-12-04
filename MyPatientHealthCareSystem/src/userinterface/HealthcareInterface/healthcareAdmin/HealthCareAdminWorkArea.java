@@ -4,6 +4,7 @@
  */
 package userinterface.HealthcareInterface.healthcareAdmin;
 
+import healthcare.Ecosystem;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import userinterface.HealthcareInterface.healthcareAdmin.HealthCareAdminWorkPanel;
@@ -17,10 +18,10 @@ public class HealthCareAdminWorkArea extends javax.swing.JFrame {
     /**
      * Creates new form HopsitalWorkArea
      */
-    static JPanel jpanel;
-    public HealthCareAdminWorkArea(JPanel jpanel) {
+    static Ecosystem ecosystem;
+    public HealthCareAdminWorkArea(Ecosystem ecosystem) {
         initComponents();
-        this.jpanel = jpanel;
+        this.ecosystem = ecosystem;
     }
 
     /**
@@ -155,7 +156,7 @@ public class HealthCareAdminWorkArea extends javax.swing.JFrame {
     private void btnDoctorsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDoctorsActionPerformed
         // TODO add your handling code here:
         
-        HealthCareAdminWorkPanel healthCareAdmin = (HealthCareAdminWorkPanel) jpanel;
+        HealthCareAdminWorkPanel healthCareAdmin = new HealthCareAdminWorkPanel(ecosystem);
         jSplitPaneSystem.setRightComponent(healthCareAdmin);
     }//GEN-LAST:event_btnDoctorsActionPerformed
 
@@ -225,7 +226,7 @@ public class HealthCareAdminWorkArea extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                HealthCareAdminWorkArea patientFrame = new HealthCareAdminWorkArea(jpanel);
+                HealthCareAdminWorkArea patientFrame = new HealthCareAdminWorkArea(ecosystem);
                 patientFrame.setExtendedState(JFrame.MAXIMIZED_BOTH); 
                 patientFrame.setVisible(true);
             }
