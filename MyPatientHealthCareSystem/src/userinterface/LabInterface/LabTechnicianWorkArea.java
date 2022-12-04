@@ -125,7 +125,8 @@ public class LabTechnicianWorkArea extends javax.swing.JFrame {
 
     private void viewLabRequest_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewLabRequest_btnActionPerformed
         // TODO add your handling code here:
-        
+        LabTechnicianViewRequestsJPanel ltvr =  new LabTechnicianViewRequestsJPanel();
+        jSplitPane.setRightComponent(ltvr);
         
     }//GEN-LAST:event_viewLabRequest_btnActionPerformed
 
