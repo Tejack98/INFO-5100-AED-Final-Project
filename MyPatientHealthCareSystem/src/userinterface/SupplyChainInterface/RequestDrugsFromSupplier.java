@@ -25,7 +25,6 @@ public class RequestDrugsFromSupplier extends javax.swing.JPanel {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-
         btnRequestSupplier = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -46,7 +45,6 @@ public class RequestDrugsFromSupplier extends javax.swing.JPanel {
         jCheckBox8 = new javax.swing.JCheckBox();
         jCheckBox9 = new javax.swing.JCheckBox();
         jLabel11 = new javax.swing.JLabel();
-
         btnRequestSupplier.setText("Request Supplier");
 
         jLabel1.setText("Drug List");

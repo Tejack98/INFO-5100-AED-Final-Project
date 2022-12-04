@@ -8,8 +8,8 @@ package userinterface.SupplyChainInterface;
  *
  * @author adity
  */
-public class HandlerWorkArea extends javax.swing.JFrame {
 
+public class HandlerWorkArea extends javax.swing.JFrame {
     /**
      * Creates new form HandlerWorkArea
      */
@@ -25,7 +25,6 @@ public class HandlerWorkArea extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-
         jSplitPane1 = new javax.swing.JSplitPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
