@@ -4,7 +4,7 @@
  */
 package userinterface.HealthcareInterface.healthcareAdmin;
 
-import userinterface.HealthcareInterface.doctor.DoctorSignUp;
+import healthcare.Ecosystem;
 
 /**
  *
@@ -15,8 +15,10 @@ public class HealthCareAdminWorkPanel extends javax.swing.JPanel {
     /**
      * Creates new form HealthCareAdminWorkPanel
      */
-    public HealthCareAdminWorkPanel() {
+    Ecosystem ecosystem;
+    public HealthCareAdminWorkPanel(Ecosystem ecosystem) {
         initComponents();
+        this.ecosystem = ecosystem;
     }
 
     /**
@@ -117,8 +119,8 @@ public class HealthCareAdminWorkPanel extends javax.swing.JPanel {
 
     private void btnViewDoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewDoctorActionPerformed
         // TODO add your handling code here:
-//        HospitalViewDoctor hospitalViewDoctor = new HospitalViewDoctor(personDirectory,doctorDirectory);
-//        splitPane.setRightComponent(hospitalViewDoctor );
+        AdminViewDoctor adminViewDoctor = new AdminViewDoctor(ecosystem);
+        splitPane.setRightComponent(adminViewDoctor );
     }//GEN-LAST:event_btnViewDoctorActionPerformed
 
     private void btnCreateDoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateDoctorActionPerformed
@@ -129,8 +131,8 @@ public class HealthCareAdminWorkPanel extends javax.swing.JPanel {
 
     private void btnUpdateDoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateDoctorActionPerformed
         // TODO add your handling code here:
-//        HospitalUpdateDoctor hospitalUpdateDoctor = new HospitalUpdateDoctor(personDirectory,doctorDirectory, community);
-//        splitPane.setRightComponent(hospitalUpdateDoctor);
+        AdminUpdateDoctor adminUpdateDoctor = new AdminUpdateDoctor();
+        splitPane.setRightComponent(adminUpdateDoctor);
     }//GEN-LAST:event_btnUpdateDoctorActionPerformed
 
 
