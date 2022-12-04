@@ -2,18 +2,20 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package userinterface.SupplyChainInterface;
+package userinterface.HealthcareInterface.Pharmacy;
+
+import userinterface.SupplyChainInterface.*;
 
 /**
  *
  * @author adity
  */
-public class RequestDrugsFromSupplier extends javax.swing.JPanel {
+public class PharmacistRequestDrugsFromSupplier extends javax.swing.JPanel {
 
     /**
      * Creates new form RequestDrugsFromSupplier
      */
-    public RequestDrugsFromSupplier() {
+    public PharmacistRequestDrugsFromSupplier() {
         initComponents();
     }
 
@@ -26,7 +28,7 @@ public class RequestDrugsFromSupplier extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnRequestSupplier = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -47,7 +49,7 @@ public class RequestDrugsFromSupplier extends javax.swing.JPanel {
         jCheckBox9 = new javax.swing.JCheckBox();
         jLabel11 = new javax.swing.JLabel();
 
-        btnRequestSupplier.setText("Request Supplier");
+        jButton1.setText("Request Supplier");
 
         jLabel1.setText("Drug List");
 
@@ -95,40 +97,43 @@ public class RequestDrugsFromSupplier extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.LEADING))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jCheckBox8, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jCheckBox9, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jCheckBox7, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jCheckBox5, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jCheckBox6, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jCheckBox3, javax.swing.GroupLayout.Alignment.TRAILING)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel2))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jCheckBox1, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jCheckBox4, javax.swing.GroupLayout.Alignment.TRAILING)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addGap(67, 67, 67)
-                                .addComponent(jLabel10)))
-                        .addComponent(btnRequestSupplier)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel11))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap(398, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jLabel5)
+                                        .addComponent(jLabel4)
+                                        .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.LEADING))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jCheckBox8, javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jCheckBox9, javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jCheckBox7, javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jCheckBox5, javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jCheckBox6, javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jCheckBox3, javax.swing.GroupLayout.Alignment.TRAILING)))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jLabel3)
+                                        .addComponent(jLabel2))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jCheckBox1, javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jCheckBox4, javax.swing.GroupLayout.Alignment.TRAILING)))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addComponent(jLabel1)
+                                    .addGap(67, 67, 67)
+                                    .addComponent(jLabel10)))
+                            .addComponent(jButton1))))
                 .addGap(105, 482, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -173,7 +178,7 @@ public class RequestDrugsFromSupplier extends javax.swing.JPanel {
                     .addComponent(jLabel9)
                     .addComponent(jCheckBox8))
                 .addGap(18, 18, 18)
-                .addComponent(btnRequestSupplier)
+                .addComponent(jButton1)
                 .addGap(72, 72, 72))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -192,7 +197,7 @@ public class RequestDrugsFromSupplier extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnRequestSupplier;
+    private javax.swing.JButton jButton1;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox3;
     private javax.swing.JCheckBox jCheckBox4;
