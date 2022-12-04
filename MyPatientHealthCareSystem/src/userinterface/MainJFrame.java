@@ -16,8 +16,8 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import userinterface.Administration.AdministratorWorkArea;
-import userinterface.DonorBankInterface.DonorWorkArea;
-import userinterface.DonorBankInterface.Logindetails.AdminLogin.DonorAdminWorkArea;
+import userinterface.DonorBankInterface.DonorAdminWorkArea;
+//import userinterface.DonorBankInterface.Logindetails.AdminLogin.DonorAdminWorkArea;
 import userinterface.EmergencyUnit.ambulanceHandler.AmbulanceHandlerWorkArea;
 import userinterface.EmergencyUnit.emergencyAdmin.EmergencyUnitAdminWorkArea;
 import userinterface.HealthcareInterface.Pharmacy.PharmacistWorkArea;
@@ -232,7 +232,7 @@ public class MainJFrame extends javax.swing.JFrame {
             }
 
             if (Role.RoleType.Donor.toString().equals(userAccount.getRole().toString())) {
-                DonorWorkArea donor = (DonorWorkArea) frame;
+                DonorAdminWorkArea donor = (DonorAdminWorkArea) frame;
                 donor.setExtendedState(JFrame.MAXIMIZED_BOTH);
                 donor.setVisible(true);
             }
