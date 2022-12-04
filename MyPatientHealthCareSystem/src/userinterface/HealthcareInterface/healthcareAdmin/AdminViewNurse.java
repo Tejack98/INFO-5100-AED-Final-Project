@@ -4,6 +4,14 @@
  */
 package userinterface.HealthcareInterface.healthcareAdmin;
 
+import healthcare.Ecosystem;
+import healthcare.enterprise.healthCare.NurseRole;
+import healthcare.role.Role;
+import healthcare.userAccount.UserAccount;
+import healthcare.userAccount.UserAccountDirectory;
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author adity
@@ -13,8 +21,11 @@ public class AdminViewNurse extends javax.swing.JPanel {
     /**
      * Creates new form AdminViewNurse
      */
-    public AdminViewNurse() {
+    Ecosystem ecosystem;
+    public AdminViewNurse(Ecosystem ecosystem) {
         initComponents();
+        this.ecosystem = ecosystem;
+        populateData();  
     }
 
     /**
@@ -28,7 +39,7 @@ public class AdminViewNurse extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        nurseTable = new javax.swing.JTable();
         lblSearchNurseByID = new javax.swing.JLabel();
         txtSearchNurseByID = new javax.swing.JTextField();
         btnSearch = new javax.swing.JButton();
@@ -38,18 +49,26 @@ public class AdminViewNurse extends javax.swing.JPanel {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("View Nurse Information");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        nurseTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Name", "Email", "Gender", "Phone No.", "Address", "City", "State", "Zipcode"
+                "Name", "Email", "Gender", "Hospital Name", "Phone No.", "Address", "City", "State", "Zipcode"
             }
-        ));
-        jScrollPane1.setViewportView(jTable1);
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(nurseTable);
 
         lblSearchNurseByID.setText("Search Nurse By ID");
 
@@ -97,14 +116,34 @@ public class AdminViewNurse extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    private void populateData(){
+        UserAccountDirectory userAccounts = ecosystem.getUserAccountDirectory();  
+        ArrayList<UserAccount> userList = userAccounts.getUserAccountList();
+        
+        DefaultTableModel model = (DefaultTableModel) nurseTable.getModel();
+        model.setRowCount(0);
+        
+        for(UserAccount ua: userList){
+            
+            if(ua.getRole().toString().equals(Role.RoleType.Nurse.toString())){     
+                NurseRole role = (NurseRole) ua.getRole();
+                model.addRow(new Object[]
+                {ua.getPerson().getPersonName(),ua.getUserEmail(),role.getGender(),role.getHospitalName(), String.valueOf(ua.getPerson().getContactNumber()), ua.getPerson().getAddress(), ua.getPerson().getCity(), ua.getPerson().getState(), String.valueOf(ua.getPerson().getZipcode())});
+            }
+            
+        }
+        
+    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnSearch;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JLabel lblSearchNurseByID;
+    private javax.swing.JTable nurseTable;
     private javax.swing.JTextField txtSearchNurseByID;
     // End of variables declaration//GEN-END:variables
 }

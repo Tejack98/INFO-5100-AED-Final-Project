@@ -207,7 +207,7 @@ public class HealthCareAdminSignUp extends javax.swing.JPanel {
                     
                     
                     Person person = ecosystem.getPersonDirectory().createAndAddPerson(name,Address,City,State,Zipcode,cellPhoneNumber);
-                    UserAccount u = ecosystem.getUserAccountDirectory().createUserAccount(username, password, person, new HealthCareAdminRole(), emailId);
+                    UserAccount u = ecosystem.getUserAccountDirectory().createUserAccount(HealthCareAdminID,username, password, person, new HealthCareAdminRole(), emailId);
                     
                     JOptionPane.showMessageDialog(this,"Health Care Admin Registered Successfully.Your New Id is:"+HealthCareAdminID+" and password: "+password+",Please save this Id for furture reference.");
                     
