@@ -4,6 +4,9 @@
  */
 package userinterface.HealthcareInterface.doctor;
 
+import healthcare.Ecosystem;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Tejas
@@ -12,7 +15,7 @@ public class DoctorDashboardPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form DoctorDashboard
-     */
+     */    
     public DoctorDashboardPanel() {
         initComponents();
     }

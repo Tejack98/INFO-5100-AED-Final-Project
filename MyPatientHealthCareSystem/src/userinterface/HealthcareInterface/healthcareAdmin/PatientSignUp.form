@@ -38,28 +38,26 @@
                           <Component id="lblAddress" alignment="1" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="txtName" alignment="0" pref="230" max="32767" attributes="0"/>
-                          <Component id="txtEmail" alignment="0" pref="230" max="32767" attributes="0"/>
-                          <Component id="txtDiagnosis" alignment="0" pref="230" max="32767" attributes="0"/>
-                          <Component id="txtPhoneNo" alignment="0" pref="230" max="32767" attributes="0"/>
-                          <Component id="txtDateOfBirth" alignment="0" pref="230" max="32767" attributes="0"/>
-                          <Component id="cboxHospitalName" alignment="0" max="32767" attributes="0"/>
-                          <Component id="cboxGender" alignment="0" max="32767" attributes="0"/>
-                          <Component id="txtZipcode" alignment="0" pref="230" max="32767" attributes="0"/>
-                          <Component id="txtCity" alignment="0" pref="230" max="32767" attributes="0"/>
-                          <Component id="txtAddress" alignment="0" pref="230" max="32767" attributes="0"/>
-                          <Component id="txtState" alignment="0" pref="230" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="btnSignUp" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="txtName" alignment="0" pref="230" max="32767" attributes="0"/>
+                              <Component id="txtEmail" alignment="0" pref="230" max="32767" attributes="0"/>
+                              <Component id="txtDiagnosis" alignment="0" pref="230" max="32767" attributes="0"/>
+                              <Component id="txtPhoneNo" alignment="0" pref="230" max="32767" attributes="0"/>
+                              <Component id="txtDateOfBirth" alignment="0" pref="230" max="32767" attributes="0"/>
+                              <Component id="cboxHospitalName" alignment="0" max="32767" attributes="0"/>
+                              <Component id="cboxGender" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtZipcode" alignment="0" pref="230" max="32767" attributes="0"/>
+                              <Component id="txtCity" alignment="0" pref="230" max="32767" attributes="0"/>
+                              <Component id="txtAddress" alignment="0" pref="230" max="32767" attributes="0"/>
+                              <Component id="txtState" alignment="0" pref="230" max="32767" attributes="0"/>
+                          </Group>
                       </Group>
                       <EmptySpace min="0" pref="183" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-              <Component id="btnSignUp" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="269" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -123,9 +121,9 @@
                   <Component id="lblZipCode" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtZipcode" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="btnSignUp" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace pref="47" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>

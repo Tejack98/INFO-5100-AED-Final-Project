@@ -11,6 +11,7 @@ import healthcare.organization.Organization;
 import healthcare.role.Role;
 import healthcare.userAccount.UserAccount;
 import javax.swing.JPanel;
+import userinterface.HealthcareInterface.nurse.NurseDashboard;
 
 /**
  *
@@ -18,6 +19,8 @@ import javax.swing.JPanel;
  */
 public class NurseRole extends Role {
     
+    private String gender;
+    private String hospitalName;
     
     @Override
     public String toString() {
@@ -26,8 +29,23 @@ public class NurseRole extends Role {
     
     @Override
     public JPanel createWorkArea( UserAccount userAccount, Organization organization, Enterprise enterprise, Ecosystem Ecosystem, Network network) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-        //return new AdminWorkAreaJPanel(userProcessContainer, enterprise);       
+        return new NurseDashboard();       
     }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getHospitalName() {
+        return hospitalName;
+    }
+
+    public void setHospitalName(String hospitalName) {
+        this.hospitalName = hospitalName;
+    }  
     
 }
