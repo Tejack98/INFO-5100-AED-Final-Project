@@ -21,6 +21,7 @@ public class SysAdminMangeNetwork extends javax.swing.JPanel {
     public SysAdminMangeNetwork(Ecosystem ecosystem) {
         initComponents();
         this.ecosystem = ecosystem;
+        populateNetworkTable();
     }
     
     private void populateNetworkTable() {

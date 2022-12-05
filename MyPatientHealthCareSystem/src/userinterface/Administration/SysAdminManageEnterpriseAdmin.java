@@ -6,7 +6,14 @@ package userinterface.Administration;
 
 
 import healthcare.Ecosystem;
+import healthcare.Enterprise.donorBank.DonorAdminRole;
 import healthcare.enterprise.Enterprise;
+import healthcare.enterprise.emergencyUnit.EmergencyUnitAdminRole;
+import healthcare.enterprise.healthCare.HealthCareAdminRole;
+import healthcare.enterprise.lab.LabAdminRole;
+import healthcare.enterprise.pharmacy.PharmacyAdminRole;
+import healthcare.enterprise.supplyChain.SupplyManagerRole;
+import healthcare.enterprise.vaccination.VaccinationAdminRole;
 import healthcare.network.Network;
 import healthcare.person.Person;
 import healthcare.systemAdmin.AdminMasterRole;
@@ -294,8 +301,34 @@ public class SysAdminManageEnterpriseAdmin extends javax.swing.JPanel {
 
         Person employee = enterprise.getPersonDirectory().createAndAddPersonAdmin(name);
 
-        UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(adminId, username, password, employee, new AdminMasterRole(), email);
-
+        if(enterprise.getEnterpriseType().equals(Enterprise.EnterpriseType.HealthCare)){
+            UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(adminId, username, password, employee, new HealthCareAdminRole(), email);
+        }
+        
+        if(enterprise.getEnterpriseType().equals(Enterprise.EnterpriseType.DonorBank)){
+            UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(adminId, username, password, employee, new DonorAdminRole(), email);
+        }
+        
+        if(enterprise.getEnterpriseType().equals(Enterprise.EnterpriseType.EmergencyUnit)){
+            UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(adminId, username, password, employee, new EmergencyUnitAdminRole(), email);
+        }
+        
+        if(enterprise.getEnterpriseType().equals(Enterprise.EnterpriseType.Lab)){
+            UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(adminId, username, password, employee, new LabAdminRole(), email);
+        }
+        
+        if(enterprise.getEnterpriseType().equals(Enterprise.EnterpriseType.Pharmacy)){
+            UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(adminId, username, password, employee, new PharmacyAdminRole(), email);
+        }
+        
+        if(enterprise.getEnterpriseType().equals(Enterprise.EnterpriseType.SupplyChain)){
+            UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(adminId, username, password, employee, new SupplyManagerRole(), email);
+        }
+        
+        if(enterprise.getEnterpriseType().equals(Enterprise.EnterpriseType.Vaccination)){
+            UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(adminId, username, password, employee, new VaccinationAdminRole(), email);
+        }
+                
         JOptionPane.showMessageDialog(this, "Health Care Admin Registered Successfully.Your New Admin Username is:" + username + " and password: " + password + ",Please save this Id for furture reference.");
 
         SendMail s = new SendMail();

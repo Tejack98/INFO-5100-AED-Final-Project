@@ -6,12 +6,14 @@ package healthcare;
 
 import healthcare.Enterprise.donorBank.DonorAdminRole;
 import healthcare.Enterprise.donorBank.DonorRole;
+import healthcare.enterprise.Enterprise;
 import healthcare.enterprise.healthCare.DoctorRole;
 import healthcare.enterprise.healthCare.HealthCareAdminRole;
 import healthcare.enterprise.healthCare.NurseRole;
 import healthcare.enterprise.healthCare.PatientRole;
 import healthcare.enterprise.lab.LabAdminRole;
 import healthcare.enterprise.lab.LabAssistantRole;
+import healthcare.network.Network;
 import healthcare.person.Person;
 import healthcare.systemAdmin.AdminMasterRole;
 import healthcare.userAccount.UserAccount;
@@ -74,6 +76,17 @@ public class Configsystem {
         
         //=====================================================================================
        
+        Network network = ecosystem.createAndAddNetwork();
+        network.setNetworkName("BostonNetwork");
+        Enterprise enterprise = network.getEnterpriseMasterList().createAndAddEnterprise(Enterprise.EnterpriseType.HealthCare, "My Hospital");
+        Enterprise enterprise2 = network.getEnterpriseMasterList().createAndAddEnterprise(Enterprise.EnterpriseType.DonorBank, "Donor Bank");
+        Enterprise enterprise3 = network.getEnterpriseMasterList().createAndAddEnterprise(Enterprise.EnterpriseType.EmergencyUnit, "Emergency Unit");
+        Enterprise enterprise4 = network.getEnterpriseMasterList().createAndAddEnterprise(Enterprise.EnterpriseType.Lab, "Clinical Lab");
+        Enterprise enterprise5 = network.getEnterpriseMasterList().createAndAddEnterprise(Enterprise.EnterpriseType.Pharmacy, "Wellness Pharma");
+        Enterprise enterprise6 = network.getEnterpriseMasterList().createAndAddEnterprise(Enterprise.EnterpriseType.SupplyChain, "Insta Med");
+        Enterprise enterprise7 = network.getEnterpriseMasterList().createAndAddEnterprise(Enterprise.EnterpriseType.Vaccination, "Vaccination Ent");
+        
+        
         return ecosystem;
     }
     
