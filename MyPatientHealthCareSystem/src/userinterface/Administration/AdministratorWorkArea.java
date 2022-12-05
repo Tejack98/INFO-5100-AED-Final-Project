@@ -145,6 +145,7 @@ public class AdministratorWorkArea extends javax.swing.JFrame {
 
     private void btnEnterpriseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnterpriseActionPerformed
         // TODO add your handling code here:
+
         SysAdminManageEnterprise sme = new SysAdminManageEnterprise(ecosystem);
         jSplitPaneSystem.setRightComponent(sme);
     }//GEN-LAST:event_btnEnterpriseActionPerformed

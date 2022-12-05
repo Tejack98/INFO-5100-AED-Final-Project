@@ -13,6 +13,7 @@ import healthcare.workQueue.PatientAppointmentRequest;
 import healthcare.workQueue.WorkRequest;
 import javax.swing.table.DefaultTableModel;
 
+
 /**
  *
  * @author shriyapandita
@@ -34,8 +35,6 @@ public class ViewAppointment extends javax.swing.JPanel {
         this.enterprise = enterprise;
         this.ecosystem = ecosystem;
         this.network = network;
-        populateAppointmentListTable();
-    }
     
     public void populateAppointmentListTable() {
         //To change body of generated methods, choose Tools | Templates.
