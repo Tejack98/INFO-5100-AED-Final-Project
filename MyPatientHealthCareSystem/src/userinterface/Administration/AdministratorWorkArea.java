@@ -36,12 +36,11 @@ public class AdministratorWorkArea extends javax.swing.JFrame {
 
         jSplitPaneSystem = new javax.swing.JSplitPane();
         controlPanel = new javax.swing.JPanel();
-        btnDoctors = new javax.swing.JButton();
-        btnPatients = new javax.swing.JButton();
-        btnEncounters = new javax.swing.JButton();
+        btnEnterprise = new javax.swing.JButton();
+        btnAdmin = new javax.swing.JButton();
         btnLogout = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        btnEncounters1 = new javax.swing.JButton();
+        btnNetwork = new javax.swing.JButton();
         workArea = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -49,24 +48,17 @@ public class AdministratorWorkArea extends javax.swing.JFrame {
         controlPanel.setBackground(new java.awt.Color(100, 92, 170));
         controlPanel.setPreferredSize(new java.awt.Dimension(200, 600));
 
-        btnDoctors.setText("Doctors");
-        btnDoctors.addActionListener(new java.awt.event.ActionListener() {
+        btnEnterprise.setText("Enterprise");
+        btnEnterprise.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDoctorsActionPerformed(evt);
+                btnEnterpriseActionPerformed(evt);
             }
         });
 
-        btnPatients.setText("Patients");
-        btnPatients.addActionListener(new java.awt.event.ActionListener() {
+        btnAdmin.setText("Admin");
+        btnAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPatientsActionPerformed(evt);
-            }
-        });
-
-        btnEncounters.setText("Nurse");
-        btnEncounters.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEncountersActionPerformed(evt);
+                btnAdminActionPerformed(evt);
             }
         });
 
@@ -77,15 +69,15 @@ public class AdministratorWorkArea extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Hospital");
+        jLabel1.setText("Administrator");
 
-        btnEncounters1.setText("Admin");
-        btnEncounters1.addActionListener(new java.awt.event.ActionListener() {
+        btnNetwork.setText("Network");
+        btnNetwork.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEncounters1ActionPerformed(evt);
+                btnNetworkActionPerformed(evt);
             }
         });
 
@@ -100,10 +92,9 @@ public class AdministratorWorkArea extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, controlPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnEncounters, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnPatients, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnDoctors, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnEncounters1, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnEnterprise, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnNetwork, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(14, 14, 14))
         );
@@ -113,14 +104,12 @@ public class AdministratorWorkArea extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnEncounters1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnNetwork, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnDoctors, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnEnterprise, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnPatients, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnEncounters, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 234, Short.MAX_VALUE)
+                .addComponent(btnAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 307, Short.MAX_VALUE)
                 .addComponent(btnLogout)
                 .addGap(15, 15, 15))
         );
@@ -154,33 +143,28 @@ public class AdministratorWorkArea extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnDoctorsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDoctorsActionPerformed
+    private void btnEnterpriseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnterpriseActionPerformed
         // TODO add your handling code here:
-        
-//        HealthCareAdminDoctorPanel healthCareAdmin = new HealthCareAdminDoctorPanel(ecosystem);
-//        jSplitPaneSystem.setRightComponent(healthCareAdmin);
-    }//GEN-LAST:event_btnDoctorsActionPerformed
-
-    private void btnPatientsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPatientsActionPerformed
-        // TODO add your handling code here:
-//        HospitalPatientWorkPanel hospitalPatient = new HospitalPatientWorkPanel(personDirectory, patientDirectory, community);
-//        jSplitPaneSystem.setRightComponent(hospitalPatient);
-    }//GEN-LAST:event_btnPatientsActionPerformed
-
-    private void btnEncountersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEncountersActionPerformed
-        // TODO add your handling code here:
-//        HospitalEncountersWorkPanel hospitalEncounters = new HospitalEncountersWorkPanel(patientDirectory, doctorDirectory);
-//        jSplitPaneSystem.setRightComponent(hospitalEncounters);
-    }//GEN-LAST:event_btnEncountersActionPerformed
+        SysAdminManageEnterprise sme = new SysAdminManageEnterprise(ecosystem);
+        jSplitPaneSystem.setRightComponent(sme);
+    }//GEN-LAST:event_btnEnterpriseActionPerformed
 
     private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
         // TODO add your handling code here:
         dispose();
     }//GEN-LAST:event_btnLogoutActionPerformed
 
-    private void btnEncounters1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEncounters1ActionPerformed
+    private void btnNetworkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNetworkActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnEncounters1ActionPerformed
+        SysAdminMangeNetwork samn = new SysAdminMangeNetwork(ecosystem);
+        jSplitPaneSystem.setRightComponent(samn);
+    }//GEN-LAST:event_btnNetworkActionPerformed
+
+    private void btnAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminActionPerformed
+        // TODO add your handling code here:
+        SysAdminManageEnterpriseAdmin samea = new SysAdminManageEnterpriseAdmin(ecosystem);
+        jSplitPaneSystem.setRightComponent(samea);
+    }//GEN-LAST:event_btnAdminActionPerformed
 
     /**
      * @param args the command line arguments
@@ -251,11 +235,10 @@ public class AdministratorWorkArea extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnDoctors;
-    private javax.swing.JButton btnEncounters;
-    private javax.swing.JButton btnEncounters1;
+    private javax.swing.JButton btnAdmin;
+    private javax.swing.JButton btnEnterprise;
     private javax.swing.JButton btnLogout;
-    private javax.swing.JButton btnPatients;
+    private javax.swing.JButton btnNetwork;
     private javax.swing.JPanel controlPanel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JSplitPane jSplitPaneSystem;

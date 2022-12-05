@@ -194,7 +194,7 @@ public class MainJFrame extends javax.swing.JFrame {
             return;
         } else {
             Role role = userAccount.getRole();
-            System.out.println(Role.RoleType.HealthCareAdmin.toString());
+            System.out.println(Role.RoleType.Administrator.toString());
             System.out.println(userAccount.getRole().toString());
             JFrame frame = role.createWorkArea(userAccount, inOrganization, inEnterprise, ecosystem, inNetwork);
 
@@ -291,15 +291,14 @@ public class MainJFrame extends javax.swing.JFrame {
                 SupplyManagerWorkArea supplierFrame = (SupplyManagerWorkArea) frame;
                 supplierFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
                 supplierFrame.setVisible(true);
-                
+
+            }
 // ===============================================================================================
 // ============================AdminMaster===========================================================  
-                if (Role.RoleType.Administrator.toString().equals(userAccount.getRole().toString())) {
-                    AdministratorWorkArea adminWA = (AdministratorWorkArea) frame;
-                    adminWA.setExtendedState(JFrame.MAXIMIZED_BOTH);
-                    adminWA.setVisible(true);
-                }
-                
+            if (Role.RoleType.Administrator.toString().equals(userAccount.getRole().toString())) {
+                AdministratorWorkArea adminWA = (AdministratorWorkArea) frame;
+                adminWA.setExtendedState(JFrame.MAXIMIZED_BOTH);
+                adminWA.setVisible(true);
             }
 
         }

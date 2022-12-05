@@ -30,6 +30,14 @@ public class PersonDirectory {
         return person;
     }
     
+    public Person createAndAddPersonAdmin(String personName){
+        Person person = new Person();
+        person.setPersonName(personName);
+        personList.add(person);
+        return person;
+    }
+    
+    
     public void removePerson(Person person){
         personList.remove(person);
     }

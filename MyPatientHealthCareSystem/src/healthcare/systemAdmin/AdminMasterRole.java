@@ -12,6 +12,7 @@ import healthcare.role.Role;
 import healthcare.userAccount.UserAccount;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import userinterface.Administration.AdministratorWorkArea;
 
 /**
  *
@@ -26,8 +27,7 @@ public class AdminMasterRole extends Role {
     }
 
     @Override
-    public JFrame createWorkArea(UserAccount userAccount, Organization organization, Enterprise enterprise, Ecosystem Ecosystem, Network network) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-        //return new AdminWorkAreaJPanel(userProcessContainer, enterprise);       
+    public JFrame createWorkArea(UserAccount userAccount, Organization organization, Enterprise enterprise, Ecosystem ecosystem, Network network) {
+       return new AdministratorWorkArea(ecosystem);       
     }
 }
