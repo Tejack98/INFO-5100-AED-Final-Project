@@ -35,6 +35,7 @@ public class ViewAppointment extends javax.swing.JPanel {
         this.enterprise = enterprise;
         this.ecosystem = ecosystem;
         this.network = network;
+    }
     
     public void populateAppointmentListTable() {
         //To change body of generated methods, choose Tools | Templates.
