@@ -12,7 +12,7 @@ import healthcare.role.Role;
 import healthcare.userAccount.UserAccount;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import userinterface.DonorBankInterface.Logindetails.AdminLogin.DonorAdminWorkArea;
+import userinterface.DonorBankInterface.donorAdmin.DonorAdminWorkArea;
 
 /**
  *

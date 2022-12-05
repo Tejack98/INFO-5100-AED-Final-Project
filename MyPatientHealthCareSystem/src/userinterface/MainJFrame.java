@@ -16,7 +16,7 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import userinterface.Administration.AdministratorWorkArea;
-import userinterface.DonorBankInterface.DonorAdminWorkArea;
+import userinterface.DonorBankInterface.donorAdmin.DonorAdminWorkArea;
 //import userinterface.DonorBankInterface.Logindetails.AdminLogin.DonorAdminWorkArea;
 import userinterface.EmergencyUnit.ambulanceHandler.AmbulanceHandlerWorkArea;
 import userinterface.EmergencyUnit.emergencyAdmin.EmergencyUnitAdminWorkArea;

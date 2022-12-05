@@ -2,18 +2,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package userinterface.DonorBankInterface.Logindetails.AdminLogin;
+package userinterface.DonorBankInterface.donorAdmin;
 
 /**
  *
  * @author shriyapandita
  */
-public class OrganDonationForm extends javax.swing.JPanel {
+public class BloodDonationForm extends javax.swing.JPanel {
 
     /**
-     * Creates new form OrganDonationForm
+     * Creates new form BloodDonationForm
      */
-    public OrganDonationForm() {
+    public BloodDonationForm() {
         initComponents();
     }
 
@@ -27,18 +27,20 @@ public class OrganDonationForm extends javax.swing.JPanel {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        lblDonorName = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        lblDateofBirth = new javax.swing.JLabel();
-        lblEmail = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        lblPhone = new javax.swing.JLabel();
-        lblOccupation = new javax.swing.JLabel();
-        lblBloodType = new javax.swing.JLabel();
-        lblDonateBlood = new javax.swing.JLabel();
-        lblDisease = new javax.swing.JLabel();
-        lblAllergies = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
         jTextField4 = new javax.swing.JTextField();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
         jRadioButton3 = new javax.swing.JRadioButton();
         jRadioButton4 = new javax.swing.JRadioButton();
         jRadioButton5 = new javax.swing.JRadioButton();
@@ -51,29 +53,34 @@ public class OrganDonationForm extends javax.swing.JPanel {
         jLabel14 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
-        lblOrganDonation = new javax.swing.JLabel();
-        jTextField8 = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+
+        setBackground(new java.awt.Color(255, 204, 204));
 
         jPanel1.setBackground(new java.awt.Color(255, 204, 204));
 
-        lblDonorName.setText("Donor Name");
+        jLabel2.setText("Donor Name");
 
-        lblDateofBirth.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        lblDateofBirth.setText("Date of Birth");
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        jLabel4.setText("Date of Birth");
 
-        lblEmail.setText("Email");
+        jLabel5.setText("Email");
 
-        lblPhone.setText("Phone");
+        jLabel7.setText("Phone");
 
-        lblOccupation.setText("Occupation");
+        jLabel8.setText("Occupation");
 
-        lblBloodType.setText("Blood Type");
+        jLabel9.setText("Blood Type");
 
-        lblDonateBlood.setText("Organ you wish to donate?");
+        jLabel10.setText("Did you ever donate blood before?");
 
-        lblDisease.setText("Do you suffer of any diseases?");
+        jLabel11.setText("Do you suffer of any diseases?");
 
-        lblAllergies.setText("Do you have any allergies?");
+        jLabel12.setText("Do you have any allergies?");
+
+        jRadioButton1.setText("Yes");
+
+        jRadioButton2.setText("No");
 
         jRadioButton3.setText("No");
 
@@ -113,8 +120,8 @@ public class OrganDonationForm extends javax.swing.JPanel {
 
         jPanel2.setBackground(new java.awt.Color(153, 204, 255));
 
-        lblOrganDonation.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
-        lblOrganDonation.setText("Organ Donation Form");
+        jLabel1.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
+        jLabel1.setText("Blood Donation Form");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -124,7 +131,7 @@ public class OrganDonationForm extends javax.swing.JPanel {
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel2Layout.createSequentialGroup()
                     .addGap(296, 296, 296)
-                    .addComponent(lblOrganDonation)
+                    .addComponent(jLabel1)
                     .addContainerGap(296, Short.MAX_VALUE)))
         );
         jPanel2Layout.setVerticalGroup(
@@ -133,15 +140,9 @@ public class OrganDonationForm extends javax.swing.JPanel {
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel2Layout.createSequentialGroup()
                     .addGap(24, 24, 24)
-                    .addComponent(lblOrganDonation)
+                    .addComponent(jLabel1)
                     .addContainerGap(24, Short.MAX_VALUE)))
         );
-
-        jTextField8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField8ActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -155,13 +156,13 @@ public class OrganDonationForm extends javax.swing.JPanel {
                         .addComponent(jLabel6))
                     .addComponent(jLabel14)
                     .addComponent(jLabel13)
-                    .addComponent(lblBloodType, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(lblDonorName, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(27, 27, 27)
                         .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(lblEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(259, 259, 259)
@@ -173,22 +174,22 @@ public class OrganDonationForm extends javax.swing.JPanel {
                                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(40, 40, 40)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblDateofBirth)
+                                    .addComponent(jLabel4)
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                         .addComponent(jButton1)
                                         .addGroup(jPanel1Layout.createSequentialGroup()
                                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(lblPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(lblOccupation, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                 .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE))))))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblAllergies, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblDonateBlood)
-                            .addComponent(lblDisease, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(27, 27, 27)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -196,11 +197,14 @@ public class OrganDonationForm extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jRadioButton3))
                             .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jRadioButton1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jRadioButton2))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jRadioButton6)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jRadioButton5))
-                            .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(30, Short.MAX_VALUE))
+                                .addComponent(jRadioButton5)))))
+                .addContainerGap(38, Short.MAX_VALUE))
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
@@ -211,39 +215,40 @@ public class OrganDonationForm extends javax.swing.JPanel {
                 .addComponent(jLabel13)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblDonorName)
-                    .addComponent(lblDateofBirth)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel4)
                     .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(16, 16, 16)
                 .addComponent(jLabel3)
                 .addGap(3, 3, 3)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblEmail)
-                    .addComponent(lblPhone)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel7)
                     .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblOccupation)
+                    .addComponent(jLabel8)
                     .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblBloodType)
+                    .addComponent(jLabel9)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(34, 34, 34)
                 .addComponent(jLabel14)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel6)
-                .addGap(20, 20, 20)
+                .addGap(21, 21, 21)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblDonateBlood)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel10)
+                    .addComponent(jRadioButton1)
+                    .addComponent(jRadioButton2))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblDisease)
+                    .addComponent(jLabel11)
                     .addComponent(jRadioButton4)
                     .addComponent(jRadioButton3))
                 .addGap(15, 15, 15)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblAllergies)
+                    .addComponent(jLabel12)
                     .addComponent(jRadioButton6)
                     .addComponent(jRadioButton5))
                 .addGap(70, 70, 70)
@@ -275,20 +280,28 @@ public class OrganDonationForm extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField7ActionPerformed
 
-    private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField8ActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JRadioButton jRadioButton4;
     private javax.swing.JRadioButton jRadioButton5;
@@ -297,16 +310,5 @@ public class OrganDonationForm extends javax.swing.JPanel {
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JLabel lblAllergies;
-    private javax.swing.JLabel lblBloodType;
-    private javax.swing.JLabel lblDateofBirth;
-    private javax.swing.JLabel lblDisease;
-    private javax.swing.JLabel lblDonateBlood;
-    private javax.swing.JLabel lblDonorName;
-    private javax.swing.JLabel lblEmail;
-    private javax.swing.JLabel lblOccupation;
-    private javax.swing.JLabel lblOrganDonation;
-    private javax.swing.JLabel lblPhone;
     // End of variables declaration//GEN-END:variables
 }

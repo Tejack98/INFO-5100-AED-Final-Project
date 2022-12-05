@@ -2,7 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package userinterface.DonorBankInterface;
+package userinterface.DonorBankInterface.donor;
+
+import healthcare.Ecosystem;
 
 /**
  *
@@ -13,8 +15,10 @@ public class DonorWorkArea extends javax.swing.JFrame {
     /**
      * Creates new form DonorWorkArea
      */
-    public DonorWorkArea() {
+    static Ecosystem ecosystem;
+    public DonorWorkArea(Ecosystem ecosystem) {
         initComponents();
+        this.ecosystem = ecosystem;
     }
 
     /**
@@ -189,7 +193,7 @@ public class DonorWorkArea extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new DonorWorkArea().setVisible(true);
+                new DonorWorkArea(ecosystem).setVisible(true);
             }
         });
     }

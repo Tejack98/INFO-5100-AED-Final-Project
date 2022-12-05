@@ -12,7 +12,8 @@ import healthcare.role.Role;
 import healthcare.userAccount.UserAccount;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import userinterface.DonorBankInterface.DonorAdminWorkArea;
+import userinterface.DonorBankInterface.donor.DonorWorkArea;
+import userinterface.DonorBankInterface.donorAdmin.DonorAdminWorkArea;
 
 /**
  *
@@ -27,7 +28,7 @@ public class DonorRole extends Role{
     
     @Override
     public JFrame createWorkArea(UserAccount userAccount, Organization organization, Enterprise enterprise, Ecosystem ecosystem, Network network) { 
-        return new DonorAdminWorkArea(ecosystem);       
+        return new DonorWorkArea(ecosystem);       
     }
     
 }
