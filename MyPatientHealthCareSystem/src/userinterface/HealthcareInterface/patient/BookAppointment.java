@@ -195,12 +195,16 @@ public class BookAppointment extends javax.swing.JPanel {
                 break;
             }
         }
+        System.out.println("Organization :" + org);
 
         if (org != null) {
             int a = org.getWorkQueue().getWorkRequestList().hashCode();
             org.getWorkQueue().getWorkRequestList().add(par);
             userAccount.getWorkQueue().getWorkRequestList().add(par);
         }
+        
+        
+        System.out.println(userAccount.getWorkQueue().getWorkRequestList());
     }//GEN-LAST:event_btnsaveActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

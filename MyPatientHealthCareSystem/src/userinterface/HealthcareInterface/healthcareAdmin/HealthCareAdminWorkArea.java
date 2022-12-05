@@ -96,7 +96,7 @@ public class HealthCareAdminWorkArea extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Hospital");
 
-        btnAdmin.setText("Admin");
+        btnAdmin.setText("Organization");
         btnAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAdminActionPerformed(evt);
@@ -194,6 +194,8 @@ public class HealthCareAdminWorkArea extends javax.swing.JFrame {
 
     private void btnAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminActionPerformed
         // TODO add your handling code here:
+        HealthcareManageOrganization hmo = new HealthcareManageOrganization(enterprise);
+        jSplitPaneSystem.setRightComponent(hmo);
     }//GEN-LAST:event_btnAdminActionPerformed
 
     /**
