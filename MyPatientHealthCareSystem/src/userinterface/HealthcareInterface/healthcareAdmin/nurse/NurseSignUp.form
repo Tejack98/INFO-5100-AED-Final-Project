@@ -23,39 +23,34 @@
                       <Component id="lblTitle" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace pref="170" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="lblName" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblUsername" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblAddress" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblCity" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblState" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblZipCode" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblGender" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblPhoneNumber" alignment="1" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="lblHospitalName" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                          </Group>
+                      <EmptySpace pref="227" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="lblHospitalName" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblName" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblUsername" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblAddress" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblCity" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblState" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblZipCode" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblGender" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblPhoneNumber" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblUsername1" alignment="1" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="cboxHospitalName" max="32767" attributes="0"/>
-                          <Component id="txtName" alignment="0" pref="230" max="32767" attributes="0"/>
-                          <Component id="txtEmail" alignment="0" pref="230" max="32767" attributes="0"/>
-                          <Component id="txtAddress" alignment="0" pref="230" max="32767" attributes="0"/>
-                          <Component id="txtCity" alignment="0" pref="230" max="32767" attributes="0"/>
-                          <Component id="txtState" alignment="0" pref="230" max="32767" attributes="0"/>
-                          <Component id="txtZipcode" alignment="0" pref="230" max="32767" attributes="0"/>
+                          <Component id="txtName" alignment="0" pref="238" max="32767" attributes="0"/>
+                          <Component id="txtEmail" alignment="0" pref="238" max="32767" attributes="0"/>
+                          <Component id="txtAddress" alignment="0" pref="238" max="32767" attributes="0"/>
+                          <Component id="txtCity" alignment="0" pref="238" max="32767" attributes="0"/>
+                          <Component id="txtState" alignment="0" pref="238" max="32767" attributes="0"/>
+                          <Component id="txtZipcode" alignment="0" pref="238" max="32767" attributes="0"/>
                           <Component id="CBoxGender" alignment="0" max="32767" attributes="0"/>
                           <Component id="txtPhoneNo" alignment="0" max="32767" attributes="0"/>
                           <Component id="btnSignUp" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="networkJComboBox" alignment="1" max="32767" attributes="0"/>
+                          <Component id="enterpriseJComboBox" alignment="0" pref="238" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace min="0" pref="170" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="219" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -82,15 +77,17 @@
                   <Component id="lblGender" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="CBoxGender" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="lblHospitalName" min="-2" max="-2" attributes="0"/>
-                  <Group type="102" attributes="0">
-                      <Component id="cboxHospitalName" min="-2" pref="22" max="-2" attributes="0"/>
-                      <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
-                  </Group>
+              <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="networkJComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblUsername1" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblHospitalName" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="enterpriseJComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblPhoneNumber" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtPhoneNo" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -117,7 +114,7 @@
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="btnSignUp" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="40" max="32767" attributes="0"/>
+              <EmptySpace pref="113" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -236,8 +233,27 @@
     </Component>
     <Component class="javax.swing.JTextField" name="txtPhoneNo">
     </Component>
-    <Component class="javax.swing.JComboBox" name="cboxHospitalName">
+    <Component class="javax.swing.JLabel" name="lblHospitalName">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Comic Sans MS" size="14" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Enterprise"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblUsername1">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Comic Sans MS" size="14" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Network"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="networkJComboBox">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Century Gothic" size="12" style="0"/>
+        </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="4">
             <StringItem index="0" value="Item 1"/>
@@ -247,16 +263,23 @@
           </StringArray>
         </Property>
       </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-      </AuxValues>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="networkJComboBoxActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="lblHospitalName">
+    <Component class="javax.swing.JComboBox" name="enterpriseJComboBox">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Comic Sans MS" size="14" style="0"/>
+          <Font name="Century Gothic" size="12" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Hospital Name"/>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="4">
+            <StringItem index="0" value="Item 1"/>
+            <StringItem index="1" value="Item 2"/>
+            <StringItem index="2" value="Item 3"/>
+            <StringItem index="3" value="Item 4"/>
+          </StringArray>
+        </Property>
       </Properties>
     </Component>
   </SubComponents>
