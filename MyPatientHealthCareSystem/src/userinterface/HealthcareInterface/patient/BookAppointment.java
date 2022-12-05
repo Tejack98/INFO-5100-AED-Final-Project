@@ -6,9 +6,13 @@ package userinterface.HealthcareInterface.patient;
 
 import healthcare.Ecosystem;
 import healthcare.enterprise.Enterprise;
+import healthcare.enterprise.healthCare.DoctorOrganization;
 import healthcare.network.Network;
 import healthcare.organization.Organization;
 import healthcare.userAccount.UserAccount;
+import healthcare.workQueue.PatientAppointmentRequest;
+import java.text.DateFormat;
+import java.util.Date;
 
 /**
  *
@@ -174,8 +178,30 @@ public class BookAppointment extends javax.swing.JPanel {
 
     private void btnsaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsaveActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnsaveActionPerformed
+        String message = txtmessage.getText();
+        Date appDate = dateChooserField.getDate();
+        String strDate = DateFormat.getDateInstance().format(appDate);
+        
+        PatientAppointmentRequest par = new PatientAppointmentRequest();
+        par.setMessage(message);
+        par.setAppointmentDate(strDate);
+        par.setSender(userAccount);
+        par.setStatus("Sent By Patient");
+        
+        Organization org = null;
+        for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()) {
+            if (organization instanceof DoctorOrganization) {
+                org = organization;
+                break;
+            }
+        }
 
+        if (org != null) {
+            int a = org.getWorkQueue().getWorkRequestList().hashCode();
+            org.getWorkQueue().getWorkRequestList().add(par);
+            userAccount.getWorkQueue().getWorkRequestList().add(par);
+        }
+    }//GEN-LAST:event_btnsaveActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backJButton;

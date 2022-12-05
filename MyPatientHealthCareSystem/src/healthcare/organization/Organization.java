@@ -9,6 +9,7 @@ import healthcare.person.PersonDirectory;
 import healthcare.role.Role;
 import healthcare.userAccount.UserAccountDirectory;
 import healthcare.role.Role;
+import healthcare.workQueue.WorkQueue;
 import java.util.ArrayList;
 
 /**
@@ -18,6 +19,7 @@ import java.util.ArrayList;
 public abstract class Organization {
     
     private String organizationName;
+    private WorkQueue workQueue;
     private int organizationId ;
     private PersonDirectory personDirectory;
     private UserAccountDirectory userAccountDirectory;
@@ -55,6 +57,14 @@ public abstract class Organization {
     
     public String getOrganizationName() {
         return organizationName;
+    }
+
+    public WorkQueue getWorkQueue() {
+        return workQueue;
+    }
+
+    public void setWorkQueue(WorkQueue workQueue) {
+        this.workQueue = workQueue;
     }
     
     public enum OrganizationType {
