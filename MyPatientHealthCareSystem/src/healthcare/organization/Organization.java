@@ -30,6 +30,7 @@ public abstract class Organization {
     }
     
     public Organization(String organizationName) {
+        workQueue = new WorkQueue();
         this.organizationName = organizationName;
         this.personDirectory = new PersonDirectory();
         this.userAccountDirectory = new UserAccountDirectory();
