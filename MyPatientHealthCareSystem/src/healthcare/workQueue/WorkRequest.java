@@ -168,5 +168,9 @@ public class WorkRequest {
         this.medlist = medlist;
     }
     
+    @Override
+    public String toString() {
+        return String.valueOf(this.message);
+    }
     
 }

@@ -35,11 +35,12 @@ public class ViewAppointment extends javax.swing.JPanel {
         this.enterprise = enterprise;
         this.ecosystem = ecosystem;
         this.network = network;
+        populateAppointmentListTable();
     }
     
     public void populateAppointmentListTable() {
         //To change body of generated methods, choose Tools | Templates.
-        DefaultTableModel model = (DefaultTableModel) appTable.getModel();
+        DefaultTableModel model = (DefaultTableModel) appointmentsTable.getModel();
         model.setRowCount(0);
         for (WorkRequest request : userAccount.getWorkQueue().getWorkRequestList()) {
             Object[] row = new Object[5];
@@ -68,7 +69,7 @@ public class ViewAppointment extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        appTable = new javax.swing.JTable();
+        appointmentsTable = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
 
         jPanel1.setBackground(new java.awt.Color(255, 204, 204));
@@ -77,8 +78,8 @@ public class ViewAppointment extends javax.swing.JPanel {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("View Appointment");
 
-        appTable.setBackground(new java.awt.Color(153, 204, 255));
-        appTable.setModel(new javax.swing.table.DefaultTableModel(
+        appointmentsTable.setBackground(new java.awt.Color(153, 204, 255));
+        appointmentsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -90,14 +91,14 @@ public class ViewAppointment extends javax.swing.JPanel {
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, true, false
+                false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(appTable);
+        jScrollPane1.setViewportView(appointmentsTable);
 
         jButton1.setBackground(new java.awt.Color(153, 204, 255));
         jButton1.setText("Update Date");
@@ -144,7 +145,7 @@ public class ViewAppointment extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable appTable;
+    private javax.swing.JTable appointmentsTable;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;

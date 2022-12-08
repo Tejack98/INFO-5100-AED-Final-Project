@@ -4,6 +4,18 @@
  */
 package userinterface.HealthcareInterface.doctor;
 
+import healthcare.enterprise.Enterprise;
+import healthcare.enterprise.lab.LabOrganization;
+import healthcare.organization.Organization;
+import healthcare.userAccount.UserAccount;
+import healthcare.workQueue.DoctorLabRequest;
+import healthcare.workQueue.PatientAppointmentRequest;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author shriyapandita
@@ -13,8 +25,133 @@ public class DoctorPatientMedicalHistoryPanel extends javax.swing.JPanel {
     /**
      * Creates new form DoctorPatientMedicalHistoryPanel
      */
-    public DoctorPatientMedicalHistoryPanel() {
+    
+    
+    PatientAppointmentRequest request;
+    UserAccount useraccount;
+    Enterprise enterprise;
+    String gender[] = {"Male", "Female", "Other"};
+    HashMap<String, String> heart_rate = new HashMap<String, String>();
+    HashMap<String, String> temp_range = new HashMap<String, String>();
+    HashMap<String, String> bp_range = new HashMap<String, String>();
+    HashMap<String, String> resp_range = new HashMap<String, String>();
+    HashMap<String, String> med_range = new HashMap<String, String>();
+    String inj_opioid_use[] = {"On Hands", "On Feet", "On Neck"};
+    String opioid_intoxication[] = {"Pin Point Pupil", "Nodding Off", "Drowsiness", "Sweating"};
+    String opioid_withdrawal[] = {"Restlessness", "Lacrimation", "Hypertension", "Muscle Tenderness"};
+    String liver_disease[] = {"Jaundice", "Hepatosplenomegaly", "Ascites"};
+    
+    public DoctorPatientMedicalHistoryPanel(PatientAppointmentRequest request, UserAccount useraccount, Enterprise enterprise) {
         initComponents();
+        this.request = request;
+        this.useraccount = useraccount;
+        this.enterprise = enterprise;
+
+        for (String str : gender) {
+            genderCombo.addItem(str);
+        }
+        for (int i = 1; i <= 110; i++) {
+            ageCombo.addItem(i);
+        }
+
+        // heart beat range
+        heart_rate.put("30bpm-70bpm", "low");
+        heart_rate.put("71bpm-100bpm", "normal");
+        heart_rate.put("101bpm-150bpm", "high");
+
+        // Getting a Set of Key-value pairs
+        Set hb_entrySet = heart_rate.entrySet();
+
+        // Obtaining an iterator for the entry set
+        Iterator hb_it = hb_entrySet.iterator();
+
+        while (hb_it.hasNext()) {
+            Map.Entry hb_me = (Map.Entry) hb_it.next();
+            heartRateCombo.addItem(hb_me.getKey());
+        }
+
+        // temperature range
+        temp_range.put("normal", "97.7 - 99.5°F");
+        temp_range.put("high", ">99.5 or 100.9°F");
+        temp_range.put("low", "<95.0°F");
+
+        // Getting a Set of Key-value pairs
+        Set temp_entrySet = temp_range.entrySet();
+
+        // Obtaining an iterator for the entry set
+        Iterator t_it = temp_entrySet.iterator();
+
+        while (t_it.hasNext()) {
+            Map.Entry t_me = (Map.Entry) t_it.next();
+            tempCombo.addItem(t_me.getValue());
+        }
+
+        // blood pressure range
+        bp_range.put("low", "<120 bp");
+        bp_range.put("normal", "120-129 bp");
+        bp_range.put("stage2", ">120 bp");
+
+        // Getting a Set of Key-value pairs
+        Set bp_entrySet = bp_range.entrySet();
+
+        // Obtaining an iterator for the entry set
+        Iterator bp_it = bp_entrySet.iterator();
+
+        while (bp_it.hasNext()) {
+            Map.Entry bp_me = (Map.Entry) bp_it.next();
+            bpCombo.addItem(bp_me.getValue());
+        }
+
+        // respiratory rate range
+        resp_range.put("low", "< 12 bpm");
+        resp_range.put("normal", "12-20 bpM");
+        resp_range.put("high", "> 20 bpm");
+
+        // Getting a Set of Key-value pairs
+        Set resp_entrySet = resp_range.entrySet();
+
+        // Obtaining an iterator for the entry set
+        Iterator resp_it = resp_entrySet.iterator();
+
+        while (resp_it.hasNext()) {
+            Map.Entry resp_me = (Map.Entry) resp_it.next();
+            respCombo.addItem(resp_me.getValue());
+        }
+        med_range.put("low", "10-20 mg/mL");
+        med_range.put("normL", "20-40 mg/mL");
+        med_range.put("high", "40-80 mg/mL");
+
+        // Getting a Set of Key-value pairs
+        Set oxcy_entrySet = med_range.entrySet();
+
+        // Obtaining an iterator for the entry set
+        Iterator oxcy_it = oxcy_entrySet.iterator();
+
+        while (oxcy_it.hasNext()) {
+            Map.Entry oxcy_me = (Map.Entry) oxcy_it.next();
+            oxycCombo.addItem(oxcy_me.getValue());
+            fenCombo.addItem(oxcy_me.getValue());
+            bupCombo.addItem(oxcy_me.getValue());
+            metCombo.addItem(oxcy_me.getValue());
+            oxymCombo.addItem(oxcy_me.getValue());
+        }
+
+        for (String str : inj_opioid_use) {
+            injCombo.addItem(str);
+        }
+
+        for (String str : opioid_intoxication) {
+            intoCombo.addItem(str);
+        }
+
+        for (String str : opioid_withdrawal) {
+            withCombo.addItem(str);
+        }
+
+        for (String str : liver_disease) {
+            livCombo.addItem(str);
+        }
+
     }
 
     /**
@@ -483,15 +620,16 @@ public class DoctorPatientMedicalHistoryPanel extends javax.swing.JPanel {
                     .addComponent(anxietyChk)
                     .addComponent(disruptSocialChk))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel12)
-                    .addComponent(jLabel18))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel18)
+                    .addComponent(jLabel12))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel14)
-                    .addComponent(heartRateCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel19)
-                    .addComponent(jLabel20))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel14)
+                        .addComponent(heartRateCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel20)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -550,10 +688,26 @@ public class DoctorPatientMedicalHistoryPanel extends javax.swing.JPanel {
 
     private void fenChkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fenChkActionPerformed
         // TODO add your handling code here:
+        if(fenChk.isSelected())
+        {
+           fenCombo.setEnabled(true);
+        }
+        else
+        {
+            fenCombo.setEnabled(false);
+        }
     }//GEN-LAST:event_fenChkActionPerformed
 
     private void oxycChkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_oxycChkActionPerformed
         // TODO add your handling code here:
+        if(oxycChk.isSelected())
+        {
+           oxycCombo.setEnabled(true);
+        }
+        else
+        {
+            oxycCombo.setEnabled(false);
+        }
     }//GEN-LAST:event_oxycChkActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -563,7 +717,151 @@ public class DoctorPatientMedicalHistoryPanel extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        DoctorLabRequest labr = new DoctorLabRequest();
+        labr.setSender(useraccount);
+
+        labr.setMessage("Lab Request");
+        labr.setStatus("Med Hist Collected For Lab");
+        request.setStatus("Med Hist Collected For Lab");
+         request.setDoc_med_history("");
+
+        //Setting patient's general information 
+        labr.setName(txtpatientname.getText());
+        labr.setGender((String)genderCombo.getSelectedItem());
+        labr.setAge((Integer)ageCombo.getSelectedItem());
         
+        //Setting patients medical history
+        labr.setDrug_history(drugChk.isSelected());
+        labr.setAlcohol_history(alcoholChk.isSelected());
+        labr.setDepression_history(depressionChk.isSelected());
+        labr.setAnxiety_history(anxietyChk.isSelected());
+        labr.setDisrupt_history(disruptSocialChk.isSelected());
+        
+       
+        if((String)heartRateCombo.getSelectedItem() == "101bpm-150bpm")
+        {
+            labr.setHr_risk(true);
+        }
+        else
+        {
+            labr.setHr_risk(false);
+        }
+        
+        if((String)tempCombo.getSelectedItem() == ">99.5 or 100.9°F")
+        {
+            labr.setTemp_risk(true);
+        }
+        else
+        {
+            labr.setTemp_risk(false);
+        }
+        
+        if((String)bpCombo.getSelectedItem() == ">120 bp" ||
+            (String)bpCombo.getSelectedItem() == "<120 bp")    
+        {
+            labr.setBp_risk(true);
+        }
+        else
+        {
+            labr.setBp_risk(false);
+        }
+        
+        if((String)respCombo.getSelectedItem() == "> 20 bpm" ||
+           (String)respCombo.getSelectedItem() == "< 12 bpm")         
+        {
+            labr.setResp_risk(true);
+        }
+        else
+        {
+            labr.setResp_risk(false);
+        }
+        
+        //Setting patient's medicine consumption flag
+        labr.setOxycodone_taken(oxycChk.isSelected());
+        labr.setFantanyl_taken(fenChk.isSelected());
+        labr.setBupre_taken(bupChk.isSelected());
+        labr.setMethadone_taken(metChk.isSelected());
+        labr.setOxymorphone_taken(oxymChk.isSelected());
+        
+        //Setting patient's medicine consumption dose risk
+        if((String)oxycCombo.getSelectedItem() == "40-80 mg/mL")
+        {
+            labr.setOxycodone_risk(true);
+        }
+        else
+        {
+            labr.setOxycodone_risk(false);
+        }
+        if((String)fenCombo.getSelectedItem() == "40-80 mg/mL")
+        {
+            labr.setFantanyl_risk(true);
+        }
+        else
+        {
+            labr.setFantanyl_risk(false);
+        }
+        
+        if((String)bupCombo.getSelectedItem() == "40-80 mg/mL")
+        {
+            labr.setBupre_risk(true);
+        }
+        else
+        {
+            labr.setBupre_risk(false);
+        }
+        
+        if((String)metCombo.getSelectedItem() == "40-80 mg/mL")
+        {
+            labr.setMethadone_risk(true);
+        }
+        else
+        {
+            labr.setMethadone_risk(false);
+        }
+        
+        if((String)oxymCombo.getSelectedItem() == "40-80 mg/mL")
+        {
+            labr.setOxymorphone_risk(true);
+        }
+        else
+        {
+            labr.setOxymorphone_risk(false);
+        }
+        
+        //Setting patient's additional consumption flag
+        labr.setInjection_checked(injChk.isSelected());
+        labr.setIntoxication_checked(intoChk.isSelected());
+        labr.setWithdrawal_checked(withChk.isSelected());
+        labr.setDisease_checked(livChk.isSelected());
+        
+        
+        //Setting patient's additional consumption flag
+        labr.setInjection_type((String)injCombo.getSelectedItem());
+        labr.setIntoxication_type((String)intoCombo.getSelectedItem());
+        labr.setWithdrawal_type((String)withCombo.getSelectedItem());
+        labr.setDisease_type((String)livCombo.getSelectedItem());
+        
+    //    Doctor_LabRequest labr = new Doctor_LabRequest();
+        Organization org = null;
+        for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()){
+            if (organization instanceof LabOrganization){
+                org = organization;
+                //testing
+                System.out.println(request.hashCode());
+              //  org.setHashcode(request.hashCode());
+                break;
+            }
+        }
+        if (org!=null){
+              int a = request.hashCode();
+              request.setHashcode(a);//patient hashcode from db
+        System.out.println(a);
+        labr.setHashcode(a);
+            org.getWorkQueue().getWorkRequestList().add(labr);
+            useraccount.getWorkQueue().getWorkRequestList().add(labr);
+        }
+    
+         JOptionPane.showMessageDialog(null, "Report Requested Successfully");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void livComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_livComboActionPerformed
@@ -572,6 +870,14 @@ public class DoctorPatientMedicalHistoryPanel extends javax.swing.JPanel {
 
     private void livChkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_livChkActionPerformed
         // TODO add your handling code here:
+        if(livChk.isSelected())
+        {
+           livCombo.setEnabled(true);
+        }
+        else
+        {
+            livCombo.setEnabled(false);
+        }
     }//GEN-LAST:event_livChkActionPerformed
 
     private void withComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_withComboActionPerformed
@@ -584,6 +890,14 @@ public class DoctorPatientMedicalHistoryPanel extends javax.swing.JPanel {
 
     private void oxymChkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_oxymChkActionPerformed
         // TODO add your handling code here:
+        if(oxymChk.isSelected())
+        {
+           oxymCombo.setEnabled(true);
+        }
+        else
+        {
+            oxymCombo.setEnabled(false);
+        }
     }//GEN-LAST:event_oxymChkActionPerformed
 
     private void txtpatientnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtpatientnameActionPerformed
@@ -592,6 +906,15 @@ public class DoctorPatientMedicalHistoryPanel extends javax.swing.JPanel {
 
     private void metChkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_metChkActionPerformed
         // TODO add your handling code here:
+        if(metChk.isSelected())
+        {
+           metCombo.setEnabled(true);
+        }
+        else
+        {
+            metCombo.setEnabled(false);
+        }
+        
     }//GEN-LAST:event_metChkActionPerformed
 
     private void heartRateComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_heartRateComboActionPerformed
@@ -601,12 +924,26 @@ public class DoctorPatientMedicalHistoryPanel extends javax.swing.JPanel {
 
     private void bupChkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bupChkActionPerformed
         // TODO add your handling code here:
-        
+        if(bupChk.isSelected())
+        {
+           bupCombo.setEnabled(true);
+        }
+        else
+        {
+            bupCombo.setEnabled(false);
+        }
     }//GEN-LAST:event_bupChkActionPerformed
 
     private void withChkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_withChkActionPerformed
         // TODO add your handling code here:
-        
+        if(withChk.isSelected())
+        {
+           withCombo.setEnabled(true);
+        }
+        else
+        {
+            withCombo.setEnabled(false);
+        }
     }//GEN-LAST:event_withChkActionPerformed
 
     private void genderComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_genderComboActionPerformed
@@ -620,7 +957,14 @@ public class DoctorPatientMedicalHistoryPanel extends javax.swing.JPanel {
 
     private void injChkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_injChkActionPerformed
         // TODO add your handling code here:
-        
+        if(injChk.isSelected())
+        {
+           injCombo.setEnabled(true);
+        }
+        else
+        {
+            injCombo.setEnabled(false);
+        }
     }//GEN-LAST:event_injChkActionPerformed
 
     private void oxymComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_oxymComboActionPerformed
@@ -654,7 +998,14 @@ public class DoctorPatientMedicalHistoryPanel extends javax.swing.JPanel {
 
     private void intoChkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_intoChkActionPerformed
         // TODO add your handling code here:
-        
+         if(intoChk.isSelected())
+        {
+           intoCombo.setEnabled(true);
+        }
+        else
+        {
+            intoCombo.setEnabled(false);
+        }
     }//GEN-LAST:event_intoChkActionPerformed
 
 

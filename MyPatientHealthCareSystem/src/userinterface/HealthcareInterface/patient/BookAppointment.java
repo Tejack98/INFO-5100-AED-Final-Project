@@ -13,6 +13,7 @@ import healthcare.userAccount.UserAccount;
 import healthcare.workQueue.PatientAppointmentRequest;
 import java.text.DateFormat;
 import java.util.Date;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -203,8 +204,9 @@ public class BookAppointment extends javax.swing.JPanel {
             userAccount.getWorkQueue().getWorkRequestList().add(par);
         }
         
+        JOptionPane.showMessageDialog(null, "Appointment booked successfully");
+        txtmessage.setText("");
         
-        System.out.println(userAccount.getWorkQueue().getWorkRequestList());
     }//GEN-LAST:event_btnsaveActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

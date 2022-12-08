@@ -4,6 +4,11 @@
  */
 package userinterface.HealthcareInterface.doctor;
 
+import healthcare.Ecosystem;
+import healthcare.enterprise.Enterprise;
+import healthcare.network.Network;
+import healthcare.organization.Organization;
+import healthcare.userAccount.UserAccount;
 import userinterface.HealthcareInterface.healthcareAdmin.doctor.HealthCareAdminDoctorPanel;
 
 /**
@@ -15,10 +20,21 @@ public class DoctorWorkArea extends javax.swing.JFrame {
     /**
      * Creates new form HopsitalWorkArea
      */
-    public DoctorWorkArea() {
+    
+    static UserAccount userAccount;
+    static Organization organization;
+    static Enterprise enterprise;
+    static Ecosystem ecosystem;
+    static Network network;
+    public DoctorWorkArea(UserAccount userAccount, Organization organization, Enterprise enterprise ,Ecosystem ecosystem, Network network) {
         initComponents();
+        this.userAccount = userAccount;
+        this.organization = organization;
+        this.enterprise = enterprise;
+        this.ecosystem = ecosystem;
+        this.network = network;
         
-        DoctorAppointmentRequestsPanel req = new DoctorAppointmentRequestsPanel();
+        DoctorAppointmentRequestsPanel req = new DoctorAppointmentRequestsPanel(userAccount,organization, enterprise ,network);
         jSplitPaneSystem.setRightComponent(req);
     }
 
@@ -168,14 +184,14 @@ public class DoctorWorkArea extends javax.swing.JFrame {
 
     private void Appointment_req_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Appointment_req_btnActionPerformed
         // TODO add your handling code here:
-        DoctorAppointmentRequestsPanel req = new DoctorAppointmentRequestsPanel();
+        DoctorAppointmentRequestsPanel req = new DoctorAppointmentRequestsPanel(userAccount,organization, enterprise ,network);
         jSplitPaneSystem.setRightComponent(req);
     }//GEN-LAST:event_Appointment_req_btnActionPerformed
 
     private void Pat_Med_His_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pat_Med_His_btnActionPerformed
         // TODO add your handling code here:
-        DoctorPatientMedicalHistoryPanel dpmh = new DoctorPatientMedicalHistoryPanel();
-        jSplitPaneSystem.setRightComponent(dpmh);
+//        DoctorPatientMedicalHistoryPanel dpmh = new DoctorPatientMedicalHistoryPanel();
+//        jSplitPaneSystem.setRightComponent(dpmh);
     }//GEN-LAST:event_Pat_Med_His_btnActionPerformed
 
     private void Pat_Med_His_btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pat_Med_His_btn1ActionPerformed
@@ -245,7 +261,7 @@ public class DoctorWorkArea extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new DoctorWorkArea().setVisible(true);
+                new DoctorWorkArea(userAccount,organization,enterprise,ecosystem,network).setVisible(true);
             }
         });
     }
