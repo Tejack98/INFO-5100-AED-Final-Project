@@ -8,6 +8,8 @@ import healthcare.Ecosystem;
 import healthcare.enterprise.Enterprise;
 import healthcare.enterprise.healthCare.DoctorRole;
 import healthcare.network.Network;
+import healthcare.organization.Organization;
+import healthcare.organization.OrganizationDirectory;
 import healthcare.person.Person;
 import healthcare.role.Role;
 import healthcare.userAccount.UserAccount;
@@ -29,11 +31,13 @@ public class DoctorSignUp extends javax.swing.JPanel {
      */
     boolean emptyValidationStatus = true;
     boolean validationCheck = true;
-    Ecosystem ecosystem;   
-    public DoctorSignUp(Ecosystem ecosystem) {
+    Ecosystem ecosystem;  
+    OrganizationDirectory orgList;
+    public DoctorSignUp(Ecosystem ecosystem, OrganizationDirectory orgList) {
         initComponents();
         this.ecosystem = ecosystem;
-        populateNetworkComboBox();
+        this.orgList = orgList;
+        populateOrganizationComboBox();
     }
 
     /**
@@ -64,9 +68,7 @@ public class DoctorSignUp extends javax.swing.JPanel {
         cboxSpeciality = new javax.swing.JComboBox<>();
         lblPhoneNo = new javax.swing.JLabel();
         txtPhoneNo = new javax.swing.JTextField();
-        networkJComboBox = new javax.swing.JComboBox();
-        lblUsername1 = new javax.swing.JLabel();
-        enterpriseJComboBox = new javax.swing.JComboBox();
+        organizationJComboBox = new javax.swing.JComboBox();
 
         btnSignUp.setText("Sign Up");
         btnSignUp.addActionListener(new java.awt.event.ActionListener() {
@@ -92,7 +94,7 @@ public class DoctorSignUp extends javax.swing.JPanel {
         lblUsername.setText("Email");
 
         lblEnterprise.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
-        lblEnterprise.setText("Enterprise");
+        lblEnterprise.setText("Organization");
 
         txtCity.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -114,19 +116,8 @@ public class DoctorSignUp extends javax.swing.JPanel {
         lblPhoneNo.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         lblPhoneNo.setText("Phone No");
 
-        networkJComboBox.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        networkJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        networkJComboBox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                networkJComboBoxActionPerformed(evt);
-            }
-        });
-
-        lblUsername1.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
-        lblUsername1.setText("Network");
-
-        enterpriseJComboBox.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        enterpriseJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        organizationJComboBox.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        organizationJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Doctor", "Nurse", "Patient" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -140,34 +131,39 @@ public class DoctorSignUp extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(161, 161, 161)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblName)
-                            .addComponent(lblUsername)
-                            .addComponent(lblEnterprise)
-                            .addComponent(lblAddress)
-                            .addComponent(lblCity)
-                            .addComponent(lblState)
-                            .addComponent(lblZipCode)
-                            .addComponent(lblSpeciality)
-                            .addComponent(lblPhoneNo)
-                            .addComponent(lblUsername1))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtName, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
-                            .addComponent(txtEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
-                            .addComponent(txtAddress, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
-                            .addComponent(txtCity, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
-                            .addComponent(txtState, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
-                            .addComponent(txtZipcode, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
-                            .addComponent(cboxSpeciality, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txtPhoneNo, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
-                            .addComponent(networkJComboBox, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(enterpriseJComboBox, 0, 238, Short.MAX_VALUE))
-                        .addGap(0, 242, Short.MAX_VALUE)))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(lblEnterprise)
+                                        .addComponent(lblAddress)
+                                        .addComponent(lblCity)
+                                        .addComponent(lblState)
+                                        .addComponent(lblZipCode)
+                                        .addComponent(lblSpeciality)
+                                        .addComponent(lblPhoneNo))
+                                    .addGap(18, 18, 18)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(txtAddress, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
+                                        .addComponent(txtCity, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
+                                        .addComponent(txtState, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
+                                        .addComponent(txtZipcode, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
+                                        .addComponent(cboxSpeciality, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(txtPhoneNo, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
+                                        .addComponent(organizationJComboBox, 0, 238, Short.MAX_VALUE)))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addGap(250, 250, 250)
+                                    .addComponent(btnSignUp)
+                                    .addGap(5, 5, 5)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(lblName)
+                                    .addComponent(lblUsername))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtName, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
+                                    .addComponent(txtEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE))))
+                        .addGap(0, 231, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btnSignUp)
-                .addGap(253, 253, 253))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -182,14 +178,10 @@ public class DoctorSignUp extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblUsername)
                     .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(networkJComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblUsername1))
-                .addGap(17, 17, 17)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblEnterprise)
-                    .addComponent(enterpriseJComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(organizationJComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblSpeciality)
@@ -216,7 +208,7 @@ public class DoctorSignUp extends javax.swing.JPanel {
                     .addComponent(txtPhoneNo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(19, 19, 19)
                 .addComponent(btnSignUp)
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addContainerGap(70, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -234,7 +226,7 @@ public class DoctorSignUp extends javax.swing.JPanel {
                     String name = txtName.getText();
                     String emailId = txtEmail.getText();
                     String Speciality = cboxSpeciality.getSelectedItem().toString();
-                    String HospitalName = enterpriseJComboBox.getSelectedItem().toString();
+                    String HospitalName = organizationJComboBox.getSelectedItem().toString();
                     String Address = txtAddress.getText();
                     String City = txtCity.getText();
                     String State = txtState.getText();
@@ -250,10 +242,10 @@ public class DoctorSignUp extends javax.swing.JPanel {
                     DoctorRole role  = new DoctorRole();
                     role.setHospitalName(HospitalName);
                     role.setSpeciality(Speciality);
-                    
-                    Enterprise enterprise = (Enterprise) enterpriseJComboBox.getSelectedItem();
-                    Person person = enterprise.getPersonDirectory().createAndAddPerson(username, Address, City, State, Zipcode, cellPhoneNumber);
-                    UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(doctorID,username, password, person, role, emailId);
+                        
+                    Organization organization = (Organization) organizationJComboBox.getSelectedItem();
+                    Person p = organization.getPersonDirectory().createAndAddPerson(username, Address, City, State, Zipcode, cellPhoneNumber);           
+                    UserAccount account = organization.getUserAccountDirectory().createUserAccount(doctorID,username, password, p, role, emailId);
                     
                     JOptionPane.showMessageDialog(this, "Doctor Registered Successfully.Your New Username:" + username + " and password: " + password + ",Please save this Id for furture reference.");
 
@@ -345,37 +337,27 @@ public class DoctorSignUp extends javax.swing.JPanel {
     
     }//GEN-LAST:event_btnSignUpActionPerformed
 
-    private void networkJComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_networkJComboBoxActionPerformed
+    private void populateOrganizationComboBox() {
+        organizationJComboBox.removeAllItems();
 
-        Network network = (Network) networkJComboBox.getSelectedItem();
-        if (network != null) {
-            populateEnterpriseComboBox(network);
-        }
-
-    }//GEN-LAST:event_networkJComboBoxActionPerformed
-
-    private void populateNetworkComboBox() {
-        networkJComboBox.removeAllItems();
-
-        for (Network network : ecosystem.getNetworkList()) {
-            networkJComboBox.addItem(network);
+        for (Organization organization : orgList.getOrganizationList()){
+            organizationJComboBox.addItem(organization);
         }
     }
 
-    private void populateEnterpriseComboBox(Network network) {
-        enterpriseJComboBox.removeAllItems();
-
-        for (Enterprise enterprise : network.getEnterpriseMasterList().getEnterpriseList()) {
-            enterpriseJComboBox.addItem(enterprise);
-        }
-
-    }
+//    private void populateEnterpriseComboBox(Network network) {
+//        organizationJComboBox.removeAllItems();
+//
+//        for (Enterprise enterprise : network.getEnterpriseMasterList().getEnterpriseList()) {
+//            organizationJComboBox.addItem(enterprise);
+//        }
+//
+//    }
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSignUp;
     private javax.swing.JComboBox<String> cboxSpeciality;
-    private javax.swing.JComboBox enterpriseJComboBox;
     private javax.swing.JLabel lblAddress;
     private javax.swing.JLabel lblCity;
     private javax.swing.JLabel lblEnterprise;
@@ -385,9 +367,8 @@ public class DoctorSignUp extends javax.swing.JPanel {
     private javax.swing.JLabel lblState;
     private javax.swing.JLabel lblTitle;
     private javax.swing.JLabel lblUsername;
-    private javax.swing.JLabel lblUsername1;
     private javax.swing.JLabel lblZipCode;
-    private javax.swing.JComboBox networkJComboBox;
+    private javax.swing.JComboBox organizationJComboBox;
     private javax.swing.JTextField txtAddress;
     private javax.swing.JTextField txtCity;
     private javax.swing.JTextField txtEmail;

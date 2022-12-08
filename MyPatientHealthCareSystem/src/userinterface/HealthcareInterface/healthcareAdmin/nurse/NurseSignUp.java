@@ -8,6 +8,8 @@ import healthcare.Ecosystem;
 import healthcare.enterprise.Enterprise;
 import healthcare.enterprise.healthCare.NurseRole;
 import healthcare.network.Network;
+import healthcare.organization.Organization;
+import healthcare.organization.OrganizationDirectory;
 import healthcare.person.Person;
 import healthcare.userAccount.UserAccount;
 import java.awt.Color;
@@ -28,11 +30,22 @@ public class NurseSignUp extends javax.swing.JPanel {
     boolean emptyValidationStatus = true;
     boolean validationCheck = true;
     Ecosystem ecosystem;   
-    public NurseSignUp(Ecosystem ecosystem) {
+    OrganizationDirectory orgList;
+    public NurseSignUp(Ecosystem ecosystem, OrganizationDirectory orgList) {
         initComponents();
         this.ecosystem = ecosystem;
-        populateNetworkComboBox();
+        this.orgList = orgList;
+        populateOrganizationComboBox();
     }
+    
+    private void populateOrganizationComboBox() {
+        organizationJComboBox.removeAllItems();
+
+        for (Organization organization : orgList.getOrganizationList()){
+            organizationJComboBox.addItem(organization);
+        }
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -62,9 +75,7 @@ public class NurseSignUp extends javax.swing.JPanel {
         CBoxGender = new javax.swing.JComboBox<>();
         txtPhoneNo = new javax.swing.JTextField();
         lblHospitalName = new javax.swing.JLabel();
-        lblUsername1 = new javax.swing.JLabel();
-        networkJComboBox = new javax.swing.JComboBox();
-        enterpriseJComboBox = new javax.swing.JComboBox();
+        organizationJComboBox = new javax.swing.JComboBox();
 
         lblAddress.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         lblAddress.setText("Address");
@@ -110,21 +121,10 @@ public class NurseSignUp extends javax.swing.JPanel {
         CBoxGender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         lblHospitalName.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
-        lblHospitalName.setText("Enterprise");
+        lblHospitalName.setText("Organization");
 
-        lblUsername1.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
-        lblUsername1.setText("Network");
-
-        networkJComboBox.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        networkJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        networkJComboBox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                networkJComboBoxActionPerformed(evt);
-            }
-        });
-
-        enterpriseJComboBox.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        enterpriseJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        organizationJComboBox.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        organizationJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -146,8 +146,7 @@ public class NurseSignUp extends javax.swing.JPanel {
                             .addComponent(lblState)
                             .addComponent(lblZipCode)
                             .addComponent(lblGender)
-                            .addComponent(lblPhoneNumber)
-                            .addComponent(lblUsername1))
+                            .addComponent(lblPhoneNumber))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(txtName, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
@@ -159,8 +158,7 @@ public class NurseSignUp extends javax.swing.JPanel {
                             .addComponent(CBoxGender, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(txtPhoneNo, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnSignUp, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(networkJComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(enterpriseJComboBox, javax.swing.GroupLayout.Alignment.LEADING, 0, 238, Short.MAX_VALUE))
+                            .addComponent(organizationJComboBox, javax.swing.GroupLayout.Alignment.LEADING, 0, 238, Short.MAX_VALUE))
                         .addGap(0, 219, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -183,12 +181,8 @@ public class NurseSignUp extends javax.swing.JPanel {
                     .addComponent(CBoxGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(networkJComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblUsername1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblHospitalName)
-                    .addComponent(enterpriseJComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(organizationJComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(12, 12, 12)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblPhoneNumber)
@@ -211,7 +205,7 @@ public class NurseSignUp extends javax.swing.JPanel {
                     .addComponent(txtZipcode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(btnSignUp)
-                .addContainerGap(113, Short.MAX_VALUE))
+                .addContainerGap(147, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -230,7 +224,7 @@ public class NurseSignUp extends javax.swing.JPanel {
                     long cellPhoneNumber = Long.parseLong(txtPhoneNo.getText());
                     String emailId = txtEmail.getText();
                     String gender = CBoxGender.getSelectedItem().toString();
-                    String HospitalName = enterpriseJComboBox.getSelectedItem().toString();
+                    String HospitalName = organizationJComboBox.getSelectedItem().toString();
                     String Address = txtAddress.getText();
                     String City = txtCity.getText();
                     String State = txtState.getText();
@@ -246,9 +240,9 @@ public class NurseSignUp extends javax.swing.JPanel {
                     role.setGender(gender);
                     role.setHospitalName(HospitalName);
                     
-                    Enterprise enterprise = (Enterprise) enterpriseJComboBox.getSelectedItem();
-                    Person person = enterprise.getPersonDirectory().createAndAddPerson(name,Address,City,State,Zipcode,cellPhoneNumber);
-                    UserAccount u = enterprise.getUserAccountDirectory().createUserAccount(NurseID,username, password, person, role, emailId);
+                    Organization organization = (Organization) organizationJComboBox.getSelectedItem();
+                    Person p = organization.getPersonDirectory().createAndAddPerson(username, Address, City, State, Zipcode, cellPhoneNumber);                               
+                    UserAccount u = organization.getUserAccountDirectory().createUserAccount(NurseID,username, password, p, role, emailId);
                     
                     JOptionPane.showMessageDialog(this,"Nurse Registered Successfully.Your New Username is:"+username+" and password: "+password+",Please save this Id for furture reference.");
                     
@@ -362,35 +356,10 @@ public class NurseSignUp extends javax.swing.JPanel {
         return emptyValidationStatus;
     }//GEN-LAST:event_btnSignUpActionPerformed
 
-    private void networkJComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_networkJComboBoxActionPerformed
-
-        Network network = (Network) networkJComboBox.getSelectedItem();
-        if (network != null) {
-            populateEnterpriseComboBox(network);
-        }
-    }//GEN-LAST:event_networkJComboBoxActionPerformed
-
-       private void populateNetworkComboBox() {
-        networkJComboBox.removeAllItems();
-
-        for (Network network : ecosystem.getNetworkList()) {
-            networkJComboBox.addItem(network);
-        }
-    }
-
-    private void populateEnterpriseComboBox(Network network) {
-        enterpriseJComboBox.removeAllItems();
-
-        for (Enterprise enterprise : network.getEnterpriseMasterList().getEnterpriseList()) {
-            enterpriseJComboBox.addItem(enterprise);
-        }
-
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> CBoxGender;
     private javax.swing.JButton btnSignUp;
-    private javax.swing.JComboBox enterpriseJComboBox;
     private javax.swing.JLabel lblAddress;
     private javax.swing.JLabel lblCity;
     private javax.swing.JLabel lblGender;
@@ -400,9 +369,8 @@ public class NurseSignUp extends javax.swing.JPanel {
     private javax.swing.JLabel lblState;
     private javax.swing.JLabel lblTitle;
     private javax.swing.JLabel lblUsername;
-    private javax.swing.JLabel lblUsername1;
     private javax.swing.JLabel lblZipCode;
-    private javax.swing.JComboBox networkJComboBox;
+    private javax.swing.JComboBox organizationJComboBox;
     private javax.swing.JTextField txtAddress;
     private javax.swing.JTextField txtCity;
     private javax.swing.JTextField txtEmail;
