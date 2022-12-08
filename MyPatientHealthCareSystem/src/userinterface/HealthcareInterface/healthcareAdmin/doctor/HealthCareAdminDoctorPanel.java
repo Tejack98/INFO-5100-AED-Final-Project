@@ -134,19 +134,19 @@ public class HealthCareAdminDoctorPanel extends javax.swing.JPanel {
 
     private void btnViewDoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewDoctorActionPerformed
         // TODO add your handling code here:
-        AdminViewDoctor adminViewDoctor = new AdminViewDoctor(ecosystem);
+        AdminViewDoctor adminViewDoctor = new AdminViewDoctor(ecosystem, enterprise.getOrganizationDirectory());
         splitPane.setRightComponent(adminViewDoctor );
     }//GEN-LAST:event_btnViewDoctorActionPerformed
 
     private void btnCreateDoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateDoctorActionPerformed
         // TODO add your handling code here
-        DoctorSignUp doctorSignUp = new DoctorSignUp(ecosystem);
+        DoctorSignUp doctorSignUp = new DoctorSignUp(ecosystem, enterprise.getOrganizationDirectory());
         splitPane.setRightComponent(doctorSignUp);
     }//GEN-LAST:event_btnCreateDoctorActionPerformed
 
     private void btnUpdateDoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateDoctorActionPerformed
         // TODO add your handling code here:
-        AdminUpdateDoctor adminUpdateDoctor = new AdminUpdateDoctor();
+        AdminUpdateDoctor adminUpdateDoctor = new AdminUpdateDoctor(ecosystem, enterprise.getOrganizationDirectory());
         splitPane.setRightComponent(adminUpdateDoctor);
     }//GEN-LAST:event_btnUpdateDoctorActionPerformed
 

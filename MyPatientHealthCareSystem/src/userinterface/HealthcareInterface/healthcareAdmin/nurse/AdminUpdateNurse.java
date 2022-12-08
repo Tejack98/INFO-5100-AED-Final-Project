@@ -5,6 +5,7 @@
 package userinterface.HealthcareInterface.healthcareAdmin.nurse;
 
 import healthcare.Ecosystem;
+import healthcare.organization.OrganizationDirectory;
 
 /**
  *
@@ -15,8 +16,13 @@ public class AdminUpdateNurse extends javax.swing.JPanel {
     /**
      * Creates new form AdminUpdateNurse
      */
-    public AdminUpdateNurse(Ecosystem ecosystem) {
+    
+    Ecosystem ecosystem;  
+    OrganizationDirectory orgList;
+    public AdminUpdateNurse(Ecosystem ecosystem, OrganizationDirectory orgList) {
         initComponents();
+        this.ecosystem = ecosystem;
+        this.orgList = orgList;
     }
 
     /**
