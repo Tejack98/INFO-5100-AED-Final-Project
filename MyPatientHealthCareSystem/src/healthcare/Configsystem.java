@@ -14,6 +14,7 @@ import healthcare.enterprise.healthCare.PatientRole;
 import healthcare.enterprise.lab.LabAdminRole;
 import healthcare.enterprise.lab.LabAssistantRole;
 import healthcare.network.Network;
+import healthcare.organization.Organization;
 import healthcare.person.Person;
 import healthcare.systemAdmin.AdminMasterRole;
 import healthcare.userAccount.UserAccount;
@@ -72,6 +73,8 @@ public class Configsystem {
         
         //=================================================================
         
+        Organization org = enterprise.getOrganizationDirectory().createNewOrganization(Organization.OrganizationType.Doctor);
+        
         Person person = enterprise.getPersonDirectory().createAndAddPerson("tej","75 Saint Alphonso","Boston","MA",Long.parseLong("02120"),Long.parseLong("8576938034")); 
         Person person2 = enterprise.getPersonDirectory().createAndAddPerson("tej","75 Saint Alphonso","Boston","MA",Long.parseLong("02120"),Long.parseLong("8576938034")); 
         Person person3 = enterprise.getPersonDirectory().createAndAddPerson("Pan","75 Saint Alphonso","Boston","MA",Long.parseLong("02120"),Long.parseLong("8576938034"));
@@ -85,10 +88,10 @@ public class Configsystem {
         n1.setHospitalName("myHospital1");
         n1.setGender("Female");
         
-        UserAccount u = enterprise.getUserAccountDirectory().createUserAccount(4444,"doc", "doc", person, d1,"t@g.com");
+        UserAccount u = org.getUserAccountDirectory().createUserAccount(4444,"doc", "doc", person, d1,"t@g.com");
         UserAccount u2 = enterprise.getUserAccountDirectory().createUserAccount(1111,"hadmin", "hadmin", person2,new HealthCareAdminRole(),"t@g.com");
-        UserAccount u3 = enterprise.getUserAccountDirectory().createUserAccount(2222,"pat", "pat", person3, new PatientRole(),"s@g.com");
-        UserAccount u4 = enterprise.getUserAccountDirectory().createUserAccount(3333,"nurse", "nurse", person4, new NurseRole() ,"s@g.com");
+        UserAccount u3 = org.getUserAccountDirectory().createUserAccount(2222,"pat", "pat", person3, new PatientRole(),"s@g.com");
+        UserAccount u4 = org.getUserAccountDirectory().createUserAccount(3333,"nurse", "nurse", person4, new NurseRole() ,"s@g.com");
         
         
         return ecosystem;

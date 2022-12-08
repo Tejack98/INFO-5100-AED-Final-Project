@@ -4,6 +4,10 @@
  */
 package userinterface.HealthcareInterface.healthcareAdmin.doctor;
 
+import healthcare.Ecosystem;
+import healthcare.organization.Organization;
+import healthcare.organization.OrganizationDirectory;
+
 /**
  *
  * @author adity
@@ -13,8 +17,21 @@ public class AdminUpdateDoctor extends javax.swing.JPanel {
     /**
      * Creates new form AdminUpdateDoctor
      */
-    public AdminUpdateDoctor() {
+    Ecosystem ecosystem;  
+    OrganizationDirectory orgList;
+    public AdminUpdateDoctor(Ecosystem ecosystem, OrganizationDirectory orgList) {
         initComponents();
+        this.ecosystem = ecosystem;
+        this.orgList = orgList;
+        populateOrganizationComboBox();
+    }
+    
+    private void populateOrganizationComboBox() {
+        organizationJComboBox.removeAllItems();
+
+        for (Organization organization : orgList.getOrganizationList()){
+            organizationJComboBox.addItem(organization);
+        }
     }
 
     /**
@@ -32,14 +49,12 @@ public class AdminUpdateDoctor extends javax.swing.JPanel {
         txtEmail = new javax.swing.JTextField();
         lblSpeciality = new javax.swing.JLabel();
         lblTitle = new javax.swing.JLabel();
-        cboxHospitalName = new javax.swing.JComboBox<>();
         lblName = new javax.swing.JLabel();
         cboxSpeciality = new javax.swing.JComboBox<>();
         lblUsername = new javax.swing.JLabel();
         lblPhoneNo = new javax.swing.JLabel();
         txtAddress = new javax.swing.JTextField();
         txtPhoneNo = new javax.swing.JTextField();
-        lblHospitalName = new javax.swing.JLabel();
         txtCity = new javax.swing.JTextField();
         txtState = new javax.swing.JTextField();
         lblState = new javax.swing.JLabel();
@@ -49,6 +64,8 @@ public class AdminUpdateDoctor extends javax.swing.JPanel {
         lblSearchByDoctorID = new javax.swing.JLabel();
         btnSearch = new javax.swing.JButton();
         btnUpdate = new javax.swing.JButton();
+        lblEnterprise = new javax.swing.JLabel();
+        organizationJComboBox = new javax.swing.JComboBox();
 
         lblCity.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         lblCity.setText("City");
@@ -60,8 +77,6 @@ public class AdminUpdateDoctor extends javax.swing.JPanel {
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitle.setText("Update Doctor Profile");
 
-        cboxHospitalName.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
         lblName.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         lblName.setText("Name");
 
@@ -72,9 +87,6 @@ public class AdminUpdateDoctor extends javax.swing.JPanel {
 
         lblPhoneNo.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         lblPhoneNo.setText("Phone No");
-
-        lblHospitalName.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
-        lblHospitalName.setText("Hospital Name");
 
         txtCity.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -111,28 +123,35 @@ public class AdminUpdateDoctor extends javax.swing.JPanel {
         btnUpdate.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         btnUpdate.setText("Update");
 
+        lblEnterprise.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        lblEnterprise.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblEnterprise.setText("Organization");
+
+        organizationJComboBox.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        organizationJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Doctor", "Nurse", "Patient" }));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(120, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(127, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(lblPhoneNo, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lblZipCode, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lblState, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lblCity, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lblAddress, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lblSpeciality, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblHospitalName, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lblUsername, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lblName, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblSearchByDoctorID, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addGap(18, 18, 18)
+                    .addComponent(lblSearchByDoctorID, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblEnterprise, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(organizationJComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(txtName, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
                     .addComponent(txtEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
-                    .addComponent(cboxHospitalName, 0, 230, Short.MAX_VALUE)
                     .addComponent(cboxSpeciality, 0, 230, Short.MAX_VALUE)
                     .addComponent(txtAddress, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
                     .addComponent(txtCity, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
@@ -157,12 +176,12 @@ public class AdminUpdateDoctor extends javax.swing.JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(86, Short.MAX_VALUE)
+                .addGap(71, 71, 71)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtSearchById, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblSearchByDoctorID)
                     .addComponent(btnSearch))
-                .addGap(61, 61, 61)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblName))
@@ -170,10 +189,13 @@ public class AdminUpdateDoctor extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblUsername))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cboxHospitalName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblHospitalName))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(organizationJComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblEnterprise)))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cboxSpeciality, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -224,11 +246,10 @@ public class AdminUpdateDoctor extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSearch;
     private javax.swing.JButton btnUpdate;
-    private javax.swing.JComboBox<String> cboxHospitalName;
     private javax.swing.JComboBox<String> cboxSpeciality;
     private javax.swing.JLabel lblAddress;
     private javax.swing.JLabel lblCity;
-    private javax.swing.JLabel lblHospitalName;
+    private javax.swing.JLabel lblEnterprise;
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblPhoneNo;
     private javax.swing.JLabel lblSearchByDoctorID;
@@ -237,6 +258,7 @@ public class AdminUpdateDoctor extends javax.swing.JPanel {
     private javax.swing.JLabel lblTitle;
     private javax.swing.JLabel lblUsername;
     private javax.swing.JLabel lblZipCode;
+    private javax.swing.JComboBox organizationJComboBox;
     private javax.swing.JTextField txtAddress;
     private javax.swing.JTextField txtCity;
     private javax.swing.JTextField txtEmail;
