@@ -73,15 +73,14 @@ public class Configsystem {
         
         //=================================================================
         
-        Organization org = enterprise.getOrganizationDirectory().createNewOrganization(Organization.OrganizationType.Doctor);
         Organization orgdoc = enterprise.getOrganizationDirectory().createNewOrganization(Organization.OrganizationType.Doctor);
         Organization orgnurse = enterprise.getOrganizationDirectory().createNewOrganization(Organization.OrganizationType.Nurse);
         Organization orgpat = enterprise.getOrganizationDirectory().createNewOrganization(Organization.OrganizationType.Patient);
         
-        Person person = enterprise.getPersonDirectory().createAndAddPerson("tej","75 Saint Alphonso","Boston","MA",Long.parseLong("02120"),Long.parseLong("8576938034")); 
+        Person person = orgdoc.getPersonDirectory().createAndAddPerson("tej","75 Saint Alphonso","Boston","MA",Long.parseLong("02120"),Long.parseLong("8576938034")); 
         Person person2 = enterprise.getPersonDirectory().createAndAddPerson("tej","75 Saint Alphonso","Boston","MA",Long.parseLong("02120"),Long.parseLong("8576938034")); 
-        Person person3 = enterprise.getPersonDirectory().createAndAddPerson("Pan","75 Saint Alphonso","Boston","MA",Long.parseLong("02120"),Long.parseLong("8576938034"));
-        Person person4 = enterprise.getPersonDirectory().createAndAddPerson("mat","75 Saint Alphonso","Boston","MA",Long.parseLong("02120"),Long.parseLong("8576938034"));
+        Person person3 = orgnurse.getPersonDirectory().createAndAddPerson("Pan","75 Saint Alphonso","Boston","MA",Long.parseLong("02120"),Long.parseLong("8576938034"));
+        Person person4 = orgpat.getPersonDirectory().createAndAddPerson("mat","75 Saint Alphonso","Boston","MA",Long.parseLong("02120"),Long.parseLong("8576938034"));
         
         DoctorRole d1 = new DoctorRole();
         d1.setHospitalName("myHospital");

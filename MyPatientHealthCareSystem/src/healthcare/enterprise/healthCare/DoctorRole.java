@@ -32,7 +32,7 @@ public class DoctorRole extends Role {
     
     @Override
     public JFrame createWorkArea(UserAccount userAccount, Organization organization, Enterprise enterprise, Ecosystem ecosystem, Network network) {
-        return new DoctorWorkArea();       
+        return new DoctorWorkArea(userAccount,organization,enterprise,ecosystem,network);       
     }
 
     public String getSpeciality() {
