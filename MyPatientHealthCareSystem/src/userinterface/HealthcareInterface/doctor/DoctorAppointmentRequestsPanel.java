@@ -5,6 +5,17 @@
 
 package userinterface.HealthcareInterface.doctor;
 
+import healthcare.enterprise.Enterprise;
+import healthcare.enterprise.healthCare.DoctorOrganization;
+import healthcare.network.Network;
+import healthcare.organization.Organization;
+import healthcare.userAccount.UserAccount;
+import healthcare.workQueue.PatientAppointmentRequest;
+import healthcare.workQueue.WorkRequest;
+import java.awt.CardLayout;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author shriyapandita
@@ -12,8 +23,20 @@ package userinterface.HealthcareInterface.doctor;
 public class DoctorAppointmentRequestsPanel extends javax.swing.JPanel {
 
     /** Creates new form DoctorAppointmentRequestsPanel */
-    public DoctorAppointmentRequestsPanel() {
+    
+    private DoctorOrganization organization;
+    private Enterprise enterprise;
+    private UserAccount userAccount;
+    private Network network;
+    
+    public DoctorAppointmentRequestsPanel( UserAccount account, Organization organization, Enterprise enterprise, Network network) {
         initComponents();
+        this.userAccount = userAccount;
+        this.organization = (DoctorOrganization) organization;
+        this.enterprise = enterprise;
+        this.network = network;
+        populateRequestTable();
+        assignToMebtn.setEnabled(true);
     }
 
     /** This method is called from within the constructor to
@@ -27,38 +50,38 @@ public class DoctorAppointmentRequestsPanel extends javax.swing.JPanel {
 
         jSplitPane1 = new javax.swing.JSplitPane();
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        collectMedicalHistory_btn = new javax.swing.JButton();
+        assignToMebtn = new javax.swing.JButton();
+        vw_labbtn = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        docWorkRequestJTable = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
 
         jPanel1.setBackground(new java.awt.Color(153, 204, 255));
 
-        jButton1.setBackground(new java.awt.Color(255, 204, 204));
-        jButton1.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
-        jButton1.setText("Collect Medical History");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        collectMedicalHistory_btn.setBackground(new java.awt.Color(255, 204, 204));
+        collectMedicalHistory_btn.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
+        collectMedicalHistory_btn.setText("Collect Medical History");
+        collectMedicalHistory_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                collectMedicalHistory_btnActionPerformed(evt);
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(255, 204, 204));
-        jButton2.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
-        jButton2.setText("Assign to me");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        assignToMebtn.setBackground(new java.awt.Color(255, 204, 204));
+        assignToMebtn.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
+        assignToMebtn.setText("Assign to me");
+        assignToMebtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                assignToMebtnActionPerformed(evt);
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(255, 204, 204));
-        jButton3.setFont(new java.awt.Font("Georgia", 0, 13)); // NOI18N
-        jButton3.setText("View Lab Result");
+        vw_labbtn.setBackground(new java.awt.Color(255, 204, 204));
+        vw_labbtn.setFont(new java.awt.Font("Georgia", 0, 13)); // NOI18N
+        vw_labbtn.setText("View Lab Result");
 
         jButton4.setBackground(new java.awt.Color(255, 204, 204));
         jButton4.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
@@ -76,13 +99,13 @@ public class DoctorAppointmentRequestsPanel extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(vw_labbtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(assignToMebtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton1))))
+                            .addComponent(collectMedicalHistory_btn))))
                 .addGap(16, 16, 16))
         );
         jPanel1Layout.setVerticalGroup(
@@ -91,11 +114,11 @@ public class DoctorAppointmentRequestsPanel extends javax.swing.JPanel {
                 .addGap(30, 30, 30)
                 .addComponent(jButton4)
                 .addGap(46, 46, 46)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(collectMedicalHistory_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(58, 58, 58)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(assignToMebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(64, 64, 64)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(vw_labbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(180, Short.MAX_VALUE))
         );
 
@@ -103,7 +126,7 @@ public class DoctorAppointmentRequestsPanel extends javax.swing.JPanel {
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        docWorkRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -114,7 +137,7 @@ public class DoctorAppointmentRequestsPanel extends javax.swing.JPanel {
                 "Message", "Request Intended By", "Request Received By", "Status", "Date"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(docWorkRequestJTable);
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 153));
         jLabel1.setFont(new java.awt.Font("Georgia", 1, 24)); // NOI18N
@@ -155,30 +178,126 @@ public class DoctorAppointmentRequestsPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void assignToMebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignToMebtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+        
+        String status;
+
+        int selectedRow = docWorkRequestJTable.getSelectedRow();
+        
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(null, "Please select a patient first", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        } else {
+            status = (String) docWorkRequestJTable.getValueAt(selectedRow, 3);
+
+            if (status.equals("Sent By Patient")) {
+                WorkRequest request = (WorkRequest) docWorkRequestJTable.getValueAt(selectedRow, 0);
+                request.setReceiver(userAccount);
+                request.setStatus("Assigned To Doc");
+                
+
+                populateRequestTable();
+            } else if (status.equals("Assigned To Doc")) {
+                JOptionPane.showMessageDialog(null, "Request is already with you" + "\n"
+                        + "Now start capturing medical history", "Warning", JOptionPane.WARNING_MESSAGE);
+
+                return;
+            } else if (status.equals("Med Hist Coll Req")) {
+                JOptionPane.showMessageDialog(null, "Already Collected Medical History" + "\n"
+                        + "No Action Needed", "Warning", JOptionPane.WARNING_MESSAGE);
+
+                return;
+            } else {
+                JOptionPane.showMessageDialog(null, "Request is not with you", "Warning", JOptionPane.WARNING_MESSAGE);
+
+                return;
+            }
+
+        }
+        
+    }//GEN-LAST:event_assignToMebtnActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
+         populateRequestTable();
     }//GEN-LAST:event_jButton4ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void collectMedicalHistory_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_collectMedicalHistory_btnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+        
+        PatientAppointmentRequest par = new PatientAppointmentRequest();
+        String status;
+        int selectedRow = docWorkRequestJTable.getSelectedRow();
+        
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(null, "Please select a patient first", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        String s = (String) docWorkRequestJTable.getValueAt(selectedRow, 3);
+        
+        if (s.equals("Assigned To Doc")) {
 
+            PatientAppointmentRequest request = (PatientAppointmentRequest) docWorkRequestJTable.getValueAt(selectedRow, 0);
+
+            //  request.setStatus("Med Hist Coll Req");
+            //  ProcessAppointmentRequestJPanel processAppointmentRequestJPanel = new ProcessAppointmentRequestJPanel(userProcessContainer, request, userAccount,enterprise);
+            DoctorPatientMedicalHistoryPanel processAppointmentRequestJPanel = new DoctorPatientMedicalHistoryPanel( request, userAccount, enterprise);
+            jSplitPane1.setRightComponent(processAppointmentRequestJPanel);
+            assignToMebtn.setEnabled(false);
+            
+//            userProcessContainer.add("processWorkRequestJPanel", processAppointmentRequestJPanel);
+//            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+//
+//            layout.next(userProcessContainer);
+
+        } else if (s.equals("Med Hist Coll Req")) {
+            JOptionPane.showMessageDialog(null, "Medical history already collected" + "\n"
+                    + "No action required", "Error", JOptionPane.WARNING_MESSAGE);
+            return;
+        } else {
+            JOptionPane.showMessageDialog(null, "Request is not with you" + "\n"
+                    + "No action needed", "Error", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        
+    }//GEN-LAST:event_collectMedicalHistory_btnActionPerformed
+
+    
+    public void populateRequestTable() {
+
+        DefaultTableModel model = (DefaultTableModel) docWorkRequestJTable.getModel();
+
+        model.setRowCount(0);
+        for (WorkRequest request : organization.getWorkQueue().getWorkRequestList()) {
+            Object[] row = new Object[5];
+            //    row[0] = request.getMessage();
+            row[0] = request;
+            row[1] = request.getSender().getUserName();
+            row[2] = request.getReceiver();
+            String result = request.getStatus();
+            // System.out.println(result);
+            row[3] = result == null ? "Waiting" : result;
+
+            row[4] = request.getRequestDate();
+
+            model.addRow(row);
+
+        }
+
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton assignToMebtn;
+    private javax.swing.JButton collectMedicalHistory_btn;
+    private javax.swing.JTable docWorkRequestJTable;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSplitPane jSplitPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JButton vw_labbtn;
     // End of variables declaration//GEN-END:variables
 
 }
