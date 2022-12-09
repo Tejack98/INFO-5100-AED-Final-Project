@@ -9,6 +9,7 @@ import healthcare.enterprise.Enterprise;
 import healthcare.network.Network;
 import healthcare.organization.Organization;
 import healthcare.userAccount.UserAccount;
+import healthcare.workQueue.WorkRequest;
 import userinterface.HealthcareInterface.healthcareAdmin.doctor.HealthCareAdminDoctorPanel;
 
 /**
@@ -196,8 +197,8 @@ public class DoctorWorkArea extends javax.swing.JFrame {
 
     private void Pat_Med_His_btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pat_Med_His_btn1ActionPerformed
         // TODO add your handling code here:]
-        RequestPharmacistForMedicinePanel rpfm = new RequestPharmacistForMedicinePanel();
-        jSplitPaneSystem.setRightComponent(rpfm);
+//        RequestPharmacistForMedicinePanel rpfm = new RequestPharmacistForMedicinePanel(request, Network network, UserAccount userAccount,Enterprise enterprise);
+//        jSplitPaneSystem.setRightComponent(rpfm);
     }//GEN-LAST:event_Pat_Med_His_btn1ActionPerformed
 
     /**
