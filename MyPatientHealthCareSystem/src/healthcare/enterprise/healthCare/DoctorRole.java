@@ -34,7 +34,7 @@ public class DoctorRole extends Role {
     public JFrame createWorkArea(UserAccount userAccount, Organization organization, Enterprise enterprise, Ecosystem ecosystem, Network network) {
         return new DoctorWorkArea(userAccount,organization,enterprise,ecosystem,network);       
     }
-
+    
     public String getSpeciality() {
         return speciality;
     }
