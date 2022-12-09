@@ -279,7 +279,7 @@ public class DoctorAppointmentRequestsPanel extends javax.swing.JPanel {
         }
         WorkRequest request = (WorkRequest) docWorkRequestJTable.getValueAt(selectedRow, 0);
 
-         ViewLabResults viewLabResultcases = new ViewLabResults(jPanel2,request, network, enterprise, userAccount);
+         ViewLabResults viewLabResultcases = new ViewLabResults(request, network, enterprise, userAccount);
          jSplitPane1.setRightComponent(viewLabResultcases);
          populateRequestTable();
     }//GEN-LAST:event_vw_labbtnActionPerformed

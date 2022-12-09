@@ -245,6 +245,8 @@ public class LabTechnicianViewRequestsJPanel extends javax.swing.JPanel {
         
         jScrollPane2.removeAll();
         jScrollPane2.add(processWorkRequestJPanel);
+        jScrollPane2.revalidate();
+        jScrollPane2.repaint();
     }//GEN-LAST:event_processJButtonActionPerformed
 
     private void assignJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignJButtonActionPerformed

@@ -64,6 +64,15 @@ public class EnterpriseMasterDirectory {
             enterpriseList.add(enterprise);
         }
         
+        if (Enterprise.EnterpriseType.EmergencyUnit == enterpriseType) {
+            enterprise = new SupplyChainEnterprise(name);
+            enterpriseList.add(enterprise);
+        }
+        if (Enterprise.EnterpriseType.Vaccination == enterpriseType) {
+            enterprise = new SupplyChainEnterprise(name);
+            enterpriseList.add(enterprise);
+        }
+        
         return enterprise;
     }
     
