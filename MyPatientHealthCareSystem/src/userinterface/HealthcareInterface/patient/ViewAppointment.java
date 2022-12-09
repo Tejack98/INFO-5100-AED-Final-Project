@@ -11,6 +11,7 @@ import healthcare.organization.Organization;
 import healthcare.userAccount.UserAccount;
 import healthcare.workQueue.PatientAppointmentRequest;
 import healthcare.workQueue.WorkRequest;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 
@@ -70,7 +71,8 @@ public class ViewAppointment extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         appointmentsTable = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
+        vwDiganosisBtn = new javax.swing.JButton();
+        txtDiagnose = new javax.swing.JLabel();
 
         jPanel1.setBackground(new java.awt.Color(255, 204, 204));
 
@@ -100,35 +102,43 @@ public class ViewAppointment extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(appointmentsTable);
 
-        jButton1.setBackground(new java.awt.Color(153, 204, 255));
-        jButton1.setText("Update Date");
+        vwDiganosisBtn.setBackground(new java.awt.Color(153, 204, 255));
+        vwDiganosisBtn.setText("View Diagnosis");
+        vwDiganosisBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                vwDiganosisBtnActionPerformed(evt);
+            }
+        });
+
+        txtDiagnose.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGap(36, 36, 36)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 421, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                        .addGap(36, 36, 36)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton1)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 421, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(53, Short.MAX_VALUE))
+                        .addComponent(vwDiganosisBtn)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtDiagnose, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(41, 41, 41)
+                .addGap(45, 45, 45)
                 .addComponent(jLabel1)
-                .addGap(35, 35, 35)
+                .addGap(31, 31, 31)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addComponent(jButton1)
-                .addContainerGap(161, Short.MAX_VALUE))
+                .addGap(34, 34, 34)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(vwDiganosisBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtDiagnose, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(157, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -143,12 +153,27 @@ public class ViewAppointment extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void vwDiganosisBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vwDiganosisBtnActionPerformed
+        // TODO add your handling code here:
+        
+        int selectedRow = appointmentsTable.getSelectedRow();
+        String status;
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(null, "Please select a row", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }       
+        WorkRequest request = (WorkRequest) appointmentsTable.getValueAt(selectedRow, 0);
+      
+        txtDiagnose.setText(request.getDiagnose());
+    }//GEN-LAST:event_vwDiganosisBtnActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable appointmentsTable;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel txtDiagnose;
+    private javax.swing.JButton vwDiganosisBtn;
     // End of variables declaration//GEN-END:variables
 }

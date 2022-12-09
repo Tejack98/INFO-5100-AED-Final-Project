@@ -15,6 +15,11 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import static userinterface.HealthcareInterface.doctor.DoctorWorkArea.enterprise;
+import static userinterface.HealthcareInterface.doctor.DoctorWorkArea.network;
+import static userinterface.HealthcareInterface.doctor.DoctorWorkArea.organization;
+import static userinterface.HealthcareInterface.doctor.DoctorWorkArea.userAccount;
 
 /**
  *
@@ -173,7 +178,7 @@ public class DoctorPatientMedicalHistoryPanel extends javax.swing.JPanel {
         oxycChk = new javax.swing.JCheckBox();
         jPanel6 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        backBtn = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
@@ -253,11 +258,11 @@ public class DoctorPatientMedicalHistoryPanel extends javax.swing.JPanel {
         jLabel9.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
         jLabel9.setText("Fill Patient Medical History & Symptoms");
 
-        jButton2.setBackground(new java.awt.Color(71, 120, 197));
-        jButton2.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        backBtn.setBackground(new java.awt.Color(71, 120, 197));
+        backBtn.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        backBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                backBtnActionPerformed(evt);
             }
         });
 
@@ -267,7 +272,7 @@ public class DoctorPatientMedicalHistoryPanel extends javax.swing.JPanel {
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGap(15, 15, 15)
-                .addComponent(jButton2)
+                .addComponent(backBtn)
                 .addGap(37, 37, 37)
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 535, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -280,7 +285,7 @@ public class DoctorPatientMedicalHistoryPanel extends javax.swing.JPanel {
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addComponent(jLabel9)
                         .addGap(0, 14, Short.MAX_VALUE))
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(backBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -674,7 +679,7 @@ public class DoctorPatientMedicalHistoryPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(intoChk)
                     .addComponent(withCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(withChk)
                     .addComponent(intoCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -710,10 +715,15 @@ public class DoctorPatientMedicalHistoryPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_oxycChkActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
         // TODO add your handling code here:
-    
-    }//GEN-LAST:event_jButton2ActionPerformed
+        JPanel parentPanel = (JPanel) jLabel2.getParent();
+        parentPanel.repaint();
+        parentPanel.revalidate();
+        
+        DoctorAppointmentRequestsPanel req = new DoctorAppointmentRequestsPanel(userAccount,organization, enterprise,network);
+       
+    }//GEN-LAST:event_backBtnActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
@@ -1013,6 +1023,7 @@ public class DoctorPatientMedicalHistoryPanel extends javax.swing.JPanel {
     private javax.swing.JComboBox ageCombo;
     private javax.swing.JCheckBox alcoholChk;
     private javax.swing.JCheckBox anxietyChk;
+    private javax.swing.JButton backBtn;
     private javax.swing.JComboBox bpCombo;
     private javax.swing.JCheckBox bupChk;
     private javax.swing.JComboBox bupCombo;
@@ -1028,7 +1039,6 @@ public class DoctorPatientMedicalHistoryPanel extends javax.swing.JPanel {
     private javax.swing.JCheckBox intoChk;
     private javax.swing.JComboBox intoCombo;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

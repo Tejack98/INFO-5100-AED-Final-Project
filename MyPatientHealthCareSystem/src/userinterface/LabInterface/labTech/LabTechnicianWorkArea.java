@@ -5,6 +5,11 @@
 package userinterface.LabInterface.labTech;
 
 import healthcare.Ecosystem;
+import healthcare.enterprise.Enterprise;
+import healthcare.enterprise.lab.LabOrganization;
+import healthcare.network.Network;
+import healthcare.organization.Organization;
+import healthcare.userAccount.UserAccount;
 
 /**
  *
@@ -15,10 +20,19 @@ public class LabTechnicianWorkArea extends javax.swing.JFrame {
     /**
      * Creates new form LabTechnicianWorkArea
      */
+    static UserAccount userAccount;
+    static Organization labOrganization;
+    static Enterprise enterprise;
     static Ecosystem ecosystem;
-    public LabTechnicianWorkArea(Ecosystem ecosystem) {
+    static Network network;
+    public LabTechnicianWorkArea(Ecosystem ecosystem, UserAccount userAccount,
+            Organization organization, Enterprise enterprise, Network network) {
         initComponents();
+        this.userAccount = userAccount;
         this.ecosystem = ecosystem;
+        this.labOrganization = (LabOrganization) organization;
+        this.enterprise = enterprise;
+        this.network = network;
     }
 
     /**
@@ -35,7 +49,7 @@ public class LabTechnicianWorkArea extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         viewLabRequest_btn = new javax.swing.JButton();
         ViewLabDetails_btn = new javax.swing.JButton();
-        viewCollectedMedHistory_btn = new javax.swing.JButton();
+        btnLogout = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -60,10 +74,11 @@ public class LabTechnicianWorkArea extends javax.swing.JFrame {
             }
         });
 
-        viewCollectedMedHistory_btn.setText("View Collected Medical History");
-        viewCollectedMedHistory_btn.addActionListener(new java.awt.event.ActionListener() {
+        btnLogout.setBackground(new java.awt.Color(255, 204, 204));
+        btnLogout.setText("Logout");
+        btnLogout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                viewCollectedMedHistory_btnActionPerformed(evt);
+                btnLogoutActionPerformed(evt);
             }
         });
 
@@ -75,10 +90,13 @@ public class LabTechnicianWorkArea extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(viewCollectedMedHistory_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ViewLabDetails_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(viewLabRequest_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(19, 19, 19))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -89,9 +107,9 @@ public class LabTechnicianWorkArea extends javax.swing.JFrame {
                 .addComponent(viewLabRequest_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(ViewLabDetails_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(viewCollectedMedHistory_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(180, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 220, Short.MAX_VALUE)
+                .addComponent(btnLogout)
+                .addGap(23, 23, 23))
         );
 
         jSplitPane.setLeftComponent(jPanel1);
@@ -125,7 +143,7 @@ public class LabTechnicianWorkArea extends javax.swing.JFrame {
 
     private void viewLabRequest_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewLabRequest_btnActionPerformed
         // TODO add your handling code here:
-        LabTechnicianViewRequestsJPanel ltvr =  new LabTechnicianViewRequestsJPanel();
+        LabTechnicianViewRequestsJPanel ltvr =  new LabTechnicianViewRequestsJPanel(ecosystem,userAccount,labOrganization, enterprise, network);
         jSplitPane.setRightComponent(ltvr);
         
     }//GEN-LAST:event_viewLabRequest_btnActionPerformed
@@ -136,11 +154,10 @@ public class LabTechnicianWorkArea extends javax.swing.JFrame {
         jSplitPane.setRightComponent(viewLabDetails);
     }//GEN-LAST:event_ViewLabDetails_btnActionPerformed
 
-    private void viewCollectedMedHistory_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewCollectedMedHistory_btnActionPerformed
+    private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
         // TODO add your handling code here:
-        CollectedMedicalHistory cmh =  new CollectedMedicalHistory();
-        jSplitPane.setRightComponent(cmh);
-    }//GEN-LAST:event_viewCollectedMedHistory_btnActionPerformed
+        dispose();
+    }//GEN-LAST:event_btnLogoutActionPerformed
 
     /**
      * @param args the command line arguments
@@ -172,18 +189,18 @@ public class LabTechnicianWorkArea extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new LabTechnicianWorkArea(ecosystem).setVisible(true);
+                new LabTechnicianWorkArea(ecosystem,userAccount, labOrganization, enterprise, network).setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ViewLabDetails_btn;
+    private javax.swing.JButton btnLogout;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSplitPane jSplitPane;
-    private javax.swing.JButton viewCollectedMedHistory_btn;
     private javax.swing.JButton viewLabRequest_btn;
     // End of variables declaration//GEN-END:variables
 }
