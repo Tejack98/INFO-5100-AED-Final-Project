@@ -82,6 +82,11 @@ public class DoctorAppointmentRequestsPanel extends javax.swing.JPanel {
         vw_labbtn.setBackground(new java.awt.Color(255, 204, 204));
         vw_labbtn.setFont(new java.awt.Font("Georgia", 0, 13)); // NOI18N
         vw_labbtn.setText("View Lab Result");
+        vw_labbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                vw_labbtnActionPerformed(evt);
+            }
+        });
 
         jButton4.setBackground(new java.awt.Color(255, 204, 204));
         jButton4.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
@@ -141,16 +146,16 @@ public class DoctorAppointmentRequestsPanel extends javax.swing.JPanel {
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 153));
         jLabel1.setFont(new java.awt.Font("Georgia", 1, 24)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Appointment Requests");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(19, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 467, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 486, Short.MAX_VALUE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -161,7 +166,7 @@ public class DoctorAppointmentRequestsPanel extends javax.swing.JPanel {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(277, Short.MAX_VALUE))
+                .addContainerGap(278, Short.MAX_VALUE))
         );
 
         jSplitPane1.setRightComponent(jPanel2);
@@ -262,6 +267,22 @@ public class DoctorAppointmentRequestsPanel extends javax.swing.JPanel {
         }
         
     }//GEN-LAST:event_collectMedicalHistory_btnActionPerformed
+
+    private void vw_labbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vw_labbtnActionPerformed
+        // TODO add your handling code here:
+        String status;
+        int selectedRow = docWorkRequestJTable.getSelectedRow();
+
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(null, "Please select a patient first", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        WorkRequest request = (WorkRequest) docWorkRequestJTable.getValueAt(selectedRow, 0);
+
+         ViewLabResults viewLabResultcases = new ViewLabResults(jPanel2,request, network, enterprise, userAccount);
+         jSplitPane1.setRightComponent(viewLabResultcases);
+         populateRequestTable();
+    }//GEN-LAST:event_vw_labbtnActionPerformed
 
     
     public void populateRequestTable() {
