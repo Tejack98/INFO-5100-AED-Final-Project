@@ -49,15 +49,7 @@ public class Configsystem {
         UserAccount la_user = ecosystem.getUserAccountDirectory().createUserAccount(5555,"ladmin", "ladmin", labAdmin, lar ,"labadmin@g.com");
         UserAccount lassist = ecosystem.getUserAccountDirectory().createUserAccount(6666,"lassist", "lassist", labAssist, lassistr ,"labadmin@g.com");
         
-        
-        //========================Donor=========================================================
-        
-        Person dadmin = ecosystem.getPersonDirectory().createAndAddPerson("tej","75 Saint Alphonso","Boston","MA",Long.parseLong("02120"),Long.parseLong("8576938034"));
-        Person donor = ecosystem.getPersonDirectory().createAndAddPerson("Shr","75 Saint Alphonso","Boston","MA",Long.parseLong("02120"),Long.parseLong("8576938034"));
-        
-        UserAccount daminUser = ecosystem.getUserAccountDirectory().createUserAccount(7777,"dadmin", "dadmin", dadmin, new DonorAdminRole() ,"labadmin@g.com");
-        UserAccount donor_user = ecosystem.getUserAccountDirectory().createUserAccount(8888,"donor", "donor", donor, new DonorRole() ,"labadmin@g.com");
-        
+              
         //=====================================================================================
        
         Network network = ecosystem.createAndAddNetwork();
@@ -76,11 +68,14 @@ public class Configsystem {
         Organization orgdoc = enterprise.getOrganizationDirectory().createNewOrganization(Organization.OrganizationType.Doctor);
         Organization orgnurse = enterprise.getOrganizationDirectory().createNewOrganization(Organization.OrganizationType.Nurse);
         Organization orgpat = enterprise.getOrganizationDirectory().createNewOrganization(Organization.OrganizationType.Patient);
+        Organization orglab = enterprise4.getOrganizationDirectory().createNewOrganization(Organization.OrganizationType.Lab);
+        Organization orgDonor = enterprise2.getOrganizationDirectory().createNewOrganization(Organization.OrganizationType.DonorBank);
         
         Person person = orgdoc.getPersonDirectory().createAndAddPerson("tej","75 Saint Alphonso","Boston","MA",Long.parseLong("02120"),Long.parseLong("8576938034")); 
         Person person2 = enterprise.getPersonDirectory().createAndAddPerson("tej","75 Saint Alphonso","Boston","MA",Long.parseLong("02120"),Long.parseLong("8576938034")); 
         Person person3 = orgnurse.getPersonDirectory().createAndAddPerson("Pan","75 Saint Alphonso","Boston","MA",Long.parseLong("02120"),Long.parseLong("8576938034"));
         Person person4 = orgpat.getPersonDirectory().createAndAddPerson("mat","75 Saint Alphonso","Boston","MA",Long.parseLong("02120"),Long.parseLong("8576938034"));
+        Person person5 = orglab.getPersonDirectory().createAndAddPerson("Mak","75 Saint Alphonso","Boston","MA",Long.parseLong("02120"),Long.parseLong("8576938034"));
         
         DoctorRole d1 = new DoctorRole();
         d1.setHospitalName("myHospital");
@@ -94,7 +89,14 @@ public class Configsystem {
         UserAccount u2 = enterprise.getUserAccountDirectory().createUserAccount(1111,"hadmin", "hadmin", person2,new HealthCareAdminRole(),"t@g.com");
         UserAccount u3 = orgpat.getUserAccountDirectory().createUserAccount(2222,"pat", "pat", person3, new PatientRole(),"s@g.com");
         UserAccount u4 = orgnurse.getUserAccountDirectory().createUserAccount(3333,"nurse", "nurse", person4, new NurseRole() ,"s@g.com");
+        UserAccount u5 = orglab.getUserAccountDirectory().createUserAccount(3333,"alab", "alab", person5, new LabAdminRole() ,"s@g.com");
         
+
+        Person dadmin = orgDonor.getPersonDirectory().createAndAddPerson("tej","75 Saint Alphonso","Boston","MA",Long.parseLong("02120"),Long.parseLong("8576938034"));
+        Person donor = orgDonor.getPersonDirectory().createAndAddPerson("Shr","75 Saint Alphonso","Boston","MA",Long.parseLong("02120"),Long.parseLong("8576938034"));
+        
+        UserAccount daminUser = orgDonor.getUserAccountDirectory().createUserAccount(7777,"dadmin", "dadmin", dadmin, new DonorAdminRole() ,"labadmin@g.com");
+        UserAccount donor_user = orgDonor.getUserAccountDirectory().createUserAccount(8888,"donor", "donor", donor, new DonorRole() ,"labadmin@g.com");
         
         return ecosystem;
     }

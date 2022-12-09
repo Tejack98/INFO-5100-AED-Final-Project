@@ -4,6 +4,14 @@
  */
 package userinterface.LabInterface.labTech;
 
+import healthcare.enterprise.Enterprise;
+import healthcare.network.Network;
+import healthcare.organization.Organization;
+import healthcare.userAccount.UserAccount;
+import healthcare.workQueue.DoctorLabRequest;
+import healthcare.workQueue.WorkRequest;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author adity
@@ -13,8 +21,20 @@ public class CollectedMedicalHistory extends javax.swing.JPanel {
     /**
      * Creates new form CollectedMedicalHistory
      */
-    public CollectedMedicalHistory() {
+    
+    DoctorLabRequest request;
+    UserAccount useraccount;
+    Enterprise enterprise;
+    String result = "";
+    String solution = "";
+    String type = "";
+    
+    public CollectedMedicalHistory(DoctorLabRequest request,UserAccount useraccount, Enterprise enterprise) {
         initComponents();
+        this.request = request;
+        this.useraccount = useraccount;
+        this.enterprise = enterprise;
+        populateMedicalHistory();
     }
 
     /**
@@ -33,7 +53,6 @@ public class CollectedMedicalHistory extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         txtName = new javax.swing.JTextField();
-        cboxGender = new javax.swing.JComboBox<>();
         txtAge = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -48,6 +67,7 @@ public class CollectedMedicalHistory extends javax.swing.JPanel {
         jScrollPane4 = new javax.swing.JScrollPane();
         txtLabAssesmentsResults = new javax.swing.JTextArea();
         btnSendResults = new javax.swing.JButton();
+        txtGender = new javax.swing.JTextField();
 
         jLabel6.setText("jLabel6");
 
@@ -71,8 +91,6 @@ public class CollectedMedicalHistory extends javax.swing.JPanel {
                 txtNameActionPerformed(evt);
             }
         });
-
-        cboxGender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel7.setText("Medical History");
@@ -109,6 +127,12 @@ public class CollectedMedicalHistory extends javax.swing.JPanel {
             }
         });
 
+        txtGender.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtGenderActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -124,10 +148,11 @@ public class CollectedMedicalHistory extends javax.swing.JPanel {
                             .addComponent(jLabel5)
                             .addComponent(jLabel3))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtAge)
-                            .addComponent(cboxGender, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(txtAge)
+                                .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtGender, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -164,7 +189,7 @@ public class CollectedMedicalHistory extends javax.swing.JPanel {
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel4)
-                                    .addComponent(cboxGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(txtGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel5)
@@ -194,12 +219,155 @@ public class CollectedMedicalHistory extends javax.swing.JPanel {
 
     private void btnSendResultsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSendResultsActionPerformed
         // TODO add your handling code here:
+        if (request.isDrug_history() || request.isAlcohol_history()
+                || request.isHr_risk() || request.isTemp_risk()
+                || (request.isOxycodone_taken() && request.isOxycodone_risk())
+                || (request.isFantanyl_taken() && request.isFantanyl_risk())
+                || (request.isBupre_taken() && request.isBupre_risk())
+                || (request.isMethadone_taken() && request.isMethadone_risk())
+                || (request.isOxymorphone_taken() && request.isOxymorphone_risk())
+                || (request.isInjection_checked()) || (request.isIntoxication_checked())
+                || request.isWithdrawal_checked() || request.isDisease_checked()) {
+            type = "Overdose [Pharmacotherapist]";
+            result = result + "This is an Opioid Overdose case.";
+            solution = "Patient is recommended for Pharmacotherapist.";
+            request.setStatus("Lab req done");
+
+        } // Send to Psychiatrist when the below criteria is true 
+        else if (request.isDepression_history() || request.isAnxiety_history()
+                || request.isDisrupt_history() || request.isBp_risk() || request.isResp_risk()) {
+            type = "Overdose [Psychiatrist]";
+            result = result + "This is an Opioid Overdose case.";
+            solution = "Patient is recommended for Psychiatrist.";
+            request.setStatus("Lab req done");
+
+        } // If not any above criteria then patient can be treated medically 
+        else {
+            type = "Not Overdose [Medical Treatment]";
+            result = result + "This is not an Opioid Overdose case." + "\n"
+                    + "Patient is recommended for medical treatment .";
+            solution = "Patient is recommended for medical treatm.";
+            request.setStatus("Lab req done");
+
+        }
+
+        txtLabAssesmentsResults.setText(result);
+        /*-----------------------*/
+        int b = request.getHashcode();
+        System.out.println("b" + b);
+        //Dharati
+        Enterprise inEnterprise = null;
+        Organization inOrganization = null;
+        Network inNetwork = null;
+        for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()) {
+            if (organization.getOrganizationName().equals("Doctor Organization")) {
+                for (WorkRequest work : organization.getWorkQueue().getWorkRequestList()) {
+                    if (work.getHashcode() == b) {
+                        work.setStatus("Lab req done");
+                        work.setLabresult(result);
+                        work.setResulttype(type);
+                        work.setSolution(solution);
+                    }
+
+                }
+            }
+        }
+
+        JOptionPane.showMessageDialog(null, "Result Sent Successfully");
+        
     }//GEN-LAST:event_btnSendResultsActionPerformed
 
+    private void txtGenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtGenderActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtGenderActionPerformed
+
+    
+    public void populateMedicalHistory() {
+
+        txtName.setText(request.getName());
+        txtGender.setText(request.getGender());
+        txtAge.setText(Integer.toString(request.getAge()));
+        String med_hist = "";
+        String health_risk = "";
+        String consum_risk = "";
+        if (request.isDrug_history()) {
+            med_hist = "Drug History Found" + "\n";
+
+        }
+
+        if (request.isAlcohol_history()) {
+            med_hist = med_hist + "Alcohol History Found" + "\n";
+
+        }
+
+        if (request.isDepression_history()) {
+            med_hist = med_hist + "Depression History Found" + "\n";
+        }
+
+        if (request.isAnxiety_history()) {
+            med_hist = med_hist + "Anxiety History Found" + "\n";
+        }
+        if (request.isDisrupt_history()) {
+            med_hist = med_hist + "Bad Social Relationships History Found" + "\n";
+        }
+        if (med_hist.length() > 0) {
+            result = result + med_hist;
+            txtMedicalHistory.setText(med_hist);
+        } else {
+            txtMedicalHistory.setText("No Severe Medical History Found");
+        }
+
+        if (request.isHr_risk()) {
+            health_risk = "Heart Risk Found" + "\n";
+        }
+
+        if (request.isBp_risk()) {
+            health_risk = "High Blood Pressure Diagnosed" + "\n";
+        }
+
+        if (request.isTemp_risk()) {
+            health_risk = health_risk + "Fever Diagnosed" + "\n";
+        }
+
+        if (request.isResp_risk()) {
+            health_risk = health_risk + "High Respiratory Rate Diagnosed" + "\n";
+        }
+        if (health_risk.length() > 0) {
+            txtCurrentHealthRiskFound.setText(health_risk);
+        } else {
+            txtCurrentHealthRiskFound.setText("No Sever Health Risk Detected");
+        }
+
+        // Calculating consumption risk 
+        if (request.isOxycodone_taken() && request.isOxycodone_risk()) {
+            consum_risk = "Above Limit Oxycodone Conspumtion History" + "\n";
+        }
+
+        if (request.isFantanyl_taken() && request.isFantanyl_risk()) {
+            consum_risk = consum_risk + "Above Limit Fantanyl Conspumtion History" + "\n";
+        }
+
+        if (request.isBupre_taken() && request.isBupre_risk()) {
+            consum_risk = consum_risk + "Above Limit Buprenorphine Conspumtion History" + "\n";
+        }
+
+        if (request.isMethadone_taken() && request.isMethadone_risk()) {
+            consum_risk = consum_risk + "Above Limit Methadon Conspumtion History" + "\n";
+        }
+
+        if (request.isOxymorphone_taken() && request.isOxymorphone_risk()) {
+            consum_risk = consum_risk + "Above Limit Oxymorphone Conspumtion History" + "\n";
+        }
+        if (consum_risk.length() > 0) {
+            txtMedicalDoseConsumptionDetails.setText(consum_risk);
+        } else {
+            txtMedicalDoseConsumptionDetails.setText("No severe medicine consumption history found");
+        }
+
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSendResults;
-    private javax.swing.JComboBox<String> cboxGender;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -216,6 +384,7 @@ public class CollectedMedicalHistory extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTextField txtAge;
     private javax.swing.JTextArea txtCurrentHealthRiskFound;
+    private javax.swing.JTextField txtGender;
     private javax.swing.JTextArea txtLabAssesmentsResults;
     private javax.swing.JTextArea txtMedicalDoseConsumptionDetails;
     private javax.swing.JTextArea txtMedicalHistory;

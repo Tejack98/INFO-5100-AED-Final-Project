@@ -28,7 +28,7 @@ public class LabAssistantRole extends Role{
     
     @Override
     public JFrame createWorkArea(UserAccount userAccount, Organization organization, Enterprise enterprise, Ecosystem ecosystem, Network network) { 
-        return new LabTechnicianWorkArea(ecosystem);       
+        return new LabTechnicianWorkArea(ecosystem, userAccount,organization,enterprise,network);       
     }
     
 }
