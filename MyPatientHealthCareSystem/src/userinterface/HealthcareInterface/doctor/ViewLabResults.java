@@ -8,6 +8,9 @@ import healthcare.enterprise.Enterprise;
 import healthcare.network.Network;
 import healthcare.userAccount.UserAccount;
 import healthcare.workQueue.WorkRequest;
+import java.awt.CardLayout;
+import javax.swing.GroupLayout;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -19,18 +22,22 @@ public class ViewLabResults extends javax.swing.JPanel {
     /**
      * Creates new form ViewLabResults
      */
+    
+    JPanel userProcessContainer;
     WorkRequest patientrequest;
     Network network;
     Enterprise enterprise;
     UserAccount userAccount;
     String emailId=null;
     
-    public ViewLabResults(WorkRequest request, Network network, Enterprise enterprise, UserAccount userAccount) {
+    public ViewLabResults(JPanel container,WorkRequest request, Network network, Enterprise enterprise, UserAccount userAccount) {
         initComponents();
         this.patientrequest = request;
+        this.userProcessContainer = container;
         this.network = network;
         this.enterprise = enterprise;
         this.userAccount = userAccount;
+        popupResult();
     }
 
     /**
@@ -44,12 +51,14 @@ public class ViewLabResults extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
         result_txt = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        resulttxt = new javax.swing.JTextField();
         result_txt1 = new javax.swing.JLabel();
         solutionByLabtxt = new javax.swing.JTextField();
         result_txt2 = new javax.swing.JLabel();
         resultTypetxt = new javax.swing.JTextField();
         prescriptionBtn = new javax.swing.JButton();
+        backBtn = new javax.swing.JButton();
+        txtName = new javax.swing.JTextField();
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -68,6 +77,19 @@ public class ViewLabResults extends javax.swing.JPanel {
             }
         });
 
+        backBtn.setText("Back");
+        backBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backBtnActionPerformed(evt);
+            }
+        });
+
+        txtName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNameActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -82,25 +104,32 @@ public class ViewLabResults extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(result_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(resulttxt, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(result_txt1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(prescriptionBtn)
                             .addComponent(solutionByLabtxt, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtName))
                 .addContainerGap(168, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(backBtn)
+                .addGap(24, 24, 24))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(57, 57, 57)
                 .addComponent(jLabel1)
-                .addGap(33, 33, 33)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(result_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(resulttxt, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(result_txt2, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -111,26 +140,57 @@ public class ViewLabResults extends javax.swing.JPanel {
                     .addComponent(solutionByLabtxt, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29)
                 .addComponent(prescriptionBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(117, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addComponent(backBtn)
+                .addGap(20, 20, 20))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void prescriptionBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prescriptionBtnActionPerformed
         // TODO add your handling code here:
         
-    // RequestPharmacistForMedicinePanel medPanel = new RequestPharmacistForMedicinePanel(patientrequest, network, userAccount,  enterprise);
+        RequestPharmacistForMedicinePanel medPanel = new RequestPharmacistForMedicinePanel(userProcessContainer,patientrequest, network, userAccount, enterprise);
+
+        GroupLayout layout = (GroupLayout) userProcessContainer.getLayout();
+        layout.addLayoutComponent("processWorkRequestJPanel", medPanel);
+        layout.replace(this, medPanel);
+       
+        JOptionPane.showMessageDialog(null, "Request sent back to Doctor");
       
     }//GEN-LAST:event_prescriptionBtnActionPerformed
 
+    private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
+        // TODO add your handling code here:
+        userProcessContainer.remove(this);
+        GroupLayout layout = (GroupLayout)userProcessContainer.getLayout();
+        layout.removeLayoutComponent(userProcessContainer);
+        popupResult();
+    }//GEN-LAST:event_backBtnActionPerformed
 
+    private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNameActionPerformed
+
+    private void popupResult() {
+        
+        txtName.setText(patientrequest.getSender().getUserName());
+        resulttxt.setText(patientrequest.getLabresult());
+        resultTypetxt.setText(patientrequest.getResulttype());
+        solutionByLabtxt.setText(patientrequest.getSolution());
+        String category = resultTypetxt.getText();
+    }
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton backBtn;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JButton prescriptionBtn;
     private javax.swing.JTextField resultTypetxt;
     private javax.swing.JLabel result_txt;
     private javax.swing.JLabel result_txt1;
     private javax.swing.JLabel result_txt2;
+    private javax.swing.JTextField resulttxt;
     private javax.swing.JTextField solutionByLabtxt;
+    private javax.swing.JTextField txtName;
     // End of variables declaration//GEN-END:variables
 }
