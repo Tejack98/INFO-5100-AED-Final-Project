@@ -21,6 +21,62 @@ import userinterface.DonorBankInterface.donorAdmin.DonorAdminWorkArea;
  */
 public class DonorRole extends Role{
     
+    private String bloodType;
+    private String Occupation;
+    private String dateofbirth;
+    private String blooddonate;
+    private String sufferdisease;
+    private String priorallergies;
+    private String organdonate;
+
+    public String getOrgandonate() {
+        return organdonate;
+    }
+
+    public void setOrgandonate(String organdonate) {
+        this.organdonate = organdonate;
+    }
+
+    public String getOccupation() {
+        return Occupation;
+    }
+
+    public void setOccupation(String Occupation) {
+        this.Occupation = Occupation;
+    }
+
+    public String getDateofbirth() {
+        return dateofbirth;
+    }
+
+    public void setDateofbirth(String dateofbirth) {
+        this.dateofbirth = dateofbirth;
+    }
+
+    public String getBlooddonate() {
+        return blooddonate;
+    }
+
+    public void setBlooddonate(String blooddonate) {
+        this.blooddonate = blooddonate;
+    }
+
+    public String getSufferdisease() {
+        return sufferdisease;
+    }
+
+    public void setSufferdisease(String sufferdisease) {
+        this.sufferdisease = sufferdisease;
+    }
+
+    public String getPriorallergies() {
+        return priorallergies;
+    }
+
+    public void setPriorallergies(String priorallergies) {
+        this.priorallergies = priorallergies;
+    }
+    
     @Override
     public String toString() {
         return String.valueOf("Donor");
@@ -29,6 +85,14 @@ public class DonorRole extends Role{
     @Override
     public JFrame createWorkArea(UserAccount userAccount, Organization organization, Enterprise enterprise, Ecosystem ecosystem, Network network) { 
         return new DonorWorkArea(ecosystem,userAccount, organization, enterprise, network );       
+    }
+
+    public String getBloodType() {
+        return bloodType;
+    }
+
+    public void setBloodType(String bloodType) {
+        this.bloodType = bloodType;
     }
     
 }
