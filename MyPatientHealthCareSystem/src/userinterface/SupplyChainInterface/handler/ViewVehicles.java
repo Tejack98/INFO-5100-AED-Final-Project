@@ -3,14 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package userinterface.Pharmacy.pharmacist;
+package userinterface.SupplyChainInterface.handler;
 
 
+import userinterface.Pharmacy.pharmacist.*;
 import userinterface.LabInterface.labTech.*;
 import healthcare.Ecosystem;
 import healthcare.enterprise.Enterprise;
 import healthcare.enterprise.lab.LabOrganization;
 import healthcare.enterprise.pharmacy.PharmacyOrganization;
+import healthcare.enterprise.supplyChain.SupplierOrganization;
+import healthcare.enterprise.supplyChain.Vehicle;
 import healthcare.network.Network;
 import healthcare.organization.Organization;
 import healthcare.userAccount.UserAccount;
@@ -25,28 +28,28 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author tejas
  */
-public class PharmacistsViewRequestsJPanel extends javax.swing.JPanel {
+public class ViewVehicles extends javax.swing.JPanel {
 
     /**
      * Creates new form LabAssistantWorkAreaJPanel
      */
     
     UserAccount userAccount;
-    Organization pharmaOrganization;
+    SupplierOrganization suppOrganization;
     Enterprise enterprise;
     Ecosystem ecosystem;
     Network network;
 
-    public PharmacistsViewRequestsJPanel(Ecosystem ecosystem, UserAccount account,
+    public ViewVehicles(Ecosystem ecosystem, UserAccount account,
             Organization organization, Enterprise enterprise, Network network) {
         initComponents();
         this.userAccount = account;
         this.ecosystem = ecosystem;
-        this.pharmaOrganization = (PharmacyOrganization) organization;
+        this.suppOrganization = (SupplierOrganization) organization;
         this.enterprise = enterprise;
         this.network = network;
         lblname.setText(userAccount.getPerson().getPersonName());
-        populatePharmacistsRequestTable();
+        populateVehiclesTable();
     }
 
     /**
@@ -64,10 +67,9 @@ public class PharmacistsViewRequestsJPanel extends javax.swing.JPanel {
         jLabel6 = new javax.swing.JLabel();
         lblname = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        pharmaWorkRequestJTable = new javax.swing.JTable();
+        supplierChainVehicleJTable = new javax.swing.JTable();
         optionsPanel = new javax.swing.JPanel();
         refreshJButton = new javax.swing.JButton();
-        processJButton = new javax.swing.JButton();
         assignJButton = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
@@ -76,7 +78,7 @@ public class PharmacistsViewRequestsJPanel extends javax.swing.JPanel {
 
         jLabel6.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Pharmacy Requests Received");
+        jLabel6.setText("Book Vehicles");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -98,22 +100,22 @@ public class PharmacistsViewRequestsJPanel extends javax.swing.JPanel {
         lblname.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lblname.setText("Lab Assitant Name");
 
-        pharmaWorkRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
+        supplierChainVehicleJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Message", "Request Intended By", "Request Received By", "Status", "Date", "Med List"
+                "Name", "Type", "Description", "Number", "Status"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class
+                java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
+                false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -124,7 +126,7 @@ public class PharmacistsViewRequestsJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(pharmaWorkRequestJTable);
+        jScrollPane2.setViewportView(supplierChainVehicleJTable);
 
         javax.swing.GroupLayout actionPanelLayout = new javax.swing.GroupLayout(actionPanel);
         actionPanel.setLayout(actionPanelLayout);
@@ -165,17 +167,6 @@ public class PharmacistsViewRequestsJPanel extends javax.swing.JPanel {
             }
         });
 
-        processJButton.setBackground(new java.awt.Color(49, 84, 140));
-        processJButton.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        processJButton.setForeground(new java.awt.Color(255, 255, 255));
-        processJButton.setText("Process Requests");
-        processJButton.setBorder(null);
-        processJButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                processJButtonActionPerformed(evt);
-            }
-        });
-
         assignJButton.setBackground(new java.awt.Color(49, 84, 140));
         assignJButton.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         assignJButton.setForeground(new java.awt.Color(255, 255, 255));
@@ -195,7 +186,6 @@ public class PharmacistsViewRequestsJPanel extends javax.swing.JPanel {
                 .addGap(0, 28, Short.MAX_VALUE)
                 .addGroup(optionsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(assignJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(processJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(refreshJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26))
         );
@@ -204,11 +194,9 @@ public class PharmacistsViewRequestsJPanel extends javax.swing.JPanel {
             .addGroup(optionsPanelLayout.createSequentialGroup()
                 .addGap(87, 87, 87)
                 .addComponent(refreshJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24)
-                .addComponent(processJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(assignJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(565, Short.MAX_VALUE))
+                .addContainerGap(632, Short.MAX_VALUE))
         );
 
         jSplitPane1.setLeftComponent(optionsPanel);
@@ -227,43 +215,25 @@ public class PharmacistsViewRequestsJPanel extends javax.swing.JPanel {
 
     private void refreshJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshJButtonActionPerformed
 
-        populatePharmacistsRequestTable();
+        populateVehiclesTable();
     }//GEN-LAST:event_refreshJButtonActionPerformed
-
-    private void processJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_processJButtonActionPerformed
-
-        int selectedRow = pharmaWorkRequestJTable.getSelectedRow();
-
-        if (selectedRow < 0) {
-            JOptionPane.showMessageDialog(null, "Please select a lab request first", "Warning", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-
-        WorkRequest request = (WorkRequest) pharmaWorkRequestJTable.getValueAt(selectedRow, 0);
-
-        request.setStatus("Processing Req");
-
-        ProcessPharmaRequest processWorkRequestJPanel = new ProcessPharmaRequest( request, userAccount, enterprise, network);
-        jSplitPane1.setRightComponent(processWorkRequestJPanel);
-    }//GEN-LAST:event_processJButtonActionPerformed
 
     private void assignJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignJButtonActionPerformed
 
-        int selectedRow = pharmaWorkRequestJTable.getSelectedRow();
+        int selectedRow = supplierChainVehicleJTable.getSelectedRow();
         String status;
         if (selectedRow < 0) {
             JOptionPane.showMessageDialog(null, "Please select a lab request first", "Warning", JOptionPane.WARNING_MESSAGE);
 
             return;
         }
-        status = (String) pharmaWorkRequestJTable.getValueAt(selectedRow, 3);
+        status = (String) supplierChainVehicleJTable.getValueAt(selectedRow, 5);
 
-        if (status.equals("Prescription Given")) {
-            WorkRequest request = (WorkRequest) pharmaWorkRequestJTable.getValueAt(selectedRow, 0);
-            request.setReceiver(userAccount);
-            request.setStatus("Assigned To Pharmacy");
-            populatePharmacistsRequestTable();
-        } else if (status.equals("Assigned To Pharmacy")) {
+        if (status.equals("Available")) {
+            
+            Vehicle v = (Vehicle) supplierChainVehicleJTable.getValueAt(selectedRow, 0);
+            v.setVehicleStatus("Booked");
+        } else if (status.equals("Booked")) {
             JOptionPane.showMessageDialog(null, "Already In Progress", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         } else {
@@ -272,21 +242,17 @@ public class PharmacistsViewRequestsJPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_assignJButtonActionPerformed
     
-    public void populatePharmacistsRequestTable() {
-        DefaultTableModel model = (DefaultTableModel) pharmaWorkRequestJTable.getModel();
+    public void populateVehiclesTable() {
+        DefaultTableModel model = (DefaultTableModel) supplierChainVehicleJTable.getModel();
 
         model.setRowCount(0);
-        for (WorkRequest request : pharmaOrganization.getWorkQueue().getWorkRequestList()) {
+        for (Vehicle v : suppOrganization.getVehicleList()) {
             Object[] row = new Object[6];
-            row[0] = request;
-            row[1] = request.getSender().getUserName();
-            row[2] = request.getReceiver() == null? "" :request.getReceiver().getUserName();
-            String result = request.getStatus();
-            // System.out.println(result);
-            row[3] = result == null ? "Waiting" : result;
-
-            row[4] = request.getRequestDate();
-            row[5] = request.getMedlist();
+            row[0] = v;
+            row[1] = v.getVehicleType();
+            row[2] = v.getVehicleDescription();
+            row[3] = v.getVehicleNumber();
+            row[4] = v.getVehicleStatus();
 
             model.addRow(row);
 
@@ -302,8 +268,7 @@ public class PharmacistsViewRequestsJPanel extends javax.swing.JPanel {
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JLabel lblname;
     private javax.swing.JPanel optionsPanel;
-    private javax.swing.JTable pharmaWorkRequestJTable;
-    private javax.swing.JButton processJButton;
     private javax.swing.JButton refreshJButton;
+    private javax.swing.JTable supplierChainVehicleJTable;
     // End of variables declaration//GEN-END:variables
 }

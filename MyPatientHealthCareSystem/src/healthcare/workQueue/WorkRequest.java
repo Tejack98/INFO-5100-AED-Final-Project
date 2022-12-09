@@ -4,6 +4,8 @@
  */
 package healthcare.workQueue;
 
+import healthcare.enterprise.emergencyUnit.Ambulance;
+import healthcare.enterprise.supplyChain.Vehicle;
 import healthcare.userAccount.UserAccount;
 import java.util.Date;
 
@@ -30,6 +32,9 @@ public class WorkRequest {
     private String doc_med_history;
     private String lab_solution;
     private String diagnose;
+    
+    private Vehicle vehicle;
+    private Ambulance ambulance;
     
     public void setAppointmentDecision(String appointmentDecision) {
         this.appointmentDecision = appointmentDecision;}
@@ -171,6 +176,22 @@ public class WorkRequest {
     @Override
     public String toString() {
         return String.valueOf(this.message);
+    }
+
+    public Vehicle getVehicle() {
+        return vehicle;
+    }
+
+    public void setVehicle(Vehicle vehicle) {
+        this.vehicle = vehicle;
+    }
+
+    public Ambulance getAmbulance() {
+        return ambulance;
+    }
+
+    public void setAmbulance(Ambulance ambulance) {
+        this.ambulance = ambulance;
     }
     
 }

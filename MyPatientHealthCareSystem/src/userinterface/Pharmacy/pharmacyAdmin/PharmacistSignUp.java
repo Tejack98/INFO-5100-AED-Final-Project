@@ -35,6 +35,7 @@ public class PharmacistSignUp extends javax.swing.JPanel {
         initComponents();
         this.ecosystem = ecosystem;
         this.orgList = orgList;
+        populateOrganizationComboBox();
     }
 
     /**

@@ -65,6 +65,11 @@ public class PharmacistWorkArea extends javax.swing.JFrame {
         });
 
         btnRequestSupplier.setText("Request Supplier");
+        btnRequestSupplier.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRequestSupplierActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -124,6 +129,13 @@ public class PharmacistWorkArea extends javax.swing.JFrame {
         PharmacistsViewRequestsJPanel pvr = new PharmacistsViewRequestsJPanel(ecosystem, userAccount, organization, enterprise, network);
         jSplitPane1.setRightComponent(pvr);
     }//GEN-LAST:event_btnViewRequestsActionPerformed
+
+    private void btnRequestSupplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRequestSupplierActionPerformed
+        // TODO add your handling code here
+        RequestSupplierForMedicinePanel rsfm = new RequestSupplierForMedicinePanel( network, userAccount, enterprise);
+        jSplitPane1.setRightComponent(rsfm);
+        
+    }//GEN-LAST:event_btnRequestSupplierActionPerformed
 
     /**
      * @param args the command line arguments
