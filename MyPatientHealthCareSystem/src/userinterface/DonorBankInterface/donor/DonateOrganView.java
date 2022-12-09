@@ -4,6 +4,8 @@
  */
 package userinterface.DonorBankInterface.donor;
 
+import healthcare.Ecosystem;
+
 /**
  *
  * @author shriyapandita
@@ -13,8 +15,10 @@ public class DonateOrganView extends javax.swing.JPanel {
     /**
      * Creates new form DonateBloodAcceptRequest
      */
-    public DonateOrganView() {
+    Ecosystem ecosystem;
+    public DonateOrganView(Ecosystem ecosystem) {
         initComponents();
+        this.ecosystem= ecosystem;
     }
 
     /**
