@@ -35,8 +35,10 @@ public class ManageLogistics extends javax.swing.JPanel {
         Vehicle_lbl = new javax.swing.JLabel();
         Delete_btn = new javax.swing.JButton();
         Delete1_btn = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         jPanel1.setBackground(new java.awt.Color(255, 204, 204));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         handler_tbl.setBackground(new java.awt.Color(255, 153, 153));
         handler_tbl.setModel(new javax.swing.table.DefaultTableModel(
@@ -52,6 +54,8 @@ public class ManageLogistics extends javax.swing.JPanel {
         ));
         Handler_scrollpane.setViewportView(handler_tbl);
 
+        jPanel1.add(Handler_scrollpane, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 100, 650, 190));
+
         Vehicle_tbl.setBackground(new java.awt.Color(255, 153, 153));
         Vehicle_tbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -66,55 +70,31 @@ public class ManageLogistics extends javax.swing.JPanel {
         ));
         Vehicle_scrollpane.setViewportView(Vehicle_tbl);
 
-        Handler_lbl.setFont(new java.awt.Font("Georgia", 0, 13)); // NOI18N
-        Handler_lbl.setText("Handler Details");
+        jPanel1.add(Vehicle_scrollpane, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 380, 650, 190));
 
+        Handler_lbl.setFont(new java.awt.Font("Georgia", 0, 18)); // NOI18N
+        Handler_lbl.setText("Handler Details");
+        jPanel1.add(Handler_lbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 70, 190, -1));
+
+        Vehicle_lbl.setFont(new java.awt.Font("Georgia", 0, 18)); // NOI18N
         Vehicle_lbl.setText("Vehicle Details");
+        jPanel1.add(Vehicle_lbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 350, 120, -1));
 
         Delete_btn.setText("Delete");
+        jPanel1.add(Delete_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 300, -1, -1));
 
         Delete1_btn.setText("Delete");
+        jPanel1.add(Delete1_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 580, -1, -1));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(165, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Vehicle_lbl)
-                    .addComponent(Handler_lbl)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(Delete1_btn)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(Vehicle_scrollpane, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Handler_scrollpane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Delete_btn))))
-                .addContainerGap(165, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(60, 60, 60)
-                .addComponent(Handler_lbl)
-                .addGap(34, 34, 34)
-                .addComponent(Handler_scrollpane, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Delete_btn)
-                .addGap(2, 2, 2)
-                .addComponent(Vehicle_lbl)
-                .addGap(18, 18, 18)
-                .addComponent(Vehicle_scrollpane, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Delete1_btn)
-                .addContainerGap(73, Short.MAX_VALUE))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\adity\\Documents\\WhatsApp Image 2022-12-08 at 20.09.24.jpg")); // NOI18N
+        jLabel1.setText("jLabel1");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -90, 740, 1060));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1600, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -132,6 +112,7 @@ public class ManageLogistics extends javax.swing.JPanel {
     private javax.swing.JScrollPane Vehicle_scrollpane;
     private javax.swing.JTable Vehicle_tbl;
     private javax.swing.JTable handler_tbl;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

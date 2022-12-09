@@ -35,10 +35,12 @@ public class ManageDonorBank extends javax.swing.JPanel {
         Delete1_lbl = new javax.swing.JButton();
         DonorBankDetails_lbl = new javax.swing.JLabel();
         DonorDetails_lbl = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
-        jPanel1.setBackground(new java.awt.Color(255, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(165, 197, 197));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTable1.setBackground(new java.awt.Color(255, 153, 153));
+        jTable1.setBackground(new java.awt.Color(255, 255, 204));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
@@ -52,7 +54,9 @@ public class ManageDonorBank extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        jTable2.setBackground(new java.awt.Color(255, 153, 153));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(712, 120, 700, 155));
+
+        jTable2.setBackground(new java.awt.Color(255, 255, 204));
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
@@ -66,68 +70,50 @@ public class ManageDonorBank extends javax.swing.JPanel {
         ));
         jScrollPane2.setViewportView(jTable2);
 
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(712, 400, 700, 158));
+
         Delete_lbl.setText("Delete");
+        Delete_lbl.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Delete_lblActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Delete_lbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 300, -1, -1));
 
         Delete1_lbl.setText("Delete");
+        jPanel1.add(Delete1_lbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 570, -1, -1));
 
+        DonorBankDetails_lbl.setFont(new java.awt.Font("Georgia", 0, 18)); // NOI18N
         DonorBankDetails_lbl.setText("DONOR BANK DETAILS");
+        jPanel1.add(DonorBankDetails_lbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 60, -1, -1));
 
+        DonorDetails_lbl.setFont(new java.awt.Font("Georgia", 0, 18)); // NOI18N
         DonorDetails_lbl.setText("DONOR DETAILS");
+        jPanel1.add(DonorDetails_lbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 360, -1, -1));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(DonorBankDetails_lbl)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                            .addComponent(Delete_lbl)
-                            .addGap(175, 175, 175))
-                        .addComponent(jScrollPane2)
-                        .addComponent(jScrollPane1)
-                        .addComponent(DonorDetails_lbl)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(350, Short.MAX_VALUE)
-                .addComponent(Delete1_lbl)
-                .addContainerGap(350, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(46, 46, 46)
-                .addComponent(DonorBankDetails_lbl)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(Delete_lbl)
-                .addGap(4, 4, 4)
-                .addComponent(DonorDetails_lbl)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(Delete1_lbl)
-                .addContainerGap(60, Short.MAX_VALUE))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\adity\\Downloads\\vecteezy_vector-character-design-on-medical-chair-while-donating-blood-ideal-for-both-print-and-web-design-projects-available-in-ai-eps-and-svg-formats_220514\\blood-drive.jpg")); // NOI18N
+        jLabel1.setText("jLabel1");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -180, 690, 1240));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 744, Short.MAX_VALUE)
+            .addGap(0, 1442, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 575, Short.MAX_VALUE)
+            .addGap(0, 1060, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void Delete_lblActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Delete_lblActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Delete_lblActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -135,6 +121,7 @@ public class ManageDonorBank extends javax.swing.JPanel {
     private javax.swing.JButton Delete_lbl;
     private javax.swing.JLabel DonorBankDetails_lbl;
     private javax.swing.JLabel DonorDetails_lbl;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
