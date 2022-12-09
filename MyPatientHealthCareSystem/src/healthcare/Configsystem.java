@@ -76,6 +76,7 @@ public class Configsystem {
         Person person3 = orgnurse.getPersonDirectory().createAndAddPerson("Pan","75 Saint Alphonso","Boston","MA",Long.parseLong("02120"),Long.parseLong("8576938034"));
         Person person4 = orgpat.getPersonDirectory().createAndAddPerson("mat","75 Saint Alphonso","Boston","MA",Long.parseLong("02120"),Long.parseLong("8576938034"));
         Person person5 = orglab.getPersonDirectory().createAndAddPerson("Mak","75 Saint Alphonso","Boston","MA",Long.parseLong("02120"),Long.parseLong("8576938034"));
+        Person person6 = orglab.getPersonDirectory().createAndAddPerson("Tej","75 Saint Alphonso","Boston","MA",Long.parseLong("02120"),Long.parseLong("8576938034"));
         
         DoctorRole d1 = new DoctorRole();
         d1.setHospitalName("myHospital");
@@ -90,6 +91,7 @@ public class Configsystem {
         UserAccount u3 = orgpat.getUserAccountDirectory().createUserAccount(2222,"pat", "pat", person3, new PatientRole(),"s@g.com");
         UserAccount u4 = orgnurse.getUserAccountDirectory().createUserAccount(3333,"nurse", "nurse", person4, new NurseRole() ,"s@g.com");
         UserAccount u5 = orglab.getUserAccountDirectory().createUserAccount(3333,"alab", "alab", person5, new LabAdminRole() ,"s@g.com");
+        UserAccount u6 = orglab.getUserAccountDirectory().createUserAccount(2233,"lab", "lab", person6, new LabAssistantRole() ,"s@g.com");
         
 
         Person dadmin = orgDonor.getPersonDirectory().createAndAddPerson("tej","75 Saint Alphonso","Boston","MA",Long.parseLong("02120"),Long.parseLong("8576938034"));
