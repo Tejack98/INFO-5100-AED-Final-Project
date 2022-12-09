@@ -37,8 +37,10 @@ public class AdminSplitPage extends javax.swing.JPanel {
         jPanel2 = new javax.swing.JPanel();
 
         jPanel1.setBackground(new java.awt.Color(255, 204, 204));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Hospital_btn.setText("Manage Hospital");
+        jPanel1.add(Hospital_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 140, -1));
 
         Transplants_btn.setText("Manage Transplants");
         Transplants_btn.addActionListener(new java.awt.event.ActionListener() {
@@ -46,73 +48,36 @@ public class AdminSplitPage extends javax.swing.JPanel {
                 Transplants_btnActionPerformed(evt);
             }
         });
+        jPanel1.add(Transplants_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, 140, -1));
 
         Logistics_btn.setText("Manage Logistics");
+        jPanel1.add(Logistics_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, 140, -1));
 
         Donor_btn.setText("Manage Donor Bank");
+        jPanel1.add(Donor_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, -1, -1));
 
         Graphs_btn.setText("Graphs");
+        jPanel1.add(Graphs_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 390, 140, -1));
 
         Logout_btn.setText("Logout");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Transplants_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(Hospital_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(Logistics_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Donor_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Graphs_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Logout_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(58, 58, 58)
-                .addComponent(Hospital_btn)
-                .addGap(61, 61, 61)
-                .addComponent(Transplants_btn)
-                .addGap(64, 64, 64)
-                .addComponent(Logistics_btn)
-                .addGap(65, 65, 65)
-                .addComponent(Donor_btn)
-                .addGap(67, 67, 67)
-                .addComponent(Graphs_btn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
-                .addComponent(Logout_btn)
-                .addGap(36, 36, 36))
-        );
+        jPanel1.add(Logout_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 990, 140, -1));
 
         jSplitPane1.setLeftComponent(jPanel1);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 567, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 576, Short.MAX_VALUE)
-        );
-
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jSplitPane1.setRightComponent(jPanel2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 720, Short.MAX_VALUE)
+            .addGap(0, 1442, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jSplitPane1))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 576, Short.MAX_VALUE)
+            .addGap(0, 1060, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jSplitPane1))
         );

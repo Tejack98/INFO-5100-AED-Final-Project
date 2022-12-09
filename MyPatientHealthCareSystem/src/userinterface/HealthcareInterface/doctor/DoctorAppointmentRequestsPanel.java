@@ -29,7 +29,7 @@ public class DoctorAppointmentRequestsPanel extends javax.swing.JPanel {
     private UserAccount userAccount;
     private Network network;
     
-    public DoctorAppointmentRequestsPanel( UserAccount account, Organization organization, Enterprise enterprise, Network network) {
+    public DoctorAppointmentRequestsPanel( UserAccount userAccount, Organization organization, Enterprise enterprise, Network network) {
         initComponents();
         this.userAccount = userAccount;
         this.organization = (DoctorOrganization) organization;
@@ -246,7 +246,7 @@ public class DoctorAppointmentRequestsPanel extends javax.swing.JPanel {
             PatientAppointmentRequest request = (PatientAppointmentRequest) docWorkRequestJTable.getValueAt(selectedRow, 0);
 
             //  request.setStatus("Med Hist Coll Req");
-            //  ProcessAppointmentRequestJPanel processAppointmentRequestJPanel = new ProcessAppointmentRequestJPanel(userProcessContainer, request, userAccount,enterprise);
+            //  ProcessAppointmentRequestJPanel processAppointmentRequestJPanel = new ProcessAppointmentRequestJPanel(userProcessContainer, request, userAccount,enterprise);      
             DoctorPatientMedicalHistoryPanel processAppointmentRequestJPanel = new DoctorPatientMedicalHistoryPanel( request, userAccount, enterprise);
             jSplitPane1.setRightComponent(processAppointmentRequestJPanel);
             assignToMebtn.setEnabled(false);
@@ -279,7 +279,7 @@ public class DoctorAppointmentRequestsPanel extends javax.swing.JPanel {
         }
         WorkRequest request = (WorkRequest) docWorkRequestJTable.getValueAt(selectedRow, 0);
 
-         ViewLabResults viewLabResultcases = new ViewLabResults(jPanel2,request, network, enterprise, userAccount);
+         ViewLabResults viewLabResultcases = new ViewLabResults(request, network, enterprise, userAccount);
          jSplitPane1.setRightComponent(viewLabResultcases);
          populateRequestTable();
     }//GEN-LAST:event_vw_labbtnActionPerformed

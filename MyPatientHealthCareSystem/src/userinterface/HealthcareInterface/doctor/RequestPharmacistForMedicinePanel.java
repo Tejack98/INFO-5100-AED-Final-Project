@@ -33,14 +33,13 @@ public class RequestPharmacistForMedicinePanel extends javax.swing.JPanel {
     WorkRequest patientrequest;
     String medlist="";
     
-    public RequestPharmacistForMedicinePanel(JPanel userProcessContainer,WorkRequest request, Network network, UserAccount userAccount,Enterprise enterprise) {
+    public RequestPharmacistForMedicinePanel(WorkRequest request, Network network, UserAccount userAccount,Enterprise enterprise) {
         initComponents();
         this.userAccount = userAccount;
         this.organization = (DoctorOrganization) organization;
         this.enterprise = enterprise;
         this.network = network;
         this.patientrequest = request;
-        this.userProcessContainer = userProcessContainer;
         txtPatientName.setText(patientrequest.getSender().getUserName());
     }
 

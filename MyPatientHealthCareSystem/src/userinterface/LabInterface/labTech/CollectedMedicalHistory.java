@@ -5,6 +5,8 @@
 package userinterface.LabInterface.labTech;
 
 import healthcare.enterprise.Enterprise;
+import healthcare.enterprise.healthCare.DoctorOrganization;
+import healthcare.enterprise.healthCare.HealthCareEnterprise;
 import healthcare.network.Network;
 import healthcare.organization.Organization;
 import healthcare.userAccount.UserAccount;
@@ -25,15 +27,17 @@ public class CollectedMedicalHistory extends javax.swing.JPanel {
     DoctorLabRequest request;
     UserAccount useraccount;
     Enterprise enterprise;
+    Network network;
     String result = "";
     String solution = "";
     String type = "";
     
-    public CollectedMedicalHistory(DoctorLabRequest request,UserAccount useraccount, Enterprise enterprise) {
+    public CollectedMedicalHistory(DoctorLabRequest request,UserAccount useraccount, Enterprise enterprise, Network network) {
         initComponents();
         this.request = request;
         this.useraccount = useraccount;
         this.enterprise = enterprise;
+        this.network = network;
         populateMedicalHistory();
     }
 
@@ -259,20 +263,25 @@ public class CollectedMedicalHistory extends javax.swing.JPanel {
         Enterprise inEnterprise = null;
         Organization inOrganization = null;
         Network inNetwork = null;
-        for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()) {
-            if (organization.getOrganizationName().equals("Doctor Organization")) {
-                for (WorkRequest work : organization.getWorkQueue().getWorkRequestList()) {
-                    if (work.getHashcode() == b) {
-                        work.setStatus("Lab req done");
-                        work.setLabresult(result);
-                        work.setResulttype(type);
-                        work.setSolution(solution);
-                    }
+        
+        for (Enterprise ent : network.getEnterpriseMasterList().getEnterpriseList()) {
+            if (ent instanceof HealthCareEnterprise) {
+                for (Organization organization : ent.getOrganizationDirectory().getOrganizationList()) {
+                    if (organization instanceof DoctorOrganization) {
+                        for (WorkRequest work : organization.getWorkQueue().getWorkRequestList()) {
+                            if (work.getHashcode() == b) {
+                                work.setStatus("Lab req done");
+                                work.setLabresult(result);
+                                work.setResulttype(type);
+                                work.setSolution(solution);
+                            }
 
+                        }
+                    }
                 }
             }
         }
-
+        
         JOptionPane.showMessageDialog(null, "Result Sent Successfully");
         
     }//GEN-LAST:event_btnSendResultsActionPerformed

@@ -12,7 +12,7 @@ import healthcare.role.*;
 import healthcare.userAccount.UserAccount;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import userinterface.Pharmacy.PharmacyAdminWorkArea;
+import userinterface.Pharmacy.pharmacyAdmin.PharmacyAdminWorkArea;
 
 /**
  *
@@ -27,7 +27,7 @@ public class PharmacyAdminRole extends Role {
     
     @Override
     public JFrame createWorkArea( UserAccount userAccount, Organization organization, Enterprise enterprise, Ecosystem ecosystem, Network network) {
-        return new PharmacyAdminWorkArea(ecosystem);       
+        return new PharmacyAdminWorkArea(userAccount, organization, enterprise, ecosystem, network);       
     }
     
 }

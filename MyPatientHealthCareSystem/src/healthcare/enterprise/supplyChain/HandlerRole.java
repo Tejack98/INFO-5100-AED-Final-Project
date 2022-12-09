@@ -37,7 +37,7 @@ public class HandlerRole extends Role {
     
     @Override
     public JFrame createWorkArea(UserAccount userAccount, Organization organization, Enterprise enterprise, Ecosystem ecosystem, Network network) {
-        return new HandlerWorkArea(ecosystem);       
+        return new HandlerWorkArea(userAccount, organization, enterprise, ecosystem, network);       
     }
     
 }

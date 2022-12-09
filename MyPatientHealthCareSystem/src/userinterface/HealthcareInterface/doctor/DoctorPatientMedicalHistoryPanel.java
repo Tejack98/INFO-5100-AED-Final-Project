@@ -5,6 +5,7 @@
 package userinterface.HealthcareInterface.doctor;
 
 import healthcare.enterprise.Enterprise;
+import healthcare.enterprise.lab.LabEnterprise;
 import healthcare.enterprise.lab.LabOrganization;
 import healthcare.organization.Organization;
 import healthcare.userAccount.UserAccount;
@@ -853,23 +854,25 @@ public class DoctorPatientMedicalHistoryPanel extends javax.swing.JPanel {
         
     //    Doctor_LabRequest labr = new Doctor_LabRequest();
         Organization org = null;
-        for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()){
-            if (organization instanceof LabOrganization){
-                org = organization;
-                //testing
-                System.out.println(request.hashCode());
-              //  org.setHashcode(request.hashCode());
-                break;
+
+        for (Enterprise enterprise : network.getEnterpriseMasterList().getEnterpriseList()) {
+            if (enterprise instanceof LabEnterprise) {
+                for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()) {
+                    if (organization instanceof LabOrganization) {
+                        org = organization;
+                        break;
+                    }
+                }
+            }
+            if (org != null) {
+                int a = request.hashCode();
+                request.setHashcode(a);
+                labr.setHashcode(a);
+                org.getWorkQueue().getWorkRequestList().add(labr);
+                userAccount.getWorkQueue().getWorkRequestList().add(labr);
             }
         }
-        if (org!=null){
-              int a = request.hashCode();
-              request.setHashcode(a);//patient hashcode from db
-        System.out.println(a);
-        labr.setHashcode(a);
-            org.getWorkQueue().getWorkRequestList().add(labr);
-            useraccount.getWorkQueue().getWorkRequestList().add(labr);
-        }
+        
     
          JOptionPane.showMessageDialog(null, "Report Requested Successfully");
     }//GEN-LAST:event_jButton1ActionPerformed
