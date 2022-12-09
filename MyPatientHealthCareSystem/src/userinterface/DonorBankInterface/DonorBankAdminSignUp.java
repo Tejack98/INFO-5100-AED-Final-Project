@@ -50,8 +50,12 @@ public class DonorBankAdminSignUp extends javax.swing.JPanel {
         txtState = new javax.swing.JTextField();
         lblAddress = new javax.swing.JLabel();
 
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        add(txtZipcode, new org.netbeans.lib.awtextra.AbsoluteConstraints(262, 315, 230, -1));
+
         lblCity.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         lblCity.setText("City");
+        add(lblCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(218, 235, -1, -1));
 
         btnSignUp.setText("Sign Up");
         btnSignUp.addActionListener(new java.awt.event.ActionListener() {
@@ -59,107 +63,48 @@ public class DonorBankAdminSignUp extends javax.swing.JPanel {
                 btnSignUpActionPerformed(evt);
             }
         });
+        add(btnSignUp, new org.netbeans.lib.awtextra.AbsoluteConstraints(306, 395, -1, -1));
 
         lblState.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         lblState.setText("State");
+        add(lblState, new org.netbeans.lib.awtextra.AbsoluteConstraints(207, 275, -1, -1));
 
         lblZipCode.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         lblZipCode.setText("Zipcode");
+        add(lblZipCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(193, 315, -1, -1));
+        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(262, 75, 230, -1));
+        add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(262, 115, 230, -1));
 
-        lblTitle.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        lblTitle.setFont(new java.awt.Font("Georgia", 1, 24)); // NOI18N
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitle.setText("Create Donor Admin Profile");
+        add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 23, 1440, -1));
 
         lblName.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         lblName.setText("Name");
+        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(207, 75, -1, -1));
+        add(txtPhoneNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(262, 155, 230, -1));
 
         lblUsername.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         lblUsername.setText("Email");
+        add(lblUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 115, -1, -1));
+        add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(262, 195, 230, -1));
 
         lblPhoneNumber.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         lblPhoneNumber.setText("Phone Number");
+        add(lblPhoneNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(149, 155, -1, -1));
 
         txtCity.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCityActionPerformed(evt);
             }
         });
+        add(txtCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(262, 235, 230, -1));
+        add(txtState, new org.netbeans.lib.awtextra.AbsoluteConstraints(262, 275, 230, -1));
 
         lblAddress.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         lblAddress.setText("Address");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(lblTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(149, 149, 149)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblName)
-                            .addComponent(lblUsername)
-                            .addComponent(lblPhoneNumber)
-                            .addComponent(lblAddress)
-                            .addComponent(lblCity)
-                            .addComponent(lblState)
-                            .addComponent(lblZipCode))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtPhoneNo, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtCity, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtState, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtZipcode, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 167, Short.MAX_VALUE)))
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btnSignUp)
-                .addGap(287, 287, 287))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(lblTitle)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblName)
-                    .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblUsername)
-                    .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblPhoneNumber)
-                    .addComponent(txtPhoneNo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblAddress)
-                    .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblCity)
-                    .addComponent(txtCity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblState)
-                    .addComponent(txtState, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblZipCode)
-                    .addComponent(txtZipcode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(58, 58, 58)
-                .addComponent(btnSignUp)
-                .addContainerGap(29, Short.MAX_VALUE))
-        );
+        add(lblAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(189, 195, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtCityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCityActionPerformed

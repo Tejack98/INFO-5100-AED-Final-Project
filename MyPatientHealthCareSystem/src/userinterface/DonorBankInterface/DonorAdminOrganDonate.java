@@ -38,107 +38,69 @@ public class DonorAdminOrganDonate extends javax.swing.JPanel {
         cboxStatus = new javax.swing.JComboBox<>();
         lblEntityDetails = new javax.swing.JLabel();
         btnSave = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 204, 204));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblDonorName.setBackground(new java.awt.Color(153, 204, 255));
         lblDonorName.setFont(new java.awt.Font("Georgia", 0, 13)); // NOI18N
         lblDonorName.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         lblDonorName.setText("Donor Name");
+        add(lblDonorName, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 120, -1, 20));
 
         lblEntityType.setFont(new java.awt.Font("Georgia", 0, 13)); // NOI18N
         lblEntityType.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         lblEntityType.setText("Entity Type");
+        add(lblEntityType, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 170, 74, 20));
 
         lblEntityName.setFont(new java.awt.Font("Georgia", 0, 13)); // NOI18N
         lblEntityName.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         lblEntityName.setText("Entity Name");
+        add(lblEntityName, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 220, -1, 20));
 
         lblBloodGroup.setFont(new java.awt.Font("Georgia", 0, 13)); // NOI18N
         lblBloodGroup.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         lblBloodGroup.setText("Blood Group");
+        add(lblBloodGroup, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 265, -1, 30));
 
         lblStatus.setFont(new java.awt.Font("Georgia", 0, 13)); // NOI18N
         lblStatus.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         lblStatus.setText("Status");
+        add(lblStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 320, 74, 20));
 
         txtDonorName.setBackground(new java.awt.Color(153, 204, 255));
+        add(txtDonorName, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 120, 290, -1));
 
         txtEntityName.setBackground(new java.awt.Color(153, 204, 255));
+        add(txtEntityName, new org.netbeans.lib.awtextra.AbsoluteConstraints(641, 220, 290, -1));
 
         txtBloodGroup.setBackground(new java.awt.Color(153, 204, 255));
+        add(txtBloodGroup, new org.netbeans.lib.awtextra.AbsoluteConstraints(641, 270, 290, -1));
 
         cboxEntityType.setBackground(new java.awt.Color(153, 204, 255));
         cboxEntityType.setFont(new java.awt.Font("Georgia", 0, 13)); // NOI18N
         cboxEntityType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Blood", "Organ" }));
+        add(cboxEntityType, new org.netbeans.lib.awtextra.AbsoluteConstraints(641, 170, 290, -1));
 
         cboxStatus.setBackground(new java.awt.Color(153, 204, 255));
         cboxStatus.setFont(new java.awt.Font("Georgia", 0, 13)); // NOI18N
         cboxStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Available", "Not Available" }));
+        add(cboxStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(641, 320, 290, -1));
 
-        lblEntityDetails.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
+        lblEntityDetails.setFont(new java.awt.Font("Georgia", 1, 24)); // NOI18N
         lblEntityDetails.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblEntityDetails.setText("Add Entity Details");
+        add(lblEntityDetails, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 1450, -1));
 
         btnSave.setBackground(new java.awt.Color(153, 204, 255));
         btnSave.setFont(new java.awt.Font("Georgia", 0, 13)); // NOI18N
         btnSave.setText("Save");
+        add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 380, 111, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(291, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblEntityDetails)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(lblBloodGroup, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lblEntityName)
-                            .addComponent(lblDonorName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lblEntityType, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lblStatus, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(43, 43, 43)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(txtDonorName)
-                                .addComponent(txtEntityName)
-                                .addComponent(txtBloodGroup)
-                                .addComponent(cboxStatus, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(cboxEntityType, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
-                .addContainerGap(292, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(61, 61, 61)
-                .addComponent(lblEntityDetails)
-                .addGap(41, 41, 41)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblDonorName)
-                    .addComponent(txtDonorName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(25, 25, 25)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblEntityType)
-                    .addComponent(cboxEntityType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblEntityName)
-                    .addComponent(txtEntityName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(23, 23, 23)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblBloodGroup)
-                    .addComponent(txtBloodGroup, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblStatus)
-                    .addComponent(cboxStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
-                .addComponent(btnSave)
-                .addContainerGap(172, Short.MAX_VALUE))
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\adity\\Downloads\\doctors-studying-kidneys-donor-clinic-medical-persons-checking-human-organ-surgery-flat-illustration\\Doctors studying kidneys of donor at clinic.jpg")); // NOI18N
+        jLabel2.setText("jLabel2");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
 
@@ -146,6 +108,7 @@ public class DonorAdminOrganDonate extends javax.swing.JPanel {
     private javax.swing.JButton btnSave;
     private javax.swing.JComboBox<String> cboxEntityType;
     private javax.swing.JComboBox<String> cboxStatus;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel lblBloodGroup;
     private javax.swing.JLabel lblDonorName;
     private javax.swing.JLabel lblEntityDetails;
