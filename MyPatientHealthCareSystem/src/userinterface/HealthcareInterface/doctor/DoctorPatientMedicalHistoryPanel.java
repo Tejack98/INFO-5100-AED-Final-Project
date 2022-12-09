@@ -873,26 +873,6 @@ public class DoctorPatientMedicalHistoryPanel extends javax.swing.JPanel {
             }
         }
         
-        
-        
-        
-//        for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()){
-//            if (organization instanceof LabOrganization){
-//                org = organization;
-//                //testing
-//                System.out.println(request.hashCode());
-//              //  org.setHashcode(request.hashCode());
-//                break;
-//            }
-//        }
-//        if (org!=null){
-//              int a = request.hashCode();
-//              request.setHashcode(a);//patient hashcode from db
-//        System.out.println(a);
-//        labr.setHashcode(a);
-//            org.getWorkQueue().getWorkRequestList().add(labr);
-//            useraccount.getWorkQueue().getWorkRequestList().add(labr);
-//        }
     
          JOptionPane.showMessageDialog(null, "Report Requested Successfully");
     }//GEN-LAST:event_jButton1ActionPerformed

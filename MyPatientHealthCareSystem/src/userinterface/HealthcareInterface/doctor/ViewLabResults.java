@@ -39,12 +39,17 @@ public class ViewLabResults extends javax.swing.JPanel {
     
     
      private void popupResult() {
+        System.out.println("ekrhvbevr---------------------");
+        System.out.println(patientrequest.getSender().getUserName());
+        System.out.println(patientrequest.getLabresult());
+        System.out.println(patientrequest.getResulttype());
+        System.out.println(patientrequest.getSolution());
         
         txtName.setText(patientrequest.getSender().getUserName());
         resulttxt.setText(patientrequest.getLabresult());
         resultTypetxt.setText(patientrequest.getResulttype());
         solutionByLabtxt.setText(patientrequest.getSolution());
-        String category = resultTypetxt.getText();
+        
     }
     
 
