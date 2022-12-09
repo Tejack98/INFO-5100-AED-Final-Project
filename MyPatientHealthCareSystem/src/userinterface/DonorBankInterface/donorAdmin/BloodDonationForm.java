@@ -4,6 +4,22 @@
  */
 package userinterface.DonorBankInterface.donorAdmin;
 
+import healthcare.Ecosystem;
+import healthcare.Enterprise.donorBank.DonorRole;
+import healthcare.enterprise.Enterprise;
+import healthcare.enterprise.healthCare.DoctorRole;
+import healthcare.organization.Organization;
+import healthcare.organization.OrganizationDirectory;
+import healthcare.person.Person;
+import healthcare.role.Role;
+import healthcare.userAccount.UserAccount;
+import java.awt.Color;
+import java.util.HashSet;
+import java.util.Random;
+import javax.swing.BorderFactory;
+import javax.swing.JOptionPane;
+import userinterface.SendMail;
+
 /**
  *
  * @author shriyapandita
@@ -13,8 +29,16 @@ public class BloodDonationForm extends javax.swing.JPanel {
     /**
      * Creates new form BloodDonationForm
      */
-    public BloodDonationForm() {
+    Ecosystem ecosystem;
+    OrganizationDirectory orgList;
+    boolean emptyValidationStatus = true;
+    boolean validationCheck = true;
+    public BloodDonationForm(Ecosystem ecosystem, OrganizationDirectory orgList) {
         initComponents();
+        this.ecosystem= ecosystem;
+        this.orgList = orgList;
+        //populateOrganizationComboBox(); 
+        
     }
 
     /**
@@ -38,22 +62,20 @@ public class BloodDonationForm extends javax.swing.JPanel {
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
-        jRadioButton5 = new javax.swing.JRadioButton();
-        jRadioButton6 = new javax.swing.JRadioButton();
+        txtDonorName = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        txtEmail = new javax.swing.JTextField();
+        txtDateofBirth = new javax.swing.JTextField();
+        cboxBlood = new javax.swing.JComboBox<>();
         jLabel14 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        txtOccupation = new javax.swing.JTextField();
+        txtPhone = new javax.swing.JTextField();
+        btnSubmit = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        cboxDiseases = new javax.swing.JComboBox<>();
+        cboxAllergies = new javax.swing.JComboBox<>();
+        cboxDonate = new javax.swing.JComboBox<>();
 
         setBackground(new java.awt.Color(255, 204, 204));
 
@@ -78,45 +100,43 @@ public class BloodDonationForm extends javax.swing.JPanel {
 
         jLabel12.setText("Do you have any allergies?");
 
-        jRadioButton1.setText("Yes");
-
-        jRadioButton2.setText("No");
-
-        jRadioButton3.setText("No");
-
-        jRadioButton4.setText("Yes");
-
-        jRadioButton5.setText("No");
-
-        jRadioButton6.setText("Yes");
-
         jLabel13.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         jLabel13.setText("General Details");
 
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+        txtEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+                txtEmailActionPerformed(evt);
             }
         });
 
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+        txtDateofBirth.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
+                txtDateofBirthActionPerformed(evt);
             }
         });
 
-        jTextField7.addActionListener(new java.awt.event.ActionListener() {
+        cboxBlood.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-" }));
+        cboxBlood.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField7ActionPerformed(evt);
+                cboxBloodActionPerformed(evt);
             }
         });
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-" }));
 
         jLabel14.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         jLabel14.setText("Additional Details");
 
-        jButton1.setText("Submit");
+        txtOccupation.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtOccupationActionPerformed(evt);
+            }
+        });
+
+        btnSubmit.setText("Submit");
+        btnSubmit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSubmitActionPerformed(evt);
+            }
+        });
 
         jPanel2.setBackground(new java.awt.Color(153, 204, 255));
 
@@ -144,6 +164,27 @@ public class BloodDonationForm extends javax.swing.JPanel {
                     .addContainerGap(24, Short.MAX_VALUE)))
         );
 
+        cboxDiseases.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Yes", "No" }));
+        cboxDiseases.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cboxDiseasesActionPerformed(evt);
+            }
+        });
+
+        cboxAllergies.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Yes", "No" }));
+        cboxAllergies.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cboxAllergiesActionPerformed(evt);
+            }
+        });
+
+        cboxDonate.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Yes", "No" }));
+        cboxDonate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cboxDonateActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -160,7 +201,7 @@ public class BloodDonationForm extends javax.swing.JPanel {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(27, 27, 27)
-                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtDonorName, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -170,41 +211,35 @@ public class BloodDonationForm extends javax.swing.JPanel {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(27, 27, 27)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cboxBlood, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(40, 40, 40)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel4)
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jButton1)
+                                        .addComponent(btnSubmit)
                                         .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE))))))))
+                                            .addComponent(txtOccupation, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(txtPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                            .addComponent(jLabel4)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(txtDateofBirth, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel10)
                             .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(27, 27, 27)
+                        .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jRadioButton4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jRadioButton3))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jRadioButton1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jRadioButton2))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jRadioButton6)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jRadioButton5)))))
-                .addContainerGap(38, Short.MAX_VALUE))
+                            .addComponent(cboxDonate, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cboxDiseases, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cboxAllergies, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(63, Short.MAX_VALUE))
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
@@ -217,42 +252,40 @@ public class BloodDonationForm extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jLabel4)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtDonorName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtDateofBirth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(16, 16, 16)
                 .addComponent(jLabel3)
                 .addGap(3, 3, 3)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(jLabel7)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtPhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cboxBlood, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtOccupation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(34, 34, 34)
                 .addComponent(jLabel14)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel6)
-                .addGap(21, 21, 21)
+                .addGap(20, 20, 20)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton2))
+                    .addComponent(cboxDonate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
-                    .addComponent(jRadioButton4)
-                    .addComponent(jRadioButton3))
-                .addGap(15, 15, 15)
+                    .addComponent(cboxDiseases, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(13, 13, 13)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
-                    .addComponent(jRadioButton6)
-                    .addComponent(jRadioButton5))
-                .addGap(70, 70, 70)
-                .addComponent(jButton1)
+                    .addComponent(cboxAllergies, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(69, 69, 69)
+                .addComponent(btnSubmit)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -268,22 +301,229 @@ public class BloodDonationForm extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void txtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_txtEmailActionPerformed
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+    private void txtDateofBirthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDateofBirthActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
+    }//GEN-LAST:event_txtDateofBirthActionPerformed
 
-    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+    private void cboxBloodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboxBloodActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField7ActionPerformed
+    }//GEN-LAST:event_cboxBloodActionPerformed
 
+    private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
+        // TODO add your handling code here:
+        try {
+            if (EmpytyFieldValidation()) {
 
+                if (RegexValidation()) {
+
+                    String name = txtDonorName.getText();
+                    String emailId = txtEmail.getText();
+                    long cellPhoneNumber = Long.parseLong(txtPhone.getText());
+                    
+                    Random random = new Random();
+                    int donorID = random.nextInt((9999 - 100) + 1) + 10;
+
+                    String username = name.substring(0, 3) + String.valueOf(donorID);
+                    String password = name + String.valueOf(random.nextInt((9999 - 100) + 1) + 10);
+                    
+                    DonorRole role  = new DonorRole();
+                    role.setBloodType(cboxBlood.getSelectedItem().toString());
+                    role.setBlooddonate(cboxDonate.getSelectedItem().toString());
+                    role.setPriorallergies(cboxAllergies.getSelectedItem().toString());
+                    role.setSufferdisease(cboxDiseases.getSelectedItem().toString());
+                    role.setOccupation(txtOccupation.toString());
+                    role.setDateofbirth(txtDateofBirth.toString());
+                            
+                        
+                  //  Organization organization = (Organization) organizationJComboBox.getSelectedItem();
+                  //  Person p = organization.getPersonDirectory().createAndAddPerson(username, Address, City, State, Zipcode, cellPhoneNumber);           
+                 //   UserAccount account = organization.getUserAccountDirectory().createUserAccount(doctorID,username, password, p, role, emailId);
+                    
+                    JOptionPane.showMessageDialog(this, "Blood Donor Registered Successfully.Your New Username:" + username + " and password: " + password + ",Please save this Id for furture reference.");
+
+                    SendMail s = new SendMail();
+                    s.sendUserRegisterEmail(emailId, username, password);
+
+                } else {
+                    JOptionPane.showMessageDialog(this, "Some Error in entered data.Please check over the red fields to know more.");
+                    validationCheck = true;
+                }
+            } else {
+                JOptionPane.showMessageDialog(this, "Some Error in entered data. Please check over the red fields to know more.");
+                emptyValidationStatus = true;
+            }
+        } 
+        catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Donor not registered, Try again");
+            System.out.println(e.toString());
+            emptyValidationStatus = true;
+        }
+                                                
+    }//GEN-LAST:event_btnSubmitActionPerformed
+
+    private void txtOccupationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtOccupationActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtOccupationActionPerformed
+
+    private void cboxDiseasesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboxDiseasesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cboxDiseasesActionPerformed
+
+    private void cboxAllergiesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboxAllergiesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cboxAllergiesActionPerformed
+
+    private void cboxDonateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboxDonateActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cboxDonateActionPerformed
+
+    private boolean RegexValidation() {
+        if(!txtDonorName.getText().matches("^[a-zA-Z ]+$"))
+        {
+            txtDonorName.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            txtDonorName.setToolTipText("Please enter only characters and space.");
+            validationCheck=false;
+        }
+        
+        if(txtDonorName.getText().matches("^[a-zA-Z ]+$"))
+        {
+            txtDonorName.setBorder(BorderFactory.createLineBorder(Color.BLUE, 0));
+        }
+        
+        if(!txtPhone.getText().matches("\\d{10}"))
+        {
+          txtPhone.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+          txtPhone.setToolTipText("Please enter valid 10 digit phone number");
+          validationCheck=false;
+        }
+        
+        if(txtPhone.getText().matches("\\d{10}"))
+        {
+            txtPhone.setBorder(BorderFactory.createLineBorder(Color.BLUE, 0));
+        }
+        
+        if(!txtEmail.getText().matches("^[A-Za-z0-9+_.-]+@(.+)$"))
+        {
+            txtEmail.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            txtEmail.setToolTipText("Please enter a valid Email Address in the form abc@xyy.com");
+            validationCheck=false;
+        }
+        
+        if(txtEmail.getText().matches("^[A-Za-z0-9+_.-]+@(.+)$"))
+        {
+            txtEmail.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        }
+        
+        if(!txtOccupation.getText().matches("^[a-zA-Z ]+$"))
+        {
+            txtOccupation.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            txtOccupation.setToolTipText("Please enter only characters and space.");
+            validationCheck=false;
+        }
+        
+        if(txtOccupation.getText().matches("^[a-zA-Z ]+$"))
+        {
+            txtOccupation.setBorder(BorderFactory.createLineBorder(Color.BLUE, 0));
+        }
+        
+        
+        if(!txtDateofBirth.getText().matches("^(1[0-2]|0[1-9])/(3[01]" + "|[12][0-9]|0[1-9])/[0-9]{4}$"))
+        {
+            txtDateofBirth.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            txtDateofBirth.setToolTipText("Please enter in format mm/dd/yyyy");
+            validationCheck=false;
+        }
+        
+        if(txtDateofBirth.getText().matches("^(1[0-2]|0[1-9])/(3[01]" + "|[12][0-9]|0[1-9])/[0-9]{4}$"))
+        {
+            txtDateofBirth.setBorder(BorderFactory.createLineBorder(Color.BLUE, 0));
+        }
+    
+        return validationCheck;
+    }
+    
+      //  private void populateOrganizationComboBox() {
+      //  cboxBlood.removeAllItems();
+
+      //  for (Organization organization : orgList.getOrganizationList()){
+          //   cboxBlood.addItem(organization);
+      //  }
+  //  }
+        
+        private boolean EmpytyFieldValidation() {
+        if( txtDonorName.getText().equals(null) ||  txtDonorName.getText().trim().isEmpty() )
+        {
+             txtDonorName.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+             txtDonorName.setToolTipText("This Field Cannot be empty");
+            emptyValidationStatus= false;
+        }
+        if(!txtDonorName.getText().equals(null) && ! txtDonorName.getText().trim().isEmpty() )
+        {
+             txtDonorName.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        }
+        
+        if( txtEmail.getText().equals(null) || txtEmail.getText().trim().isEmpty() )
+        {
+            txtEmail.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            txtEmail.setToolTipText("This Field Cannot be empty");
+            emptyValidationStatus= false;
+        }
+        
+        if( !txtEmail.getText().equals(null) || txtEmail.getText().trim().isEmpty() )
+        {
+            txtEmail.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        }
+      
+        if( txtOccupation.getText().equals(null) || txtOccupation.getText().trim().isEmpty() )
+        {
+            txtOccupation.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            txtOccupation.setToolTipText("This Field Cannot be empty");
+            emptyValidationStatus= false;
+        }
+        
+        if( !txtOccupation.getText().equals(null) || txtOccupation.getText().trim().isEmpty() )
+        {
+            txtOccupation.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        }
+        
+        if( txtDateofBirth.getText().equals(null) || txtDateofBirth.getText().trim().isEmpty() )
+        {
+            txtDateofBirth.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            txtDateofBirth.setToolTipText("This Field Cannot be empty");
+            emptyValidationStatus= false;
+        }
+        
+        if( !txtDateofBirth.getText().equals(null) || txtDateofBirth.getText().trim().isEmpty() )
+        {
+            txtDateofBirth.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        }
+      
+        if( txtPhone.getText().equals(null) || txtPhone.getText().trim().isEmpty() )
+        {
+            txtPhone.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            txtPhone.setToolTipText("This Field Cannot be empty");
+            emptyValidationStatus= false;
+        }
+        
+        if( !txtPhone.getText().equals(null) || txtPhone.getText().trim().isEmpty() )
+        {
+            txtPhone.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        }
+      
+        return emptyValidationStatus;
+    
+    }                                
+        
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JButton btnSubmit;
+    private javax.swing.JComboBox<String> cboxAllergies;
+    private javax.swing.JComboBox<String> cboxBlood;
+    private javax.swing.JComboBox<String> cboxDiseases;
+    private javax.swing.JComboBox<String> cboxDonate;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -300,15 +540,10 @@ public class BloodDonationForm extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
-    private javax.swing.JRadioButton jRadioButton5;
-    private javax.swing.JRadioButton jRadioButton6;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField txtDateofBirth;
+    private javax.swing.JTextField txtDonorName;
+    private javax.swing.JTextField txtEmail;
+    private javax.swing.JTextField txtOccupation;
+    private javax.swing.JTextField txtPhone;
     // End of variables declaration//GEN-END:variables
 }
