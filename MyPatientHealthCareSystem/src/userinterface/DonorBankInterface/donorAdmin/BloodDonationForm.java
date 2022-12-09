@@ -4,6 +4,8 @@
  */
 package userinterface.DonorBankInterface.donorAdmin;
 
+import healthcare.Ecosystem;
+
 /**
  *
  * @author shriyapandita
@@ -13,8 +15,10 @@ public class BloodDonationForm extends javax.swing.JPanel {
     /**
      * Creates new form BloodDonationForm
      */
-    public BloodDonationForm() {
+    Ecosystem ecosystem;
+    public BloodDonationForm(Ecosystem ecosystem) {
         initComponents();
+        this.ecosystem= ecosystem;
     }
 
     /**
