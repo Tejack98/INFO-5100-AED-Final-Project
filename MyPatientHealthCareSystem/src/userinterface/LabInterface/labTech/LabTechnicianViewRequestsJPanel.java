@@ -271,10 +271,13 @@ public class LabTechnicianViewRequestsJPanel extends javax.swing.JPanel {
             return;
         }
     }//GEN-LAST:event_assignJButtonActionPerformed
+    
     public void populateLabRequestTable() {
         DefaultTableModel model = (DefaultTableModel) labWorkRequestJTable.getModel();
 
         model.setRowCount(0);
+        System.out.println("_________________________________________________");
+        System.out.println(labOrganization.getWorkQueue().getWorkRequestList());
 
         for (WorkRequest request : labOrganization.getWorkQueue().getWorkRequestList()) {
             Object[] row = new Object[5];
