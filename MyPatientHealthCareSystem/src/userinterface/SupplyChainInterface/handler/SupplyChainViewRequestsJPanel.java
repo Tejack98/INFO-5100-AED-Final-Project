@@ -3,14 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package userinterface.Pharmacy.pharmacist;
+package userinterface.SupplyChainInterface.handler;
 
 
+import userinterface.Pharmacy.pharmacist.*;
 import userinterface.LabInterface.labTech.*;
 import healthcare.Ecosystem;
 import healthcare.enterprise.Enterprise;
 import healthcare.enterprise.lab.LabOrganization;
 import healthcare.enterprise.pharmacy.PharmacyOrganization;
+import healthcare.enterprise.supplyChain.SupplierOrganization;
 import healthcare.network.Network;
 import healthcare.organization.Organization;
 import healthcare.userAccount.UserAccount;
@@ -25,28 +27,28 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author tejas
  */
-public class PharmacistsViewRequestsJPanel extends javax.swing.JPanel {
+public class SupplyChainViewRequestsJPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form LabAssistantWorkAreaJPanel
      */
     
     UserAccount userAccount;
-    Organization pharmaOrganization;
+    Organization suppOrganization;
     Enterprise enterprise;
     Ecosystem ecosystem;
     Network network;
 
-    public PharmacistsViewRequestsJPanel(Ecosystem ecosystem, UserAccount account,
+    public SupplyChainViewRequestsJPanel(Ecosystem ecosystem, UserAccount account,
             Organization organization, Enterprise enterprise, Network network) {
         initComponents();
         this.userAccount = account;
         this.ecosystem = ecosystem;
-        this.pharmaOrganization = (PharmacyOrganization) organization;
+        this.suppOrganization = (SupplierOrganization) organization;
         this.enterprise = enterprise;
         this.network = network;
         lblname.setText(userAccount.getPerson().getPersonName());
-        populatePharmacistsRequestTable();
+        populateSupplyChainRequestTable();
     }
 
     /**
@@ -64,7 +66,7 @@ public class PharmacistsViewRequestsJPanel extends javax.swing.JPanel {
         jLabel6 = new javax.swing.JLabel();
         lblname = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        pharmaWorkRequestJTable = new javax.swing.JTable();
+        supplierChainWorkRequestJTable = new javax.swing.JTable();
         optionsPanel = new javax.swing.JPanel();
         refreshJButton = new javax.swing.JButton();
         processJButton = new javax.swing.JButton();
@@ -98,7 +100,7 @@ public class PharmacistsViewRequestsJPanel extends javax.swing.JPanel {
         lblname.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lblname.setText("Lab Assitant Name");
 
-        pharmaWorkRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
+        supplierChainWorkRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -124,7 +126,7 @@ public class PharmacistsViewRequestsJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(pharmaWorkRequestJTable);
+        jScrollPane2.setViewportView(supplierChainWorkRequestJTable);
 
         javax.swing.GroupLayout actionPanelLayout = new javax.swing.GroupLayout(actionPanel);
         actionPanel.setLayout(actionPanelLayout);
@@ -227,43 +229,43 @@ public class PharmacistsViewRequestsJPanel extends javax.swing.JPanel {
 
     private void refreshJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshJButtonActionPerformed
 
-        populatePharmacistsRequestTable();
+        populateSupplyChainRequestTable();
     }//GEN-LAST:event_refreshJButtonActionPerformed
 
     private void processJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_processJButtonActionPerformed
 
-        int selectedRow = pharmaWorkRequestJTable.getSelectedRow();
+        int selectedRow = supplierChainWorkRequestJTable.getSelectedRow();
 
         if (selectedRow < 0) {
             JOptionPane.showMessageDialog(null, "Please select a lab request first", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
-        WorkRequest request = (WorkRequest) pharmaWorkRequestJTable.getValueAt(selectedRow, 0);
+        WorkRequest request = (WorkRequest) supplierChainWorkRequestJTable.getValueAt(selectedRow, 0);
 
         request.setStatus("Processing Req");
 
-        ProcessPharmaRequest processWorkRequestJPanel = new ProcessPharmaRequest( request, userAccount, enterprise, network);
-        jSplitPane1.setRightComponent(processWorkRequestJPanel);
+        ProcessSupplyRequest processSupplyRequest = new ProcessSupplyRequest( request, userAccount, enterprise, network);
+        jSplitPane1.setRightComponent(processSupplyRequest);
     }//GEN-LAST:event_processJButtonActionPerformed
 
     private void assignJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignJButtonActionPerformed
 
-        int selectedRow = pharmaWorkRequestJTable.getSelectedRow();
+        int selectedRow = supplierChainWorkRequestJTable.getSelectedRow();
         String status;
         if (selectedRow < 0) {
             JOptionPane.showMessageDialog(null, "Please select a lab request first", "Warning", JOptionPane.WARNING_MESSAGE);
 
             return;
         }
-        status = (String) pharmaWorkRequestJTable.getValueAt(selectedRow, 3);
+        status = (String) supplierChainWorkRequestJTable.getValueAt(selectedRow, 3);
 
-        if (status.equals("Prescription Given")) {
-            WorkRequest request = (WorkRequest) pharmaWorkRequestJTable.getValueAt(selectedRow, 0);
+        if (status.equals("Supply Requested")) {
+            WorkRequest request = (WorkRequest) supplierChainWorkRequestJTable.getValueAt(selectedRow, 0);
             request.setReceiver(userAccount);
-            request.setStatus("Assigned To Pharmacy");
-            populatePharmacistsRequestTable();
-        } else if (status.equals("Assigned To Pharmacy")) {
+            request.setStatus("Assigned To Supply Chain");
+            populateSupplyChainRequestTable();
+        } else if (status.equals("Assigned To Supply Chain")) {
             JOptionPane.showMessageDialog(null, "Already In Progress", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         } else {
@@ -272,11 +274,11 @@ public class PharmacistsViewRequestsJPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_assignJButtonActionPerformed
     
-    public void populatePharmacistsRequestTable() {
-        DefaultTableModel model = (DefaultTableModel) pharmaWorkRequestJTable.getModel();
+    public void populateSupplyChainRequestTable() {
+        DefaultTableModel model = (DefaultTableModel) supplierChainWorkRequestJTable.getModel();
 
         model.setRowCount(0);
-        for (WorkRequest request : pharmaOrganization.getWorkQueue().getWorkRequestList()) {
+        for (WorkRequest request : suppOrganization.getWorkQueue().getWorkRequestList()) {
             Object[] row = new Object[6];
             row[0] = request;
             row[1] = request.getSender().getUserName();
@@ -302,8 +304,8 @@ public class PharmacistsViewRequestsJPanel extends javax.swing.JPanel {
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JLabel lblname;
     private javax.swing.JPanel optionsPanel;
-    private javax.swing.JTable pharmaWorkRequestJTable;
     private javax.swing.JButton processJButton;
     private javax.swing.JButton refreshJButton;
+    private javax.swing.JTable supplierChainWorkRequestJTable;
     // End of variables declaration//GEN-END:variables
 }

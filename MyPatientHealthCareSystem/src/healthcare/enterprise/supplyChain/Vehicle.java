@@ -12,13 +12,14 @@ public class Vehicle {
     private String vehicleName;
     private String vehicleNumber;
     private String vehicleType;
-    private String vehicalDescription;
+    private String vehicleDescription;
+    private String vehicleStatus;
 
     public Vehicle(String vehicleName, String vehicleNumber, String vehicleType, String vehicalDescription) {
         this.vehicleName = vehicleName;
         this.vehicleNumber = vehicleNumber;
         this.vehicleType = vehicleType;
-        this.vehicalDescription = vehicalDescription;
+        this.vehicleDescription = vehicalDescription;
     }
 
     public String getVehicleName() {
@@ -45,12 +46,25 @@ public class Vehicle {
         this.vehicleType = vehicleType;
     }
 
-    public String getVehicalDescription() {
-        return vehicalDescription;
+    public String getVehicleDescription() {
+        return vehicleDescription;
     }
 
-    public void setVehicalDescription(String vehicalDescription) {
-        this.vehicalDescription = vehicalDescription;
+    public void setVehicleDescription(String vehicleDescription) {
+        this.vehicleDescription = vehicleDescription;
+    }
+
+    public String getVehicleStatus() {
+        return vehicleStatus;
+    }
+
+    public void setVehicleStatus(String vehicleStatus) {
+        this.vehicleStatus = vehicleStatus;
+    }
+
+    @Override
+    public String toString() {
+        return vehicleName;
     }
     
     

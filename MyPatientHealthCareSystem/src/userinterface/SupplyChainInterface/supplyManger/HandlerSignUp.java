@@ -4,10 +4,18 @@
  */
 package userinterface.SupplyChainInterface.supplyManger;
 
+import healthcare.Ecosystem;
+import healthcare.enterprise.pharmacy.PharmacistRole;
+import healthcare.enterprise.supplyChain.HandlerRole;
+import healthcare.organization.Organization;
+import healthcare.organization.OrganizationDirectory;
+import healthcare.person.Person;
+import healthcare.userAccount.UserAccount;
 import java.awt.Color;
 import java.util.Random;
 import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
+import userinterface.SendMail;
 
 /**
  *
@@ -20,8 +28,13 @@ public class HandlerSignUp extends javax.swing.JPanel {
      */
     boolean emptyValidationStatus = true;
     boolean validationCheck = true;
-    public HandlerSignUp() {
+    Ecosystem ecosystem;  
+    OrganizationDirectory orgList;
+    public HandlerSignUp(Ecosystem ecosystem, OrganizationDirectory orgList) {
         initComponents();
+        this.ecosystem = ecosystem;
+        this.orgList = orgList;
+        populateOrganizationComboBox();
     }
 
     /**
@@ -55,6 +68,8 @@ public class HandlerSignUp extends javax.swing.JPanel {
         lblGender1 = new javax.swing.JLabel();
         txtPhoneNo = new javax.swing.JTextField();
         cboxVehicle = new javax.swing.JComboBox<>();
+        lblOrgName = new javax.swing.JLabel();
+        organizationJComboBox = new javax.swing.JComboBox();
 
         lblDateOfBirth.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         lblDateOfBirth.setText("Date Of Birth");
@@ -119,6 +134,13 @@ public class HandlerSignUp extends javax.swing.JPanel {
 
         cboxVehicle.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
+        lblOrgName.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        lblOrgName.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblOrgName.setText("Organization Name");
+
+        organizationJComboBox.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        organizationJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Doctor", "Nurse", "Patient" }));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -129,18 +151,19 @@ public class HandlerSignUp extends javax.swing.JPanel {
                         .addContainerGap()
                         .addComponent(lblTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(225, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblName)
-                            .addComponent(lblUsername)
-                            .addComponent(lblPhoneNo)
-                            .addComponent(lblDateOfBirth)
-                            .addComponent(lblGender)
-                            .addComponent(lblState)
-                            .addComponent(lblCity)
-                            .addComponent(lblZipCode)
-                            .addComponent(lblAddress)
-                            .addComponent(lblGender1))
+                        .addContainerGap(179, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblName, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblUsername, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblPhoneNo, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblDateOfBirth, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblGender, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblState, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblCity, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblZipCode, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblAddress, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblGender1, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblOrgName, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnSignUp)
@@ -154,8 +177,9 @@ public class HandlerSignUp extends javax.swing.JPanel {
                                 .addComponent(txtAddress, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
                                 .addComponent(txtState, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
                                 .addComponent(txtPhoneNo, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
-                                .addComponent(cboxVehicle, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addGap(0, 200, Short.MAX_VALUE)))
+                                .addComponent(cboxVehicle, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(organizationJComboBox, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 185, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -171,7 +195,11 @@ public class HandlerSignUp extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblUsername)
                     .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(8, 8, 8)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(organizationJComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblOrgName))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblGender)
                     .addComponent(cboxGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -205,7 +233,7 @@ public class HandlerSignUp extends javax.swing.JPanel {
                     .addComponent(txtZipcode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(btnSignUp)
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -241,9 +269,19 @@ public class HandlerSignUp extends javax.swing.JPanel {
                     
                     Random random=new Random();
                     int HandlerID=random.nextInt((9999 - 100) + 1) + 10;
-
-                    String password = name + String.valueOf(random.nextInt((9999 - 100) + 1)+ 10);
-                    JOptionPane.showMessageDialog(this,"Handler Registered Successfully.Your New Id is:"+HandlerID+" and password: "+password+",Please save this Id for furture reference.");
+                    
+                    Organization organization = (Organization) organizationJComboBox.getSelectedItem();
+                    
+                    String username = name.substring(0, 3) + String.valueOf(HandlerID);
+                    String password = name + String.valueOf(random.nextInt((9999 - 100) + 1) + 10);
+                    
+                    Person p = organization.getPersonDirectory().createAndAddPerson(username, Address, City, State, Zipcode, cellPhoneNumber);  
+                    UserAccount u = organization.getUserAccountDirectory().createUserAccount(HandlerID,username, password, p, new HandlerRole(), emailId);
+                    
+                    JOptionPane.showMessageDialog(this,"Handler Registered Successfully.Your New Username is:"+username+" and password: "+password+",Please save this Id for furture reference.");
+                    
+                    SendMail s = new SendMail();
+                    s.sendUserRegisterEmail(emailId, username, password);
 
                 }
                 else{
@@ -352,6 +390,13 @@ public class HandlerSignUp extends javax.swing.JPanel {
         return emptyValidationStatus;
     }//GEN-LAST:event_btnSignUpActionPerformed
 
+    private void populateOrganizationComboBox() {
+        organizationJComboBox.removeAllItems();
+
+        for (Organization organization : orgList.getOrganizationList()) {
+            organizationJComboBox.addItem(organization);
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSignUp;
@@ -363,11 +408,13 @@ public class HandlerSignUp extends javax.swing.JPanel {
     private javax.swing.JLabel lblGender;
     private javax.swing.JLabel lblGender1;
     private javax.swing.JLabel lblName;
+    private javax.swing.JLabel lblOrgName;
     private javax.swing.JLabel lblPhoneNo;
     private javax.swing.JLabel lblState;
     private javax.swing.JLabel lblTitle;
     private javax.swing.JLabel lblUsername;
     private javax.swing.JLabel lblZipCode;
+    private javax.swing.JComboBox organizationJComboBox;
     private javax.swing.JTextField txtAddress;
     private javax.swing.JTextField txtCity;
     private javax.swing.JTextField txtDateOfBirth;
