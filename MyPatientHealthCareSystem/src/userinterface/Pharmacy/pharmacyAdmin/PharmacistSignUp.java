@@ -2,10 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package userinterface.LabInterface.labAdmin;
+package userinterface.Pharmacy.pharmacyAdmin;
 
 import healthcare.Ecosystem;
+import healthcare.enterprise.healthCare.NurseRole;
 import healthcare.enterprise.lab.LabAssistantRole;
+import healthcare.enterprise.pharmacy.PharmacistRole;
 import healthcare.organization.Organization;
 import healthcare.organization.OrganizationDirectory;
 import healthcare.person.Person;
@@ -20,21 +22,19 @@ import userinterface.SendMail;
  *
  * @author adity
  */
-
-public class LabTechnicianSignUp extends javax.swing.JPanel {
+public class PharmacistSignUp extends javax.swing.JPanel {
 
     /**
-     * Creates new form LabTechnicianSignUp
+     * Creates new form PharmacistSignUp
      */
     boolean emptyValidationStatus = true;
     boolean validationCheck = true;
     Ecosystem ecosystem;  
     OrganizationDirectory orgList;
-    public LabTechnicianSignUp(Ecosystem ecosystem, OrganizationDirectory orgList) {
+    public PharmacistSignUp(Ecosystem ecosystem, OrganizationDirectory orgList) {
         initComponents();
         this.ecosystem = ecosystem;
         this.orgList = orgList;
-        populateOrganizationComboBox();
     }
 
     /**
@@ -46,41 +46,40 @@ public class LabTechnicianSignUp extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblGender = new javax.swing.JLabel();
-        lblTitle = new javax.swing.JLabel();
-        lblPhoneNo = new javax.swing.JLabel();
-        txtDateOfBirth = new javax.swing.JTextField();
-        lblAddress = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        txtCity = new javax.swing.JTextField();
         btnSignUp = new javax.swing.JButton();
-        txtName = new javax.swing.JTextField();
         txtState = new javax.swing.JTextField();
+        lblState = new javax.swing.JLabel();
+        lblAddress = new javax.swing.JLabel();
+        lblZipCode = new javax.swing.JLabel();
+        txtZipcode = new javax.swing.JTextField();
+        txtName = new javax.swing.JTextField();
+        lblCity = new javax.swing.JLabel();
+        txtEmail = new javax.swing.JTextField();
+        lblSpeciality = new javax.swing.JLabel();
+        lblName = new javax.swing.JLabel();
+        cboxSpeciality = new javax.swing.JComboBox<>();
+        lblUsername = new javax.swing.JLabel();
+        lblPhoneNo = new javax.swing.JLabel();
         txtAddress = new javax.swing.JTextField();
         txtPhoneNo = new javax.swing.JTextField();
-        lblZipCode = new javax.swing.JLabel();
-        lblDateOfBirth = new javax.swing.JLabel();
-        lblCity = new javax.swing.JLabel();
-        cboxGender = new javax.swing.JComboBox<>();
-        txtCity = new javax.swing.JTextField();
         lblOrgName = new javax.swing.JLabel();
-        lblState = new javax.swing.JLabel();
-        txtZipcode = new javax.swing.JTextField();
-        lblUsername = new javax.swing.JLabel();
-        lblName = new javax.swing.JLabel();
-        txtEmail = new javax.swing.JTextField();
+        lblGender = new javax.swing.JLabel();
+        cboxGender = new javax.swing.JComboBox<>();
+        lblDateOfBirth = new javax.swing.JLabel();
+        txtDateOfBirth = new javax.swing.JTextField();
         organizationJComboBox = new javax.swing.JComboBox();
 
-        lblGender.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
-        lblGender.setText("Gender");
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Create New Pharmacist");
 
-        lblTitle.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
-        lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTitle.setText("Create Technician Profile");
-
-        lblPhoneNo.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
-        lblPhoneNo.setText("Phone No.");
-
-        lblAddress.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
-        lblAddress.setText("Address");
+        txtCity.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCityActionPerformed(evt);
+            }
+        });
 
         btnSignUp.setText("Sign Up");
         btnSignUp.addActionListener(new java.awt.event.ActionListener() {
@@ -89,46 +88,43 @@ public class LabTechnicianSignUp extends javax.swing.JPanel {
             }
         });
 
-        txtState.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtStateActionPerformed(evt);
-            }
-        });
+        lblState.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        lblState.setText("State");
 
-        txtPhoneNo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtPhoneNoActionPerformed(evt);
-            }
-        });
+        lblAddress.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        lblAddress.setText("Address");
 
         lblZipCode.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         lblZipCode.setText("Zipcode");
 
-        lblDateOfBirth.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
-        lblDateOfBirth.setText("Date Of Birth");
-
         lblCity.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         lblCity.setText("City");
 
-        cboxGender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        lblSpeciality.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        lblSpeciality.setText("Speciality");
 
-        txtCity.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCityActionPerformed(evt);
-            }
-        });
+        lblName.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        lblName.setText("Name");
 
-        lblOrgName.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
-        lblOrgName.setText("Organization Name");
-
-        lblState.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
-        lblState.setText("State");
+        cboxSpeciality.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         lblUsername.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         lblUsername.setText("Email");
 
-        lblName.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
-        lblName.setText("Name");
+        lblPhoneNo.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        lblPhoneNo.setText("Phone No");
+
+        lblOrgName.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        lblOrgName.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblOrgName.setText("Organization Name");
+
+        lblGender.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        lblGender.setText("Gender");
+
+        cboxGender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        lblDateOfBirth.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        lblDateOfBirth.setText("Date Of Birth");
 
         organizationJComboBox.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         organizationJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Doctor", "Nurse", "Patient" }));
@@ -137,48 +133,49 @@ public class LabTechnicianSignUp extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(178, 178, 178)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(lblTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblDateOfBirth)
+                            .addComponent(lblGender))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cboxGender, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtDateOfBirth, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(181, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(lblName)
                             .addComponent(lblUsername)
-                            .addComponent(lblOrgName)
-                            .addComponent(lblPhoneNo)
-                            .addComponent(lblDateOfBirth)
-                            .addComponent(lblGender)
-                            .addComponent(lblState)
+                            .addComponent(lblAddress)
                             .addComponent(lblCity)
+                            .addComponent(lblState)
                             .addComponent(lblZipCode)
-                            .addComponent(lblAddress))
+                            .addComponent(lblSpeciality)
+                            .addComponent(lblPhoneNo)
+                            .addComponent(lblOrgName, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtName, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
-                            .addComponent(txtEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
-                            .addComponent(txtPhoneNo, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
-                            .addComponent(txtDateOfBirth, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
-                            .addComponent(cboxGender, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txtZipcode, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
-                            .addComponent(txtCity, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
-                            .addComponent(txtAddress, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
-                            .addComponent(txtState, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
-                            .addComponent(organizationJComboBox, javax.swing.GroupLayout.Alignment.TRAILING, 0, 238, Short.MAX_VALUE))
-                        .addGap(0, 234, Short.MAX_VALUE)))
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btnSignUp)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnSignUp)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(txtName)
+                                .addComponent(txtEmail)
+                                .addComponent(txtAddress)
+                                .addComponent(txtCity)
+                                .addComponent(txtState)
+                                .addComponent(txtZipcode)
+                                .addComponent(cboxSpeciality, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(txtPhoneNo, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE))
+                            .addComponent(organizationJComboBox, 0, 230, Short.MAX_VALUE))))
+                .addContainerGap(195, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(lblTitle)
+                .addGap(25, 25, 25)
+                .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblName)
@@ -187,22 +184,22 @@ public class LabTechnicianSignUp extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblUsername)
                     .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblGender)
+                    .addComponent(cboxGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblDateOfBirth)
+                    .addComponent(txtDateOfBirth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblOrgName)
                     .addComponent(organizationJComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblGender)
-                    .addComponent(cboxGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblPhoneNo)
-                    .addComponent(txtPhoneNo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblDateOfBirth)
-                    .addComponent(txtDateOfBirth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblSpeciality)
+                    .addComponent(cboxSpeciality, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblAddress)
@@ -220,18 +217,14 @@ public class LabTechnicianSignUp extends javax.swing.JPanel {
                     .addComponent(lblZipCode)
                     .addComponent(txtZipcode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblPhoneNo)
+                    .addComponent(txtPhoneNo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addComponent(btnSignUp)
-                .addContainerGap(90, Short.MAX_VALUE))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void txtStateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtStateActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtStateActionPerformed
-
-    private void txtPhoneNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPhoneNoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtPhoneNoActionPerformed
 
     private void txtCityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCityActionPerformed
         // TODO add your handling code here:
@@ -239,6 +232,7 @@ public class LabTechnicianSignUp extends javax.swing.JPanel {
 
     private void btnSignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignUpActionPerformed
         // TODO add your handling code here:
+        
         try{
             if(EmpytyFieldValidation()){
 
@@ -248,7 +242,7 @@ public class LabTechnicianSignUp extends javax.swing.JPanel {
                     long cellPhoneNumber = Long.parseLong(txtPhoneNo.getText());
                     String emailId = txtEmail.getText();
                     String gender = cboxGender.getSelectedItem().toString();
-                    String LabName = organizationJComboBox.getSelectedItem().toString();
+                    String pharmaName = organizationJComboBox.getSelectedItem().toString();
                     String dob = txtDateOfBirth.getText();
                     String Address = txtAddress.getText();
                     String City = txtCity.getText();
@@ -262,9 +256,9 @@ public class LabTechnicianSignUp extends javax.swing.JPanel {
                     String password = name + String.valueOf(random.nextInt((9999 - 100) + 1) + 10);
 
                     
-                    Organization organization = (Organization)  organizationJComboBox.getSelectedItem();
+                    Organization organization = (Organization) organizationJComboBox.getSelectedItem();
                     Person p = organization.getPersonDirectory().createAndAddPerson(username, Address, City, State, Zipcode, cellPhoneNumber);  
-                    UserAccount u = organization.getUserAccountDirectory().createUserAccount(LabTechID,username, password, p, new LabAssistantRole(), emailId);
+                    UserAccount u = organization.getUserAccountDirectory().createUserAccount(LabTechID,username, password, p, new PharmacistRole(), emailId);
                     
                     JOptionPane.showMessageDialog(this,"Lab Technician Registered Successfully.Your New Username is: "+username+" and password: "+password+",Please save this Id for furture reference.");
                     
@@ -287,104 +281,89 @@ public class LabTechnicianSignUp extends javax.swing.JPanel {
             System.out.println(e.toString());
             emptyValidationStatus=true;
         }
-    }                                               
 
-    private boolean RegexValidation() {
-        if(!txtName.getText().matches("^[a-zA-Z ]+$"))
-        {
+    }//GEN-LAST:event_btnSignUpActionPerformed
+
+     private boolean RegexValidation() {
+        if (!txtName.getText().matches("^[a-zA-Z ]+$")) {
             txtName.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
             txtName.setToolTipText("Please enter only characters and space.");
-            validationCheck=false;
+            validationCheck = false;
         }
-        
-        if(txtName.getText().matches("^[a-zA-Z ]+$"))
-        {
+
+        if (txtName.getText().matches("^[a-zA-Z ]+$")) {
             txtName.setBorder(BorderFactory.createLineBorder(Color.BLUE, 0));
         }
-        
-        if(!txtEmail.getText().matches("^[A-Za-z0-9+_.-]+@(.+)$"))
-        {
+
+        if (!txtEmail.getText().matches("^[A-Za-z0-9+_.-]+@(.+)$")) {
             txtEmail.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
             txtEmail.setToolTipText("Please enter a valid Email Address in the form abc@xyy.com");
-            validationCheck=false;
+            validationCheck = false;
         }
-        
-        if(txtEmail.getText().matches("^[A-Za-z0-9+_.-]+@(.+)$"))
-        {
+
+        if (txtEmail.getText().matches("^[A-Za-z0-9+_.-]+@(.+)$")) {
             txtEmail.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
         }
-        
-        if(!txtPhoneNo.getText().matches("^[0-9]{10}$"))
-        {
+
+        if (!txtPhoneNo.getText().matches("^[0-9]{10}$")) {
             txtPhoneNo.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
             txtPhoneNo.setToolTipText("Please enter a 10 digit number");
-            validationCheck=false;
+            validationCheck = false;
         }
-        
-        if(txtPhoneNo.getText().matches("^[0-9]{10}$"))
-        {
+
+        if (txtPhoneNo.getText().matches("^[0-9]{10}$")) {
             txtPhoneNo.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
         }
 
         return validationCheck;
     }
-    
+
     private boolean EmpytyFieldValidation() {
-        if(txtName.getText().equals(null) || txtName.getText().trim().isEmpty() )
-        {
+        if (txtName.getText().equals(null) || txtName.getText().trim().isEmpty()) {
             txtName.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
             txtName.setToolTipText("This Field Cannot be empty");
-            emptyValidationStatus= false;
+            emptyValidationStatus = false;
         }
-        if(!txtName.getText().equals(null) && !txtName.getText().trim().isEmpty() )
-        {
+        if (!txtName.getText().equals(null) && !txtName.getText().trim().isEmpty()) {
             txtName.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
         }
-       
-        
-        
-        if(txtAddress.getText().equals(null)|| txtAddress.getText().trim().isEmpty())
-        {
+
+        if (txtAddress.getText().equals(null) || txtAddress.getText().trim().isEmpty()) {
             txtAddress.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
             txtAddress.setToolTipText("This Field Cannot be empty");
-            emptyValidationStatus= false;
+            emptyValidationStatus = false;
         }
-        if(!txtAddress.getText().equals(null) && !txtAddress.getText().trim().isEmpty())
-        {
+        if (!txtAddress.getText().equals(null) && !txtAddress.getText().trim().isEmpty()) {
             txtAddress.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
-           
+
         }
-        
-        if(txtCity.getText().equals(null)|| txtCity.getText().trim().isEmpty())
-        {
+
+        if (txtCity.getText().equals(null) || txtCity.getText().trim().isEmpty()) {
             txtCity.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
             txtCity.setToolTipText("This Field Cannot be empty");
-            emptyValidationStatus= false;
+            emptyValidationStatus = false;
         }
-        if(!txtCity.getText().equals(null) && !txtCity.getText().trim().isEmpty())
-        {
+        if (!txtCity.getText().equals(null) && !txtCity.getText().trim().isEmpty()) {
             txtCity.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
-           
+
         }
-        
-        if(txtPhoneNo.getText().equals(null) || txtPhoneNo.getText().trim().isEmpty())
-        {
+
+        if (txtPhoneNo.getText().equals(null) || txtPhoneNo.getText().trim().isEmpty()) {
             txtPhoneNo.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
             txtPhoneNo.setToolTipText("This Field Cannot be empty");
-            emptyValidationStatus=false;
+            emptyValidationStatus = false;
         }
-        if(!txtPhoneNo.getText().equals(null) && !txtPhoneNo.getText().trim().isEmpty())
-        {
+        if (!txtPhoneNo.getText().equals(null) && !txtPhoneNo.getText().trim().isEmpty()) {
             txtPhoneNo.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
         }
         return emptyValidationStatus;
-    
-    }//GEN-LAST:event_btnSignUpActionPerformed
 
+    }
+    
     private void populateOrganizationComboBox() {
         organizationJComboBox.removeAllItems();
 
-        for (Organization organization : orgList.getOrganizationList()){
+        for (Organization organization : orgList.getOrganizationList()) {
             organizationJComboBox.addItem(organization);
         }
     }
@@ -392,6 +371,8 @@ public class LabTechnicianSignUp extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSignUp;
     private javax.swing.JComboBox<String> cboxGender;
+    private javax.swing.JComboBox<String> cboxSpeciality;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblAddress;
     private javax.swing.JLabel lblCity;
     private javax.swing.JLabel lblDateOfBirth;
@@ -399,8 +380,8 @@ public class LabTechnicianSignUp extends javax.swing.JPanel {
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblOrgName;
     private javax.swing.JLabel lblPhoneNo;
+    private javax.swing.JLabel lblSpeciality;
     private javax.swing.JLabel lblState;
-    private javax.swing.JLabel lblTitle;
     private javax.swing.JLabel lblUsername;
     private javax.swing.JLabel lblZipCode;
     private javax.swing.JComboBox organizationJComboBox;
