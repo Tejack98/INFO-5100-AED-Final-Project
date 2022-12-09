@@ -4,6 +4,18 @@
  */
 package userinterface.HealthcareInterface.doctor;
 
+import healthcare.enterprise.Enterprise;
+import healthcare.enterprise.healthCare.DoctorOrganization;
+import healthcare.enterprise.pharmacy.PharmacyEnterprise;
+import healthcare.enterprise.pharmacy.PharmacyOrganization;
+import healthcare.network.Network;
+import healthcare.organization.Organization;
+import healthcare.userAccount.UserAccount;
+import healthcare.workQueue.WorkRequest;
+import java.awt.CardLayout;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+
 /**
  *
  * @author shriyapandita
@@ -13,8 +25,22 @@ public class RequestPharmacistForMedicinePanel extends javax.swing.JPanel {
     /**
      * Creates new form RequestPharmacistForMedicinePanel
      */
-    public RequestPharmacistForMedicinePanel() {
+    private DoctorOrganization organization;
+    private Enterprise enterprise;
+    private UserAccount userAccount;
+    private Network network;
+    JPanel userProcessContainer;
+    WorkRequest patientrequest;
+    String medlist="";
+    
+    public RequestPharmacistForMedicinePanel(WorkRequest request, Network network, UserAccount userAccount,Enterprise enterprise) {
         initComponents();
+        this.userAccount = userAccount;
+        this.organization = (DoctorOrganization) organization;
+        this.enterprise = enterprise;
+        this.network = network;
+        this.patientrequest = request;
+        txtPatientName.setText(patientrequest.getSender().getUserName());
     }
 
     /**
@@ -31,7 +57,7 @@ public class RequestPharmacistForMedicinePanel extends javax.swing.JPanel {
         jButton2 = new javax.swing.JButton();
         txtPatientName = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        requestbtn = new javax.swing.JButton();
         chkViv = new javax.swing.JCheckBox();
         chkAnt = new javax.swing.JCheckBox();
         chkCam = new javax.swing.JCheckBox();
@@ -87,13 +113,13 @@ public class RequestPharmacistForMedicinePanel extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         jLabel1.setText("For Patient");
 
-        jButton1.setBackground(new java.awt.Color(153, 204, 255));
-        jButton1.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
-        jButton1.setText("Request Pharmacist");
-        jButton1.setBorder(null);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        requestbtn.setBackground(new java.awt.Color(153, 204, 255));
+        requestbtn.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        requestbtn.setText("Request Pharmacist");
+        requestbtn.setBorder(null);
+        requestbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                requestbtnActionPerformed(evt);
             }
         });
 
@@ -145,7 +171,7 @@ public class RequestPharmacistForMedicinePanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(60, 60, 60)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
+                    .addComponent(requestbtn)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(chkCam)
@@ -177,20 +203,70 @@ public class RequestPharmacistForMedicinePanel extends javax.swing.JPanel {
                 .addGap(29, 29, 29)
                 .addComponent(chkViv)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(requestbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(133, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+//        userProcessContainer.remove(this);
+//        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+//        layout.previous(userProcessContainer);
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void requestbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestbtnActionPerformed
         // TODO add your handling code here:
-
+                patientrequest.setSender(userAccount);
+       // patientrequest.setReceiver();
+        if (chkAca.isSelected())
+        {
+            medlist = medlist + " Acamprosate ,";
+        
+        }
+        if (chkDis.isSelected())
+        {
+            medlist = medlist + "Disulfiram ,";
+        
+        }
        
-    }//GEN-LAST:event_jButton1ActionPerformed
+        if(chkCam.isSelected())
+        {
+            medlist = medlist + "Campral ,";
+        }
+        if(chkAnt.isSelected())
+        {
+            medlist = medlist + "Antabuse ,";
+        }
+        if(chkViv.isSelected())
+        {
+            medlist = medlist + "Vivitrol ,";
+        }
+      
+        System.out.println(medlist);
+        patientrequest.setMedlist(medlist);
+        patientrequest.setStatus("Prescription Given");
+        patientrequest.setDiagnose("Following medicines have been prescribed : \n " + medlist);
+
+        Organization org = null;
+        for (Enterprise enterprise : network.getEnterpriseMasterList().getEnterpriseList()) {
+            if (enterprise instanceof PharmacyEnterprise) {
+                for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()) {
+                    if (organization instanceof PharmacyOrganization) {
+                        org = organization;
+                        break;
+                    }
+                }
+            }
+            if (org != null) {
+                org.getWorkQueue().getWorkRequestList().add(patientrequest);
+                patientrequest.setReceiver(null);
+                userAccount.getWorkQueue().getWorkRequestList().add(patientrequest);
+            }
+        }
+        JOptionPane.showMessageDialog(null, "Medical prescription sent to pharmacist successfully.");
+
+    }//GEN-LAST:event_requestbtnActionPerformed
 
     private void chkVivActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkVivActionPerformed
         // TODO add your handling code here:
@@ -219,11 +295,11 @@ public class RequestPharmacistForMedicinePanel extends javax.swing.JPanel {
     private javax.swing.JCheckBox chkCam;
     private javax.swing.JCheckBox chkDis;
     private javax.swing.JCheckBox chkViv;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JButton requestbtn;
     private javax.swing.JTextField txtPatientName;
     // End of variables declaration//GEN-END:variables
 }

@@ -6,6 +6,8 @@ package userinterface.LabInterface.labAdmin;
 
 import healthcare.Ecosystem;
 import healthcare.enterprise.lab.LabAssistantRole;
+import healthcare.organization.Organization;
+import healthcare.organization.OrganizationDirectory;
 import healthcare.person.Person;
 import healthcare.userAccount.UserAccount;
 import java.awt.Color;
@@ -26,10 +28,12 @@ public class LabTechnicianSignUp extends javax.swing.JPanel {
      */
     boolean emptyValidationStatus = true;
     boolean validationCheck = true;
-    Ecosystem ecosystem;   
-    public LabTechnicianSignUp() {
+    Ecosystem ecosystem;  
+    OrganizationDirectory orgList;
+    public LabTechnicianSignUp(Ecosystem ecosystem, OrganizationDirectory orgList) {
         initComponents();
-        this.ecosystem = Ecosystem.getEcosystemInstance();
+        this.ecosystem = ecosystem;
+        this.orgList = orgList;
     }
 
     /**
@@ -56,9 +60,9 @@ public class LabTechnicianSignUp extends javax.swing.JPanel {
         lblCity = new javax.swing.JLabel();
         cboxGender = new javax.swing.JComboBox<>();
         txtCity = new javax.swing.JTextField();
-        lblLabName = new javax.swing.JLabel();
+        lblOrgName = new javax.swing.JLabel();
         lblState = new javax.swing.JLabel();
-        cboxLabName = new javax.swing.JComboBox<>();
+        cboxOrgName = new javax.swing.JComboBox<>();
         txtZipcode = new javax.swing.JTextField();
         lblUsername = new javax.swing.JLabel();
         lblName = new javax.swing.JLabel();
@@ -113,13 +117,13 @@ public class LabTechnicianSignUp extends javax.swing.JPanel {
             }
         });
 
-        lblLabName.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
-        lblLabName.setText("Lab Name");
+        lblOrgName.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        lblOrgName.setText("Organization Name");
 
         lblState.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         lblState.setText("State");
 
-        cboxLabName.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cboxOrgName.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         lblUsername.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         lblUsername.setText("Email");
@@ -137,11 +141,11 @@ public class LabTechnicianSignUp extends javax.swing.JPanel {
                         .addContainerGap()
                         .addComponent(lblTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(200, Short.MAX_VALUE)
+                        .addContainerGap(185, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(lblName)
                             .addComponent(lblUsername)
-                            .addComponent(lblLabName)
+                            .addComponent(lblOrgName)
                             .addComponent(lblPhoneNo)
                             .addComponent(lblDateOfBirth)
                             .addComponent(lblGender)
@@ -155,13 +159,13 @@ public class LabTechnicianSignUp extends javax.swing.JPanel {
                             .addComponent(txtEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
                             .addComponent(txtPhoneNo, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
                             .addComponent(txtDateOfBirth, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
-                            .addComponent(cboxLabName, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cboxOrgName, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(cboxGender, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(txtZipcode, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
                             .addComponent(txtCity, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
                             .addComponent(txtAddress, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
                             .addComponent(txtState, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE))
-                        .addGap(0, 254, Short.MAX_VALUE)))
+                        .addGap(0, 238, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -183,8 +187,8 @@ public class LabTechnicianSignUp extends javax.swing.JPanel {
                     .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblLabName)
-                    .addComponent(cboxLabName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblOrgName)
+                    .addComponent(cboxOrgName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblGender)
@@ -242,7 +246,7 @@ public class LabTechnicianSignUp extends javax.swing.JPanel {
                     long cellPhoneNumber = Long.parseLong(txtPhoneNo.getText());
                     String emailId = txtEmail.getText();
                     String gender = cboxGender.getSelectedItem().toString();
-                    String LabName = cboxLabName.getSelectedItem().toString();
+                    String LabName = cboxOrgName.getSelectedItem().toString();
                     String dob = txtDateOfBirth.getText();
                     String Address = txtAddress.getText();
                     String City = txtCity.getText();
@@ -255,10 +259,12 @@ public class LabTechnicianSignUp extends javax.swing.JPanel {
                     String username = name.substring(0, 3) + String.valueOf(LabTechID);
                     String password = name + String.valueOf(random.nextInt((9999 - 100) + 1) + 10);
 
-                    Person person = ecosystem.getPersonDirectory().createAndAddPerson(name,Address,City,State,Zipcode,cellPhoneNumber);
-                    UserAccount u = ecosystem.getUserAccountDirectory().createUserAccount(LabTechID,username, password, person, new LabAssistantRole(), emailId);
                     
-                    JOptionPane.showMessageDialog(this,"Lab Technician Registered Successfully.Your New Id is:"+LabTechID+" and password: "+password+",Please save this Id for furture reference.");
+                    Organization organization = (Organization) cboxOrgName.getSelectedItem();
+                    Person p = organization.getPersonDirectory().createAndAddPerson(username, Address, City, State, Zipcode, cellPhoneNumber);  
+                    UserAccount u = organization.getUserAccountDirectory().createUserAccount(LabTechID,username, password, p, new LabAssistantRole(), emailId);
+                    
+                    JOptionPane.showMessageDialog(this,"Lab Technician Registered Successfully.Your New Username is: "+username+" and password: "+password+",Please save this Id for furture reference.");
                     
                     SendMail s = new SendMail();
                     s.sendUserRegisterEmail(emailId, username, password);
@@ -380,13 +386,13 @@ public class LabTechnicianSignUp extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSignUp;
     private javax.swing.JComboBox<String> cboxGender;
-    private javax.swing.JComboBox<String> cboxLabName;
+    private javax.swing.JComboBox<String> cboxOrgName;
     private javax.swing.JLabel lblAddress;
     private javax.swing.JLabel lblCity;
     private javax.swing.JLabel lblDateOfBirth;
     private javax.swing.JLabel lblGender;
-    private javax.swing.JLabel lblLabName;
     private javax.swing.JLabel lblName;
+    private javax.swing.JLabel lblOrgName;
     private javax.swing.JLabel lblPhoneNo;
     private javax.swing.JLabel lblState;
     private javax.swing.JLabel lblTitle;

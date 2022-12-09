@@ -4,6 +4,12 @@
  */
 package userinterface.HealthcareInterface.doctor;
 
+import healthcare.Ecosystem;
+import healthcare.enterprise.Enterprise;
+import healthcare.network.Network;
+import healthcare.organization.Organization;
+import healthcare.userAccount.UserAccount;
+import healthcare.workQueue.WorkRequest;
 import userinterface.HealthcareInterface.healthcareAdmin.doctor.HealthCareAdminDoctorPanel;
 
 /**
@@ -15,10 +21,21 @@ public class DoctorWorkArea extends javax.swing.JFrame {
     /**
      * Creates new form HopsitalWorkArea
      */
-    public DoctorWorkArea() {
+    
+    static UserAccount userAccount;
+    static Organization organization;
+    static Enterprise enterprise;
+    static Ecosystem ecosystem;
+    static Network network;
+    public DoctorWorkArea(UserAccount userAccount, Organization organization, Enterprise enterprise ,Ecosystem ecosystem, Network network) {
         initComponents();
+        this.userAccount = userAccount;
+        this.organization = organization;
+        this.enterprise = enterprise;
+        this.ecosystem = ecosystem;
+        this.network = network;
         
-        DoctorAppointmentRequestsPanel req = new DoctorAppointmentRequestsPanel();
+        DoctorAppointmentRequestsPanel req = new DoctorAppointmentRequestsPanel(userAccount,organization, enterprise ,network);
         jSplitPaneSystem.setRightComponent(req);
     }
 
@@ -94,13 +111,10 @@ public class DoctorWorkArea extends javax.swing.JFrame {
         controlPanel.setLayout(controlPanelLayout);
         controlPanelLayout.setHorizontalGroup(
             controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(controlPanelLayout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, controlPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(17, Short.MAX_VALUE)
                 .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Pat_Med_His_btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Pat_Med_His_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Appointment_req_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -121,9 +135,9 @@ public class DoctorWorkArea extends javax.swing.JFrame {
                 .addComponent(Pat_Med_His_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(Pat_Med_His_btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 165, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 164, Short.MAX_VALUE)
                 .addComponent(btnLogout)
-                .addGap(15, 15, 15))
+                .addGap(16, 16, 16))
         );
 
         jSplitPaneSystem.setLeftComponent(controlPanel);
@@ -168,20 +182,20 @@ public class DoctorWorkArea extends javax.swing.JFrame {
 
     private void Appointment_req_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Appointment_req_btnActionPerformed
         // TODO add your handling code here:
-        DoctorAppointmentRequestsPanel req = new DoctorAppointmentRequestsPanel();
+        DoctorAppointmentRequestsPanel req = new DoctorAppointmentRequestsPanel(userAccount,organization, enterprise ,network);
         jSplitPaneSystem.setRightComponent(req);
     }//GEN-LAST:event_Appointment_req_btnActionPerformed
 
     private void Pat_Med_His_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pat_Med_His_btnActionPerformed
         // TODO add your handling code here:
-        DoctorPatientMedicalHistoryPanel dpmh = new DoctorPatientMedicalHistoryPanel();
-        jSplitPaneSystem.setRightComponent(dpmh);
+//        DoctorPatientMedicalHistoryPanel dpmh = new DoctorPatientMedicalHistoryPanel();
+//        jSplitPaneSystem.setRightComponent(dpmh);
     }//GEN-LAST:event_Pat_Med_His_btnActionPerformed
 
     private void Pat_Med_His_btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pat_Med_His_btn1ActionPerformed
         // TODO add your handling code here:]
-        RequestPharmacistForMedicinePanel rpfm = new RequestPharmacistForMedicinePanel();
-        jSplitPaneSystem.setRightComponent(rpfm);
+//        RequestPharmacistForMedicinePanel rpfm = new RequestPharmacistForMedicinePanel(request, Network network, UserAccount userAccount,Enterprise enterprise);
+//        jSplitPaneSystem.setRightComponent(rpfm);
     }//GEN-LAST:event_Pat_Med_His_btn1ActionPerformed
 
     /**
@@ -245,7 +259,7 @@ public class DoctorWorkArea extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new DoctorWorkArea().setVisible(true);
+                new DoctorWorkArea(userAccount,organization,enterprise,ecosystem,network).setVisible(true);
             }
         });
     }
