@@ -123,7 +123,6 @@ public class LabTechnicianSignUp extends javax.swing.JPanel {
 
         lblState.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         lblState.setText("State");
-
         lblUsername.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         lblUsername.setText("Email");
 
@@ -260,8 +259,7 @@ public class LabTechnicianSignUp extends javax.swing.JPanel {
                     
                     String username = name.substring(0, 3) + String.valueOf(LabTechID);
                     String password = name + String.valueOf(random.nextInt((9999 - 100) + 1) + 10);
-
-                    
+             
                     Organization organization = (Organization)  organizationJComboBox.getSelectedItem();
                     Person p = organization.getPersonDirectory().createAndAddPerson(username, Address, City, State, Zipcode, cellPhoneNumber);  
                     UserAccount u = organization.getUserAccountDirectory().createUserAccount(LabTechID,username, password, p, new LabAssistantRole(), emailId);
