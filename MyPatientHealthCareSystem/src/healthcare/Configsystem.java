@@ -19,6 +19,8 @@ import healthcare.enterprise.pharmacy.PharmacistRole;
 import healthcare.enterprise.pharmacy.PharmacyAdminRole;
 import healthcare.enterprise.supplyChain.HandlerRole;
 import healthcare.enterprise.supplyChain.SupplyManagerRole;
+import healthcare.enterprise.vaccination.VaccinationAdminRole;
+import healthcare.enterprise.vaccination.VaccinatorRole;
 import healthcare.network.Network;
 import healthcare.organization.Organization;
 import healthcare.person.Person;
@@ -114,8 +116,8 @@ public class Configsystem {
         UserAccount u10 = orgsupplier.getUserAccountDirectory().createUserAccount(5033,"han", "han", person8, new HandlerRole() ,"s@g.com");
         UserAccount u11 = orgEmergUnit.getUserAccountDirectory().createUserAccount(2323,"aemg", "aemg", person9, new EmergencyUnitAdminRole() ,"s@g.com");
         UserAccount u12 = orgEmergUnit.getUserAccountDirectory().createUserAccount(5033,"ahan", "ahan", person10, new AmbulanceHandlerRole() ,"s@g.com");
-        UserAccount u13 = orgVacc.getUserAccountDirectory().createUserAccount(4544,"emg", "emg", person11, new EmergencyUnitAdminRole() ,"s@g.com");
-        UserAccount u14 = orgVacc.getUserAccountDirectory().createUserAccount(6555,"ahan", "ahan", person12, new AmbulanceHandlerRole() ,"s@g.com");
+        UserAccount u13 = orgVacc.getUserAccountDirectory().createUserAccount(4544,"vac", "vac", person11, new VaccinatorRole() ,"s@g.com");
+        UserAccount u14 = orgVacc.getUserAccountDirectory().createUserAccount(6555,"avac", "avac", person12, new VaccinationAdminRole() ,"s@g.com");
         
 
         Person dadmin = orgDonor.getPersonDirectory().createAndAddPerson("tej","75 Saint Alphonso","Boston","MA",Long.parseLong("02120"),Long.parseLong("8576938034"));

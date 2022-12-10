@@ -54,6 +54,7 @@ public class NurseWorkArea extends javax.swing.JFrame {
         btnLogout = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         btnViewPres = new javax.swing.JButton();
+        btnViewPres1 = new javax.swing.JButton();
         workArea = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -61,7 +62,7 @@ public class NurseWorkArea extends javax.swing.JFrame {
         controlPanel.setBackground(new java.awt.Color(100, 92, 170));
         controlPanel.setPreferredSize(new java.awt.Dimension(200, 600));
 
-        btnDash.setText("Dashboard");
+        btnDash.setText("Request Vaccines");
         btnDash.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDashActionPerformed(evt);
@@ -80,10 +81,17 @@ public class NurseWorkArea extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Nurse");
 
-        btnViewPres.setText("View Prescription");
+        btnViewPres.setText("Request Blood");
         btnViewPres.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnViewPresActionPerformed(evt);
+            }
+        });
+
+        btnViewPres1.setText("Request Organ");
+        btnViewPres1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewPres1ActionPerformed(evt);
             }
         });
 
@@ -91,25 +99,38 @@ public class NurseWorkArea extends javax.swing.JFrame {
         controlPanel.setLayout(controlPanelLayout);
         controlPanelLayout.setHorizontalGroup(
             controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, controlPanelLayout.createSequentialGroup()
-                .addContainerGap(17, Short.MAX_VALUE)
+            .addGroup(controlPanelLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnViewPres, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnDash, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(14, 14, 14))
+                    .addGroup(controlPanelLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, controlPanelLayout.createSequentialGroup()
+                                .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(25, 25, 25))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, controlPanelLayout.createSequentialGroup()
+                                .addComponent(btnDash)
+                                .addContainerGap())))
+                    .addGroup(controlPanelLayout.createSequentialGroup()
+                        .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnViewPres, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnViewPres1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap())))
         );
         controlPanelLayout.setVerticalGroup(
             controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(controlPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnDash, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnViewPres, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 375, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnViewPres1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 320, Short.MAX_VALUE)
                 .addComponent(btnLogout)
                 .addGap(14, 14, 14))
         );
@@ -145,8 +166,11 @@ public class NurseWorkArea extends javax.swing.JFrame {
 
     private void btnDashActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDashActionPerformed
         // TODO add your handling code here:
-        NurseDashboard nurseDash = new NurseDashboard(userAccount,organization,enterprise,ecosystem,network);
-        jSplitPaneSystem.setRightComponent(nurseDash);
+//        NurseDashboard nurseDash = new NurseDashboard(userAccount,organization,enterprise,ecosystem,network);
+//        jSplitPaneSystem.setRightComponent(nurseDash);
+
+        NurseRequestVaccinesPanel nrvp = new NurseRequestVaccinesPanel(network, userAccount, enterprise);
+        jSplitPaneSystem.setRightComponent(nrvp);
     }//GEN-LAST:event_btnDashActionPerformed
 
     private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
@@ -157,9 +181,15 @@ public class NurseWorkArea extends javax.swing.JFrame {
 
     private void btnViewPresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewPresActionPerformed
         // TODO add your handling code here:
-        NurseViewPatientPrescription nurseViewPres = new NurseViewPatientPrescription(userAccount,organization,enterprise,ecosystem,network);
-        jSplitPaneSystem.setRightComponent(nurseViewPres);
+        NurseRequestBloodPanel nrb = new NurseRequestBloodPanel(network, userAccount, enterprise);
+        jSplitPaneSystem.setRightComponent(nrb);
     }//GEN-LAST:event_btnViewPresActionPerformed
+
+    private void btnViewPres1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewPres1ActionPerformed
+        // TODO add your handling code here:
+        NurseRequestOrganPanel nro = new NurseRequestOrganPanel(network, userAccount, enterprise);
+        jSplitPaneSystem.setRightComponent(nro);
+    }//GEN-LAST:event_btnViewPres1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -327,6 +357,7 @@ public class NurseWorkArea extends javax.swing.JFrame {
     private javax.swing.JButton btnDash;
     private javax.swing.JButton btnLogout;
     private javax.swing.JButton btnViewPres;
+    private javax.swing.JButton btnViewPres1;
     private javax.swing.JPanel controlPanel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JSplitPane jSplitPaneSystem;

@@ -8,6 +8,7 @@ import healthcare.Ecosystem;
 import healthcare.db4oUtil.Db4oUtil;
 import healthcare.enterprise.Enterprise;
 import healthcare.enterprise.EnterpriseMasterDirectory;
+import healthcare.enterprise.vaccination.VaccinationAdminRole;
 import healthcare.network.Network;
 import healthcare.organization.Organization;
 import healthcare.role.Role;
@@ -32,6 +33,8 @@ import userinterface.LabInterface.labAdmin.LabAdminWorkArea;
 import userinterface.LabInterface.labTech.LabTechnicianWorkArea;
 import userinterface.SupplyChainInterface.handler.HandlerWorkArea;
 import userinterface.SupplyChainInterface.supplyManger.SupplyManagerWorkArea;
+import userinterface.Vaccination.vaccinationAdmin.VaccinationAdminWorkArea;
+import userinterface.Vaccination.vaccinator.VaccinatorWorkArea;
 
 /**
  *
@@ -294,6 +297,22 @@ public class MainJFrame extends javax.swing.JFrame {
                 supplierFrame.setVisible(true);
 
             }
+            
+// ===============================================================================================
+// ============================Vaccination===========================================================  
+            if (Role.RoleType.Vaccinator.toString().equals(userAccount.getRole().toString())) {
+                VaccinatorWorkArea vaccFrame = (VaccinatorWorkArea) frame;
+                vaccFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+                vaccFrame.setVisible(true);
+            }
+
+            if (Role.RoleType.VaccinationAdmin.toString().equals(userAccount.getRole().toString())) {
+                VaccinationAdminWorkArea vaccAdminFrame = (VaccinationAdminWorkArea) frame;
+                vaccAdminFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+                vaccAdminFrame.setVisible(true);
+
+            }
+            
 // ===============================================================================================
 // ============================AdminMaster===========================================================  
             if (Role.RoleType.Administrator.toString().equals(userAccount.getRole().toString())) {
