@@ -231,7 +231,18 @@ public class HealthCareAdminSignUp extends javax.swing.JPanel {
         {
             txtPhoneNo.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
         }
-
+        
+        if(!txtZipcode.getText().matches("^[0-9]{5}(?:-[0-9]{4})?$"))
+        {
+            txtZipcode.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            txtZipcode.setToolTipText("Please enter a valid zip code number");
+            validationCheck=false;
+        }
+         if(txtZipcode.getText().matches("^[0-9]{5}(?:-[0-9]{4})?$"))
+        {
+            txtZipcode.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        }
+        
         return validationCheck;
     }
     
@@ -247,6 +258,17 @@ public class HealthCareAdminSignUp extends javax.swing.JPanel {
             txtName.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
         }
 
+        if(txtEmail.getText().equals(null) || txtEmail.getText().trim().isEmpty() )
+        {
+            txtEmail.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            txtEmail.setToolTipText("This Field Cannot be empty");
+            emptyValidationStatus= false;
+        }
+        
+        if(!txtEmail.getText().equals(null) && !txtEmail.getText().trim().isEmpty() )
+        {
+            txtEmail.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        }
         if(txtAddress.getText().equals(null)|| txtAddress.getText().trim().isEmpty())
         {
             txtAddress.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
@@ -271,6 +293,17 @@ public class HealthCareAdminSignUp extends javax.swing.JPanel {
            
         }
         
+        if(txtState.getText().equals(null)|| txtState.getText().trim().isEmpty())
+        {
+            txtState.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            txtState.setToolTipText("This Field Cannot be empty");
+            emptyValidationStatus= false;
+        }
+        if(!txtState.getText().equals(null) && !txtState.getText().trim().isEmpty())
+        {
+            txtState.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+           
+        }
         if(txtPhoneNo.getText().equals(null) || txtPhoneNo.getText().trim().isEmpty())
         {
             txtPhoneNo.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
@@ -280,6 +313,17 @@ public class HealthCareAdminSignUp extends javax.swing.JPanel {
         if(!txtPhoneNo.getText().equals(null) && !txtPhoneNo.getText().trim().isEmpty())
         {
             txtPhoneNo.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        }
+        
+        if(txtZipcode.getText().equals(null) || txtZipcode.getText().trim().isEmpty())
+        {
+            txtZipcode.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            txtZipcode.setToolTipText("This Field Cannot be empty");
+            emptyValidationStatus=false;
+        }
+        if(!txtZipcode.getText().equals(null) && !txtZipcode.getText().trim().isEmpty())
+        {
+            txtZipcode.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
         }
         return emptyValidationStatus;
     }//GEN-LAST:event_btnSignUpActionPerformed
