@@ -9,5 +9,14 @@ package healthcare.workQueue;
  * @author Tejas
  */
 public class DonorBankRequest extends WorkRequest {
+    private String bloodType;
+
+    public String getBloodType() {
+        return bloodType;
+    }
+
+    public void setBloodType(String bloodType) {
+        this.bloodType = bloodType;
+    }
     
 }
