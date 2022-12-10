@@ -24,7 +24,7 @@ import javax.swing.JOptionPane;
  *
  * @author adity
  */
-public class ProcessBloodRequest extends javax.swing.JPanel {
+public class ProcessDonationRequest extends javax.swing.JPanel {
 
     /**
      * Creates new form CollectedMedicalHistory
@@ -38,7 +38,7 @@ public class ProcessBloodRequest extends javax.swing.JPanel {
     String solution = "";
     String type = "";
     
-    public ProcessBloodRequest(DonorBankRequest request,UserAccount useraccount, Enterprise enterprise, Network network) {
+    public ProcessDonationRequest(DonorBankRequest request,UserAccount useraccount, Enterprise enterprise, Network network) {
         initComponents();
         this.request = request;
         this.useraccount = useraccount;
@@ -63,10 +63,12 @@ public class ProcessBloodRequest extends javax.swing.JPanel {
         jLabel12 = new javax.swing.JLabel();
         cboxBlood1 = new javax.swing.JComboBox<>();
         jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        txtOrg = new javax.swing.JTextField();
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Blood Request Details");
+        jLabel1.setText("Donation Request Details");
 
         btnSendResults.setText("Process And Send Results");
         btnSendResults.addActionListener(new java.awt.event.ActionListener() {
@@ -86,9 +88,9 @@ public class ProcessBloodRequest extends javax.swing.JPanel {
 
         jLabel12.setBackground(new java.awt.Color(255, 255, 255));
         jLabel12.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        jLabel12.setText("For User");
+        jLabel12.setText("For Donor");
 
-        cboxBlood1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-" }));
+        cboxBlood1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-", "NA" }));
         cboxBlood1.setEnabled(false);
         cboxBlood1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -98,22 +100,36 @@ public class ProcessBloodRequest extends javax.swing.JPanel {
 
         jLabel9.setText("Blood Type");
 
+        jLabel10.setText("Organ");
+
+        txtOrg.setEditable(false);
+        txtOrg.setText("NA");
+        txtOrg.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtOrgActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 777, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnSendResults, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(249, 249, 249))
             .addGroup(layout.createSequentialGroup()
-                .addGap(219, 219, 219)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(115, 115, 115)
-                        .addComponent(cboxBlood1, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(219, 219, 219)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(28, 28, 28)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(cboxBlood1, 0, 223, Short.MAX_VALUE)
+                                    .addComponent(txtOrg)))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(254, 254, 254)
+                        .addComponent(btnSendResults, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -132,9 +148,13 @@ public class ProcessBloodRequest extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
                     .addComponent(cboxBlood1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 209, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(txtOrg)
+                    .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(33, 33, 33)
                 .addComponent(btnSendResults)
-                .addGap(104, 104, 104))
+                .addContainerGap(240, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(99, 99, 99)
@@ -152,7 +172,6 @@ public class ProcessBloodRequest extends javax.swing.JPanel {
         /*-----------------------*/
         int b = request.getHashcode();
         System.out.println("b" + b);
-        //Dharati
         Enterprise inEnterprise = null;
         Organization inOrganization = null;
         Network inNetwork = null;
@@ -163,7 +182,7 @@ public class ProcessBloodRequest extends javax.swing.JPanel {
                     if (organization instanceof DonorBankOrganization ){
                         for (WorkRequest work : organization.getWorkQueue().getWorkRequestList()) {
                             if (work.getHashcode() == b) {
-                                work.setStatus("Blood req done");
+                                work.setStatus("Donation req done");
                             }
                         }
                     }
@@ -183,10 +202,19 @@ public class ProcessBloodRequest extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_cboxBlood1ActionPerformed
 
+    private void txtOrgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtOrgActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtOrgActionPerformed
+
     
     public void populateBloodRequest() {
         
         cboxBlood1.setSelectedItem(request.getBloodType());
+        String organ = request.getOrgan();
+        
+        if(organ != ""){
+            txtOrg.setText(organ);
+        }
         
 //       String medList = request.getMedlist();
 //        
@@ -214,8 +242,10 @@ public class ProcessBloodRequest extends javax.swing.JPanel {
     private javax.swing.JButton btnSendResults;
     private javax.swing.JComboBox<String> cboxBlood1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JTextField txtOrg;
     private javax.swing.JTextField txtPatientName;
     // End of variables declaration//GEN-END:variables
 }
