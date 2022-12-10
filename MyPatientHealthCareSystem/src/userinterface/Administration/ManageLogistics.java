@@ -86,7 +86,7 @@ public class ManageLogistics extends javax.swing.JPanel {
         Delete1_btn.setText("Delete");
         jPanel1.add(Delete1_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 580, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\adity\\Documents\\WhatsApp Image 2022-12-08 at 20.09.24.jpg")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/WhatsApp Image 2022-12-08 at 20.09.24.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -90, 740, 1060));
 
