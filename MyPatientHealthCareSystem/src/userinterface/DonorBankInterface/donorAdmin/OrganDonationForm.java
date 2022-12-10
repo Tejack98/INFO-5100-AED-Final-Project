@@ -5,8 +5,14 @@
 package userinterface.DonorBankInterface.donorAdmin;
 
 import healthcare.Ecosystem;
+import healthcare.Enterprise.donorBank.DonorBankOrganization;
 import healthcare.Enterprise.donorBank.DonorRole;
+import healthcare.enterprise.Enterprise;
+import healthcare.network.Network;
+import healthcare.organization.Organization;
 import healthcare.organization.OrganizationDirectory;
+import healthcare.person.Person;
+import healthcare.userAccount.UserAccount;
 import java.awt.Color;
 import java.util.Random;
 import javax.swing.BorderFactory;
@@ -22,14 +28,15 @@ public class OrganDonationForm extends javax.swing.JPanel {
     /**
      * Creates new form OrganDonationForm
      */
+    private DonorBankOrganization organization;
     Ecosystem ecosystem;
-    OrganizationDirectory orgList;
     boolean emptyValidationStatus = true;
     boolean validationCheck = true;
-    public OrganDonationForm(Ecosystem ecosystem, OrganizationDirectory orgList) {
+    public OrganDonationForm(Ecosystem ecosystem, UserAccount account,
+            Organization organization, Enterprise enterprise, Network network) {
         initComponents();
+        this.organization = (DonorBankOrganization) organization;
         this.ecosystem= ecosystem;
-        this.orgList = orgList;
     }
 
    
@@ -331,9 +338,9 @@ public class OrganDonationForm extends javax.swing.JPanel {
                     long cellPhoneNumber = Long.parseLong(txtPhone.getText());
                     
                     Random random = new Random();
-                    int doctorID = random.nextInt((9999 - 100) + 1) + 10;
+                    int donorID = random.nextInt((9999 - 100) + 1) + 10;
 
-                    String username = name.substring(0, 3) + String.valueOf(doctorID);
+                    String username = name.substring(0, 3) + String.valueOf(donorID);
                     String password = name + String.valueOf(random.nextInt((9999 - 100) + 1) + 10);
                     
                     DonorRole role  = new DonorRole();
@@ -344,11 +351,9 @@ public class OrganDonationForm extends javax.swing.JPanel {
                     role.setOccupation(txtOccupation.toString());
                     role.setDateofbirth(txtDateofBirth.toString());
                     role.setOrgandonate(txtOrganDonate.toString());
-                            
-                        
-                  //  Organization organization = (Organization) organizationJComboBox.getSelectedItem();
-                   // Person p = organization.getPersonDirectory().createAndAddPerson(username, Address, City, State, Zipcode, cellPhoneNumber);           
-                 //   UserAccount account = organization.getUserAccountDirectory().createUserAccount(doctorID,username, password, p, role, emailId);
+                                                 
+                    Person p = organization.getPersonDirectory().createAndAddDonor(name, cellPhoneNumber);           
+                    UserAccount account = organization.getUserAccountDirectory().createUserAccount(donorID,username, password, p, role, emailId);
                     
                     JOptionPane.showMessageDialog(this, "Organ Donor Registered Successfully.Your New Username:" + username + " and password: " + password + ",Please save this Id for furture reference.");
 

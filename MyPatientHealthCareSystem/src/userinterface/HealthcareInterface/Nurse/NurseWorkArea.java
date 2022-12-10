@@ -54,6 +54,7 @@ public class NurseWorkArea extends javax.swing.JFrame {
         btnLogout = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         btnViewPres = new javax.swing.JButton();
+        btnViewPres1 = new javax.swing.JButton();
         workArea = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -87,6 +88,13 @@ public class NurseWorkArea extends javax.swing.JFrame {
             }
         });
 
+        btnViewPres1.setText("Request Organ");
+        btnViewPres1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewPres1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout controlPanelLayout = new javax.swing.GroupLayout(controlPanel);
         controlPanel.setLayout(controlPanelLayout);
         controlPanelLayout.setHorizontalGroup(
@@ -106,7 +114,9 @@ public class NurseWorkArea extends javax.swing.JFrame {
                                 .addComponent(btnDash)
                                 .addContainerGap())))
                     .addGroup(controlPanelLayout.createSequentialGroup()
-                        .addComponent(btnViewPres, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnViewPres, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnViewPres1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addContainerGap())))
         );
         controlPanelLayout.setVerticalGroup(
@@ -118,7 +128,9 @@ public class NurseWorkArea extends javax.swing.JFrame {
                 .addComponent(btnDash, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnViewPres, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 387, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnViewPres1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 320, Short.MAX_VALUE)
                 .addComponent(btnLogout)
                 .addGap(14, 14, 14))
         );
@@ -172,6 +184,12 @@ public class NurseWorkArea extends javax.swing.JFrame {
         NurseRequestBloodPanel nrb = new NurseRequestBloodPanel(network, userAccount, enterprise);
         jSplitPaneSystem.setRightComponent(nrb);
     }//GEN-LAST:event_btnViewPresActionPerformed
+
+    private void btnViewPres1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewPres1ActionPerformed
+        // TODO add your handling code here:
+        NurseRequestOrganPanel nro = new NurseRequestOrganPanel(network, userAccount, enterprise);
+        jSplitPaneSystem.setRightComponent(nro);
+    }//GEN-LAST:event_btnViewPres1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -339,6 +357,7 @@ public class NurseWorkArea extends javax.swing.JFrame {
     private javax.swing.JButton btnDash;
     private javax.swing.JButton btnLogout;
     private javax.swing.JButton btnViewPres;
+    private javax.swing.JButton btnViewPres1;
     private javax.swing.JPanel controlPanel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JSplitPane jSplitPaneSystem;

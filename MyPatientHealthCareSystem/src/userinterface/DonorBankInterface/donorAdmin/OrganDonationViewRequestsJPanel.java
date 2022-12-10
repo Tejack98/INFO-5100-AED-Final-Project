@@ -26,7 +26,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author tejas
  */
-public class BloodDonationViewRequestsJPanel extends javax.swing.JPanel {
+public class OrganDonationViewRequestsJPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form LabAssistantWorkAreaJPanel
@@ -38,7 +38,7 @@ public class BloodDonationViewRequestsJPanel extends javax.swing.JPanel {
     Ecosystem ecosystem;
     Network network;
 
-    public BloodDonationViewRequestsJPanel(Ecosystem ecosystem, UserAccount account,
+    public OrganDonationViewRequestsJPanel(Ecosystem ecosystem, UserAccount account,
             Organization organization, Enterprise enterprise, Network network) {
         initComponents();
         this.userAccount = account;
@@ -47,7 +47,7 @@ public class BloodDonationViewRequestsJPanel extends javax.swing.JPanel {
         this.enterprise = enterprise;
         this.network = network;
         lblname.setText(userAccount.getPerson().getPersonName());
-        populatebloodRequestTable();
+        populateOrganRequestTable();
     }
 
     /**
@@ -65,7 +65,7 @@ public class BloodDonationViewRequestsJPanel extends javax.swing.JPanel {
         jLabel6 = new javax.swing.JLabel();
         lblname = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        bloodRequestJTable = new javax.swing.JTable();
+        organRequestJTable = new javax.swing.JTable();
         optionsPanel = new javax.swing.JPanel();
         refreshJButton = new javax.swing.JButton();
         processJButton = new javax.swing.JButton();
@@ -99,7 +99,7 @@ public class BloodDonationViewRequestsJPanel extends javax.swing.JPanel {
         lblname.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lblname.setText("Admin Name");
 
-        bloodRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
+        organRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -107,7 +107,7 @@ public class BloodDonationViewRequestsJPanel extends javax.swing.JPanel {
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "Message", "Request Intended By", "Blood Type", "Request Received By", "Status", "Date"
+                "Message", "Request Intended By", "Organ", "Request Received By", "Status", "Date"
             }
         ) {
             Class[] types = new Class [] {
@@ -125,7 +125,7 @@ public class BloodDonationViewRequestsJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(bloodRequestJTable);
+        jScrollPane2.setViewportView(organRequestJTable);
 
         javax.swing.GroupLayout actionPanelLayout = new javax.swing.GroupLayout(actionPanel);
         actionPanel.setLayout(actionPanelLayout);
@@ -228,19 +228,19 @@ public class BloodDonationViewRequestsJPanel extends javax.swing.JPanel {
 
     private void refreshJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshJButtonActionPerformed
 
-        populatebloodRequestTable();
+        populateOrganRequestTable();
     }//GEN-LAST:event_refreshJButtonActionPerformed
 
     private void processJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_processJButtonActionPerformed
 
-        int selectedRow = bloodRequestJTable.getSelectedRow();
+        int selectedRow = organRequestJTable.getSelectedRow();
 
         if (selectedRow < 0) {
-            JOptionPane.showMessageDialog(null, "Please select a blood request first", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Please select a organ request first", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
-        DonorBankRequest request = (DonorBankRequest) bloodRequestJTable.getValueAt(selectedRow, 0);
+        DonorBankRequest request = (DonorBankRequest) organRequestJTable.getValueAt(selectedRow, 0);
 
         request.setStatus("Processing Req");
 
@@ -250,20 +250,20 @@ public class BloodDonationViewRequestsJPanel extends javax.swing.JPanel {
 
     private void assignJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignJButtonActionPerformed
 
-        int selectedRow = bloodRequestJTable.getSelectedRow();
+        int selectedRow = organRequestJTable.getSelectedRow();
         String status;
         if (selectedRow < 0) {
-            JOptionPane.showMessageDialog(null, "Please select a Blood Request first", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Please select a Organ Request first", "Warning", JOptionPane.WARNING_MESSAGE);
 
             return;
         }
-        status = (String) bloodRequestJTable.getValueAt(selectedRow, 4);
+        status = (String) organRequestJTable.getValueAt(selectedRow, 4);
 
-        if (status.equals("Blood Requested")) {
-            WorkRequest request = (WorkRequest) bloodRequestJTable.getValueAt(selectedRow, 0);
+        if (status.equals("Organ Requested")) {
+            WorkRequest request = (WorkRequest) organRequestJTable.getValueAt(selectedRow, 0);
             request.setReceiver(userAccount);
             request.setStatus("Assigned To Donor Bank");
-            populatebloodRequestTable();
+            populateOrganRequestTable();
         } else if (status.equals("Assigned To Donor Bank")) {
             JOptionPane.showMessageDialog(null, "Already In Progress", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
@@ -273,8 +273,8 @@ public class BloodDonationViewRequestsJPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_assignJButtonActionPerformed
     
-    public void populatebloodRequestTable() {
-        DefaultTableModel model = (DefaultTableModel) bloodRequestJTable.getModel();
+    public void populateOrganRequestTable() {
+        DefaultTableModel model = (DefaultTableModel) organRequestJTable.getModel();
 
         model.setRowCount(0);
         System.out.println("_________________________________________________");
@@ -283,16 +283,12 @@ public class BloodDonationViewRequestsJPanel extends javax.swing.JPanel {
         for (WorkRequest request : donorOrganization.getWorkQueue().getWorkRequestList()) {
             
             DonorBankRequest dr = (DonorBankRequest) request;
-            System.out.println("+++++++++++++++++++++++++++");
-            System.out.println(dr.getReqType());
-            System.out.println("+++++++++++++++++++++++++++");
-            if(dr.getReqType()== "bloods")
-            {
+            if(dr.getReqType()=="organ"){
+            
                 Object[] row = new Object[6];
                 row[0] = request;
                 row[1] = request.getSender().getPerson().getPersonName();
-                System.out.println("In records");
-                row[2] = dr.getBloodType();
+                row[2] = dr.getOrgan();
                 row[3] = request.getReceiver() == null ? null : request.getReceiver().getPerson().getPersonName();
                 row[4] = request.getStatus();
                 row[5] = request.getRequestDate();
@@ -305,13 +301,13 @@ public class BloodDonationViewRequestsJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel actionPanel;
     private javax.swing.JButton assignJButton;
-    private javax.swing.JTable bloodRequestJTable;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JLabel lblname;
     private javax.swing.JPanel optionsPanel;
+    private javax.swing.JTable organRequestJTable;
     private javax.swing.JButton processJButton;
     private javax.swing.JButton refreshJButton;
     // End of variables declaration//GEN-END:variables
