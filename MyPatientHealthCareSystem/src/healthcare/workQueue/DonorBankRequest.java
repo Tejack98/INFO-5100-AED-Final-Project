@@ -12,6 +12,7 @@ public class DonorBankRequest extends WorkRequest {
     private String bloodType;
     private String organ;
     private String reqType; 
+    private String appointmentDate;
 
     public String getBloodType() {
         return bloodType;
@@ -35,6 +36,14 @@ public class DonorBankRequest extends WorkRequest {
 
     public void setReqType(String reqType) {
         this.reqType = reqType;
+    }
+
+    public String getAppointmentDate() {
+        return appointmentDate;
+    }
+
+    public void setAppointmentDate(String appointmentDate) {
+        this.appointmentDate = appointmentDate;
     }
     
     
