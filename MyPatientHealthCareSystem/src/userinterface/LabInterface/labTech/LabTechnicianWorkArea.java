@@ -32,7 +32,7 @@ public class LabTechnicianWorkArea extends javax.swing.JFrame {
             Organization organization, Enterprise enterprise, Network network) {
         initComponents();
         this.userAccount = userAccount;
-        this.ecosystem = db4oUtil.retrieveDb4oSystem();
+        this.ecosystem = ecosystem;
         this.labOrganization = (LabOrganization) organization;
         this.enterprise = enterprise;
         this.network = network;
