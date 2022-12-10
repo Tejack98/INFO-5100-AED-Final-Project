@@ -21,7 +21,7 @@ public class VaccinationAdminWorkArea extends javax.swing.JFrame {
     
     public VaccinationAdminWorkArea(Ecosystem ecosystem) {
         initComponents();
-        this.ecosystem = db4oUtil.retrieveDb4oSystem();
+        this.ecosystem = ecosystem;
     }
 
     /**
