@@ -61,10 +61,15 @@ public class AdminViewDoctor extends javax.swing.JPanel {
         lblEnterprise = new javax.swing.JLabel();
         organizationJComboBox = new javax.swing.JComboBox();
         btnView = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        setBackground(new java.awt.Color(204, 204, 204));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Georgia", 0, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("View Doctor Information");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 1200, 37));
 
         docTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -79,81 +84,46 @@ public class AdminViewDoctor extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(docTable);
 
-        lblSearchDoctorByID.setText("Search Doctor By ID");
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, 1010, 220));
 
+        lblSearchDoctorByID.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
+        lblSearchDoctorByID.setText("Search Doctor By ID");
+        add(lblSearchDoctorByID, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 110, -1, -1));
+        add(txtSearchDoctorByID, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 110, 224, -1));
+
+        btnSearch.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         btnSearch.setText("Search");
         btnSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSearchActionPerformed(evt);
             }
         });
+        add(btnSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 110, -1, -1));
 
+        btnDelete.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         btnDelete.setText("Delete");
+        add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 390, -1, 30));
 
-        lblEnterprise.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        lblEnterprise.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblEnterprise.setText("Organization");
+        add(lblEnterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 70, -1, -1));
 
-        organizationJComboBox.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        organizationJComboBox.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         organizationJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Doctor", "Nurse", "Patient" }));
+        add(organizationJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 70, 224, -1));
 
+        btnView.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         btnView.setText("Search");
         btnView.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnViewActionPerformed(evt);
             }
         });
+        add(btnView, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 70, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 632, Short.MAX_VALUE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(btnDelete)))
-                        .addContainerGap())))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblSearchDoctorByID, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblEnterprise, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtSearchDoctorByID, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
-                    .addComponent(organizationJComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnSearch)
-                    .addComponent(btnView))
-                .addGap(100, 100, 100))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblEnterprise)
-                    .addComponent(organizationJComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnView))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtSearchDoctorByID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblSearchDoctorByID)
-                    .addComponent(btnSearch))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnDelete)
-                .addContainerGap(109, Short.MAX_VALUE))
-        );
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/View Doctors.jpg"))); // NOI18N
+        jLabel3.setText("jLabel3");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, -1, 740));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
@@ -193,6 +163,7 @@ public class AdminViewDoctor extends javax.swing.JPanel {
     private javax.swing.JButton btnView;
     private javax.swing.JTable docTable;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblEnterprise;
     private javax.swing.JLabel lblSearchDoctorByID;

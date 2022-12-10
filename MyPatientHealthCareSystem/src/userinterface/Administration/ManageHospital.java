@@ -129,7 +129,7 @@ public class ManageHospital extends javax.swing.JPanel {
         jLabel4.setText("Patient Details");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 600, -1, -1));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\adity\\Downloads\\vecteezy_physician-and-grandparents-in-the-hospital-doctors-and-elderly-people-vector-illustration_1830302\\2275_R0lVIEFOTiAwODUtMDM.jpg")); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/2275_R0lVIEFOTiAwODUtMDM.jpg"))); // NOI18N
         jLabel5.setText("jLabel5");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(-180, 0, 910, 980));
 

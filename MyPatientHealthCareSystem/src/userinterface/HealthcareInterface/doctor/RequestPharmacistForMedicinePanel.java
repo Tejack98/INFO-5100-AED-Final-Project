@@ -68,7 +68,7 @@ public class RequestPharmacistForMedicinePanel extends javax.swing.JPanel {
 
         jPanel6.setBackground(new java.awt.Color(153, 204, 255));
 
-        jLabel6.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Georgia", 1, 24)); // NOI18N
         jLabel6.setText("Prescription");
 
         jButton2.setBackground(new java.awt.Color(71, 120, 197));
@@ -100,7 +100,6 @@ public class RequestPharmacistForMedicinePanel extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        txtPatientName.setBackground(new java.awt.Color(153, 204, 255));
         txtPatientName.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
         txtPatientName.setEnabled(false);
         txtPatientName.addActionListener(new java.awt.event.ActionListener() {
@@ -110,11 +109,11 @@ public class RequestPharmacistForMedicinePanel extends javax.swing.JPanel {
         });
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jLabel1.setText("For Patient");
 
         requestbtn.setBackground(new java.awt.Color(153, 204, 255));
-        requestbtn.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        requestbtn.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
         requestbtn.setText("Request Pharmacist");
         requestbtn.setBorder(null);
         requestbtn.addActionListener(new java.awt.event.ActionListener() {
@@ -124,7 +123,7 @@ public class RequestPharmacistForMedicinePanel extends javax.swing.JPanel {
         });
 
         chkViv.setBackground(new java.awt.Color(255, 204, 204));
-        chkViv.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        chkViv.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         chkViv.setText(" Vivitrol");
         chkViv.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -133,7 +132,7 @@ public class RequestPharmacistForMedicinePanel extends javax.swing.JPanel {
         });
 
         chkAnt.setBackground(new java.awt.Color(255, 204, 204));
-        chkAnt.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        chkAnt.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         chkAnt.setText("Antabuse");
         chkAnt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -142,11 +141,11 @@ public class RequestPharmacistForMedicinePanel extends javax.swing.JPanel {
         });
 
         chkCam.setBackground(new java.awt.Color(255, 204, 204));
-        chkCam.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        chkCam.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         chkCam.setText("Campral");
 
         chkDis.setBackground(new java.awt.Color(255, 204, 204));
-        chkDis.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        chkDis.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         chkDis.setText("Disulfiram");
         chkDis.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -155,7 +154,7 @@ public class RequestPharmacistForMedicinePanel extends javax.swing.JPanel {
         });
 
         chkAca.setBackground(new java.awt.Color(255, 204, 204));
-        chkAca.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        chkAca.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         chkAca.setText("Acamprosate");
         chkAca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -204,7 +203,7 @@ public class RequestPharmacistForMedicinePanel extends javax.swing.JPanel {
                 .addComponent(chkViv)
                 .addGap(18, 18, 18)
                 .addComponent(requestbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(133, Short.MAX_VALUE))
+                .addContainerGap(146, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

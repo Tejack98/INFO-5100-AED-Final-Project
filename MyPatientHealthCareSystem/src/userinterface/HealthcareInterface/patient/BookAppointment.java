@@ -61,7 +61,7 @@ public class BookAppointment extends javax.swing.JPanel {
 
         jPanel6.setBackground(new java.awt.Color(153, 204, 255));
 
-        jLabel3.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
         jLabel3.setText("Book Doctor's Appointment");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
@@ -71,7 +71,7 @@ public class BookAppointment extends javax.swing.JPanel {
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel3)
-                .addContainerGap(285, Short.MAX_VALUE))
+                .addContainerGap(275, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -91,16 +91,16 @@ public class BookAppointment extends javax.swing.JPanel {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         jLabel1.setText("Message");
 
-        jLabel2.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         jLabel2.setText("Choose Date");
 
         txtmessage.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
 
         btnsave.setBackground(new java.awt.Color(153, 204, 255));
-        btnsave.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        btnsave.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
         btnsave.setText("Book Appointment");
         btnsave.setBorder(null);
         btnsave.addActionListener(new java.awt.event.ActionListener() {
@@ -152,7 +152,7 @@ public class BookAppointment extends javax.swing.JPanel {
                     .addComponent(dateChooserField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(46, 46, 46)
                 .addComponent(btnsave, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(117, Short.MAX_VALUE))
+                .addContainerGap(119, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
