@@ -17,6 +17,8 @@ public class AdminUpdateDoctor extends javax.swing.JPanel {
     /**
      * Creates new form AdminUpdateDoctor
      */
+    boolean emptyValidationStatus = true;
+    boolean validationCheck = true;
     Ecosystem ecosystem;  
     OrganizationDirectory orgList;
     public AdminUpdateDoctor(Ecosystem ecosystem, OrganizationDirectory orgList) {
@@ -147,6 +149,11 @@ public class AdminUpdateDoctor extends javax.swing.JPanel {
 
         btnUpdate.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         btnUpdate.setText("Update");
+        btnUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdateActionPerformed(evt);
+            }
+        });
         add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 480, -1, -1));
 
         lblEnterprise.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
@@ -174,6 +181,29 @@ public class AdminUpdateDoctor extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnSearchActionPerformed
 
+    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
+        // TODO add your handling code here:
+        try {
+            if (EmpytyFieldValidation()) {
+
+                if (RegexValidation()) {
+                }
+            }
+        }
+        catch (Exception e) {
+            
+        }
+    }//GEN-LAST:event_btnUpdateActionPerformed
+
+    private boolean RegexValidation() 
+    {
+        return validationCheck;
+    }
+    
+    private boolean EmpytyFieldValidation()
+    {
+        return emptyValidationStatus;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSearch;
