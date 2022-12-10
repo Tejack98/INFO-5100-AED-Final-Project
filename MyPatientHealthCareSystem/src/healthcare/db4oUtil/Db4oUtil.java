@@ -68,12 +68,12 @@ public class Db4oUtil {
         ObjectContainer connection = createDb4oConnection();
         ObjectSet<Ecosystem> ecosystems = connection.query(Ecosystem.class); // Change to the object you want to save
         Ecosystem ecosystem;
-//        if (ecosystems.isEmpty()) {
+        if (ecosystems.isEmpty()) {
             ecosystem = Configsystem.configureEcosystem(); // If there's no System in the record, create a new one
-//        } 
-//        else {
-//            ecosystem = ecosystems.get(ecosystems.size() - 1);
-//        }
+        } 
+        else {
+            ecosystem = ecosystems.get(ecosystems.size() - 1);
+        }
         connection.close();
         return ecosystem;
     }

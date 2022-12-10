@@ -5,6 +5,7 @@
 package userinterface.Vaccination.vaccinationAdmin;
 
 import healthcare.Ecosystem;
+import healthcare.db4oUtil.Db4oUtil;
 
 /**
  *
@@ -16,9 +17,11 @@ public class VaccinationAdminWorkArea extends javax.swing.JFrame {
      * Creates new form VaccinationAdminWorkArea
      */
     static Ecosystem ecosystem;
+    private Db4oUtil db4oUtil = Db4oUtil.getDb4oInstance();
+    
     public VaccinationAdminWorkArea(Ecosystem ecosystem) {
         initComponents();
-        this.ecosystem = ecosystem;
+        this.ecosystem = db4oUtil.retrieveDb4oSystem();
     }
 
     /**
@@ -37,6 +40,7 @@ public class VaccinationAdminWorkArea extends javax.swing.JFrame {
         btnAddVaccinator = new javax.swing.JButton();
         btnViewRequests = new javax.swing.JButton();
         btnAssignVaccinator = new javax.swing.JButton();
+        btnLogout = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -79,17 +83,30 @@ public class VaccinationAdminWorkArea extends javax.swing.JFrame {
             }
         });
 
+        btnLogout.setBackground(new java.awt.Color(255, 204, 204));
+        btnLogout.setText("Logout");
+        btnLogout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLogoutActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(15, 15, 15)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnAssignVaccinator, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnViewRequests, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAddVaccinator, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnAssignVaccinator, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnAddVaccinator, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnViewRequests, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -99,11 +116,13 @@ public class VaccinationAdminWorkArea extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnAddVaccinator, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(26, 26, 26)
                 .addComponent(btnViewRequests, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(31, 31, 31)
                 .addComponent(btnAssignVaccinator, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(147, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)
+                .addComponent(btnLogout)
+                .addContainerGap())
         );
 
         jSplitPane1.setLeftComponent(jPanel1);
@@ -147,6 +166,12 @@ public class VaccinationAdminWorkArea extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAssignVaccinatorActionPerformed
 
+    private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
+        // TODO add your handling code here:
+        db4oUtil.storeDb4oEcosystem(ecosystem);
+        dispose();
+    }//GEN-LAST:event_btnLogoutActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -185,6 +210,7 @@ public class VaccinationAdminWorkArea extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddVaccinator;
     private javax.swing.JButton btnAssignVaccinator;
+    private javax.swing.JButton btnLogout;
     private javax.swing.JButton btnViewRequests;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;

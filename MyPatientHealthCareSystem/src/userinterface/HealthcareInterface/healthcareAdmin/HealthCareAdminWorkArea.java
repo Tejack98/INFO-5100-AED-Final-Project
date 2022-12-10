@@ -5,6 +5,7 @@
 package userinterface.HealthcareInterface.healthcareAdmin;
 
 import healthcare.Ecosystem;
+import healthcare.db4oUtil.Db4oUtil;
 import healthcare.enterprise.Enterprise;
 import healthcare.network.Network;
 import healthcare.organization.Organization;
@@ -29,13 +30,14 @@ public class HealthCareAdminWorkArea extends javax.swing.JFrame {
     static Enterprise enterprise;
     static Ecosystem ecosystem;
     static Network network;
+    private Db4oUtil db4oUtil = Db4oUtil.getDb4oInstance();
     
     public HealthCareAdminWorkArea(UserAccount userAccount, Organization organization, Enterprise enterprise ,Ecosystem ecosystem, Network network) {
         initComponents();
         this.userAccount = userAccount;
         this.organization = organization;
         this.enterprise = enterprise;
-        this.ecosystem = ecosystem;
+        this.ecosystem = db4oUtil.retrieveDb4oSystem();
         this.network = network;
     }
 
@@ -195,6 +197,7 @@ public class HealthCareAdminWorkArea extends javax.swing.JFrame {
 
     private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
         // TODO add your handling code here:
+        db4oUtil.storeDb4oEcosystem(ecosystem);
         dispose();
     }//GEN-LAST:event_btnLogoutActionPerformed
 

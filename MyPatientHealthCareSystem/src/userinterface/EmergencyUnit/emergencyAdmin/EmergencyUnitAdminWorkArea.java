@@ -5,6 +5,7 @@
 package userinterface.EmergencyUnit.emergencyAdmin;
 
 import healthcare.Ecosystem;
+import healthcare.db4oUtil.Db4oUtil;
 
 /**
  *
@@ -16,9 +17,11 @@ public class EmergencyUnitAdminWorkArea extends javax.swing.JFrame {
      * Creates new form EmergencyUnitAdmin
      */
     static Ecosystem ecosystem;
+    private Db4oUtil db4oUtil = Db4oUtil.getDb4oInstance();
+    
     public EmergencyUnitAdminWorkArea(Ecosystem ecosystem) {
         initComponents();
-        this.ecosystem = ecosystem;
+        this.ecosystem = db4oUtil.retrieveDb4oSystem();
     }
 
     /**
@@ -35,6 +38,7 @@ public class EmergencyUnitAdminWorkArea extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         btnAddAmbulance = new javax.swing.JButton();
         btnAddAmbulanceHandler = new javax.swing.JButton();
+        btnLogout = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -58,16 +62,29 @@ public class EmergencyUnitAdminWorkArea extends javax.swing.JFrame {
             }
         });
 
+        btnLogout.setBackground(new java.awt.Color(255, 204, 204));
+        btnLogout.setText("Logout");
+        btnLogout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLogoutActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnAddAmbulanceHandler, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAddAmbulance, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnAddAmbulanceHandler, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnAddAmbulance, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -77,9 +94,11 @@ public class EmergencyUnitAdminWorkArea extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnAddAmbulance, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnAddAmbulanceHandler, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(246, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 229, Short.MAX_VALUE)
+                .addComponent(btnLogout)
+                .addContainerGap())
         );
 
         jSplitPane1.setLeftComponent(jPanel1);
@@ -118,6 +137,12 @@ public class EmergencyUnitAdminWorkArea extends javax.swing.JFrame {
     private void btnAddAmbulanceHandlerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddAmbulanceHandlerActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAddAmbulanceHandlerActionPerformed
+
+    private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
+        // TODO add your handling code here:
+        db4oUtil.storeDb4oEcosystem(ecosystem);
+        dispose();
+    }//GEN-LAST:event_btnLogoutActionPerformed
 
     /**
      * @param args the command line arguments
@@ -158,6 +183,7 @@ public class EmergencyUnitAdminWorkArea extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddAmbulance;
     private javax.swing.JButton btnAddAmbulanceHandler;
+    private javax.swing.JButton btnLogout;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

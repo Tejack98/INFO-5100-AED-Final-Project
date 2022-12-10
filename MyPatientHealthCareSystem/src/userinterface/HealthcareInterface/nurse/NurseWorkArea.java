@@ -5,6 +5,7 @@
 package userinterface.HealthcareInterface.nurse;
 
 import healthcare.Ecosystem;
+import healthcare.db4oUtil.Db4oUtil;
 import healthcare.enterprise.Enterprise;
 import healthcare.network.Network;
 import healthcare.organization.Organization;
@@ -27,12 +28,14 @@ public class NurseWorkArea extends javax.swing.JFrame {
     static Enterprise enterprise;
     static Ecosystem ecosystem;
     static Network network;
+    private Db4oUtil db4oUtil = Db4oUtil.getDb4oInstance();
+    
     public NurseWorkArea(UserAccount userAccount, Organization organization, Enterprise enterprise ,Ecosystem ecosystem, Network network) {
         initComponents();
         this.userAccount = userAccount;
         this.organization = organization;
         this.enterprise = enterprise;
-        this.ecosystem = ecosystem;
+        this.ecosystem = db4oUtil.retrieveDb4oSystem();
         this.network = network;
     }
 
@@ -88,13 +91,10 @@ public class NurseWorkArea extends javax.swing.JFrame {
         controlPanel.setLayout(controlPanelLayout);
         controlPanelLayout.setHorizontalGroup(
             controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(controlPanelLayout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, controlPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(17, Short.MAX_VALUE)
                 .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnViewPres, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnDash, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -109,9 +109,9 @@ public class NurseWorkArea extends javax.swing.JFrame {
                 .addComponent(btnDash, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnViewPres, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 374, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 375, Short.MAX_VALUE)
                 .addComponent(btnLogout)
-                .addGap(15, 15, 15))
+                .addGap(14, 14, 14))
         );
 
         jSplitPaneSystem.setLeftComponent(controlPanel);
@@ -151,6 +151,7 @@ public class NurseWorkArea extends javax.swing.JFrame {
 
     private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
         // TODO add your handling code here:
+        db4oUtil.storeDb4oEcosystem(ecosystem);
         dispose();
     }//GEN-LAST:event_btnLogoutActionPerformed
 
