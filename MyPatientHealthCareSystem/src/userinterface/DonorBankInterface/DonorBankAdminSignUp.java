@@ -49,62 +49,68 @@ public class DonorBankAdminSignUp extends javax.swing.JPanel {
         txtCity = new javax.swing.JTextField();
         txtState = new javax.swing.JTextField();
         lblAddress = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(98, 155, 185));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        add(txtZipcode, new org.netbeans.lib.awtextra.AbsoluteConstraints(262, 315, 230, -1));
+        add(txtZipcode, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 670, 360, -1));
 
-        lblCity.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        lblCity.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblCity.setText("City");
-        add(lblCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(218, 235, -1, -1));
+        add(lblCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 530, -1, 20));
 
+        btnSignUp.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         btnSignUp.setText("Sign Up");
         btnSignUp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSignUpActionPerformed(evt);
             }
         });
-        add(btnSignUp, new org.netbeans.lib.awtextra.AbsoluteConstraints(306, 395, -1, -1));
+        add(btnSignUp, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 730, -1, -1));
 
-        lblState.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        lblState.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblState.setText("State");
-        add(lblState, new org.netbeans.lib.awtextra.AbsoluteConstraints(207, 275, -1, -1));
+        add(lblState, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 600, -1, 20));
 
-        lblZipCode.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        lblZipCode.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblZipCode.setText("Zipcode");
-        add(lblZipCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(193, 315, -1, -1));
-        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(262, 75, 230, -1));
-        add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(262, 115, 230, -1));
+        add(lblZipCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 670, -1, 20));
+        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 250, 360, -1));
+        add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 320, 360, -1));
 
         lblTitle.setFont(new java.awt.Font("Georgia", 1, 24)); // NOI18N
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitle.setText("Create Donor Admin Profile");
-        add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 23, 1440, -1));
+        add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 170, 600, -1));
 
-        lblName.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        lblName.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblName.setText("Name");
-        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(207, 75, -1, -1));
-        add(txtPhoneNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(262, 155, 230, -1));
+        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 250, -1, 20));
+        add(txtPhoneNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 390, 360, -1));
 
-        lblUsername.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        lblUsername.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblUsername.setText("Email");
-        add(lblUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 115, -1, -1));
-        add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(262, 195, 230, -1));
+        add(lblUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 320, -1, 20));
+        add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 460, 360, -1));
 
-        lblPhoneNumber.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        lblPhoneNumber.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblPhoneNumber.setText("Phone Number");
-        add(lblPhoneNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(149, 155, -1, -1));
+        add(lblPhoneNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 390, -1, 20));
 
         txtCity.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCityActionPerformed(evt);
             }
         });
-        add(txtCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(262, 235, 230, -1));
-        add(txtState, new org.netbeans.lib.awtextra.AbsoluteConstraints(262, 275, 230, -1));
+        add(txtCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 530, 360, -1));
+        add(txtState, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 600, 360, -1));
 
-        lblAddress.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        lblAddress.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblAddress.setText("Address");
-        add(lblAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(189, 195, -1, -1));
+        add(lblAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 460, -1, 20));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\adity\\Downloads\\organdonation.png")); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 900));
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtCityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCityActionPerformed
@@ -247,6 +253,7 @@ public class DonorBankAdminSignUp extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSignUp;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblAddress;
     private javax.swing.JLabel lblCity;
     private javax.swing.JLabel lblName;
