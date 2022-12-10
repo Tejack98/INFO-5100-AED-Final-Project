@@ -74,11 +74,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="btnAssignVaccinator" min="-2" pref="149" max="-2" attributes="0"/>
-                                  <Component id="btnAddVaccinator" min="-2" pref="149" max="-2" attributes="0"/>
-                                  <Component id="btnViewRequests" alignment="0" min="-2" pref="149" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="btnAddVaccinator" min="-2" pref="149" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
@@ -96,11 +92,7 @@
                       <Component id="jLabel1" min="-2" pref="75" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="btnAddVaccinator" min="-2" pref="75" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                      <Component id="btnViewRequests" min="-2" pref="75" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                      <Component id="btnAssignVaccinator" min="-2" pref="75" max="-2" attributes="0"/>
-                      <EmptySpace pref="97" max="32767" attributes="0"/>
+                      <EmptySpace pref="304" max="32767" attributes="0"/>
                       <Component id="btnLogout" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -123,22 +115,6 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddVaccinatorActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JButton" name="btnViewRequests">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="View Requests"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnViewRequestsActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JButton" name="btnAssignVaccinator">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Assign Vaccinator"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAssignVaccinatorActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnLogout">

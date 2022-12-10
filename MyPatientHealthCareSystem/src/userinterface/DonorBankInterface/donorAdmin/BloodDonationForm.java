@@ -10,6 +10,7 @@ import healthcare.Enterprise.donorBank.DonorRole;
 import healthcare.enterprise.Enterprise;
 import healthcare.enterprise.healthCare.DoctorOrganization;
 import healthcare.enterprise.healthCare.DoctorRole;
+import healthcare.network.Network;
 import healthcare.organization.Organization;
 import healthcare.organization.OrganizationDirectory;
 import healthcare.person.Person;
@@ -33,14 +34,13 @@ public class BloodDonationForm extends javax.swing.JPanel {
      */
     private DonorBankOrganization organization;
     Ecosystem ecosystem;
-    OrganizationDirectory orgList;
     boolean emptyValidationStatus = true;
     boolean validationCheck = true;
-    public BloodDonationForm(Ecosystem ecosystem, OrganizationDirectory orgList) {
+    public BloodDonationForm(Ecosystem ecosystem, UserAccount account,
+            Organization organization, Enterprise enterprise, Network network) {
         initComponents();
         this.organization = (DonorBankOrganization) organization;
         this.ecosystem= ecosystem;
-        this.orgList = orgList;
         //populateOrganizationComboBox(); 
         
     }
@@ -342,10 +342,8 @@ public class BloodDonationForm extends javax.swing.JPanel {
                     role.setOccupation(txtOccupation.toString());
                     role.setDateofbirth(txtDateofBirth.toString());
                             
-                        
-                  //  Organization organization = (Organization) organizationJComboBox.getSelectedItem();
-                   // Person p = organization.getPersonDirectory().createAndAddPerson(username, Address, City, State, Zipcode, cellPhoneNumber);           
-                 //  UserAccount account = organization.getUserAccountDirectory().createUserAccount(doctorID,username, password, p, role, emailId);
+                    Person p = organization.getPersonDirectory().createAndAddDonor(name, cellPhoneNumber);           
+                    UserAccount account = organization.getUserAccountDirectory().createUserAccount(donorID,username, password, p, role, emailId);
                     
                     JOptionPane.showMessageDialog(this, "Blood Donor Registered Successfully.Your New Username:" + username + " and password: " + password + ",Please save this Id for furture reference.");
 

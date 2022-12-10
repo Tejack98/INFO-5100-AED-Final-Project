@@ -61,7 +61,7 @@ public class DonorAdminWorkArea extends javax.swing.JFrame {
         controlPanel.setPreferredSize(new java.awt.Dimension(200, 600));
 
         btnPatients.setBackground(new java.awt.Color(255, 204, 204));
-        btnPatients.setText("Manage Transplant ");
+        btnPatients.setText("Transplant Request");
         btnPatients.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPatientsActionPerformed(evt);
@@ -81,7 +81,7 @@ public class DonorAdminWorkArea extends javax.swing.JFrame {
         jLabel1.setText("Donor Admin");
 
         btnPatients2.setBackground(new java.awt.Color(255, 204, 204));
-        btnPatients2.setText("Manage Blood ");
+        btnPatients2.setText(" Blood Requests");
         btnPatients2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPatients2ActionPerformed(evt);
@@ -111,7 +111,7 @@ public class DonorAdminWorkArea extends javax.swing.JFrame {
             .addComponent(btnPatients3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btnPatients2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btnPatients4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnPatients, javax.swing.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE)
+            .addComponent(btnPatients, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(controlPanelLayout.createSequentialGroup()
                 .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(controlPanelLayout.createSequentialGroup()
@@ -120,7 +120,7 @@ public class DonorAdminWorkArea extends javax.swing.JFrame {
                     .addGroup(controlPanelLayout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         controlPanelLayout.setVerticalGroup(
             controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -175,8 +175,8 @@ public class DonorAdminWorkArea extends javax.swing.JFrame {
         // TODO add your handling code here:
 //        PatientDashboard patientDash = new PatientDashboard();
 //        jSplitPaneSystem.setRightComponent(patientDash);
-    DonorTransplantAcceptRequest donorTransplantAcceptRequest = new DonorTransplantAcceptRequest(ecosystem, enterprise.getOrganizationDirectory());
-        jSplitPaneSystem.setRightComponent(donorTransplantAcceptRequest);
+        OrganDonationViewRequestsJPanel bdvr = new OrganDonationViewRequestsJPanel(ecosystem, userAccount, organization, enterprise, network);
+        jSplitPaneSystem.setRightComponent(bdvr);
     }//GEN-LAST:event_btnPatientsActionPerformed
 
     private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
@@ -187,19 +187,19 @@ public class DonorAdminWorkArea extends javax.swing.JFrame {
 
     private void btnPatients2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPatients2ActionPerformed
         // TODO add your handling code here:
-        DonateBloodAcceptRequest donateBloodAcceptRequest = new DonateBloodAcceptRequest(ecosystem, enterprise.getOrganizationDirectory());
-        jSplitPaneSystem.setRightComponent(donateBloodAcceptRequest);
+        BloodDonationViewRequestsJPanel bdvr = new BloodDonationViewRequestsJPanel(ecosystem, userAccount, organization, enterprise, network);
+        jSplitPaneSystem.setRightComponent(bdvr);
     }//GEN-LAST:event_btnPatients2ActionPerformed
 
     private void btnPatients3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPatients3ActionPerformed
         // TODO add your handling code here:
-        OrganDonationForm organDonationForm = new OrganDonationForm(ecosystem, enterprise.getOrganizationDirectory());
+        OrganDonationForm organDonationForm = new OrganDonationForm(ecosystem, userAccount, organization, enterprise, network);
         jSplitPaneSystem.setRightComponent(organDonationForm);
     }//GEN-LAST:event_btnPatients3ActionPerformed
 
     private void btnPatients4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPatients4ActionPerformed
         // TODO add your handling code here:
-        BloodDonationForm bloodDonationForm = new BloodDonationForm(ecosystem, enterprise.getOrganizationDirectory());
+        BloodDonationForm bloodDonationForm = new BloodDonationForm(ecosystem, userAccount, organization, enterprise, network);
         jSplitPaneSystem.setRightComponent(bloodDonationForm);
     }//GEN-LAST:event_btnPatients4ActionPerformed
 

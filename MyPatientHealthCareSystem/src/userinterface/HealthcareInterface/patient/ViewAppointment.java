@@ -89,7 +89,7 @@ public class ViewAppointment extends javax.swing.JPanel {
                 {null, null, null, null, null}
             },
             new String [] {
-                "Appointment Date", "Message", "Request Received By", "Status", "Result"
+                "Message", "Appointment Date", "Request Received By", "Status", "Result"
             }
         ) {
             boolean[] canEdit = new boolean [] {
