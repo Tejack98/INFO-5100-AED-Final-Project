@@ -58,7 +58,7 @@
                   <Component id="btnPatients3" alignment="0" max="32767" attributes="0"/>
                   <Component id="btnPatients2" alignment="0" max="32767" attributes="0"/>
                   <Component id="btnPatients4" alignment="0" max="32767" attributes="0"/>
-                  <Component id="btnPatients" alignment="0" pref="157" max="32767" attributes="0"/>
+                  <Component id="btnPatients" alignment="0" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
@@ -70,7 +70,7 @@
                               <Component id="btnLogout" min="-2" pref="102" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="26" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>

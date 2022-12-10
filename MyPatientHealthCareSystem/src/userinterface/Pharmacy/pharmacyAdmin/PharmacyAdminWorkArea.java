@@ -5,6 +5,7 @@
 package userinterface.Pharmacy.pharmacyAdmin;
 
 import healthcare.Ecosystem;
+import healthcare.db4oUtil.Db4oUtil;
 import healthcare.enterprise.Enterprise;
 import healthcare.network.Network;
 import healthcare.organization.Organization;
@@ -24,12 +25,14 @@ public class PharmacyAdminWorkArea extends javax.swing.JFrame {
     static Enterprise enterprise;
     static Ecosystem ecosystem;
     static Network network;
+    private Db4oUtil db4oUtil = Db4oUtil.getDb4oInstance();
+    
     public PharmacyAdminWorkArea(UserAccount userAccount, Organization organization, Enterprise enterprise ,Ecosystem ecosystem, Network network) {
         initComponents();
         this.userAccount = userAccount;
         this.organization = organization;
         this.enterprise = enterprise;
-        this.ecosystem = ecosystem;
+        this.ecosystem = db4oUtil.retrieveDb4oSystem();
         this.network = network;
     }
 
@@ -48,6 +51,7 @@ public class PharmacyAdminWorkArea extends javax.swing.JFrame {
         btnCreatePharmacist = new javax.swing.JButton();
         btnUpdatePharmacist = new javax.swing.JButton();
         Org_Name1 = new javax.swing.JButton();
+        btnLogout = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -66,11 +70,24 @@ public class PharmacyAdminWorkArea extends javax.swing.JFrame {
         });
 
         btnUpdatePharmacist.setText("Update Pharmacist");
+        btnUpdatePharmacist.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdatePharmacistActionPerformed(evt);
+            }
+        });
 
         Org_Name1.setText("Orgainzation");
         Org_Name1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Org_Name1ActionPerformed(evt);
+            }
+        });
+
+        btnLogout.setBackground(new java.awt.Color(255, 204, 204));
+        btnLogout.setText("Logout");
+        btnLogout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLogoutActionPerformed(evt);
             }
         });
 
@@ -80,11 +97,18 @@ public class PharmacyAdminWorkArea extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnUpdatePharmacist, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
-                    .addComponent(btnCreatePharmacist, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
-                    .addComponent(Org_Name1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Org_Name1, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnUpdatePharmacist, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnCreatePharmacist, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -95,9 +119,11 @@ public class PharmacyAdminWorkArea extends javax.swing.JFrame {
                 .addComponent(btnCreatePharmacist, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnUpdatePharmacist, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
+                .addGap(18, 18, 18)
                 .addComponent(Org_Name1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 144, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 127, Short.MAX_VALUE)
+                .addComponent(btnLogout)
+                .addContainerGap())
         );
 
         jSplitPane1.setLeftComponent(jPanel1);
@@ -142,6 +168,16 @@ public class PharmacyAdminWorkArea extends javax.swing.JFrame {
         jSplitPane1.setRightComponent(pmo);
     }//GEN-LAST:event_Org_Name1ActionPerformed
 
+    private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
+        // TODO add your handling code here:
+        db4oUtil.storeDb4oEcosystem(ecosystem);
+        dispose();
+    }//GEN-LAST:event_btnLogoutActionPerformed
+
+    private void btnUpdatePharmacistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdatePharmacistActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnUpdatePharmacistActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -178,9 +214,9 @@ public class PharmacyAdminWorkArea extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Org_Name;
     private javax.swing.JButton Org_Name1;
     private javax.swing.JButton btnCreatePharmacist;
+    private javax.swing.JButton btnLogout;
     private javax.swing.JButton btnUpdatePharmacist;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;

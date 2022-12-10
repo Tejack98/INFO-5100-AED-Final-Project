@@ -5,6 +5,7 @@
 package userinterface.DonorBankInterface.donorAdmin;
 
 import healthcare.Ecosystem;
+import healthcare.db4oUtil.Db4oUtil;
 import healthcare.enterprise.Enterprise;
 import healthcare.network.Network;
 import healthcare.organization.Organization;
@@ -24,12 +25,14 @@ public class DonorAdminWorkArea extends javax.swing.JFrame {
     static Organization organization;
     static Enterprise enterprise;
     static Network network;
+    private Db4oUtil db4oUtil = Db4oUtil.getDb4oInstance();
+    
     public DonorAdminWorkArea(Ecosystem ecosystem, UserAccount userAccount, Organization organization, Enterprise enterprise,Network network) {
         initComponents();
         this.userAccount = userAccount;
         this.organization = organization;
         this.enterprise = enterprise;
-        this.ecosystem = ecosystem;
+        this.ecosystem = db4oUtil.retrieveDb4oSystem();
         this.network = network;
     }
 
@@ -178,6 +181,7 @@ public class DonorAdminWorkArea extends javax.swing.JFrame {
 
     private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
         // TODO add your handling code here:
+        db4oUtil.storeDb4oEcosystem(ecosystem);
         dispose();
     }//GEN-LAST:event_btnLogoutActionPerformed
 
