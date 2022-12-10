@@ -28,7 +28,7 @@ public class SupplyManagerRole extends Role {
     
     @Override
     public JFrame createWorkArea(UserAccount userAccount, Organization organization, Enterprise enterprise, Ecosystem ecosystem, Network network) {
-        return new SupplyManagerWorkArea(ecosystem);       
+        return new SupplyManagerWorkArea(userAccount, organization, enterprise, ecosystem, network);       
     }
     
 }

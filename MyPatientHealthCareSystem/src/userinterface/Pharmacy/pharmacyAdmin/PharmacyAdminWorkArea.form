@@ -23,7 +23,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jSplitPane1" alignment="1" pref="736" max="32767" attributes="0"/>
+          <Component id="jSplitPane1" alignment="0" pref="721" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -53,26 +53,28 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jLabel1" alignment="0" max="32767" attributes="0"/>
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="25" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="btnRequestSupplier" min="-2" pref="128" max="-2" attributes="0"/>
-                          <Component id="btnViewRequests" min="-2" pref="128" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="btnUpdatePharmacist" pref="145" max="32767" attributes="0"/>
+                          <Component id="btnCreatePharmacist" pref="145" max="32767" attributes="0"/>
+                          <Component id="Org_Name1" alignment="0" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel1" min="-2" pref="76" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="btnViewRequests" min="-2" pref="77" max="-2" attributes="0"/>
+                      <Component id="jLabel1" min="-2" pref="90" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="btnRequestSupplier" min="-2" pref="77" max="-2" attributes="0"/>
-                      <EmptySpace pref="235" max="32767" attributes="0"/>
+                      <Component id="btnCreatePharmacist" min="-2" pref="68" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="btnUpdatePharmacist" min="-2" pref="68" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                      <Component id="Org_Name1" min="-2" pref="62" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="144" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -81,21 +83,32 @@
             <Component class="javax.swing.JLabel" name="jLabel1">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="24" style="1"/>
+                  <Font name="Segoe UI" size="21" style="1"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="Pharmacist"/>
+                <Property name="text" type="java.lang.String" value="Pharmacy Admin"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="btnViewRequests">
+            <Component class="javax.swing.JButton" name="btnCreatePharmacist">
               <Properties>
-                <Property name="text" type="java.lang.String" value="View Requests"/>
+                <Property name="text" type="java.lang.String" value="Create Pharmacist"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCreatePharmacistActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnUpdatePharmacist">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Update Pharmacist"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="btnRequestSupplier">
+            <Component class="javax.swing.JButton" name="Org_Name1">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Request Supplier"/>
+                <Property name="text" type="java.lang.String" value="Orgainzation"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Org_Name1ActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -109,12 +122,12 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="631" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="616" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="501" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="498" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>

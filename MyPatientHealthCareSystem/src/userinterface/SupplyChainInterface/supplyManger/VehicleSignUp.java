@@ -4,6 +4,11 @@
  */
 package userinterface.SupplyChainInterface.supplyManger;
 
+import healthcare.Ecosystem;
+import healthcare.db4oUtil.Db4oUtil;
+import healthcare.enterprise.supplyChain.SupplierOrganization;
+import healthcare.enterprise.supplyChain.Vehicle;
+import healthcare.organization.Organization;
 import java.awt.Color;
 import java.util.Random;
 import javax.swing.BorderFactory;
@@ -20,8 +25,14 @@ public class VehicleSignUp extends javax.swing.JPanel {
      */
     boolean emptyValidationStatus = true;
     boolean validationCheck = true;
-    public VehicleSignUp() {
+    
+    private Ecosystem ecosystem;
+    private SupplierOrganization supOrganization;
+    
+    public VehicleSignUp(Ecosystem ecosystem, Organization organization) {
         initComponents();
+        this.ecosystem = ecosystem;
+        this.supOrganization = (SupplierOrganization) organization;
     }
 
     /**
@@ -145,11 +156,10 @@ public class VehicleSignUp extends javax.swing.JPanel {
                     String VehicleNumber = txtVehicleNumber.getText();
                     String Description = txtDescription.getText();
                     
-                    Random random=new Random();
-                    int VehicleID=random.nextInt((9999 - 100) + 1) + 10;
-
-                    String password = VehicleName + String.valueOf(random.nextInt((9999 - 100) + 1)+ 10);
-                    JOptionPane.showMessageDialog(this,"Vehicle Registered Successfully.Your New Vehicle Id is:"+VehicleID+" and password: "+password+",Please save this Id for furture reference.");
+                    Vehicle vehicle = new Vehicle(VehicleName, VehicleNumber, VehicleType, Description);
+                    supOrganization.addNewVehicle(vehicle);
+                    
+                    JOptionPane.showMessageDialog(this,"Vehicle Registered Successfully");
 
                 }
                 else{

@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package userinterface.DonorBankInterface.donor;
+package userinterface.Pharmacy.pharmacyAdmin;
 
 import healthcare.Ecosystem;
 import healthcare.enterprise.Enterprise;
@@ -12,26 +12,25 @@ import healthcare.userAccount.UserAccount;
 
 /**
  *
- * @author shriyapandita
+ * @author adity
  */
-public class DonorWorkArea extends javax.swing.JFrame {
+public class PharmacyAdminWorkArea extends javax.swing.JFrame {
 
     /**
-     * Creates new form DonorWorkArea1
+     * Creates new form PharmacyAdminWorkArea
      */
-    static Ecosystem ecosystem;
     static UserAccount userAccount;
     static Organization organization;
     static Enterprise enterprise;
+    static Ecosystem ecosystem;
     static Network network;
-    public DonorWorkArea(Ecosystem ecosystem, UserAccount userAccount, Organization organization, Enterprise enterprise,Network network) {
+    public PharmacyAdminWorkArea(UserAccount userAccount, Organization organization, Enterprise enterprise ,Ecosystem ecosystem, Network network) {
         initComponents();
         this.userAccount = userAccount;
         this.organization = organization;
         this.enterprise = enterprise;
         this.ecosystem = ecosystem;
         this.network = network;
-        
     }
 
     /**
@@ -45,41 +44,33 @@ public class DonorWorkArea extends javax.swing.JFrame {
 
         jSplitPane1 = new javax.swing.JSplitPane();
         jPanel1 = new javax.swing.JPanel();
-        btnPatients = new javax.swing.JButton();
-        btnLogout = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        btnPatients2 = new javax.swing.JButton();
+        btnCreatePharmacist = new javax.swing.JButton();
+        btnUpdatePharmacist = new javax.swing.JButton();
+        Org_Name1 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(153, 204, 255));
+        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
 
-        btnPatients.setBackground(new java.awt.Color(255, 204, 204));
-        btnPatients.setText("View Transplant");
-        btnPatients.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPatientsActionPerformed(evt);
-            }
-        });
-
-        btnLogout.setBackground(new java.awt.Color(255, 204, 204));
-        btnLogout.setText("Logout");
-        btnLogout.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLogoutActionPerformed(evt);
-            }
-        });
-
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 21)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Donor Dashboard");
+        jLabel1.setText("Pharmacy Admin");
 
-        btnPatients2.setBackground(new java.awt.Color(255, 204, 204));
-        btnPatients2.setText("View Blood Donation");
-        btnPatients2.addActionListener(new java.awt.event.ActionListener() {
+        btnCreatePharmacist.setText("Create Pharmacist");
+        btnCreatePharmacist.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPatients2ActionPerformed(evt);
+                btnCreatePharmacistActionPerformed(evt);
+            }
+        });
+
+        btnUpdatePharmacist.setText("Update Pharmacist");
+
+        Org_Name1.setText("Orgainzation");
+        Org_Name1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Org_Name1ActionPerformed(evt);
             }
         });
 
@@ -89,27 +80,24 @@ public class DonorWorkArea extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(14, 14, 14)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnUpdatePharmacist, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
+                    .addComponent(btnCreatePharmacist, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
+                    .addComponent(Org_Name1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(btnPatients, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnPatients2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE))
-                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(46, 46, 46)
-                .addComponent(btnPatients2, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(65, 65, 65)
-                .addComponent(btnPatients, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 163, Short.MAX_VALUE)
-                .addComponent(btnLogout)
-                .addGap(29, 29, 29))
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnCreatePharmacist, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnUpdatePharmacist, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(Org_Name1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 144, Short.MAX_VALUE))
         );
 
         jSplitPane1.setLeftComponent(jPanel1);
@@ -118,11 +106,11 @@ public class DonorWorkArea extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 559, Short.MAX_VALUE)
+            .addGap(0, 616, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 484, Short.MAX_VALUE)
+            .addGap(0, 498, Short.MAX_VALUE)
         );
 
         jSplitPane1.setRightComponent(jPanel2);
@@ -131,7 +119,7 @@ public class DonorWorkArea extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSplitPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 721, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -141,22 +129,18 @@ public class DonorWorkArea extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnPatientsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPatientsActionPerformed
+    private void btnCreatePharmacistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreatePharmacistActionPerformed
         // TODO add your handling code here:
-        DonateOrganView donateOrganView = new  DonateOrganView(ecosystem);
-        jSplitPane1.setRightComponent(donateOrganView);
-    }//GEN-LAST:event_btnPatientsActionPerformed
+        PharmacistSignUp psp = new PharmacistSignUp(ecosystem,enterprise.getOrganizationDirectory());
+        jSplitPane1.setRightComponent(psp);
+    }//GEN-LAST:event_btnCreatePharmacistActionPerformed
 
-    private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
+    private void Org_Name1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Org_Name1ActionPerformed
         // TODO add your handling code here:
-        dispose();
-    }//GEN-LAST:event_btnLogoutActionPerformed
 
-    private void btnPatients2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPatients2ActionPerformed
-        // TODO add your handling code here:
-        DonateBloodView donateBloodView = new DonateBloodView(ecosystem);
-        jSplitPane1.setRightComponent(donateBloodView);
-    }//GEN-LAST:event_btnPatients2ActionPerformed
+        PharmacyManageOrganization pmo = new PharmacyManageOrganization(enterprise);
+        jSplitPane1.setRightComponent(pmo);
+    }//GEN-LAST:event_Org_Name1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -175,29 +159,29 @@ public class DonorWorkArea extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(DonorWorkArea.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PharmacyAdminWorkArea.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(DonorWorkArea.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PharmacyAdminWorkArea.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(DonorWorkArea.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PharmacyAdminWorkArea.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(DonorWorkArea.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PharmacyAdminWorkArea.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new DonorWorkArea(ecosystem,userAccount, organization, enterprise, network ).setVisible(true);
+                new PharmacyAdminWorkArea(userAccount, organization, enterprise, ecosystem, network).setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnLogout;
-    private javax.swing.JButton btnPatients;
-    private javax.swing.JButton btnPatients2;
+    private javax.swing.JButton Org_Name;
+    private javax.swing.JButton Org_Name1;
+    private javax.swing.JButton btnCreatePharmacist;
+    private javax.swing.JButton btnUpdatePharmacist;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

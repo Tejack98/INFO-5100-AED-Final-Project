@@ -28,6 +28,6 @@ public class DonorAdminRole extends Role {
     
     @Override
     public JFrame createWorkArea( UserAccount userAccount, Organization organization, Enterprise enterprise, Ecosystem ecosystem, Network network) {
-        return new DonorAdminWorkArea(ecosystem);       
+        return new DonorAdminWorkArea(ecosystem,userAccount,organization,enterprise,network);       
     }
 }

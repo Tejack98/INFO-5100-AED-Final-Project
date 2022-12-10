@@ -5,6 +5,10 @@
 package userinterface.SupplyChainInterface.supplyManger;
 
 import healthcare.Ecosystem;
+import healthcare.enterprise.Enterprise;
+import healthcare.network.Network;
+import healthcare.organization.Organization;
+import healthcare.userAccount.UserAccount;
 
 /**
  *
@@ -16,10 +20,18 @@ public class SupplyManagerWorkArea extends javax.swing.JFrame {
      * Creates new form SupplyManagerWorkArea
      */
     
+    static UserAccount userAccount;
+    static Organization organization;
+    static Enterprise enterprise;
     static Ecosystem ecosystem;
-    public SupplyManagerWorkArea(Ecosystem ecosystem) {
+    static Network network;
+    public SupplyManagerWorkArea(UserAccount userAccount, Organization organization, Enterprise enterprise ,Ecosystem ecosystem, Network network) {
         initComponents();
+        this.userAccount = userAccount;
+        this.organization = organization;
+        this.enterprise = enterprise;
         this.ecosystem = ecosystem;
+        this.network = network;
     }
 
     /**
@@ -115,10 +127,14 @@ public class SupplyManagerWorkArea extends javax.swing.JFrame {
 
     private void btnAddHandlerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddHandlerActionPerformed
         // TODO add your handling code here:
+        HandlerSignUp hsu = new HandlerSignUp(ecosystem, enterprise.getOrganizationDirectory());
+        jSplitPane1.setRightComponent(hsu);
     }//GEN-LAST:event_btnAddHandlerActionPerformed
 
     private void btnAddVehicleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddVehicleActionPerformed
         // TODO add your handling code here:
+        VehicleSignUp vsu = new VehicleSignUp(ecosystem, organization);
+        jSplitPane1.setRightComponent(vsu);
     }//GEN-LAST:event_btnAddVehicleActionPerformed
 
     /**
@@ -151,7 +167,7 @@ public class SupplyManagerWorkArea extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new SupplyManagerWorkArea(ecosystem).setVisible(true);
+                new SupplyManagerWorkArea(userAccount, organization, enterprise, ecosystem, network).setVisible(true);
             }
         });
     }

@@ -14,8 +14,7 @@ import java.util.ArrayList;
  */
 public class SupplierOrganization extends Organization {
     
-    private ArrayList<HandlerRole> handler;
-    private ArrayList<Vehicle> vehicle;
+    private ArrayList<Vehicle> vehicleList;
     
     public SupplierOrganization() {
         super(Organization.OrganizationType.Supplier.getValue());
@@ -26,19 +25,16 @@ public class SupplierOrganization extends Organization {
         return null;
     }
 
-    public ArrayList<HandlerRole> getHandler() {
-        return handler;
+    public ArrayList<Vehicle> getVehicleList() {
+        return vehicleList;
     }
 
-    public void setHandler(ArrayList<HandlerRole> handler) {
-        this.handler = handler;
+    public void setVehicleList(ArrayList<Vehicle> vehicleList) {
+        this.vehicleList = vehicleList;
     }
-
-    public ArrayList<Vehicle> getVehicle() {
+    
+    public Vehicle addNewVehicle(Vehicle vehicle){
+        this.vehicleList.add(vehicle);
         return vehicle;
-    }
-
-    public void setVehicle(ArrayList<Vehicle> vehicle) {
-        this.vehicle = vehicle;
     }
 }

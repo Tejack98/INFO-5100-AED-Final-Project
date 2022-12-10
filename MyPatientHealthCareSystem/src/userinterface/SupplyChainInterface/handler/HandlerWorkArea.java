@@ -5,6 +5,10 @@
 package userinterface.SupplyChainInterface.handler;
 
 import healthcare.Ecosystem;
+import healthcare.enterprise.Enterprise;
+import healthcare.network.Network;
+import healthcare.organization.Organization;
+import healthcare.userAccount.UserAccount;
 
 /**
  *
@@ -15,10 +19,19 @@ public class HandlerWorkArea extends javax.swing.JFrame {
     /**
      * Creates new form HandlerWorkArea
      */
+    static UserAccount userAccount;
+    static Organization organization;
+    static Enterprise enterprise;
     static Ecosystem ecosystem;
-    public HandlerWorkArea(Ecosystem ecosystem) {
+    static Network network;
+    public HandlerWorkArea(UserAccount userAccount, Organization organization, Enterprise enterprise ,Ecosystem ecosystem, Network network) {
         initComponents();
         this.ecosystem = ecosystem;
+        this.userAccount = userAccount;
+        this.organization = organization;
+        this.enterprise = enterprise;
+        this.ecosystem = ecosystem;
+        this.network = network;
     }
 
     /**
@@ -114,10 +127,14 @@ public class HandlerWorkArea extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        SupplyChainViewRequestsJPanel scvr = new SupplyChainViewRequestsJPanel(ecosystem, userAccount, organization, enterprise, network);
+        jSplitPane1.setRightComponent(scvr);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        ViewVehicles vVeh = new ViewVehicles(ecosystem, userAccount, organization, enterprise, network);
+        jSplitPane1.setRightComponent(vVeh);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
@@ -150,7 +167,7 @@ public class HandlerWorkArea extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new HandlerWorkArea(ecosystem).setVisible(true);
+                new HandlerWorkArea(userAccount, organization, enterprise, ecosystem, network).setVisible(true);
             }
         });
     }
