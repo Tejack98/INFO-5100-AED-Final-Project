@@ -247,8 +247,8 @@ public class VaccinationsViewRequestsJPanel extends javax.swing.JPanel {
 
         request.setStatus("Processing Req");
 
-        ProcessSupplyRequest processSupplyRequest = new ProcessSupplyRequest( request, userAccount, enterprise, network);
-        jSplitPane1.setRightComponent(processSupplyRequest);
+        ProcessVaccinationRequest processVaccinationRequest = new ProcessVaccinationRequest( request, userAccount, enterprise, network);
+        jSplitPane1.setRightComponent(processVaccinationRequest);
     }//GEN-LAST:event_processJButtonActionPerformed
 
     private void assignJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignJButtonActionPerformed

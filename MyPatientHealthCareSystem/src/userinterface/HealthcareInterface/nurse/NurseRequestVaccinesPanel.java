@@ -7,8 +7,10 @@ package userinterface.HealthcareInterface.nurse;
 import userinterface.HealthcareInterface.doctor.*;
 import healthcare.enterprise.Enterprise;
 import healthcare.enterprise.healthCare.DoctorOrganization;
+import healthcare.enterprise.healthCare.NurseOrganization;
 import healthcare.enterprise.pharmacy.PharmacyEnterprise;
 import healthcare.enterprise.pharmacy.PharmacyOrganization;
+import healthcare.enterprise.vaccination.VaccinationEnterprise;
 import healthcare.enterprise.vaccination.VaccinationOrganization;
 import healthcare.network.Network;
 import healthcare.organization.Organization;
@@ -27,7 +29,7 @@ public class NurseRequestVaccinesPanel extends javax.swing.JPanel {
     /**
      * Creates new form RequestPharmacistForMedicinePanel
      */
-    private DoctorOrganization organization;
+    private NurseOrganization organization;
     private Enterprise enterprise;
     private UserAccount userAccount;
     private Network network;
@@ -37,10 +39,10 @@ public class NurseRequestVaccinesPanel extends javax.swing.JPanel {
     public NurseRequestVaccinesPanel( Network network, UserAccount userAccount,Enterprise enterprise) {
         initComponents();
         this.userAccount = userAccount;
-        this.organization = (DoctorOrganization) organization;
+        this.organization = (NurseOrganization) organization;
         this.enterprise = enterprise;
         this.network = network;
-        txtPatientName.setText(userAccount.getUserName());
+        txtUserName.setText(userAccount.getUserName());
     }
 
     /**
@@ -55,7 +57,7 @@ public class NurseRequestVaccinesPanel extends javax.swing.JPanel {
         jPanel6 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
-        txtPatientName = new javax.swing.JTextField();
+        txtUserName = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         requestbtn = new javax.swing.JButton();
         chkCov = new javax.swing.JCheckBox();
@@ -63,6 +65,8 @@ public class NurseRequestVaccinesPanel extends javax.swing.JPanel {
         chkMMR = new javax.swing.JCheckBox();
         chkPolio = new javax.swing.JCheckBox();
         chkTdap = new javax.swing.JCheckBox();
+        jLabel2 = new javax.swing.JLabel();
+        txtMsg = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(255, 204, 204));
 
@@ -100,18 +104,18 @@ public class NurseRequestVaccinesPanel extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        txtPatientName.setBackground(new java.awt.Color(153, 204, 255));
-        txtPatientName.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
-        txtPatientName.setEnabled(false);
-        txtPatientName.addActionListener(new java.awt.event.ActionListener() {
+        txtUserName.setBackground(new java.awt.Color(153, 204, 255));
+        txtUserName.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        txtUserName.setEnabled(false);
+        txtUserName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtPatientNameActionPerformed(evt);
+                txtUserNameActionPerformed(evt);
             }
         });
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        jLabel1.setText("For Patient");
+        jLabel1.setText("By User");
 
         requestbtn.setBackground(new java.awt.Color(153, 204, 255));
         requestbtn.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
@@ -168,6 +172,8 @@ public class NurseRequestVaccinesPanel extends javax.swing.JPanel {
             }
         });
 
+        jLabel2.setText("Message");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -176,6 +182,10 @@ public class NurseRequestVaccinesPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(60, 60, 60)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtMsg, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(requestbtn)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -186,8 +196,8 @@ public class NurseRequestVaccinesPanel extends javax.swing.JPanel {
                             .addComponent(chkVar)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtPatientName, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 241, Short.MAX_VALUE))
+                        .addComponent(txtUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 231, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -196,7 +206,7 @@ public class NurseRequestVaccinesPanel extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(txtPatientName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtUserName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(chkTdap)
                 .addGap(30, 30, 30)
@@ -207,9 +217,13 @@ public class NurseRequestVaccinesPanel extends javax.swing.JPanel {
                 .addComponent(chkVar)
                 .addGap(29, 29, 29)
                 .addComponent(chkCov)
-                .addGap(18, 18, 18)
+                .addGap(14, 14, 14)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtMsg, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addComponent(requestbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(133, Short.MAX_VALUE))
+                .addGap(72, 72, 72))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -252,20 +266,21 @@ public class NurseRequestVaccinesPanel extends javax.swing.JPanel {
         }
       
         System.out.println(vaccinelist);
-        wr.setMedlist(vaccinelist);
+        wr.setVaccinesList(vaccinelist);
+        wr.setMessage(vaccinelist);
         wr.setStatus("Vaccines Requested");
         wr.setDiagnose("Following Vaccines have been requested : \n " + vaccinelist);
 
         Organization org = null;
         for (Enterprise enterprise : network.getEnterpriseMasterList().getEnterpriseList()) {
-            if (enterprise instanceof PharmacyEnterprise) {
+            if (enterprise instanceof VaccinationEnterprise) {
                 for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()) {
                     if (organization instanceof VaccinationOrganization) {
                         org = organization;
                         break;
                     }
                 }
-            }
+            }                
             if (org != null) {
                 org.getWorkQueue().getWorkRequestList().add(wr);
                 wr.setReceiver(null);
@@ -292,9 +307,9 @@ public class NurseRequestVaccinesPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_chkTdapActionPerformed
 
-    private void txtPatientNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPatientNameActionPerformed
+    private void txtUserNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUserNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtPatientNameActionPerformed
+    }//GEN-LAST:event_txtUserNameActionPerformed
 
     private void chkMMRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkMMRActionPerformed
         // TODO add your handling code here:
@@ -309,9 +324,11 @@ public class NurseRequestVaccinesPanel extends javax.swing.JPanel {
     private javax.swing.JCheckBox chkVar;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JButton requestbtn;
-    private javax.swing.JTextField txtPatientName;
+    private javax.swing.JTextField txtMsg;
+    private javax.swing.JTextField txtUserName;
     // End of variables declaration//GEN-END:variables
 }

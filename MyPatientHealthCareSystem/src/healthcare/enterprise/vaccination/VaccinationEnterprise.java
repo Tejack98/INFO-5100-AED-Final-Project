@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class VaccinationEnterprise extends Enterprise {
     
     public VaccinationEnterprise(String enterpriseName) {
-        super(enterpriseName, Enterprise.EnterpriseType.SupplyChain);
+        super(enterpriseName, Enterprise.EnterpriseType.Vaccination);
     }
     
     @Override

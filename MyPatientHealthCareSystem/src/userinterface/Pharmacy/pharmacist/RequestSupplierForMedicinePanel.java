@@ -9,6 +9,8 @@ import healthcare.enterprise.Enterprise;
 import healthcare.enterprise.healthCare.DoctorOrganization;
 import healthcare.enterprise.pharmacy.PharmacyEnterprise;
 import healthcare.enterprise.pharmacy.PharmacyOrganization;
+import healthcare.enterprise.supplyChain.SupplierOrganization;
+import healthcare.enterprise.supplyChain.SupplyChainEnterprise;
 import healthcare.network.Network;
 import healthcare.organization.Organization;
 import healthcare.userAccount.UserAccount;
@@ -63,6 +65,8 @@ public class RequestSupplierForMedicinePanel extends javax.swing.JPanel {
         chkCam = new javax.swing.JCheckBox();
         chkDis = new javax.swing.JCheckBox();
         chkAca = new javax.swing.JCheckBox();
+        txtMsg = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 204, 204));
 
@@ -163,6 +167,8 @@ public class RequestSupplierForMedicinePanel extends javax.swing.JPanel {
             }
         });
 
+        jLabel2.setText("Message");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -176,12 +182,16 @@ public class RequestSupplierForMedicinePanel extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(chkCam)
                             .addComponent(chkDis)
-                            .addComponent(chkAca)
                             .addComponent(chkViv)
                             .addComponent(chkAnt)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(chkAca, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtPharmacistName, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtMsg, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtPharmacistName, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(0, 241, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -202,9 +212,13 @@ public class RequestSupplierForMedicinePanel extends javax.swing.JPanel {
                 .addComponent(chkAnt)
                 .addGap(29, 29, 29)
                 .addComponent(chkViv)
+                .addGap(14, 14, 14)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txtMsg, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(requestbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(133, Short.MAX_VALUE))
+                .addContainerGap(87, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -245,14 +259,15 @@ public class RequestSupplierForMedicinePanel extends javax.swing.JPanel {
         }
       
         System.out.println(medlist);
+        request.setMessage(txtMsg.getText());
         request.setMedlist(medlist);
         request.setStatus("Supply Requested");
 
         Organization org = null;
         for (Enterprise enterprise : network.getEnterpriseMasterList().getEnterpriseList()) {
-            if (enterprise instanceof PharmacyEnterprise) {
+            if (enterprise instanceof SupplyChainEnterprise) {
                 for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()) {
-                    if (organization instanceof PharmacyOrganization) {
+                    if (organization instanceof SupplierOrganization) {
                         org = organization;
                         break;
                     }
@@ -299,9 +314,11 @@ public class RequestSupplierForMedicinePanel extends javax.swing.JPanel {
     private javax.swing.JCheckBox chkViv;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JButton requestbtn;
+    private javax.swing.JTextField txtMsg;
     private javax.swing.JTextField txtPharmacistName;
     // End of variables declaration//GEN-END:variables
 }
