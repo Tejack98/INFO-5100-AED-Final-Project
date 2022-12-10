@@ -139,7 +139,7 @@ public class HealthCareAdminSignUp extends javax.swing.JPanel {
         cboxSpeciality.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         add(cboxSpeciality, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 250, 230, 24));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\adity\\Downloads\\guide-to-healthcare-administration-768x490.jpg")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/guide-to-healthcare-administration-768x490.jpg"))); // NOI18N
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -130, -1, 900));
     }// </editor-fold>//GEN-END:initComponents
 

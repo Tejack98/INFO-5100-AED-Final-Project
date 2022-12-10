@@ -91,7 +91,7 @@ public class ManageDonorBank extends javax.swing.JPanel {
         DonorDetails_lbl.setText("DONOR DETAILS");
         jPanel1.add(DonorDetails_lbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 360, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\adity\\Downloads\\vecteezy_vector-character-design-on-medical-chair-while-donating-blood-ideal-for-both-print-and-web-design-projects-available-in-ai-eps-and-svg-formats_220514\\blood-drive.jpg")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/blood-drive.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -180, 690, 1240));
 

@@ -59,7 +59,7 @@ public class ManageTransplants extends javax.swing.JPanel {
         ManageTransplant_lbl.setText("Manage Transplants");
         jPanel1.add(ManageTransplant_lbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 41, 280, 50));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\adity\\Downloads\\organdonation.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/organdonation.png"))); // NOI18N
         jLabel1.setText("jLabel1");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 230, 850, 830));
 

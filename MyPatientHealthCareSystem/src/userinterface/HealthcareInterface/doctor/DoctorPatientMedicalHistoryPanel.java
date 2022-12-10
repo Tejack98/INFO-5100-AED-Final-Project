@@ -221,7 +221,7 @@ public class DoctorPatientMedicalHistoryPanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 204, 204));
 
         fenChk.setBackground(new java.awt.Color(255, 204, 204));
-        fenChk.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        fenChk.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         fenChk.setText("Fentanyl");
         fenChk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -229,23 +229,23 @@ public class DoctorPatientMedicalHistoryPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         jLabel2.setText("Age");
 
-        jLabel20.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel20.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jLabel20.setText("Range");
 
-        jLabel13.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         jLabel13.setText("Gender");
 
-        jLabel19.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel19.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jLabel19.setText("Medicine ");
 
-        jLabel10.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jLabel10.setText("General Information");
 
         oxycChk.setBackground(new java.awt.Color(255, 204, 204));
-        oxycChk.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        oxycChk.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         oxycChk.setText("Oxycodone");
         oxycChk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -256,7 +256,7 @@ public class DoctorPatientMedicalHistoryPanel extends javax.swing.JPanel {
         jPanel6.setBackground(new java.awt.Color(153, 204, 255));
 
         jLabel9.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel9.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Georgia", 1, 24)); // NOI18N
         jLabel9.setText("Fill Patient Medical History & Symptoms");
 
         backBtn.setBackground(new java.awt.Color(71, 120, 197));
@@ -290,14 +290,14 @@ public class DoctorPatientMedicalHistoryPanel extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-        jLabel1.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         jLabel1.setText("Name");
 
-        jLabel18.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel18.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jLabel18.setText("Medicine Consumption History");
 
         jButton1.setBackground(new java.awt.Color(153, 204, 255));
-        jButton1.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jButton1.setText("Submit Report ");
         jButton1.setBorder(null);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -313,11 +313,11 @@ public class DoctorPatientMedicalHistoryPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel17.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jLabel17.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         jLabel17.setText("Respiratory Rate");
 
         livChk.setBackground(new java.awt.Color(255, 204, 204));
-        livChk.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        livChk.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         livChk.setText("Liver Disease");
         livChk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -333,7 +333,7 @@ public class DoctorPatientMedicalHistoryPanel extends javax.swing.JPanel {
         });
 
         alcoholChk.setBackground(new java.awt.Color(255, 204, 204));
-        alcoholChk.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        alcoholChk.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         alcoholChk.setText("Alcohol History");
         alcoholChk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -342,14 +342,14 @@ public class DoctorPatientMedicalHistoryPanel extends javax.swing.JPanel {
         });
 
         drugChk.setBackground(new java.awt.Color(255, 204, 204));
-        drugChk.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        drugChk.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         drugChk.setText("Drug History");
 
-        jLabel11.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jLabel11.setText("Medical History");
 
         oxymChk.setBackground(new java.awt.Color(255, 204, 204));
-        oxymChk.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        oxymChk.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         oxymChk.setText("Oxymorphone");
         oxymChk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -365,7 +365,7 @@ public class DoctorPatientMedicalHistoryPanel extends javax.swing.JPanel {
         });
 
         metChk.setBackground(new java.awt.Color(255, 204, 204));
-        metChk.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        metChk.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         metChk.setText("Methadone");
         metChk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -380,7 +380,7 @@ public class DoctorPatientMedicalHistoryPanel extends javax.swing.JPanel {
         });
 
         bupChk.setBackground(new java.awt.Color(255, 204, 204));
-        bupChk.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        bupChk.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         bupChk.setText("Buprenorphine");
         bupChk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -389,7 +389,7 @@ public class DoctorPatientMedicalHistoryPanel extends javax.swing.JPanel {
         });
 
         withChk.setBackground(new java.awt.Color(255, 204, 204));
-        withChk.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        withChk.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         withChk.setText("Opioid Withdrawal");
         withChk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -410,11 +410,11 @@ public class DoctorPatientMedicalHistoryPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel14.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jLabel14.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         jLabel14.setText("Heart Rate");
 
         injChk.setBackground(new java.awt.Color(255, 204, 204));
-        injChk.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        injChk.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         injChk.setText("Injection Opioid Use ");
         injChk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -422,14 +422,14 @@ public class DoctorPatientMedicalHistoryPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel12.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel12.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jLabel12.setText("Current Physical Symptoms");
 
         jLabel21.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         jLabel21.setText("Additional Information ");
 
         disruptSocialChk.setBackground(new java.awt.Color(255, 204, 204));
-        disruptSocialChk.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        disruptSocialChk.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         disruptSocialChk.setText("Bad Social Relationships");
 
         oxymCombo.setEnabled(false);
@@ -440,7 +440,7 @@ public class DoctorPatientMedicalHistoryPanel extends javax.swing.JPanel {
         });
 
         anxietyChk.setBackground(new java.awt.Color(255, 204, 204));
-        anxietyChk.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        anxietyChk.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         anxietyChk.setText("Anxiety History");
 
         metCombo.setEnabled(false);
@@ -451,7 +451,7 @@ public class DoctorPatientMedicalHistoryPanel extends javax.swing.JPanel {
         });
 
         depressionChk.setBackground(new java.awt.Color(255, 204, 204));
-        depressionChk.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        depressionChk.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         depressionChk.setText("Depression History");
 
         bupCombo.setEnabled(false);
@@ -481,7 +481,7 @@ public class DoctorPatientMedicalHistoryPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel16.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jLabel16.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         jLabel16.setText("Blood Pressure");
 
         intoCombo.setEnabled(false);
@@ -491,11 +491,11 @@ public class DoctorPatientMedicalHistoryPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel15.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jLabel15.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         jLabel15.setText("Temperature");
 
         intoChk.setBackground(new java.awt.Color(255, 204, 204));
-        intoChk.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        intoChk.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         intoChk.setText("Opioid Intoxication");
         intoChk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -599,7 +599,7 @@ public class DoctorPatientMedicalHistoryPanel extends javax.swing.JPanel {
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(tempCombo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(respCombo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addContainerGap(106, Short.MAX_VALUE))))
+                        .addContainerGap(122, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
