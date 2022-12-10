@@ -257,13 +257,15 @@ public class RequestSupplierForMedicinePanel extends javax.swing.JPanel {
                         break;
                     }
                 }
-            }
-            if (org != null) {
-                org.getWorkQueue().getWorkRequestList().add(request);
-                request.setReceiver(null);
-                userAccount.getWorkQueue().getWorkRequestList().add(request);
-            }
+            }   
         }
+
+        if (org != null) {
+            org.getWorkQueue().getWorkRequestList().add(request);
+            request.setReceiver(null);
+            userAccount.getWorkQueue().getWorkRequestList().add(request);
+        }
+        
         JOptionPane.showMessageDialog(null, "Medical prescription sent to pharmacist successfully.");
 
     }//GEN-LAST:event_requestbtnActionPerformed

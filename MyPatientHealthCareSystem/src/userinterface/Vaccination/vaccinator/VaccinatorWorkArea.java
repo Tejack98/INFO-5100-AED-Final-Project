@@ -6,6 +6,10 @@ package userinterface.Vaccination.vaccinator;
 
 import healthcare.Ecosystem;
 import healthcare.db4oUtil.Db4oUtil;
+import healthcare.enterprise.Enterprise;
+import healthcare.network.Network;
+import healthcare.organization.Organization;
+import healthcare.userAccount.UserAccount;
 
 /**
  *
@@ -16,12 +20,20 @@ public class VaccinatorWorkArea extends javax.swing.JFrame {
     /**
      * Creates new form VaccinatorWorkArea
      */
+    static UserAccount userAccount;
+    static Organization organization;
+    static Enterprise enterprise;
     static Ecosystem ecosystem;
+    static Network network;
     private Db4oUtil db4oUtil = Db4oUtil.getDb4oInstance();
     
-    public VaccinatorWorkArea(Ecosystem ecosystem) {
+    public VaccinatorWorkArea(UserAccount userAccount, Organization organization, Enterprise enterprise ,Ecosystem ecosystem, Network network) {
         initComponents();
+        this.userAccount = userAccount;
+        this.organization = organization;
+        this.enterprise = enterprise;
         this.ecosystem = ecosystem;
+        this.network = network;
     }
 
     /**
@@ -36,7 +48,7 @@ public class VaccinatorWorkArea extends javax.swing.JFrame {
         jSplitPane1 = new javax.swing.JSplitPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        btnViewAssignment = new javax.swing.JButton();
+        btnViewRequests = new javax.swing.JButton();
         btnLogout = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
 
@@ -48,7 +60,12 @@ public class VaccinatorWorkArea extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Vaccinator");
 
-        btnViewAssignment.setText("View Assignment");
+        btnViewRequests.setText("View Requests");
+        btnViewRequests.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewRequestsActionPerformed(evt);
+            }
+        });
 
         btnLogout.setBackground(new java.awt.Color(255, 204, 204));
         btnLogout.setText("Logout");
@@ -63,14 +80,14 @@ public class VaccinatorWorkArea extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(btnViewAssignment, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(33, Short.MAX_VALUE)
                 .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnViewRequests, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -78,7 +95,7 @@ public class VaccinatorWorkArea extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnViewAssignment, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnViewRequests, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 281, Short.MAX_VALUE)
                 .addComponent(btnLogout)
                 .addGap(15, 15, 15))
@@ -121,6 +138,12 @@ public class VaccinatorWorkArea extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_btnLogoutActionPerformed
 
+    private void btnViewRequestsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewRequestsActionPerformed
+        // TODO add your handling code here:
+        VaccinationsViewRequestsJPanel vvrj = new VaccinationsViewRequestsJPanel(ecosystem, userAccount, organization, enterprise, network);
+        jSplitPane1.setRightComponent(vvrj);
+    }//GEN-LAST:event_btnViewRequestsActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -151,14 +174,14 @@ public class VaccinatorWorkArea extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VaccinatorWorkArea(ecosystem).setVisible(true);
+                new VaccinatorWorkArea(userAccount, organization, enterprise, ecosystem, network).setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLogout;
-    private javax.swing.JButton btnViewAssignment;
+    private javax.swing.JButton btnViewRequests;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

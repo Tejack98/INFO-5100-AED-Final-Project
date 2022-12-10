@@ -863,14 +863,14 @@ public class DoctorPatientMedicalHistoryPanel extends javax.swing.JPanel {
                         break;
                     }
                 }
-            }
-            if (org != null) {
-                int a = request.hashCode();
-                request.setHashcode(a);
-                labr.setHashcode(a);
-                org.getWorkQueue().getWorkRequestList().add(labr);
-                userAccount.getWorkQueue().getWorkRequestList().add(labr);
-            }
+            }  
+        }
+        if (org != null) {
+            int a = request.hashCode();
+            request.setHashcode(a);
+            labr.setHashcode(a);
+            org.getWorkQueue().getWorkRequestList().add(labr);
+            userAccount.getWorkQueue().getWorkRequestList().add(labr);
         }
         
     

@@ -39,6 +39,7 @@ public class WorkRequest {
     public void setAppointmentDecision(String appointmentDecision) {
         this.appointmentDecision = appointmentDecision;}
     private String medlist="";
+    private String vaccinesList="";
     
     
     public WorkRequest(){
@@ -192,6 +193,14 @@ public class WorkRequest {
 
     public void setAmbulance(Ambulance ambulance) {
         this.ambulance = ambulance;
+    }
+
+    public String getVaccinesList() {
+        return vaccinesList;
+    }
+
+    public void setVaccinesList(String vaccinesList) {
+        this.vaccinesList = vaccinesList;
     }
     
 }
