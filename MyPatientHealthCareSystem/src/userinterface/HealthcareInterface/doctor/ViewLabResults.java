@@ -78,6 +78,7 @@ public class ViewLabResults extends javax.swing.JPanel {
 
         optionPanel.setBackground(new java.awt.Color(255, 204, 204));
 
+        prescriptionBtn.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         prescriptionBtn.setText("Write Prescription");
         prescriptionBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -110,14 +111,17 @@ public class ViewLabResults extends javax.swing.JPanel {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Georgia", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Lab Process Result");
 
+        result_txt.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         result_txt.setText("Result");
 
+        result_txt2.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         result_txt2.setText("Result Type");
 
+        result_txt1.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         result_txt1.setText("Solution By Lab");
 
         backBtn.setText("Back");
@@ -173,7 +177,7 @@ public class ViewLabResults extends javax.swing.JPanel {
                 .addGroup(actionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(result_txt1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(solutionByLabtxt, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 200, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 198, Short.MAX_VALUE)
                 .addComponent(backBtn)
                 .addGap(15, 15, 15))
         );
@@ -188,7 +192,7 @@ public class ViewLabResults extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSplitPane1)
+            .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 615, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 

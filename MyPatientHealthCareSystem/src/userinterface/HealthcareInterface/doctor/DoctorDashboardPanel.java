@@ -71,10 +71,12 @@ public class DoctorDashboardPanel extends javax.swing.JPanel {
 
         jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 60, 790, 200));
 
+        btnAddDiagnosis.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         btnAddDiagnosis.setText("Add Diagnosis");
         jPanel3.add(btnAddDiagnosis, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 290, -1, -1));
         jPanel3.add(txtDiagnosis, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 290, 400, -1));
 
+        btnLogout.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         btnLogout.setText("Logout");
         jPanel3.add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 340, -1, -1));
 
@@ -98,10 +100,12 @@ public class DoctorDashboardPanel extends javax.swing.JPanel {
 
         jPanel4.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 1440, 250));
 
+        jLabel1.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         jLabel1.setText("Search By Name");
         jPanel4.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 320, 110, 20));
         jPanel4.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 320, 300, -1));
 
+        btnSearch.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         btnSearch.setText("Search");
         btnSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -110,10 +114,12 @@ public class DoctorDashboardPanel extends javax.swing.JPanel {
         });
         jPanel4.add(btnSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 320, 80, -1));
 
+        jLabel2.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         jLabel2.setText("Status");
         jPanel4.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 380, 60, 20));
         jPanel4.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 380, 300, -1));
 
+        btnAddStatus.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         btnAddStatus.setText("Add Status");
         btnAddStatus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -122,6 +128,7 @@ public class DoctorDashboardPanel extends javax.swing.JPanel {
         });
         jPanel4.add(btnAddStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 380, -1, -1));
 
+        btnLogOut.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         btnLogOut.setText("Logout");
         btnLogOut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

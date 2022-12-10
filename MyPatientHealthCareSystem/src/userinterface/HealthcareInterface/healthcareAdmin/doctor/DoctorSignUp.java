@@ -81,71 +81,71 @@ public class DoctorSignUp extends javax.swing.JPanel {
                 btnSignUpActionPerformed(evt);
             }
         });
-        add(btnSignUp, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 470, -1, -1));
+        add(btnSignUp, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 490, -1, -1));
 
         lblState.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblState.setText("State");
-        add(lblState, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 340, -1, -1));
+        add(lblState, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 360, -1, -1));
 
         lblZipCode.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblZipCode.setText("Zipcode");
-        add(lblZipCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 380, -1, -1));
-        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 100, 238, -1));
-        add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 140, 238, -1));
+        add(lblZipCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 400, -1, -1));
+        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 120, 238, -1));
+        add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 160, 238, -1));
 
         lblTitle.setFont(new java.awt.Font("Georgia", 1, 24)); // NOI18N
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitle.setText("Create Doctor Profile");
-        add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(716, 23, 720, -1));
+        add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(606, 23, 610, -1));
 
         lblName.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblName.setText("Name");
-        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 100, -1, -1));
+        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 120, -1, -1));
 
         lblUsername.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblUsername.setText("Email");
-        add(lblUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 140, -1, -1));
-        add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 260, 238, -1));
+        add(lblUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 160, -1, -1));
+        add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 280, 238, -1));
 
         lblEnterprise.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblEnterprise.setText("Organization");
-        add(lblEnterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 180, -1, -1));
+        add(lblEnterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 200, -1, -1));
 
         txtCity.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCityActionPerformed(evt);
             }
         });
-        add(txtCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 300, 238, -1));
-        add(txtState, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 340, 238, -1));
+        add(txtCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 320, 238, -1));
+        add(txtState, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 360, 238, -1));
 
         lblAddress.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblAddress.setText("Address");
-        add(lblAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 260, -1, -1));
-        add(txtZipcode, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 380, 238, -1));
+        add(lblAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 280, -1, -1));
+        add(txtZipcode, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 400, 238, -1));
 
         lblCity.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblCity.setText("City");
-        add(lblCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 300, -1, -1));
+        add(lblCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 320, -1, -1));
 
         lblSpeciality.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblSpeciality.setText("Speciality");
-        add(lblSpeciality, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 220, -1, -1));
+        add(lblSpeciality, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 240, -1, -1));
 
         cboxSpeciality.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         cboxSpeciality.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(cboxSpeciality, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 220, 238, -1));
+        add(cboxSpeciality, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 240, 238, -1));
 
         lblPhoneNo.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblPhoneNo.setText("Phone No");
-        add(lblPhoneNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 420, -1, -1));
-        add(txtPhoneNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 420, 238, -1));
+        add(lblPhoneNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 440, -1, -1));
+        add(txtPhoneNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 440, 238, -1));
 
         organizationJComboBox.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         organizationJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Doctor", "Nurse", "Patient" }));
-        add(organizationJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 180, 238, -1));
+        add(organizationJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 200, 238, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\adity\\Downloads\\vecteezy_doctors-and-nurses-illustration_10314959_256\\vecteezy_doctors-and-nurses-illustration_10314959.jpg")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/DoctorSignUp.jpg"))); // NOI18N
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 900));
     }// </editor-fold>//GEN-END:initComponents
 
