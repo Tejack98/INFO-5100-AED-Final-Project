@@ -6,6 +6,7 @@ package userinterface.Administration;
 
 import userinterface.HealthcareInterface.healthcareAdmin.*;
 import healthcare.Ecosystem;
+import healthcare.db4oUtil.Db4oUtil;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import userinterface.HealthcareInterface.healthcareAdmin.doctor.HealthCareAdminDoctorPanel;
@@ -19,10 +20,12 @@ public class AdministratorWorkArea extends javax.swing.JFrame {
     /**
      * Creates new form HopsitalWorkArea
      */
+    private Db4oUtil db4oUtil = Db4oUtil.getDb4oInstance();
+    
     static Ecosystem ecosystem;
     public AdministratorWorkArea(Ecosystem ecosystem) {
         initComponents();
-        this.ecosystem = ecosystem;
+        this.ecosystem = db4oUtil.retrieveDb4oSystem();
     }
 
     /**
@@ -128,6 +131,7 @@ public class AdministratorWorkArea extends javax.swing.JFrame {
 
     private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
         // TODO add your handling code here:
+        db4oUtil.storeDb4oEcosystem(ecosystem);
         dispose();
     }//GEN-LAST:event_btnLogoutActionPerformed
 

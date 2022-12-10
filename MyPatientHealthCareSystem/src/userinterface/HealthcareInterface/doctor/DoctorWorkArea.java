@@ -5,7 +5,9 @@
 package userinterface.HealthcareInterface.doctor;
 
 import healthcare.Ecosystem;
+import healthcare.db4oUtil.Db4oUtil;
 import healthcare.enterprise.Enterprise;
+import healthcare.enterprise.healthCare.DoctorOrganization;
 import healthcare.network.Network;
 import healthcare.organization.Organization;
 import healthcare.userAccount.UserAccount;
@@ -23,16 +25,18 @@ public class DoctorWorkArea extends javax.swing.JFrame {
      */
     
     static UserAccount userAccount;
-    static Organization organization;
+    static DoctorOrganization organization;
     static Enterprise enterprise;
     static Ecosystem ecosystem;
     static Network network;
+    private Db4oUtil db4oUtil = Db4oUtil.getDb4oInstance();
+    
     public DoctorWorkArea(UserAccount userAccount, Organization organization, Enterprise enterprise ,Ecosystem ecosystem, Network network) {
         initComponents();
         this.userAccount = userAccount;
-        this.organization = organization;
+        this.organization = (DoctorOrganization)organization;
         this.enterprise = enterprise;
-        this.ecosystem = ecosystem;
+        this.ecosystem = db4oUtil.retrieveDb4oSystem();
         this.network = network;
         
         DoctorAppointmentRequestsPanel req = new DoctorAppointmentRequestsPanel(userAccount,organization, enterprise ,network);
@@ -55,7 +59,7 @@ public class DoctorWorkArea extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         Appointment_req_btn = new javax.swing.JButton();
         Pat_Med_His_btn = new javax.swing.JButton();
-        Pat_Med_His_btn1 = new javax.swing.JButton();
+        btnDocDashboard1 = new javax.swing.JButton();
         workArea = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -99,11 +103,11 @@ public class DoctorWorkArea extends javax.swing.JFrame {
             }
         });
 
-        Pat_Med_His_btn1.setBackground(new java.awt.Color(255, 204, 204));
-        Pat_Med_His_btn1.setText("Request Pharmacist");
-        Pat_Med_His_btn1.addActionListener(new java.awt.event.ActionListener() {
+        btnDocDashboard1.setBackground(new java.awt.Color(255, 204, 204));
+        btnDocDashboard1.setText("Statistics");
+        btnDocDashboard1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Pat_Med_His_btn1ActionPerformed(evt);
+                btnDocDashboard1ActionPerformed(evt);
             }
         });
 
@@ -112,15 +116,18 @@ public class DoctorWorkArea extends javax.swing.JFrame {
         controlPanelLayout.setHorizontalGroup(
             controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, controlPanelLayout.createSequentialGroup()
-                .addContainerGap(17, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Pat_Med_His_btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Pat_Med_His_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Appointment_req_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnDocDashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(14, 14, 14))
+            .addGroup(controlPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnDocDashboard1, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         controlPanelLayout.setVerticalGroup(
             controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -133,9 +140,9 @@ public class DoctorWorkArea extends javax.swing.JFrame {
                 .addComponent(Appointment_req_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(Pat_Med_His_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(Pat_Med_His_btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 164, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnDocDashboard1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 175, Short.MAX_VALUE)
                 .addComponent(btnLogout)
                 .addGap(16, 16, 16))
         );
@@ -177,6 +184,7 @@ public class DoctorWorkArea extends javax.swing.JFrame {
 
     private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
         // TODO add your handling code here:
+        db4oUtil.storeDb4oEcosystem(ecosystem);
         dispose();
     }//GEN-LAST:event_btnLogoutActionPerformed
 
@@ -192,11 +200,11 @@ public class DoctorWorkArea extends javax.swing.JFrame {
 //        jSplitPaneSystem.setRightComponent(dpmh);
     }//GEN-LAST:event_Pat_Med_His_btnActionPerformed
 
-    private void Pat_Med_His_btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pat_Med_His_btn1ActionPerformed
-        // TODO add your handling code here:]
-//        RequestPharmacistForMedicinePanel rpfm = new RequestPharmacistForMedicinePanel(request, Network network, UserAccount userAccount,Enterprise enterprise);
-//        jSplitPaneSystem.setRightComponent(rpfm);
-    }//GEN-LAST:event_Pat_Med_His_btn1ActionPerformed
+    private void btnDocDashboard1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDocDashboard1ActionPerformed
+        // TODO add your handling code here:
+        StatisticsJPanel spanel = new StatisticsJPanel(controlPanel, userAccount, organization, enterprise, network);
+        jSplitPaneSystem.setRightComponent(spanel);
+    }//GEN-LAST:event_btnDocDashboard1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -267,8 +275,8 @@ public class DoctorWorkArea extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Appointment_req_btn;
     private javax.swing.JButton Pat_Med_His_btn;
-    private javax.swing.JButton Pat_Med_His_btn1;
     private javax.swing.JButton btnDocDashboard;
+    private javax.swing.JButton btnDocDashboard1;
     private javax.swing.JButton btnLogout;
     private javax.swing.JPanel controlPanel;
     private javax.swing.JLabel jLabel1;

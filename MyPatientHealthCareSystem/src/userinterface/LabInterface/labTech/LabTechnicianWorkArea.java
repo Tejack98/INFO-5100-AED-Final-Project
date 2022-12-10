@@ -5,6 +5,7 @@
 package userinterface.LabInterface.labTech;
 
 import healthcare.Ecosystem;
+import healthcare.db4oUtil.Db4oUtil;
 import healthcare.enterprise.Enterprise;
 import healthcare.enterprise.lab.LabOrganization;
 import healthcare.network.Network;
@@ -25,11 +26,13 @@ public class LabTechnicianWorkArea extends javax.swing.JFrame {
     static Enterprise enterprise;
     static Ecosystem ecosystem;
     static Network network;
+    private Db4oUtil db4oUtil = Db4oUtil.getDb4oInstance();
+    
     public LabTechnicianWorkArea(Ecosystem ecosystem, UserAccount userAccount,
             Organization organization, Enterprise enterprise, Network network) {
         initComponents();
         this.userAccount = userAccount;
-        this.ecosystem = ecosystem;
+        this.ecosystem = db4oUtil.retrieveDb4oSystem();
         this.labOrganization = (LabOrganization) organization;
         this.enterprise = enterprise;
         this.network = network;
@@ -156,6 +159,7 @@ public class LabTechnicianWorkArea extends javax.swing.JFrame {
 
     private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
         // TODO add your handling code here:
+        db4oUtil.storeDb4oEcosystem(ecosystem);
         dispose();
     }//GEN-LAST:event_btnLogoutActionPerformed
 
