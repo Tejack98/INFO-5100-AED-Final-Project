@@ -27,7 +27,7 @@ import javax.swing.JPanel;
  *
  * @author shriyapandita
  */
-public class NurseRequestBloodPanel extends javax.swing.JPanel {
+public class NurseRequestOrganPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form RequestPharmacistForMedicinePanel
@@ -38,7 +38,7 @@ public class NurseRequestBloodPanel extends javax.swing.JPanel {
     private Network network;
     JPanel userProcessContainer;
     
-    public NurseRequestBloodPanel( Network network, UserAccount userAccount,Enterprise enterprise) {
+    public NurseRequestOrganPanel( Network network, UserAccount userAccount,Enterprise enterprise) {
         initComponents();
         this.userAccount = userAccount;
         this.organization = (NurseOrganization) organization;
@@ -66,13 +66,15 @@ public class NurseRequestBloodPanel extends javax.swing.JPanel {
         txtMsg = new javax.swing.JTextField();
         cboxBlood1 = new javax.swing.JComboBox<>();
         jLabel9 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        txtOrg = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(255, 204, 204));
 
         jPanel6.setBackground(new java.awt.Color(153, 204, 255));
 
         jLabel6.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
-        jLabel6.setText("Request Blood");
+        jLabel6.setText("Request Organ");
 
         jButton2.setBackground(new java.awt.Color(71, 120, 197));
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -118,7 +120,7 @@ public class NurseRequestBloodPanel extends javax.swing.JPanel {
 
         requestbtn.setBackground(new java.awt.Color(153, 204, 255));
         requestbtn.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
-        requestbtn.setText("Request Blood");
+        requestbtn.setText("Request Org");
         requestbtn.setBorder(null);
         requestbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -137,6 +139,8 @@ public class NurseRequestBloodPanel extends javax.swing.JPanel {
 
         jLabel9.setText("Blood Type");
 
+        jLabel3.setText("Organ");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -146,16 +150,23 @@ public class NurseRequestBloodPanel extends javax.swing.JPanel {
                 .addGap(48, 48, 48)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(requestbtn)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
-                            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(24, 24, 24)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(cboxBlood1, 0, 223, Short.MAX_VALUE)
-                            .addComponent(txtUserName)
-                            .addComponent(txtMsg))))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                            .addComponent(txtOrg, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtMsg, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(24, 24, 24)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(cboxBlood1, 0, 223, Short.MAX_VALUE)
+                                .addComponent(txtUserName)))))
                 .addGap(0, 207, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -170,13 +181,17 @@ public class NurseRequestBloodPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cboxBlood1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtOrg, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtMsg, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(requestbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(265, Short.MAX_VALUE))
+                .addContainerGap(231, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -193,9 +208,10 @@ public class NurseRequestBloodPanel extends javax.swing.JPanel {
         DonorBankRequest request = new DonorBankRequest();
         request.setSender(userAccount);
         request.setBloodType(cboxBlood1.getSelectedItem().toString());
+        request.setOrgan(txtOrg.getText());
         request.setMessage(txtMsg.getText());
-        request.setReqType("bloods");
-        request.setStatus("Blood Requested");
+        request.setReqType("organ");
+        request.setStatus("Organ Requested");
 
         Organization org = null;
         for (Enterprise enterprise : network.getEnterpriseMasterList().getEnterpriseList()) {
@@ -213,7 +229,7 @@ public class NurseRequestBloodPanel extends javax.swing.JPanel {
                 request.setReceiver(null);
                 userAccount.getWorkQueue().getWorkRequestList().add(request);
             }
-        JOptionPane.showMessageDialog(null, "Blood request sent to Donor bank Organization successfully.");
+        JOptionPane.showMessageDialog(null, "Organ request sent to Donor bank Organization successfully.");
 
     }//GEN-LAST:event_requestbtnActionPerformed
 
@@ -231,11 +247,13 @@ public class NurseRequestBloodPanel extends javax.swing.JPanel {
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JButton requestbtn;
     private javax.swing.JTextField txtMsg;
+    private javax.swing.JTextField txtOrg;
     private javax.swing.JTextField txtUserName;
     // End of variables declaration//GEN-END:variables
 }
