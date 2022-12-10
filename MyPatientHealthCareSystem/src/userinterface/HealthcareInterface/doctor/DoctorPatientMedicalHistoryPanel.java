@@ -11,10 +11,12 @@ import healthcare.organization.Organization;
 import healthcare.userAccount.UserAccount;
 import healthcare.workQueue.DoctorLabRequest;
 import healthcare.workQueue.PatientAppointmentRequest;
+import java.awt.Color;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
+import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import static userinterface.HealthcareInterface.doctor.DoctorWorkArea.enterprise;
@@ -32,7 +34,8 @@ public class DoctorPatientMedicalHistoryPanel extends javax.swing.JPanel {
      * Creates new form DoctorPatientMedicalHistoryPanel
      */
     
-    
+    boolean emptyValidationStatus = true;
+    boolean validationCheck = true;
     PatientAppointmentRequest request;
     UserAccount useraccount;
     Enterprise enterprise;
@@ -728,6 +731,10 @@ public class DoctorPatientMedicalHistoryPanel extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        try {
+            if (EmpytyFieldValidation()) {
+
+                if (RegexValidation()) {
         DoctorLabRequest labr = new DoctorLabRequest();
         labr.setSender(useraccount);
 
@@ -876,7 +883,47 @@ public class DoctorPatientMedicalHistoryPanel extends javax.swing.JPanel {
     
          JOptionPane.showMessageDialog(null, "Report Requested Successfully");
     }//GEN-LAST:event_jButton1ActionPerformed
-
+          
+            }
+        }
+        catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Donor not registered, Try again");
+            System.out.println(e.toString());
+            emptyValidationStatus = true;
+        }
+    }
+    
+    private boolean RegexValidation()
+        {
+            if(!txtpatientname.getText().matches("^[a-zA-Z ]+$"))
+        {
+            txtpatientname.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            txtpatientname.setToolTipText("Please enter only characters and space.");
+            validationCheck=false;
+        }
+        
+        if(txtpatientname.getText().matches("^[a-zA-Z ]+$"))
+        {
+            txtpatientname.setBorder(BorderFactory.createLineBorder(Color.BLUE, 0));
+        }
+            return validationCheck;
+        }
+        
+        private boolean EmpytyFieldValidation()
+        {
+            if( txtpatientname.getText().equals(null) ||  txtpatientname.getText().trim().isEmpty() )
+        {
+             txtpatientname.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+             txtpatientname.setToolTipText("This Field Cannot be empty");
+            emptyValidationStatus= false;
+        }
+        if(!txtpatientname.getText().equals(null) && ! txtpatientname.getText().trim().isEmpty() )
+        {
+             txtpatientname.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        }
+            return emptyValidationStatus;
+        }
+        
     private void livComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_livComboActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_livComboActionPerformed

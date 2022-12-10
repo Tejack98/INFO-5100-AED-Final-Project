@@ -13,8 +13,10 @@ import healthcare.organization.Organization;
 import healthcare.userAccount.UserAccount;
 import healthcare.workQueue.WorkRequest;
 import java.awt.CardLayout;
+import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import java.awt.Color;
 
 /**
  *
@@ -25,6 +27,8 @@ public class RequestPharmacistForMedicinePanel extends javax.swing.JPanel {
     /**
      * Creates new form RequestPharmacistForMedicinePanel
      */
+    boolean emptyValidationStatus = true;
+    boolean validationCheck = true;
     private DoctorOrganization organization;
     private Enterprise enterprise;
     private UserAccount userAccount;
@@ -216,6 +220,10 @@ public class RequestPharmacistForMedicinePanel extends javax.swing.JPanel {
 
     private void requestbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestbtnActionPerformed
         // TODO add your handling code here:
+        try {
+            if (EmpytyFieldValidation()) {
+
+                if (RegexValidation()) {
                 patientrequest.setSender(userAccount);
        // patientrequest.setReceiver();
         if (chkAca.isSelected())
@@ -264,7 +272,12 @@ public class RequestPharmacistForMedicinePanel extends javax.swing.JPanel {
             }
         }
         JOptionPane.showMessageDialog(null, "Medical prescription sent to pharmacist successfully.");
-
+                }}}
+        catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Donor not registered, Try again");
+            System.out.println(e.toString());
+            emptyValidationStatus = true;
+        }
     }//GEN-LAST:event_requestbtnActionPerformed
 
     private void chkVivActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkVivActionPerformed
@@ -287,6 +300,36 @@ public class RequestPharmacistForMedicinePanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtPatientNameActionPerformed
 
+    private boolean RegexValidation()
+        {
+            if(!txtPatientName.getText().matches("^[a-zA-Z ]+$"))
+        {
+            txtPatientName.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            txtPatientName.setToolTipText("Please enter only characters and space.");
+            validationCheck=false;
+        }
+        
+        if(txtPatientName.getText().matches("^[a-zA-Z ]+$"))
+        {
+            txtPatientName.setBorder(BorderFactory.createLineBorder(Color.BLUE, 0));
+        }
+            return validationCheck;
+        }
+        
+        private boolean EmpytyFieldValidation()
+        {
+            if( txtPatientName.getText().equals(null) ||  txtPatientName.getText().trim().isEmpty() )
+        {
+             txtPatientName.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+             txtPatientName.setToolTipText("This Field Cannot be empty");
+            emptyValidationStatus= false;
+        }
+        if(!txtPatientName.getText().equals(null) && ! txtPatientName.getText().trim().isEmpty() )
+        {
+             txtPatientName.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        }
+            return emptyValidationStatus;
+        }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox chkAca;
