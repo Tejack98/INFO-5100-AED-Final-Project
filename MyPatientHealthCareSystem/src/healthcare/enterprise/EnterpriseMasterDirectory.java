@@ -8,7 +8,9 @@ import healthcare.enterprise.pharmacy.PharmacyEnterprise;
 import healthcare.enterprise.supplyChain.SupplyChainEnterprise;
 import healthcare.enterprise.lab.LabEnterprise;
 import healthcare.Enterprise.donorBank.DonorBankEnterprise;
+import healthcare.enterprise.emergencyUnit.EmergencyUnitEnterprise;
 import healthcare.enterprise.healthCare.HealthCareEnterprise;
+import healthcare.enterprise.vaccination.VaccinationEnterprise;
 import java.util.ArrayList;
 
 /**
@@ -65,11 +67,11 @@ public class EnterpriseMasterDirectory {
         }
         
         if (Enterprise.EnterpriseType.EmergencyUnit == enterpriseType) {
-            enterprise = new SupplyChainEnterprise(name);
+            enterprise = new EmergencyUnitEnterprise(name);
             enterpriseList.add(enterprise);
         }
         if (Enterprise.EnterpriseType.Vaccination == enterpriseType) {
-            enterprise = new SupplyChainEnterprise(name);
+            enterprise = new VaccinationEnterprise(name);
             enterpriseList.add(enterprise);
         }
         

@@ -27,7 +27,7 @@ public class VaccinatorRole extends Role {
     
     @Override
     public JFrame createWorkArea(UserAccount userAccount, Organization organization, Enterprise enterprise, Ecosystem ecosystem, Network network) {
-        return new VaccinatorWorkArea(ecosystem);       
+        return new VaccinatorWorkArea(userAccount, organization, enterprise, ecosystem, network);       
     }
     
 }

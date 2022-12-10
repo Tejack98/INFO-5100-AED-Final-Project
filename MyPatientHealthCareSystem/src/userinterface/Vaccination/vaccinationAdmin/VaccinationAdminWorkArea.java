@@ -6,6 +6,10 @@ package userinterface.Vaccination.vaccinationAdmin;
 
 import healthcare.Ecosystem;
 import healthcare.db4oUtil.Db4oUtil;
+import healthcare.enterprise.Enterprise;
+import healthcare.network.Network;
+import healthcare.organization.Organization;
+import healthcare.userAccount.UserAccount;
 
 /**
  *
@@ -16,12 +20,20 @@ public class VaccinationAdminWorkArea extends javax.swing.JFrame {
     /**
      * Creates new form VaccinationAdminWorkArea
      */
+    static UserAccount userAccount;
+    static Organization organization;
+    static Enterprise enterprise;
     static Ecosystem ecosystem;
+    static Network network;
     private Db4oUtil db4oUtil = Db4oUtil.getDb4oInstance();
     
-    public VaccinationAdminWorkArea(Ecosystem ecosystem) {
+    public VaccinationAdminWorkArea(UserAccount userAccount, Organization organization, Enterprise enterprise ,Ecosystem ecosystem, Network network) {
         initComponents();
+        this.userAccount = userAccount;
+        this.organization = organization;
+        this.enterprise = enterprise;
         this.ecosystem = ecosystem;
+        this.network = network;
     }
 
     /**
@@ -38,8 +50,6 @@ public class VaccinationAdminWorkArea extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         btnAddVaccinator = new javax.swing.JButton();
-        btnViewRequests = new javax.swing.JButton();
-        btnAssignVaccinator = new javax.swing.JButton();
         btnLogout = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
 
@@ -69,20 +79,6 @@ public class VaccinationAdminWorkArea extends javax.swing.JFrame {
             }
         });
 
-        btnViewRequests.setText("View Requests");
-        btnViewRequests.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnViewRequestsActionPerformed(evt);
-            }
-        });
-
-        btnAssignVaccinator.setText("Assign Vaccinator");
-        btnAssignVaccinator.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAssignVaccinatorActionPerformed(evt);
-            }
-        });
-
         btnLogout.setBackground(new java.awt.Color(255, 204, 204));
         btnLogout.setText("Logout");
         btnLogout.addActionListener(new java.awt.event.ActionListener() {
@@ -100,10 +96,7 @@ public class VaccinationAdminWorkArea extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(15, 15, 15)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnAssignVaccinator, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnAddVaccinator, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnViewRequests, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnAddVaccinator, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(37, 37, 37)
                         .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -116,11 +109,7 @@ public class VaccinationAdminWorkArea extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnAddVaccinator, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
-                .addComponent(btnViewRequests, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
-                .addComponent(btnAssignVaccinator, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 304, Short.MAX_VALUE)
                 .addComponent(btnLogout)
                 .addContainerGap())
         );
@@ -156,15 +145,9 @@ public class VaccinationAdminWorkArea extends javax.swing.JFrame {
 
     private void btnAddVaccinatorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddVaccinatorActionPerformed
         // TODO add your handling code here:
+        VaccinatorSignUp vsu = new VaccinatorSignUp(ecosystem, enterprise.getOrganizationDirectory());
+        jSplitPane1.setRightComponent(vsu);
     }//GEN-LAST:event_btnAddVaccinatorActionPerformed
-
-    private void btnViewRequestsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewRequestsActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnViewRequestsActionPerformed
-
-    private void btnAssignVaccinatorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAssignVaccinatorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnAssignVaccinatorActionPerformed
 
     private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
         // TODO add your handling code here:
@@ -202,16 +185,14 @@ public class VaccinationAdminWorkArea extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VaccinationAdminWorkArea(ecosystem).setVisible(true);
+                new VaccinationAdminWorkArea(userAccount, organization, enterprise, ecosystem, network).setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddVaccinator;
-    private javax.swing.JButton btnAssignVaccinator;
     private javax.swing.JButton btnLogout;
-    private javax.swing.JButton btnViewRequests;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

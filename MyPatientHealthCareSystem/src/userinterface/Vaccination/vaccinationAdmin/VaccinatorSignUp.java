@@ -8,6 +8,7 @@ import userinterface.SupplyChainInterface.supplyManger.*;
 import healthcare.Ecosystem;
 import healthcare.enterprise.pharmacy.PharmacistRole;
 import healthcare.enterprise.supplyChain.HandlerRole;
+import healthcare.enterprise.vaccination.VaccinatorRole;
 import healthcare.organization.Organization;
 import healthcare.organization.OrganizationDirectory;
 import healthcare.person.Person;
@@ -269,17 +270,17 @@ public class VaccinatorSignUp extends javax.swing.JPanel {
                     long Zipcode = Long.parseLong(txtZipcode.getText());
                     
                     Random random=new Random();
-                    int HandlerID=random.nextInt((9999 - 100) + 1) + 10;
+                    int vaccinatorID=random.nextInt((9999 - 100) + 1) + 10;
                     
                     Organization organization = (Organization) organizationJComboBox.getSelectedItem();
                     
-                    String username = name.substring(0, 3) + String.valueOf(HandlerID);
+                    String username = name.substring(0, 3) + String.valueOf(vaccinatorID);
                     String password = name + String.valueOf(random.nextInt((9999 - 100) + 1) + 10);
                     
                     Person p = organization.getPersonDirectory().createAndAddPerson(username, Address, City, State, Zipcode, cellPhoneNumber);  
-                    UserAccount u = organization.getUserAccountDirectory().createUserAccount(HandlerID,username, password, p, new HandlerRole(), emailId);
+                    UserAccount u = organization.getUserAccountDirectory().createUserAccount(vaccinatorID,username, password, p, new VaccinatorRole(), emailId);
                     
-                    JOptionPane.showMessageDialog(this,"Handler Registered Successfully.Your New Username is:"+username+" and password: "+password+",Please save this Id for furture reference.");
+                    JOptionPane.showMessageDialog(this,"Vaccinator Registered Successfully.Your New Username is:"+username+" and password: "+password+",Please save this Id for furture reference.");
                     
                     SendMail s = new SendMail();
                     s.sendUserRegisterEmail(emailId, username, password);
@@ -296,7 +297,7 @@ public class VaccinatorSignUp extends javax.swing.JPanel {
             }
         }
         catch(Exception e){
-            JOptionPane.showMessageDialog(this,"Handler not registered, Try again");
+            JOptionPane.showMessageDialog(this,"Vaccinator not registered, Try again");
             System.out.println(e.toString());
             emptyValidationStatus=true;
         }
