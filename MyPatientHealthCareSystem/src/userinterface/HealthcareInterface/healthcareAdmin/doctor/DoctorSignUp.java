@@ -69,147 +69,84 @@ public class DoctorSignUp extends javax.swing.JPanel {
         lblPhoneNo = new javax.swing.JLabel();
         txtPhoneNo = new javax.swing.JTextField();
         organizationJComboBox = new javax.swing.JComboBox();
+        jLabel2 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(255, 255, 255));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnSignUp.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         btnSignUp.setText("Sign Up");
         btnSignUp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSignUpActionPerformed(evt);
             }
         });
+        add(btnSignUp, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 470, -1, -1));
 
-        lblState.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        lblState.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblState.setText("State");
+        add(lblState, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 340, -1, -1));
 
-        lblZipCode.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        lblZipCode.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblZipCode.setText("Zipcode");
+        add(lblZipCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 380, -1, -1));
+        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 100, 238, -1));
+        add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 140, 238, -1));
 
-        lblTitle.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        lblTitle.setFont(new java.awt.Font("Georgia", 1, 24)); // NOI18N
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitle.setText("Create Doctor Profile");
+        add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(716, 23, 720, -1));
 
-        lblName.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        lblName.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblName.setText("Name");
+        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 100, -1, -1));
 
-        lblUsername.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        lblUsername.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblUsername.setText("Email");
+        add(lblUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 140, -1, -1));
+        add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 260, 238, -1));
 
-        lblEnterprise.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        lblEnterprise.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblEnterprise.setText("Organization");
+        add(lblEnterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 180, -1, -1));
 
         txtCity.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCityActionPerformed(evt);
             }
         });
+        add(txtCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 300, 238, -1));
+        add(txtState, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 340, 238, -1));
 
-        lblAddress.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        lblAddress.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblAddress.setText("Address");
+        add(lblAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 260, -1, -1));
+        add(txtZipcode, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 380, 238, -1));
 
-        lblCity.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        lblCity.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblCity.setText("City");
+        add(lblCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 300, -1, -1));
 
-        lblSpeciality.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        lblSpeciality.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblSpeciality.setText("Speciality");
+        add(lblSpeciality, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 220, -1, -1));
 
+        cboxSpeciality.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         cboxSpeciality.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        add(cboxSpeciality, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 220, 238, -1));
 
-        lblPhoneNo.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        lblPhoneNo.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblPhoneNo.setText("Phone No");
+        add(lblPhoneNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 420, -1, -1));
+        add(txtPhoneNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 420, 238, -1));
 
-        organizationJComboBox.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        organizationJComboBox.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         organizationJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Doctor", "Nurse", "Patient" }));
+        add(organizationJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 180, 238, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(lblTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(161, 161, 161)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(lblEnterprise)
-                                        .addComponent(lblAddress)
-                                        .addComponent(lblCity)
-                                        .addComponent(lblState)
-                                        .addComponent(lblZipCode)
-                                        .addComponent(lblSpeciality)
-                                        .addComponent(lblPhoneNo))
-                                    .addGap(18, 18, 18)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(txtAddress, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
-                                        .addComponent(txtCity, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
-                                        .addComponent(txtState, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
-                                        .addComponent(txtZipcode, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
-                                        .addComponent(cboxSpeciality, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(txtPhoneNo, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
-                                        .addComponent(organizationJComboBox, 0, 238, Short.MAX_VALUE)))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addGap(250, 250, 250)
-                                    .addComponent(btnSignUp)
-                                    .addGap(5, 5, 5)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(lblName)
-                                    .addComponent(lblUsername))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtName, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
-                                    .addComponent(txtEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE))))
-                        .addGap(0, 231, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(lblTitle)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblName)
-                    .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblUsername)
-                    .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblEnterprise)
-                    .addComponent(organizationJComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblSpeciality)
-                    .addComponent(cboxSpeciality, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblAddress)
-                    .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblCity)
-                    .addComponent(txtCity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblState)
-                    .addComponent(txtState, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblZipCode)
-                    .addComponent(txtZipcode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblPhoneNo)
-                    .addComponent(txtPhoneNo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(19, 19, 19)
-                .addComponent(btnSignUp)
-                .addContainerGap(70, Short.MAX_VALUE))
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\adity\\Downloads\\vecteezy_doctors-and-nurses-illustration_10314959_256\\vecteezy_doctors-and-nurses-illustration_10314959.jpg")); // NOI18N
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 900));
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtCityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCityActionPerformed
@@ -358,6 +295,7 @@ public class DoctorSignUp extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSignUp;
     private javax.swing.JComboBox<String> cboxSpeciality;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel lblAddress;
     private javax.swing.JLabel lblCity;
     private javax.swing.JLabel lblEnterprise;

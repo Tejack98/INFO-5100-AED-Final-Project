@@ -51,6 +51,9 @@ public class DoctorDashboardPanel extends javax.swing.JPanel {
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        TabbedPanePatientList.setBackground(new java.awt.Color(153, 204, 255));
+
+        jPanel3.setBackground(new java.awt.Color(255, 204, 204));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -66,17 +69,18 @@ public class DoctorDashboardPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(72, 50, 540, 200));
+        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 60, 790, 200));
 
         btnAddDiagnosis.setText("Add Diagnosis");
-        jPanel3.add(btnAddDiagnosis, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 280, -1, -1));
-        jPanel3.add(txtDiagnosis, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 280, 400, -1));
+        jPanel3.add(btnAddDiagnosis, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 290, -1, -1));
+        jPanel3.add(txtDiagnosis, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 290, 400, -1));
 
         btnLogout.setText("Logout");
-        jPanel3.add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 340, -1, -1));
+        jPanel3.add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 340, -1, -1));
 
         TabbedPanePatientList.addTab("Patient List", jPanel3);
 
+        jPanel4.setBackground(new java.awt.Color(255, 204, 204));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
@@ -92,11 +96,11 @@ public class DoctorDashboardPanel extends javax.swing.JPanel {
         ));
         jScrollPane2.setViewportView(jTable2);
 
-        jPanel4.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 660, 130));
+        jPanel4.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 1440, 250));
 
         jLabel1.setText("Search By Name");
-        jPanel4.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(148, 210, 110, -1));
-        jPanel4.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 210, 190, -1));
+        jPanel4.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 320, 110, 20));
+        jPanel4.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 320, 300, -1));
 
         btnSearch.setText("Search");
         btnSearch.addActionListener(new java.awt.event.ActionListener() {
@@ -104,11 +108,11 @@ public class DoctorDashboardPanel extends javax.swing.JPanel {
                 btnSearchActionPerformed(evt);
             }
         });
-        jPanel4.add(btnSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 210, 80, -1));
+        jPanel4.add(btnSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 320, 80, -1));
 
         jLabel2.setText("Status");
-        jPanel4.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 260, -1, -1));
-        jPanel4.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 260, 190, -1));
+        jPanel4.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 380, 60, 20));
+        jPanel4.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 380, 300, -1));
 
         btnAddStatus.setText("Add Status");
         btnAddStatus.addActionListener(new java.awt.event.ActionListener() {
@@ -116,26 +120,31 @@ public class DoctorDashboardPanel extends javax.swing.JPanel {
                 btnAddStatusActionPerformed(evt);
             }
         });
-        jPanel4.add(btnAddStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 260, -1, -1));
+        jPanel4.add(btnAddStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 380, -1, -1));
 
         btnLogOut.setText("Logout");
-        jPanel4.add(btnLogOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 320, -1, -1));
+        btnLogOut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLogOutActionPerformed(evt);
+            }
+        });
+        jPanel4.add(btnLogOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 430, -1, -1));
 
         TabbedPanePatientList.addTab("Transplant History", jPanel4);
 
-        jPanel2.add(TabbedPanePatientList, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 1, 660, 410));
+        jPanel2.add(TabbedPanePatientList, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 1, 1440, 900));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 660, Short.MAX_VALUE)
+            .addGap(0, 1442, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 411, Short.MAX_VALUE)
+            .addGap(0, 901, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -169,6 +178,10 @@ public class DoctorDashboardPanel extends javax.swing.JPanel {
     private void btnAddStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddStatusActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAddStatusActionPerformed
+
+    private void btnLogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogOutActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnLogOutActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
