@@ -25,7 +25,7 @@ public class AdministratorWorkArea extends javax.swing.JFrame {
     static Ecosystem ecosystem;
     public AdministratorWorkArea(Ecosystem ecosystem) {
         initComponents();
-        this.ecosystem = db4oUtil.retrieveDb4oSystem();
+        this.ecosystem = ecosystem;
     }
 
     /**

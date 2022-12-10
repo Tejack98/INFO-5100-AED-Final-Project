@@ -21,7 +21,7 @@ public class AmbulanceHandlerWorkArea extends javax.swing.JFrame {
     private Db4oUtil db4oUtil = Db4oUtil.getDb4oInstance();
     public AmbulanceHandlerWorkArea(Ecosystem ecosystem) {
         initComponents();
-        this.ecosystem = db4oUtil.retrieveDb4oSystem();
+        this.ecosystem = ecosystem;
     }
 
     /**
