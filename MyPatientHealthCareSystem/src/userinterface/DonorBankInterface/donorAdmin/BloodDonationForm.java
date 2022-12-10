@@ -5,8 +5,10 @@
 package userinterface.DonorBankInterface.donorAdmin;
 
 import healthcare.Ecosystem;
+import healthcare.Enterprise.donorBank.DonorBankOrganization;
 import healthcare.Enterprise.donorBank.DonorRole;
 import healthcare.enterprise.Enterprise;
+import healthcare.enterprise.healthCare.DoctorOrganization;
 import healthcare.enterprise.healthCare.DoctorRole;
 import healthcare.organization.Organization;
 import healthcare.organization.OrganizationDirectory;
@@ -29,12 +31,14 @@ public class BloodDonationForm extends javax.swing.JPanel {
     /**
      * Creates new form BloodDonationForm
      */
+    private DonorBankOrganization organization;
     Ecosystem ecosystem;
     OrganizationDirectory orgList;
     boolean emptyValidationStatus = true;
     boolean validationCheck = true;
     public BloodDonationForm(Ecosystem ecosystem, OrganizationDirectory orgList) {
         initComponents();
+        this.organization = (DonorBankOrganization) organization;
         this.ecosystem= ecosystem;
         this.orgList = orgList;
         //populateOrganizationComboBox(); 
@@ -340,8 +344,8 @@ public class BloodDonationForm extends javax.swing.JPanel {
                             
                         
                   //  Organization organization = (Organization) organizationJComboBox.getSelectedItem();
-                  //  Person p = organization.getPersonDirectory().createAndAddPerson(username, Address, City, State, Zipcode, cellPhoneNumber);           
-                 //   UserAccount account = organization.getUserAccountDirectory().createUserAccount(doctorID,username, password, p, role, emailId);
+                   // Person p = organization.getPersonDirectory().createAndAddPerson(username, Address, City, State, Zipcode, cellPhoneNumber);           
+                 //  UserAccount account = organization.getUserAccountDirectory().createUserAccount(doctorID,username, password, p, role, emailId);
                     
                     JOptionPane.showMessageDialog(this, "Blood Donor Registered Successfully.Your New Username:" + username + " and password: " + password + ",Please save this Id for furture reference.");
 
