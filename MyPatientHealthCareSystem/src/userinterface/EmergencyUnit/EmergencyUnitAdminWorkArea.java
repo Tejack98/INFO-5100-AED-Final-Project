@@ -23,7 +23,7 @@ public class EmergencyUnitAdminWorkArea extends javax.swing.JFrame {
     
     public EmergencyUnitAdminWorkArea() {
         initComponents();
-        this.ecosystem = db4oUtil.retrieveDb4oSystem();
+        this.ecosystem = ecosystem;
     }
 
     /**

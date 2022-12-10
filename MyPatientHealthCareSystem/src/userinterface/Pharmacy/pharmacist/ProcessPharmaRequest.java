@@ -234,7 +234,15 @@ public class ProcessPharmaRequest extends javax.swing.JPanel {
     private void chkAcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkAcaActionPerformed
         // TODO add your handling code here:
         
-        String medList = request.getMedlist();
+        
+    }//GEN-LAST:event_chkAcaActionPerformed
+
+    
+    public void populatePharmaRequests() {
+
+       String medList = request.getMedlist();
+        
+        System.out.println("00000000000000000" + medList);
         
         if(medList.contains(String.valueOf("Disulfiram"))){
             chkDis.setSelected(true);
@@ -251,12 +259,6 @@ public class ProcessPharmaRequest extends javax.swing.JPanel {
         if(medList.contains(String.valueOf("Vivitrol"))){
             chkViv.setSelected(true);
         }
-    }//GEN-LAST:event_chkAcaActionPerformed
-
-    
-    public void populatePharmaRequests() {
-
-       
 
     }
 

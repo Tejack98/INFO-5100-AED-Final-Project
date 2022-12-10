@@ -33,7 +33,7 @@ public class DonorWorkArea extends javax.swing.JFrame {
         this.userAccount = userAccount;
         this.organization = organization;
         this.enterprise = enterprise;
-        this.ecosystem = db4oUtil.retrieveDb4oSystem();
+        this.ecosystem = ecosystem;
         this.network = network;
         
     }

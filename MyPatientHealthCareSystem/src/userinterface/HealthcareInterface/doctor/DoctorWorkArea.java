@@ -36,7 +36,7 @@ public class DoctorWorkArea extends javax.swing.JFrame {
         this.userAccount = userAccount;
         this.organization = (DoctorOrganization)organization;
         this.enterprise = enterprise;
-        this.ecosystem = db4oUtil.retrieveDb4oSystem();
+        this.ecosystem = ecosystem;
         this.network = network;
         
         DoctorAppointmentRequestsPanel req = new DoctorAppointmentRequestsPanel(userAccount,organization, enterprise ,network);
