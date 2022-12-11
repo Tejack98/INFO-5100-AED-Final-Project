@@ -56,6 +56,7 @@ public class DonorAdminWorkArea extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         btnAddHandler = new javax.swing.JButton();
         Org_Name = new javax.swing.JButton();
+        btnAddHandler1 = new javax.swing.JButton();
         workArea = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -91,6 +92,14 @@ public class DonorAdminWorkArea extends javax.swing.JFrame {
             }
         });
 
+        btnAddHandler1.setBackground(new java.awt.Color(255, 204, 204));
+        btnAddHandler1.setText("View Handler");
+        btnAddHandler1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddHandler1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout controlPanelLayout = new javax.swing.GroupLayout(controlPanel);
         controlPanel.setLayout(controlPanelLayout);
         controlPanelLayout.setHorizontalGroup(
@@ -106,6 +115,7 @@ public class DonorAdminWorkArea extends javax.swing.JFrame {
                         .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(Org_Name, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnAddHandler1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         controlPanelLayout.setVerticalGroup(
             controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -114,9 +124,11 @@ public class DonorAdminWorkArea extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(68, 68, 68)
                 .addComponent(btnAddHandler, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(27, 27, 27)
+                .addComponent(btnAddHandler1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
                 .addComponent(Org_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 301, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 210, Short.MAX_VALUE)
                 .addComponent(btnLogout)
                 .addGap(30, 30, 30))
         );
@@ -170,6 +182,12 @@ public class DonorAdminWorkArea extends javax.swing.JFrame {
         DonorBankManageOrganization lmo = new DonorBankManageOrganization(enterprise);
         jSplitPaneSystem.setRightComponent(lmo);
     }//GEN-LAST:event_Org_NameActionPerformed
+
+    private void btnAddHandler1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddHandler1ActionPerformed
+        // TODO add your handling code here:
+        DonorBankAdminViewHandlers dbavh = new DonorBankAdminViewHandlers(ecosystem, enterprise.getOrganizationDirectory());
+        jSplitPaneSystem.setRightComponent(dbavh);
+    }//GEN-LAST:event_btnAddHandler1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -464,6 +482,7 @@ public class DonorAdminWorkArea extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Org_Name;
     private javax.swing.JButton btnAddHandler;
+    private javax.swing.JButton btnAddHandler1;
     private javax.swing.JButton btnLogout;
     private javax.swing.JPanel controlPanel;
     private javax.swing.JLabel jLabel1;
