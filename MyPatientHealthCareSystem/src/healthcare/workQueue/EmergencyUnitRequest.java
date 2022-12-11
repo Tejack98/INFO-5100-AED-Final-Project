@@ -11,5 +11,13 @@ import java.time.LocalDateTime;
  */
 public class EmergencyUnitRequest extends WorkRequest {
     
-    LocalDateTime emergencyDateTime;
+    private String Location;
+
+    public String getLocation() {
+        return Location;
+    }
+
+    public void setLocation(String Location) {
+        this.Location = Location;
+    }
 }

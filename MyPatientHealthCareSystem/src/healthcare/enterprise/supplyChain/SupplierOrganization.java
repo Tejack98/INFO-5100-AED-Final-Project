@@ -18,6 +18,7 @@ public class SupplierOrganization extends Organization {
     
     public SupplierOrganization() {
         super(Organization.OrganizationType.Supplier.getValue());
+        this.vehicleList = new ArrayList<>();
     }
     
     @Override

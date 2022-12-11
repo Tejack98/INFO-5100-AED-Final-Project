@@ -14,32 +14,30 @@ import java.util.ArrayList;
  */
 public class EmergencyUnitOrganization extends Organization {
        
-    private ArrayList<AmbulanceHandlerRole> ambulanceHandler;
-    private ArrayList<Ambulance> ambulance;
+    private ArrayList<Ambulance> ambulanceList;
     
     
     public EmergencyUnitOrganization() {
         super(Organization.OrganizationType.EmergencyUnit.getValue());
-    }
-        
-    public ArrayList<AmbulanceHandlerRole> getAmbulanceHandler() {
-        return ambulanceHandler;
+        this.ambulanceList = new ArrayList<>();
     }
 
-    public void setAmbulanceHandler(ArrayList<AmbulanceHandlerRole> ambulanceHandler) {
-        this.ambulanceHandler = ambulanceHandler;
+
+    public ArrayList<Ambulance> getAmbulanceList() {
+        return ambulanceList;
     }
 
-    public ArrayList<Ambulance> getAmbulance() {
-        return ambulance;
-    }
-
-    public void setAmbulance(ArrayList<Ambulance> ambulance) {
-        this.ambulance = ambulance;
+    public void setAmbulanceList(ArrayList<Ambulance> ambulanceList) {
+        this.ambulanceList = ambulanceList;
     }
     
     @Override
     public ArrayList<Role> getSupportedRole() {
         return null;
+    }
+    
+    public Ambulance addNewVehicle(Ambulance amb){
+        this.ambulanceList.add(amb);
+        return amb;
     }
 }

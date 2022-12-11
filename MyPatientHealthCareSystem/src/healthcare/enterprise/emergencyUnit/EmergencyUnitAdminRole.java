@@ -27,6 +27,6 @@ public class EmergencyUnitAdminRole extends Role {
     
     @Override
     public JFrame createWorkArea(UserAccount userAccount, Organization organization, Enterprise enterprise, Ecosystem ecosystem, Network network) {
-        return new EmergencyUnitAdminWorkArea(ecosystem);       
+        return new EmergencyUnitAdminWorkArea(userAccount, organization, enterprise, ecosystem, network);       
     }
 }
