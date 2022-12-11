@@ -79,84 +79,123 @@ public class InventoryInfo extends javax.swing.JPanel {
         jCheckBox5 = new javax.swing.JCheckBox();
         jCheckBox16 = new javax.swing.JCheckBox();
 
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Inventory Information");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 23, 926, -1));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel2.setText("Medecines List");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(225, 65, -1, -1));
 
         jLabel3.setText("Hydrocodone");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(225, 100, -1, -1));
 
         jLabel4.setText("Dolo");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(225, 131, -1, -1));
 
         jLabel5.setText("Omeprazole");
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(225, 528, -1, -1));
 
         jLabel6.setText("Gabapentin");
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(225, 497, -1, -1));
 
         jLabel7.setText("Levothyroxine");
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(225, 559, -1, -1));
 
         jLabel8.setText("O2");
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(225, 162, -1, -1));
 
         jLabel9.setText("Sinarest");
+        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(225, 193, -1, -1));
 
         jLabel10.setText("Crocin");
+        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(225, 218, -1, -1));
 
         jLabel11.setText("Meftal");
+        add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(225, 249, -1, -1));
 
         jLabel12.setText("Spasm");
+        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(225, 280, -1, -1));
 
         jLabel13.setText("Aldrid");
+        add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(225, 311, -1, -1));
 
         jLabel14.setText("Metformin");
+        add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(225, 342, -1, -1));
 
         jLabel15.setText("Losartan");
+        add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(225, 373, -1, -1));
 
         jLabel16.setText("Antibiotics");
+        add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(225, 404, -1, -1));
 
         jLabel17.setText("Albuterol");
+        add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(225, 435, -1, -1));
 
         jLabel18.setText("Antihistamines");
+        add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(225, 466, -1, -1));
 
         jLabel19.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel19.setText("Count");
+        add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(389, 65, -1, -1));
 
         jLabel20.setText("100");
+        add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(411, 100, -1, -1));
 
         jLabel22.setText("50");
+        add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(418, 131, -1, -1));
 
         jLabel23.setText("98");
+        add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(418, 162, -1, -1));
 
         jLabel24.setText("150");
+        add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(411, 193, -1, -1));
 
         jLabel27.setText("90");
+        add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(418, 249, -1, -1));
 
         jLabel28.setText("33");
+        add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(418, 218, -1, -1));
 
         jLabel29.setText("45");
+        add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(418, 280, -1, -1));
 
         jLabel30.setText("90");
+        add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(418, 311, -1, -1));
 
         jLabel31.setText("95");
+        add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(418, 373, -1, -1));
 
         jLabel32.setText("19");
+        add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(418, 342, -1, -1));
 
         jLabel33.setText("103");
+        add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(411, 404, -1, -1));
 
         jLabel34.setText("54");
+        add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(418, 435, -1, -1));
 
         jLabel35.setText("36");
+        add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(418, 466, -1, -1));
 
         jLabel36.setText("57");
+        add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(418, 497, -1, -1));
 
         jLabel37.setText("47");
+        add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(418, 528, -1, -1));
 
         jLabel38.setText("89");
+        add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(418, 559, -1, -1));
 
         jLabel21.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel21.setText("Check Medecines To Request");
+        add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(503, 65, -1, -1));
 
         jCheckBox1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(503, 100, 210, -1));
 
         jCheckBox2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jCheckBox2.addActionListener(new java.awt.event.ActionListener() {
@@ -164,12 +203,16 @@ public class InventoryInfo extends javax.swing.JPanel {
                 jCheckBox2ActionPerformed(evt);
             }
         });
+        add(jCheckBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(503, 131, 210, -1));
 
         jCheckBox3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        add(jCheckBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(503, 249, 210, -1));
 
         jCheckBox4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        add(jCheckBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(503, 218, 210, -1));
 
         jCheckBox6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        add(jCheckBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(503, 280, 210, -1));
 
         jCheckBox7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jCheckBox7.addActionListener(new java.awt.event.ActionListener() {
@@ -177,18 +220,25 @@ public class InventoryInfo extends javax.swing.JPanel {
                 jCheckBox7ActionPerformed(evt);
             }
         });
+        add(jCheckBox7, new org.netbeans.lib.awtextra.AbsoluteConstraints(503, 311, 210, -1));
 
         jCheckBox8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        add(jCheckBox8, new org.netbeans.lib.awtextra.AbsoluteConstraints(503, 342, 210, -1));
 
         jCheckBox9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        add(jCheckBox9, new org.netbeans.lib.awtextra.AbsoluteConstraints(503, 404, 210, -1));
 
         jCheckBox10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        add(jCheckBox10, new org.netbeans.lib.awtextra.AbsoluteConstraints(503, 373, 210, -1));
 
         jCheckBox11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        add(jCheckBox11, new org.netbeans.lib.awtextra.AbsoluteConstraints(503, 435, 210, -1));
 
         jCheckBox12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        add(jCheckBox12, new org.netbeans.lib.awtextra.AbsoluteConstraints(503, 466, 210, -1));
 
         jCheckBox13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        add(jCheckBox13, new org.netbeans.lib.awtextra.AbsoluteConstraints(503, 528, 210, -1));
 
         jCheckBox14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jCheckBox14.addActionListener(new java.awt.event.ActionListener() {
@@ -196,6 +246,7 @@ public class InventoryInfo extends javax.swing.JPanel {
                 jCheckBox14ActionPerformed(evt);
             }
         });
+        add(jCheckBox14, new org.netbeans.lib.awtextra.AbsoluteConstraints(503, 497, 210, -1));
 
         jCheckBox15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jCheckBox15.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -204,8 +255,10 @@ public class InventoryInfo extends javax.swing.JPanel {
                 jCheckBox15ActionPerformed(evt);
             }
         });
+        add(jCheckBox15, new org.netbeans.lib.awtextra.AbsoluteConstraints(503, 559, 210, -1));
 
         jCheckBox5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        add(jCheckBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(503, 162, 210, -1));
 
         jCheckBox16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jCheckBox16.addActionListener(new java.awt.event.ActionListener() {
@@ -213,201 +266,7 @@ public class InventoryInfo extends javax.swing.JPanel {
                 jCheckBox16ActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 219, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel24)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel10)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel28))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel11)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel27))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel12)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel29))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel13)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel30))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel14)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel32))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel15)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel31))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel16)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel33))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel17)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel34))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel18)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel35))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel6)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel36))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel5)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel37))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel7)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel38))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                        .addComponent(jLabel4)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel22))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel2)
-                                            .addComponent(jLabel3))
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGap(57, 57, 57)
-                                                .addComponent(jLabel19))
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(jLabel20)))))
-                                .addComponent(jLabel23))
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel9))
-                        .addGap(71, 71, 71)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jCheckBox1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jCheckBox2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jCheckBox5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jCheckBox16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jCheckBox4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jCheckBox3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jCheckBox6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jCheckBox7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jCheckBox8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jCheckBox10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jCheckBox9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jCheckBox11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jCheckBox12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jCheckBox14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jCheckBox13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jCheckBox15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(0, 219, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel19)
-                    .addComponent(jLabel21))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel20)
-                    .addComponent(jCheckBox1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel22)
-                    .addComponent(jCheckBox2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel23)
-                    .addComponent(jCheckBox5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9)
-                    .addComponent(jLabel24)
-                    .addComponent(jCheckBox16))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(jLabel28)
-                    .addComponent(jCheckBox4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel11)
-                    .addComponent(jLabel27)
-                    .addComponent(jCheckBox3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel12)
-                    .addComponent(jLabel29)
-                    .addComponent(jCheckBox6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel13)
-                    .addComponent(jLabel30)
-                    .addComponent(jCheckBox7))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel14)
-                    .addComponent(jLabel32)
-                    .addComponent(jCheckBox8))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel15)
-                    .addComponent(jLabel31)
-                    .addComponent(jCheckBox10))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel16)
-                    .addComponent(jLabel33)
-                    .addComponent(jCheckBox9))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel17)
-                    .addComponent(jLabel34)
-                    .addComponent(jCheckBox11))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel18)
-                    .addComponent(jLabel35)
-                    .addComponent(jCheckBox12))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel36)
-                    .addComponent(jCheckBox14))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel37)
-                    .addComponent(jCheckBox13))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel38)
-                    .addComponent(jCheckBox15))
-                .addGap(23, 23, 23))
-        );
+        add(jCheckBox16, new org.netbeans.lib.awtextra.AbsoluteConstraints(503, 193, 210, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed

@@ -128,7 +128,7 @@ public class LabTechnicianSignUp extends javax.swing.JPanel {
         lblCity.setText("City");
         add(lblCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 390, -1, -1));
 
-        cboxGender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cboxGender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female", "Others" }));
         add(cboxGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 220, 238, -1));
 
         txtCity.addActionListener(new java.awt.event.ActionListener() {
@@ -263,6 +263,66 @@ public class LabTechnicianSignUp extends javax.swing.JPanel {
         {
             txtPhoneNo.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
         }
+        
+        if(!txtDateOfBirth.getText().matches("^(1[0-2]|0[1-9])/(3[01]" + "|[12][0-9]|0[1-9])/[0-9]{4}$"))
+        {
+            txtDateOfBirth.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            txtDateOfBirth.setToolTipText("Please enter in format mm/dd/yyyy");
+            validationCheck=false;
+        }
+        
+        if(txtDateOfBirth.getText().matches("^(1[0-2]|0[1-9])/(3[01]" + "|[12][0-9]|0[1-9])/[0-9]{4}$"))
+        {
+            txtDateOfBirth.setBorder(BorderFactory.createLineBorder(Color.BLUE, 0));
+        }
+        
+        if(!txtAddress.getText().matches("^[a-zA-Z ]+$"))
+        {
+            txtAddress.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            txtAddress.setToolTipText("Please enter only characters and space.");
+            validationCheck=false;
+        }
+        
+        if(txtAddress.getText().matches("^[a-zA-Z ]+$"))
+        {
+            txtAddress.setBorder(BorderFactory.createLineBorder(Color.BLUE, 0));
+        }
+        
+        if(!txtCity.getText().matches("^[a-zA-Z ]+$"))
+        {
+            txtCity.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            txtCity.setToolTipText("Please enter only characters and space.");
+            validationCheck=false;
+        }
+        
+        if(txtCity.getText().matches("^[a-zA-Z ]+$"))
+        {
+            txtCity.setBorder(BorderFactory.createLineBorder(Color.BLUE, 0));
+        }
+
+        if(!txtState.getText().matches("^[a-zA-Z ]+$"))
+        {
+            txtState.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            txtState.setToolTipText("Please enter only characters and space.");
+            validationCheck=false;
+        }
+        
+        if(txtState.getText().matches("^[a-zA-Z ]+$"))
+        {
+            txtState.setBorder(BorderFactory.createLineBorder(Color.BLUE, 0));
+        }
+
+        if(!txtZipcode.getText().matches("^[0-9]{5}(?:-[0-9]{4})?$"))
+        {
+            txtZipcode.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            txtZipcode.setToolTipText("Please enter a valid zip code number");
+            validationCheck=false;
+        }
+         if(txtZipcode.getText().matches("^[0-9]{5}(?:-[0-9]{4})?$"))
+        {
+            txtZipcode.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        }
+
 
         return validationCheck;
     }
@@ -279,7 +339,38 @@ public class LabTechnicianSignUp extends javax.swing.JPanel {
             txtName.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
         }
        
+        if(txtEmail.getText().equals(null) || txtEmail.getText().trim().isEmpty())
+        {
+            txtEmail.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            txtEmail.setToolTipText("This Field Cannot be empty");
+            emptyValidationStatus=false;
+        }
+        if(!txtEmail.getText().equals(null) && !txtEmail.getText().trim().isEmpty())
+        {
+            txtEmail.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        }
         
+        if(txtPhoneNo.getText().equals(null) || txtPhoneNo.getText().trim().isEmpty())
+        {
+            txtPhoneNo.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            txtPhoneNo.setToolTipText("This Field Cannot be empty");
+            emptyValidationStatus=false;
+        }
+        if(!txtPhoneNo.getText().equals(null) && !txtPhoneNo.getText().trim().isEmpty())
+        {
+            txtPhoneNo.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        }
+        
+        if(txtDateOfBirth.getText().equals(null) || txtDateOfBirth.getText().trim().isEmpty())
+        {
+            txtDateOfBirth.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            txtDateOfBirth.setToolTipText("This Field Cannot be empty");
+            emptyValidationStatus=false;
+        }
+        if(!txtDateOfBirth.getText().equals(null) && !txtDateOfBirth.getText().trim().isEmpty())
+        {
+            txtDateOfBirth.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        }
         
         if(txtAddress.getText().equals(null)|| txtAddress.getText().trim().isEmpty())
         {
@@ -305,16 +396,28 @@ public class LabTechnicianSignUp extends javax.swing.JPanel {
            
         }
         
-        if(txtPhoneNo.getText().equals(null) || txtPhoneNo.getText().trim().isEmpty())
+         if(txtState.getText().equals(null) || txtState.getText().trim().isEmpty())
         {
-            txtPhoneNo.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
-            txtPhoneNo.setToolTipText("This Field Cannot be empty");
+            txtState.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            txtState.setToolTipText("This Field Cannot be empty");
             emptyValidationStatus=false;
         }
-        if(!txtPhoneNo.getText().equals(null) && !txtPhoneNo.getText().trim().isEmpty())
+        if(!txtState.getText().equals(null) && !txtState.getText().trim().isEmpty())
         {
-            txtPhoneNo.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+            txtState.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
         }
+
+           if(txtZipcode.getText().equals(null) || txtZipcode.getText().trim().isEmpty())
+        {
+            txtZipcode.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            txtZipcode.setToolTipText("This Field Cannot be empty");
+            emptyValidationStatus=false;
+        }
+        if(!txtZipcode.getText().equals(null) && !txtZipcode.getText().trim().isEmpty())
+        {
+            txtZipcode.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        }
+
         return emptyValidationStatus;
     
     }//GEN-LAST:event_btnSignUpActionPerformed
