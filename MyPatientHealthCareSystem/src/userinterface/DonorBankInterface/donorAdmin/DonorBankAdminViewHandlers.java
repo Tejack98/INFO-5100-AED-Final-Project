@@ -2,13 +2,24 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package userinterface.Vaccination.vaccinationAdmin;
+package userinterface.DonorBankInterface.donorAdmin;
 
+import userinterface.SupplyChainInterface.supplyManger.*;
+import userinterface.Pharmacy.pharmacyAdmin.*;
+import userinterface.LabInterface.labAdmin.*;
+import userinterface.HealthcareInterface.healthcareAdmin.doctor.*;
 import healthcare.Ecosystem;
+import healthcare.Enterprise.donorBank.DonorBankOrganization;
+import healthcare.enterprise.donorBank.DonationHandlerRole;
+import healthcare.enterprise.healthCare.DoctorOrganization;
+import healthcare.enterprise.healthCare.DoctorRole;
+import healthcare.enterprise.healthCare.HealthCareAdminRole;
+import healthcare.enterprise.lab.LabAssistantRole;
+import healthcare.enterprise.lab.LabOrganization;
+import healthcare.enterprise.pharmacy.PharmacistRole;
+import healthcare.enterprise.pharmacy.PharmacyOrganization;
 import healthcare.enterprise.supplyChain.HandlerRole;
 import healthcare.enterprise.supplyChain.SupplierOrganization;
-import healthcare.enterprise.vaccination.VaccinationOrganization;
-import healthcare.enterprise.vaccination.VaccinatorRole;
 import healthcare.organization.Organization;
 import healthcare.organization.OrganizationDirectory;
 import healthcare.role.Role;
@@ -16,19 +27,20 @@ import healthcare.userAccount.UserAccount;
 import healthcare.userAccount.UserAccountDirectory;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
+import userinterface.SupplyChainInterface.supplyManger.SupplyChainManageOrganization;
 
 /**
  *
  * @author adity
  */
-public class VaccinationViewVaccinators extends javax.swing.JPanel {
+public class DonorBankAdminViewHandlers extends javax.swing.JPanel {
 
     /**
      * Creates new form AdminViewDoctor
      */
     Ecosystem ecosystem;
     OrganizationDirectory orgList;
-    public VaccinationViewVaccinators(Ecosystem ecosystem, OrganizationDirectory orgList) {
+    public DonorBankAdminViewHandlers(Ecosystem ecosystem, OrganizationDirectory orgList) {
         initComponents();
         this.ecosystem = ecosystem;
         this.orgList = orgList;
@@ -40,7 +52,7 @@ public class VaccinationViewVaccinators extends javax.swing.JPanel {
         organizationJComboBox.removeAllItems();
 
         for (Organization organization : orgList.getOrganizationList()) {
-            if (organization instanceof VaccinationOrganization) {
+            if (organization instanceof DonorBankOrganization) {
                 organizationJComboBox.addItem(organization);
             }
         }
@@ -57,7 +69,7 @@ public class VaccinationViewVaccinators extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        vaccinatorTable = new javax.swing.JTable();
+        donhandlerTable = new javax.swing.JTable();
         lblSearchDoctorByID = new javax.swing.JLabel();
         txtSearchTechByname = new javax.swing.JTextField();
         btnSearch = new javax.swing.JButton();
@@ -71,10 +83,10 @@ public class VaccinationViewVaccinators extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("Georgia", 0, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("View Vaccinator Information");
+        jLabel1.setText("View Technician Information");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 1200, 37));
 
-        vaccinatorTable.setModel(new javax.swing.table.DefaultTableModel(
+        donhandlerTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null},
@@ -93,7 +105,7 @@ public class VaccinationViewVaccinators extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(vaccinatorTable);
+        jScrollPane1.setViewportView(donhandlerTable);
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, 1010, 220));
 
@@ -135,7 +147,7 @@ public class VaccinationViewVaccinators extends javax.swing.JPanel {
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
         // TODO add your handling code here:
-        populateDataByVaccinatorName();
+        populateDataByHandlerName();
     }//GEN-LAST:event_btnSearchActionPerformed
 
     private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
@@ -148,14 +160,14 @@ public class VaccinationViewVaccinators extends javax.swing.JPanel {
         UserAccountDirectory userAccounts = org.getUserAccountDirectory();  
         ArrayList<UserAccount> userList = userAccounts.getUserAccountList();
         
-        DefaultTableModel model = (DefaultTableModel) vaccinatorTable.getModel();
+        DefaultTableModel model = (DefaultTableModel) donhandlerTable.getModel();
         model.setRowCount(0);
         
         for(UserAccount ua: userList){
             
-            if(ua.getRole().toString().equals(Role.RoleType.Vaccinator.toString())){
+            if(ua.getRole().toString().equals(Role.RoleType.DonationHandler.toString())){
                 
-                VaccinatorRole role = (VaccinatorRole) ua.getRole();
+                DonationHandlerRole role = (DonationHandlerRole) ua.getRole();
                 model.addRow(new Object[]
                 {ua.getPerson().getPersonName(),ua.getUserEmail(), ua.getPerson().getAddress(), ua.getPerson().getCity(), ua.getPerson().getState(), String.valueOf(ua.getPerson().getZipcode()), String.valueOf(ua.getPerson().getContactNumber()),ua.getUserName()});
             }
@@ -165,22 +177,22 @@ public class VaccinationViewVaccinators extends javax.swing.JPanel {
     }
     
     
-    private void populateDataByVaccinatorName(){
+    private void populateDataByHandlerName(){
         Organization org = (Organization) organizationJComboBox.getSelectedItem();
-        String vaccinatorName = txtSearchTechByname.getText().toLowerCase();
+        String donhandName = txtSearchTechByname.getText().toLowerCase();
         
         UserAccountDirectory userAccounts = org.getUserAccountDirectory();  
         ArrayList<UserAccount> userList = userAccounts.getUserAccountList();
         
-        DefaultTableModel model = (DefaultTableModel) vaccinatorTable.getModel();
+        DefaultTableModel model = (DefaultTableModel) donhandlerTable.getModel();
         model.setRowCount(0);
 
         for (UserAccount ua : userList) {
 
-            if (ua.getRole().toString().equals(Role.RoleType.Vaccinator.toString())) {
+            if (ua.getRole().toString().equals(Role.RoleType.DonationHandler.toString())) {
 
-                if (ua.getPerson().getPersonName().toLowerCase().contains(vaccinatorName)) {
-                    VaccinatorRole role = (VaccinatorRole) ua.getRole();
+                if (ua.getPerson().getPersonName().toLowerCase().contains(donhandName)) {
+                    DonationHandlerRole role = (DonationHandlerRole) ua.getRole();
                     model.addRow(new Object[]{ua.getPerson().getPersonName(), ua.getUserEmail(),ua.getPerson().getAddress(), ua.getPerson().getCity(), ua.getPerson().getState(), String.valueOf(ua.getPerson().getZipcode()), String.valueOf(ua.getPerson().getContactNumber()),ua.getUserName()});
                 }
             }
@@ -193,6 +205,7 @@ public class VaccinationViewVaccinators extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSearch;
     private javax.swing.JButton btnView;
+    private javax.swing.JTable donhandlerTable;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
@@ -200,6 +213,5 @@ public class VaccinationViewVaccinators extends javax.swing.JPanel {
     private javax.swing.JLabel lblSearchDoctorByID;
     private javax.swing.JComboBox organizationJComboBox;
     private javax.swing.JTextField txtSearchTechByname;
-    private javax.swing.JTable vaccinatorTable;
     // End of variables declaration//GEN-END:variables
 }
