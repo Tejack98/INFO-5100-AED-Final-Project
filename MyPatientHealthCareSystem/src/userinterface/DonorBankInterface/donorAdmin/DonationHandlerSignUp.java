@@ -73,10 +73,12 @@ public class DonationHandlerSignUp extends javax.swing.JPanel {
         lblOrgName = new javax.swing.JLabel();
         organizationJComboBox = new javax.swing.JComboBox();
 
-        lblDateOfBirth.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        setBackground(new java.awt.Color(255, 204, 204));
+
+        lblDateOfBirth.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblDateOfBirth.setText("Date Of Birth");
 
-        lblTitle.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        lblTitle.setFont(new java.awt.Font("Georgia", 1, 24)); // NOI18N
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitle.setText("Create Handler Profile");
 
@@ -87,21 +89,21 @@ public class DonationHandlerSignUp extends javax.swing.JPanel {
             }
         });
 
-        lblPhoneNo.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        lblPhoneNo.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblPhoneNo.setText("Phone No.");
 
-        lblName.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        lblName.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblName.setText("Name");
 
-        lblUsername.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        lblUsername.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblUsername.setText("Email");
 
-        lblGender.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        lblGender.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblGender.setText("Gender");
 
-        cboxGender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cboxGender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female", "Other" }));
 
-        lblState.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        lblState.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblState.setText("State");
 
         txtCity.addActionListener(new java.awt.event.ActionListener() {
@@ -110,10 +112,10 @@ public class DonationHandlerSignUp extends javax.swing.JPanel {
             }
         });
 
-        lblCity.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        lblCity.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblCity.setText("City");
 
-        lblZipCode.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        lblZipCode.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblZipCode.setText("Zipcode");
 
         txtState.addActionListener(new java.awt.event.ActionListener() {
@@ -122,10 +124,10 @@ public class DonationHandlerSignUp extends javax.swing.JPanel {
             }
         });
 
-        lblAddress.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        lblAddress.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblAddress.setText("Address");
 
-        lblGender1.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        lblGender1.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblGender1.setText("Vehicle");
 
         txtPhoneNo.addActionListener(new java.awt.event.ActionListener() {
@@ -134,9 +136,9 @@ public class DonationHandlerSignUp extends javax.swing.JPanel {
             }
         });
 
-        cboxVehicle.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cboxVehicle.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ambulance 101", "Ambulance 102", "Ambulance 103", "Ambulance 104", "Ambulance 105" }));
 
-        lblOrgName.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        lblOrgName.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblOrgName.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         lblOrgName.setText("Organization Name");
 
@@ -235,7 +237,7 @@ public class DonationHandlerSignUp extends javax.swing.JPanel {
                     .addComponent(txtZipcode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(btnSignUp)
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -340,6 +342,65 @@ public class DonationHandlerSignUp extends javax.swing.JPanel {
             txtPhoneNo.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
         }
 
+        if(!txtAddress.getText().matches("^[a-zA-Z ]+$"))
+        {
+            txtAddress.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            txtAddress.setToolTipText("Please enter only characters and space.");
+            validationCheck=false;
+        }
+        
+        if(txtAddress.getText().matches("^[a-zA-Z ]+$"))
+        {
+            txtAddress.setBorder(BorderFactory.createLineBorder(Color.BLUE, 0));
+        }
+        
+        if(!txtCity.getText().matches("^[a-zA-Z ]+$"))
+        {
+            txtCity.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            txtCity.setToolTipText("Please enter only characters and space.");
+            validationCheck=false;
+        }
+        
+        if(txtCity.getText().matches("^[a-zA-Z ]+$"))
+        {
+            txtCity.setBorder(BorderFactory.createLineBorder(Color.BLUE, 0));
+        }
+        
+        if(!txtState.getText().matches("^[a-zA-Z ]+$"))
+        {
+            txtState.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            txtState.setToolTipText("Please enter only characters and space.");
+            validationCheck=false;
+        }
+        
+        if(txtState.getText().matches("^[a-zA-Z ]+$"))
+        {
+            txtState.setBorder(BorderFactory.createLineBorder(Color.BLUE, 0));
+        }
+        
+        if(!txtDateOfBirth.getText().matches("^(1[0-2]|0[1-9])/(3[01]" + "|[12][0-9]|0[1-9])/[0-9]{4}$"))
+        {
+            txtDateOfBirth.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            txtDateOfBirth.setToolTipText("Please enter in format mm/dd/yyyy");
+            validationCheck=false;
+        }
+        
+        if(txtDateOfBirth.getText().matches("^(1[0-2]|0[1-9])/(3[01]" + "|[12][0-9]|0[1-9])/[0-9]{4}$"))
+        {
+            txtDateOfBirth.setBorder(BorderFactory.createLineBorder(Color.BLUE, 0));
+        }
+        
+        if(!txtZipcode.getText().matches("^[0-9]{5}(?:-[0-9]{4})?$"))
+        {
+            txtZipcode.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            txtZipcode.setToolTipText("Please enter a valid zip code number");
+            validationCheck=false;
+        }
+         if(txtZipcode.getText().matches("^[0-9]{5}(?:-[0-9]{4})?$"))
+        {
+            txtZipcode.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        }
+
         return validationCheck;
     }
     
@@ -388,6 +449,53 @@ public class DonationHandlerSignUp extends javax.swing.JPanel {
         if(!txtPhoneNo.getText().equals(null) && !txtPhoneNo.getText().trim().isEmpty())
         {
             txtPhoneNo.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        }
+        
+        if(txtEmail.getText().equals(null)|| txtEmail.getText().trim().isEmpty())
+        {
+            txtEmail.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            txtEmail.setToolTipText("This Field Cannot be empty");
+            emptyValidationStatus= false;
+        }
+        if(!txtEmail.getText().equals(null) && !txtEmail.getText().trim().isEmpty())
+        {
+            txtEmail.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+           
+        }
+        if(txtDateOfBirth.getText().equals(null)|| txtDateOfBirth.getText().trim().isEmpty())
+        {
+            txtDateOfBirth.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            txtDateOfBirth.setToolTipText("This Field Cannot be empty");
+            emptyValidationStatus= false;
+        }
+        if(!txtDateOfBirth.getText().equals(null) && !txtDateOfBirth.getText().trim().isEmpty())
+        {
+            txtDateOfBirth.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+           
+        }
+        
+        if(txtState.getText().equals(null)|| txtState.getText().trim().isEmpty())
+        {
+            txtState.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            txtState.setToolTipText("This Field Cannot be empty");
+            emptyValidationStatus= false;
+        }
+        if(!txtState.getText().equals(null) && !txtState.getText().trim().isEmpty())
+        {
+            txtState.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+           
+        }
+        
+        if(txtZipcode.getText().equals(null)|| txtZipcode.getText().trim().isEmpty())
+        {
+            txtZipcode.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            txtZipcode.setToolTipText("This Field Cannot be empty");
+            emptyValidationStatus= false;
+        }
+        if(!txtZipcode.getText().equals(null) && !txtZipcode.getText().trim().isEmpty())
+        {
+            txtZipcode.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+           
         }
         return emptyValidationStatus;
     }//GEN-LAST:event_btnSignUpActionPerformed
