@@ -6,6 +6,8 @@ package userinterface.Administration;
 
 import healthcare.Ecosystem;
 import healthcare.network.Network;
+import java.awt.Color;
+import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -18,6 +20,8 @@ public class SysAdminMangeNetwork extends javax.swing.JPanel {
     /**
      * Creates new form SysAdminMangeNetwork
      */
+    boolean emptyValidationStatus = true;
+    boolean validationCheck = true;
     private Ecosystem ecosystem;
     public SysAdminMangeNetwork(Ecosystem ecosystem) {
         initComponents();
@@ -134,15 +138,54 @@ public class SysAdminMangeNetwork extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void submitJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitJButtonActionPerformed
+        try {
+            if (EmpytyFieldValidation()) {
 
+                if (RegexValidation()) {
         String name = nameJTextField.getText();
 
         Network network = ecosystem.createAndAddNetwork();
         network.setNetworkName(name);
 
         populateNetworkTable();
+                }}}
+        catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Doctor not registered, Try again");
+            System.out.println(e.toString());
+            emptyValidationStatus = true;
+        }
     }//GEN-LAST:event_submitJButtonActionPerformed
 
+    private boolean RegexValidation()
+    {
+        if(!nameJTextField.getText().matches("^[a-zA-Z ]+$"))
+        {
+            nameJTextField.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            nameJTextField.setToolTipText("Please enter only characters and space.");
+            validationCheck=false;
+        }
+        
+        if(nameJTextField.getText().matches("^[a-zA-Z ]+$"))
+        {
+            nameJTextField.setBorder(BorderFactory.createLineBorder(Color.BLUE, 0));
+        }
+         return validationCheck;
+    }
+    
+    private boolean EmpytyFieldValidation()
+    {
+        if(nameJTextField.getText().equals(null) || nameJTextField.getText().trim().isEmpty() )
+        {
+            nameJTextField.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            nameJTextField.setToolTipText("This Field Cannot be empty");
+            emptyValidationStatus= false;
+        }
+        if(!nameJTextField.getText().equals(null) && !nameJTextField.getText().trim().isEmpty() )
+        {
+            nameJTextField.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        }
+        return emptyValidationStatus;
+    }
     private void deleteJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteJButtonActionPerformed
         // TODO add your handling code here:
 

@@ -19,8 +19,10 @@ import healthcare.person.Person;
 import healthcare.systemAdmin.AdminMasterRole;
 import healthcare.userAccount.UserAccount;
 import java.awt.CardLayout;
+import java.awt.Color;
 import java.awt.Component;
 import java.util.Random;
+import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -37,6 +39,8 @@ public class SysAdminManageEnterpriseAdmin extends javax.swing.JPanel {
     /**
      * Creates new form ManageEnterpriseJPanel
      */
+    boolean emptyValidationStatus = true;
+    boolean validationCheck = true;
     private Ecosystem ecosystem;
     public SysAdminManageEnterpriseAdmin(Ecosystem ecosystem) {
         initComponents();
@@ -208,7 +212,10 @@ public class SysAdminManageEnterpriseAdmin extends javax.swing.JPanel {
     }//GEN-LAST:event_networkJComboBoxActionPerformed
 
     private void submitJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitJButtonActionPerformed
+        try {
+            if (EmpytyFieldValidation()) {
 
+                if (RegexValidation()) {
         Enterprise enterprise = (Enterprise) enterpriseJComboBox.getSelectedItem();
 
         String name = nameJTextField.getText();
@@ -255,9 +262,73 @@ public class SysAdminManageEnterpriseAdmin extends javax.swing.JPanel {
         SendMail s = new SendMail();
         s.sendUserRegisterEmail(email, username, password);
         populateTable();
-
+                }}}
+        catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Doctor not registered, Try again");
+            System.out.println(e.toString());
+            emptyValidationStatus = true;
+        }
     }//GEN-LAST:event_submitJButtonActionPerformed
+    
+    private boolean RegexValidation()
+    {
+        if(!nameJTextField.getText().matches("^[a-zA-Z ]+$"))
+        {
+            nameJTextField.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            nameJTextField.setToolTipText("Please enter only characters and space.");
+            validationCheck=false;
+        }
+        
+        if(nameJTextField.getText().matches("^[a-zA-Z ]+$"))
+        {
+            nameJTextField.setBorder(BorderFactory.createLineBorder(Color.BLUE, 0));
+        }
 
+        if(!txtEmail.getText().matches("^[A-Za-z0-9+_.-]+@(.+)$"))
+        {
+            txtEmail.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            txtEmail.setToolTipText("Please enter a valid Email Address in the form abc@xyy.com");
+            validationCheck=false;
+        }
+        
+        if(txtEmail.getText().matches("^[A-Za-z0-9+_.-]+@(.+)$"))
+        {
+            txtEmail.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        }
+        
+
+         return validationCheck;
+    }
+    
+     private boolean EmpytyFieldValidation()
+     {  
+         if(txtEmail.getText().equals(null) || txtEmail.getText().trim().isEmpty())
+        {
+            txtEmail.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            txtEmail.setToolTipText("This Field Cannot be empty");
+            emptyValidationStatus=false;
+        }
+        if(!txtEmail.getText().equals(null) && !txtEmail.getText().trim().isEmpty())
+        {
+            txtEmail.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        }
+        
+        if(nameJTextField.getText().equals(null) || nameJTextField.getText().trim().isEmpty() )
+        {
+            nameJTextField.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            nameJTextField.setToolTipText("This Field Cannot be empty");
+            emptyValidationStatus= false;
+        }
+        if(!nameJTextField.getText().equals(null) && !nameJTextField.getText().trim().isEmpty() )
+        {
+            nameJTextField.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        }
+
+        
+
+         return emptyValidationStatus;
+
+     }
     private void nameJTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameJTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nameJTextFieldActionPerformed
