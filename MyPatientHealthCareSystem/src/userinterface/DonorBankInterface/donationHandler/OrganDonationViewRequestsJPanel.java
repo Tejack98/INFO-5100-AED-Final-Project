@@ -96,7 +96,6 @@ public class OrganDonationViewRequestsJPanel extends javax.swing.JPanel {
                 .addComponent(jLabel6)
                 .addContainerGap(20, Short.MAX_VALUE))
         );
-
         lblname.setFont(new java.awt.Font("Georgia", 0, 18)); // NOI18N
         lblname.setText("Handler Name");
 

@@ -53,6 +53,7 @@ public class PharmacyAdminWorkArea extends javax.swing.JFrame {
         btnCreatePharmacist = new javax.swing.JButton();
         Org_Name1 = new javax.swing.JButton();
         btnLogout = new javax.swing.JButton();
+        btnViewPharmacist = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -90,6 +91,15 @@ public class PharmacyAdminWorkArea extends javax.swing.JFrame {
             }
         });
 
+        btnViewPharmacist.setBackground(new java.awt.Color(255, 204, 204));
+        btnViewPharmacist.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
+        btnViewPharmacist.setText("View Pharmacist");
+        btnViewPharmacist.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewPharmacistActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -99,8 +109,13 @@ public class PharmacyAdminWorkArea extends javax.swing.JFrame {
                 .addGap(31, 31, 31)
                 .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(btnCreatePharmacist, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(Org_Name1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnViewPharmacist, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Org_Name1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnCreatePharmacist, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -108,9 +123,11 @@ public class PharmacyAdminWorkArea extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnCreatePharmacist, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41)
+                .addGap(33, 33, 33)
+                .addComponent(btnViewPharmacist, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35)
                 .addComponent(Org_Name1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 192, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)
                 .addComponent(btnLogout)
                 .addContainerGap())
         );
@@ -165,6 +182,11 @@ public class PharmacyAdminWorkArea extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_btnLogoutActionPerformed
 
+    private void btnViewPharmacistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewPharmacistActionPerformed
+        // TODO add your handling code here:
+        PharmacyAdminViewPharmacists pavp = new PharmacyAdminViewPharmacists(ecosystem, enterprise.getOrganizationDirectory());
+        jSplitPane1.setRightComponent(pavp);
+    }//GEN-LAST:event_btnViewPharmacistActionPerformed
     /**
      * @param args the command line arguments
      */
@@ -204,6 +226,7 @@ public class PharmacyAdminWorkArea extends javax.swing.JFrame {
     private javax.swing.JButton Org_Name1;
     private javax.swing.JButton btnCreatePharmacist;
     private javax.swing.JButton btnLogout;
+    private javax.swing.JButton btnViewPharmacist;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

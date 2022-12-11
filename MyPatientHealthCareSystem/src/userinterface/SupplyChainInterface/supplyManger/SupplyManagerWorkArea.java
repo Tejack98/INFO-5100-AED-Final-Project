@@ -56,6 +56,8 @@ public class SupplyManagerWorkArea extends javax.swing.JFrame {
         btnLogout = new javax.swing.JButton();
         btnAddVehicle = new javax.swing.JButton();
         Org_Name = new javax.swing.JButton();
+        btnAddHandler1 = new javax.swing.JButton();
+        btnAddVehicle1 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -102,6 +104,24 @@ public class SupplyManagerWorkArea extends javax.swing.JFrame {
             }
         });
 
+        btnAddHandler1.setBackground(new java.awt.Color(255, 204, 204));
+        btnAddHandler1.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
+        btnAddHandler1.setText("View handlers");
+        btnAddHandler1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddHandler1ActionPerformed(evt);
+            }
+        });
+
+        btnAddVehicle1.setBackground(new java.awt.Color(255, 204, 204));
+        btnAddVehicle1.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
+        btnAddVehicle1.setText("View Vehicles");
+        btnAddVehicle1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddVehicle1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -115,12 +135,14 @@ public class SupplyManagerWorkArea extends javax.swing.JFrame {
                         .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(30, 30, 30))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnAddVehicle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Org_Name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(Org_Name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnAddHandler, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnAddVehicle1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnAddHandler, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnAddHandler1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnAddVehicle, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addContainerGap())))
         );
         jPanel1Layout.setVerticalGroup(
@@ -128,13 +150,17 @@ public class SupplyManagerWorkArea extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnAddHandler, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnAddVehicle, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Org_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 132, Short.MAX_VALUE)
+                .addComponent(btnAddHandler, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(btnAddVehicle, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnAddHandler1, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(btnAddVehicle1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Org_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
                 .addComponent(btnLogout)
                 .addContainerGap())
         );
@@ -151,7 +177,7 @@ public class SupplyManagerWorkArea extends javax.swing.JFrame {
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 494, Short.MAX_VALUE)
+            .addGap(0, 500, Short.MAX_VALUE)
         );
 
         jSplitPane1.setRightComponent(jPanel2);
@@ -195,6 +221,18 @@ public class SupplyManagerWorkArea extends javax.swing.JFrame {
         jSplitPane1.setRightComponent(lmo);
     }//GEN-LAST:event_Org_NameActionPerformed
 
+    private void btnAddHandler1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddHandler1ActionPerformed
+        // TODO add your handling code here:
+        SupplyManagerViewHandlers smvh = new SupplyManagerViewHandlers(ecosystem, enterprise.getOrganizationDirectory());
+        jSplitPane1.setRightComponent(smvh);
+    }//GEN-LAST:event_btnAddHandler1ActionPerformed
+
+    private void btnAddVehicle1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddVehicle1ActionPerformed
+        // TODO add your handling code here:
+        SupplyManagerViewVehicles smvv = new SupplyManagerViewVehicles(ecosystem, userAccount, organization, enterprise, network);
+        jSplitPane1.setRightComponent(smvv);
+    }//GEN-LAST:event_btnAddVehicle1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -233,7 +271,9 @@ public class SupplyManagerWorkArea extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Org_Name;
     private javax.swing.JButton btnAddHandler;
+    private javax.swing.JButton btnAddHandler1;
     private javax.swing.JButton btnAddVehicle;
+    private javax.swing.JButton btnAddVehicle1;
     private javax.swing.JButton btnLogout;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
