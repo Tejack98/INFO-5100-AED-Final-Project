@@ -60,6 +60,10 @@ public class PatientDashboard extends javax.swing.JPanel {
         txtSearch = new javax.swing.JTextField();
         btnLogOut = new javax.swing.JButton();
 
+        jTabbedPane1.setBackground(new java.awt.Color(153, 204, 255));
+
+        jPanel1.setBackground(new java.awt.Color(255, 204, 204));
+
         jLabel1.setText("Name");
 
         jLabel2.setText("Username");
@@ -74,6 +78,7 @@ public class PatientDashboard extends javax.swing.JPanel {
             }
         });
 
+        btnLogout.setBackground(new java.awt.Color(153, 204, 255));
         btnLogout.setText("Logout");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);

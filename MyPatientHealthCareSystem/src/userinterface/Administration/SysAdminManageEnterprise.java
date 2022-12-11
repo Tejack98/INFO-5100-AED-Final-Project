@@ -109,7 +109,7 @@ public class SysAdminManageEnterprise extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(enterpriseJTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 110, 880, 240));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 110, 880, 240));
 
         jPanel1.setBackground(new java.awt.Color(153, 204, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -147,7 +147,7 @@ public class SysAdminManageEnterprise extends javax.swing.JPanel {
         });
         jPanel1.add(submitJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 400, 80, 31));
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 1060));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 380, 1060));
 
         jPanel6.setBackground(new java.awt.Color(255, 204, 204));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -156,7 +156,7 @@ public class SysAdminManageEnterprise extends javax.swing.JPanel {
         jLabel7.setText("Manage Enterprise Work Area");
         jPanel6.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 980, -1));
 
-        add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 0, 990, 80));
+        add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 0, 990, 80));
     }// </editor-fold>//GEN-END:initComponents
 
     private void submitJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitJButtonActionPerformed

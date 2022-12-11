@@ -36,34 +36,67 @@ public class AdminSplitPage extends javax.swing.JPanel {
         Logout_btn = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
 
-        jPanel1.setBackground(new java.awt.Color(255, 204, 204));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel1.setBackground(new java.awt.Color(153, 204, 255));
 
+        Hospital_btn.setBackground(new java.awt.Color(255, 204, 204));
         Hospital_btn.setText("Manage Hospital");
-        jPanel1.add(Hospital_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 140, -1));
 
+        Transplants_btn.setBackground(new java.awt.Color(255, 204, 204));
         Transplants_btn.setText("Manage Transplants");
         Transplants_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Transplants_btnActionPerformed(evt);
             }
         });
-        jPanel1.add(Transplants_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, 140, -1));
 
+        Logistics_btn.setBackground(new java.awt.Color(255, 204, 204));
         Logistics_btn.setText("Manage Logistics");
-        jPanel1.add(Logistics_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, 140, -1));
 
+        Donor_btn.setBackground(new java.awt.Color(255, 204, 204));
         Donor_btn.setText("Manage Donor Bank");
-        jPanel1.add(Donor_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, -1, -1));
 
+        Graphs_btn.setBackground(new java.awt.Color(255, 204, 204));
         Graphs_btn.setText("Graphs");
-        jPanel1.add(Graphs_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 390, 140, -1));
 
         Logout_btn.setText("Logout");
-        jPanel1.add(Logout_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 990, 140, -1));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(Logout_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Graphs_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Donor_btn)
+                    .addComponent(Logistics_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Transplants_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Hospital_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(23, 23, 23))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(73, 73, 73)
+                .addComponent(Hospital_btn)
+                .addGap(54, 54, 54)
+                .addComponent(Transplants_btn)
+                .addGap(57, 57, 57)
+                .addComponent(Logistics_btn)
+                .addGap(55, 55, 55)
+                .addComponent(Donor_btn)
+                .addGap(59, 59, 59)
+                .addComponent(Graphs_btn)
+                .addGap(577, 577, 577)
+                .addComponent(Logout_btn))
+        );
 
         jSplitPane1.setLeftComponent(jPanel1);
 
+        jPanel2.setBackground(new java.awt.Color(255, 204, 204));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jSplitPane1.setRightComponent(jPanel2);
 

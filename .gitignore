@@ -4,3 +4,4 @@
 /MyPatientHealthCareSystem/build/
 /MyPatientHealthCareSystem/dist/
 .DS_Store
+MyPatientHealthCareSystem/DataStore.db4o
