@@ -86,7 +86,7 @@ public class PharmacistsViewRequestsJPanel extends javax.swing.JPanel {
 
         lblname.setFont(new java.awt.Font("Georgia", 0, 18)); // NOI18N
         lblname.setText("Lab Assitant Name");
-        actionPanel.add(lblname, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, -1, 23));
+        actionPanel.add(lblname, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 113, -1, 30));
 
         pharmaWorkRequestJTable.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         pharmaWorkRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -133,7 +133,7 @@ public class PharmacistsViewRequestsJPanel extends javax.swing.JPanel {
                 refreshJButtonActionPerformed(evt);
             }
         });
-        optionsPanel.add(refreshJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 153, 44));
+        optionsPanel.add(refreshJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(3, 150, 160, 44));
 
         processJButton.setBackground(new java.awt.Color(255, 204, 204));
         processJButton.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
@@ -144,7 +144,7 @@ public class PharmacistsViewRequestsJPanel extends javax.swing.JPanel {
                 processJButtonActionPerformed(evt);
             }
         });
-        optionsPanel.add(processJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 153, 43));
+        optionsPanel.add(processJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(3, 240, 160, 43));
 
         assignJButton.setBackground(new java.awt.Color(255, 204, 204));
         assignJButton.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
@@ -155,7 +155,7 @@ public class PharmacistsViewRequestsJPanel extends javax.swing.JPanel {
                 assignJButtonActionPerformed(evt);
             }
         });
-        optionsPanel.add(assignJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 153, 42));
+        optionsPanel.add(assignJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(3, 340, 160, 42));
 
         jSplitPane1.setLeftComponent(optionsPanel);
 
