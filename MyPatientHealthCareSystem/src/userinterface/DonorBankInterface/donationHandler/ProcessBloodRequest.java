@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package userinterface.DonorBankInterface.donorAdmin;
+package userinterface.DonorBankInterface.donationHandler;
 
 import healthcare.Enterprise.donorBank.DonorBankEnterprise;
 import healthcare.Enterprise.donorBank.DonorBankOrganization;

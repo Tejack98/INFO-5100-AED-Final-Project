@@ -17,6 +17,7 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import userinterface.Administration.AdministratorWorkArea;
+import userinterface.DonorBankInterface.donationHandler.DonationHandlerWorkArea;
 import userinterface.DonorBankInterface.donor.DonorWorkArea;
 import userinterface.DonorBankInterface.donorAdmin.DonorAdminWorkArea;
 //import userinterface.DonorBankInterface.Logindetails.AdminLogin.DonorAdminWorkArea;
@@ -239,6 +240,14 @@ public class MainJFrame extends javax.swing.JFrame {
                 DonorWorkArea donor = (DonorWorkArea) frame;
                 donor.setExtendedState(JFrame.MAXIMIZED_BOTH);
                 donor.setVisible(true);
+            }
+            System.out.println("------------------------------+++++-------------");
+            System.out.println(userAccount.getRole().toString());
+            
+            if (Role.RoleType.DonationHandler.toString().equals(userAccount.getRole().toString())) {
+                DonationHandlerWorkArea donationHandlerFrame = (DonationHandlerWorkArea) frame;
+                donationHandlerFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+                donationHandlerFrame.setVisible(true);
             }
 
 // ===============================================================================================
