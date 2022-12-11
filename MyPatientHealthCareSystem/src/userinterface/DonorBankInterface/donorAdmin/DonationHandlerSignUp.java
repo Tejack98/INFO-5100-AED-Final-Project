@@ -4,27 +4,39 @@
  */
 package userinterface.DonorBankInterface.donorAdmin;
 
+import userinterface.SupplyChainInterface.supplyManger.*;
+import healthcare.Ecosystem;
+import healthcare.enterprise.donorBank.DonationHandlerRole;
+import healthcare.enterprise.pharmacy.PharmacistRole;
+import healthcare.enterprise.supplyChain.HandlerRole;
+import healthcare.organization.Organization;
+import healthcare.organization.OrganizationDirectory;
+import healthcare.person.Person;
+import healthcare.userAccount.UserAccount;
 import java.awt.Color;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Random;
 import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
+import userinterface.SendMail;
 
 /**
  *
  * @author adity
  */
-public class DonorSignUp extends javax.swing.JPanel {
+public class DonationHandlerSignUp extends javax.swing.JPanel {
 
     /**
-     * Creates new form DonorSignUp
+     * Creates new form HandlerSignUp
      */
     boolean emptyValidationStatus = true;
     boolean validationCheck = true;
-    public DonorSignUp() {
+    Ecosystem ecosystem;  
+    OrganizationDirectory orgList;
+    public DonationHandlerSignUp(Ecosystem ecosystem, OrganizationDirectory orgList) {
         initComponents();
+        this.ecosystem = ecosystem;
+        this.orgList = orgList;
+        populateOrganizationComboBox();
     }
 
     /**
@@ -36,21 +48,18 @@ public class DonorSignUp extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnSignUp = new javax.swing.JButton();
-        lblPhoneNo = new javax.swing.JLabel();
-        lblName = new javax.swing.JLabel();
-        lblUsername = new javax.swing.JLabel();
-        lblGender = new javax.swing.JLabel();
-        cboxDonorBankName = new javax.swing.JComboBox<>();
-        lblDonorBankName = new javax.swing.JLabel();
-        cboxGender = new javax.swing.JComboBox<>();
         lblDateOfBirth = new javax.swing.JLabel();
-        txtPhoneNo = new javax.swing.JTextField();
         txtName = new javax.swing.JTextField();
         txtDateOfBirth = new javax.swing.JTextField();
         txtEmail = new javax.swing.JTextField();
         lblTitle = new javax.swing.JLabel();
         txtZipcode = new javax.swing.JTextField();
+        btnSignUp = new javax.swing.JButton();
+        lblPhoneNo = new javax.swing.JLabel();
+        lblName = new javax.swing.JLabel();
+        lblUsername = new javax.swing.JLabel();
+        lblGender = new javax.swing.JLabel();
+        cboxGender = new javax.swing.JComboBox<>();
         lblState = new javax.swing.JLabel();
         txtCity = new javax.swing.JTextField();
         lblCity = new javax.swing.JLabel();
@@ -58,6 +67,18 @@ public class DonorSignUp extends javax.swing.JPanel {
         txtAddress = new javax.swing.JTextField();
         txtState = new javax.swing.JTextField();
         lblAddress = new javax.swing.JLabel();
+        lblGender1 = new javax.swing.JLabel();
+        txtPhoneNo = new javax.swing.JTextField();
+        cboxVehicle = new javax.swing.JComboBox<>();
+        lblOrgName = new javax.swing.JLabel();
+        organizationJComboBox = new javax.swing.JComboBox();
+
+        lblDateOfBirth.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        lblDateOfBirth.setText("Date Of Birth");
+
+        lblTitle.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTitle.setText("Create Handler Profile");
 
         btnSignUp.setText("Sign Up");
         btnSignUp.addActionListener(new java.awt.event.ActionListener() {
@@ -78,25 +99,7 @@ public class DonorSignUp extends javax.swing.JPanel {
         lblGender.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         lblGender.setText("Gender");
 
-        cboxDonorBankName.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        lblDonorBankName.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
-        lblDonorBankName.setText("Donor Bank Name");
-
         cboxGender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        lblDateOfBirth.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
-        lblDateOfBirth.setText("Date Of Birth");
-
-        txtPhoneNo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtPhoneNoActionPerformed(evt);
-            }
-        });
-
-        lblTitle.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTitle.setText("Create Donor Profile");
 
         lblState.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         lblState.setText("State");
@@ -122,6 +125,24 @@ public class DonorSignUp extends javax.swing.JPanel {
         lblAddress.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         lblAddress.setText("Address");
 
+        lblGender1.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        lblGender1.setText("Vehicle");
+
+        txtPhoneNo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPhoneNoActionPerformed(evt);
+            }
+        });
+
+        cboxVehicle.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        lblOrgName.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        lblOrgName.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblOrgName.setText("Organization Name");
+
+        organizationJComboBox.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        organizationJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Doctor", "Nurse", "Patient" }));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -132,36 +153,36 @@ public class DonorSignUp extends javax.swing.JPanel {
                         .addContainerGap()
                         .addComponent(lblTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(193, 193, 193)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblName)
-                            .addComponent(lblUsername)
-                            .addComponent(lblDonorBankName)
-                            .addComponent(lblPhoneNo)
-                            .addComponent(lblDateOfBirth)
-                            .addComponent(lblGender)
-                            .addComponent(lblCity)
-                            .addComponent(lblZipCode)
-                            .addComponent(lblAddress)
-                            .addComponent(lblState))
+                        .addContainerGap(179, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblName, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblUsername, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblPhoneNo, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblDateOfBirth, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblGender, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblState, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblCity, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblZipCode, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblAddress, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblGender1, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblOrgName, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtName, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
-                            .addComponent(txtEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
-                            .addComponent(txtPhoneNo, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
-                            .addComponent(txtDateOfBirth, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
-                            .addComponent(cboxDonorBankName, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(cboxGender, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txtZipcode, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
-                            .addComponent(txtCity, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
-                            .addComponent(txtAddress, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
-                            .addComponent(txtState, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnSignUp)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(txtName, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
+                                .addComponent(txtEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
+                                .addComponent(txtDateOfBirth, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
+                                .addComponent(cboxGender, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(txtZipcode, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
+                                .addComponent(txtCity, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
+                                .addComponent(txtAddress, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
+                                .addComponent(txtState, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
+                                .addComponent(txtPhoneNo, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
+                                .addComponent(cboxVehicle, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(organizationJComboBox, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 185, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 374, Short.MAX_VALUE)
-                .addComponent(btnSignUp)
-                .addGap(367, 367, 367))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -176,14 +197,18 @@ public class DonorSignUp extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblUsername)
                     .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(8, 8, 8)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblDonorBankName)
-                    .addComponent(cboxDonorBankName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(organizationJComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblOrgName))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblGender)
                     .addComponent(cboxGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblGender1)
+                    .addComponent(cboxVehicle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblPhoneNo)
@@ -208,15 +233,11 @@ public class DonorSignUp extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblZipCode)
                     .addComponent(txtZipcode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(59, 59, 59)
+                .addGap(18, 18, 18)
                 .addComponent(btnSignUp)
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void txtPhoneNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPhoneNoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtPhoneNoActionPerformed
 
     private void txtCityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCityActionPerformed
         // TODO add your handling code here:
@@ -225,6 +246,10 @@ public class DonorSignUp extends javax.swing.JPanel {
     private void txtStateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtStateActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtStateActionPerformed
+
+    private void txtPhoneNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPhoneNoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPhoneNoActionPerformed
 
     private void btnSignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignUpActionPerformed
         // TODO add your handling code here:
@@ -237,7 +262,7 @@ public class DonorSignUp extends javax.swing.JPanel {
                     long cellPhoneNumber = Long.parseLong(txtPhoneNo.getText());
                     String emailId = txtEmail.getText();
                     String gender = cboxGender.getSelectedItem().toString();
-                    String DonorBankName = cboxDonorBankName.getSelectedItem().toString();
+                    String Vehicle = cboxVehicle.getSelectedItem().toString();
                     String dob = txtDateOfBirth.getText();
                     String Address = txtAddress.getText();
                     String City = txtCity.getText();
@@ -245,10 +270,20 @@ public class DonorSignUp extends javax.swing.JPanel {
                     long Zipcode = Long.parseLong(txtZipcode.getText());
                     
                     Random random=new Random();
-                    int donorID=random.nextInt((9999 - 100) + 1) + 10;
-
-                    String password = name + String.valueOf(random.nextInt((9999 - 100) + 1)+ 10);
-                    JOptionPane.showMessageDialog(this,"Donor Registered Successfully.Your New Donor Id is:"+donorID+" and password: "+password+",Please save this Doctor Id for furture reference.");
+                    int HandlerID=random.nextInt((9999 - 100) + 1) + 10;
+                    
+                    Organization organization = (Organization) organizationJComboBox.getSelectedItem();
+                    
+                    String username = name.substring(0, 3) + String.valueOf(HandlerID);
+                    String password = name + String.valueOf(random.nextInt((9999 - 100) + 1) + 10);
+                    
+                    Person p = organization.getPersonDirectory().createAndAddPerson(username, Address, City, State, Zipcode, cellPhoneNumber);  
+                    UserAccount u = organization.getUserAccountDirectory().createUserAccount(HandlerID,username, password, p, new DonationHandlerRole(), emailId);
+                    
+                    JOptionPane.showMessageDialog(this,"Handler Registered Successfully.Your New Username is:"+username+" and password: "+password+",Please save this Id for furture reference.");
+                    
+                    SendMail s = new SendMail();
+                    s.sendUserRegisterEmail(emailId, username, password);
 
                 }
                 else{
@@ -262,7 +297,7 @@ public class DonorSignUp extends javax.swing.JPanel {
             }
         }
         catch(Exception e){
-            JOptionPane.showMessageDialog(this,"Donor not registered, Try again");
+            JOptionPane.showMessageDialog(this,"Handler not registered, Try again");
             System.out.println(e.toString());
             emptyValidationStatus=true;
         }
@@ -320,11 +355,6 @@ public class DonorSignUp extends javax.swing.JPanel {
             txtName.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
         }
        
-        
-         
-        
-        
-        
         if(txtAddress.getText().equals(null)|| txtAddress.getText().trim().isEmpty())
         {
             txtAddress.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
@@ -360,25 +390,33 @@ public class DonorSignUp extends javax.swing.JPanel {
             txtPhoneNo.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
         }
         return emptyValidationStatus;
-    
     }//GEN-LAST:event_btnSignUpActionPerformed
 
+    private void populateOrganizationComboBox() {
+        organizationJComboBox.removeAllItems();
+
+        for (Organization organization : orgList.getOrganizationList()) {
+            organizationJComboBox.addItem(organization);
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSignUp;
-    private javax.swing.JComboBox<String> cboxDonorBankName;
     private javax.swing.JComboBox<String> cboxGender;
+    private javax.swing.JComboBox<String> cboxVehicle;
     private javax.swing.JLabel lblAddress;
     private javax.swing.JLabel lblCity;
     private javax.swing.JLabel lblDateOfBirth;
-    private javax.swing.JLabel lblDonorBankName;
     private javax.swing.JLabel lblGender;
+    private javax.swing.JLabel lblGender1;
     private javax.swing.JLabel lblName;
+    private javax.swing.JLabel lblOrgName;
     private javax.swing.JLabel lblPhoneNo;
     private javax.swing.JLabel lblState;
     private javax.swing.JLabel lblTitle;
     private javax.swing.JLabel lblUsername;
     private javax.swing.JLabel lblZipCode;
+    private javax.swing.JComboBox organizationJComboBox;
     private javax.swing.JTextField txtAddress;
     private javax.swing.JTextField txtCity;
     private javax.swing.JTextField txtDateOfBirth;

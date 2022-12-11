@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package userinterface.DonorBankInterface.donorAdmin;
+package userinterface.DonorBankInterface.donationHandler;
 
 import healthcare.Enterprise.donorBank.DonorBankEnterprise;
 import healthcare.Enterprise.donorBank.DonorBankOrganization;
@@ -86,7 +86,7 @@ public class ProcessBloodRequest extends javax.swing.JPanel {
 
         jLabel12.setBackground(new java.awt.Color(255, 255, 255));
         jLabel12.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        jLabel12.setText("For Patient");
+        jLabel12.setText("For User");
 
         cboxBlood1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-" }));
         cboxBlood1.setEnabled(false);
