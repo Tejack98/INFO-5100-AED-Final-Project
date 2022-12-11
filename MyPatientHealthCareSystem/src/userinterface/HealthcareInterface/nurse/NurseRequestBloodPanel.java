@@ -71,7 +71,7 @@ public class NurseRequestBloodPanel extends javax.swing.JPanel {
 
         jPanel6.setBackground(new java.awt.Color(153, 204, 255));
 
-        jLabel6.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Georgia", 1, 24)); // NOI18N
         jLabel6.setText("Request Blood");
 
         jButton2.setBackground(new java.awt.Color(71, 120, 197));
@@ -89,7 +89,7 @@ public class NurseRequestBloodPanel extends javax.swing.JPanel {
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel6)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -113,11 +113,11 @@ public class NurseRequestBloodPanel extends javax.swing.JPanel {
         });
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         jLabel1.setText("By User");
 
         requestbtn.setBackground(new java.awt.Color(153, 204, 255));
-        requestbtn.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        requestbtn.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
         requestbtn.setText("Request Blood");
         requestbtn.setBorder(null);
         requestbtn.addActionListener(new java.awt.event.ActionListener() {
@@ -126,6 +126,7 @@ public class NurseRequestBloodPanel extends javax.swing.JPanel {
             }
         });
 
+        jLabel2.setFont(new java.awt.Font("Georgia", 0, 13)); // NOI18N
         jLabel2.setText("Message");
 
         cboxBlood1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-" }));
@@ -135,6 +136,7 @@ public class NurseRequestBloodPanel extends javax.swing.JPanel {
             }
         });
 
+        jLabel9.setFont(new java.awt.Font("Georgia", 0, 13)); // NOI18N
         jLabel9.setText("Blood Type");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -176,7 +178,7 @@ public class NurseRequestBloodPanel extends javax.swing.JPanel {
                     .addComponent(txtMsg, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(requestbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(265, Short.MAX_VALUE))
+                .addContainerGap(267, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

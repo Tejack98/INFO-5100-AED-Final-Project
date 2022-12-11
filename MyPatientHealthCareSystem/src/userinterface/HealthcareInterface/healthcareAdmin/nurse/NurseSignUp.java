@@ -140,7 +140,7 @@ public class NurseSignUp extends javax.swing.JPanel {
         add(lblPhoneNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 320, -1, -1));
 
         CBoxGender.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
-        CBoxGender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        CBoxGender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Female", "Male", "Others" }));
         add(CBoxGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 250, 238, -1));
         add(txtPhoneNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 320, 238, -1));
 

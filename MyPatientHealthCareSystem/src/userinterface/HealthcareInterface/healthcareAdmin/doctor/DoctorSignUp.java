@@ -133,7 +133,7 @@ public class DoctorSignUp extends javax.swing.JPanel {
         add(lblSpeciality, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 240, -1, -1));
 
         cboxSpeciality.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
-        cboxSpeciality.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cboxSpeciality.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cardiologist", "Oncologist", "Pediatrician", "Neurologists", "Gastroenterologist", "Pulmonologist", "Dentist" }));
         add(cboxSpeciality, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 240, 238, -1));
 
         lblPhoneNo.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
