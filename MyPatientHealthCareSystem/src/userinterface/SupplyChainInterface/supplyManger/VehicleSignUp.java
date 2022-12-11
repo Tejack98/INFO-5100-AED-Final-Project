@@ -151,8 +151,35 @@ public class VehicleSignUp extends javax.swing.JPanel {
             validationCheck=false;
         }
         
-       
-
+        if(txtVehicleName.getText().matches("^[a-zA-Z ]+$"))
+        {
+            txtVehicleName.setBorder(BorderFactory.createLineBorder(Color.BLUE, 0));
+        }
+        
+       if(!txtVehicleType.getText().matches("^[a-zA-Z ]+$"))
+        {
+            txtVehicleType.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            txtVehicleType.setToolTipText("Please enter only characters and space.");
+            validationCheck=false;
+        }
+        
+        if(txtVehicleType.getText().matches("^[a-zA-Z ]+$"))
+        {
+            txtVehicleType.setBorder(BorderFactory.createLineBorder(Color.BLUE, 0));
+        }
+        
+        if(!txtDescription.getText().matches("^[a-zA-Z ]+$"))
+        {
+            txtDescription.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            txtDescription.setToolTipText("Please enter only characters and space.");
+            validationCheck=false;
+        }
+        
+        if(txtDescription.getText().matches("^[a-zA-Z ]+$"))
+        {
+            txtDescription.setBorder(BorderFactory.createLineBorder(Color.BLUE, 0));
+        }
+        
         return validationCheck;
     }
     
@@ -167,11 +194,17 @@ public class VehicleSignUp extends javax.swing.JPanel {
         {
             txtVehicleName.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
         }
-       
         
-         
-        
-        
+        if(txtVehicleType.getText().equals(null) || txtVehicleName.getText().trim().isEmpty() )
+        {
+            txtVehicleType.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            txtVehicleType.setToolTipText("This Field Cannot be empty");
+            emptyValidationStatus= false;
+        }
+        if(!txtVehicleType.getText().equals(null) && !txtVehicleType.getText().trim().isEmpty() )
+        {
+            txtVehicleType.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        }
         
         if(txtDescription.getText().equals(null)|| txtDescription.getText().trim().isEmpty())
         {
