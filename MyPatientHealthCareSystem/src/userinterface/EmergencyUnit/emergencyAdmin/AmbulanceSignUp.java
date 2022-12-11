@@ -62,11 +62,11 @@ public class AmbulanceSignUp extends javax.swing.JPanel {
 
         lblVehicleName.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblVehicleName.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        lblVehicleName.setText("Vehicle Name");
+        lblVehicleName.setText("Ambulance Name");
 
         lblVehicleType.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblVehicleType.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        lblVehicleType.setText("Vehicle Type");
+        lblVehicleType.setText("Ambulance Type");
 
         btnSignUp.setText("Sign Up");
         btnSignUp.addActionListener(new java.awt.event.ActionListener() {
@@ -77,7 +77,7 @@ public class AmbulanceSignUp extends javax.swing.JPanel {
 
         lblVehicleNumber.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblVehicleNumber.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        lblVehicleNumber.setText("Vehicle Number");
+        lblVehicleNumber.setText("Ambulance Number");
 
         lblDescription.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblDescription.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
@@ -114,7 +114,7 @@ public class AmbulanceSignUp extends javax.swing.JPanel {
                             .addComponent(txtVehicleNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtDescription, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtVehicleType, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(191, Short.MAX_VALUE))
+                .addContainerGap(167, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
