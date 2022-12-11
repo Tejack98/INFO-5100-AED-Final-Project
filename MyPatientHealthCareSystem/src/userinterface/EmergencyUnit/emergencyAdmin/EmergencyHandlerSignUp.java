@@ -277,7 +277,7 @@ public class EmergencyHandlerSignUp extends javax.swing.JPanel {
                     String username = name.substring(0, 3) + String.valueOf(HandlerID);
                     String password = name + String.valueOf(random.nextInt((9999 - 100) + 1) + 10);
                     
-                    Person p = organization.getPersonDirectory().createAndAddPerson(username, Address, City, State, Zipcode, cellPhoneNumber);  
+                    Person p = organization.getPersonDirectory().createAndAddPerson(name, Address, City, State, Zipcode, cellPhoneNumber);  
                     UserAccount u = organization.getUserAccountDirectory().createUserAccount(HandlerID,username, password, p, new AmbulanceHandlerRole(), emailId);
                     
                     JOptionPane.showMessageDialog(this,"Handler Registered Successfully.Your New Username is:"+username+" and password: "+password+",Please save this Id for furture reference.");

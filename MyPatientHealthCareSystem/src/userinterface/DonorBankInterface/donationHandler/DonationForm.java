@@ -87,26 +87,35 @@ public class DonationForm extends javax.swing.JPanel {
 
         jPanel1.setBackground(new java.awt.Color(255, 204, 204));
 
+        jLabel2.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         jLabel2.setText("Donor Name");
 
+        jLabel4.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         jLabel4.setText("Date of Birth");
 
+        jLabel5.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         jLabel5.setText("Email");
 
+        jLabel7.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         jLabel7.setText("Phone");
 
+        jLabel8.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         jLabel8.setText("Occupation");
 
+        jLabel9.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         jLabel9.setText("Blood Type");
 
+        jLabel10.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         jLabel10.setText("Did you ever donate blood before?");
 
+        jLabel11.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         jLabel11.setText("Do you suffer of any diseases?");
 
+        jLabel12.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         jLabel12.setText("Do you have any allergies?");
 
-        jLabel13.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jLabel13.setText("General Details");
 
         txtEmail.addActionListener(new java.awt.event.ActionListener() {
@@ -128,7 +137,7 @@ public class DonationForm extends javax.swing.JPanel {
             }
         });
 
-        jLabel14.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        jLabel14.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jLabel14.setText("Additional Details");
 
         txtOccupation.addActionListener(new java.awt.event.ActionListener() {
@@ -191,6 +200,7 @@ public class DonationForm extends javax.swing.JPanel {
             }
         });
 
+        jLabel15.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         jLabel15.setText("Did you ever donate organ before?");
 
         cboxPreviousOrganDonation.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Yes", "No" }));

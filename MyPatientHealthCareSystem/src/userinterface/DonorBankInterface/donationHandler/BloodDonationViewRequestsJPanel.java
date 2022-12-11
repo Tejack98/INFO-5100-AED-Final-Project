@@ -98,7 +98,7 @@ public class BloodDonationViewRequestsJPanel extends javax.swing.JPanel {
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
-        lblname.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblname.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblname.setText("Admin Name");
 
         bloodRequestJTable.setModel(new javax.swing.table.DefaultTableModel(

@@ -62,10 +62,10 @@ public class SysAdminMangeNetwork extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("NETWORK NAME");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 450, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 310, -1));
 
         nameJTextField.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
-        jPanel1.add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 350, -1));
+        jPanel1.add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 310, -1));
 
         submitJButton.setFont(new java.awt.Font("Georgia", 1, 11)); // NOI18N
         submitJButton.setText("Submit");
@@ -75,9 +75,9 @@ public class SysAdminMangeNetwork extends javax.swing.JPanel {
                 submitJButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(submitJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 210, 92, 31));
+        jPanel1.add(submitJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 210, 92, 31));
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 1060));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 330, 1060));
 
         jPanel6.setBackground(new java.awt.Color(255, 204, 204));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -86,7 +86,7 @@ public class SysAdminMangeNetwork extends javax.swing.JPanel {
         jLabel6.setText("Manage Network Work Area");
         jPanel6.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, -1));
 
-        add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(449, -2, 990, 100));
+        add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(329, -2, 1110, 100));
 
         networkJTable.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
         networkJTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -117,7 +117,7 @@ public class SysAdminMangeNetwork extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(networkJTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 140, 920, 180));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 140, 820, 180));
     }// </editor-fold>//GEN-END:initComponents
 
     private void submitJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitJButtonActionPerformed

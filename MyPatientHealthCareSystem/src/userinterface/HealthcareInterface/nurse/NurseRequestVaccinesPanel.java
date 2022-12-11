@@ -104,7 +104,6 @@ public class NurseRequestVaccinesPanel extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        txtUserName.setBackground(new java.awt.Color(153, 204, 255));
         txtUserName.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
         txtUserName.setEnabled(false);
         txtUserName.addActionListener(new java.awt.event.ActionListener() {
@@ -114,7 +113,7 @@ public class NurseRequestVaccinesPanel extends javax.swing.JPanel {
         });
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jLabel1.setText("By User");
 
         requestbtn.setBackground(new java.awt.Color(153, 204, 255));
@@ -172,6 +171,7 @@ public class NurseRequestVaccinesPanel extends javax.swing.JPanel {
             }
         });
 
+        jLabel2.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         jLabel2.setText("Message");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -201,7 +201,7 @@ public class NurseRequestVaccinesPanel extends javax.swing.JPanel {
                                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(txtUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(0, 231, Short.MAX_VALUE))
+                .addGap(0, 222, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

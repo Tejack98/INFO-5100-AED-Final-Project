@@ -62,6 +62,7 @@ public class DonationHandlerWorkArea extends javax.swing.JFrame {
         controlPanel.setPreferredSize(new java.awt.Dimension(200, 600));
 
         btnPatients.setBackground(new java.awt.Color(255, 204, 204));
+        btnPatients.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         btnPatients.setText("Transplant Request");
         btnPatients.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -77,11 +78,12 @@ public class DonationHandlerWorkArea extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Georgia", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Handler");
 
         btnPatients2.setBackground(new java.awt.Color(255, 204, 204));
+        btnPatients2.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         btnPatients2.setText(" Blood Requests");
         btnPatients2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -90,6 +92,7 @@ public class DonationHandlerWorkArea extends javax.swing.JFrame {
         });
 
         btnPatients4.setBackground(new java.awt.Color(255, 204, 204));
+        btnPatients4.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         btnPatients4.setText("Add Donor");
         btnPatients4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -98,6 +101,7 @@ public class DonationHandlerWorkArea extends javax.swing.JFrame {
         });
 
         btnDonationRequests.setBackground(new java.awt.Color(255, 204, 204));
+        btnDonationRequests.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         btnDonationRequests.setText("Donation Requests");
         btnDonationRequests.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -120,7 +124,7 @@ public class DonationHandlerWorkArea extends javax.swing.JFrame {
                     .addGroup(controlPanelLayout.createSequentialGroup()
                         .addGap(16, 16, 16)
                         .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(7, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(btnDonationRequests, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         controlPanelLayout.setVerticalGroup(

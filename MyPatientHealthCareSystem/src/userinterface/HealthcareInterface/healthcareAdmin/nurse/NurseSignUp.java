@@ -188,7 +188,7 @@ public class NurseSignUp extends javax.swing.JPanel {
                     role.setHospitalName(HospitalName);
                     
                     Organization organization = (Organization) organizationJComboBox.getSelectedItem();
-                    Person p = organization.getPersonDirectory().createAndAddPerson(username, Address, City, State, Zipcode, cellPhoneNumber);                               
+                    Person p = organization.getPersonDirectory().createAndAddPerson(name, Address, City, State, Zipcode, cellPhoneNumber);                               
                     UserAccount u = organization.getUserAccountDirectory().createUserAccount(NurseID,username, password, p, role, emailId);
                     
                     JOptionPane.showMessageDialog(this,"Nurse Registered Successfully.Your New Username is:"+username+" and password: "+password+",Please save this Id for furture reference.");

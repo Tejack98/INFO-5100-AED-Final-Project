@@ -75,7 +75,7 @@ public class LabManageOrganization extends javax.swing.JPanel {
         jLabel7 = new javax.swing.JLabel();
         addJButton = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(255, 204, 204));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         organizationJTable.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
@@ -117,7 +117,7 @@ public class LabManageOrganization extends javax.swing.JPanel {
         jLabel1.setText("Organization Type ");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(61, 94, -1, -1));
 
-        jPanel6.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel6.setBackground(new java.awt.Color(153, 204, 255));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel7.setFont(new java.awt.Font("Georgia", 1, 24)); // NOI18N
@@ -126,9 +126,8 @@ public class LabManageOrganization extends javax.swing.JPanel {
 
         add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1250, 70));
 
-        addJButton.setBackground(new java.awt.Color(49, 84, 140));
+        addJButton.setBackground(new java.awt.Color(153, 204, 255));
         addJButton.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
-        addJButton.setForeground(new java.awt.Color(255, 255, 255));
         addJButton.setText("Add Organization");
         addJButton.setBorder(null);
         addJButton.addActionListener(new java.awt.event.ActionListener() {
