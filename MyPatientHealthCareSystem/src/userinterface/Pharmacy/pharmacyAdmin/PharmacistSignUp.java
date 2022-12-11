@@ -161,6 +161,7 @@ public class PharmacistSignUp extends javax.swing.JPanel {
         add(organizationJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 310, 230, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Pharmacist.jpg"))); // NOI18N
+        jLabel2.setText("jLabel2");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 

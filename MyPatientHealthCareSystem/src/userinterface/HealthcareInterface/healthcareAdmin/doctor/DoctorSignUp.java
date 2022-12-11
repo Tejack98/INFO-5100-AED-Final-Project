@@ -241,6 +241,18 @@ public class DoctorSignUp extends javax.swing.JPanel {
             txtCity.setBorder(BorderFactory.createLineBorder(Color.BLUE, 0));
         }
         
+        if(!txtAddress.getText().matches("^[a-zA-Z ]+$"))
+        {
+            txtAddress.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            txtAddress.setToolTipText("Please enter only characters and space.");
+            validationCheck=false;
+        }
+        
+        if(txtAddress.getText().matches("^[a-zA-Z ]+$"))
+        {
+            txtAddress.setBorder(BorderFactory.createLineBorder(Color.BLUE, 0));
+        }
+        
         
         if(!txtEmail.getText().matches("^[A-Za-z0-9+_.-]+@(.+)$"))
         {
@@ -266,6 +278,7 @@ public class DoctorSignUp extends javax.swing.JPanel {
             txtPhoneNo.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
         }
         
+        
         if(!txtZipcode.getText().matches("^[0-9]{5}(?:-[0-9]{4})?$"))
         {
             txtZipcode.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
@@ -277,7 +290,7 @@ public class DoctorSignUp extends javax.swing.JPanel {
             txtZipcode.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
         }
         
-
+        
         return validationCheck;
     }
     
