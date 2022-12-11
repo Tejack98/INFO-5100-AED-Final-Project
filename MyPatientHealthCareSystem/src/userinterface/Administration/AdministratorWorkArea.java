@@ -48,10 +48,11 @@ public class AdministratorWorkArea extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        controlPanel.setBackground(new java.awt.Color(255, 204, 204));
+        controlPanel.setBackground(new java.awt.Color(153, 204, 255));
         controlPanel.setPreferredSize(new java.awt.Dimension(200, 600));
         controlPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btnEnterprise.setBackground(new java.awt.Color(255, 204, 204));
         btnEnterprise.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         btnEnterprise.setText("Enterprise");
         btnEnterprise.addActionListener(new java.awt.event.ActionListener() {
@@ -61,6 +62,7 @@ public class AdministratorWorkArea extends javax.swing.JFrame {
         });
         controlPanel.add(btnEnterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 127, 102, 55));
 
+        btnAdmin.setBackground(new java.awt.Color(255, 204, 204));
         btnAdmin.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         btnAdmin.setText("Admin");
         btnAdmin.addActionListener(new java.awt.event.ActionListener() {
@@ -70,6 +72,7 @@ public class AdministratorWorkArea extends javax.swing.JFrame {
         });
         controlPanel.add(btnAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 200, 102, 55));
 
+        btnLogout.setBackground(new java.awt.Color(255, 204, 204));
         btnLogout.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         btnLogout.setText("Logout");
         btnLogout.addActionListener(new java.awt.event.ActionListener() {
@@ -84,6 +87,7 @@ public class AdministratorWorkArea extends javax.swing.JFrame {
         jLabel1.setText("Administrator");
         controlPanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(4, 6, 210, 42));
 
+        btnNetwork.setBackground(new java.awt.Color(255, 204, 204));
         btnNetwork.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         btnNetwork.setText("Network");
         btnNetwork.addActionListener(new java.awt.event.ActionListener() {
@@ -94,6 +98,8 @@ public class AdministratorWorkArea extends javax.swing.JFrame {
         controlPanel.add(btnNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 54, 102, 55));
 
         jSplitPaneSystem.setLeftComponent(controlPanel);
+
+        workArea.setBackground(new java.awt.Color(255, 204, 204));
 
         javax.swing.GroupLayout workAreaLayout = new javax.swing.GroupLayout(workArea);
         workArea.setLayout(workAreaLayout);
