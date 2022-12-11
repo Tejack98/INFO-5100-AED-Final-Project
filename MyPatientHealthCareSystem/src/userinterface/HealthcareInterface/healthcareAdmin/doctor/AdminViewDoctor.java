@@ -76,17 +76,17 @@ public class AdminViewDoctor extends javax.swing.JPanel {
 
         docTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Name", "Email", "Hospital Name", "Speciality", "Address", "City", "State", "Zipcode", "Phone No."
+                "Name", "Email", "Hospital Name", "Speciality", "Address", "City", "State", "Zipcode", "Phone No.", "Username"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -161,7 +161,7 @@ public class AdminViewDoctor extends javax.swing.JPanel {
                 
                 DoctorRole role = (DoctorRole) ua.getRole();
                 model.addRow(new Object[]
-                {ua.getPerson().getPersonName(),ua.getUserEmail(),role.getHospitalName(), role.getSpeciality(), ua.getPerson().getAddress(), ua.getPerson().getCity(), ua.getPerson().getState(), String.valueOf(ua.getPerson().getZipcode()), String.valueOf(ua.getPerson().getContactNumber())});
+                {ua.getPerson().getPersonName(),ua.getUserEmail(),role.getHospitalName(), role.getSpeciality(), ua.getPerson().getAddress(), ua.getPerson().getCity(), ua.getPerson().getState(), String.valueOf(ua.getPerson().getZipcode()), String.valueOf(ua.getPerson().getContactNumber()),ua.getUserName()});
             }
             
         }
@@ -185,7 +185,7 @@ public class AdminViewDoctor extends javax.swing.JPanel {
 
                 if (ua.getPerson().getPersonName().toLowerCase().contains(docName)) {
                     DoctorRole role = (DoctorRole) ua.getRole();
-                    model.addRow(new Object[]{ua.getPerson().getPersonName(), ua.getUserEmail(), role.getHospitalName(), role.getSpeciality(), ua.getPerson().getAddress(), ua.getPerson().getCity(), ua.getPerson().getState(), String.valueOf(ua.getPerson().getZipcode()), String.valueOf(ua.getPerson().getContactNumber())});
+                    model.addRow(new Object[]{ua.getPerson().getPersonName(), ua.getUserEmail(), role.getHospitalName(), role.getSpeciality(), ua.getPerson().getAddress(), ua.getPerson().getCity(), ua.getPerson().getState(), String.valueOf(ua.getPerson().getZipcode()), String.valueOf(ua.getPerson().getContactNumber()),ua.getUserName()});
                 }
             }
 
