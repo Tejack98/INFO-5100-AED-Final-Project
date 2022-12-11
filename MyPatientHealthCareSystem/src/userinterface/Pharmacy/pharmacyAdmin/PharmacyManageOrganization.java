@@ -53,7 +53,7 @@ public class PharmacyManageOrganization extends javax.swing.JPanel {
         for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()) {
             Object[] row = new Object[2];
             row[0] = organization.getOrganizationID();
-            row[1] = organization.getOrganizationName();
+            row[1] = organization;
 
             model.addRow(row);
         }
@@ -75,6 +75,7 @@ public class PharmacyManageOrganization extends javax.swing.JPanel {
         jPanel6 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         addJButton = new javax.swing.JButton();
+        deleteJButton = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 204, 204));
 
@@ -144,6 +145,16 @@ public class PharmacyManageOrganization extends javax.swing.JPanel {
             }
         });
 
+        deleteJButton.setBackground(new java.awt.Color(153, 204, 255));
+        deleteJButton.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
+        deleteJButton.setText("Delete Organization");
+        deleteJButton.setBorder(null);
+        deleteJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteJButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -158,7 +169,10 @@ public class PharmacyManageOrganization extends javax.swing.JPanel {
                                 .addComponent(jLabel1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(organizationJComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(addJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(addJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(deleteJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 615, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 173, Short.MAX_VALUE)))
                 .addContainerGap())
@@ -174,8 +188,10 @@ public class PharmacyManageOrganization extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(addJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(631, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(addJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(deleteJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(630, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -186,8 +202,29 @@ public class PharmacyManageOrganization extends javax.swing.JPanel {
         populateTable();
     }//GEN-LAST:event_addJButtonActionPerformed
 
+    private void deleteJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteJButtonActionPerformed
+        // TODO add your handling code here:
+
+        int selectedRow = organizationJTable.getSelectedRow();
+
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(null, "Please select a organization first", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        try {
+            Organization org = (Organization) organizationJTable.getValueAt(selectedRow, 1);
+            enterprise.getOrganizationDirectory().deleteOrganization(org);
+            populateTable();
+            JOptionPane.showMessageDialog(null, "Organization Deleted Successfully");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Something Went Wrong. Try again Later!");
+        }
+    }//GEN-LAST:event_deleteJButtonActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addJButton;
+    private javax.swing.JButton deleteJButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel6;
