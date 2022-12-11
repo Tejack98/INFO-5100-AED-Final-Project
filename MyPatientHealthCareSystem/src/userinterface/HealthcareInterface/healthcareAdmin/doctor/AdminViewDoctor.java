@@ -60,7 +60,6 @@ public class AdminViewDoctor extends javax.swing.JPanel {
         lblSearchDoctorByID = new javax.swing.JLabel();
         txtSearchDoctorByname = new javax.swing.JTextField();
         btnSearch = new javax.swing.JButton();
-        btnDelete = new javax.swing.JButton();
         lblEnterprise = new javax.swing.JLabel();
         organizationJComboBox = new javax.swing.JComboBox();
         btnView = new javax.swing.JButton();
@@ -76,17 +75,17 @@ public class AdminViewDoctor extends javax.swing.JPanel {
 
         docTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Name", "Email", "Hospital Name", "Speciality", "Address", "City", "State", "Zipcode", "Phone No."
+                "Name", "Email", "Hospital Name", "Speciality", "Address", "City", "State", "Zipcode", "Phone No.", "Username"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -110,10 +109,6 @@ public class AdminViewDoctor extends javax.swing.JPanel {
             }
         });
         add(btnSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 110, -1, -1));
-
-        btnDelete.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
-        btnDelete.setText("Delete");
-        add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 390, -1, 30));
 
         lblEnterprise.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblEnterprise.setText("Organization");
@@ -161,7 +156,7 @@ public class AdminViewDoctor extends javax.swing.JPanel {
                 
                 DoctorRole role = (DoctorRole) ua.getRole();
                 model.addRow(new Object[]
-                {ua.getPerson().getPersonName(),ua.getUserEmail(),role.getHospitalName(), role.getSpeciality(), ua.getPerson().getAddress(), ua.getPerson().getCity(), ua.getPerson().getState(), String.valueOf(ua.getPerson().getZipcode()), String.valueOf(ua.getPerson().getContactNumber())});
+                {ua.getPerson().getPersonName(),ua.getUserEmail(),role.getHospitalName(), role.getSpeciality(), ua.getPerson().getAddress(), ua.getPerson().getCity(), ua.getPerson().getState(), String.valueOf(ua.getPerson().getZipcode()), String.valueOf(ua.getPerson().getContactNumber()),ua.getUserName()});
             }
             
         }
@@ -185,7 +180,7 @@ public class AdminViewDoctor extends javax.swing.JPanel {
 
                 if (ua.getPerson().getPersonName().toLowerCase().contains(docName)) {
                     DoctorRole role = (DoctorRole) ua.getRole();
-                    model.addRow(new Object[]{ua.getPerson().getPersonName(), ua.getUserEmail(), role.getHospitalName(), role.getSpeciality(), ua.getPerson().getAddress(), ua.getPerson().getCity(), ua.getPerson().getState(), String.valueOf(ua.getPerson().getZipcode()), String.valueOf(ua.getPerson().getContactNumber())});
+                    model.addRow(new Object[]{ua.getPerson().getPersonName(), ua.getUserEmail(), role.getHospitalName(), role.getSpeciality(), ua.getPerson().getAddress(), ua.getPerson().getCity(), ua.getPerson().getState(), String.valueOf(ua.getPerson().getZipcode()), String.valueOf(ua.getPerson().getContactNumber()),ua.getUserName()});
                 }
             }
 
@@ -195,7 +190,6 @@ public class AdminViewDoctor extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnSearch;
     private javax.swing.JButton btnView;
     private javax.swing.JTable docTable;

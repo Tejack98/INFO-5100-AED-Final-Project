@@ -15,10 +15,10 @@ import javax.swing.JPanel;
  *
  * @author Tejas
  */
-public class ViewLabResults extends javax.swing.JPanel {
+public class LabDiagnosis extends javax.swing.JPanel {
 
     /**
-     * Creates new form ViewLabResults
+     * Creates new form LabDiagnosis
      */
     
 
@@ -28,7 +28,7 @@ public class ViewLabResults extends javax.swing.JPanel {
     UserAccount userAccount;
     String emailId=null;
     
-    public ViewLabResults(WorkRequest request, Network network, Enterprise enterprise, UserAccount userAccount) {
+    public LabDiagnosis(WorkRequest request, Network network, Enterprise enterprise, UserAccount userAccount) {
         initComponents();
         this.patientrequest = request;
         this.network = network;

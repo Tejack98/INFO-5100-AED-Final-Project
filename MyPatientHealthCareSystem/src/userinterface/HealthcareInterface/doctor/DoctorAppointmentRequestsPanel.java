@@ -36,7 +36,6 @@ public class DoctorAppointmentRequestsPanel extends javax.swing.JPanel {
         this.enterprise = enterprise;
         this.network = network;
         populateRequestTable();
-        assignToMebtn.setEnabled(true);
     }
 
     /** This method is called from within the constructor to
@@ -106,21 +105,18 @@ public class DoctorAppointmentRequestsPanel extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(vw_labbtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(assignToMebtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(collectMedicalHistory_btn))))
-                .addGap(16, 16, 16))
+                    .addComponent(collectMedicalHistory_btn, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
+                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(10, 10, 10))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(30, 30, 30)
-                .addComponent(jButton4)
-                .addGap(46, 46, 46)
+                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(41, 41, 41)
                 .addComponent(collectMedicalHistory_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(58, 58, 58)
+                .addGap(50, 50, 50)
                 .addComponent(assignToMebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(64, 64, 64)
                 .addComponent(vw_labbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -249,7 +245,6 @@ public class DoctorAppointmentRequestsPanel extends javax.swing.JPanel {
             //  ProcessAppointmentRequestJPanel processAppointmentRequestJPanel = new ProcessAppointmentRequestJPanel(userProcessContainer, request, userAccount,enterprise);      
             DoctorPatientMedicalHistoryPanel processAppointmentRequestJPanel = new DoctorPatientMedicalHistoryPanel( request, userAccount, enterprise);
             jSplitPane1.setRightComponent(processAppointmentRequestJPanel);
-            assignToMebtn.setEnabled(false);
             
 //            userProcessContainer.add("processWorkRequestJPanel", processAppointmentRequestJPanel);
 //            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
@@ -279,7 +274,7 @@ public class DoctorAppointmentRequestsPanel extends javax.swing.JPanel {
         }
         WorkRequest request = (WorkRequest) docWorkRequestJTable.getValueAt(selectedRow, 0);
 
-         ViewLabResults viewLabResultcases = new ViewLabResults(request, network, enterprise, userAccount);
+         LabDiagnosis viewLabResultcases = new LabDiagnosis(request, network, enterprise, userAccount);
          jSplitPane1.setRightComponent(viewLabResultcases);
          populateRequestTable();
     }//GEN-LAST:event_vw_labbtnActionPerformed

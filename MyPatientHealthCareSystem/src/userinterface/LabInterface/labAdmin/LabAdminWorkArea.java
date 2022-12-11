@@ -10,7 +10,6 @@ import healthcare.enterprise.Enterprise;
 import healthcare.network.Network;
 import healthcare.organization.Organization;
 import healthcare.userAccount.UserAccount;
-import userinterface.LabInterface.labAdmin.LabAdminUpdateTechnician;
 
 /**
  *
@@ -52,7 +51,6 @@ public class LabAdminWorkArea extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         createLabtech_btn = new javax.swing.JButton();
-        update_LabTech = new javax.swing.JButton();
         Org_Name = new javax.swing.JButton();
         btnLogout = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
@@ -73,15 +71,6 @@ public class LabAdminWorkArea extends javax.swing.JFrame {
         createLabtech_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 createLabtech_btnActionPerformed(evt);
-            }
-        });
-
-        update_LabTech.setBackground(new java.awt.Color(255, 204, 204));
-        update_LabTech.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
-        update_LabTech.setText("Update Lab Technician");
-        update_LabTech.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                update_LabTechActionPerformed(evt);
             }
         });
 
@@ -117,8 +106,7 @@ public class LabAdminWorkArea extends javax.swing.JFrame {
                         .addContainerGap()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Org_Name, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(update_LabTech, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)
-                            .addComponent(createLabtech_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(createLabtech_btn, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -126,13 +114,11 @@ public class LabAdminWorkArea extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(29, 29, 29)
                 .addComponent(jLabel1)
-                .addGap(18, 18, 18)
+                .addGap(51, 51, 51)
                 .addComponent(createLabtech_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(update_LabTech, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(38, 38, 38)
                 .addComponent(Org_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 132, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 159, Short.MAX_VALUE)
                 .addComponent(btnLogout)
                 .addGap(39, 39, 39))
         );
@@ -175,12 +161,6 @@ public class LabAdminWorkArea extends javax.swing.JFrame {
         jSplitPane1.setRightComponent(lts);
         
     }//GEN-LAST:event_createLabtech_btnActionPerformed
-
-    private void update_LabTechActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_update_LabTechActionPerformed
-        // TODO add your handling code here:
-        LabAdminUpdateTechnician lut = new LabAdminUpdateTechnician();
-        jSplitPane1.setRightComponent(lut);
-    }//GEN-LAST:event_update_LabTechActionPerformed
 
     private void Org_NameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Org_NameActionPerformed
         // TODO add your handling code here:
@@ -238,6 +218,5 @@ public class LabAdminWorkArea extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSplitPane jSplitPane1;
-    private javax.swing.JButton update_LabTech;
     // End of variables declaration//GEN-END:variables
 }
