@@ -202,12 +202,24 @@ public class LabTechnicianViewRequestsJPanel extends javax.swing.JPanel {
             return;
         }
 
-        DoctorLabRequest request = (DoctorLabRequest) labWorkRequestJTable.getValueAt(selectedRow, 0);
+        String status = (String) labWorkRequestJTable.getValueAt(selectedRow, 3);
+        
+        if (status.equals("Assigned To Lab")) {
+            DoctorLabRequest request = (DoctorLabRequest) labWorkRequestJTable.getValueAt(selectedRow, 0);
 
-        request.setStatus("Processing Req");
+            request.setStatus("Processing Req");
 
-        CollectedMedicalHistory processWorkRequestJPanel = new CollectedMedicalHistory( request, userAccount, enterprise, network);
-        jSplitPane1.setRightComponent(processWorkRequestJPanel);
+            CollectedMedicalHistory processWorkRequestJPanel = new CollectedMedicalHistory(request, userAccount, enterprise, network);
+            jSplitPane1.setRightComponent(processWorkRequestJPanel);
+        }
+        else if (status.equals("Med Hist Collected For Lab")){
+            JOptionPane.showMessageDialog(null, "Request not with you", "Error", JOptionPane.WARNING_MESSAGE);
+             return;
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Your Request Cant be processed", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
     }//GEN-LAST:event_processJButtonActionPerformed
 
     private void assignJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignJButtonActionPerformed

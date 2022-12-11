@@ -237,16 +237,28 @@ public class VaccinationsViewRequestsJPanel extends javax.swing.JPanel {
         int selectedRow = vaccinationsWorkRequestJTable.getSelectedRow();
 
         if (selectedRow < 0) {
-            JOptionPane.showMessageDialog(null, "Please select a lab request first", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Please select a vaccination request first", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
+        
+        String status = (String) vaccinationsWorkRequestJTable.getValueAt(selectedRow, 3);
+        
+        if (status.equals("Assigned To Vaccinator")) {
+            WorkRequest request = (WorkRequest) vaccinationsWorkRequestJTable.getValueAt(selectedRow, 0);
 
-        WorkRequest request = (WorkRequest) vaccinationsWorkRequestJTable.getValueAt(selectedRow, 0);
+            request.setStatus("Processing Req");
 
-        request.setStatus("Processing Req");
-
-        ProcessVaccinationRequest processVaccinationRequest = new ProcessVaccinationRequest( request, userAccount, enterprise, network);
-        jSplitPane1.setRightComponent(processVaccinationRequest);
+            ProcessVaccinationRequest processVaccinationRequest = new ProcessVaccinationRequest(request, userAccount, enterprise, network);
+            jSplitPane1.setRightComponent(processVaccinationRequest);
+        }
+        else if (status.equals("Vaccines Requested")) {
+            JOptionPane.showMessageDialog(null, "Request not with you", "Error", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Your Request Cant be processed", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
     }//GEN-LAST:event_processJButtonActionPerformed
 
     private void assignJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignJButtonActionPerformed
@@ -254,7 +266,7 @@ public class VaccinationsViewRequestsJPanel extends javax.swing.JPanel {
         int selectedRow = vaccinationsWorkRequestJTable.getSelectedRow();
         String status;
         if (selectedRow < 0) {
-            JOptionPane.showMessageDialog(null, "Please select a lab request first", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Please select a vaccination request first", "Warning", JOptionPane.WARNING_MESSAGE);
 
             return;
         }

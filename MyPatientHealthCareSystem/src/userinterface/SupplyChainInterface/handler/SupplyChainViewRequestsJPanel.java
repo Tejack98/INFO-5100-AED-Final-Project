@@ -239,13 +239,25 @@ public class SupplyChainViewRequestsJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Please select a lab request first", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
+        
+        String status = (String) supplierChainWorkRequestJTable.getValueAt(selectedRow, 3);
 
-        WorkRequest request = (WorkRequest) supplierChainWorkRequestJTable.getValueAt(selectedRow, 0);
+        if (status.equals("Assigned To Supply Chain")) {
+            WorkRequest request = (WorkRequest) supplierChainWorkRequestJTable.getValueAt(selectedRow, 0);
 
-        request.setStatus("Processing Req");
+            request.setStatus("Processing Req");
 
-        ProcessSupplyRequest processSupplyRequest = new ProcessSupplyRequest( request, userAccount, enterprise, network);
-        jSplitPane1.setRightComponent(processSupplyRequest);
+            ProcessSupplyRequest processSupplyRequest = new ProcessSupplyRequest(request, userAccount, enterprise, network);
+            jSplitPane1.setRightComponent(processSupplyRequest);
+        }
+        else if (status.equals("Supply Requested")) {
+             JOptionPane.showMessageDialog(null, "Request not with you", "Error", JOptionPane.WARNING_MESSAGE);
+             return;
+        }
+        else {
+            JOptionPane.showMessageDialog(null, "Your Request Cant be processed", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
     }//GEN-LAST:event_processJButtonActionPerformed
 
     private void assignJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignJButtonActionPerformed
@@ -254,7 +266,6 @@ public class SupplyChainViewRequestsJPanel extends javax.swing.JPanel {
         String status;
         if (selectedRow < 0) {
             JOptionPane.showMessageDialog(null, "Please select a lab request first", "Warning", JOptionPane.WARNING_MESSAGE);
-
             return;
         }
         status = (String) supplierChainWorkRequestJTable.getValueAt(selectedRow, 3);

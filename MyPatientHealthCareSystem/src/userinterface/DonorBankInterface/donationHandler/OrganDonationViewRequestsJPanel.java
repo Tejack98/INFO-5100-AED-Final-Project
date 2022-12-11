@@ -237,13 +237,25 @@ public class OrganDonationViewRequestsJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Please select a organ request first", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
+        
+        String status = (String) organRequestJTable.getValueAt(selectedRow, 4);
 
-        DonorBankRequest request = (DonorBankRequest) organRequestJTable.getValueAt(selectedRow, 0);
+        if (status.equals("Assigned To Donor Bank")) {
+            DonorBankRequest request = (DonorBankRequest) organRequestJTable.getValueAt(selectedRow, 0);
 
-        request.setStatus("Processing Req");
+            request.setStatus("Processing Req");
 
-        ProcessOrganRequest processWorkRequestJPanel = new ProcessOrganRequest( request, userAccount, enterprise, network);
-        jSplitPane1.setRightComponent(processWorkRequestJPanel);
+            ProcessOrganRequest processWorkRequestJPanel = new ProcessOrganRequest(request, userAccount, enterprise, network);
+            jSplitPane1.setRightComponent(processWorkRequestJPanel);
+        }
+        else if (status.equals("Organ Requested")){
+             JOptionPane.showMessageDialog(null, "Request not with you", "Error", JOptionPane.WARNING_MESSAGE);
+             return;
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Your Request Cant be processed", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
     }//GEN-LAST:event_processJButtonActionPerformed
 
     private void assignJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignJButtonActionPerformed

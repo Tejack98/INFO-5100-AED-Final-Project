@@ -236,7 +236,7 @@ public class DonationRequestsViewJPanel extends javax.swing.JPanel {
         String status = (String) donationRequestJTable.getValueAt(selectedRow, 4);
 
         if (selectedRow < 0) {
-            JOptionPane.showMessageDialog(null, "Please select a donation request first", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Please select a Dsonation request first", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
@@ -249,8 +249,13 @@ public class DonationRequestsViewJPanel extends javax.swing.JPanel {
             ProcessDonationRequest processWorkRequestJPanel = new ProcessDonationRequest(request, userAccount, enterprise, network);
             jSplitPane1.setRightComponent(processWorkRequestJPanel);
             return;
-        } else {
-            JOptionPane.showMessageDialog(null, "Request is not with you", "Warning", JOptionPane.WARNING_MESSAGE);
+        } 
+        else if(status.equals("Sent By Donor")){
+            JOptionPane.showMessageDialog(null, "Request not with you", "Error", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        else {
+            JOptionPane.showMessageDialog(null, "Your Request Cant be processed", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
     }//GEN-LAST:event_processJButtonActionPerformed
@@ -260,8 +265,7 @@ public class DonationRequestsViewJPanel extends javax.swing.JPanel {
         int selectedRow = donationRequestJTable.getSelectedRow();
         String status;
         if (selectedRow < 0) {
-            JOptionPane.showMessageDialog(null, "Please select a Blood Request first", "Warning", JOptionPane.WARNING_MESSAGE);
-
+            JOptionPane.showMessageDialog(null, "Please select a Donation Request first", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
         status = (String) donationRequestJTable.getValueAt(selectedRow, 4);
