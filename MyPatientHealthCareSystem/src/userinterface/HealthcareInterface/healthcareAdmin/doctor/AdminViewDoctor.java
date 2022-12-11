@@ -5,6 +5,7 @@
 package userinterface.HealthcareInterface.healthcareAdmin.doctor;
 
 import healthcare.Ecosystem;
+import healthcare.enterprise.healthCare.DoctorOrganization;
 import healthcare.enterprise.healthCare.DoctorRole;
 import healthcare.enterprise.healthCare.HealthCareAdminRole;
 import healthcare.organization.Organization;
@@ -37,8 +38,10 @@ public class AdminViewDoctor extends javax.swing.JPanel {
     private void populateOrganizationComboBox() {
         organizationJComboBox.removeAllItems();
 
-        for (Organization organization : orgList.getOrganizationList()){
-            organizationJComboBox.addItem(organization);
+        for (Organization organization : orgList.getOrganizationList()) {
+            if (organization instanceof DoctorOrganization) {
+                organizationJComboBox.addItem(organization);
+            }
         }
     }
 
@@ -55,7 +58,7 @@ public class AdminViewDoctor extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         docTable = new javax.swing.JTable();
         lblSearchDoctorByID = new javax.swing.JLabel();
-        txtSearchDoctorByID = new javax.swing.JTextField();
+        txtSearchDoctorByname = new javax.swing.JTextField();
         btnSearch = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
         lblEnterprise = new javax.swing.JLabel();
@@ -81,15 +84,23 @@ public class AdminViewDoctor extends javax.swing.JPanel {
             new String [] {
                 "Name", "Email", "Hospital Name", "Speciality", "Address", "City", "State", "Zipcode", "Phone No."
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(docTable);
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, 1010, 220));
 
         lblSearchDoctorByID.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
-        lblSearchDoctorByID.setText("Search Doctor By ID");
-        add(lblSearchDoctorByID, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 110, -1, -1));
-        add(txtSearchDoctorByID, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 110, 224, -1));
+        lblSearchDoctorByID.setText("Search Doctor By Name");
+        add(lblSearchDoctorByID, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 110, -1, -1));
+        add(txtSearchDoctorByname, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 110, 224, -1));
 
         btnSearch.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         btnSearch.setText("Search");
@@ -128,11 +139,12 @@ public class AdminViewDoctor extends javax.swing.JPanel {
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
         // TODO add your handling code here:
-        populateData();
+        populateDataByDocName();
     }//GEN-LAST:event_btnSearchActionPerformed
 
     private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
         // TODO add your handling code here:
+        populateData();
     }//GEN-LAST:event_btnViewActionPerformed
 
     private void populateData(){
@@ -156,6 +168,31 @@ public class AdminViewDoctor extends javax.swing.JPanel {
         
     }
     
+    
+    private void populateDataByDocName(){
+        Organization org = (Organization) organizationJComboBox.getSelectedItem();
+        String docName = txtSearchDoctorByname.getText().toLowerCase();
+        
+        UserAccountDirectory userAccounts = org.getUserAccountDirectory();  
+        ArrayList<UserAccount> userList = userAccounts.getUserAccountList();
+        
+        DefaultTableModel model = (DefaultTableModel) docTable.getModel();
+        model.setRowCount(0);
+
+        for (UserAccount ua : userList) {
+
+            if (ua.getRole().toString().equals(Role.RoleType.Doctor.toString())) {
+
+                if (ua.getPerson().getPersonName().toLowerCase().contains(docName)) {
+                    DoctorRole role = (DoctorRole) ua.getRole();
+                    model.addRow(new Object[]{ua.getPerson().getPersonName(), ua.getUserEmail(), role.getHospitalName(), role.getSpeciality(), ua.getPerson().getAddress(), ua.getPerson().getCity(), ua.getPerson().getState(), String.valueOf(ua.getPerson().getZipcode()), String.valueOf(ua.getPerson().getContactNumber())});
+                }
+            }
+
+        }
+
+    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDelete;
@@ -168,6 +205,6 @@ public class AdminViewDoctor extends javax.swing.JPanel {
     private javax.swing.JLabel lblEnterprise;
     private javax.swing.JLabel lblSearchDoctorByID;
     private javax.swing.JComboBox organizationJComboBox;
-    private javax.swing.JTextField txtSearchDoctorByID;
+    private javax.swing.JTextField txtSearchDoctorByname;
     // End of variables declaration//GEN-END:variables
 }

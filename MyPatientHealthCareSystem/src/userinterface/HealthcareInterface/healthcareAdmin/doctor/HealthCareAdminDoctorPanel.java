@@ -34,6 +34,9 @@ public class HealthCareAdminDoctorPanel extends javax.swing.JPanel {
         this.enterprise = enterprise;
         this.ecosystem = ecosystem;
         this.network = network;
+        
+        AdminViewDoctor adminViewDoctor = new AdminViewDoctor(ecosystem, enterprise.getOrganizationDirectory());
+        splitPane.setRightComponent(adminViewDoctor );
     }
 
     /**
@@ -92,8 +95,8 @@ public class HealthCareAdminDoctorPanel extends javax.swing.JPanel {
                 .addGap(80, 80, 80)
                 .addComponent(btnCreateDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(80, 80, 80)
-                .addComponent(btnUpdateDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(127, Short.MAX_VALUE))
+                .addComponent(btnUpdateDoctor)
+                .addContainerGap(124, Short.MAX_VALUE))
         );
         controlPanelLayout.setVerticalGroup(
             controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

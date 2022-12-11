@@ -36,6 +36,8 @@ public class HealthCareAdminPatientPanel extends javax.swing.JPanel {
         this.enterprise = enterprise;
         this.ecosystem = ecosystem;
         this.network = network;
+        AdminViewPatient adminViewPatient = new AdminViewPatient(ecosystem,enterprise.getOrganizationDirectory() );
+        splitPane.setRightComponent(adminViewPatient );
     }
 
     /**
