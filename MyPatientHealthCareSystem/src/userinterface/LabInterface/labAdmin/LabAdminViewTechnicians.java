@@ -182,8 +182,8 @@ public class LabAdminViewTechnicians extends javax.swing.JPanel {
             if (ua.getRole().toString().equals(Role.RoleType.Doctor.toString())) {
 
                 if (ua.getPerson().getPersonName().toLowerCase().contains(docName)) {
-                    DoctorRole role = (DoctorRole) ua.getRole();
-                    model.addRow(new Object[]{ua.getPerson().getPersonName(), ua.getUserEmail(), role.getHospitalName(), role.getSpeciality(), ua.getPerson().getAddress(), ua.getPerson().getCity(), ua.getPerson().getState(), String.valueOf(ua.getPerson().getZipcode()), String.valueOf(ua.getPerson().getContactNumber()),ua.getUserName()});
+                    LabAssistantRole role = (LabAssistantRole) ua.getRole();
+                    model.addRow(new Object[]{ua.getPerson().getPersonName(), ua.getUserEmail(),ua.getPerson().getAddress(), ua.getPerson().getCity(), ua.getPerson().getState(), String.valueOf(ua.getPerson().getZipcode()), String.valueOf(ua.getPerson().getContactNumber()),ua.getUserName()});
                 }
             }
 
