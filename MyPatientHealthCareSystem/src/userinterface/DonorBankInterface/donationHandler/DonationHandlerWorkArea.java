@@ -35,6 +35,9 @@ public class DonationHandlerWorkArea extends javax.swing.JFrame {
         this.enterprise = enterprise;
         this.ecosystem = ecosystem;
         this.network = network;
+        
+        DonationForm bloodDonationForm = new DonationForm(ecosystem, userAccount, organization, enterprise, network);
+        jSplitPaneSystem.setRightComponent(bloodDonationForm);
     }
 
     /**

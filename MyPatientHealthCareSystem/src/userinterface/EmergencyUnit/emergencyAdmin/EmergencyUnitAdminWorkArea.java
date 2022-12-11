@@ -34,6 +34,9 @@ public class EmergencyUnitAdminWorkArea extends javax.swing.JFrame {
         this.enterprise = enterprise;
         this.ecosystem = ecosystem;
         this.network = network;
+        
+        EmergencyHandlerSignUp aah = new EmergencyHandlerSignUp(ecosystem, enterprise.getOrganizationDirectory());
+        jSplitPane1.setRightComponent(aah);
     }
 
     /**

@@ -33,6 +33,8 @@ public class PharmacistWorkArea extends javax.swing.JFrame {
         this.enterprise = enterprise;
         this.ecosystem = ecosystem;
         this.network = network;
+        PharmacistsViewRequestsJPanel pvr = new PharmacistsViewRequestsJPanel(ecosystem, userAccount, organization, enterprise, network);
+        jSplitPane1.setRightComponent(pvr);
     }
 
     /**
