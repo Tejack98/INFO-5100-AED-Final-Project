@@ -74,10 +74,11 @@ public class DonationRequestsViewJPanel extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(255, 255, 255));
 
-        jPanel6.setBackground(new java.awt.Color(36, 47, 65));
+        actionPanel.setBackground(new java.awt.Color(255, 255, 255));
+
+        jPanel6.setBackground(new java.awt.Color(153, 204, 255));
 
         jLabel6.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Donation Requests Received");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
@@ -149,16 +150,15 @@ public class DonationRequestsViewJPanel extends javax.swing.JPanel {
                 .addComponent(lblname, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 457, Short.MAX_VALUE))
+                .addGap(0, 461, Short.MAX_VALUE))
         );
 
         jSplitPane1.setRightComponent(actionPanel);
 
-        optionsPanel.setBackground(new java.awt.Color(71, 120, 197));
+        optionsPanel.setBackground(new java.awt.Color(255, 204, 204));
 
-        refreshJButton.setBackground(new java.awt.Color(49, 84, 140));
+        refreshJButton.setBackground(new java.awt.Color(153, 204, 255));
         refreshJButton.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        refreshJButton.setForeground(new java.awt.Color(255, 255, 255));
         refreshJButton.setText("Refresh");
         refreshJButton.setBorder(null);
         refreshJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -167,9 +167,8 @@ public class DonationRequestsViewJPanel extends javax.swing.JPanel {
             }
         });
 
-        processJButton.setBackground(new java.awt.Color(49, 84, 140));
+        processJButton.setBackground(new java.awt.Color(153, 204, 255));
         processJButton.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        processJButton.setForeground(new java.awt.Color(255, 255, 255));
         processJButton.setText("Process Requests");
         processJButton.setBorder(null);
         processJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -178,9 +177,8 @@ public class DonationRequestsViewJPanel extends javax.swing.JPanel {
             }
         });
 
-        assignJButton.setBackground(new java.awt.Color(49, 84, 140));
+        assignJButton.setBackground(new java.awt.Color(153, 204, 255));
         assignJButton.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        assignJButton.setForeground(new java.awt.Color(255, 255, 255));
         assignJButton.setText("Assign to me");
         assignJButton.setBorder(null);
         assignJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -210,7 +208,7 @@ public class DonationRequestsViewJPanel extends javax.swing.JPanel {
                 .addComponent(processJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(assignJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(565, Short.MAX_VALUE))
+                .addContainerGap(568, Short.MAX_VALUE))
         );
 
         jSplitPane1.setLeftComponent(optionsPanel);
