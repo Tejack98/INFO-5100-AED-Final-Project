@@ -54,6 +54,7 @@ public class VaccinationAdminWorkArea extends javax.swing.JFrame {
         btnAddVaccinator = new javax.swing.JButton();
         btnLogout = new javax.swing.JButton();
         Org_Name = new javax.swing.JButton();
+        btnViewVaccinator = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -102,6 +103,15 @@ public class VaccinationAdminWorkArea extends javax.swing.JFrame {
             }
         });
 
+        btnViewVaccinator.setBackground(new java.awt.Color(255, 204, 204));
+        btnViewVaccinator.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
+        btnViewVaccinator.setText("View Vaccinator");
+        btnViewVaccinator.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewVaccinatorActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -118,7 +128,10 @@ public class VaccinationAdminWorkArea extends javax.swing.JFrame {
                         .addComponent(btnAddVaccinator, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(Org_Name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(Org_Name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnViewVaccinator, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -128,9 +141,11 @@ public class VaccinationAdminWorkArea extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnAddVaccinator, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(30, 30, 30)
+                .addComponent(btnViewVaccinator, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
                 .addComponent(Org_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 214, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
                 .addComponent(btnLogout)
                 .addContainerGap())
         );
@@ -185,6 +200,12 @@ public class VaccinationAdminWorkArea extends javax.swing.JFrame {
         jSplitPane1.setRightComponent(lmo);
     }//GEN-LAST:event_Org_NameActionPerformed
 
+    private void btnViewVaccinatorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewVaccinatorActionPerformed
+        // TODO add your handling code here:
+        VaccinationViewVaccinators vvv = new VaccinationViewVaccinators(ecosystem, enterprise.getOrganizationDirectory());
+        jSplitPane1.setRightComponent(vvv);
+    }//GEN-LAST:event_btnViewVaccinatorActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -224,6 +245,7 @@ public class VaccinationAdminWorkArea extends javax.swing.JFrame {
     private javax.swing.JButton Org_Name;
     private javax.swing.JButton btnAddVaccinator;
     private javax.swing.JButton btnLogout;
+    private javax.swing.JButton btnViewVaccinator;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
