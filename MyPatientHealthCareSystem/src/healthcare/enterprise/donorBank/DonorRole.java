@@ -27,14 +27,14 @@ public class DonorRole extends Role{
     private String blooddonate;
     private String sufferdisease;
     private String priorallergies;
-    private String organdonate;
+    private String previousOrgDonation;
 
-    public String getOrgandonate() {
-        return organdonate;
+    public String getPreviousOrgDonation() {
+        return previousOrgDonation;
     }
 
-    public void setOrgandonate(String organdonate) {
-        this.organdonate = organdonate;
+    public void setPreviousOrgDonation(String previousOrgDonation) {
+        this.previousOrgDonation = previousOrgDonation;
     }
 
     public String getOccupation() {

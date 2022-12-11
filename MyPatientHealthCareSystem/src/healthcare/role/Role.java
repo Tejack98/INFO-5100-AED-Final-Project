@@ -36,7 +36,8 @@ public abstract class Role {
         LabAdmin("Lab Admin"),
         LabAssistant("Lab Assistant"),
         EmergencyUnitAdmin("Emergency Unit Admin"),
-        AmbulanceHandler("Ambulance Handler");
+        AmbulanceHandler("Ambulance Handler"),
+        DonationHandler("Donation Handler");
                
         private String value;
 

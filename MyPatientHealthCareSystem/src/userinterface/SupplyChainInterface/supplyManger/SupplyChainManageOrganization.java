@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package userinterface.LabInterface.labAdmin;
+package userinterface.SupplyChainInterface.supplyManger;
 
 
 import userinterface.HealthcareInterface.healthcareAdmin.*;
@@ -18,7 +18,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author saura
  */
-public class LabManageOrganization extends javax.swing.JPanel {
+public class SupplyChainManageOrganization extends javax.swing.JPanel {
 
     private OrganizationDirectory directory;
     private Enterprise enterprise;
@@ -26,7 +26,7 @@ public class LabManageOrganization extends javax.swing.JPanel {
     /**
      * Creates new form ManageOrganizationJPanel
      */
-    public LabManageOrganization(Enterprise enterprise) {
+    public SupplyChainManageOrganization(Enterprise enterprise) {
         initComponents();
         //  this.directory = directory;
         this.enterprise = enterprise;
@@ -75,7 +75,7 @@ public class LabManageOrganization extends javax.swing.JPanel {
         jLabel7 = new javax.swing.JLabel();
         addJButton = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(255, 204, 204));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         organizationJTable.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
@@ -87,7 +87,7 @@ public class LabManageOrganization extends javax.swing.JPanel {
                 {null, null}
             },
             new String [] {
-                "ID", "Organization Name"
+                "ID", "Organization Type"
             }
         ) {
             Class[] types = new Class [] {
@@ -107,28 +107,42 @@ public class LabManageOrganization extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(organizationJTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(61, 129, 650, 124));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(61, 132, 640, 124));
 
-        organizationJComboBox.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
+        organizationJComboBox.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         organizationJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(organizationJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 91, 144, -1));
+        add(organizationJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(185, 91, 144, -1));
 
-        jLabel1.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         jLabel1.setText("Organization Type ");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(61, 94, -1, -1));
 
-        jPanel6.setBackground(new java.awt.Color(204, 204, 255));
-        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel6.setBackground(new java.awt.Color(153, 204, 255));
 
         jLabel7.setFont(new java.awt.Font("Georgia", 1, 24)); // NOI18N
         jLabel7.setText("Manage Organization Work Area");
-        jPanel6.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 19, -1, -1));
 
-        add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1250, 70));
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 1438, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE)
+                .addContainerGap())
+        );
 
-        addJButton.setBackground(new java.awt.Color(49, 84, 140));
+        add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1450, -1));
+
+        addJButton.setBackground(new java.awt.Color(153, 204, 255));
         addJButton.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
-        addJButton.setForeground(new java.awt.Color(255, 255, 255));
         addJButton.setText("Add Organization");
         addJButton.setBorder(null);
         addJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -136,13 +150,22 @@ public class LabManageOrganization extends javax.swing.JPanel {
                 addJButtonActionPerformed(evt);
             }
         });
-        add(addJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(61, 271, 141, 39));
+        add(addJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(61, 274, 141, 39));
     }// </editor-fold>//GEN-END:initComponents
 
     private void addJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addJButtonActionPerformed
 
         Organization.OrganizationType type = (Organization.OrganizationType ) organizationJComboBox.getSelectedItem();
         enterprise.getOrganizationDirectory().createNewOrganization(type);
+//        for (Org org : directory.getOrganizationList()) {
+//            if (org.getName().equals(type.getValue())) {
+//                JOptionPane.showMessageDialog(null, "Already exists!!.");
+//                return;
+//            }
+//
+//        }
+//
+//        directory.createOrganization(type);
         populateTable();
     }//GEN-LAST:event_addJButtonActionPerformed
 

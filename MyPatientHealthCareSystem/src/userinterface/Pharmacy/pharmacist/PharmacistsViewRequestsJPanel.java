@@ -72,32 +72,23 @@ public class PharmacistsViewRequestsJPanel extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(255, 255, 255));
 
-        jPanel6.setBackground(new java.awt.Color(36, 47, 65));
+        actionPanel.setBackground(new java.awt.Color(255, 204, 204));
+        actionPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel6.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel6.setBackground(new java.awt.Color(153, 204, 255));
+        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel6.setFont(new java.awt.Font("Georgia", 1, 24)); // NOI18N
         jLabel6.setText("Pharmacy Requests Received");
+        jPanel6.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 19, -1, 40));
 
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel6)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(jLabel6)
-                .addContainerGap(20, Short.MAX_VALUE))
-        );
+        actionPanel.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1230, 80));
 
-        lblname.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblname.setFont(new java.awt.Font("Georgia", 0, 18)); // NOI18N
         lblname.setText("Lab Assitant Name");
+        actionPanel.add(lblname, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, -1, 23));
 
+        pharmaWorkRequestJTable.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         pharmaWorkRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
@@ -126,36 +117,15 @@ public class PharmacistsViewRequestsJPanel extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(pharmaWorkRequestJTable);
 
-        javax.swing.GroupLayout actionPanelLayout = new javax.swing.GroupLayout(actionPanel);
-        actionPanel.setLayout(actionPanelLayout);
-        actionPanelLayout.setHorizontalGroup(
-            actionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(actionPanelLayout.createSequentialGroup()
-                .addComponent(lblname)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(actionPanelLayout.createSequentialGroup()
-                .addGroup(actionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 649, Short.MAX_VALUE)
-                    .addComponent(jPanel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-        actionPanelLayout.setVerticalGroup(
-            actionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(actionPanelLayout.createSequentialGroup()
-                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblname, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 457, Short.MAX_VALUE))
-        );
+        actionPanel.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 1230, 257));
 
         jSplitPane1.setRightComponent(actionPanel);
 
-        optionsPanel.setBackground(new java.awt.Color(71, 120, 197));
+        optionsPanel.setBackground(new java.awt.Color(153, 204, 255));
+        optionsPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         refreshJButton.setBackground(new java.awt.Color(49, 84, 140));
-        refreshJButton.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        refreshJButton.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
         refreshJButton.setForeground(new java.awt.Color(255, 255, 255));
         refreshJButton.setText("Refresh");
         refreshJButton.setBorder(null);
@@ -164,9 +134,10 @@ public class PharmacistsViewRequestsJPanel extends javax.swing.JPanel {
                 refreshJButtonActionPerformed(evt);
             }
         });
+        optionsPanel.add(refreshJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 153, 44));
 
         processJButton.setBackground(new java.awt.Color(49, 84, 140));
-        processJButton.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        processJButton.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
         processJButton.setForeground(new java.awt.Color(255, 255, 255));
         processJButton.setText("Process Requests");
         processJButton.setBorder(null);
@@ -175,9 +146,10 @@ public class PharmacistsViewRequestsJPanel extends javax.swing.JPanel {
                 processJButtonActionPerformed(evt);
             }
         });
+        optionsPanel.add(processJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 153, 43));
 
         assignJButton.setBackground(new java.awt.Color(49, 84, 140));
-        assignJButton.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        assignJButton.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
         assignJButton.setForeground(new java.awt.Color(255, 255, 255));
         assignJButton.setText("Assign to me");
         assignJButton.setBorder(null);
@@ -186,30 +158,7 @@ public class PharmacistsViewRequestsJPanel extends javax.swing.JPanel {
                 assignJButtonActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout optionsPanelLayout = new javax.swing.GroupLayout(optionsPanel);
-        optionsPanel.setLayout(optionsPanelLayout);
-        optionsPanelLayout.setHorizontalGroup(
-            optionsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, optionsPanelLayout.createSequentialGroup()
-                .addGap(0, 28, Short.MAX_VALUE)
-                .addGroup(optionsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(assignJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(processJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(refreshJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26))
-        );
-        optionsPanelLayout.setVerticalGroup(
-            optionsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(optionsPanelLayout.createSequentialGroup()
-                .addGap(87, 87, 87)
-                .addComponent(refreshJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24)
-                .addComponent(processJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(assignJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(565, Short.MAX_VALUE))
-        );
+        optionsPanel.add(assignJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 153, 42));
 
         jSplitPane1.setLeftComponent(optionsPanel);
 

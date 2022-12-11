@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package userinterface.DonorBankInterface.donorAdmin;
+package userinterface.DonorBankInterface.donationHandler;
 
 import healthcare.Ecosystem;
 import healthcare.Enterprise.donorBank.DonorBankOrganization;
@@ -27,16 +27,16 @@ import userinterface.SendMail;
  *
  * @author shriyapandita
  */
-public class BloodDonationForm extends javax.swing.JPanel {
+public class DonationForm extends javax.swing.JPanel {
 
     /**
-     * Creates new form BloodDonationForm
+     * Creates new form DonationForm
      */
     private DonorBankOrganization organization;
     Ecosystem ecosystem;
     boolean emptyValidationStatus = true;
     boolean validationCheck = true;
-    public BloodDonationForm(Ecosystem ecosystem, UserAccount account,
+    public DonationForm(Ecosystem ecosystem, UserAccount account,
             Organization organization, Enterprise enterprise, Network network) {
         initComponents();
         this.organization = (DonorBankOrganization) organization;
@@ -80,6 +80,8 @@ public class BloodDonationForm extends javax.swing.JPanel {
         cboxDiseases = new javax.swing.JComboBox<>();
         cboxAllergies = new javax.swing.JComboBox<>();
         cboxDonate = new javax.swing.JComboBox<>();
+        jLabel15 = new javax.swing.JLabel();
+        cboxPreviousOrganDonation = new javax.swing.JComboBox<>();
 
         setBackground(new java.awt.Color(255, 204, 204));
 
@@ -189,10 +191,20 @@ public class BloodDonationForm extends javax.swing.JPanel {
             }
         });
 
+        jLabel15.setText("Did you ever donate organ before?");
+
+        cboxPreviousOrganDonation.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Yes", "No" }));
+        cboxPreviousOrganDonation.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cboxPreviousOrganDonationActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(34, 34, 34)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -237,14 +249,15 @@ public class BloodDonationForm extends javax.swing.JPanel {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel10)
-                            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel15))
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cboxDonate, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cboxDiseases, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cboxAllergies, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(63, Short.MAX_VALUE))
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(cboxDonate, 0, 223, Short.MAX_VALUE)
+                            .addComponent(cboxDiseases, 0, 223, Short.MAX_VALUE)
+                            .addComponent(cboxAllergies, 0, 223, Short.MAX_VALUE)
+                            .addComponent(cboxPreviousOrganDonation, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap(65, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -280,15 +293,19 @@ public class BloodDonationForm extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
                     .addComponent(cboxDonate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel15)
+                    .addComponent(cboxPreviousOrganDonation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
                     .addComponent(cboxDiseases, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(13, 13, 13)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
                     .addComponent(cboxAllergies, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(69, 69, 69)
+                .addGap(52, 52, 52)
                 .addComponent(btnSubmit)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -337,6 +354,7 @@ public class BloodDonationForm extends javax.swing.JPanel {
                     DonorRole role  = new DonorRole();
                     role.setBloodType(cboxBlood.getSelectedItem().toString());
                     role.setBlooddonate(cboxDonate.getSelectedItem().toString());
+                    role.setPreviousOrgDonation(cboxPreviousOrganDonation.getSelectedItem().toString());
                     role.setPriorallergies(cboxAllergies.getSelectedItem().toString());
                     role.setSufferdisease(cboxDiseases.getSelectedItem().toString());
                     role.setOccupation(txtOccupation.toString());
@@ -382,6 +400,10 @@ public class BloodDonationForm extends javax.swing.JPanel {
     private void cboxDonateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboxDonateActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cboxDonateActionPerformed
+
+    private void cboxPreviousOrganDonationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboxPreviousOrganDonationActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cboxPreviousOrganDonationActionPerformed
 
     private boolean RegexValidation() {
         if(!txtDonorName.getText().matches("^[a-zA-Z ]+$"))
@@ -526,12 +548,14 @@ public class BloodDonationForm extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> cboxBlood;
     private javax.swing.JComboBox<String> cboxDiseases;
     private javax.swing.JComboBox<String> cboxDonate;
+    private javax.swing.JComboBox<String> cboxPreviousOrganDonation;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
