@@ -98,7 +98,7 @@ public class DonorAdminOrganDonate extends javax.swing.JPanel {
         btnSave.setText("Save");
         add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 380, 111, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\adity\\Downloads\\doctors-studying-kidneys-donor-clinic-medical-persons-checking-human-organ-surgery-flat-illustration\\Doctors studying kidneys of donor at clinic.jpg")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Doctors studying kidneys of donor at clinic.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
     }// </editor-fold>//GEN-END:initComponents

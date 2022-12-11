@@ -76,7 +76,7 @@ public class CollectedMedicalHistory extends javax.swing.JPanel {
 
         jLabel6.setText("jLabel6");
 
-        setBackground(java.awt.SystemColor.activeCaption);
+        setBackground(new java.awt.Color(153, 204, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Georgia", 1, 24)); // NOI18N

@@ -69,11 +69,14 @@ public class RequestSupplierForMedicinePanel extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 204, 204));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel6.setBackground(new java.awt.Color(153, 204, 255));
+        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel6.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Georgia", 1, 24)); // NOI18N
         jLabel6.setText("Supply Chain Request");
+        jPanel6.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(61, 6, -1, -1));
 
         jButton2.setBackground(new java.awt.Color(71, 120, 197));
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -82,29 +85,10 @@ public class RequestSupplierForMedicinePanel extends javax.swing.JPanel {
                 jButton2ActionPerformed(evt);
             }
         });
+        jPanel6.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 37, 28));
 
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel6)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 638, -1));
 
-        txtPharmacistName.setBackground(new java.awt.Color(153, 204, 255));
         txtPharmacistName.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
         txtPharmacistName.setEnabled(false);
         txtPharmacistName.addActionListener(new java.awt.event.ActionListener() {
@@ -112,10 +96,12 @@ public class RequestSupplierForMedicinePanel extends javax.swing.JPanel {
                 txtPharmacistNameActionPerformed(evt);
             }
         });
+        add(txtPharmacistName, new org.netbeans.lib.awtextra.AbsoluteConstraints(192, 52, 205, -1));
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jLabel1.setText("For Pharmacy");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 52, 126, 20));
 
         requestbtn.setBackground(new java.awt.Color(153, 204, 255));
         requestbtn.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
@@ -126,100 +112,57 @@ public class RequestSupplierForMedicinePanel extends javax.swing.JPanel {
                 requestbtnActionPerformed(evt);
             }
         });
+        add(requestbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 390, 160, 30));
 
         chkViv.setBackground(new java.awt.Color(255, 204, 204));
-        chkViv.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        chkViv.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         chkViv.setText(" Vivitrol");
         chkViv.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 chkVivActionPerformed(evt);
             }
         });
+        add(chkViv, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 300, -1, -1));
 
         chkAnt.setBackground(new java.awt.Color(255, 204, 204));
-        chkAnt.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        chkAnt.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         chkAnt.setText("Antabuse");
         chkAnt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 chkAntActionPerformed(evt);
             }
         });
+        add(chkAnt, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 250, -1, -1));
 
         chkCam.setBackground(new java.awt.Color(255, 204, 204));
-        chkCam.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        chkCam.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         chkCam.setText("Campral");
+        add(chkCam, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, -1, -1));
 
         chkDis.setBackground(new java.awt.Color(255, 204, 204));
-        chkDis.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        chkDis.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         chkDis.setText("Disulfiram");
         chkDis.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 chkDisActionPerformed(evt);
             }
         });
+        add(chkDis, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, -1, -1));
 
         chkAca.setBackground(new java.awt.Color(255, 204, 204));
-        chkAca.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        chkAca.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         chkAca.setText("Acamprosate");
         chkAca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 chkAcaActionPerformed(evt);
             }
         });
+        add(chkAca, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 90, -1, -1));
+        add(txtMsg, new org.netbeans.lib.awtextra.AbsoluteConstraints(192, 338, 205, 32));
 
+        jLabel2.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jLabel2.setText("Message");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(60, 60, 60)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(requestbtn)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(chkCam)
-                            .addComponent(chkDis)
-                            .addComponent(chkViv)
-                            .addComponent(chkAnt)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(chkAca, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtMsg, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtPharmacistName, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(0, 241, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(txtPharmacistName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(chkAca)
-                .addGap(30, 30, 30)
-                .addComponent(chkDis)
-                .addGap(32, 32, 32)
-                .addComponent(chkCam)
-                .addGap(27, 27, 27)
-                .addComponent(chkAnt)
-                .addGap(29, 29, 29)
-                .addComponent(chkViv)
-                .addGap(14, 14, 14)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txtMsg, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(requestbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(87, Short.MAX_VALUE))
-        );
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 340, 115, 28));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
