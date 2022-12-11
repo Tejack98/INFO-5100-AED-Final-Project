@@ -36,6 +36,9 @@ public class DonorWorkArea extends javax.swing.JFrame {
         this.ecosystem = ecosystem;
         this.network = network;
         
+        DonateOrganView donateOrganView = new  DonateOrganView(ecosystem);
+        jSplitPane1.setRightComponent(donateOrganView);
+        
     }
 
     /**

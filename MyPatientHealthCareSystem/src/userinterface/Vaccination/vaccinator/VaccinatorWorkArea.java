@@ -34,6 +34,8 @@ public class VaccinatorWorkArea extends javax.swing.JFrame {
         this.enterprise = enterprise;
         this.ecosystem = ecosystem;
         this.network = network;
+        VaccinationsViewRequestsJPanel vvrj = new VaccinationsViewRequestsJPanel(ecosystem, userAccount, organization, enterprise, network);
+        jSplitPane1.setRightComponent(vvrj);
     }
 
     /**
