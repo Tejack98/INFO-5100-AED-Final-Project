@@ -49,7 +49,7 @@ public class DonorAdminTransplant extends javax.swing.JPanel {
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 80, 900, 282));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\adity\\Downloads\\doctors-studying-kidneys-donor-clinic-medical-persons-checking-human-organ-surgery-flat-illustration\\Doctors studying kidneys of donor at clinic.jpg")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Doctors studying kidneys of donor at clinic.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -80, -1, 1060));
     }// </editor-fold>//GEN-END:initComponents

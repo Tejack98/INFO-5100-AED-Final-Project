@@ -109,7 +109,7 @@ public class DonorBankAdminSignUp extends javax.swing.JPanel {
         lblAddress.setText("Address");
         add(lblAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 460, -1, 20));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\adity\\Downloads\\organdonation.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/organdonation.png"))); // NOI18N
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 900));
     }// </editor-fold>//GEN-END:initComponents
 
