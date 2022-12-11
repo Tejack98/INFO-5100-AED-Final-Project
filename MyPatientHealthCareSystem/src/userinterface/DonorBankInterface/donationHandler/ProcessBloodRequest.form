@@ -33,7 +33,7 @@
                           <Component id="cboxBlood1" min="-2" pref="223" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <Component id="txtPatientName" alignment="1" min="-2" pref="205" max="-2" attributes="0"/>
+                  <Component id="txtPatientName" alignment="1" min="-2" pref="223" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="220" max="32767" attributes="0"/>
           </Group>

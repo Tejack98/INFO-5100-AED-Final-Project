@@ -51,10 +51,8 @@ public class PatientWorkArea extends javax.swing.JFrame {
 
         jSplitPaneSystem = new javax.swing.JSplitPane();
         controlPanel = new javax.swing.JPanel();
-        btnPatientDash = new javax.swing.JButton();
         btnLogout = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        btnViewDiag = new javax.swing.JButton();
         btnBookApp = new javax.swing.JButton();
         btnViewApp = new javax.swing.JButton();
         btnEmergency = new javax.swing.JButton();
@@ -64,14 +62,6 @@ public class PatientWorkArea extends javax.swing.JFrame {
 
         controlPanel.setBackground(new java.awt.Color(153, 204, 255));
         controlPanel.setPreferredSize(new java.awt.Dimension(200, 600));
-
-        btnPatientDash.setBackground(new java.awt.Color(255, 204, 204));
-        btnPatientDash.setText("Dashboard");
-        btnPatientDash.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPatientDashActionPerformed(evt);
-            }
-        });
 
         btnLogout.setBackground(new java.awt.Color(255, 204, 204));
         btnLogout.setText("Logout");
@@ -84,14 +74,6 @@ public class PatientWorkArea extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Patient");
-
-        btnViewDiag.setBackground(new java.awt.Color(255, 204, 204));
-        btnViewDiag.setText("View Diagnosis");
-        btnViewDiag.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnViewDiagActionPerformed(evt);
-            }
-        });
 
         btnBookApp.setBackground(new java.awt.Color(255, 204, 204));
         btnBookApp.setText("Book Appointment");
@@ -125,31 +107,25 @@ public class PatientWorkArea extends javax.swing.JFrame {
                 .addGap(15, 15, 15)
                 .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(btnViewDiag, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnPatientDash, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnBookApp, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btnViewApp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btnEmergency, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnBookApp, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         controlPanelLayout.setVerticalGroup(
             controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(controlPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnPatientDash, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31)
                 .addComponent(btnBookApp, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39)
+                .addGap(37, 37, 37)
                 .addComponent(btnViewApp, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36)
-                .addComponent(btnViewDiag, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41)
+                .addGap(43, 43, 43)
                 .addComponent(btnEmergency, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(46, 46, 46)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 231, Short.MAX_VALUE)
                 .addComponent(btnLogout)
-                .addGap(42, 42, 42))
+                .addGap(16, 16, 16))
         );
 
         jSplitPaneSystem.setLeftComponent(controlPanel);
@@ -164,7 +140,7 @@ public class PatientWorkArea extends javax.swing.JFrame {
         );
         workAreaLayout.setVerticalGroup(
             workAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+            .addGap(0, 595, Short.MAX_VALUE)
         );
 
         jSplitPaneSystem.setRightComponent(workArea);
@@ -177,29 +153,17 @@ public class PatientWorkArea extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSplitPaneSystem, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(jSplitPaneSystem, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 595, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnPatientDashActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPatientDashActionPerformed
-        // TODO add your handling code here:
-        PatientDashboard patientDash = new PatientDashboard(userAccount,organization,enterprise,ecosystem,network);
-        jSplitPaneSystem.setRightComponent(patientDash);
-    }//GEN-LAST:event_btnPatientDashActionPerformed
 
     private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
         // TODO add your handling code here:
         db4oUtil.storeDb4oEcosystem(ecosystem);
         dispose();
     }//GEN-LAST:event_btnLogoutActionPerformed
-
-    private void btnViewDiagActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewDiagActionPerformed
-        // TODO add your handling code here:
-       PatientViewDiagnosis pvd = new PatientViewDiagnosis(userAccount,organization,enterprise,ecosystem,network);
-       jSplitPaneSystem.setRightComponent(pvd);
-    }//GEN-LAST:event_btnViewDiagActionPerformed
 
     private void btnBookAppActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBookAppActionPerformed
         // TODO add your handling code here:
@@ -322,9 +286,7 @@ public class PatientWorkArea extends javax.swing.JFrame {
     private javax.swing.JButton btnBookApp;
     private javax.swing.JButton btnEmergency;
     private javax.swing.JButton btnLogout;
-    private javax.swing.JButton btnPatientDash;
     private javax.swing.JButton btnViewApp;
-    private javax.swing.JButton btnViewDiag;
     private javax.swing.JPanel controlPanel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JSplitPane jSplitPaneSystem;

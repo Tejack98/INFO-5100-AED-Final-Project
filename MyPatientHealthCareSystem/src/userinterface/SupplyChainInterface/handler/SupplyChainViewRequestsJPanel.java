@@ -79,7 +79,7 @@ public class SupplyChainViewRequestsJPanel extends javax.swing.JPanel {
         jPanel6.setBackground(new java.awt.Color(153, 204, 255));
 
         jLabel6.setFont(new java.awt.Font("Georgia", 1, 24)); // NOI18N
-        jLabel6.setText("Pharmacy Requests Received");
+        jLabel6.setText("Supply Requests Received");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -99,7 +99,7 @@ public class SupplyChainViewRequestsJPanel extends javax.swing.JPanel {
         );
 
         lblname.setFont(new java.awt.Font("Georgia", 0, 18)); // NOI18N
-        lblname.setText("Lab Assitant Name");
+        lblname.setText("Pharmacist Name");
 
         supplierChainWorkRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
