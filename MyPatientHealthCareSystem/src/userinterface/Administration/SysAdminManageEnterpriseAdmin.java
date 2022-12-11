@@ -115,7 +115,7 @@ public class SysAdminManageEnterpriseAdmin extends javax.swing.JPanel {
         jLabel10.setText("Manage Enterprise");
         jPanel6.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, 40));
 
-        add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 0, 990, 80));
+        add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 0, 990, 80));
 
         enterpriseJTable.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
         enterpriseJTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -139,7 +139,7 @@ public class SysAdminManageEnterpriseAdmin extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(enterpriseJTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 120, 750, 240));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 120, 750, 240));
 
         jPanel1.setBackground(new java.awt.Color(153, 204, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -194,7 +194,7 @@ public class SysAdminManageEnterpriseAdmin extends javax.swing.JPanel {
         txtEmail.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jPanel1.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 330, 238, -1));
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 460, 1060));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 1060));
     }// </editor-fold>//GEN-END:initComponents
 
     private void networkJComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_networkJComboBoxActionPerformed
