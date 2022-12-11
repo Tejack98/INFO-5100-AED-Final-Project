@@ -65,6 +65,7 @@ public class DonorWorkArea extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(153, 204, 255));
 
         btnLogout.setBackground(new java.awt.Color(255, 204, 204));
+        btnLogout.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         btnLogout.setText("Logout");
         btnLogout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -72,11 +73,12 @@ public class DonorWorkArea extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Georgia", 1, 16)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Donor Dashboard");
 
         btnPatients2.setBackground(new java.awt.Color(255, 204, 204));
+        btnPatients2.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         btnPatients2.setText("View Blood Donation");
         btnPatients2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -85,6 +87,7 @@ public class DonorWorkArea extends javax.swing.JFrame {
         });
 
         btndonateOrgan.setBackground(new java.awt.Color(255, 204, 204));
+        btndonateOrgan.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         btndonateOrgan.setText("Donate Organ");
         btndonateOrgan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -93,6 +96,7 @@ public class DonorWorkArea extends javax.swing.JFrame {
         });
 
         btndonateBlood.setBackground(new java.awt.Color(255, 204, 204));
+        btndonateBlood.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         btndonateBlood.setText("Donate Blood");
         btndonateBlood.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -101,6 +105,7 @@ public class DonorWorkArea extends javax.swing.JFrame {
         });
 
         btnPatients.setBackground(new java.awt.Color(255, 204, 204));
+        btnPatients.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         btnPatients.setText("View Transplant");
         btnPatients.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -112,7 +117,7 @@ public class DonorWorkArea extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btndonateOrgan, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btnPatients, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btndonateBlood, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -141,6 +146,8 @@ public class DonorWorkArea extends javax.swing.JFrame {
         );
 
         jSplitPane1.setLeftComponent(jPanel1);
+
+        jPanel2.setBackground(new java.awt.Color(255, 204, 204));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);

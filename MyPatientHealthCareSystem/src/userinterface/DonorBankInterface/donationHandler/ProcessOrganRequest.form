@@ -42,6 +42,7 @@
                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                   </Group>
+                  <Component id="btnSendResults" alignment="1" min="-2" pref="223" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="220" max="32767" attributes="0"/>
           </Group>

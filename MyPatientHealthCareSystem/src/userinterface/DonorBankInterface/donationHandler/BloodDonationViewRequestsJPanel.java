@@ -78,7 +78,7 @@ public class BloodDonationViewRequestsJPanel extends javax.swing.JPanel {
         jPanel6.setBackground(new java.awt.Color(153, 204, 255));
         jPanel6.setForeground(new java.awt.Color(153, 204, 255));
 
-        jLabel6.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Georgia", 1, 24)); // NOI18N
         jLabel6.setText("Blood Requests Received");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
@@ -151,7 +151,7 @@ public class BloodDonationViewRequestsJPanel extends javax.swing.JPanel {
                 .addComponent(lblname, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 464, Short.MAX_VALUE))
+                .addGap(0, 457, Short.MAX_VALUE))
         );
 
         jSplitPane1.setRightComponent(actionPanel);

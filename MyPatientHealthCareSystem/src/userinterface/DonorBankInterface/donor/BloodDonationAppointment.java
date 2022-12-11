@@ -66,7 +66,7 @@ public class BloodDonationAppointment extends javax.swing.JPanel {
 
         jPanel6.setBackground(new java.awt.Color(153, 204, 255));
 
-        jLabel3.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Georgia", 1, 24)); // NOI18N
         jLabel3.setText("Donate Blood Request");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
@@ -76,7 +76,7 @@ public class BloodDonationAppointment extends javax.swing.JPanel {
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel3)
-                .addContainerGap(1142, Short.MAX_VALUE))
+                .addContainerGap(1159, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
