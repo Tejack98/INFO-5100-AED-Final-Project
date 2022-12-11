@@ -182,7 +182,6 @@ public class DoctorPatientMedicalHistoryPanel extends javax.swing.JPanel {
         oxycChk = new javax.swing.JCheckBox();
         jPanel6 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
-        backBtn = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
@@ -262,34 +261,19 @@ public class DoctorPatientMedicalHistoryPanel extends javax.swing.JPanel {
         jLabel9.setFont(new java.awt.Font("Georgia", 1, 24)); // NOI18N
         jLabel9.setText("Fill Patient Medical History & Symptoms");
 
-        backBtn.setBackground(new java.awt.Color(71, 120, 197));
-        backBtn.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
-        backBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backBtnActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(backBtn)
-                .addGap(37, 37, 37)
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 535, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(jLabel9)
-                        .addGap(0, 14, Short.MAX_VALUE))
-                    .addComponent(backBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -716,16 +700,6 @@ public class DoctorPatientMedicalHistoryPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_oxycChkActionPerformed
 
-    private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
-        // TODO add your handling code here:
-        JPanel parentPanel = (JPanel) jLabel2.getParent();
-        parentPanel.repaint();
-        parentPanel.revalidate();
-        
-        DoctorAppointmentRequestsPanel req = new DoctorAppointmentRequestsPanel(userAccount,organization, enterprise,network);
-       
-    }//GEN-LAST:event_backBtnActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         try {
@@ -1070,7 +1044,6 @@ public class DoctorPatientMedicalHistoryPanel extends javax.swing.JPanel {
     private javax.swing.JComboBox ageCombo;
     private javax.swing.JCheckBox alcoholChk;
     private javax.swing.JCheckBox anxietyChk;
-    private javax.swing.JButton backBtn;
     private javax.swing.JComboBox bpCombo;
     private javax.swing.JCheckBox bupChk;
     private javax.swing.JComboBox bupCombo;

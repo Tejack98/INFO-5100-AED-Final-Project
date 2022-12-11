@@ -53,7 +53,6 @@ public class LabTechnicianWorkArea extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         viewLabRequest_btn = new javax.swing.JButton();
-        ViewLabDetails_btn = new javax.swing.JButton();
         btnLogout = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
 
@@ -71,15 +70,6 @@ public class LabTechnicianWorkArea extends javax.swing.JFrame {
         viewLabRequest_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 viewLabRequest_btnActionPerformed(evt);
-            }
-        });
-
-        ViewLabDetails_btn.setBackground(new java.awt.Color(255, 204, 204));
-        ViewLabDetails_btn.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
-        ViewLabDetails_btn.setText("Lab Details");
-        ViewLabDetails_btn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ViewLabDetails_btnActionPerformed(evt);
             }
         });
 
@@ -102,9 +92,7 @@ public class LabTechnicianWorkArea extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(viewLabRequest_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(ViewLabDetails_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(viewLabRequest_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -114,9 +102,7 @@ public class LabTechnicianWorkArea extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(viewLabRequest_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(ViewLabDetails_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 220, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 306, Short.MAX_VALUE)
                 .addComponent(btnLogout)
                 .addGap(23, 23, 23))
         );
@@ -158,12 +144,6 @@ public class LabTechnicianWorkArea extends javax.swing.JFrame {
         jSplitPane.setRightComponent(ltvr);
         
     }//GEN-LAST:event_viewLabRequest_btnActionPerformed
-
-    private void ViewLabDetails_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewLabDetails_btnActionPerformed
-        // TODO add your handling code here:
-        LabTechnicianLabDetails viewLabDetails =  new LabTechnicianLabDetails();
-        jSplitPane.setRightComponent(viewLabDetails);
-    }//GEN-LAST:event_ViewLabDetails_btnActionPerformed
 
     private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
         // TODO add your handling code here:
@@ -207,7 +187,6 @@ public class LabTechnicianWorkArea extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton ViewLabDetails_btn;
     private javax.swing.JButton btnLogout;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;

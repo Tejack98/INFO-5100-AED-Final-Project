@@ -201,7 +201,7 @@
                           <Component id="assignJButton" min="-2" pref="153" max="-2" attributes="0"/>
                           <Component id="refreshJButton" min="-2" pref="153" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                      <EmptySpace pref="26" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>

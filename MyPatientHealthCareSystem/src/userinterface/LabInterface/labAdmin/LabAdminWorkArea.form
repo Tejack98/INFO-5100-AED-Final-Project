@@ -67,8 +67,7 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="Org_Name" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="update_LabTech" alignment="1" pref="188" max="32767" attributes="0"/>
-                                  <Component id="createLabtech_btn" max="32767" attributes="0"/>
+                                  <Component id="createLabtech_btn" pref="188" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -81,13 +80,11 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
                       <Component id="createLabtech_btn" min="-2" pref="62" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="update_LabTech" min="-2" pref="62" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                       <Component id="Org_Name" min="-2" pref="62" max="-2" attributes="0"/>
-                      <EmptySpace pref="132" max="32767" attributes="0"/>
+                      <EmptySpace pref="159" max="32767" attributes="0"/>
                       <Component id="btnLogout" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                   </Group>
@@ -116,20 +113,6 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="createLabtech_btnActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JButton" name="update_LabTech">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="cc" green="cc" red="ff" type="rgb"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Georgia" size="12" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Update Lab Technician"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="update_LabTechActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="Org_Name">

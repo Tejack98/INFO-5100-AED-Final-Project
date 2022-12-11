@@ -11,8 +11,6 @@ import healthcare.organization.Organization;
 import healthcare.role.Role;
 import healthcare.userAccount.UserAccount;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
-import userinterface.HealthcareInterface.nurse.NurseDashboard;
 import userinterface.HealthcareInterface.nurse.NurseWorkArea;
 
 /**

@@ -75,17 +75,17 @@ public class AdminViewNurse extends javax.swing.JPanel {
 
         nurseTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Name", "Email", "Gender", "Hospital Name", "Phone No.", "Address", "City", "State", "Zipcode"
+                "Name", "Email", "Gender", "Hospital Name", "Phone No.", "Address", "City", "State", "Zipcode", "Username"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -94,7 +94,7 @@ public class AdminViewNurse extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(nurseTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 131, 1200, 194));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 131, 1190, 194));
 
         lblSearchNurseByID.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         lblSearchNurseByID.setText("Search Nurse By Name");
@@ -158,7 +158,7 @@ public class AdminViewNurse extends javax.swing.JPanel {
             if(ua.getRole().toString().equals(Role.RoleType.Nurse.toString())){     
                 NurseRole role = (NurseRole) ua.getRole();
                 model.addRow(new Object[]
-                {ua.getPerson().getPersonName(),ua.getUserEmail(),role.getGender(),role.getHospitalName(), String.valueOf(ua.getPerson().getContactNumber()), ua.getPerson().getAddress(), ua.getPerson().getCity(), ua.getPerson().getState(), String.valueOf(ua.getPerson().getZipcode())});
+                {ua.getPerson().getPersonName(),ua.getUserEmail(),role.getGender(),role.getHospitalName(), String.valueOf(ua.getPerson().getContactNumber()), ua.getPerson().getAddress(), ua.getPerson().getCity(), ua.getPerson().getState(), String.valueOf(ua.getPerson().getZipcode()), ua.getUserName()});
             }
             
         }
@@ -182,7 +182,7 @@ public class AdminViewNurse extends javax.swing.JPanel {
 
                 if (ua.getPerson().getPersonName().toLowerCase().contains(nurseName)) {
                     NurseRole role = (NurseRole) ua.getRole();
-                    model.addRow(new Object[]{ua.getPerson().getPersonName(), ua.getUserEmail(), role.getGender(), role.getHospitalName(), String.valueOf(ua.getPerson().getContactNumber()), ua.getPerson().getAddress(), ua.getPerson().getCity(), ua.getPerson().getState(), String.valueOf(ua.getPerson().getZipcode())});
+                    model.addRow(new Object[]{ua.getPerson().getPersonName(), ua.getUserEmail(), role.getGender(), role.getHospitalName(), String.valueOf(ua.getPerson().getContactNumber()), ua.getPerson().getAddress(), ua.getPerson().getCity(), ua.getPerson().getState(), String.valueOf(ua.getPerson().getZipcode()), ua.getUserName()});
                 }
             }
         }

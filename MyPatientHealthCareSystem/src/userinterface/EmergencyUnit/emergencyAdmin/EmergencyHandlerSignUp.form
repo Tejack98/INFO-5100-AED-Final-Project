@@ -24,18 +24,17 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace pref="179" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="lblName" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblUsername" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblPhoneNo" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblDateOfBirth" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblGender" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblState" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblCity" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblZipCode" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblAddress" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblGender1" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblOrgName" alignment="1" min="-2" pref="134" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="lblOrgName" alignment="1" pref="134" max="32767" attributes="0"/>
+                          <Component id="lblName" alignment="1" max="32767" attributes="0"/>
+                          <Component id="lblUsername" alignment="1" max="32767" attributes="0"/>
+                          <Component id="lblGender" alignment="1" max="32767" attributes="0"/>
+                          <Component id="lblPhoneNo" alignment="1" max="32767" attributes="0"/>
+                          <Component id="lblDateOfBirth" alignment="1" max="32767" attributes="0"/>
+                          <Component id="lblAddress" alignment="1" max="32767" attributes="0"/>
+                          <Component id="lblCity" alignment="1" max="32767" attributes="0"/>
+                          <Component id="lblState" alignment="1" max="32767" attributes="0"/>
+                          <Component id="lblZipCode" alignment="1" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -50,7 +49,6 @@
                               <Component id="txtAddress" alignment="0" pref="230" max="32767" attributes="0"/>
                               <Component id="txtState" alignment="0" pref="230" max="32767" attributes="0"/>
                               <Component id="txtPhoneNo" alignment="0" pref="230" max="32767" attributes="0"/>
-                              <Component id="cboxVehicle" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <Component id="organizationJComboBox" alignment="1" min="-2" pref="230" max="-2" attributes="0"/>
                       </Group>
@@ -86,12 +84,7 @@
                   <Component id="lblGender" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="cboxGender" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lblGender1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="cboxVehicle" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblPhoneNo" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtPhoneNo" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -123,7 +116,7 @@
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="btnSignUp" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="24" max="32767" attributes="0"/>
+              <EmptySpace pref="64" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -134,6 +127,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Comic Sans MS" size="14" style="0"/>
         </Property>
+        <Property name="horizontalAlignment" type="int" value="11"/>
         <Property name="text" type="java.lang.String" value="Date Of Birth"/>
       </Properties>
     </Component>
@@ -167,6 +161,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Comic Sans MS" size="14" style="0"/>
         </Property>
+        <Property name="horizontalAlignment" type="int" value="11"/>
         <Property name="text" type="java.lang.String" value="Phone No."/>
       </Properties>
     </Component>
@@ -175,6 +170,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Comic Sans MS" size="14" style="0"/>
         </Property>
+        <Property name="horizontalAlignment" type="int" value="11"/>
         <Property name="text" type="java.lang.String" value="Name"/>
       </Properties>
     </Component>
@@ -183,6 +179,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Comic Sans MS" size="14" style="0"/>
         </Property>
+        <Property name="horizontalAlignment" type="int" value="11"/>
         <Property name="text" type="java.lang.String" value="Email"/>
       </Properties>
     </Component>
@@ -191,6 +188,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Comic Sans MS" size="14" style="0"/>
         </Property>
+        <Property name="horizontalAlignment" type="int" value="11"/>
         <Property name="text" type="java.lang.String" value="Gender"/>
       </Properties>
     </Component>
@@ -213,6 +211,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Comic Sans MS" size="14" style="0"/>
         </Property>
+        <Property name="horizontalAlignment" type="int" value="11"/>
         <Property name="text" type="java.lang.String" value="State"/>
       </Properties>
     </Component>
@@ -226,6 +225,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Comic Sans MS" size="14" style="0"/>
         </Property>
+        <Property name="horizontalAlignment" type="int" value="11"/>
         <Property name="text" type="java.lang.String" value="City"/>
       </Properties>
     </Component>
@@ -234,6 +234,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Comic Sans MS" size="14" style="0"/>
         </Property>
+        <Property name="horizontalAlignment" type="int" value="11"/>
         <Property name="text" type="java.lang.String" value="Zipcode"/>
       </Properties>
     </Component>
@@ -249,37 +250,14 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Comic Sans MS" size="14" style="0"/>
         </Property>
+        <Property name="horizontalAlignment" type="int" value="11"/>
         <Property name="text" type="java.lang.String" value="Address"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="lblGender1">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Comic Sans MS" size="14" style="0"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Vehicle"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtPhoneNo">
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtPhoneNoActionPerformed"/>
       </Events>
-    </Component>
-    <Component class="javax.swing.JComboBox" name="cboxVehicle">
-      <Properties>
-        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="5">
-            <StringItem index="0" value="Ambulance 101"/>
-            <StringItem index="1" value="Ambulance 102"/>
-            <StringItem index="2" value="Ambulance 103"/>
-            <StringItem index="3" value="ambulance 104"/>
-            <StringItem index="4" value="Ambulance 105"/>
-          </StringArray>
-        </Property>
-      </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-      </AuxValues>
     </Component>
     <Component class="javax.swing.JLabel" name="lblOrgName">
       <Properties>

@@ -61,9 +61,11 @@ public class AmbulanceSignUp extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 204, 204));
 
         lblVehicleName.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
+        lblVehicleName.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         lblVehicleName.setText("Vehicle Name");
 
         lblVehicleType.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
+        lblVehicleType.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         lblVehicleType.setText("Vehicle Type");
 
         btnSignUp.setText("Sign Up");
@@ -74,9 +76,11 @@ public class AmbulanceSignUp extends javax.swing.JPanel {
         });
 
         lblVehicleNumber.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
+        lblVehicleNumber.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         lblVehicleNumber.setText("Vehicle Number");
 
         lblDescription.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
+        lblDescription.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         lblDescription.setText("Description");
 
         txtVehicleType.addActionListener(new java.awt.event.ActionListener() {
@@ -99,11 +103,11 @@ public class AmbulanceSignUp extends javax.swing.JPanel {
                     .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSignUp)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblVehicleName)
-                            .addComponent(lblVehicleType)
-                            .addComponent(lblDescription)
-                            .addComponent(lblVehicleNumber))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(lblVehicleNumber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblVehicleType, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblVehicleName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblDescription, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtVehicleName, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
