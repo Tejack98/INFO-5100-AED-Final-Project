@@ -57,11 +57,24 @@ public class ProcessPharmaRequest extends javax.swing.JPanel {
         btnSendResults = new javax.swing.JButton();
         txtPatientName = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
+        chkSpasm = new javax.swing.JCheckBox();
+        chkAld = new javax.swing.JCheckBox();
+        chkO2 = new javax.swing.JCheckBox();
+        chkMet = new javax.swing.JCheckBox();
+        chkSin = new javax.swing.JCheckBox();
+        chkLosa = new javax.swing.JCheckBox();
         chkViv = new javax.swing.JCheckBox();
+        chkAlbu = new javax.swing.JCheckBox();
         chkAnt = new javax.swing.JCheckBox();
+        chkHydro = new javax.swing.JCheckBox();
         chkCam = new javax.swing.JCheckBox();
+        chkAntihis = new javax.swing.JCheckBox();
         chkDis = new javax.swing.JCheckBox();
+        chkDolo = new javax.swing.JCheckBox();
         chkAca = new javax.swing.JCheckBox();
+        chkOme = new javax.swing.JCheckBox();
+        chkCrocin = new javax.swing.JCheckBox();
+        chkMef = new javax.swing.JCheckBox();
 
         jLabel6.setText("jLabel6");
 
@@ -80,7 +93,7 @@ public class ProcessPharmaRequest extends javax.swing.JPanel {
                 btnSendResultsActionPerformed(evt);
             }
         });
-        add(btnSendResults, new org.netbeans.lib.awtextra.AbsoluteConstraints(274, 397, 254, -1));
+        add(btnSendResults, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 450, 254, -1));
 
         txtPatientName.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
         txtPatientName.setEnabled(false);
@@ -96,6 +109,67 @@ public class ProcessPharmaRequest extends javax.swing.JPanel {
         jLabel12.setText("For Patient");
         add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 99, 126, -1));
 
+        chkSpasm.setBackground(new java.awt.Color(255, 204, 204));
+        chkSpasm.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        chkSpasm.setText("Spasm");
+        chkSpasm.setEnabled(false);
+        chkSpasm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkSpasmActionPerformed(evt);
+            }
+        });
+        add(chkSpasm, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 395, -1, -1));
+
+        chkAld.setBackground(new java.awt.Color(255, 204, 204));
+        chkAld.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        chkAld.setText("Aldrid");
+        chkAld.setEnabled(false);
+        chkAld.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkAldActionPerformed(evt);
+            }
+        });
+        add(chkAld, new org.netbeans.lib.awtextra.AbsoluteConstraints(499, 148, -1, -1));
+
+        chkO2.setBackground(new java.awt.Color(255, 204, 204));
+        chkO2.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        chkO2.setText("O2");
+        chkO2.setEnabled(false);
+        add(chkO2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 246, -1, -1));
+
+        chkMet.setBackground(new java.awt.Color(255, 204, 204));
+        chkMet.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        chkMet.setText("Metformin");
+        chkMet.setEnabled(false);
+        chkMet.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkMetActionPerformed(evt);
+            }
+        });
+        add(chkMet, new org.netbeans.lib.awtextra.AbsoluteConstraints(499, 198, -1, -1));
+
+        chkSin.setBackground(new java.awt.Color(255, 204, 204));
+        chkSin.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        chkSin.setText("Sinarest");
+        chkSin.setEnabled(false);
+        chkSin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkSinActionPerformed(evt);
+            }
+        });
+        add(chkSin, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 296, -1, -1));
+
+        chkLosa.setBackground(new java.awt.Color(255, 204, 204));
+        chkLosa.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        chkLosa.setText("Losartan");
+        chkLosa.setEnabled(false);
+        chkLosa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkLosaActionPerformed(evt);
+            }
+        });
+        add(chkLosa, new org.netbeans.lib.awtextra.AbsoluteConstraints(499, 246, -1, -1));
+
         chkViv.setBackground(new java.awt.Color(255, 204, 204));
         chkViv.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         chkViv.setText(" Vivitrol");
@@ -105,7 +179,18 @@ public class ProcessPharmaRequest extends javax.swing.JPanel {
                 chkVivActionPerformed(evt);
             }
         });
-        add(chkViv, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 350, -1, -1));
+        add(chkViv, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 346, -1, -1));
+
+        chkAlbu.setBackground(new java.awt.Color(255, 204, 204));
+        chkAlbu.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        chkAlbu.setText("Albuterol");
+        chkAlbu.setEnabled(false);
+        chkAlbu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkAlbuActionPerformed(evt);
+            }
+        });
+        add(chkAlbu, new org.netbeans.lib.awtextra.AbsoluteConstraints(499, 296, -1, -1));
 
         chkAnt.setBackground(new java.awt.Color(255, 204, 204));
         chkAnt.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
@@ -116,13 +201,35 @@ public class ProcessPharmaRequest extends javax.swing.JPanel {
                 chkAntActionPerformed(evt);
             }
         });
-        add(chkAnt, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 300, -1, -1));
+        add(chkAnt, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 296, -1, -1));
+
+        chkHydro.setBackground(new java.awt.Color(255, 204, 204));
+        chkHydro.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        chkHydro.setText("Hydrocodone");
+        chkHydro.setEnabled(false);
+        chkHydro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkHydroActionPerformed(evt);
+            }
+        });
+        add(chkHydro, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 148, -1, -1));
 
         chkCam.setBackground(new java.awt.Color(255, 204, 204));
         chkCam.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         chkCam.setText("Campral");
         chkCam.setEnabled(false);
-        add(chkCam, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 250, -1, -1));
+        add(chkCam, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 246, -1, -1));
+
+        chkAntihis.setBackground(new java.awt.Color(255, 204, 204));
+        chkAntihis.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        chkAntihis.setText("Antihistamines");
+        chkAntihis.setEnabled(false);
+        chkAntihis.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkAntihisActionPerformed(evt);
+            }
+        });
+        add(chkAntihis, new org.netbeans.lib.awtextra.AbsoluteConstraints(499, 346, -1, -1));
 
         chkDis.setBackground(new java.awt.Color(255, 204, 204));
         chkDis.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
@@ -133,7 +240,18 @@ public class ProcessPharmaRequest extends javax.swing.JPanel {
                 chkDisActionPerformed(evt);
             }
         });
-        add(chkDis, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 190, -1, -1));
+        add(chkDis, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 198, -1, -1));
+
+        chkDolo.setBackground(new java.awt.Color(255, 204, 204));
+        chkDolo.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        chkDolo.setText("Dolo");
+        chkDolo.setEnabled(false);
+        chkDolo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkDoloActionPerformed(evt);
+            }
+        });
+        add(chkDolo, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 198, -1, -1));
 
         chkAca.setBackground(new java.awt.Color(255, 204, 204));
         chkAca.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
@@ -144,7 +262,40 @@ public class ProcessPharmaRequest extends javax.swing.JPanel {
                 chkAcaActionPerformed(evt);
             }
         });
-        add(chkAca, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 140, -1, -1));
+        add(chkAca, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 148, -1, -1));
+
+        chkOme.setBackground(new java.awt.Color(255, 204, 204));
+        chkOme.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        chkOme.setText("Omeprazole");
+        chkOme.setEnabled(false);
+        chkOme.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkOmeActionPerformed(evt);
+            }
+        });
+        add(chkOme, new org.netbeans.lib.awtextra.AbsoluteConstraints(499, 395, -1, -1));
+
+        chkCrocin.setBackground(new java.awt.Color(255, 204, 204));
+        chkCrocin.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        chkCrocin.setText("Crocin");
+        chkCrocin.setEnabled(false);
+        chkCrocin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkCrocinActionPerformed(evt);
+            }
+        });
+        add(chkCrocin, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 346, -1, -1));
+
+        chkMef.setBackground(new java.awt.Color(255, 204, 204));
+        chkMef.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        chkMef.setText("Meftal");
+        chkMef.setEnabled(false);
+        chkMef.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkMefActionPerformed(evt);
+            }
+        });
+        add(chkMef, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 395, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSendResultsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSendResultsActionPerformed
@@ -173,7 +324,7 @@ public class ProcessPharmaRequest extends javax.swing.JPanel {
             }
         }
         
-        JOptionPane.showMessageDialog(null, "Result Sent Successfully");
+        JOptionPane.showMessageDialog(null, "Request Sent Successfully");
         
     }//GEN-LAST:event_btnSendResultsActionPerformed
 
@@ -181,23 +332,69 @@ public class ProcessPharmaRequest extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtPatientNameActionPerformed
 
+    private void chkSpasmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkSpasmActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chkSpasmActionPerformed
+
+    private void chkAldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkAldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chkAldActionPerformed
+
+    private void chkMetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkMetActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chkMetActionPerformed
+
+    private void chkSinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkSinActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chkSinActionPerformed
+
+    private void chkLosaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkLosaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chkLosaActionPerformed
+
     private void chkVivActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkVivActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_chkVivActionPerformed
+
+    private void chkAlbuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkAlbuActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chkAlbuActionPerformed
 
     private void chkAntActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkAntActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_chkAntActionPerformed
 
+    private void chkHydroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkHydroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chkHydroActionPerformed
+
+    private void chkAntihisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkAntihisActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chkAntihisActionPerformed
+
     private void chkDisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkDisActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_chkDisActionPerformed
 
+    private void chkDoloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkDoloActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chkDoloActionPerformed
+
     private void chkAcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkAcaActionPerformed
         // TODO add your handling code here:
-        
-        
     }//GEN-LAST:event_chkAcaActionPerformed
+
+    private void chkOmeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkOmeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chkOmeActionPerformed
+
+    private void chkCrocinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkCrocinActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chkCrocinActionPerformed
+
+    private void chkMefActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkMefActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chkMefActionPerformed
 
     
     public void populatePharmaRequests() {
@@ -221,15 +418,87 @@ public class ProcessPharmaRequest extends javax.swing.JPanel {
         if(medList.contains(String.valueOf("Vivitrol"))){
             chkViv.setSelected(true);
         }
+        
+   
+//-----------------------------------------------------------------------------
+        
+        if(medList.contains(String.valueOf("Meftal"))){
+            chkMef.setSelected(true);
+        }
+        
+        if(medList.contains(String.valueOf("Hydrocodone"))){
+            chkHydro.setSelected(true);
+        }
+        
+        if(medList.contains(String.valueOf("Dolo"))){
+            chkDolo.setSelected(true);
+        }
+        
+        if(medList.contains(String.valueOf("O2"))){
+            chkO2.setSelected(true);
+        }
+        
+        if(medList.contains(String.valueOf("Sinarest"))){
+            chkSin.setSelected(true);
+        }
+        
+        
+        if(medList.contains(String.valueOf("Crocin"))){
+            chkCrocin.setSelected(true);
+        }
+        
+        if(medList.contains(String.valueOf("Spasm"))){
+            chkSpasm.setSelected(true);
+        }
+        
+        if(medList.contains(String.valueOf("Aldrid"))){
+            chkAld.setSelected(true);
+        }
+        
+        if(medList.contains(String.valueOf("Metformin"))){
+            chkMet.setSelected(true);
+        }
+        
+        if(medList.contains(String.valueOf("Losartan"))){
+            chkLosa.setSelected(true);
+        }
+        
+        if(medList.contains(String.valueOf("Albuterol"))){
+            chkAlbu.setSelected(true);
+        }
+        
+        if(medList.contains(String.valueOf("Antihistamines"))){
+            chkAntihis.setSelected(true);
+        }
+        
+        if(medList.contains(String.valueOf("Omeprazole"))){
+            chkOme.setSelected(true);
+        }
+        
+
+//-----------------------------------------------------------------------------
 
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSendResults;
     private javax.swing.JCheckBox chkAca;
+    private javax.swing.JCheckBox chkAlbu;
+    private javax.swing.JCheckBox chkAld;
     private javax.swing.JCheckBox chkAnt;
+    private javax.swing.JCheckBox chkAntihis;
     private javax.swing.JCheckBox chkCam;
+    private javax.swing.JCheckBox chkCrocin;
     private javax.swing.JCheckBox chkDis;
+    private javax.swing.JCheckBox chkDolo;
+    private javax.swing.JCheckBox chkHydro;
+    private javax.swing.JCheckBox chkLosa;
+    private javax.swing.JCheckBox chkMef;
+    private javax.swing.JCheckBox chkMet;
+    private javax.swing.JCheckBox chkO2;
+    private javax.swing.JCheckBox chkOme;
+    private javax.swing.JCheckBox chkSin;
+    private javax.swing.JCheckBox chkSpasm;
     private javax.swing.JCheckBox chkViv;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
