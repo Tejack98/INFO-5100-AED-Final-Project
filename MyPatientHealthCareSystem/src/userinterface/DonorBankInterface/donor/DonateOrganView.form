@@ -50,7 +50,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="389" max="32767" attributes="0"/>
+                  <EmptySpace pref="382" max="32767" attributes="0"/>
               </Group>
               <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
@@ -74,9 +74,9 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="331" max="32767" attributes="0"/>
+                      <EmptySpace pref="294" max="32767" attributes="0"/>
                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="332" max="32767" attributes="0"/>
+                      <EmptySpace pref="295" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -94,7 +94,7 @@
             <Component class="javax.swing.JLabel" name="jLabel1">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Georgia" size="18" style="1"/>
+                  <Font name="Georgia" size="24" style="1"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Organ Donation Details"/>
               </Properties>

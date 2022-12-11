@@ -187,7 +187,6 @@ public class PharmacyAdminWorkArea extends javax.swing.JFrame {
         PharmacyAdminViewPharmacists pavp = new PharmacyAdminViewPharmacists(ecosystem, enterprise.getOrganizationDirectory());
         jSplitPane1.setRightComponent(pavp);
     }//GEN-LAST:event_btnViewPharmacistActionPerformed
-
     /**
      * @param args the command line arguments
      */

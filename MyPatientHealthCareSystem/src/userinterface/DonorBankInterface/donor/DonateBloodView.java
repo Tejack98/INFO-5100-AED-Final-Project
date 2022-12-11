@@ -58,7 +58,7 @@ public class DonateBloodView extends javax.swing.JPanel {
         jPanel2.setBackground(new java.awt.Color(153, 204, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Georgia", 1, 24)); // NOI18N
         jLabel1.setText("Blood Donation Details");
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(612, 14, -1, 50));
 

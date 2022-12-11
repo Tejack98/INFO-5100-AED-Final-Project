@@ -74,6 +74,7 @@ public class DonationHandlerWorkArea extends javax.swing.JFrame {
         });
 
         btnLogout.setBackground(new java.awt.Color(255, 204, 204));
+        btnLogout.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         btnLogout.setText("Logout");
         btnLogout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -143,7 +144,7 @@ public class DonationHandlerWorkArea extends javax.swing.JFrame {
                 .addComponent(btnPatients2, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36)
                 .addComponent(btnPatients, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 152, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 154, Short.MAX_VALUE)
                 .addComponent(btnLogout)
                 .addGap(30, 30, 30))
         );
