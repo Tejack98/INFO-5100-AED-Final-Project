@@ -185,12 +185,26 @@ public class PharmacistsViewRequestsJPanel extends javax.swing.JPanel {
             return;
         }
 
+        String status = (String) pharmaWorkRequestJTable.getValueAt(selectedRow, 3);
+        
+        if (status.equals("Assigned To Pharmacy")) {
+        
         WorkRequest request = (WorkRequest) pharmaWorkRequestJTable.getValueAt(selectedRow, 0);
 
         request.setStatus("Processing Req");
 
         ProcessPharmaRequest processWorkRequestJPanel = new ProcessPharmaRequest( request, userAccount, enterprise, network);
         jSplitPane1.setRightComponent(processWorkRequestJPanel);
+        }
+        else if (status.equals("Prescription Given")){
+            JOptionPane.showMessageDialog(null, "Request not with you", "Error", JOptionPane.WARNING_MESSAGE);
+             return;
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Your Request Cant be processed", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        
     }//GEN-LAST:event_processJButtonActionPerformed
 
     private void assignJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignJButtonActionPerformed

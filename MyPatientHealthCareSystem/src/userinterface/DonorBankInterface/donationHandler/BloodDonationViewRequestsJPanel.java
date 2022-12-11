@@ -239,12 +239,25 @@ public class BloodDonationViewRequestsJPanel extends javax.swing.JPanel {
             return;
         }
 
-        DonorBankRequest request = (DonorBankRequest) bloodRequestJTable.getValueAt(selectedRow, 0);
+        String status = (String) bloodRequestJTable.getValueAt(selectedRow, 4);
+        
+        if (status.equals("Assigned To Donor Bank")) {
 
-        request.setStatus("Processing Req");
+            DonorBankRequest request = (DonorBankRequest) bloodRequestJTable.getValueAt(selectedRow, 0);
 
-        ProcessBloodRequest processWorkRequestJPanel = new ProcessBloodRequest( request, userAccount, enterprise, network);
-        jSplitPane1.setRightComponent(processWorkRequestJPanel);
+            request.setStatus("Processing Req");
+
+            ProcessBloodRequest processWorkRequestJPanel = new ProcessBloodRequest(request, userAccount, enterprise, network);
+            jSplitPane1.setRightComponent(processWorkRequestJPanel);
+        }
+        else if (status.equals("Blood Requested")){
+            JOptionPane.showMessageDialog(null, "Request not with you", "Error", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Your Request Cant be processed", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
     }//GEN-LAST:event_processJButtonActionPerformed
 
     private void assignJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignJButtonActionPerformed
