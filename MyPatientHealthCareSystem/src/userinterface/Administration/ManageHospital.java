@@ -40,9 +40,9 @@ public class ManageHospital extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
-        jPanel1.setBackground(new java.awt.Color(255, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Admin_lbl.setFont(new java.awt.Font("Georgia", 1, 24)); // NOI18N
@@ -50,7 +50,6 @@ public class ManageHospital extends javax.swing.JPanel {
         Admin_lbl.setText("ADMINISTRATION");
         jPanel1.add(Admin_lbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 30, 720, 35));
 
-        Hospital_Jtable.setBackground(new java.awt.Color(255, 255, 204));
         Hospital_Jtable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -66,7 +65,6 @@ public class ManageHospital extends javax.swing.JPanel {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(766, 90, 660, 107));
 
-        jTable2.setBackground(new java.awt.Color(255, 255, 204));
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -82,7 +80,6 @@ public class ManageHospital extends javax.swing.JPanel {
 
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(776, 310, 650, 100));
 
-        jTable3.setBackground(new java.awt.Color(255, 255, 204));
         jTable3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -98,7 +95,6 @@ public class ManageHospital extends javax.swing.JPanel {
 
         jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 470, 660, 100));
 
-        jTable4.setBackground(new java.awt.Color(255, 255, 204));
         jTable4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -129,9 +125,9 @@ public class ManageHospital extends javax.swing.JPanel {
         jLabel4.setText("Patient Details");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 600, -1, -1));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/2275_R0lVIEFOTiAwODUtMDM.jpg"))); // NOI18N
-        jLabel5.setText("jLabel5");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(-180, 0, 910, 980));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/HealthCareAdminSignUp.jpg"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, -1, 970));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -150,10 +146,10 @@ public class ManageHospital extends javax.swing.JPanel {
     private javax.swing.JLabel Admin_lbl;
     private javax.swing.JTable Hospital_Jtable;
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
