@@ -72,7 +72,7 @@ public class NurseRequestVaccinesPanel extends javax.swing.JPanel {
 
         jPanel6.setBackground(new java.awt.Color(153, 204, 255));
 
-        jLabel6.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Georgia", 1, 24)); // NOI18N
         jLabel6.setText("Request Vaccines");
 
         jButton2.setBackground(new java.awt.Color(71, 120, 197));
@@ -118,7 +118,7 @@ public class NurseRequestVaccinesPanel extends javax.swing.JPanel {
         jLabel1.setText("By User");
 
         requestbtn.setBackground(new java.awt.Color(153, 204, 255));
-        requestbtn.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        requestbtn.setFont(new java.awt.Font("Georgia", 0, 18)); // NOI18N
         requestbtn.setText("Request Vaccines");
         requestbtn.setBorder(null);
         requestbtn.addActionListener(new java.awt.event.ActionListener() {
@@ -128,7 +128,7 @@ public class NurseRequestVaccinesPanel extends javax.swing.JPanel {
         });
 
         chkCov.setBackground(new java.awt.Color(255, 204, 204));
-        chkCov.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        chkCov.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         chkCov.setText("Covishield");
         chkCov.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -137,7 +137,7 @@ public class NurseRequestVaccinesPanel extends javax.swing.JPanel {
         });
 
         chkVar.setBackground(new java.awt.Color(255, 204, 204));
-        chkVar.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        chkVar.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         chkVar.setText("Varicella");
         chkVar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -146,7 +146,7 @@ public class NurseRequestVaccinesPanel extends javax.swing.JPanel {
         });
 
         chkMMR.setBackground(new java.awt.Color(255, 204, 204));
-        chkMMR.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        chkMMR.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         chkMMR.setText("MMR");
         chkMMR.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -155,7 +155,7 @@ public class NurseRequestVaccinesPanel extends javax.swing.JPanel {
         });
 
         chkPolio.setBackground(new java.awt.Color(255, 204, 204));
-        chkPolio.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        chkPolio.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         chkPolio.setText("Polio");
         chkPolio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -164,7 +164,7 @@ public class NurseRequestVaccinesPanel extends javax.swing.JPanel {
         });
 
         chkTdap.setBackground(new java.awt.Color(255, 204, 204));
-        chkTdap.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        chkTdap.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         chkTdap.setText("T-Dap ");
         chkTdap.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -180,23 +180,27 @@ public class NurseRequestVaccinesPanel extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGap(60, 60, 60)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtMsg, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(requestbtn)
-                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(requestbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(60, 60, 60)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(chkMMR)
-                            .addComponent(chkPolio)
-                            .addComponent(chkTdap)
-                            .addComponent(chkCov)
-                            .addComponent(chkVar)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtMsg, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(chkMMR)
+                                    .addComponent(chkPolio)
+                                    .addComponent(chkTdap)
+                                    .addComponent(chkCov)
+                                    .addComponent(chkVar)
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(0, 231, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -221,9 +225,9 @@ public class NurseRequestVaccinesPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtMsg, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
-                .addComponent(requestbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(72, 72, 72))
+                .addGap(18, 18, 18)
+                .addComponent(requestbtn)
+                .addContainerGap(104, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

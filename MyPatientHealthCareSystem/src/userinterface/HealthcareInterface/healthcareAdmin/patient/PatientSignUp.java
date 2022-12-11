@@ -114,7 +114,7 @@ public class PatientSignUp extends javax.swing.JPanel {
         add(lblGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 280, -1, -1));
 
         cboxGender.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
-        cboxGender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cboxGender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Female", "Male", "Others" }));
         cboxGender.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cboxGenderActionPerformed(evt);
@@ -183,7 +183,6 @@ public class PatientSignUp extends javax.swing.JPanel {
         add(organizationJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 250, 230, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/PatientSignUp.jpg"))); // NOI18N
-        jLabel1.setText("jLabel1");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 0, 700, 910));
     }// </editor-fold>//GEN-END:initComponents
 

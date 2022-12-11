@@ -208,11 +208,14 @@
           <Font name="Georgia" size="12" style="0"/>
         </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="4">
-            <StringItem index="0" value="Item 1"/>
-            <StringItem index="1" value="Item 2"/>
-            <StringItem index="2" value="Item 3"/>
-            <StringItem index="3" value="Item 4"/>
+          <StringArray count="7">
+            <StringItem index="0" value="Cardiologist"/>
+            <StringItem index="1" value="Oncologist"/>
+            <StringItem index="2" value="Pediatrician"/>
+            <StringItem index="3" value="Neurologists"/>
+            <StringItem index="4" value="Gastroenterologist"/>
+            <StringItem index="5" value="Pulmonologist"/>
+            <StringItem index="6" value="Dentist"/>
           </StringArray>
         </Property>
       </Properties>
