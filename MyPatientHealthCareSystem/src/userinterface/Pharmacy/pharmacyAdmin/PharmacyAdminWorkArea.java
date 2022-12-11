@@ -34,6 +34,8 @@ public class PharmacyAdminWorkArea extends javax.swing.JFrame {
         this.enterprise = enterprise;
         this.ecosystem = ecosystem;
         this.network = network;
+        PharmacyManageOrganization pmo = new PharmacyManageOrganization(enterprise);
+        jSplitPane1.setRightComponent(pmo);
     }
 
     /**

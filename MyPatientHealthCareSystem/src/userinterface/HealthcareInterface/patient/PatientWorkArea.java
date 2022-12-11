@@ -36,6 +36,8 @@ public class PatientWorkArea extends javax.swing.JFrame {
         this.enterprise = enterprise;
         this.ecosystem = ecosystem;
         this.network = network;
+        BookAppointment ba = new BookAppointment(userAccount,organization,enterprise,ecosystem,network);
+        jSplitPaneSystem.setRightComponent(ba);
     }
 
     /**

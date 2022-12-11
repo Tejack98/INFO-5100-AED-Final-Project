@@ -26,6 +26,8 @@ public class AdministratorWorkArea extends javax.swing.JFrame {
     public AdministratorWorkArea(Ecosystem ecosystem) {
         initComponents();
         this.ecosystem = ecosystem;
+        SysAdminManageEnterprise sme = new SysAdminManageEnterprise(ecosystem);
+        jSplitPaneSystem.setRightComponent(sme);
     }
 
     /**

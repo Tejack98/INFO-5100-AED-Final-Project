@@ -61,15 +61,15 @@
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="17" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="btnLogout" min="-2" pref="102" max="-2" attributes="0"/>
-                          <Component id="btnNurse" min="-2" pref="102" max="-2" attributes="0"/>
-                          <Component id="btnPatients" min="-2" pref="102" max="-2" attributes="0"/>
-                          <Component id="btnDoctors" min="-2" pref="102" max="-2" attributes="0"/>
-                          <Component id="btnAdmin" min="-2" pref="102" max="-2" attributes="0"/>
+                          <Component id="btnAdmin" max="32767" attributes="0"/>
+                          <Component id="btnDoctors" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btnPatients" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btnNurse" alignment="0" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>

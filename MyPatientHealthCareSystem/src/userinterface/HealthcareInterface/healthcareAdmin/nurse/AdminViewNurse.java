@@ -5,6 +5,7 @@
 package userinterface.HealthcareInterface.healthcareAdmin.nurse;
 
 import healthcare.Ecosystem;
+import healthcare.enterprise.healthCare.NurseOrganization;
 import healthcare.enterprise.healthCare.NurseRole;
 import healthcare.organization.Organization;
 import healthcare.organization.OrganizationDirectory;
@@ -37,7 +38,9 @@ public class AdminViewNurse extends javax.swing.JPanel {
         organizationJComboBox.removeAllItems();
 
         for (Organization organization : orgList.getOrganizationList()){
-            organizationJComboBox.addItem(organization);
+            if (organization instanceof NurseOrganization) {
+                organizationJComboBox.addItem(organization);
+            }
         }
     }
 
@@ -54,7 +57,7 @@ public class AdminViewNurse extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         nurseTable = new javax.swing.JTable();
         lblSearchNurseByID = new javax.swing.JLabel();
-        txtSearchNurseByID = new javax.swing.JTextField();
+        txtSearchNurseByName = new javax.swing.JTextField();
         btnSearch = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
         lblEnterprise = new javax.swing.JLabel();
@@ -94,12 +97,17 @@ public class AdminViewNurse extends javax.swing.JPanel {
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 131, 1200, 194));
 
         lblSearchNurseByID.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
-        lblSearchNurseByID.setText("Search Nurse By ID");
-        add(lblSearchNurseByID, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 90, -1, 20));
-        add(txtSearchNurseByID, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 90, 224, -1));
+        lblSearchNurseByID.setText("Search Nurse By Name");
+        add(lblSearchNurseByID, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 90, -1, 20));
+        add(txtSearchNurseByName, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 90, 224, -1));
 
         btnSearch.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         btnSearch.setText("Search");
+        btnSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearchActionPerformed(evt);
+            }
+        });
         add(btnSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 90, -1, -1));
 
         btnDelete.setText("Delete");
@@ -131,6 +139,11 @@ public class AdminViewNurse extends javax.swing.JPanel {
         populateData();
     }//GEN-LAST:event_btnViewActionPerformed
 
+    private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
+        // TODO add your handling code here:
+        populateDataByNurseName();
+    }//GEN-LAST:event_btnSearchActionPerformed
+
     
     private void populateData(){
         Organization org = (Organization) organizationJComboBox.getSelectedItem();
@@ -152,6 +165,30 @@ public class AdminViewNurse extends javax.swing.JPanel {
         
     }
     
+    private void populateDataByNurseName(){
+        Organization org = (Organization) organizationJComboBox.getSelectedItem();
+        
+        String nurseName = txtSearchNurseByName.getText().toLowerCase();
+        
+        UserAccountDirectory userAccounts = org.getUserAccountDirectory();  
+        ArrayList<UserAccount> userList = userAccounts.getUserAccountList();
+        
+        DefaultTableModel model = (DefaultTableModel) nurseTable.getModel();
+        model.setRowCount(0);
+
+        for (UserAccount ua : userList) {
+
+            if (ua.getRole().toString().equals(Role.RoleType.Nurse.toString())) {
+
+                if (ua.getPerson().getPersonName().toLowerCase().contains(nurseName)) {
+                    NurseRole role = (NurseRole) ua.getRole();
+                    model.addRow(new Object[]{ua.getPerson().getPersonName(), ua.getUserEmail(), role.getGender(), role.getHospitalName(), String.valueOf(ua.getPerson().getContactNumber()), ua.getPerson().getAddress(), ua.getPerson().getCity(), ua.getPerson().getState(), String.valueOf(ua.getPerson().getZipcode())});
+                }
+            }
+        }
+        
+    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDelete;
@@ -164,6 +201,6 @@ public class AdminViewNurse extends javax.swing.JPanel {
     private javax.swing.JLabel lblSearchNurseByID;
     private javax.swing.JTable nurseTable;
     private javax.swing.JComboBox organizationJComboBox;
-    private javax.swing.JTextField txtSearchNurseByID;
+    private javax.swing.JTextField txtSearchNurseByName;
     // End of variables declaration//GEN-END:variables
 }

@@ -6,6 +6,7 @@ package userinterface.Administration;
 
 import healthcare.Ecosystem;
 import healthcare.network.Network;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -30,7 +31,7 @@ public class SysAdminMangeNetwork extends javax.swing.JPanel {
         model.setRowCount(0);
         for (Network network : ecosystem.getNetworkList()) {
             Object[] row = new Object[1];
-            row[0] = network.getNetworkName();
+            row[0] = network;
             model.addRow(row);
         }
     }
@@ -52,6 +53,7 @@ public class SysAdminMangeNetwork extends javax.swing.JPanel {
         jLabel6 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         networkJTable = new javax.swing.JTable();
+        deleteJButton = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -118,6 +120,17 @@ public class SysAdminMangeNetwork extends javax.swing.JPanel {
         jScrollPane1.setViewportView(networkJTable);
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 140, 820, 180));
+
+        deleteJButton.setBackground(new java.awt.Color(153, 204, 255));
+        deleteJButton.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
+        deleteJButton.setText("Delete Network");
+        deleteJButton.setBorder(null);
+        deleteJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteJButtonActionPerformed(evt);
+            }
+        });
+        add(deleteJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 350, 141, 40));
     }// </editor-fold>//GEN-END:initComponents
 
     private void submitJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitJButtonActionPerformed
@@ -130,8 +143,29 @@ public class SysAdminMangeNetwork extends javax.swing.JPanel {
         populateNetworkTable();
     }//GEN-LAST:event_submitJButtonActionPerformed
 
+    private void deleteJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteJButtonActionPerformed
+        // TODO add your handling code here:
+
+        int selectedRow = networkJTable.getSelectedRow();
+
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(null, "Please select a Network first", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        try {
+            Network network = (Network) networkJTable.getValueAt(selectedRow, 0);
+            ecosystem.deleteNetwork(network);
+            populateNetworkTable();
+            JOptionPane.showMessageDialog(null, "Network Deleted Successfully");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Something Went Wrong. Try again Later!");
+        }
+    }//GEN-LAST:event_deleteJButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton deleteJButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;

@@ -53,7 +53,7 @@ public class DonorBankManageOrganization extends javax.swing.JPanel {
         for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()) {
             Object[] row = new Object[2];
             row[0] = organization.getOrganizationID();
-            row[1] = organization.getOrganizationName();
+            row[1] = organization;
 
             model.addRow(row);
         }
@@ -75,6 +75,7 @@ public class DonorBankManageOrganization extends javax.swing.JPanel {
         jPanel6 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         addJButton = new javax.swing.JButton();
+        deleteJButton = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 204, 204));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -151,7 +152,18 @@ public class DonorBankManageOrganization extends javax.swing.JPanel {
                 addJButtonActionPerformed(evt);
             }
         });
-        add(addJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(61, 274, 141, 39));
+        add(addJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 280, 141, 39));
+
+        deleteJButton.setBackground(new java.awt.Color(153, 204, 255));
+        deleteJButton.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
+        deleteJButton.setText("Delete Organization");
+        deleteJButton.setBorder(null);
+        deleteJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteJButtonActionPerformed(evt);
+            }
+        });
+        add(deleteJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 280, 141, 40));
     }// </editor-fold>//GEN-END:initComponents
 
     private void addJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addJButtonActionPerformed
@@ -170,8 +182,30 @@ public class DonorBankManageOrganization extends javax.swing.JPanel {
         populateTable();
     }//GEN-LAST:event_addJButtonActionPerformed
 
+    private void deleteJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteJButtonActionPerformed
+        // TODO add your handling code here:
+
+        int selectedRow = organizationJTable.getSelectedRow();
+
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(null, "Please select a organization first", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        try {
+            Organization org = (Organization) organizationJTable.getValueAt(selectedRow, 1);
+            enterprise.getOrganizationDirectory().deleteOrganization(org);
+            populateTable();
+            JOptionPane.showMessageDialog(null, "Organization Deleted Successfully");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Something Went Wrong. Try again Later!");
+        }
+
+    }//GEN-LAST:event_deleteJButtonActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addJButton;
+    private javax.swing.JButton deleteJButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel6;

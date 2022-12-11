@@ -62,11 +62,21 @@ public class ProcessVaccinationRequest extends javax.swing.JPanel {
         btnSendResults = new javax.swing.JButton();
         txtPatientName = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
+        chkPnem = new javax.swing.JCheckBox();
+        chkAde = new javax.swing.JCheckBox();
         chkTdap = new javax.swing.JCheckBox();
         chkPolio = new javax.swing.JCheckBox();
         chkMMR = new javax.swing.JCheckBox();
         chkVar = new javax.swing.JCheckBox();
         chkCov = new javax.swing.JCheckBox();
+        chkPert = new javax.swing.JCheckBox();
+        chkDipth = new javax.swing.JCheckBox();
+        chkCho = new javax.swing.JCheckBox();
+        chkAnt = new javax.swing.JCheckBox();
+        chkRab = new javax.swing.JCheckBox();
+        chkRota = new javax.swing.JCheckBox();
+        chksma = new javax.swing.JCheckBox();
+        chkMen = new javax.swing.JCheckBox();
 
         jLabel6.setText("jLabel6");
 
@@ -83,6 +93,7 @@ public class ProcessVaccinationRequest extends javax.swing.JPanel {
             }
         });
 
+        txtPatientName.setEditable(false);
         txtPatientName.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
         txtPatientName.setEnabled(false);
         txtPatientName.addActionListener(new java.awt.event.ActionListener() {
@@ -95,8 +106,28 @@ public class ProcessVaccinationRequest extends javax.swing.JPanel {
         jLabel12.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         jLabel12.setText("Request By");
 
+        chkPnem.setBackground(new java.awt.Color(255, 204, 204));
+        chkPnem.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
+        chkPnem.setText("Pneumococcal");
+        chkPnem.setEnabled(false);
+        chkPnem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkPnemActionPerformed(evt);
+            }
+        });
+
+        chkAde.setBackground(new java.awt.Color(255, 204, 204));
+        chkAde.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
+        chkAde.setText("Adenovirus");
+        chkAde.setEnabled(false);
+        chkAde.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkAdeActionPerformed(evt);
+            }
+        });
+
         chkTdap.setBackground(new java.awt.Color(255, 204, 204));
-        chkTdap.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        chkTdap.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         chkTdap.setText("T-Dap ");
         chkTdap.setEnabled(false);
         chkTdap.addActionListener(new java.awt.event.ActionListener() {
@@ -106,7 +137,7 @@ public class ProcessVaccinationRequest extends javax.swing.JPanel {
         });
 
         chkPolio.setBackground(new java.awt.Color(255, 204, 204));
-        chkPolio.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        chkPolio.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         chkPolio.setText("Polio");
         chkPolio.setEnabled(false);
         chkPolio.addActionListener(new java.awt.event.ActionListener() {
@@ -116,7 +147,7 @@ public class ProcessVaccinationRequest extends javax.swing.JPanel {
         });
 
         chkMMR.setBackground(new java.awt.Color(255, 204, 204));
-        chkMMR.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        chkMMR.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         chkMMR.setText("MMR");
         chkMMR.setEnabled(false);
         chkMMR.addActionListener(new java.awt.event.ActionListener() {
@@ -126,7 +157,7 @@ public class ProcessVaccinationRequest extends javax.swing.JPanel {
         });
 
         chkVar.setBackground(new java.awt.Color(255, 204, 204));
-        chkVar.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        chkVar.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         chkVar.setText("Varicella");
         chkVar.setEnabled(false);
         chkVar.addActionListener(new java.awt.event.ActionListener() {
@@ -136,12 +167,92 @@ public class ProcessVaccinationRequest extends javax.swing.JPanel {
         });
 
         chkCov.setBackground(new java.awt.Color(255, 204, 204));
-        chkCov.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        chkCov.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         chkCov.setText("Covishield");
         chkCov.setEnabled(false);
         chkCov.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 chkCovActionPerformed(evt);
+            }
+        });
+
+        chkPert.setBackground(new java.awt.Color(255, 204, 204));
+        chkPert.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
+        chkPert.setText("Pertussis");
+        chkPert.setEnabled(false);
+        chkPert.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkPertActionPerformed(evt);
+            }
+        });
+
+        chkDipth.setBackground(new java.awt.Color(255, 204, 204));
+        chkDipth.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
+        chkDipth.setText("Diphtheria");
+        chkDipth.setEnabled(false);
+        chkDipth.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkDipthActionPerformed(evt);
+            }
+        });
+
+        chkCho.setBackground(new java.awt.Color(255, 204, 204));
+        chkCho.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
+        chkCho.setText("Cholera");
+        chkCho.setEnabled(false);
+        chkCho.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkChoActionPerformed(evt);
+            }
+        });
+
+        chkAnt.setBackground(new java.awt.Color(255, 204, 204));
+        chkAnt.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
+        chkAnt.setText("Anthrax");
+        chkAnt.setEnabled(false);
+        chkAnt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkAntActionPerformed(evt);
+            }
+        });
+
+        chkRab.setBackground(new java.awt.Color(255, 204, 204));
+        chkRab.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
+        chkRab.setText("Rabies");
+        chkRab.setEnabled(false);
+        chkRab.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkRabActionPerformed(evt);
+            }
+        });
+
+        chkRota.setBackground(new java.awt.Color(255, 204, 204));
+        chkRota.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
+        chkRota.setText("Rotavirus");
+        chkRota.setEnabled(false);
+        chkRota.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkRotaActionPerformed(evt);
+            }
+        });
+
+        chksma.setBackground(new java.awt.Color(255, 204, 204));
+        chksma.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
+        chksma.setText("Smallpox");
+        chksma.setEnabled(false);
+        chksma.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chksmaActionPerformed(evt);
+            }
+        });
+
+        chkMen.setBackground(new java.awt.Color(255, 204, 204));
+        chkMen.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
+        chkMen.setText("Meningococcal");
+        chkMen.setEnabled(false);
+        chkMen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkMenActionPerformed(evt);
             }
         });
 
@@ -152,18 +263,8 @@ public class ProcessVaccinationRequest extends javax.swing.JPanel {
             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(309, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(chkMMR)
-                            .addComponent(chkPolio)
-                            .addComponent(chkTdap)
-                            .addComponent(chkCov)
-                            .addComponent(chkVar))
-                        .addGap(322, 322, 322))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnSendResults, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(226, 226, 226))))
+                .addComponent(btnSendResults, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(226, 226, 226))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(220, 220, 220)
@@ -171,25 +272,39 @@ public class ProcessVaccinationRequest extends javax.swing.JPanel {
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addComponent(txtPatientName, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(232, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(213, 213, 213)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(chkMMR)
+                        .addComponent(chkPolio)
+                        .addComponent(chkTdap)
+                        .addComponent(chkCov)
+                        .addComponent(chkVar))
+                    .addGap(35, 35, 35)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(chkCho)
+                        .addComponent(chkAnt)
+                        .addComponent(chkAde)
+                        .addComponent(chkPert)
+                        .addComponent(chkDipth))
+                    .addGap(24, 24, 24)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(chkRota)
+                        .addComponent(chkRab)
+                        .addComponent(chkPnem)
+                        .addComponent(chkMen)
+                        .addComponent(chksma))
+                    .addContainerGap(214, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(95, 95, 95)
-                .addComponent(chkTdap)
-                .addGap(30, 30, 30)
-                .addComponent(chkPolio)
-                .addGap(32, 32, 32)
-                .addComponent(chkMMR)
-                .addGap(27, 27, 27)
-                .addComponent(chkVar)
-                .addGap(29, 29, 29)
-                .addComponent(chkCov)
-                .addGap(18, 18, 18)
+                .addGap(382, 382, 382)
                 .addComponent(btnSendResults)
-                .addContainerGap(107, Short.MAX_VALUE))
+                .addContainerGap(71, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(99, 99, 99)
@@ -197,6 +312,34 @@ public class ProcessVaccinationRequest extends javax.swing.JPanel {
                         .addComponent(jLabel12)
                         .addComponent(txtPatientName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addContainerGap(404, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(153, 153, 153)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(chkPnem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(chkTdap, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(chkAde, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGap(27, 27, 27)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(chkPolio)
+                        .addComponent(chkAnt)
+                        .addComponent(chkRab))
+                    .addGap(29, 29, 29)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(chkMMR)
+                        .addComponent(chkCho)
+                        .addComponent(chkRota))
+                    .addGap(27, 27, 27)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(chkVar)
+                        .addComponent(chkDipth)
+                        .addComponent(chksma))
+                    .addGap(29, 29, 29)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(chkCov)
+                        .addComponent(chkPert)
+                        .addComponent(chkMen))
+                    .addContainerGap(154, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -234,6 +377,14 @@ public class ProcessVaccinationRequest extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtPatientNameActionPerformed
 
+    private void chkPnemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkPnemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chkPnemActionPerformed
+
+    private void chkAdeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkAdeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chkAdeActionPerformed
+
     private void chkTdapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkTdapActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_chkTdapActionPerformed
@@ -253,6 +404,38 @@ public class ProcessVaccinationRequest extends javax.swing.JPanel {
     private void chkCovActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkCovActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_chkCovActionPerformed
+
+    private void chkPertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkPertActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chkPertActionPerformed
+
+    private void chkDipthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkDipthActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chkDipthActionPerformed
+
+    private void chkChoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkChoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chkChoActionPerformed
+
+    private void chkAntActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkAntActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chkAntActionPerformed
+
+    private void chkRabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkRabActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chkRabActionPerformed
+
+    private void chkRotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkRotaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chkRotaActionPerformed
+
+    private void chksmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chksmaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chksmaActionPerformed
+
+    private void chkMenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkMenActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chkMenActionPerformed
 
     
     public void populateVaccinationRequests() {
@@ -275,15 +458,62 @@ public class ProcessVaccinationRequest extends javax.swing.JPanel {
             chkCov.setSelected(true);
         }
 
+//------------------------------------------------------------------------------
+
+        if(vacList.contains(String.valueOf("Adenovirus"))){
+            chkAde.setSelected(true);
+        }
+        if(vacList.contains(String.valueOf("Anthrax"))){
+            chkAnt.setSelected(true);
+        }
+        if(vacList.contains(String.valueOf("Cholera"))){
+            chkCho.setSelected(true);
+        }
+        if(vacList.contains(String.valueOf("Diphtheria"))){
+            chkDipth.setSelected(true);
+        }
+        if(vacList.contains(String.valueOf("Pertussis"))){
+            chkPert.setSelected(true);
+        }
+        
+        
+        if(vacList.contains(String.valueOf("Pneumococcal"))){
+            chkPnem.setSelected(true);
+        }
+        if(vacList.contains(String.valueOf("Rabies"))){
+            chkRab.setSelected(true);
+        }
+        if(vacList.contains(String.valueOf("Rotavirus"))){
+            chkRota.setSelected(true);
+        }
+        if(vacList.contains(String.valueOf("Smallpox"))){
+            chksma.setSelected(true);
+        }
+        if(vacList.contains(String.valueOf("Meningococcal"))){
+            chkMen.setSelected(true);
+        }
+
+//------------------------------------------------------------------------------
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSendResults;
+    private javax.swing.JCheckBox chkAde;
+    private javax.swing.JCheckBox chkAnt;
+    private javax.swing.JCheckBox chkCho;
     private javax.swing.JCheckBox chkCov;
+    private javax.swing.JCheckBox chkDipth;
     private javax.swing.JCheckBox chkMMR;
+    private javax.swing.JCheckBox chkMen;
+    private javax.swing.JCheckBox chkPert;
+    private javax.swing.JCheckBox chkPnem;
     private javax.swing.JCheckBox chkPolio;
+    private javax.swing.JCheckBox chkRab;
+    private javax.swing.JCheckBox chkRota;
     private javax.swing.JCheckBox chkTdap;
     private javax.swing.JCheckBox chkVar;
+    private javax.swing.JCheckBox chksma;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel6;

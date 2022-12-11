@@ -36,6 +36,9 @@ public class DonorAdminWorkArea extends javax.swing.JFrame {
         this.enterprise = enterprise;
         this.ecosystem = ecosystem;
         this.network = network;
+        
+        DonorBankManageOrganization lmo = new DonorBankManageOrganization(enterprise);
+        jSplitPaneSystem.setRightComponent(lmo);
     }
 
     /**
