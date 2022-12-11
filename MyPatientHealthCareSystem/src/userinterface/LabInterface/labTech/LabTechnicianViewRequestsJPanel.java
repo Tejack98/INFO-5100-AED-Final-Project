@@ -119,11 +119,9 @@ public class LabTechnicianViewRequestsJPanel extends javax.swing.JPanel {
         jSplitPane1.setRightComponent(actionPanel);
 
         optionsPanel.setBackground(new java.awt.Color(153, 204, 255));
-        optionsPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        refreshJButton.setBackground(new java.awt.Color(49, 84, 140));
-        refreshJButton.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        refreshJButton.setForeground(new java.awt.Color(255, 255, 255));
+        refreshJButton.setBackground(new java.awt.Color(255, 204, 204));
+        refreshJButton.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
         refreshJButton.setText("Refresh");
         refreshJButton.setBorder(null);
         refreshJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -131,11 +129,9 @@ public class LabTechnicianViewRequestsJPanel extends javax.swing.JPanel {
                 refreshJButtonActionPerformed(evt);
             }
         });
-        optionsPanel.add(refreshJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 87, 153, 44));
 
-        processJButton.setBackground(new java.awt.Color(49, 84, 140));
-        processJButton.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        processJButton.setForeground(new java.awt.Color(255, 255, 255));
+        processJButton.setBackground(new java.awt.Color(255, 204, 204));
+        processJButton.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
         processJButton.setText("Process Medical History");
         processJButton.setBorder(null);
         processJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -143,11 +139,9 @@ public class LabTechnicianViewRequestsJPanel extends javax.swing.JPanel {
                 processJButtonActionPerformed(evt);
             }
         });
-        optionsPanel.add(processJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 155, 153, 43));
 
-        assignJButton.setBackground(new java.awt.Color(49, 84, 140));
-        assignJButton.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        assignJButton.setForeground(new java.awt.Color(255, 255, 255));
+        assignJButton.setBackground(new java.awt.Color(255, 204, 204));
+        assignJButton.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
         assignJButton.setText("Assign to me");
         assignJButton.setBorder(null);
         assignJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -155,7 +149,30 @@ public class LabTechnicianViewRequestsJPanel extends javax.swing.JPanel {
                 assignJButtonActionPerformed(evt);
             }
         });
-        optionsPanel.add(assignJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 216, 153, 42));
+
+        javax.swing.GroupLayout optionsPanelLayout = new javax.swing.GroupLayout(optionsPanel);
+        optionsPanel.setLayout(optionsPanelLayout);
+        optionsPanelLayout.setHorizontalGroup(
+            optionsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(optionsPanelLayout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addGroup(optionsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(assignJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(processJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(refreshJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(14, 14, 14))
+        );
+        optionsPanelLayout.setVerticalGroup(
+            optionsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(optionsPanelLayout.createSequentialGroup()
+                .addGap(68, 68, 68)
+                .addComponent(refreshJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43)
+                .addComponent(processJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37)
+                .addComponent(assignJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
 
         jSplitPane1.setLeftComponent(optionsPanel);
 

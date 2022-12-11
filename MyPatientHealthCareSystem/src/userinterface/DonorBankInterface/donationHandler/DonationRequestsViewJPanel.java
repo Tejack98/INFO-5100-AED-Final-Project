@@ -78,7 +78,7 @@ public class DonationRequestsViewJPanel extends javax.swing.JPanel {
 
         jPanel6.setBackground(new java.awt.Color(153, 204, 255));
 
-        jLabel6.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Georgia", 1, 24)); // NOI18N
         jLabel6.setText("Donation Requests Received");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
@@ -98,7 +98,7 @@ public class DonationRequestsViewJPanel extends javax.swing.JPanel {
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
-        lblname.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblname.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblname.setText("Admin Name");
 
         donationRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -150,7 +150,7 @@ public class DonationRequestsViewJPanel extends javax.swing.JPanel {
                 .addComponent(lblname, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 461, Short.MAX_VALUE))
+                .addGap(0, 498, Short.MAX_VALUE))
         );
 
         jSplitPane1.setRightComponent(actionPanel);
@@ -158,7 +158,7 @@ public class DonationRequestsViewJPanel extends javax.swing.JPanel {
         optionsPanel.setBackground(new java.awt.Color(255, 204, 204));
 
         refreshJButton.setBackground(new java.awt.Color(153, 204, 255));
-        refreshJButton.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        refreshJButton.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
         refreshJButton.setText("Refresh");
         refreshJButton.setBorder(null);
         refreshJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -168,7 +168,7 @@ public class DonationRequestsViewJPanel extends javax.swing.JPanel {
         });
 
         processJButton.setBackground(new java.awt.Color(153, 204, 255));
-        processJButton.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        processJButton.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
         processJButton.setText("Process Requests");
         processJButton.setBorder(null);
         processJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -178,7 +178,7 @@ public class DonationRequestsViewJPanel extends javax.swing.JPanel {
         });
 
         assignJButton.setBackground(new java.awt.Color(153, 204, 255));
-        assignJButton.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        assignJButton.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
         assignJButton.setText("Assign to me");
         assignJButton.setBorder(null);
         assignJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -208,7 +208,7 @@ public class DonationRequestsViewJPanel extends javax.swing.JPanel {
                 .addComponent(processJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(assignJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(568, Short.MAX_VALUE))
+                .addContainerGap(611, Short.MAX_VALUE))
         );
 
         jSplitPane1.setLeftComponent(optionsPanel);
