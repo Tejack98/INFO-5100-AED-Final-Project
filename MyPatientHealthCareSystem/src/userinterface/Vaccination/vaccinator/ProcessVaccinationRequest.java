@@ -70,6 +70,8 @@ public class ProcessVaccinationRequest extends javax.swing.JPanel {
 
         jLabel6.setText("jLabel6");
 
+        setBackground(new java.awt.Color(255, 204, 204));
+
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Vaccination Request Details");
@@ -81,7 +83,6 @@ public class ProcessVaccinationRequest extends javax.swing.JPanel {
             }
         });
 
-        txtPatientName.setBackground(new java.awt.Color(153, 204, 255));
         txtPatientName.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
         txtPatientName.setEnabled(false);
         txtPatientName.addActionListener(new java.awt.event.ActionListener() {
@@ -148,34 +149,35 @@ public class ProcessVaccinationRequest extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 777, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnSendResults, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(249, 249, 249))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(220, 220, 220)
+                .addContainerGap(309, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(chkMMR)
-                    .addComponent(chkPolio)
-                    .addComponent(chkTdap)
-                    .addComponent(chkCov)
-                    .addComponent(chkVar))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(chkMMR)
+                            .addComponent(chkPolio)
+                            .addComponent(chkTdap)
+                            .addComponent(chkCov)
+                            .addComponent(chkVar))
+                        .addGap(322, 322, 322))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnSendResults, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(226, 226, 226))))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(220, 220, 220)
                     .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addComponent(txtPatientName, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(220, Short.MAX_VALUE)))
+                    .addContainerGap(232, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
+                .addGap(95, 95, 95)
                 .addComponent(chkTdap)
                 .addGap(30, 30, 30)
                 .addComponent(chkPolio)
@@ -185,9 +187,9 @@ public class ProcessVaccinationRequest extends javax.swing.JPanel {
                 .addComponent(chkVar)
                 .addGap(29, 29, 29)
                 .addComponent(chkCov)
-                .addGap(27, 27, 27)
+                .addGap(18, 18, 18)
                 .addComponent(btnSendResults)
-                .addGap(104, 104, 104))
+                .addContainerGap(107, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(99, 99, 99)
