@@ -56,12 +56,14 @@ public class PharmacyAdminWorkArea extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel1.setBackground(new java.awt.Color(153, 204, 255));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 21)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Georgia", 1, 19)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Pharmacy Admin");
 
+        btnCreatePharmacist.setBackground(new java.awt.Color(255, 204, 204));
+        btnCreatePharmacist.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         btnCreatePharmacist.setText("Create Pharmacist");
         btnCreatePharmacist.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -69,6 +71,8 @@ public class PharmacyAdminWorkArea extends javax.swing.JFrame {
             }
         });
 
+        btnUpdatePharmacist.setBackground(new java.awt.Color(255, 204, 204));
+        btnUpdatePharmacist.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         btnUpdatePharmacist.setText("Update Pharmacist");
         btnUpdatePharmacist.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -76,6 +80,8 @@ public class PharmacyAdminWorkArea extends javax.swing.JFrame {
             }
         });
 
+        Org_Name1.setBackground(new java.awt.Color(255, 204, 204));
+        Org_Name1.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         Org_Name1.setText("Orgainzation");
         Org_Name1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -84,6 +90,7 @@ public class PharmacyAdminWorkArea extends javax.swing.JFrame {
         });
 
         btnLogout.setBackground(new java.awt.Color(255, 204, 204));
+        btnLogout.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         btnLogout.setText("Logout");
         btnLogout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -121,12 +128,14 @@ public class PharmacyAdminWorkArea extends javax.swing.JFrame {
                 .addComponent(btnUpdatePharmacist, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(Org_Name1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 127, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 129, Short.MAX_VALUE)
                 .addComponent(btnLogout)
                 .addContainerGap())
         );
 
         jSplitPane1.setLeftComponent(jPanel1);
+
+        jPanel2.setBackground(new java.awt.Color(255, 204, 204));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
