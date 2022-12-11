@@ -75,11 +75,10 @@ public class ViewVehicles extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(255, 255, 255));
 
-        actionPanel.setBackground(new java.awt.Color(255, 204, 204));
+        jPanel6.setBackground(new java.awt.Color(36, 47, 65));
 
-        jPanel6.setBackground(new java.awt.Color(153, 204, 255));
-
-        jLabel6.setFont(new java.awt.Font("Georgia", 1, 24)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Book Vehicles");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
@@ -99,7 +98,7 @@ public class ViewVehicles extends javax.swing.JPanel {
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
-        lblname.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
+        lblname.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lblname.setText("Lab Assitant Name");
 
         supplierChainVehicleJTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -151,15 +150,16 @@ public class ViewVehicles extends javax.swing.JPanel {
                 .addComponent(lblname, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 452, Short.MAX_VALUE))
+                .addGap(0, 457, Short.MAX_VALUE))
         );
 
         jSplitPane1.setRightComponent(actionPanel);
 
-        optionsPanel.setBackground(new java.awt.Color(153, 204, 255));
+        optionsPanel.setBackground(new java.awt.Color(71, 120, 197));
 
-        refreshJButton.setBackground(new java.awt.Color(255, 204, 204));
-        refreshJButton.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        refreshJButton.setBackground(new java.awt.Color(49, 84, 140));
+        refreshJButton.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        refreshJButton.setForeground(new java.awt.Color(255, 255, 255));
         refreshJButton.setText("Refresh");
         refreshJButton.setBorder(null);
         refreshJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -168,8 +168,9 @@ public class ViewVehicles extends javax.swing.JPanel {
             }
         });
 
-        assignJButton.setBackground(new java.awt.Color(255, 204, 204));
-        assignJButton.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        assignJButton.setBackground(new java.awt.Color(49, 84, 140));
+        assignJButton.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        assignJButton.setForeground(new java.awt.Color(255, 255, 255));
         assignJButton.setText("Assign to me");
         assignJButton.setBorder(null);
         assignJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -178,8 +179,9 @@ public class ViewVehicles extends javax.swing.JPanel {
             }
         });
 
-        assignJButton1.setBackground(new java.awt.Color(255, 204, 204));
-        assignJButton1.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        assignJButton1.setBackground(new java.awt.Color(49, 84, 140));
+        assignJButton1.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        assignJButton1.setForeground(new java.awt.Color(255, 255, 255));
         assignJButton1.setText("Deallocate");
         assignJButton1.setBorder(null);
         assignJButton1.addActionListener(new java.awt.event.ActionListener() {
