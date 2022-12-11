@@ -148,6 +148,7 @@ public class CollectedMedicalHistory extends javax.swing.JPanel {
 
         add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 270, 254, 100));
 
+        btnSendResults.setBackground(new java.awt.Color(255, 204, 204));
         btnSendResults.setText("Process And Send Results");
         btnSendResults.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -53,7 +53,7 @@ public class PatientViewDiagnosis extends javax.swing.JPanel {
 
         jPanel6.setBackground(new java.awt.Color(153, 204, 255));
 
-        enterpriseLabel.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        enterpriseLabel.setFont(new java.awt.Font("Georgia", 1, 24)); // NOI18N
         enterpriseLabel.setText("Patient Treatment Result ");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
@@ -62,7 +62,7 @@ public class PatientViewDiagnosis extends javax.swing.JPanel {
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(enterpriseLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(enterpriseLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
@@ -77,7 +77,7 @@ public class PatientViewDiagnosis extends javax.swing.JPanel {
         txtDiagnose.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
 
         jLabel1.setBackground(new java.awt.Color(153, 204, 255));
-        jLabel1.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         jLabel1.setText("View Diagnosis");
         jLabel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 

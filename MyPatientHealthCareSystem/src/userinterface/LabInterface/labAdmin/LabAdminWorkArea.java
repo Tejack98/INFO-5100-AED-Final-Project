@@ -59,12 +59,14 @@ public class LabAdminWorkArea extends javax.swing.JFrame {
 
         jSplitPane1.setDividerLocation(200);
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel1.setBackground(new java.awt.Color(153, 204, 255));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Georgia", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Lab Admin");
 
+        createLabtech_btn.setBackground(new java.awt.Color(255, 204, 204));
+        createLabtech_btn.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         createLabtech_btn.setText("Create Lab Technician");
         createLabtech_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -72,6 +74,8 @@ public class LabAdminWorkArea extends javax.swing.JFrame {
             }
         });
 
+        update_LabTech.setBackground(new java.awt.Color(255, 204, 204));
+        update_LabTech.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         update_LabTech.setText("Update Lab Technician");
         update_LabTech.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -79,7 +83,9 @@ public class LabAdminWorkArea extends javax.swing.JFrame {
             }
         });
 
-        Org_Name.setText("Orgainzation");
+        Org_Name.setBackground(new java.awt.Color(255, 204, 204));
+        Org_Name.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
+        Org_Name.setText("Organization");
         Org_Name.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Org_NameActionPerformed(evt);
@@ -124,12 +130,14 @@ public class LabAdminWorkArea extends javax.swing.JFrame {
                 .addComponent(update_LabTech, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(Org_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 128, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 132, Short.MAX_VALUE)
                 .addComponent(btnLogout)
                 .addGap(39, 39, 39))
         );
 
         jSplitPane1.setLeftComponent(jPanel1);
+
+        jPanel2.setBackground(new java.awt.Color(255, 204, 204));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
