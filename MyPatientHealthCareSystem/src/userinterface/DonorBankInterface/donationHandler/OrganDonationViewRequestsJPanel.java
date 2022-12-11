@@ -73,10 +73,11 @@ public class OrganDonationViewRequestsJPanel extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(255, 255, 255));
 
-        jPanel6.setBackground(new java.awt.Color(36, 47, 65));
+        actionPanel.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel6.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel6.setBackground(new java.awt.Color(255, 204, 204));
+
+        jLabel6.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
         jLabel6.setText("Organ Requests Received");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
@@ -148,16 +149,15 @@ public class OrganDonationViewRequestsJPanel extends javax.swing.JPanel {
                 .addComponent(lblname, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 457, Short.MAX_VALUE))
+                .addGap(0, 459, Short.MAX_VALUE))
         );
 
         jSplitPane1.setRightComponent(actionPanel);
 
-        optionsPanel.setBackground(new java.awt.Color(71, 120, 197));
+        optionsPanel.setBackground(new java.awt.Color(153, 204, 255));
 
-        refreshJButton.setBackground(new java.awt.Color(49, 84, 140));
-        refreshJButton.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        refreshJButton.setForeground(new java.awt.Color(255, 255, 255));
+        refreshJButton.setBackground(new java.awt.Color(255, 204, 204));
+        refreshJButton.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         refreshJButton.setText("Refresh");
         refreshJButton.setBorder(null);
         refreshJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -166,9 +166,8 @@ public class OrganDonationViewRequestsJPanel extends javax.swing.JPanel {
             }
         });
 
-        processJButton.setBackground(new java.awt.Color(49, 84, 140));
-        processJButton.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        processJButton.setForeground(new java.awt.Color(255, 255, 255));
+        processJButton.setBackground(new java.awt.Color(255, 204, 204));
+        processJButton.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         processJButton.setText("Process Requests");
         processJButton.setBorder(null);
         processJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -177,9 +176,8 @@ public class OrganDonationViewRequestsJPanel extends javax.swing.JPanel {
             }
         });
 
-        assignJButton.setBackground(new java.awt.Color(49, 84, 140));
-        assignJButton.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        assignJButton.setForeground(new java.awt.Color(255, 255, 255));
+        assignJButton.setBackground(new java.awt.Color(255, 204, 204));
+        assignJButton.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         assignJButton.setText("Assign to me");
         assignJButton.setBorder(null);
         assignJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -192,13 +190,9 @@ public class OrganDonationViewRequestsJPanel extends javax.swing.JPanel {
         optionsPanel.setLayout(optionsPanelLayout);
         optionsPanelLayout.setHorizontalGroup(
             optionsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, optionsPanelLayout.createSequentialGroup()
-                .addGap(0, 28, Short.MAX_VALUE)
-                .addGroup(optionsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(assignJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(processJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(refreshJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26))
+            .addComponent(refreshJButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(processJButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 207, Short.MAX_VALUE)
+            .addComponent(assignJButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         optionsPanelLayout.setVerticalGroup(
             optionsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
