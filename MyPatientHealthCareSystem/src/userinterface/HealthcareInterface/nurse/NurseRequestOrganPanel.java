@@ -20,6 +20,8 @@ import healthcare.userAccount.UserAccount;
 import healthcare.workQueue.DonorBankRequest;
 import healthcare.workQueue.WorkRequest;
 import java.awt.CardLayout;
+import java.awt.Color;
+import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -32,6 +34,8 @@ public class NurseRequestOrganPanel extends javax.swing.JPanel {
     /**
      * Creates new form RequestPharmacistForMedicinePanel
      */
+    boolean emptyValidationStatus = true;
+    boolean validationCheck = true;
     private NurseOrganization organization;
     private Enterprise enterprise;
     private UserAccount userAccount;
@@ -105,7 +109,6 @@ public class NurseRequestOrganPanel extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        txtUserName.setBackground(new java.awt.Color(153, 204, 255));
         txtUserName.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
         txtUserName.setEnabled(false);
         txtUserName.addActionListener(new java.awt.event.ActionListener() {
@@ -115,12 +118,12 @@ public class NurseRequestOrganPanel extends javax.swing.JPanel {
         });
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         jLabel1.setText("By User");
 
         requestbtn.setBackground(new java.awt.Color(153, 204, 255));
-        requestbtn.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
-        requestbtn.setText("Request Org");
+        requestbtn.setFont(new java.awt.Font("Georgia", 0, 18)); // NOI18N
+        requestbtn.setText("Request Organ");
         requestbtn.setBorder(null);
         requestbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -128,6 +131,7 @@ public class NurseRequestOrganPanel extends javax.swing.JPanel {
             }
         });
 
+        jLabel2.setFont(new java.awt.Font("Georgia", 0, 13)); // NOI18N
         jLabel2.setText("Message");
 
         cboxBlood1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-" }));
@@ -137,8 +141,10 @@ public class NurseRequestOrganPanel extends javax.swing.JPanel {
             }
         });
 
+        jLabel9.setFont(new java.awt.Font("Georgia", 0, 13)); // NOI18N
         jLabel9.setText("Blood Type");
 
+        jLabel3.setFont(new java.awt.Font("Georgia", 0, 13)); // NOI18N
         jLabel3.setText("Organ");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -148,25 +154,24 @@ public class NurseRequestOrganPanel extends javax.swing.JPanel {
             .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addGap(48, 48, 48)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(requestbtn)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
-                            .addComponent(txtOrg, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txtMsg, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGap(24, 24, 24)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(cboxBlood1, 0, 223, Short.MAX_VALUE)
-                                .addComponent(txtUserName)))))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                        .addComponent(txtOrg, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txtMsg, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(24, 24, 24)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(cboxBlood1, 0, 223, Short.MAX_VALUE)
+                            .addComponent(txtUserName)))
+                    .addComponent(requestbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 207, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -190,8 +195,8 @@ public class NurseRequestOrganPanel extends javax.swing.JPanel {
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtMsg, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(requestbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(231, Short.MAX_VALUE))
+                .addComponent(requestbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(237, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -204,7 +209,10 @@ public class NurseRequestOrganPanel extends javax.swing.JPanel {
 
     private void requestbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestbtnActionPerformed
         // TODO add your handling code here:
-        
+        try {
+            if (EmpytyFieldValidation()) {
+
+                if (RegexValidation()) {
         DonorBankRequest request = new DonorBankRequest();
         request.setSender(userAccount);
         request.setBloodType(cboxBlood1.getSelectedItem().toString());
@@ -230,9 +238,46 @@ public class NurseRequestOrganPanel extends javax.swing.JPanel {
                 userAccount.getWorkQueue().getWorkRequestList().add(request);
             }
         JOptionPane.showMessageDialog(null, "Organ request sent to Donor bank Organization successfully.");
-
+                }}}
+        catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Doctor not registered, Try again");
+            System.out.println(e.toString());
+            emptyValidationStatus = true;
+        }
     }//GEN-LAST:event_requestbtnActionPerformed
 
+    private boolean RegexValidation()
+    {
+        if(!txtOrg.getText().matches("^[a-zA-Z ]+$"))
+        {
+            txtOrg.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            txtOrg.setToolTipText("Please enter only characters and space.");
+            validationCheck=false;
+        }
+        
+        if(txtOrg.getText().matches("^[a-zA-Z ]+$"))
+        {
+            txtOrg.setBorder(BorderFactory.createLineBorder(Color.BLUE, 0));
+        }
+        
+        
+        return validationCheck;
+    }
+    
+    private boolean EmpytyFieldValidation()
+    {
+        if(txtOrg.getText().equals(null) || txtOrg.getText().trim().isEmpty() )
+        {
+            txtOrg.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            txtOrg.setToolTipText("This Field Cannot be empty");
+            emptyValidationStatus= false;
+        }
+        if(!txtOrg.getText().equals(null) && !txtOrg.getText().trim().isEmpty() )
+        {
+            txtOrg.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        }
+        return emptyValidationStatus;
+    }
     private void txtUserNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUserNameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtUserNameActionPerformed

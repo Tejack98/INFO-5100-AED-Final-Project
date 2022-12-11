@@ -52,6 +52,7 @@ public class DoctorDashboardPanel extends javax.swing.JPanel {
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         TabbedPanePatientList.setBackground(new java.awt.Color(153, 204, 255));
+        TabbedPanePatientList.setFont(new java.awt.Font("Georgia", 0, 13)); // NOI18N
 
         jPanel3.setBackground(new java.awt.Color(255, 204, 204));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -112,7 +113,7 @@ public class DoctorDashboardPanel extends javax.swing.JPanel {
                 btnSearchActionPerformed(evt);
             }
         });
-        jPanel4.add(btnSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 320, 80, -1));
+        jPanel4.add(btnSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 320, 100, -1));
 
         jLabel2.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         jLabel2.setText("Status");
@@ -126,7 +127,7 @@ public class DoctorDashboardPanel extends javax.swing.JPanel {
                 btnAddStatusActionPerformed(evt);
             }
         });
-        jPanel4.add(btnAddStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 380, -1, -1));
+        jPanel4.add(btnAddStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 380, 100, -1));
 
         btnLogOut.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         btnLogOut.setText("Logout");
@@ -135,7 +136,7 @@ public class DoctorDashboardPanel extends javax.swing.JPanel {
                 btnLogOutActionPerformed(evt);
             }
         });
-        jPanel4.add(btnLogOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 430, -1, -1));
+        jPanel4.add(btnLogOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 430, 100, -1));
 
         TabbedPanePatientList.addTab("Transplant History", jPanel4);
 

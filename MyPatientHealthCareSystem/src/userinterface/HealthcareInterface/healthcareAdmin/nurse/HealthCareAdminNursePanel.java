@@ -56,10 +56,11 @@ public class HealthCareAdminNursePanel extends javax.swing.JPanel {
 
         splitPane.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
 
-        controlPanel.setBackground(new java.awt.Color(160, 132, 202));
+        controlPanel.setBackground(new java.awt.Color(153, 204, 255));
         controlPanel.setPreferredSize(new java.awt.Dimension(150, 609));
         controlPanel.setVerifyInputWhenFocusTarget(false);
 
+        btnViewDoctor.setFont(new java.awt.Font("Georgia", 0, 13)); // NOI18N
         btnViewDoctor.setText("View Nurses");
         btnViewDoctor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -67,6 +68,7 @@ public class HealthCareAdminNursePanel extends javax.swing.JPanel {
             }
         });
 
+        btnCreateDoctor.setFont(new java.awt.Font("Georgia", 0, 13)); // NOI18N
         btnCreateDoctor.setText("Create Nurse");
         btnCreateDoctor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -74,6 +76,7 @@ public class HealthCareAdminNursePanel extends javax.swing.JPanel {
             }
         });
 
+        btnUpdateDoctor.setFont(new java.awt.Font("Georgia", 0, 13)); // NOI18N
         btnUpdateDoctor.setText("Update Nurse");
         btnUpdateDoctor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -107,7 +110,7 @@ public class HealthCareAdminNursePanel extends javax.swing.JPanel {
 
         splitPane.setLeftComponent(controlPanel);
 
-        patientWorkArea.setBackground(new java.awt.Color(191, 172, 224));
+        patientWorkArea.setBackground(new java.awt.Color(255, 204, 204));
 
         javax.swing.GroupLayout patientWorkAreaLayout = new javax.swing.GroupLayout(patientWorkArea);
         patientWorkArea.setLayout(patientWorkAreaLayout);

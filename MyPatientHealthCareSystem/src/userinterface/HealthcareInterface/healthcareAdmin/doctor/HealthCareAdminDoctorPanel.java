@@ -58,6 +58,7 @@ public class HealthCareAdminDoctorPanel extends javax.swing.JPanel {
         controlPanel.setPreferredSize(new java.awt.Dimension(150, 609));
         controlPanel.setVerifyInputWhenFocusTarget(false);
 
+        btnViewDoctor.setFont(new java.awt.Font("Georgia", 0, 13)); // NOI18N
         btnViewDoctor.setText("View Doctors");
         btnViewDoctor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -65,6 +66,7 @@ public class HealthCareAdminDoctorPanel extends javax.swing.JPanel {
             }
         });
 
+        btnCreateDoctor.setFont(new java.awt.Font("Georgia", 0, 13)); // NOI18N
         btnCreateDoctor.setText("Create Doctor");
         btnCreateDoctor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -72,6 +74,7 @@ public class HealthCareAdminDoctorPanel extends javax.swing.JPanel {
             }
         });
 
+        btnUpdateDoctor.setFont(new java.awt.Font("Georgia", 0, 13)); // NOI18N
         btnUpdateDoctor.setText("Update Doctor");
         btnUpdateDoctor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

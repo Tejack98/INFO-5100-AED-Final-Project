@@ -4,6 +4,8 @@
  */
 package userinterface.DonorBankInterface.donorAdmin;
 
+import userinterface.DonorBankInterface.donationHandler.DonationForm;
+import userinterface.DonorBankInterface.donationHandler.BloodDonationViewRequestsJPanel;
 import healthcare.Ecosystem;
 import healthcare.db4oUtil.Db4oUtil;
 import healthcare.enterprise.Enterprise;
@@ -47,26 +49,16 @@ public class DonorAdminWorkArea extends javax.swing.JFrame {
 
         jSplitPaneSystem = new javax.swing.JSplitPane();
         controlPanel = new javax.swing.JPanel();
-        btnPatients = new javax.swing.JButton();
         btnLogout = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        btnPatients2 = new javax.swing.JButton();
-        btnPatients3 = new javax.swing.JButton();
-        btnPatients4 = new javax.swing.JButton();
+        btnAddHandler = new javax.swing.JButton();
+        Org_Name = new javax.swing.JButton();
         workArea = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         controlPanel.setBackground(new java.awt.Color(153, 204, 255));
         controlPanel.setPreferredSize(new java.awt.Dimension(200, 600));
-
-        btnPatients.setBackground(new java.awt.Color(255, 204, 204));
-        btnPatients.setText("Transplant Request");
-        btnPatients.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPatientsActionPerformed(evt);
-            }
-        });
 
         btnLogout.setBackground(new java.awt.Color(255, 204, 204));
         btnLogout.setText("Logout");
@@ -80,27 +72,18 @@ public class DonorAdminWorkArea extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Donor Admin");
 
-        btnPatients2.setBackground(new java.awt.Color(255, 204, 204));
-        btnPatients2.setText(" Blood Requests");
-        btnPatients2.addActionListener(new java.awt.event.ActionListener() {
+        btnAddHandler.setBackground(new java.awt.Color(255, 204, 204));
+        btnAddHandler.setText("Add Handler");
+        btnAddHandler.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPatients2ActionPerformed(evt);
+                btnAddHandlerActionPerformed(evt);
             }
         });
 
-        btnPatients3.setBackground(new java.awt.Color(255, 204, 204));
-        btnPatients3.setText("Add Organ Donor");
-        btnPatients3.addActionListener(new java.awt.event.ActionListener() {
+        Org_Name.setText("Orgainzation");
+        Org_Name.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPatients3ActionPerformed(evt);
-            }
-        });
-
-        btnPatients4.setBackground(new java.awt.Color(255, 204, 204));
-        btnPatients4.setText("Add Blood Donor");
-        btnPatients4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPatients4ActionPerformed(evt);
+                Org_NameActionPerformed(evt);
             }
         });
 
@@ -108,36 +91,30 @@ public class DonorAdminWorkArea extends javax.swing.JFrame {
         controlPanel.setLayout(controlPanelLayout);
         controlPanelLayout.setHorizontalGroup(
             controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btnPatients3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnPatients2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnPatients4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnPatients, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnAddHandler, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(controlPanelLayout.createSequentialGroup()
                 .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(controlPanelLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(controlPanelLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(16, 16, 16)
                         .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(Org_Name, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         controlPanelLayout.setVerticalGroup(
             controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(controlPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(70, 70, 70)
-                .addComponent(btnPatients4, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(51, 51, 51)
-                .addComponent(btnPatients2, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
-                .addComponent(btnPatients3, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44)
-                .addComponent(btnPatients, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
+                .addGap(68, 68, 68)
+                .addComponent(btnAddHandler, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(Org_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 301, Short.MAX_VALUE)
                 .addComponent(btnLogout)
-                .addGap(31, 31, 31))
+                .addGap(30, 30, 30))
         );
 
         jSplitPaneSystem.setLeftComponent(controlPanel);
@@ -171,37 +148,24 @@ public class DonorAdminWorkArea extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnPatientsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPatientsActionPerformed
-        // TODO add your handling code here:
-//        PatientDashboard patientDash = new PatientDashboard();
-//        jSplitPaneSystem.setRightComponent(patientDash);
-        OrganDonationViewRequestsJPanel bdvr = new OrganDonationViewRequestsJPanel(ecosystem, userAccount, organization, enterprise, network);
-        jSplitPaneSystem.setRightComponent(bdvr);
-    }//GEN-LAST:event_btnPatientsActionPerformed
-
     private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
         // TODO add your handling code here:
         db4oUtil.storeDb4oEcosystem(ecosystem);
         dispose();
     }//GEN-LAST:event_btnLogoutActionPerformed
 
-    private void btnPatients2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPatients2ActionPerformed
+    private void btnAddHandlerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddHandlerActionPerformed
         // TODO add your handling code here:
-        BloodDonationViewRequestsJPanel bdvr = new BloodDonationViewRequestsJPanel(ecosystem, userAccount, organization, enterprise, network);
-        jSplitPaneSystem.setRightComponent(bdvr);
-    }//GEN-LAST:event_btnPatients2ActionPerformed
+        DonationHandlerSignUp dhs = new DonationHandlerSignUp(ecosystem, enterprise.getOrganizationDirectory());
+        jSplitPaneSystem.setRightComponent(dhs);
+    }//GEN-LAST:event_btnAddHandlerActionPerformed
 
-    private void btnPatients3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPatients3ActionPerformed
+    private void Org_NameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Org_NameActionPerformed
         // TODO add your handling code here:
-        OrganDonationForm organDonationForm = new OrganDonationForm(ecosystem, userAccount, organization, enterprise, network);
-        jSplitPaneSystem.setRightComponent(organDonationForm);
-    }//GEN-LAST:event_btnPatients3ActionPerformed
 
-    private void btnPatients4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPatients4ActionPerformed
-        // TODO add your handling code here:
-        BloodDonationForm bloodDonationForm = new BloodDonationForm(ecosystem, userAccount, organization, enterprise, network);
-        jSplitPaneSystem.setRightComponent(bloodDonationForm);
-    }//GEN-LAST:event_btnPatients4ActionPerformed
+        DonorBankManageOrganization lmo = new DonorBankManageOrganization(enterprise);
+        jSplitPaneSystem.setRightComponent(lmo);
+    }//GEN-LAST:event_Org_NameActionPerformed
 
     /**
      * @param args the command line arguments
@@ -494,11 +458,9 @@ public class DonorAdminWorkArea extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Org_Name;
+    private javax.swing.JButton btnAddHandler;
     private javax.swing.JButton btnLogout;
-    private javax.swing.JButton btnPatients;
-    private javax.swing.JButton btnPatients2;
-    private javax.swing.JButton btnPatients3;
-    private javax.swing.JButton btnPatients4;
     private javax.swing.JPanel controlPanel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JSplitPane jSplitPaneSystem;

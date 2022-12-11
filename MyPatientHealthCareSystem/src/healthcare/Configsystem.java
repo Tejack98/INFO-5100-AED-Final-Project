@@ -7,6 +7,7 @@ package healthcare;
 import healthcare.Enterprise.donorBank.DonorAdminRole;
 import healthcare.Enterprise.donorBank.DonorRole;
 import healthcare.enterprise.Enterprise;
+import healthcare.enterprise.donorBank.DonationHandlerRole;
 import healthcare.enterprise.emergencyUnit.AmbulanceHandlerRole;
 import healthcare.enterprise.emergencyUnit.EmergencyUnitAdminRole;
 import healthcare.enterprise.healthCare.DoctorRole;
@@ -122,9 +123,11 @@ public class Configsystem {
 
         Person dadmin = orgDonor.getPersonDirectory().createAndAddPerson("tej","75 Saint Alphonso","Boston","MA",Long.parseLong("02120"),Long.parseLong("8576938034"));
         Person donor = orgDonor.getPersonDirectory().createAndAddPerson("Shr","75 Saint Alphonso","Boston","MA",Long.parseLong("02120"),Long.parseLong("8576938034"));
+        Person donorHandler = orgDonor.getPersonDirectory().createAndAddPerson("DHan","75 Saint Alphonso","Boston","MA",Long.parseLong("02120"),Long.parseLong("8576938034"));
         
         UserAccount daminUser = orgDonor.getUserAccountDirectory().createUserAccount(7777,"dadmin", "dadmin", dadmin, new DonorAdminRole() ,"labadmin@g.com");
         UserAccount donor_user = orgDonor.getUserAccountDirectory().createUserAccount(8888,"donor", "donor", donor, new DonorRole() ,"labadmin@g.com");
+        UserAccount donor_Hand_user = orgDonor.getUserAccountDirectory().createUserAccount(8888,"hdon", "hdon", donorHandler, new DonationHandlerRole(),"labadmin@g.com");
         
         return ecosystem;
     }
