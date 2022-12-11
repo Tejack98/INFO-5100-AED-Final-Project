@@ -109,33 +109,33 @@ public class SysAdminManageEnterprise extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(enterpriseJTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 110, 880, 240));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 110, 900, 240));
 
         jPanel1.setBackground(new java.awt.Color(153, 204, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         jLabel1.setText("Network");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, -1, -1));
 
         networkJComboBox.setFont(new java.awt.Font("Georgia", 0, 11)); // NOI18N
         networkJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel1.add(networkJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 170, 200, -1));
+        jPanel1.add(networkJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 170, 200, -1));
 
         jLabel3.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         jLabel3.setText("Enterprise Type");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, -1, -1));
 
         enterpriseTypeJComboBox.setFont(new java.awt.Font("Georgia", 0, 11)); // NOI18N
         enterpriseTypeJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel1.add(enterpriseTypeJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 250, 200, -1));
+        jPanel1.add(enterpriseTypeJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 250, 200, -1));
 
         jLabel2.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         jLabel2.setText("Name");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 330, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 330, -1, -1));
 
         nameJTextField.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
-        jPanel1.add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 330, 200, -1));
+        jPanel1.add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 330, 200, -1));
 
         submitJButton.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         submitJButton.setText("Submit");
@@ -145,9 +145,9 @@ public class SysAdminManageEnterprise extends javax.swing.JPanel {
                 submitJButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(submitJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 400, 80, 31));
+        jPanel1.add(submitJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 390, 80, 31));
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 380, 1060));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 330, 1060));
 
         jPanel6.setBackground(new java.awt.Color(255, 204, 204));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -156,7 +156,7 @@ public class SysAdminManageEnterprise extends javax.swing.JPanel {
         jLabel7.setText("Manage Enterprise Work Area");
         jPanel6.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 980, -1));
 
-        add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 0, 990, 80));
+        add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 0, 990, 80));
     }// </editor-fold>//GEN-END:initComponents
 
     private void submitJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitJButtonActionPerformed

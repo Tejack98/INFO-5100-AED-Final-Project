@@ -72,7 +72,7 @@
                       <Component id="lblname" min="-2" pref="23" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                       <Component id="jScrollPane2" min="-2" pref="257" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="464" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="457" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -112,7 +112,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel6">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Georgia" size="18" style="1"/>
+                      <Font name="Georgia" size="24" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Blood Requests Received"/>
                   </Properties>

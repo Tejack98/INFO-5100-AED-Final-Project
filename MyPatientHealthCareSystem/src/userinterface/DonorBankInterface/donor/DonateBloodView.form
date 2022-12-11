@@ -130,7 +130,7 @@
             <Component class="javax.swing.JLabel" name="jLabel1">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Georgia" size="18" style="1"/>
+                  <Font name="Georgia" size="24" style="1"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Blood Donation Details"/>
               </Properties>
