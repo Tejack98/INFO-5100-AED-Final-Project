@@ -55,6 +55,8 @@ public class EmergencyUnitAdminWorkArea extends javax.swing.JFrame {
         btnAddAmbulanceHandler = new javax.swing.JButton();
         btnLogout = new javax.swing.JButton();
         Org_Name = new javax.swing.JButton();
+        btnAddAmbulanceHandler1 = new javax.swing.JButton();
+        btnAddAmbulanceHandler2 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -96,6 +98,22 @@ public class EmergencyUnitAdminWorkArea extends javax.swing.JFrame {
             }
         });
 
+        btnAddAmbulanceHandler1.setBackground(new java.awt.Color(153, 204, 255));
+        btnAddAmbulanceHandler1.setText("View Handlers");
+        btnAddAmbulanceHandler1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddAmbulanceHandler1ActionPerformed(evt);
+            }
+        });
+
+        btnAddAmbulanceHandler2.setBackground(new java.awt.Color(153, 204, 255));
+        btnAddAmbulanceHandler2.setText("View Ambulance");
+        btnAddAmbulanceHandler2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddAmbulanceHandler2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -108,6 +126,8 @@ public class EmergencyUnitAdminWorkArea extends javax.swing.JFrame {
             .addComponent(btnAddAmbulance, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btnAddAmbulanceHandler, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(Org_Name, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnAddAmbulanceHandler1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnAddAmbulanceHandler2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -115,12 +135,16 @@ public class EmergencyUnitAdminWorkArea extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnAddAmbulance, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnAddAmbulance, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnAddAmbulanceHandler, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
-                .addComponent(Org_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 120, Short.MAX_VALUE)
+                .addComponent(btnAddAmbulanceHandler, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnAddAmbulanceHandler1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnAddAmbulanceHandler2, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(Org_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addComponent(btnLogout)
                 .addContainerGap())
         );
@@ -183,6 +207,18 @@ public class EmergencyUnitAdminWorkArea extends javax.swing.JFrame {
         jSplitPane1.setRightComponent(lmo);
     }//GEN-LAST:event_Org_NameActionPerformed
 
+    private void btnAddAmbulanceHandler1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddAmbulanceHandler1ActionPerformed
+        // TODO add your handling code here:
+        EmergencyUnitViewHandlers euvh = new EmergencyUnitViewHandlers(ecosystem, enterprise.getOrganizationDirectory());
+        jSplitPane1.setRightComponent(euvh);
+    }//GEN-LAST:event_btnAddAmbulanceHandler1ActionPerformed
+
+    private void btnAddAmbulanceHandler2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddAmbulanceHandler2ActionPerformed
+        // TODO add your handling code here:
+        EmergencyUnitViewAmbulance euva = new EmergencyUnitViewAmbulance(ecosystem, userAccount, organization, enterprise, network);
+        jSplitPane1.setRightComponent(euva);
+    }//GEN-LAST:event_btnAddAmbulanceHandler2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -223,6 +259,8 @@ public class EmergencyUnitAdminWorkArea extends javax.swing.JFrame {
     private javax.swing.JButton Org_Name;
     private javax.swing.JButton btnAddAmbulance;
     private javax.swing.JButton btnAddAmbulanceHandler;
+    private javax.swing.JButton btnAddAmbulanceHandler1;
+    private javax.swing.JButton btnAddAmbulanceHandler2;
     private javax.swing.JButton btnLogout;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
