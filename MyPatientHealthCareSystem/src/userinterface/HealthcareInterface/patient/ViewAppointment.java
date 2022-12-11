@@ -141,6 +141,7 @@ public class ViewAppointment extends javax.swing.JPanel {
         }       
         WorkRequest request = (WorkRequest) appointmentsTable.getValueAt(selectedRow, 0);
       
+        System.out.println("-=-=-=-==-==-=-=-=-=-==- "+ request.getDiagnose());
         txtDiagnose.setText(request.getDiagnose());
     }//GEN-LAST:event_vwDiganosisBtnActionPerformed
 

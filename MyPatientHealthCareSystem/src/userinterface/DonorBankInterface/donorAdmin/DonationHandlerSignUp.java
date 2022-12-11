@@ -133,6 +133,12 @@ public class DonationHandlerSignUp extends javax.swing.JPanel {
         lblZipCode.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblZipCode.setText("Zipcode");
         add(lblZipCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 410, -1, -1));
+
+        txtAddress.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtAddressActionPerformed(evt);
+            }
+        });
         add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 290, 230, -1));
 
         txtState.addActionListener(new java.awt.event.ActionListener() {
@@ -201,7 +207,7 @@ public class DonationHandlerSignUp extends javax.swing.JPanel {
                     String username = name.substring(0, 3) + String.valueOf(HandlerID);
                     String password = name + String.valueOf(random.nextInt((9999 - 100) + 1) + 10);
                     
-                    Person p = organization.getPersonDirectory().createAndAddPerson(username, Address, City, State, Zipcode, cellPhoneNumber);  
+                    Person p = organization.getPersonDirectory().createAndAddPerson(name, Address, City, State, Zipcode, cellPhoneNumber);  
                     UserAccount u = organization.getUserAccountDirectory().createUserAccount(HandlerID,username, password, p, new DonationHandlerRole(), emailId);
                     
                     JOptionPane.showMessageDialog(this,"Handler Registered Successfully.Your New Username is:"+username+" and password: "+password+",Please save this Id for furture reference.");
@@ -421,6 +427,10 @@ public class DonationHandlerSignUp extends javax.swing.JPanel {
         }
         return emptyValidationStatus;
     }//GEN-LAST:event_btnSignUpActionPerformed
+
+    private void txtAddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAddressActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtAddressActionPerformed
 
     private void populateOrganizationComboBox() {
         organizationJComboBox.removeAllItems();

@@ -68,6 +68,11 @@ public abstract class Organization {
         this.workQueue = workQueue;
     }
     
+    @Override
+    public String toString() {
+        return organizationName;
+    }
+    
     public enum OrganizationType {
         Administrator("Admin Organization", null),
         Doctor("Doctor Organization",Enterprise.EnterpriseType.HealthCare),

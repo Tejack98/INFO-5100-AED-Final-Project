@@ -201,7 +201,7 @@ public class LabTechnicianSignUp extends javax.swing.JPanel {
                     String password = name + String.valueOf(random.nextInt((9999 - 100) + 1) + 10);
              
                     Organization organization = (Organization)  organizationJComboBox.getSelectedItem();
-                    Person p = organization.getPersonDirectory().createAndAddPerson(username, Address, City, State, Zipcode, cellPhoneNumber);  
+                    Person p = organization.getPersonDirectory().createAndAddPerson(name, Address, City, State, Zipcode, cellPhoneNumber);  
                     UserAccount u = organization.getUserAccountDirectory().createUserAccount(LabTechID,username, password, p, new LabAssistantRole(), emailId);
                     
                     JOptionPane.showMessageDialog(this,"Lab Technician Registered Successfully.Your New Username is: "+username+" and password: "+password+",Please save this Id for furture reference.");

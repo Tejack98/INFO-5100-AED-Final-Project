@@ -49,6 +49,7 @@ public class ViewLabResults extends javax.swing.JPanel {
         resulttxt.setText(patientrequest.getLabresult());
         resultTypetxt.setText(patientrequest.getResulttype());
         solutionByLabtxt.setText(patientrequest.getSolution());
+        txtDocDiagnosis.setText(patientrequest.getDiagnose());
         
     }
     
@@ -74,7 +75,8 @@ public class ViewLabResults extends javax.swing.JPanel {
         resultTypetxt = new javax.swing.JTextField();
         result_txt1 = new javax.swing.JLabel();
         solutionByLabtxt = new javax.swing.JTextField();
-        backBtn = new javax.swing.JButton();
+        txtDocDiagnosis = new javax.swing.JTextField();
+        diagnosisbtn = new javax.swing.JButton();
 
         optionPanel.setBackground(new java.awt.Color(255, 204, 204));
 
@@ -108,6 +110,7 @@ public class ViewLabResults extends javax.swing.JPanel {
 
         actionPanel.setBackground(new java.awt.Color(255, 255, 255));
 
+        txtName.setEditable(false);
         txtName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNameActionPerformed(evt);
@@ -119,21 +122,25 @@ public class ViewLabResults extends javax.swing.JPanel {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Lab Process Result");
 
+        resulttxt.setEditable(false);
+
         result_txt.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         result_txt.setText("Result");
 
         result_txt2.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         result_txt2.setText("Result Type");
 
+        resultTypetxt.setEditable(false);
+
         result_txt1.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         result_txt1.setText("Solution By Lab");
 
-        backBtn.setBackground(new java.awt.Color(255, 204, 204));
-        backBtn.setFont(new java.awt.Font("Georgia", 0, 13)); // NOI18N
-        backBtn.setText("Back");
-        backBtn.addActionListener(new java.awt.event.ActionListener() {
+        solutionByLabtxt.setEditable(false);
+
+        diagnosisbtn.setText("Add Diagnosis");
+        diagnosisbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backBtnActionPerformed(evt);
+                diagnosisbtnActionPerformed(evt);
             }
         });
 
@@ -143,24 +150,26 @@ public class ViewLabResults extends javax.swing.JPanel {
             actionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(actionPanelLayout.createSequentialGroup()
                 .addGap(166, 166, 166)
-                .addGroup(actionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(backBtn)
-                    .addGroup(actionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(actionPanelLayout.createSequentialGroup()
-                            .addComponent(result_txt2, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(resultTypetxt, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(actionPanelLayout.createSequentialGroup()
-                            .addComponent(result_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(resulttxt, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(actionPanelLayout.createSequentialGroup()
-                            .addComponent(result_txt1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(solutionByLabtxt, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txtName)))
-                .addContainerGap(177, Short.MAX_VALUE))
+                .addGroup(actionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(actionPanelLayout.createSequentialGroup()
+                        .addComponent(result_txt2, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(resultTypetxt, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(actionPanelLayout.createSequentialGroup()
+                        .addComponent(result_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(resulttxt, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(actionPanelLayout.createSequentialGroup()
+                        .addComponent(result_txt1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(solutionByLabtxt, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtName)
+                    .addGroup(actionPanelLayout.createSequentialGroup()
+                        .addComponent(txtDocDiagnosis, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(diagnosisbtn)))
+                .addContainerGap(174, Short.MAX_VALUE))
         );
         actionPanelLayout.setVerticalGroup(
             actionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -181,9 +190,11 @@ public class ViewLabResults extends javax.swing.JPanel {
                 .addGroup(actionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(result_txt1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(solutionByLabtxt, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
-                .addComponent(backBtn)
-                .addContainerGap(188, Short.MAX_VALUE))
+                .addGap(27, 27, 27)
+                .addGroup(actionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtDocDiagnosis, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(diagnosisbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(148, Short.MAX_VALUE))
         );
 
         jSplitPane1.setRightComponent(actionPanel);
@@ -214,18 +225,17 @@ public class ViewLabResults extends javax.swing.JPanel {
 
     }//GEN-LAST:event_prescriptionBtnActionPerformed
 
-    private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
+    private void diagnosisbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_diagnosisbtnActionPerformed
         // TODO add your handling code here:
-//        userProcessContainer.remove(this);
-//        GroupLayout layout = (GroupLayout)userProcessContainer.getLayout();
-//        layout.removeLayoutComponent(userProcessContainer);
-        popupResult();
-    }//GEN-LAST:event_backBtnActionPerformed
+        patientrequest.setDiagnose(txtDocDiagnosis.getText());
+        txtDocDiagnosis.setText("");
+        JOptionPane.showMessageDialog(null, "Diagnosis Added Successfully");
+    }//GEN-LAST:event_diagnosisbtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel actionPanel;
-    private javax.swing.JButton backBtn;
+    private javax.swing.JButton diagnosisbtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JPanel optionPanel;
@@ -236,6 +246,7 @@ public class ViewLabResults extends javax.swing.JPanel {
     private javax.swing.JLabel result_txt2;
     private javax.swing.JTextField resulttxt;
     private javax.swing.JTextField solutionByLabtxt;
+    private javax.swing.JTextField txtDocDiagnosis;
     private javax.swing.JTextField txtName;
     // End of variables declaration//GEN-END:variables
 }

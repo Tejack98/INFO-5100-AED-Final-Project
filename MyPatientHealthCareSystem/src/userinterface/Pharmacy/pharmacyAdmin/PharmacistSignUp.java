@@ -196,7 +196,7 @@ public class PharmacistSignUp extends javax.swing.JPanel {
 
                     
                     Organization organization = (Organization) organizationJComboBox.getSelectedItem();
-                    Person p = organization.getPersonDirectory().createAndAddPerson(username, Address, City, State, Zipcode, cellPhoneNumber);  
+                    Person p = organization.getPersonDirectory().createAndAddPerson(name, Address, City, State, Zipcode, cellPhoneNumber);  
                     UserAccount u = organization.getUserAccountDirectory().createUserAccount(LabTechID,username, password, p, new PharmacistRole(), emailId);
                     
                     JOptionPane.showMessageDialog(this,"Lab Technician Registered Successfully.Your New Username is: "+username+" and password: "+password+",Please save this Id for furture reference.");
