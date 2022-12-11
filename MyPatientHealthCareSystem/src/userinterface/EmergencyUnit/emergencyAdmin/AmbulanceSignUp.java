@@ -58,10 +58,12 @@ public class AmbulanceSignUp extends javax.swing.JPanel {
         lblTitle = new javax.swing.JLabel();
         txtDescription = new javax.swing.JTextField();
 
-        lblVehicleName.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        setBackground(new java.awt.Color(255, 204, 204));
+
+        lblVehicleName.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblVehicleName.setText("Vehicle Name");
 
-        lblVehicleType.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        lblVehicleType.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblVehicleType.setText("Vehicle Type");
 
         btnSignUp.setText("Sign Up");
@@ -71,10 +73,10 @@ public class AmbulanceSignUp extends javax.swing.JPanel {
             }
         });
 
-        lblVehicleNumber.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        lblVehicleNumber.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblVehicleNumber.setText("Vehicle Number");
 
-        lblDescription.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        lblDescription.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblDescription.setText("Description");
 
         txtVehicleType.addActionListener(new java.awt.event.ActionListener() {
@@ -83,7 +85,7 @@ public class AmbulanceSignUp extends javax.swing.JPanel {
             }
         });
 
-        lblTitle.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        lblTitle.setFont(new java.awt.Font("Georgia", 1, 24)); // NOI18N
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitle.setText("Create Ambulance");
 
@@ -92,12 +94,11 @@ public class AmbulanceSignUp extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(149, 149, 149)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSignUp)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(lblTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(149, 149, 149)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(lblVehicleName)
                             .addComponent(lblVehicleType)
@@ -108,13 +109,8 @@ public class AmbulanceSignUp extends javax.swing.JPanel {
                             .addComponent(txtVehicleName, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtVehicleNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtDescription, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtVehicleType, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 178, Short.MAX_VALUE)))
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btnSignUp)
-                .addGap(304, 304, 304))
+                            .addComponent(txtVehicleType, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(191, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -139,7 +135,7 @@ public class AmbulanceSignUp extends javax.swing.JPanel {
                     .addComponent(txtVehicleNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(btnSignUp)
-                .addContainerGap(239, Short.MAX_VALUE))
+                .addContainerGap(245, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -190,6 +186,17 @@ public class AmbulanceSignUp extends javax.swing.JPanel {
             validationCheck=false;
         }
         
+        if(!txtVehicleType.getText().matches("^[a-zA-Z ]+$"))
+        {
+            txtVehicleType.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            txtVehicleType.setToolTipText("Please enter only characters and space.");
+            validationCheck=false;
+        }
+        
+        if(txtVehicleType.getText().matches("^[a-zA-Z ]+$"))
+        {
+            txtVehicleType.setBorder(BorderFactory.createLineBorder(Color.BLUE, 0));
+        }
        
 
         return validationCheck;
@@ -207,6 +214,17 @@ public class AmbulanceSignUp extends javax.swing.JPanel {
             txtVehicleName.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
         }
        
+        if(txtVehicleType.getText().equals(null) || txtVehicleType.getText().trim().isEmpty() )
+        {
+            txtVehicleType.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            txtVehicleType.setToolTipText("This Field Cannot be empty");
+            emptyValidationStatus= false;
+        }
+        if(!txtVehicleType.getText().equals(null) && !txtVehicleType.getText().trim().isEmpty() )
+        {
+            txtVehicleType.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        }
+        
         if(txtDescription.getText().equals(null)|| txtDescription.getText().trim().isEmpty())
         {
             txtDescription.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
