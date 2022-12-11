@@ -80,6 +80,7 @@ public class DonorAdminWorkArea extends javax.swing.JFrame {
             }
         });
 
+        Org_Name.setBackground(new java.awt.Color(255, 204, 204));
         Org_Name.setText("Orgainzation");
         Org_Name.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -125,7 +126,7 @@ public class DonorAdminWorkArea extends javax.swing.JFrame {
         workArea.setLayout(workAreaLayout);
         workAreaLayout.setHorizontalGroup(
             workAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 644, Short.MAX_VALUE)
+            .addGap(0, 659, Short.MAX_VALUE)
         );
         workAreaLayout.setVerticalGroup(
             workAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

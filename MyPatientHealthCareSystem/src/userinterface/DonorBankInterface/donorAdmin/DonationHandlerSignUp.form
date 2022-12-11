@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <Properties>
+    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+      <Color blue="cc" green="cc" red="ff" type="rgb"/>
+    </Property>
+  </Properties>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
@@ -123,7 +128,7 @@
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="btnSignUp" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="24" max="32767" attributes="0"/>
+              <EmptySpace pref="31" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -132,7 +137,7 @@
     <Component class="javax.swing.JLabel" name="lblDateOfBirth">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Comic Sans MS" size="14" style="0"/>
+          <Font name="Georgia" size="14" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Date Of Birth"/>
       </Properties>
@@ -146,7 +151,7 @@
     <Component class="javax.swing.JLabel" name="lblTitle">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Comic Sans MS" size="24" style="1"/>
+          <Font name="Georgia" size="24" style="1"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="Create Handler Profile"/>
@@ -165,7 +170,7 @@
     <Component class="javax.swing.JLabel" name="lblPhoneNo">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Comic Sans MS" size="14" style="0"/>
+          <Font name="Georgia" size="14" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Phone No."/>
       </Properties>
@@ -173,7 +178,7 @@
     <Component class="javax.swing.JLabel" name="lblName">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Comic Sans MS" size="14" style="0"/>
+          <Font name="Georgia" size="14" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Name"/>
       </Properties>
@@ -181,7 +186,7 @@
     <Component class="javax.swing.JLabel" name="lblUsername">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Comic Sans MS" size="14" style="0"/>
+          <Font name="Georgia" size="14" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Email"/>
       </Properties>
@@ -189,7 +194,7 @@
     <Component class="javax.swing.JLabel" name="lblGender">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Comic Sans MS" size="14" style="0"/>
+          <Font name="Georgia" size="14" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Gender"/>
       </Properties>
@@ -197,11 +202,10 @@
     <Component class="javax.swing.JComboBox" name="cboxGender">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="4">
-            <StringItem index="0" value="Item 1"/>
-            <StringItem index="1" value="Item 2"/>
-            <StringItem index="2" value="Item 3"/>
-            <StringItem index="3" value="Item 4"/>
+          <StringArray count="3">
+            <StringItem index="0" value="Male"/>
+            <StringItem index="1" value="Female"/>
+            <StringItem index="2" value="Other"/>
           </StringArray>
         </Property>
       </Properties>
@@ -212,7 +216,7 @@
     <Component class="javax.swing.JLabel" name="lblState">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Comic Sans MS" size="14" style="0"/>
+          <Font name="Georgia" size="14" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="State"/>
       </Properties>
@@ -225,7 +229,7 @@
     <Component class="javax.swing.JLabel" name="lblCity">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Comic Sans MS" size="14" style="0"/>
+          <Font name="Georgia" size="14" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="City"/>
       </Properties>
@@ -233,7 +237,7 @@
     <Component class="javax.swing.JLabel" name="lblZipCode">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Comic Sans MS" size="14" style="0"/>
+          <Font name="Georgia" size="14" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Zipcode"/>
       </Properties>
@@ -248,7 +252,7 @@
     <Component class="javax.swing.JLabel" name="lblAddress">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Comic Sans MS" size="14" style="0"/>
+          <Font name="Georgia" size="14" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Address"/>
       </Properties>
@@ -256,7 +260,7 @@
     <Component class="javax.swing.JLabel" name="lblGender1">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Comic Sans MS" size="14" style="0"/>
+          <Font name="Georgia" size="14" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Vehicle"/>
       </Properties>
@@ -269,11 +273,12 @@
     <Component class="javax.swing.JComboBox" name="cboxVehicle">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="4">
-            <StringItem index="0" value="Item 1"/>
-            <StringItem index="1" value="Item 2"/>
-            <StringItem index="2" value="Item 3"/>
-            <StringItem index="3" value="Item 4"/>
+          <StringArray count="5">
+            <StringItem index="0" value="Ambulance 101"/>
+            <StringItem index="1" value="Ambulance 102"/>
+            <StringItem index="2" value="Ambulance 103"/>
+            <StringItem index="3" value="Ambulance 104"/>
+            <StringItem index="4" value="Ambulance 105"/>
           </StringArray>
         </Property>
       </Properties>
@@ -284,7 +289,7 @@
     <Component class="javax.swing.JLabel" name="lblOrgName">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Comic Sans MS" size="14" style="0"/>
+          <Font name="Georgia" size="14" style="0"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="11"/>
         <Property name="text" type="java.lang.String" value="Organization Name"/>

@@ -67,11 +67,9 @@ public class DonateBloodView extends javax.swing.JPanel {
         jLabel1.setText("Blood Donation Details");
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(612, 24, -1, -1));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1440, 80));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1820, 80));
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\adity\\Downloads\\vecteezy_volunteer-collecting-blood-donation_1978288\\vecteezy_activism-illustration_wk0121_generated.jpg")); // NOI18N
-        jLabel3.setText("jLabel3");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-150, 80, 1970, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -82,7 +80,7 @@ public class DonateBloodView extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 426, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 404, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
