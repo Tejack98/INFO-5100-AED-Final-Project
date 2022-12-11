@@ -243,12 +243,21 @@ public class EmergencyUnitViewRequestsJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Please select a emergency request first", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
-
-        EmergencyUnitRequest request = (EmergencyUnitRequest) emergencyWorkRequestJTable.getValueAt(selectedRow, 0);
-        request.setStatus("Addressed");
+        String status = (String) emergencyWorkRequestJTable.getValueAt(selectedRow, 2);
         
-        JOptionPane.showMessageDialog(null, "Emergency Addressed");
-        
+        if (status.equals("Assigned To Emergency Unit")) {
+            EmergencyUnitRequest request = (EmergencyUnitRequest) emergencyWorkRequestJTable.getValueAt(selectedRow, 0);
+            request.setStatus("Addressed");
+            populateEmergencyRequestTable();
+            JOptionPane.showMessageDialog(null, "Emergency Addressed");
+            return;
+        }else if(status.equals("Emergency Request")){
+            JOptionPane.showMessageDialog(null, "Request Not with you");
+            return;
+        }else{
+            JOptionPane.showMessageDialog(null, "Your Request Cant be processed", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
     }//GEN-LAST:event_processJButtonActionPerformed
 
     private void assignJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignJButtonActionPerformed
@@ -261,7 +270,7 @@ public class EmergencyUnitViewRequestsJPanel extends javax.swing.JPanel {
         }
         status = (String) emergencyWorkRequestJTable.getValueAt(selectedRow, 2);
 
-        if (status.equals("Emergency Requested")) {
+        if (status.equals("Emergency Request")) {
             EmergencyUnitRequest request = (EmergencyUnitRequest) emergencyWorkRequestJTable.getValueAt(selectedRow, 0);
             request.setReceiver(userAccount);
             request.setStatus("Assigned To Emergency Unit");
