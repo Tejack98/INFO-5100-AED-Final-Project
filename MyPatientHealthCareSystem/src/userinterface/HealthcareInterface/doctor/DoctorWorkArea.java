@@ -57,7 +57,6 @@ public class DoctorWorkArea extends javax.swing.JFrame {
         btnLogout = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         Appointment_req_btn = new javax.swing.JButton();
-        Pat_Med_His_btn = new javax.swing.JButton();
         btnDocDashboard1 = new javax.swing.JButton();
         workArea = new javax.swing.JPanel();
 
@@ -86,14 +85,6 @@ public class DoctorWorkArea extends javax.swing.JFrame {
             }
         });
 
-        Pat_Med_His_btn.setBackground(new java.awt.Color(255, 204, 204));
-        Pat_Med_His_btn.setText("Medical History");
-        Pat_Med_His_btn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Pat_Med_His_btnActionPerformed(evt);
-            }
-        });
-
         btnDocDashboard1.setBackground(new java.awt.Color(255, 204, 204));
         btnDocDashboard1.setText("Statistics");
         btnDocDashboard1.addActionListener(new java.awt.event.ActionListener() {
@@ -106,7 +97,6 @@ public class DoctorWorkArea extends javax.swing.JFrame {
         controlPanel.setLayout(controlPanelLayout);
         controlPanelLayout.setHorizontalGroup(
             controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Pat_Med_His_btn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btnDocDashboard1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(controlPanelLayout.createSequentialGroup()
                 .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -116,7 +106,7 @@ public class DoctorWorkArea extends javax.swing.JFrame {
                     .addGroup(controlPanelLayout.createSequentialGroup()
                         .addGap(50, 50, 50)
                         .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(48, Short.MAX_VALUE))
             .addComponent(Appointment_req_btn, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
         );
         controlPanelLayout.setVerticalGroup(
@@ -126,11 +116,9 @@ public class DoctorWorkArea extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(78, 78, 78)
                 .addComponent(Appointment_req_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(63, 63, 63)
-                .addComponent(Pat_Med_His_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(54, 54, 54)
+                .addGap(46, 46, 46)
                 .addComponent(btnDocDashboard1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 140, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 271, Short.MAX_VALUE)
                 .addComponent(btnLogout)
                 .addGap(19, 19, 19))
         );
@@ -177,12 +165,6 @@ public class DoctorWorkArea extends javax.swing.JFrame {
         DoctorAppointmentRequestsPanel req = new DoctorAppointmentRequestsPanel(userAccount,organization, enterprise ,network);
         jSplitPaneSystem.setRightComponent(req);
     }//GEN-LAST:event_Appointment_req_btnActionPerformed
-
-    private void Pat_Med_His_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pat_Med_His_btnActionPerformed
-        // TODO add your handling code here:
-//        DoctorPatientMedicalHistoryPanel dpmh = new DoctorPatientMedicalHistoryPanel();
-//        jSplitPaneSystem.setRightComponent(dpmh);
-    }//GEN-LAST:event_Pat_Med_His_btnActionPerformed
 
     private void btnDocDashboard1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDocDashboard1ActionPerformed
         // TODO add your handling code here:
@@ -258,7 +240,6 @@ public class DoctorWorkArea extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Appointment_req_btn;
-    private javax.swing.JButton Pat_Med_His_btn;
     private javax.swing.JButton btnDocDashboard1;
     private javax.swing.JButton btnLogout;
     private javax.swing.JPanel controlPanel;

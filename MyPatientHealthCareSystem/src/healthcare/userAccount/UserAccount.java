@@ -81,5 +81,10 @@ public class UserAccount {
     public void setUserId(int userId) {
         this.userId = userId;
     }
+    
+    @Override
+    public String toString() {
+        return userName;
+    }
        
 }

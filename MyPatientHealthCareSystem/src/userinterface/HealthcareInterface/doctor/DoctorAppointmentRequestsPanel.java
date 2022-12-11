@@ -81,7 +81,7 @@ public class DoctorAppointmentRequestsPanel extends javax.swing.JPanel {
 
         vw_labbtn.setBackground(new java.awt.Color(255, 204, 204));
         vw_labbtn.setFont(new java.awt.Font("Georgia", 0, 13)); // NOI18N
-        vw_labbtn.setText("View Lab Result");
+        vw_labbtn.setText("Diagnosis");
         vw_labbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 vw_labbtnActionPerformed(evt);

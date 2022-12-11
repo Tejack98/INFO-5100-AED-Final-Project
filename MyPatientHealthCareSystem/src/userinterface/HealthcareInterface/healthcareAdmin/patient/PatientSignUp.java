@@ -226,7 +226,7 @@ public class PatientSignUp extends javax.swing.JPanel {
                     role.setHospitalName(HospitalName);
                     
                     Organization organization = (Organization) organizationJComboBox.getSelectedItem();
-                    Person p = organization.getPersonDirectory().createAndAddPerson(username, Address, City, State, Zipcode, cellPhoneNumber);    
+                    Person p = organization.getPersonDirectory().createAndAddPerson(name, Address, City, State, Zipcode, cellPhoneNumber);    
                     UserAccount account = organization.getUserAccountDirectory().createUserAccount(PatientID,username, password, p, role, emailId);
                     
                     JOptionPane.showMessageDialog(this,"Patient Registered Successfully.Your New Patient Username is:"+username+" and password: "+password+",Please save this Patient Id for furture reference.");
