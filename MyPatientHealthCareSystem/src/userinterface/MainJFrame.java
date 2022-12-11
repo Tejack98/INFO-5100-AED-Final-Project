@@ -21,8 +21,8 @@ import userinterface.DonorBankInterface.donationHandler.DonationHandlerWorkArea;
 import userinterface.DonorBankInterface.donor.DonorWorkArea;
 import userinterface.DonorBankInterface.donorAdmin.DonorAdminWorkArea;
 //import userinterface.DonorBankInterface.Logindetails.AdminLogin.DonorAdminWorkArea;
-import userinterface.EmergencyUnit.ambulanceHandler.AmbulanceHandlerWorkArea;
 import userinterface.EmergencyUnit.emergencyAdmin.EmergencyUnitAdminWorkArea;
+import userinterface.EmergencyUnit.handler.EmergencyHandlerWorkArea;
 import userinterface.Pharmacy.pharmacist.PharmacistWorkArea;
 import userinterface.Pharmacy.pharmacyAdmin.PharmacyAdminWorkArea;
 import userinterface.HealthcareInterface.doctor.DoctorWorkArea;
@@ -259,7 +259,7 @@ public class MainJFrame extends javax.swing.JFrame {
             }
 
             if (Role.RoleType.AmbulanceHandler.toString().equals(userAccount.getRole().toString())) {
-                AmbulanceHandlerWorkArea ambHanlerFrame = (AmbulanceHandlerWorkArea) frame;
+                EmergencyHandlerWorkArea ambHanlerFrame = (EmergencyHandlerWorkArea) frame;
                 ambHanlerFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
                 ambHanlerFrame.setVisible(true);
             }

@@ -3,13 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package userinterface.SupplyChainInterface.handler;
+package userinterface.EmergencyUnit.handler;
 
 
+import userinterface.SupplyChainInterface.handler.*;
 import userinterface.Pharmacy.pharmacist.*;
 import userinterface.LabInterface.labTech.*;
 import healthcare.Ecosystem;
 import healthcare.enterprise.Enterprise;
+import healthcare.enterprise.emergencyUnit.Ambulance;
+import healthcare.enterprise.emergencyUnit.EmergencyUnitOrganization;
 import healthcare.enterprise.lab.LabOrganization;
 import healthcare.enterprise.pharmacy.PharmacyOrganization;
 import healthcare.enterprise.supplyChain.SupplierOrganization;
@@ -28,28 +31,28 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author tejas
  */
-public class ViewVehicles extends javax.swing.JPanel {
+public class ViewAmbulanceVehicles extends javax.swing.JPanel {
 
     /**
      * Creates new form LabAssistantWorkAreaJPanel
      */
     
     UserAccount userAccount;
-    SupplierOrganization suppOrganization;
+    EmergencyUnitOrganization emerOrganization;
     Enterprise enterprise;
     Ecosystem ecosystem;
     Network network;
 
-    public ViewVehicles(Ecosystem ecosystem, UserAccount account,
+    public ViewAmbulanceVehicles(Ecosystem ecosystem, UserAccount account,
             Organization organization, Enterprise enterprise, Network network) {
         initComponents();
         this.userAccount = account;
         this.ecosystem = ecosystem;
-        this.suppOrganization = (SupplierOrganization) organization;
+        this.emerOrganization = (EmergencyUnitOrganization) organization;
         this.enterprise = enterprise;
         this.network = network;
         lblname.setText(userAccount.getPerson().getPersonName());
-        populateVehiclesTable();
+        populateAmbulanceTable();
     }
 
     /**
@@ -67,11 +70,11 @@ public class ViewVehicles extends javax.swing.JPanel {
         jLabel6 = new javax.swing.JLabel();
         lblname = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        supplierChainVehicleJTable = new javax.swing.JTable();
+        ambulanceVehicleJTable = new javax.swing.JTable();
         optionsPanel = new javax.swing.JPanel();
         refreshJButton = new javax.swing.JButton();
         assignJButton = new javax.swing.JButton();
-        assignJButton1 = new javax.swing.JButton();
+        deallocateJButton = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -101,7 +104,7 @@ public class ViewVehicles extends javax.swing.JPanel {
         lblname.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lblname.setText("Lab Assitant Name");
 
-        supplierChainVehicleJTable.setModel(new javax.swing.table.DefaultTableModel(
+        ambulanceVehicleJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -127,7 +130,7 @@ public class ViewVehicles extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(supplierChainVehicleJTable);
+        jScrollPane2.setViewportView(ambulanceVehicleJTable);
 
         javax.swing.GroupLayout actionPanelLayout = new javax.swing.GroupLayout(actionPanel);
         actionPanel.setLayout(actionPanelLayout);
@@ -179,14 +182,14 @@ public class ViewVehicles extends javax.swing.JPanel {
             }
         });
 
-        assignJButton1.setBackground(new java.awt.Color(49, 84, 140));
-        assignJButton1.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        assignJButton1.setForeground(new java.awt.Color(255, 255, 255));
-        assignJButton1.setText("Deallocate");
-        assignJButton1.setBorder(null);
-        assignJButton1.addActionListener(new java.awt.event.ActionListener() {
+        deallocateJButton.setBackground(new java.awt.Color(49, 84, 140));
+        deallocateJButton.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        deallocateJButton.setForeground(new java.awt.Color(255, 255, 255));
+        deallocateJButton.setText("Deallocate");
+        deallocateJButton.setBorder(null);
+        deallocateJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                assignJButton1ActionPerformed(evt);
+                deallocateJButtonActionPerformed(evt);
             }
         });
 
@@ -197,7 +200,7 @@ public class ViewVehicles extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, optionsPanelLayout.createSequentialGroup()
                 .addGap(0, 28, Short.MAX_VALUE)
                 .addGroup(optionsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(assignJButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(deallocateJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(assignJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(refreshJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26))
@@ -209,9 +212,9 @@ public class ViewVehicles extends javax.swing.JPanel {
                 .addComponent(refreshJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(assignJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(assignJButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(572, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(deallocateJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(578, Short.MAX_VALUE))
         );
 
         jSplitPane1.setLeftComponent(optionsPanel);
@@ -230,25 +233,26 @@ public class ViewVehicles extends javax.swing.JPanel {
 
     private void refreshJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshJButtonActionPerformed
 
-        populateVehiclesTable();
+        populateAmbulanceTable();
     }//GEN-LAST:event_refreshJButtonActionPerformed
 
     private void assignJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignJButtonActionPerformed
 
-        int selectedRow = supplierChainVehicleJTable.getSelectedRow();
+        int selectedRow = ambulanceVehicleJTable.getSelectedRow();
         String status;
         if (selectedRow < 0) {
-            JOptionPane.showMessageDialog(null, "Please select a vehicle first", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Please select a Ambulance first", "Warning", JOptionPane.WARNING_MESSAGE);
 
             return;
         }
-        status = (String) supplierChainVehicleJTable.getValueAt(selectedRow, 4);
+        status = (String) ambulanceVehicleJTable.getValueAt(selectedRow, 4);
+        System.out.println(status);
 
         if (status.equals("Available")) {
             
-            Vehicle v = (Vehicle) supplierChainVehicleJTable.getValueAt(selectedRow, 0);
-            v.setVehicleStatus("Booked");
-            populateVehiclesTable();
+            Ambulance v = (Ambulance) ambulanceVehicleJTable.getValueAt(selectedRow, 0);
+            v.setAmbulanceStatus("Booked");
+            populateAmbulanceTable();
         } else if (status.equals("Booked")) {
             JOptionPane.showMessageDialog(null, "Already Booked", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
@@ -258,22 +262,23 @@ public class ViewVehicles extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_assignJButtonActionPerformed
 
-    private void assignJButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignJButton1ActionPerformed
+    private void deallocateJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deallocateJButtonActionPerformed
         // TODO add your handling code here:
-        int selectedRow = supplierChainVehicleJTable.getSelectedRow();
+        int selectedRow = ambulanceVehicleJTable.getSelectedRow();
         String status;
         if (selectedRow < 0) {
-            JOptionPane.showMessageDialog(null, "Please select a vehicle first", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Please select a Ambulance first", "Warning", JOptionPane.WARNING_MESSAGE);
 
             return;
         }
-        status = (String) supplierChainVehicleJTable.getValueAt(selectedRow, 4);
+        status = (String) ambulanceVehicleJTable.getValueAt(selectedRow, 4);
+        System.out.println(status);
 
         if (status.equals("Booked")) {
             
-            Vehicle v = (Vehicle) supplierChainVehicleJTable.getValueAt(selectedRow, 0);
-            v.setVehicleStatus("Available");
-            populateVehiclesTable();
+            Ambulance v = (Ambulance) ambulanceVehicleJTable.getValueAt(selectedRow, 0);
+            v.setAmbulanceStatus("Available");
+            populateAmbulanceTable();
         } else if (status.equals("Available")) {
             JOptionPane.showMessageDialog(null, "Already Available", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
@@ -281,19 +286,19 @@ public class ViewVehicles extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Your Request Cant be processed", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
-    }//GEN-LAST:event_assignJButton1ActionPerformed
+    }//GEN-LAST:event_deallocateJButtonActionPerformed
     
-    public void populateVehiclesTable() {
-        DefaultTableModel model = (DefaultTableModel) supplierChainVehicleJTable.getModel();
+    public void populateAmbulanceTable() {
+        DefaultTableModel model = (DefaultTableModel) ambulanceVehicleJTable.getModel();
 
         model.setRowCount(0);
-        for (Vehicle v : suppOrganization.getVehicleList()) {
+        for (Ambulance v : emerOrganization.getAmbulanceList()) {
             Object[] row = new Object[6];
             row[0] = v;
-            row[1] = v.getVehicleType();
-            row[2] = v.getVehicleDescription();
-            row[3] = v.getVehicleNumber();
-            row[4] = v.getVehicleStatus();
+            row[1] = v.getAmbulanceType();
+            row[2] = v.getAmbulanceDescription();
+            row[3] = v.getAmbulanceNumber();
+            row[4] = v.getAmbulanceStatus();
 
             model.addRow(row);
 
@@ -302,8 +307,9 @@ public class ViewVehicles extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel actionPanel;
+    private javax.swing.JTable ambulanceVehicleJTable;
     private javax.swing.JButton assignJButton;
-    private javax.swing.JButton assignJButton1;
+    private javax.swing.JButton deallocateJButton;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane2;
@@ -311,6 +317,5 @@ public class ViewVehicles extends javax.swing.JPanel {
     private javax.swing.JLabel lblname;
     private javax.swing.JPanel optionsPanel;
     private javax.swing.JButton refreshJButton;
-    private javax.swing.JTable supplierChainVehicleJTable;
     // End of variables declaration//GEN-END:variables
 }

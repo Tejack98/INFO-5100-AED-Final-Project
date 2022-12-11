@@ -13,12 +13,14 @@ public class Ambulance {
     private String ambulanceNumber;
     private String ambulanceType;
     private String ambulanceDescription;
+    private String ambulanceStatus;
 
-    public Ambulance(String ambulanceName, String ambulanceNumber, String ambulanceType, String ambulanceDescription) {
+    public Ambulance(String ambulanceName, String ambulanceNumber, String ambulanceType, String ambulanceDescription, String status) {
         this.ambulanceName = ambulanceName;
         this.ambulanceNumber = ambulanceNumber;
         this.ambulanceType = ambulanceType;
         this.ambulanceDescription = ambulanceDescription;
+        this.ambulanceStatus = status;
     }
 
     public String getAmbulanceName() {
@@ -52,8 +54,13 @@ public class Ambulance {
     public void setAmbulanceDescription(String ambulanceDescription) {
         this.ambulanceDescription = ambulanceDescription;
     }
-    
-    
-    
+
+    public String getAmbulanceStatus() {
+        return ambulanceStatus;
+    }
+
+    public void setAmbulanceStatus(String ambulanceStatus) {
+        this.ambulanceStatus = ambulanceStatus;
+    }
     
 }

@@ -23,7 +23,7 @@
                       <Component id="lblTitle" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace pref="253" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="149" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="lblVehicleName" alignment="1" min="-2" max="-2" attributes="0"/>
                           <Component id="lblVehicleType" alignment="1" min="-2" max="-2" attributes="0"/>
@@ -36,12 +36,16 @@
                           <Component id="txtVehicleNumber" alignment="0" min="-2" pref="230" max="-2" attributes="0"/>
                           <Component id="txtDescription" alignment="0" min="-2" pref="230" max="-2" attributes="0"/>
                           <Component id="txtVehicleType" alignment="0" min="-2" pref="230" max="-2" attributes="0"/>
-                          <Component id="btnSignUp" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="0" pref="343" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="178" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              <Component id="btnSignUp" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="304" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -72,22 +76,12 @@
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="btnSignUp" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="274" max="32767" attributes="0"/>
+              <EmptySpace pref="239" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="lblVehicleType">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Comic Sans MS" size="14" style="0"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Vehicle Type"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="txtVehicleNumber">
-    </Component>
     <Component class="javax.swing.JLabel" name="lblVehicleName">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -96,38 +90,14 @@
         <Property name="text" type="java.lang.String" value="Vehicle Name"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtDescription">
+    <Component class="javax.swing.JTextField" name="txtVehicleNumber">
     </Component>
-    <Component class="javax.swing.JLabel" name="lblTitle">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Comic Sans MS" size="24" style="1"/>
-        </Property>
-        <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="Register Ambulance"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="txtVehicleType">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtVehicleTypeActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JTextField" name="txtVehicleName">
-    </Component>
-    <Component class="javax.swing.JLabel" name="lblDescription">
+    <Component class="javax.swing.JLabel" name="lblVehicleType">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Comic Sans MS" size="14" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Description"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="lblVehicleNumber">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Comic Sans MS" size="14" style="0"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Vehicle Number"/>
+        <Property name="text" type="java.lang.String" value="Vehicle Type"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnSignUp">
@@ -137,6 +107,40 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSignUpActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblVehicleNumber">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Comic Sans MS" size="14" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Vehicle Number"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblDescription">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Comic Sans MS" size="14" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Description"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtVehicleName">
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtVehicleType">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtVehicleTypeActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblTitle">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Comic Sans MS" size="24" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+        <Property name="text" type="java.lang.String" value="Create Ambulance"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtDescription">
     </Component>
   </SubComponents>
 </Form>

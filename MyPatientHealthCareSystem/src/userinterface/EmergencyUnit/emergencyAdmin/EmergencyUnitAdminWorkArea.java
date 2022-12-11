@@ -6,6 +6,10 @@ package userinterface.EmergencyUnit.emergencyAdmin;
 
 import healthcare.Ecosystem;
 import healthcare.db4oUtil.Db4oUtil;
+import healthcare.enterprise.Enterprise;
+import healthcare.network.Network;
+import healthcare.organization.Organization;
+import healthcare.userAccount.UserAccount;
 
 /**
  *
@@ -16,12 +20,20 @@ public class EmergencyUnitAdminWorkArea extends javax.swing.JFrame {
     /**
      * Creates new form EmergencyUnitAdmin
      */
+    static UserAccount userAccount;
+    static Organization organization;
+    static Enterprise enterprise;
     static Ecosystem ecosystem;
+    static Network network;
     private Db4oUtil db4oUtil = Db4oUtil.getDb4oInstance();
     
-    public EmergencyUnitAdminWorkArea(Ecosystem ecosystem) {
+    public EmergencyUnitAdminWorkArea(UserAccount userAccount, Organization organization, Enterprise enterprise ,Ecosystem ecosystem, Network network) {
         initComponents();
+        this.userAccount = userAccount;
+        this.organization = organization;
+        this.enterprise = enterprise;
         this.ecosystem = ecosystem;
+        this.network = network;
     }
 
     /**
@@ -39,6 +51,7 @@ public class EmergencyUnitAdminWorkArea extends javax.swing.JFrame {
         btnAddAmbulance = new javax.swing.JButton();
         btnAddAmbulanceHandler = new javax.swing.JButton();
         btnLogout = new javax.swing.JButton();
+        Org_Name = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -70,21 +83,29 @@ public class EmergencyUnitAdminWorkArea extends javax.swing.JFrame {
             }
         });
 
+        Org_Name.setText("Orgainzation");
+        Org_Name.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Org_NameActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btnAddAmbulanceHandler, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(Org_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGap(44, 44, 44)
+                            .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGap(19, 19, 19)
                             .addComponent(btnAddAmbulance, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(44, 44, 44)
-                        .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(btnAddAmbulanceHandler, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -94,9 +115,11 @@ public class EmergencyUnitAdminWorkArea extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnAddAmbulance, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnAddAmbulanceHandler, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 229, Short.MAX_VALUE)
+                .addGap(12, 12, 12)
+                .addComponent(Org_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 137, Short.MAX_VALUE)
                 .addComponent(btnLogout)
                 .addContainerGap())
         );
@@ -132,10 +155,16 @@ public class EmergencyUnitAdminWorkArea extends javax.swing.JFrame {
 
     private void btnAddAmbulanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddAmbulanceActionPerformed
         // TODO add your handling code here:
+        
+        AmbulanceSignUp asu = new AmbulanceSignUp(ecosystem, organization);
+        jSplitPane1.setRightComponent(asu);
     }//GEN-LAST:event_btnAddAmbulanceActionPerformed
 
     private void btnAddAmbulanceHandlerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddAmbulanceHandlerActionPerformed
         // TODO add your handling code here:
+        
+        EmergencyHandlerSignUp aah = new EmergencyHandlerSignUp(ecosystem, enterprise.getOrganizationDirectory());
+        jSplitPane1.setRightComponent(aah);
     }//GEN-LAST:event_btnAddAmbulanceHandlerActionPerformed
 
     private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
@@ -143,6 +172,13 @@ public class EmergencyUnitAdminWorkArea extends javax.swing.JFrame {
         db4oUtil.storeDb4oEcosystem(ecosystem);
         dispose();
     }//GEN-LAST:event_btnLogoutActionPerformed
+
+    private void Org_NameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Org_NameActionPerformed
+        // TODO add your handling code here:
+
+        EmergencyUnitManageOrganization lmo = new EmergencyUnitManageOrganization(enterprise);
+        jSplitPane1.setRightComponent(lmo);
+    }//GEN-LAST:event_Org_NameActionPerformed
 
     /**
      * @param args the command line arguments
@@ -175,12 +211,13 @@ public class EmergencyUnitAdminWorkArea extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new EmergencyUnitAdminWorkArea(ecosystem).setVisible(true);
+                new EmergencyUnitAdminWorkArea(userAccount, organization, enterprise, ecosystem, network).setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Org_Name;
     private javax.swing.JButton btnAddAmbulance;
     private javax.swing.JButton btnAddAmbulanceHandler;
     private javax.swing.JButton btnLogout;

@@ -2,10 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package userinterface.SupplyChainInterface.supplyManger;
+package userinterface.EmergencyUnit.emergencyAdmin;
 
+import userinterface.SupplyChainInterface.supplyManger.*;
 import healthcare.Ecosystem;
 import healthcare.db4oUtil.Db4oUtil;
+import healthcare.enterprise.emergencyUnit.Ambulance;
+import healthcare.enterprise.emergencyUnit.EmergencyUnitOrganization;
 import healthcare.enterprise.supplyChain.SupplierOrganization;
 import healthcare.enterprise.supplyChain.Vehicle;
 import healthcare.organization.Organization;
@@ -18,7 +21,7 @@ import javax.swing.JOptionPane;
  *
  * @author adity
  */
-public class VehicleSignUp extends javax.swing.JPanel {
+public class AmbulanceSignUp extends javax.swing.JPanel {
 
     /**
      * Creates new form VehicleSignUp
@@ -27,12 +30,12 @@ public class VehicleSignUp extends javax.swing.JPanel {
     boolean validationCheck = true;
     
     private Ecosystem ecosystem;
-    private SupplierOrganization supOrganization;
+    private EmergencyUnitOrganization emerOrganization;
     
-    public VehicleSignUp(Ecosystem ecosystem, Organization organization) {
+    public AmbulanceSignUp(Ecosystem ecosystem, Organization organization) {
         initComponents();
         this.ecosystem = ecosystem;
-        this.supOrganization = (SupplierOrganization) organization;
+        this.emerOrganization = (EmergencyUnitOrganization) organization;
     }
 
     /**
@@ -82,7 +85,7 @@ public class VehicleSignUp extends javax.swing.JPanel {
 
         lblTitle.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTitle.setText("Create Vehicle");
+        lblTitle.setText("Create Ambulance");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -156,8 +159,8 @@ public class VehicleSignUp extends javax.swing.JPanel {
                     String VehicleNumber = txtVehicleNumber.getText();
                     String Description = txtDescription.getText();
                     
-                    Vehicle vehicle = new Vehicle(VehicleName, VehicleNumber, VehicleType, Description, "Available");
-                    supOrganization.addNewVehicle(vehicle);
+                    Ambulance amb = new Ambulance(VehicleName, VehicleNumber, VehicleType, Description, "Available");
+                    emerOrganization.addNewVehicle(amb);
                     
                     JOptionPane.showMessageDialog(this,"Vehicle Registered Successfully");
 
@@ -204,11 +207,6 @@ public class VehicleSignUp extends javax.swing.JPanel {
             txtVehicleName.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
         }
        
-        
-         
-        
-        
-        
         if(txtDescription.getText().equals(null)|| txtDescription.getText().trim().isEmpty())
         {
             txtDescription.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
