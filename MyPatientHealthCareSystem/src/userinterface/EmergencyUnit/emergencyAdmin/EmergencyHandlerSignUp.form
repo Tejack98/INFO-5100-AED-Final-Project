@@ -197,11 +197,10 @@
     <Component class="javax.swing.JComboBox" name="cboxGender">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="4">
-            <StringItem index="0" value="Item 1"/>
-            <StringItem index="1" value="Item 2"/>
-            <StringItem index="2" value="Item 3"/>
-            <StringItem index="3" value="Item 4"/>
+          <StringArray count="3">
+            <StringItem index="0" value="Male"/>
+            <StringItem index="1" value="Female"/>
+            <StringItem index="2" value="Other"/>
           </StringArray>
         </Property>
       </Properties>
@@ -269,11 +268,12 @@
     <Component class="javax.swing.JComboBox" name="cboxVehicle">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="4">
-            <StringItem index="0" value="Item 1"/>
-            <StringItem index="1" value="Item 2"/>
-            <StringItem index="2" value="Item 3"/>
-            <StringItem index="3" value="Item 4"/>
+          <StringArray count="5">
+            <StringItem index="0" value="Ambulance 101"/>
+            <StringItem index="1" value="Ambulance 102"/>
+            <StringItem index="2" value="Ambulance 103"/>
+            <StringItem index="3" value="ambulance 104"/>
+            <StringItem index="4" value="Ambulance 105"/>
           </StringArray>
         </Property>
       </Properties>
