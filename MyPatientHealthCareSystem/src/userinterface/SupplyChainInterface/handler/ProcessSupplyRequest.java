@@ -11,6 +11,7 @@ import healthcare.enterprise.healthCare.DoctorOrganization;
 import healthcare.enterprise.healthCare.HealthCareEnterprise;
 import healthcare.enterprise.pharmacy.PharmacyOrganization;
 import healthcare.enterprise.supplyChain.SupplierOrganization;
+import healthcare.enterprise.supplyChain.SupplyChainEnterprise;
 import healthcare.network.Network;
 import healthcare.organization.Organization;
 import healthcare.userAccount.UserAccount;
@@ -59,21 +60,32 @@ public class ProcessSupplyRequest extends javax.swing.JPanel {
         btnSendResults = new javax.swing.JButton();
         txtPatientName = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
+        chkO2 = new javax.swing.JCheckBox();
+        chkSin = new javax.swing.JCheckBox();
         chkViv = new javax.swing.JCheckBox();
         chkAnt = new javax.swing.JCheckBox();
         chkCam = new javax.swing.JCheckBox();
         chkDis = new javax.swing.JCheckBox();
         chkAca = new javax.swing.JCheckBox();
+        chkCrocin = new javax.swing.JCheckBox();
+        chkMef = new javax.swing.JCheckBox();
+        chkSpasm = new javax.swing.JCheckBox();
+        chkAld = new javax.swing.JCheckBox();
+        chkMet = new javax.swing.JCheckBox();
+        chkLosa = new javax.swing.JCheckBox();
+        chkAlbu = new javax.swing.JCheckBox();
+        chkHydro = new javax.swing.JCheckBox();
+        chkAntihis = new javax.swing.JCheckBox();
+        chkDolo = new javax.swing.JCheckBox();
+        chkOme = new javax.swing.JCheckBox();
 
         jLabel6.setText("jLabel6");
 
         setBackground(new java.awt.Color(255, 204, 204));
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Georgia", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Pharma Request Details");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 6, 777, 42));
 
         btnSendResults.setBackground(new java.awt.Color(153, 204, 255));
         btnSendResults.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
@@ -83,8 +95,8 @@ public class ProcessSupplyRequest extends javax.swing.JPanel {
                 btnSendResultsActionPerformed(evt);
             }
         });
-        add(btnSendResults, new org.netbeans.lib.awtextra.AbsoluteConstraints(274, 413, 254, -1));
 
+        txtPatientName.setEditable(false);
         txtPatientName.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
         txtPatientName.setEnabled(false);
         txtPatientName.addActionListener(new java.awt.event.ActionListener() {
@@ -92,12 +104,25 @@ public class ProcessSupplyRequest extends javax.swing.JPanel {
                 txtPatientNameActionPerformed(evt);
             }
         });
-        add(txtPatientName, new org.netbeans.lib.awtextra.AbsoluteConstraints(352, 99, 205, -1));
 
         jLabel12.setBackground(new java.awt.Color(255, 255, 255));
         jLabel12.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jLabel12.setText("For Pharmacy");
-        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 99, 126, -1));
+
+        chkO2.setBackground(new java.awt.Color(255, 204, 204));
+        chkO2.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        chkO2.setText("O2");
+        chkO2.setEnabled(false);
+
+        chkSin.setBackground(new java.awt.Color(255, 204, 204));
+        chkSin.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        chkSin.setText("Sinarest");
+        chkSin.setEnabled(false);
+        chkSin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkSinActionPerformed(evt);
+            }
+        });
 
         chkViv.setBackground(new java.awt.Color(255, 204, 204));
         chkViv.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
@@ -108,7 +133,6 @@ public class ProcessSupplyRequest extends javax.swing.JPanel {
                 chkVivActionPerformed(evt);
             }
         });
-        add(chkViv, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 360, -1, -1));
 
         chkAnt.setBackground(new java.awt.Color(255, 204, 204));
         chkAnt.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
@@ -119,13 +143,11 @@ public class ProcessSupplyRequest extends javax.swing.JPanel {
                 chkAntActionPerformed(evt);
             }
         });
-        add(chkAnt, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 310, -1, -1));
 
         chkCam.setBackground(new java.awt.Color(255, 204, 204));
         chkCam.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         chkCam.setText("Campral");
         chkCam.setEnabled(false);
-        add(chkCam, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 260, -1, -1));
 
         chkDis.setBackground(new java.awt.Color(255, 204, 204));
         chkDis.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
@@ -136,7 +158,6 @@ public class ProcessSupplyRequest extends javax.swing.JPanel {
                 chkDisActionPerformed(evt);
             }
         });
-        add(chkDis, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 210, -1, -1));
 
         chkAca.setBackground(new java.awt.Color(255, 204, 204));
         chkAca.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
@@ -147,7 +168,206 @@ public class ProcessSupplyRequest extends javax.swing.JPanel {
                 chkAcaActionPerformed(evt);
             }
         });
-        add(chkAca, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 150, -1, -1));
+
+        chkCrocin.setBackground(new java.awt.Color(255, 204, 204));
+        chkCrocin.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        chkCrocin.setText("Crocin");
+        chkCrocin.setEnabled(false);
+        chkCrocin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkCrocinActionPerformed(evt);
+            }
+        });
+
+        chkMef.setBackground(new java.awt.Color(255, 204, 204));
+        chkMef.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        chkMef.setText("Meftal");
+        chkMef.setEnabled(false);
+        chkMef.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkMefActionPerformed(evt);
+            }
+        });
+
+        chkSpasm.setBackground(new java.awt.Color(255, 204, 204));
+        chkSpasm.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        chkSpasm.setText("Spasm");
+        chkSpasm.setEnabled(false);
+        chkSpasm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkSpasmActionPerformed(evt);
+            }
+        });
+
+        chkAld.setBackground(new java.awt.Color(255, 204, 204));
+        chkAld.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        chkAld.setText("Aldrid");
+        chkAld.setEnabled(false);
+        chkAld.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkAldActionPerformed(evt);
+            }
+        });
+
+        chkMet.setBackground(new java.awt.Color(255, 204, 204));
+        chkMet.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        chkMet.setText("Metformin");
+        chkMet.setEnabled(false);
+        chkMet.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkMetActionPerformed(evt);
+            }
+        });
+
+        chkLosa.setBackground(new java.awt.Color(255, 204, 204));
+        chkLosa.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        chkLosa.setText("Losartan");
+        chkLosa.setEnabled(false);
+        chkLosa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkLosaActionPerformed(evt);
+            }
+        });
+
+        chkAlbu.setBackground(new java.awt.Color(255, 204, 204));
+        chkAlbu.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        chkAlbu.setText("Albuterol");
+        chkAlbu.setEnabled(false);
+        chkAlbu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkAlbuActionPerformed(evt);
+            }
+        });
+
+        chkHydro.setBackground(new java.awt.Color(255, 204, 204));
+        chkHydro.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        chkHydro.setText("Hydrocodone");
+        chkHydro.setEnabled(false);
+        chkHydro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkHydroActionPerformed(evt);
+            }
+        });
+
+        chkAntihis.setBackground(new java.awt.Color(255, 204, 204));
+        chkAntihis.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        chkAntihis.setText("Antihistamines");
+        chkAntihis.setEnabled(false);
+        chkAntihis.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkAntihisActionPerformed(evt);
+            }
+        });
+
+        chkDolo.setBackground(new java.awt.Color(255, 204, 204));
+        chkDolo.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        chkDolo.setText("Dolo");
+        chkDolo.setEnabled(false);
+        chkDolo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkDoloActionPerformed(evt);
+            }
+        });
+
+        chkOme.setBackground(new java.awt.Color(255, 204, 204));
+        chkOme.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        chkOme.setText("Omeprazole");
+        chkOme.setEnabled(false);
+        chkOme.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkOmeActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 777, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(220, 220, 220)
+                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(6, 6, 6)
+                        .addComponent(txtPatientName, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(274, 274, 274)
+                        .addComponent(btnSendResults, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(108, 108, 108))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(227, 227, 227)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(chkAca)
+                        .addComponent(chkDis)
+                        .addComponent(chkCam)
+                        .addComponent(chkAnt)
+                        .addComponent(chkViv)
+                        .addComponent(chkMef))
+                    .addGap(27, 27, 27)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(chkHydro)
+                        .addComponent(chkDolo)
+                        .addComponent(chkO2)
+                        .addComponent(chkSin)
+                        .addComponent(chkCrocin)
+                        .addComponent(chkSpasm))
+                    .addGap(27, 27, 27)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(chkOme)
+                        .addComponent(chkAlbu)
+                        .addComponent(chkLosa)
+                        .addComponent(chkMet)
+                        .addComponent(chkAld)
+                        .addComponent(chkAntihis))
+                    .addContainerGap(227, Short.MAX_VALUE)))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(6, 6, 6)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(39, 39, 39)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel12)
+                    .addComponent(txtPatientName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(317, 317, 317)
+                .addComponent(btnSendResults))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(130, 130, 130)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(chkAca)
+                        .addComponent(chkHydro)
+                        .addComponent(chkAld))
+                    .addGap(29, 29, 29)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(chkDis)
+                        .addComponent(chkDolo)
+                        .addComponent(chkMet))
+                    .addGap(27, 27, 27)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(chkCam)
+                        .addComponent(chkO2)
+                        .addComponent(chkLosa))
+                    .addGap(29, 29, 29)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(chkAnt)
+                        .addComponent(chkSin)
+                        .addComponent(chkAlbu))
+                    .addGap(29, 29, 29)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(chkViv)
+                        .addComponent(chkCrocin)
+                        .addComponent(chkAntihis))
+                    .addGap(28, 28, 28)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(chkMef)
+                        .addComponent(chkSpasm)
+                        .addComponent(chkOme))
+                    .addContainerGap(130, Short.MAX_VALUE)))
+        );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSendResultsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSendResultsActionPerformed
@@ -163,7 +383,7 @@ public class ProcessSupplyRequest extends javax.swing.JPanel {
         Network inNetwork = null;
         
         for (Enterprise ent : network.getEnterpriseMasterList().getEnterpriseList()) {
-            if (ent instanceof HealthCareEnterprise) {
+            if (ent instanceof SupplyChainEnterprise) {
                 for (Organization organization : ent.getOrganizationDirectory().getOrganizationList()) {
                     if (organization instanceof SupplierOrganization ){
                         for (WorkRequest work : organization.getWorkQueue().getWorkRequestList()) {
@@ -184,6 +404,10 @@ public class ProcessSupplyRequest extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtPatientNameActionPerformed
 
+    private void chkSinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkSinActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chkSinActionPerformed
+
     private void chkVivActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkVivActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_chkVivActionPerformed
@@ -198,8 +422,56 @@ public class ProcessSupplyRequest extends javax.swing.JPanel {
 
     private void chkAcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkAcaActionPerformed
         // TODO add your handling code here:
-        
-        String medList = request.getMedlist();
+    }//GEN-LAST:event_chkAcaActionPerformed
+
+    private void chkCrocinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkCrocinActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chkCrocinActionPerformed
+
+    private void chkMefActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkMefActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chkMefActionPerformed
+
+    private void chkSpasmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkSpasmActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chkSpasmActionPerformed
+
+    private void chkAldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkAldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chkAldActionPerformed
+
+    private void chkMetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkMetActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chkMetActionPerformed
+
+    private void chkLosaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkLosaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chkLosaActionPerformed
+
+    private void chkAlbuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkAlbuActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chkAlbuActionPerformed
+
+    private void chkHydroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkHydroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chkHydroActionPerformed
+
+    private void chkAntihisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkAntihisActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chkAntihisActionPerformed
+
+    private void chkDoloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkDoloActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chkDoloActionPerformed
+
+    private void chkOmeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkOmeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chkOmeActionPerformed
+
+    
+    public void populateSupplierRequests() {
+
+       String medList = request.getMedlist();
         
         if(medList.contains(String.valueOf("Disulfiram"))){
             chkDis.setSelected(true);
@@ -216,21 +488,86 @@ public class ProcessSupplyRequest extends javax.swing.JPanel {
         if(medList.contains(String.valueOf("Vivitrol"))){
             chkViv.setSelected(true);
         }
-    }//GEN-LAST:event_chkAcaActionPerformed
+   
+//-----------------------------------------------------------------------------
+        
+        if(medList.contains(String.valueOf("Meftal"))){
+            chkMef.setSelected(true);
+        }
+        
+        if(medList.contains(String.valueOf("Hydrocodone"))){
+            chkHydro.setSelected(true);
+        }
+        
+        if(medList.contains(String.valueOf("Dolo"))){
+            chkDolo.setSelected(true);
+        }
+        
+        if(medList.contains(String.valueOf("O2"))){
+            chkO2.setSelected(true);
+        }
+        
+        if(medList.contains(String.valueOf("Sinarest"))){
+            chkSin.setSelected(true);
+        }
+        
+        
+        if(medList.contains(String.valueOf("Crocin"))){
+            chkCrocin.setSelected(true);
+        }
+        
+        if(medList.contains(String.valueOf("Spasm"))){
+            chkSpasm.setSelected(true);
+        }
+        
+        if(medList.contains(String.valueOf("Aldrid"))){
+            chkAld.setSelected(true);
+        }
+        
+        if(medList.contains(String.valueOf("Metformin"))){
+            chkMet.setSelected(true);
+        }
+        
+        if(medList.contains(String.valueOf("Losartan"))){
+            chkLosa.setSelected(true);
+        }
+        
+        if(medList.contains(String.valueOf("Albuterol"))){
+            chkAlbu.setSelected(true);
+        }
+        
+        if(medList.contains(String.valueOf("Antihistamines"))){
+            chkAntihis.setSelected(true);
+        }
+        
+        if(medList.contains(String.valueOf("Omeprazole"))){
+            chkOme.setSelected(true);
+        }
+        
 
-    
-    public void populateSupplierRequests() {
-
-       
+//-----------------------------------------------------------------------------
 
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSendResults;
     private javax.swing.JCheckBox chkAca;
+    private javax.swing.JCheckBox chkAlbu;
+    private javax.swing.JCheckBox chkAld;
     private javax.swing.JCheckBox chkAnt;
+    private javax.swing.JCheckBox chkAntihis;
     private javax.swing.JCheckBox chkCam;
+    private javax.swing.JCheckBox chkCrocin;
     private javax.swing.JCheckBox chkDis;
+    private javax.swing.JCheckBox chkDolo;
+    private javax.swing.JCheckBox chkHydro;
+    private javax.swing.JCheckBox chkLosa;
+    private javax.swing.JCheckBox chkMef;
+    private javax.swing.JCheckBox chkMet;
+    private javax.swing.JCheckBox chkO2;
+    private javax.swing.JCheckBox chkOme;
+    private javax.swing.JCheckBox chkSin;
+    private javax.swing.JCheckBox chkSpasm;
     private javax.swing.JCheckBox chkViv;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
