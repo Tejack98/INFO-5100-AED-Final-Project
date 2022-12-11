@@ -124,9 +124,8 @@ public class PharmacistsViewRequestsJPanel extends javax.swing.JPanel {
         optionsPanel.setBackground(new java.awt.Color(153, 204, 255));
         optionsPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        refreshJButton.setBackground(new java.awt.Color(49, 84, 140));
+        refreshJButton.setBackground(new java.awt.Color(255, 204, 204));
         refreshJButton.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
-        refreshJButton.setForeground(new java.awt.Color(255, 255, 255));
         refreshJButton.setText("Refresh");
         refreshJButton.setBorder(null);
         refreshJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -134,11 +133,10 @@ public class PharmacistsViewRequestsJPanel extends javax.swing.JPanel {
                 refreshJButtonActionPerformed(evt);
             }
         });
-        optionsPanel.add(refreshJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 153, 44));
+        optionsPanel.add(refreshJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 153, 44));
 
-        processJButton.setBackground(new java.awt.Color(49, 84, 140));
+        processJButton.setBackground(new java.awt.Color(255, 204, 204));
         processJButton.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
-        processJButton.setForeground(new java.awt.Color(255, 255, 255));
         processJButton.setText("Process Requests");
         processJButton.setBorder(null);
         processJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -146,11 +144,10 @@ public class PharmacistsViewRequestsJPanel extends javax.swing.JPanel {
                 processJButtonActionPerformed(evt);
             }
         });
-        optionsPanel.add(processJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 153, 43));
+        optionsPanel.add(processJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 153, 43));
 
-        assignJButton.setBackground(new java.awt.Color(49, 84, 140));
+        assignJButton.setBackground(new java.awt.Color(255, 204, 204));
         assignJButton.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
-        assignJButton.setForeground(new java.awt.Color(255, 255, 255));
         assignJButton.setText("Assign to me");
         assignJButton.setBorder(null);
         assignJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -158,7 +155,7 @@ public class PharmacistsViewRequestsJPanel extends javax.swing.JPanel {
                 assignJButtonActionPerformed(evt);
             }
         });
-        optionsPanel.add(assignJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 153, 42));
+        optionsPanel.add(assignJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 153, 42));
 
         jSplitPane1.setLeftComponent(optionsPanel);
 
