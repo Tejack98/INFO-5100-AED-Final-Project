@@ -15,11 +15,12 @@ public class Vehicle {
     private String vehicleDescription;
     private String vehicleStatus;
 
-    public Vehicle(String vehicleName, String vehicleNumber, String vehicleType, String vehicalDescription) {
+    public Vehicle(String vehicleName, String vehicleNumber, String vehicleType, String vehicalDescription, String status) {
         this.vehicleName = vehicleName;
         this.vehicleNumber = vehicleNumber;
         this.vehicleType = vehicleType;
         this.vehicleDescription = vehicalDescription;
+        this.vehicleStatus = status;
     }
 
     public String getVehicleName() {

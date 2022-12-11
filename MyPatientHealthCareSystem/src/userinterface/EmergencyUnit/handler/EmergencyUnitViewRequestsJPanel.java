@@ -3,21 +3,23 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package userinterface.SupplyChainInterface.handler;
+package userinterface.EmergencyUnit.handler;
 
 
+import userinterface.SupplyChainInterface.handler.*;
 import userinterface.Pharmacy.pharmacist.*;
 import userinterface.LabInterface.labTech.*;
 import healthcare.Ecosystem;
 import healthcare.enterprise.Enterprise;
+import healthcare.enterprise.emergencyUnit.EmergencyUnitOrganization;
 import healthcare.enterprise.lab.LabOrganization;
 import healthcare.enterprise.pharmacy.PharmacyOrganization;
 import healthcare.enterprise.supplyChain.SupplierOrganization;
-import healthcare.enterprise.supplyChain.Vehicle;
 import healthcare.network.Network;
 import healthcare.organization.Organization;
 import healthcare.userAccount.UserAccount;
 import healthcare.workQueue.DoctorLabRequest;
+import healthcare.workQueue.EmergencyUnitRequest;
 import healthcare.workQueue.WorkRequest;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
@@ -28,28 +30,28 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author tejas
  */
-public class ViewVehicles extends javax.swing.JPanel {
+public class EmergencyUnitViewRequestsJPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form LabAssistantWorkAreaJPanel
      */
     
     UserAccount userAccount;
-    SupplierOrganization suppOrganization;
+    EmergencyUnitOrganization emerOrganization;
     Enterprise enterprise;
     Ecosystem ecosystem;
     Network network;
 
-    public ViewVehicles(Ecosystem ecosystem, UserAccount account,
+    public EmergencyUnitViewRequestsJPanel(Ecosystem ecosystem, UserAccount account,
             Organization organization, Enterprise enterprise, Network network) {
         initComponents();
         this.userAccount = account;
         this.ecosystem = ecosystem;
-        this.suppOrganization = (SupplierOrganization) organization;
+        this.emerOrganization = (EmergencyUnitOrganization) organization;
         this.enterprise = enterprise;
         this.network = network;
         lblname.setText(userAccount.getPerson().getPersonName());
-        populateVehiclesTable();
+        populateEmergencyRequestTable();
     }
 
     /**
@@ -67,11 +69,11 @@ public class ViewVehicles extends javax.swing.JPanel {
         jLabel6 = new javax.swing.JLabel();
         lblname = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        supplierChainVehicleJTable = new javax.swing.JTable();
+        emergencyWorkRequestJTable = new javax.swing.JTable();
         optionsPanel = new javax.swing.JPanel();
         refreshJButton = new javax.swing.JButton();
+        processJButton = new javax.swing.JButton();
         assignJButton = new javax.swing.JButton();
-        assignJButton1 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -79,7 +81,7 @@ public class ViewVehicles extends javax.swing.JPanel {
 
         jLabel6.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Book Vehicles");
+        jLabel6.setText("Emergency Requests Received");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -99,9 +101,9 @@ public class ViewVehicles extends javax.swing.JPanel {
         );
 
         lblname.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        lblname.setText("Lab Assitant Name");
+        lblname.setText("Handler Name");
 
-        supplierChainVehicleJTable.setModel(new javax.swing.table.DefaultTableModel(
+        emergencyWorkRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -109,11 +111,11 @@ public class ViewVehicles extends javax.swing.JPanel {
                 {null, null, null, null, null}
             },
             new String [] {
-                "Name", "Type", "Description", "Number", "Status"
+                "Message", "Request Received By", "Status", "Date", "Location"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false, false
@@ -127,7 +129,7 @@ public class ViewVehicles extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(supplierChainVehicleJTable);
+        jScrollPane2.setViewportView(emergencyWorkRequestJTable);
 
         javax.swing.GroupLayout actionPanelLayout = new javax.swing.GroupLayout(actionPanel);
         actionPanel.setLayout(actionPanelLayout);
@@ -168,6 +170,17 @@ public class ViewVehicles extends javax.swing.JPanel {
             }
         });
 
+        processJButton.setBackground(new java.awt.Color(49, 84, 140));
+        processJButton.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        processJButton.setForeground(new java.awt.Color(255, 255, 255));
+        processJButton.setText("Process Requests");
+        processJButton.setBorder(null);
+        processJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                processJButtonActionPerformed(evt);
+            }
+        });
+
         assignJButton.setBackground(new java.awt.Color(49, 84, 140));
         assignJButton.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         assignJButton.setForeground(new java.awt.Color(255, 255, 255));
@@ -179,17 +192,6 @@ public class ViewVehicles extends javax.swing.JPanel {
             }
         });
 
-        assignJButton1.setBackground(new java.awt.Color(49, 84, 140));
-        assignJButton1.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        assignJButton1.setForeground(new java.awt.Color(255, 255, 255));
-        assignJButton1.setText("Deallocate");
-        assignJButton1.setBorder(null);
-        assignJButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                assignJButton1ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout optionsPanelLayout = new javax.swing.GroupLayout(optionsPanel);
         optionsPanel.setLayout(optionsPanelLayout);
         optionsPanelLayout.setHorizontalGroup(
@@ -197,8 +199,8 @@ public class ViewVehicles extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, optionsPanelLayout.createSequentialGroup()
                 .addGap(0, 28, Short.MAX_VALUE)
                 .addGroup(optionsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(assignJButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(assignJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(processJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(refreshJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26))
         );
@@ -207,11 +209,11 @@ public class ViewVehicles extends javax.swing.JPanel {
             .addGroup(optionsPanelLayout.createSequentialGroup()
                 .addGap(87, 87, 87)
                 .addComponent(refreshJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24)
+                .addComponent(processJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(assignJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(assignJButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(572, Short.MAX_VALUE))
+                .addContainerGap(565, Short.MAX_VALUE))
         );
 
         jSplitPane1.setLeftComponent(optionsPanel);
@@ -230,70 +232,62 @@ public class ViewVehicles extends javax.swing.JPanel {
 
     private void refreshJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshJButtonActionPerformed
 
-        populateVehiclesTable();
+        populateEmergencyRequestTable();
     }//GEN-LAST:event_refreshJButtonActionPerformed
+
+    private void processJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_processJButtonActionPerformed
+
+        int selectedRow = emergencyWorkRequestJTable.getSelectedRow();
+
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(null, "Please select a emergency request first", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        EmergencyUnitRequest request = (EmergencyUnitRequest) emergencyWorkRequestJTable.getValueAt(selectedRow, 0);
+        request.setStatus("Addressed");
+        
+        JOptionPane.showMessageDialog(null, "Emergency Addressed");
+        
+    }//GEN-LAST:event_processJButtonActionPerformed
 
     private void assignJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignJButtonActionPerformed
 
-        int selectedRow = supplierChainVehicleJTable.getSelectedRow();
+        int selectedRow = emergencyWorkRequestJTable.getSelectedRow();
         String status;
         if (selectedRow < 0) {
-            JOptionPane.showMessageDialog(null, "Please select a vehicle first", "Warning", JOptionPane.WARNING_MESSAGE);
-
+            JOptionPane.showMessageDialog(null, "Please select a emergency request first", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
-        status = (String) supplierChainVehicleJTable.getValueAt(selectedRow, 4);
+        status = (String) emergencyWorkRequestJTable.getValueAt(selectedRow, 2);
 
-        if (status.equals("Available")) {
-            
-            Vehicle v = (Vehicle) supplierChainVehicleJTable.getValueAt(selectedRow, 0);
-            v.setVehicleStatus("Booked");
-            populateVehiclesTable();
-        } else if (status.equals("Booked")) {
-            JOptionPane.showMessageDialog(null, "Already Booked", "Warning", JOptionPane.WARNING_MESSAGE);
+        if (status.equals("Emergency Requested")) {
+            EmergencyUnitRequest request = (EmergencyUnitRequest) emergencyWorkRequestJTable.getValueAt(selectedRow, 0);
+            request.setReceiver(userAccount);
+            request.setStatus("Assigned To Emergency Unit");
+            populateEmergencyRequestTable();
+        } else if (status.equals("Assigned To Emergency Unit")) {
+            JOptionPane.showMessageDialog(null, "Already In Progress", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         } else {
             JOptionPane.showMessageDialog(null, "Your Request Cant be processed", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
     }//GEN-LAST:event_assignJButtonActionPerformed
-
-    private void assignJButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignJButton1ActionPerformed
-        // TODO add your handling code here:
-        int selectedRow = supplierChainVehicleJTable.getSelectedRow();
-        String status;
-        if (selectedRow < 0) {
-            JOptionPane.showMessageDialog(null, "Please select a vehicle first", "Warning", JOptionPane.WARNING_MESSAGE);
-
-            return;
-        }
-        status = (String) supplierChainVehicleJTable.getValueAt(selectedRow, 4);
-
-        if (status.equals("Booked")) {
-            
-            Vehicle v = (Vehicle) supplierChainVehicleJTable.getValueAt(selectedRow, 0);
-            v.setVehicleStatus("Available");
-            populateVehiclesTable();
-        } else if (status.equals("Available")) {
-            JOptionPane.showMessageDialog(null, "Already Available", "Warning", JOptionPane.WARNING_MESSAGE);
-            return;
-        } else {
-            JOptionPane.showMessageDialog(null, "Your Request Cant be processed", "Warning", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-    }//GEN-LAST:event_assignJButton1ActionPerformed
     
-    public void populateVehiclesTable() {
-        DefaultTableModel model = (DefaultTableModel) supplierChainVehicleJTable.getModel();
+    public void populateEmergencyRequestTable() {
+        DefaultTableModel model = (DefaultTableModel) emergencyWorkRequestJTable.getModel();
 
         model.setRowCount(0);
-        for (Vehicle v : suppOrganization.getVehicleList()) {
-            Object[] row = new Object[6];
-            row[0] = v;
-            row[1] = v.getVehicleType();
-            row[2] = v.getVehicleDescription();
-            row[3] = v.getVehicleNumber();
-            row[4] = v.getVehicleStatus();
+        for (WorkRequest request : emerOrganization.getWorkQueue().getWorkRequestList()) {
+            Object[] row = new Object[5];
+            row[0] = request;
+            row[1] = request.getReceiver() == null? "" :request.getReceiver().getUserName();
+            String result = request.getStatus();
+            row[2] = result == null ? "Waiting" : result;
+            row[3] = request.getRequestDate();
+            EmergencyUnitRequest eur = (EmergencyUnitRequest)request;
+            row[4] = eur.getLocation();
 
             model.addRow(row);
 
@@ -303,14 +297,14 @@ public class ViewVehicles extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel actionPanel;
     private javax.swing.JButton assignJButton;
-    private javax.swing.JButton assignJButton1;
+    private javax.swing.JTable emergencyWorkRequestJTable;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JLabel lblname;
     private javax.swing.JPanel optionsPanel;
+    private javax.swing.JButton processJButton;
     private javax.swing.JButton refreshJButton;
-    private javax.swing.JTable supplierChainVehicleJTable;
     // End of variables declaration//GEN-END:variables
 }

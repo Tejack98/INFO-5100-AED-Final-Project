@@ -14,7 +14,6 @@ import healthcare.userAccount.UserAccount;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import userinterface.DonorBankInterface.donationHandler.DonationHandlerWorkArea;
-import userinterface.EmergencyUnit.ambulanceHandler.AmbulanceHandlerWorkArea;
 import userinterface.EmergencyUnit.emergencyAdmin.EmergencyUnitAdminWorkArea;
 
 /**

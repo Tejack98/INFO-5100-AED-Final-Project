@@ -12,8 +12,8 @@ import healthcare.role.Role;
 import healthcare.userAccount.UserAccount;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import userinterface.EmergencyUnit.ambulanceHandler.AmbulanceHandlerWorkArea;
 import userinterface.EmergencyUnit.emergencyAdmin.EmergencyUnitAdminWorkArea;
+import userinterface.EmergencyUnit.handler.EmergencyHandlerWorkArea;
 
 /**
  *
@@ -29,7 +29,7 @@ public class AmbulanceHandlerRole extends Role {
     
     @Override
     public JFrame createWorkArea(UserAccount userAccount, Organization organization, Enterprise enterprise, Ecosystem ecosystem, Network network) {
-        return new AmbulanceHandlerWorkArea(ecosystem);       
+        return new EmergencyHandlerWorkArea(userAccount, organization, enterprise, ecosystem, network);       
     }
     
 }
