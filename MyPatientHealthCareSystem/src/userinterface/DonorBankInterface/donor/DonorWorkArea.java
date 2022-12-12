@@ -36,8 +36,8 @@ public class DonorWorkArea extends javax.swing.JFrame {
         this.ecosystem = ecosystem;
         this.network = network;
         
-        DonateOrganView donateOrganView = new  DonateOrganView(ecosystem);
-        jSplitPane1.setRightComponent(donateOrganView);
+        BloodDonationAppointment oda = new BloodDonationAppointment(userAccount, organization, enterprise, ecosystem, network);
+        jSplitPane1.setRightComponent(oda);
         
     }
 
@@ -54,10 +54,8 @@ public class DonorWorkArea extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         btnLogout = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        btnPatients2 = new javax.swing.JButton();
         btndonateOrgan = new javax.swing.JButton();
         btndonateBlood = new javax.swing.JButton();
-        btnPatients = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -77,15 +75,6 @@ public class DonorWorkArea extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Donor Dashboard");
 
-        btnPatients2.setBackground(new java.awt.Color(255, 204, 204));
-        btnPatients2.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
-        btnPatients2.setText("View Blood Donation");
-        btnPatients2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPatients2ActionPerformed(evt);
-            }
-        });
-
         btndonateOrgan.setBackground(new java.awt.Color(255, 204, 204));
         btndonateOrgan.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         btndonateOrgan.setText("Donate Organ");
@@ -104,24 +93,13 @@ public class DonorWorkArea extends javax.swing.JFrame {
             }
         });
 
-        btnPatients.setBackground(new java.awt.Color(255, 204, 204));
-        btnPatients.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
-        btnPatients.setText("View Transplant");
-        btnPatients.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPatientsActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btndonateOrgan, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnPatients, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btndonateBlood, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnPatients2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -132,15 +110,11 @@ public class DonorWorkArea extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36)
+                .addGap(68, 68, 68)
                 .addComponent(btndonateOrgan, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
+                .addGap(84, 84, 84)
                 .addComponent(btndonateBlood, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addComponent(btnPatients2, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
-                .addComponent(btnPatients, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 123, Short.MAX_VALUE)
                 .addComponent(btnLogout)
                 .addGap(30, 30, 30))
         );
@@ -176,23 +150,11 @@ public class DonorWorkArea extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnPatientsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPatientsActionPerformed
-        // TODO add your handling code here:
-        DonateOrganView donateOrganView = new  DonateOrganView(ecosystem);
-        jSplitPane1.setRightComponent(donateOrganView);
-    }//GEN-LAST:event_btnPatientsActionPerformed
-
     private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
         // TODO add your handling code here:
         db4oUtil.storeDb4oEcosystem(ecosystem);
         dispose();
     }//GEN-LAST:event_btnLogoutActionPerformed
-
-    private void btnPatients2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPatients2ActionPerformed
-        // TODO add your handling code here:
-        DonateBloodView donateBloodView = new DonateBloodView(ecosystem);
-        jSplitPane1.setRightComponent(donateBloodView);
-    }//GEN-LAST:event_btnPatients2ActionPerformed
 
     private void btndonateOrganActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndonateOrganActionPerformed
         // TODO add your handling code here:
@@ -244,8 +206,6 @@ public class DonorWorkArea extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLogout;
-    private javax.swing.JButton btnPatients;
-    private javax.swing.JButton btnPatients2;
     private javax.swing.JButton btndonateBlood;
     private javax.swing.JButton btndonateOrgan;
     private javax.swing.JLabel jLabel1;
