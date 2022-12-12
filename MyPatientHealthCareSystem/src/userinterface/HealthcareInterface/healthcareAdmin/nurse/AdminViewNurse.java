@@ -59,7 +59,6 @@ public class AdminViewNurse extends javax.swing.JPanel {
         lblSearchNurseByID = new javax.swing.JLabel();
         txtSearchNurseByName = new javax.swing.JTextField();
         btnSearch = new javax.swing.JButton();
-        btnDelete = new javax.swing.JButton();
         lblEnterprise = new javax.swing.JLabel();
         organizationJComboBox = new javax.swing.JComboBox();
         btnView = new javax.swing.JButton();
@@ -109,9 +108,6 @@ public class AdminViewNurse extends javax.swing.JPanel {
             }
         });
         add(btnSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 90, -1, -1));
-
-        btnDelete.setText("Delete");
-        add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(1128, 343, -1, -1));
 
         lblEnterprise.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         lblEnterprise.setText("Organization");
@@ -191,7 +187,6 @@ public class AdminViewNurse extends javax.swing.JPanel {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnSearch;
     private javax.swing.JButton btnView;
     private javax.swing.JLabel jLabel1;

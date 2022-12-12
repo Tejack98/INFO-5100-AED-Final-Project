@@ -6,6 +6,7 @@ package userinterface.HealthcareInterface.healthcareAdmin.patient;
 
 import healthcare.Ecosystem;
 import healthcare.enterprise.Enterprise;
+import healthcare.enterprise.healthCare.PatientOrganization;
 import healthcare.enterprise.healthCare.PatientRole;
 import healthcare.network.Network;
 import healthcare.organization.Organization;
@@ -43,7 +44,9 @@ public class PatientSignUp extends javax.swing.JPanel {
         organizationJComboBox.removeAllItems();
 
         for (Organization organization : orgList.getOrganizationList()){
-            organizationJComboBox.addItem(organization);
+            if (organization instanceof PatientOrganization) {
+                organizationJComboBox.addItem(organization);
+            }
         }
     }
 
@@ -57,7 +60,6 @@ public class PatientSignUp extends javax.swing.JPanel {
     private void initComponents() {
 
         txtName = new javax.swing.JTextField();
-        txtDateOfBirth = new javax.swing.JTextField();
         txtEmail = new javax.swing.JTextField();
         lblTitle = new javax.swing.JLabel();
         lblPhoneNo = new javax.swing.JLabel();
@@ -65,7 +67,6 @@ public class PatientSignUp extends javax.swing.JPanel {
         lblUsername = new javax.swing.JLabel();
         lblGender = new javax.swing.JLabel();
         cboxGender = new javax.swing.JComboBox<>();
-        lblDateOfBirth = new javax.swing.JLabel();
         txtPhoneNo = new javax.swing.JTextField();
         txtZipcode = new javax.swing.JTextField();
         lblState = new javax.swing.JLabel();
@@ -83,13 +84,6 @@ public class PatientSignUp extends javax.swing.JPanel {
         setBackground(new java.awt.Color(95, 108, 178));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 170, 230, -1));
-
-        txtDateOfBirth.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtDateOfBirthActionPerformed(evt);
-            }
-        });
-        add(txtDateOfBirth, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 350, 230, -1));
         add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 210, 230, -1));
 
         lblTitle.setFont(new java.awt.Font("Georgia", 1, 24)); // NOI18N
@@ -122,48 +116,44 @@ public class PatientSignUp extends javax.swing.JPanel {
         });
         add(cboxGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 280, 230, -1));
 
-        lblDateOfBirth.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
-        lblDateOfBirth.setText("Date Of Birth");
-        add(lblDateOfBirth, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 350, -1, -1));
-
         txtPhoneNo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtPhoneNoActionPerformed(evt);
             }
         });
         add(txtPhoneNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 310, 230, -1));
-        add(txtZipcode, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 510, 230, -1));
+        add(txtZipcode, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 470, 230, -1));
 
         lblState.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblState.setText("State");
-        add(lblState, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 470, -1, -1));
+        add(lblState, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 430, -1, -1));
 
         txtCity.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCityActionPerformed(evt);
             }
         });
-        add(txtCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 430, 230, -1));
+        add(txtCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 390, 230, -1));
 
         lblCity.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblCity.setText("City");
-        add(lblCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 430, -1, -1));
+        add(lblCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 390, -1, -1));
 
         lblZipCode.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblZipCode.setText("Zipcode");
-        add(lblZipCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 510, -1, -1));
-        add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 390, 230, -1));
+        add(lblZipCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 470, -1, -1));
+        add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 350, 230, -1));
 
         txtState.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtStateActionPerformed(evt);
             }
         });
-        add(txtState, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 470, 230, -1));
+        add(txtState, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 430, 230, -1));
 
         lblAddress.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblAddress.setText("Address");
-        add(lblAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 390, -1, -1));
+        add(lblAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 350, -1, -1));
 
         btnSignUp.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         btnSignUp.setText("Sign Up");
@@ -172,7 +162,7 @@ public class PatientSignUp extends javax.swing.JPanel {
                 btnSignUpActionPerformed(evt);
             }
         });
-        add(btnSignUp, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 550, -1, -1));
+        add(btnSignUp, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 510, -1, -1));
 
         lblHospitalName.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblHospitalName.setText("Organization");
@@ -335,21 +325,7 @@ public class PatientSignUp extends javax.swing.JPanel {
         {
             txtAddress.setBorder(BorderFactory.createLineBorder(Color.BLUE, 0));
         }
-        
-        if(!txtDateOfBirth.getText().matches("^(1[0-2]|0[1-9])/(3[01]" + "|[12][0-9]|0[1-9])/[0-9]{4}$"))
-        {
-            txtDateOfBirth.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
-            txtDateOfBirth.setToolTipText("Please enter in format mm/dd/yyyy");
-            validationCheck=false;
-        }
-        
-        if(txtDateOfBirth.getText().matches("^(1[0-2]|0[1-9])/(3[01]" + "|[12][0-9]|0[1-9])/[0-9]{4}$"))
-        {
-            txtDateOfBirth.setBorder(BorderFactory.createLineBorder(Color.BLUE, 0));
-        }
-
-
-       
+               
         return validationCheck;
     }
     
@@ -437,10 +413,6 @@ public class PatientSignUp extends javax.swing.JPanel {
         return emptyValidationStatus;
     }//GEN-LAST:event_btnSignUpActionPerformed
 
-    private void txtDateOfBirthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDateOfBirthActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtDateOfBirthActionPerformed
-
     private void cboxGenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboxGenderActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cboxGenderActionPerformed
@@ -453,7 +425,6 @@ public class PatientSignUp extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblAddress;
     private javax.swing.JLabel lblCity;
-    private javax.swing.JLabel lblDateOfBirth;
     private javax.swing.JLabel lblGender;
     private javax.swing.JLabel lblHospitalName;
     private javax.swing.JLabel lblName;
@@ -465,7 +436,6 @@ public class PatientSignUp extends javax.swing.JPanel {
     private javax.swing.JComboBox organizationJComboBox;
     private javax.swing.JTextField txtAddress;
     private javax.swing.JTextField txtCity;
-    private javax.swing.JTextField txtDateOfBirth;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtName;
     private javax.swing.JTextField txtPhoneNo;
