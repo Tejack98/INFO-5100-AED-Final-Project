@@ -237,7 +237,7 @@ public class OrganDonationAppointment extends javax.swing.JPanel {
             userAccount.getWorkQueue().getWorkRequestList().add(dbr);
         }
         
-        JOptionPane.showMessageDialog(null, "Blood Donation Requested Successfully");
+        JOptionPane.showMessageDialog(null, "Organ Donation Requested Successfully");
         txtmessage.setText("");
         
     }//GEN-LAST:event_btnDonateActionPerformed
