@@ -75,6 +75,7 @@ public class SupplyChainViewRequestsJPanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
 
         actionPanel.setBackground(new java.awt.Color(255, 204, 204));
+        actionPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel6.setBackground(new java.awt.Color(153, 204, 255));
 
@@ -98,8 +99,11 @@ public class SupplyChainViewRequestsJPanel extends javax.swing.JPanel {
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
+        actionPanel.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1040, -1));
+
         lblname.setFont(new java.awt.Font("Georgia", 0, 18)); // NOI18N
         lblname.setText("Pharmacist Name");
+        actionPanel.add(lblname, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 79, -1, 23));
 
         supplierChainWorkRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -129,30 +133,7 @@ public class SupplyChainViewRequestsJPanel extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(supplierChainWorkRequestJTable);
 
-        javax.swing.GroupLayout actionPanelLayout = new javax.swing.GroupLayout(actionPanel);
-        actionPanel.setLayout(actionPanelLayout);
-        actionPanelLayout.setHorizontalGroup(
-            actionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(actionPanelLayout.createSequentialGroup()
-                .addGroup(actionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 649, Short.MAX_VALUE)
-                    .addComponent(jPanel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-            .addGroup(actionPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblname)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        actionPanelLayout.setVerticalGroup(
-            actionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(actionPanelLayout.createSequentialGroup()
-                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblname, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 452, Short.MAX_VALUE))
-        );
+        actionPanel.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 114, 1040, 257));
 
         jSplitPane1.setRightComponent(actionPanel);
 
@@ -209,7 +190,7 @@ public class SupplyChainViewRequestsJPanel extends javax.swing.JPanel {
                 .addComponent(processJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(assignJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(565, Short.MAX_VALUE))
+                .addContainerGap(642, Short.MAX_VALUE))
         );
 
         jSplitPane1.setLeftComponent(optionsPanel);
@@ -218,7 +199,7 @@ public class SupplyChainViewRequestsJPanel extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSplitPane1)
+            .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1250, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

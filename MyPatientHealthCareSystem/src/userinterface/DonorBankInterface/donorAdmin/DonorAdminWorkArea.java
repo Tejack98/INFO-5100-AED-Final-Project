@@ -63,6 +63,7 @@ public class DonorAdminWorkArea extends javax.swing.JFrame {
 
         controlPanel.setBackground(new java.awt.Color(153, 204, 255));
         controlPanel.setPreferredSize(new java.awt.Dimension(200, 600));
+        controlPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnLogout.setBackground(new java.awt.Color(255, 204, 204));
         btnLogout.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
@@ -72,10 +73,12 @@ public class DonorAdminWorkArea extends javax.swing.JFrame {
                 btnLogoutActionPerformed(evt);
             }
         });
+        controlPanel.add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 711, -1, 30));
 
-        jLabel1.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Georgia", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Donor Admin");
+        controlPanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 200, 50));
 
         btnAddHandler.setBackground(new java.awt.Color(255, 204, 204));
         btnAddHandler.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
@@ -85,6 +88,7 @@ public class DonorAdminWorkArea extends javax.swing.JFrame {
                 btnAddHandlerActionPerformed(evt);
             }
         });
+        controlPanel.add(btnAddHandler, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, -1, 60));
 
         Org_Name.setBackground(new java.awt.Color(255, 204, 204));
         Org_Name.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
@@ -94,6 +98,7 @@ public class DonorAdminWorkArea extends javax.swing.JFrame {
                 Org_NameActionPerformed(evt);
             }
         });
+        controlPanel.add(Org_Name, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 370, -1, 60));
 
         btnAddHandler1.setBackground(new java.awt.Color(255, 204, 204));
         btnAddHandler1.setText("View Handler");
@@ -102,36 +107,7 @@ public class DonorAdminWorkArea extends javax.swing.JFrame {
                 btnAddHandler1ActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout controlPanelLayout = new javax.swing.GroupLayout(controlPanel);
-        controlPanel.setLayout(controlPanelLayout);
-        controlPanelLayout.setHorizontalGroup(
-            controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btnAddHandler, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(controlPanelLayout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(18, Short.MAX_VALUE))
-            .addComponent(Org_Name, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(controlPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        controlPanelLayout.setVerticalGroup(
-            controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(controlPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(68, 68, 68)
-                .addComponent(btnAddHandler, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addComponent(btnAddHandler1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addComponent(Org_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 303, Short.MAX_VALUE)
-                .addComponent(btnLogout)
-                .addGap(30, 30, 30))
-        );
+        controlPanel.add(btnAddHandler1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, -1, 60));
 
         jSplitPaneSystem.setLeftComponent(controlPanel);
 
