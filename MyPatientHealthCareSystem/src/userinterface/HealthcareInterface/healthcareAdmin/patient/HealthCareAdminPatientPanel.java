@@ -53,7 +53,6 @@ public class HealthCareAdminPatientPanel extends javax.swing.JPanel {
         controlPanel = new javax.swing.JPanel();
         btnViewPatient = new javax.swing.JButton();
         btnCreatePatient = new javax.swing.JButton();
-        btnUpdatePatient = new javax.swing.JButton();
         patientWorkArea = new javax.swing.JPanel();
 
         splitPane.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
@@ -78,14 +77,6 @@ public class HealthCareAdminPatientPanel extends javax.swing.JPanel {
             }
         });
 
-        btnUpdatePatient.setFont(new java.awt.Font("Georgia", 0, 13)); // NOI18N
-        btnUpdatePatient.setText("Update Patient");
-        btnUpdatePatient.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnUpdatePatientActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout controlPanelLayout = new javax.swing.GroupLayout(controlPanel);
         controlPanel.setLayout(controlPanelLayout);
         controlPanelLayout.setHorizontalGroup(
@@ -93,20 +84,17 @@ public class HealthCareAdminPatientPanel extends javax.swing.JPanel {
             .addGroup(controlPanelLayout.createSequentialGroup()
                 .addContainerGap(159, Short.MAX_VALUE)
                 .addComponent(btnViewPatient, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(80, 80, 80)
+                .addGap(176, 176, 176)
                 .addComponent(btnCreatePatient, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(80, 80, 80)
-                .addComponent(btnUpdatePatient, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(127, Short.MAX_VALUE))
+                .addContainerGap(229, Short.MAX_VALUE))
         );
         controlPanelLayout.setVerticalGroup(
             controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, controlPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnViewPatient, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCreatePatient, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnUpdatePatient, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnCreatePatient, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -151,16 +139,9 @@ public class HealthCareAdminPatientPanel extends javax.swing.JPanel {
         splitPane.setRightComponent(pSignUp);
     }//GEN-LAST:event_btnCreatePatientActionPerformed
 
-    private void btnUpdatePatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdatePatientActionPerformed
-        // TODO add your handling code here:
-        AdminUpdatePatient adminUpdatepat = new AdminUpdatePatient(ecosystem, enterprise.getOrganizationDirectory());
-        splitPane.setRightComponent(adminUpdatepat);
-    }//GEN-LAST:event_btnUpdatePatientActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCreatePatient;
-    private javax.swing.JButton btnUpdatePatient;
     private javax.swing.JButton btnViewPatient;
     private javax.swing.JPanel controlPanel;
     private javax.swing.JPanel patientWorkArea;

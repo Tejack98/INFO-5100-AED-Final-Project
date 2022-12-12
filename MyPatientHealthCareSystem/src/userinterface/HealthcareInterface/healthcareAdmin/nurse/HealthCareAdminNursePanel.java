@@ -53,7 +53,6 @@ public class HealthCareAdminNursePanel extends javax.swing.JPanel {
         controlPanel = new javax.swing.JPanel();
         btnViewDoctor = new javax.swing.JButton();
         btnCreateDoctor = new javax.swing.JButton();
-        btnUpdateDoctor = new javax.swing.JButton();
         patientWorkArea = new javax.swing.JPanel();
 
         splitPane.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
@@ -78,35 +77,24 @@ public class HealthCareAdminNursePanel extends javax.swing.JPanel {
             }
         });
 
-        btnUpdateDoctor.setFont(new java.awt.Font("Georgia", 0, 13)); // NOI18N
-        btnUpdateDoctor.setText("Update Nurse");
-        btnUpdateDoctor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnUpdateDoctorActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout controlPanelLayout = new javax.swing.GroupLayout(controlPanel);
         controlPanel.setLayout(controlPanelLayout);
         controlPanelLayout.setHorizontalGroup(
             controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(controlPanelLayout.createSequentialGroup()
-                .addContainerGap(159, Short.MAX_VALUE)
+                .addGap(183, 183, 183)
                 .addComponent(btnViewDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(80, 80, 80)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 184, Short.MAX_VALUE)
                 .addComponent(btnCreateDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(80, 80, 80)
-                .addComponent(btnUpdateDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(127, Short.MAX_VALUE))
+                .addGap(197, 197, 197))
         );
         controlPanelLayout.setVerticalGroup(
             controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, controlPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnViewDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCreateDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnUpdateDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnCreateDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -151,16 +139,9 @@ public class HealthCareAdminNursePanel extends javax.swing.JPanel {
         splitPane.setRightComponent(nurseSignUp);
     }//GEN-LAST:event_btnCreateDoctorActionPerformed
 
-    private void btnUpdateDoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateDoctorActionPerformed
-        // TODO add your handling code here:
-        AdminUpdateNurse adminUpdateNurse = new AdminUpdateNurse(ecosystem, enterprise.getOrganizationDirectory());
-        splitPane.setRightComponent(adminUpdateNurse);
-    }//GEN-LAST:event_btnUpdateDoctorActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCreateDoctor;
-    private javax.swing.JButton btnUpdateDoctor;
     private javax.swing.JButton btnViewDoctor;
     private javax.swing.JPanel controlPanel;
     private javax.swing.JPanel patientWorkArea;

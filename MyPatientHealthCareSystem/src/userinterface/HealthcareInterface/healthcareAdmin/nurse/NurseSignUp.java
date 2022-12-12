@@ -6,6 +6,7 @@ package userinterface.HealthcareInterface.healthcareAdmin.nurse;
 
 import healthcare.Ecosystem;
 import healthcare.enterprise.Enterprise;
+import healthcare.enterprise.healthCare.NurseOrganization;
 import healthcare.enterprise.healthCare.NurseRole;
 import healthcare.network.Network;
 import healthcare.organization.Organization;
@@ -42,7 +43,9 @@ public class NurseSignUp extends javax.swing.JPanel {
         organizationJComboBox.removeAllItems();
 
         for (Organization organization : orgList.getOrganizationList()){
-            organizationJComboBox.addItem(organization);
+            if (organization instanceof NurseOrganization) {
+                organizationJComboBox.addItem(organization);
+            }
         }
     }
     
