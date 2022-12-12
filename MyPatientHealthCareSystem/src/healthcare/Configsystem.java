@@ -105,9 +105,13 @@ public class Configsystem {
         n1.setHospitalName("myHospital1");
         n1.setGender("Female");
         
+        PatientRole p1 = new PatientRole();
+        p1.setHospitalName("myHospital1");
+        p1.setGender("Female");
+        
         UserAccount u = orgdoc.getUserAccountDirectory().createUserAccount(4444,"doc", "doc", person, d1,"t@g.com");
         UserAccount u2 = enterprise.getUserAccountDirectory().createUserAccount(1111,"hadmin", "hadmin", person2,new HealthCareAdminRole(),"t@g.com");
-        UserAccount u3 = orgpat.getUserAccountDirectory().createUserAccount(2222,"pat", "pat", person3, new PatientRole(),"s@g.com");
+        UserAccount u3 = orgpat.getUserAccountDirectory().createUserAccount(2222,"pat", "pat", person3, p1,"s@g.com");
         UserAccount u4 = orgnurse.getUserAccountDirectory().createUserAccount(3333,"nurse", "nurse", person4, new NurseRole() ,"s@g.com");
         UserAccount u5 = orglab.getUserAccountDirectory().createUserAccount(2322,"alab", "alab", person5, new LabAdminRole() ,"s@g.com");
         UserAccount u6 = orglab.getUserAccountDirectory().createUserAccount(2233,"lab", "lab", person6, new LabAssistantRole() ,"s@g.com");

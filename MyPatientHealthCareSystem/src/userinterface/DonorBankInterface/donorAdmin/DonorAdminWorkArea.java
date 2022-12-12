@@ -107,6 +107,7 @@ public class DonorAdminWorkArea extends javax.swing.JFrame {
                 btnAddHandler1ActionPerformed(evt);
             }
         });
+
         controlPanel.add(btnAddHandler1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, -1, 60));
 
         jSplitPaneSystem.setLeftComponent(controlPanel);
