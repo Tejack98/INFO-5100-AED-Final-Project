@@ -476,12 +476,14 @@ public class RequestPharmacistForMedicinePanel extends javax.swing.JPanel {
                     }
                 }
             }
-            if (org != null) {
+            
+        }
+        
+        if (org != null) {
                 org.getWorkQueue().getWorkRequestList().add(patientrequest);
                 patientrequest.setReceiver(null);
                 userAccount.getWorkQueue().getWorkRequestList().add(patientrequest);
             }
-        }
         JOptionPane.showMessageDialog(null, "Medical prescription sent to pharmacist successfully.");
                 }}}
         catch (Exception e) {

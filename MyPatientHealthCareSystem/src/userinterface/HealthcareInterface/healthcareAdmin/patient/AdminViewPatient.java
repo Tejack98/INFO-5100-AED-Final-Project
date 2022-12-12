@@ -59,7 +59,6 @@ public class AdminViewPatient extends javax.swing.JPanel {
         lblSearchPatientByName = new javax.swing.JLabel();
         txtSearchPatientByName = new javax.swing.JTextField();
         btnSearch = new javax.swing.JButton();
-        btnDelete = new javax.swing.JButton();
         lblEnterprise = new javax.swing.JLabel();
         organizationJComboBox = new javax.swing.JComboBox();
         btnView = new javax.swing.JButton();
@@ -109,10 +108,6 @@ public class AdminViewPatient extends javax.swing.JPanel {
             }
         });
         add(btnSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(784, 97, -1, -1));
-
-        btnDelete.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
-        btnDelete.setText("Delete");
-        add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 360, -1, -1));
 
         lblEnterprise.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblEnterprise.setText("Organization");
@@ -190,7 +185,6 @@ public class AdminViewPatient extends javax.swing.JPanel {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnSearch;
     private javax.swing.JButton btnView;
     private javax.swing.JLabel jLabel1;

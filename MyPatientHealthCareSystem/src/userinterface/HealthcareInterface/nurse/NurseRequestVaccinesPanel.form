@@ -41,12 +41,12 @@
                           <Component id="chkVar" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="chkCho" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="chkAnt" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="chkAde" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="chkAde" alignment="0" max="32767" attributes="0"/>
                           <Component id="chkPert" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="chkDipth" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="chkAnt" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -76,10 +76,8 @@
               <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="chkPnem" max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="chkTdap" max="32767" attributes="0"/>
-                      <Component id="chkAde" max="32767" attributes="0"/>
-                  </Group>
+                  <Component id="chkTdap" max="32767" attributes="0"/>
+                  <Component id="chkAde" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">

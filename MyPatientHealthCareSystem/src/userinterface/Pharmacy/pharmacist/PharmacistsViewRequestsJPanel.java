@@ -73,7 +73,6 @@ public class PharmacistsViewRequestsJPanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
 
         actionPanel.setBackground(new java.awt.Color(255, 204, 204));
-        actionPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel6.setBackground(new java.awt.Color(153, 204, 255));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -82,11 +81,8 @@ public class PharmacistsViewRequestsJPanel extends javax.swing.JPanel {
         jLabel6.setText("Pharmacy Requests Received");
         jPanel6.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 19, -1, 40));
 
-        actionPanel.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1230, 80));
-
         lblname.setFont(new java.awt.Font("Georgia", 0, 18)); // NOI18N
         lblname.setText("Lab Assitant Name");
-        actionPanel.add(lblname, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 113, -1, 30));
 
         pharmaWorkRequestJTable.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         pharmaWorkRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -117,7 +113,31 @@ public class PharmacistsViewRequestsJPanel extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(pharmaWorkRequestJTable);
 
-        actionPanel.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 1230, 257));
+        javax.swing.GroupLayout actionPanelLayout = new javax.swing.GroupLayout(actionPanel);
+        actionPanel.setLayout(actionPanelLayout);
+        actionPanelLayout.setHorizontalGroup(
+            actionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(actionPanelLayout.createSequentialGroup()
+                .addGroup(actionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(actionPanelLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(lblname))
+                    .addGroup(actionPanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 836, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        actionPanelLayout.setVerticalGroup(
+            actionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(actionPanelLayout.createSequentialGroup()
+                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addComponent(lblname, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
 
         jSplitPane1.setRightComponent(actionPanel);
 

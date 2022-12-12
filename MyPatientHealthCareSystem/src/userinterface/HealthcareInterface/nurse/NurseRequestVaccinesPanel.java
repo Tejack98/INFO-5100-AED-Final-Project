@@ -283,12 +283,12 @@ public class NurseRequestVaccinesPanel extends javax.swing.JPanel {
                             .addComponent(chkCov)
                             .addComponent(chkVar))
                         .addGap(35, 35, 35)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(chkCho)
-                            .addComponent(chkAnt)
-                            .addComponent(chkAde)
+                            .addComponent(chkAde, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(chkPert)
-                            .addComponent(chkDipth))
+                            .addComponent(chkDipth)
+                            .addComponent(chkAnt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(24, 24, 24)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(chkRota)
@@ -311,9 +311,8 @@ public class NurseRequestVaccinesPanel extends javax.swing.JPanel {
                 .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(chkPnem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(chkTdap, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(chkAde, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(chkTdap, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(chkAde, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(chkPolio)
@@ -375,47 +374,47 @@ public class NurseRequestVaccinesPanel extends javax.swing.JPanel {
       
 //--------------------------------------------------------------------------------
         
-        if(chkVar.isSelected())
+        if(chkAde.isSelected())
         {
             vaccinelist = vaccinelist + "Adenovirus ,";
         }
-        if(chkCov.isSelected())
+        if(chkAnt.isSelected())
         {
             vaccinelist = vaccinelist + "Anthrax ,";
         }
         
-        if(chkVar.isSelected())
+        if(chkCho.isSelected())
         {
             vaccinelist = vaccinelist + "Cholera ,";
         }
-        if(chkCov.isSelected())
+        if(chkDipth.isSelected())
         {
             vaccinelist = vaccinelist + "Diphtheria ,";
         }
         
-        if(chkVar.isSelected())
+        if(chkPert.isSelected())
         {
             vaccinelist = vaccinelist + "Pertussis ,";
         }
-        if(chkCov.isSelected())
+        if(chkPnem.isSelected())
         {
             vaccinelist = vaccinelist + "Pneumococcal ,";
         }
         
-        if(chkVar.isSelected())
+        if(chkRab.isSelected())
         {
             vaccinelist = vaccinelist + "Rabies ,";
         }
-        if(chkCov.isSelected())
+        if(chkRota.isSelected())
         {
             vaccinelist = vaccinelist + "Rotavirus ,";
         }
         
-        if(chkVar.isSelected())
+        if(chksma.isSelected())
         {
             vaccinelist = vaccinelist + "Smallpox ,";
         }
-        if(chkCov.isSelected())
+        if(chkMen.isSelected())
         {
             vaccinelist = vaccinelist + "Meningococcal ";
         }
@@ -424,7 +423,7 @@ public class NurseRequestVaccinesPanel extends javax.swing.JPanel {
         
         System.out.println(vaccinelist);
         wr.setVaccinesList(vaccinelist);
-        wr.setMessage(vaccinelist);
+        wr.setMessage(txtMsg.getText());
         wr.setStatus("Vaccines Requested");
         wr.setDiagnose("Following Vaccines have been requested : \n " + vaccinelist);
 
@@ -492,25 +491,25 @@ public class NurseRequestVaccinesPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_chkPertActionPerformed
 
-    private void chkRotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkRotaActionPerformed
+    private void chkMenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkMenActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_chkRotaActionPerformed
+    }//GEN-LAST:event_chkMenActionPerformed
 
     private void chksmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chksmaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_chksmaActionPerformed
 
-    private void chkMenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkMenActionPerformed
+    private void chkRotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkRotaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_chkMenActionPerformed
-
-    private void chkPnemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkPnemActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_chkPnemActionPerformed
+    }//GEN-LAST:event_chkRotaActionPerformed
 
     private void chkRabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkRabActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_chkRabActionPerformed
+
+    private void chkPnemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkPnemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chkPnemActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

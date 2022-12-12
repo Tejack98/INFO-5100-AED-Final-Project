@@ -77,7 +77,6 @@ public class VaccinationsViewRequestsJPanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
 
         actionPanel.setBackground(new java.awt.Color(255, 204, 204));
-        actionPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel6.setBackground(new java.awt.Color(153, 204, 255));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -86,11 +85,8 @@ public class VaccinationsViewRequestsJPanel extends javax.swing.JPanel {
         jLabel6.setText("Vaccination Requests Received");
         jPanel6.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 19, -1, -1));
 
-        actionPanel.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1300, -1));
-
         lblname.setFont(new java.awt.Font("Georgia", 0, 18)); // NOI18N
         lblname.setText("Lab Assitant Name");
-        actionPanel.add(lblname, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 79, -1, 23));
 
         vaccinationsWorkRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -100,7 +96,7 @@ public class VaccinationsViewRequestsJPanel extends javax.swing.JPanel {
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "Message", "Request Intended By", "Request Received By", "Status", "Date", "Med List"
+                "Message", "Request Intended By", "Request Received By", "Status", "Date", "Vaccines List"
             }
         ) {
             Class[] types = new Class [] {
@@ -120,7 +116,26 @@ public class VaccinationsViewRequestsJPanel extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(vaccinationsWorkRequestJTable);
 
-        actionPanel.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 114, 1300, 257));
+        javax.swing.GroupLayout actionPanelLayout = new javax.swing.GroupLayout(actionPanel);
+        actionPanel.setLayout(actionPanelLayout);
+        actionPanelLayout.setHorizontalGroup(
+            actionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 1300, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(actionPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(actionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 693, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblname)))
+        );
+        actionPanelLayout.setVerticalGroup(
+            actionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(actionPanelLayout.createSequentialGroup()
+                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
+                .addComponent(lblname, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
 
         jSplitPane1.setRightComponent(actionPanel);
 
@@ -166,7 +181,7 @@ public class VaccinationsViewRequestsJPanel extends javax.swing.JPanel {
                     .addComponent(refreshJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(processJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(assignJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         optionsPanelLayout.setVerticalGroup(
             optionsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -177,7 +192,7 @@ public class VaccinationsViewRequestsJPanel extends javax.swing.JPanel {
                 .addComponent(processJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(assignJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(642, Short.MAX_VALUE))
+                .addContainerGap(400, Short.MAX_VALUE))
         );
 
         jSplitPane1.setLeftComponent(optionsPanel);
@@ -267,7 +282,7 @@ public class VaccinationsViewRequestsJPanel extends javax.swing.JPanel {
             row[3] = result == null ? "Waiting" : result;
 
             row[4] = request.getRequestDate();
-            row[5] = request.getMedlist();
+            row[5] = request.getVaccinesList();
 
             model.addRow(row);
 

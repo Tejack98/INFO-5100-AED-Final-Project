@@ -41,6 +41,7 @@ public class ProcessPharmaRequest extends javax.swing.JPanel {
         this.enterprise = enterprise;
         this.network = network;
         populatePharmaRequests();
+        txtPatientName.setText(request.getSender().getUserName());
     }
 
     /**
