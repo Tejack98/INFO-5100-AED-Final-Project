@@ -89,7 +89,7 @@ public class PharmacistWorkArea extends javax.swing.JFrame {
                 btnLogoutActionPerformed(evt);
             }
         });
-        jPanel1.add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 460, 102, -1));
+        jPanel1.add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 430, 102, -1));
 
         jSplitPane1.setLeftComponent(jPanel1);
 

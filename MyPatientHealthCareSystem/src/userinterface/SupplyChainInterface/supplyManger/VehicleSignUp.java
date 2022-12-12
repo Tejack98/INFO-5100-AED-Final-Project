@@ -154,6 +154,7 @@ public class VehicleSignUp extends javax.swing.JPanel {
         if(txtVehicleName.getText().matches("^[a-zA-Z ]+$"))
         {
             txtVehicleName.setBorder(BorderFactory.createLineBorder(Color.BLUE, 0));
+            validationCheck=true;
         }
         
        if(!txtVehicleType.getText().matches("^[a-zA-Z ]+$"))
@@ -166,6 +167,7 @@ public class VehicleSignUp extends javax.swing.JPanel {
         if(txtVehicleType.getText().matches("^[a-zA-Z ]+$"))
         {
             txtVehicleType.setBorder(BorderFactory.createLineBorder(Color.BLUE, 0));
+            validationCheck=true;
         }
         
         if(!txtDescription.getText().matches("^[a-zA-Z ]+$"))
@@ -178,6 +180,7 @@ public class VehicleSignUp extends javax.swing.JPanel {
         if(txtDescription.getText().matches("^[a-zA-Z ]+$"))
         {
             txtDescription.setBorder(BorderFactory.createLineBorder(Color.BLUE, 0));
+            validationCheck=true;
         }
         
         return validationCheck;
@@ -193,6 +196,7 @@ public class VehicleSignUp extends javax.swing.JPanel {
         if(!txtVehicleName.getText().equals(null) && !txtVehicleName.getText().trim().isEmpty() )
         {
             txtVehicleName.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+            emptyValidationStatus= true;
         }
         
         if(txtVehicleType.getText().equals(null) || txtVehicleName.getText().trim().isEmpty() )
@@ -204,6 +208,7 @@ public class VehicleSignUp extends javax.swing.JPanel {
         if(!txtVehicleType.getText().equals(null) && !txtVehicleType.getText().trim().isEmpty() )
         {
             txtVehicleType.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+            emptyValidationStatus= true;
         }
         
         if(txtDescription.getText().equals(null)|| txtDescription.getText().trim().isEmpty())
@@ -215,7 +220,7 @@ public class VehicleSignUp extends javax.swing.JPanel {
         if(!txtDescription.getText().equals(null) && !txtDescription.getText().trim().isEmpty())
         {
             txtDescription.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
-           
+           emptyValidationStatus= true;
         }
         if(txtVehicleNumber.getText().equals(null) || txtVehicleNumber.getText().trim().isEmpty())
         {
@@ -226,6 +231,7 @@ public class VehicleSignUp extends javax.swing.JPanel {
         if(!txtVehicleNumber.getText().equals(null) && !txtVehicleNumber.getText().trim().isEmpty())
         {
             txtVehicleNumber.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+            emptyValidationStatus= true;
         }
         return emptyValidationStatus;
     }//GEN-LAST:event_btnSignUpActionPerformed

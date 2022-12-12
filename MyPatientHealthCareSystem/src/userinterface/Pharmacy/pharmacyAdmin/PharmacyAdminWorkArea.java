@@ -127,9 +127,9 @@ public class PharmacyAdminWorkArea extends javax.swing.JFrame {
                 .addComponent(btnViewPharmacist, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)
                 .addComponent(Org_Name1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
                 .addComponent(btnLogout)
-                .addContainerGap())
+                .addGap(40, 40, 40))
         );
 
         jSplitPane1.setLeftComponent(jPanel1);

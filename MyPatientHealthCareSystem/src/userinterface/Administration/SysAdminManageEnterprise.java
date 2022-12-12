@@ -201,6 +201,8 @@ public class SysAdminManageEnterprise extends javax.swing.JPanel {
         if(nameJTextField.getText().matches("^[a-zA-Z ]+$"))
         {
             nameJTextField.setBorder(BorderFactory.createLineBorder(Color.BLUE, 0));
+            validationCheck = true;
+
         }
         return validationCheck;
     }
@@ -216,6 +218,7 @@ public class SysAdminManageEnterprise extends javax.swing.JPanel {
         if(!nameJTextField.getText().equals(null) && !nameJTextField.getText().trim().isEmpty() )
         {
             nameJTextField.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+            emptyValidationStatus = true;
         }
 
         return emptyValidationStatus;

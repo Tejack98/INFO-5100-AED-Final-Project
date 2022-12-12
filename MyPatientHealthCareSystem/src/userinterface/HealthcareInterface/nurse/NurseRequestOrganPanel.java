@@ -238,6 +238,7 @@ public class NurseRequestOrganPanel extends javax.swing.JPanel {
         if(txtOrg.getText().matches("^[a-zA-Z ]+$"))
         {
             txtOrg.setBorder(BorderFactory.createLineBorder(Color.BLUE, 0));
+            validationCheck=true;
         }
         
         
@@ -255,6 +256,7 @@ public class NurseRequestOrganPanel extends javax.swing.JPanel {
         if(!txtOrg.getText().equals(null) && !txtOrg.getText().trim().isEmpty() )
         {
             txtOrg.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+            emptyValidationStatus= true;
         }
         return emptyValidationStatus;
     }

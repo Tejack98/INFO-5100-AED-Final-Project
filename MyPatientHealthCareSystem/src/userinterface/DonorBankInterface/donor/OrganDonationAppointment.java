@@ -205,8 +205,13 @@ public class OrganDonationAppointment extends javax.swing.JPanel {
     private void btnDonateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDonateActionPerformed
         // TODO add your handling code here:
         String message = txtmessage.getText();
-        Date appDate = dateChooserField.getDate();
-        String strDate = DateFormat.getDateInstance().format(appDate);
+        String strDate = null;
+        try {
+            Date appDate = dateChooserField.getDate();
+            strDate = DateFormat.getDateInstance().format(appDate);
+        } catch (Exception e) {
+            System.out.println("Date is Null");
+        }
         
         DonorBankRequest dbr = new DonorBankRequest();
         dbr.setMessage(message);

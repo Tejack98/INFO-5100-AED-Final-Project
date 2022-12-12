@@ -63,10 +63,10 @@
                   </Group>
                   <Component id="btnViewPres" alignment="1" max="32767" attributes="0"/>
                   <Component id="btnViewPres1" alignment="0" max="32767" attributes="0"/>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                      <Component id="btnLogout" min="-2" pref="102" max="-2" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
+                      <Component id="btnLogout" min="-2" pref="102" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -81,9 +81,9 @@
                       <Component id="btnViewPres" min="-2" pref="55" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="btnViewPres1" min="-2" pref="55" max="-2" attributes="0"/>
-                      <EmptySpace pref="304" max="32767" attributes="0"/>
+                      <EmptySpace pref="274" max="32767" attributes="0"/>
                       <Component id="btnLogout" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>

@@ -242,6 +242,7 @@ public class VaccinatorSignUp extends javax.swing.JPanel {
         if(txtName.getText().matches("^[a-zA-Z ]+$"))
         {
             txtName.setBorder(BorderFactory.createLineBorder(Color.BLUE, 0));
+            validationCheck=true;
         }
         
         if(!txtEmail.getText().matches("^[A-Za-z0-9+_.-]+@(.+)$"))
@@ -254,6 +255,7 @@ public class VaccinatorSignUp extends javax.swing.JPanel {
         if(txtEmail.getText().matches("^[A-Za-z0-9+_.-]+@(.+)$"))
         {
             txtEmail.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+            validationCheck=true;
         }
         
         if(!txtPhoneNo.getText().matches("^[0-9]{10}$"))
@@ -266,6 +268,7 @@ public class VaccinatorSignUp extends javax.swing.JPanel {
         if(txtPhoneNo.getText().matches("^[0-9]{10}$"))
         {
             txtPhoneNo.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+            validationCheck=true;
         }
         
         if(!txtDateOfBirth.getText().matches("^(1[0-2]|0[1-9])/(3[01]" + "|[12][0-9]|0[1-9])/[0-9]{4}$"))
@@ -278,6 +281,7 @@ public class VaccinatorSignUp extends javax.swing.JPanel {
         if(txtDateOfBirth.getText().matches("^(1[0-2]|0[1-9])/(3[01]" + "|[12][0-9]|0[1-9])/[0-9]{4}$"))
         {
             txtDateOfBirth.setBorder(BorderFactory.createLineBorder(Color.BLUE, 0));
+            validationCheck=true;
         }
         
         if(!txtAddress.getText().matches("^[a-zA-Z ]+$"))
@@ -290,6 +294,7 @@ public class VaccinatorSignUp extends javax.swing.JPanel {
         if(txtAddress.getText().matches("^[a-zA-Z ]+$"))
         {
             txtAddress.setBorder(BorderFactory.createLineBorder(Color.BLUE, 0));
+            validationCheck=true;
         }
         
         if(!txtCity.getText().matches("^[a-zA-Z ]+$"))
@@ -302,6 +307,7 @@ public class VaccinatorSignUp extends javax.swing.JPanel {
         if(txtCity.getText().matches("^[a-zA-Z ]+$"))
         {
             txtCity.setBorder(BorderFactory.createLineBorder(Color.BLUE, 0));
+            validationCheck=true;
         }
 
         if(!txtState.getText().matches("^[a-zA-Z ]+$"))
@@ -314,6 +320,7 @@ public class VaccinatorSignUp extends javax.swing.JPanel {
         if(txtState.getText().matches("^[a-zA-Z ]+$"))
         {
             txtState.setBorder(BorderFactory.createLineBorder(Color.BLUE, 0));
+            validationCheck=true;
         }
 
         if(!txtZipcode.getText().matches("^[0-9]{5}(?:-[0-9]{4})?$"))
@@ -325,6 +332,7 @@ public class VaccinatorSignUp extends javax.swing.JPanel {
          if(txtZipcode.getText().matches("^[0-9]{5}(?:-[0-9]{4})?$"))
         {
             txtZipcode.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+            validationCheck=true;
         }
 
         return validationCheck;
@@ -340,6 +348,7 @@ public class VaccinatorSignUp extends javax.swing.JPanel {
         if(!txtName.getText().equals(null) && !txtName.getText().trim().isEmpty() )
         {
             txtName.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+            emptyValidationStatus= true;
         }
        
         if(txtEmail.getText().equals(null) || txtEmail.getText().trim().isEmpty())
@@ -351,6 +360,7 @@ public class VaccinatorSignUp extends javax.swing.JPanel {
         if(!txtEmail.getText().equals(null) && !txtEmail.getText().trim().isEmpty())
         {
             txtEmail.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+            emptyValidationStatus= true;
         }
         
         if(txtPhoneNo.getText().equals(null) || txtPhoneNo.getText().trim().isEmpty())
@@ -362,6 +372,7 @@ public class VaccinatorSignUp extends javax.swing.JPanel {
         if(!txtPhoneNo.getText().equals(null) && !txtPhoneNo.getText().trim().isEmpty())
         {
             txtPhoneNo.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+            emptyValidationStatus= true;
         }
         
         if(txtDateOfBirth.getText().equals(null) || txtDateOfBirth.getText().trim().isEmpty())
@@ -373,6 +384,7 @@ public class VaccinatorSignUp extends javax.swing.JPanel {
         if(!txtDateOfBirth.getText().equals(null) && !txtDateOfBirth.getText().trim().isEmpty())
         {
             txtDateOfBirth.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+            emptyValidationStatus= true;
         }
         
         if(txtAddress.getText().equals(null)|| txtAddress.getText().trim().isEmpty())
@@ -384,7 +396,7 @@ public class VaccinatorSignUp extends javax.swing.JPanel {
         if(!txtAddress.getText().equals(null) && !txtAddress.getText().trim().isEmpty())
         {
             txtAddress.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
-           
+           emptyValidationStatus= true;
         }
         
         if(txtCity.getText().equals(null)|| txtCity.getText().trim().isEmpty())
@@ -396,7 +408,7 @@ public class VaccinatorSignUp extends javax.swing.JPanel {
         if(!txtCity.getText().equals(null) && !txtCity.getText().trim().isEmpty())
         {
             txtCity.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
-           
+           emptyValidationStatus= true;
         }
         
          if(txtState.getText().equals(null) || txtState.getText().trim().isEmpty())
@@ -408,6 +420,7 @@ public class VaccinatorSignUp extends javax.swing.JPanel {
         if(!txtState.getText().equals(null) && !txtState.getText().trim().isEmpty())
         {
             txtState.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+            emptyValidationStatus= true;
         }
 
            if(txtZipcode.getText().equals(null) || txtZipcode.getText().trim().isEmpty())
@@ -419,6 +432,7 @@ public class VaccinatorSignUp extends javax.swing.JPanel {
         if(!txtZipcode.getText().equals(null) && !txtZipcode.getText().trim().isEmpty())
         {
             txtZipcode.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+            emptyValidationStatus= true;
         }
 
         

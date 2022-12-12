@@ -58,9 +58,7 @@ public class PharmacistSignUp extends javax.swing.JPanel {
         txtName = new javax.swing.JTextField();
         lblCity = new javax.swing.JLabel();
         txtEmail = new javax.swing.JTextField();
-        lblSpeciality = new javax.swing.JLabel();
         lblName = new javax.swing.JLabel();
-        cboxSpeciality = new javax.swing.JComboBox<>();
         lblUsername = new javax.swing.JLabel();
         lblPhoneNo = new javax.swing.JLabel();
         txtAddress = new javax.swing.JTextField();
@@ -86,7 +84,7 @@ public class PharmacistSignUp extends javax.swing.JPanel {
                 txtCityActionPerformed(evt);
             }
         });
-        add(txtCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 430, 230, -1));
+        add(txtCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 400, 230, -1));
 
         btnSignUp.setText("Sign Up");
         btnSignUp.addActionListener(new java.awt.event.ActionListener() {
@@ -94,39 +92,31 @@ public class PharmacistSignUp extends javax.swing.JPanel {
                 btnSignUpActionPerformed(evt);
             }
         });
-        add(btnSignUp, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 590, -1, -1));
-        add(txtState, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 470, 230, -1));
+        add(btnSignUp, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 560, -1, -1));
+        add(txtState, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 440, 230, -1));
 
         lblState.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblState.setText("State");
-        add(lblState, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 470, -1, -1));
+        add(lblState, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 440, -1, -1));
 
         lblAddress.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblAddress.setText("Address");
-        add(lblAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 390, -1, -1));
+        add(lblAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 360, -1, -1));
 
         lblZipCode.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblZipCode.setText("Zipcode");
-        add(lblZipCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 510, -1, -1));
-        add(txtZipcode, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 510, 230, -1));
+        add(lblZipCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 480, -1, -1));
+        add(txtZipcode, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 480, 230, -1));
         add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 160, 230, -1));
 
         lblCity.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblCity.setText("City");
-        add(lblCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 430, -1, -1));
+        add(lblCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 400, -1, -1));
         add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 200, 230, -1));
-
-        lblSpeciality.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
-        lblSpeciality.setText("Speciality");
-        add(lblSpeciality, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 350, -1, -1));
 
         lblName.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblName.setText("Name");
         add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 160, -1, -1));
-
-        cboxSpeciality.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
-        cboxSpeciality.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(cboxSpeciality, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 350, 230, -1));
 
         lblUsername.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblUsername.setText("Email");
@@ -134,9 +124,9 @@ public class PharmacistSignUp extends javax.swing.JPanel {
 
         lblPhoneNo.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblPhoneNo.setText("Phone No");
-        add(lblPhoneNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 550, -1, -1));
-        add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 390, 230, -1));
-        add(txtPhoneNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 550, 230, -1));
+        add(lblPhoneNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 520, -1, -1));
+        add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 360, 230, -1));
+        add(txtPhoneNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 520, 230, -1));
 
         lblOrgName.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblOrgName.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
@@ -158,6 +148,11 @@ public class PharmacistSignUp extends javax.swing.JPanel {
 
         organizationJComboBox.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         organizationJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Doctor", "Nurse", "Patient" }));
+        organizationJComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                organizationJComboBoxActionPerformed(evt);
+            }
+        });
         add(organizationJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 310, 230, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Pharmacist.jpg"))); // NOI18N
@@ -222,6 +217,10 @@ public class PharmacistSignUp extends javax.swing.JPanel {
 
     }//GEN-LAST:event_btnSignUpActionPerformed
 
+    private void organizationJComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_organizationJComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_organizationJComboBoxActionPerformed
+
      private boolean RegexValidation() {
         if(!txtName.getText().matches("^[a-zA-Z ]+$"))
         {
@@ -233,6 +232,7 @@ public class PharmacistSignUp extends javax.swing.JPanel {
         if(txtName.getText().matches("^[a-zA-Z ]+$"))
         {
             txtName.setBorder(BorderFactory.createLineBorder(Color.BLUE, 0));
+            validationCheck=true;
         }
         
         if(!txtEmail.getText().matches("^[A-Za-z0-9+_.-]+@(.+)$"))
@@ -245,6 +245,7 @@ public class PharmacistSignUp extends javax.swing.JPanel {
         if(txtEmail.getText().matches("^[A-Za-z0-9+_.-]+@(.+)$"))
         {
             txtEmail.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+             validationCheck=true;
         }
         
         if(!txtPhoneNo.getText().matches("^[0-9]{10}$"))
@@ -257,6 +258,7 @@ public class PharmacistSignUp extends javax.swing.JPanel {
         if(txtPhoneNo.getText().matches("^[0-9]{10}$"))
         {
             txtPhoneNo.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+             validationCheck=true;
         }
         
         if(!txtDateOfBirth.getText().matches("^(1[0-2]|0[1-9])/(3[01]" + "|[12][0-9]|0[1-9])/[0-9]{4}$"))
@@ -269,6 +271,7 @@ public class PharmacistSignUp extends javax.swing.JPanel {
         if(txtDateOfBirth.getText().matches("^(1[0-2]|0[1-9])/(3[01]" + "|[12][0-9]|0[1-9])/[0-9]{4}$"))
         {
             txtDateOfBirth.setBorder(BorderFactory.createLineBorder(Color.BLUE, 0));
+             validationCheck=true;
         }
         
         if(!txtAddress.getText().matches("^[a-zA-Z ]+$"))
@@ -281,6 +284,7 @@ public class PharmacistSignUp extends javax.swing.JPanel {
         if(txtAddress.getText().matches("^[a-zA-Z ]+$"))
         {
             txtAddress.setBorder(BorderFactory.createLineBorder(Color.BLUE, 0));
+             validationCheck=true;
         }
         
         if(!txtCity.getText().matches("^[a-zA-Z ]+$"))
@@ -293,6 +297,7 @@ public class PharmacistSignUp extends javax.swing.JPanel {
         if(txtCity.getText().matches("^[a-zA-Z ]+$"))
         {
             txtCity.setBorder(BorderFactory.createLineBorder(Color.BLUE, 0));
+             validationCheck=true;
         }
 
         if(!txtState.getText().matches("^[a-zA-Z ]+$"))
@@ -305,6 +310,7 @@ public class PharmacistSignUp extends javax.swing.JPanel {
         if(txtState.getText().matches("^[a-zA-Z ]+$"))
         {
             txtState.setBorder(BorderFactory.createLineBorder(Color.BLUE, 0));
+             validationCheck=true;
         }
 
         if(!txtZipcode.getText().matches("^[0-9]{5}(?:-[0-9]{4})?$"))
@@ -316,6 +322,7 @@ public class PharmacistSignUp extends javax.swing.JPanel {
          if(txtZipcode.getText().matches("^[0-9]{5}(?:-[0-9]{4})?$"))
         {
             txtZipcode.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+             validationCheck=true;
         }
 
 
@@ -332,6 +339,7 @@ public class PharmacistSignUp extends javax.swing.JPanel {
         if(!txtName.getText().equals(null) && !txtName.getText().trim().isEmpty() )
         {
             txtName.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+            emptyValidationStatus= true;
         }
        
         if(txtEmail.getText().equals(null) || txtEmail.getText().trim().isEmpty())
@@ -343,6 +351,7 @@ public class PharmacistSignUp extends javax.swing.JPanel {
         if(!txtEmail.getText().equals(null) && !txtEmail.getText().trim().isEmpty())
         {
             txtEmail.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+             emptyValidationStatus= true;
         }
         
         if(txtPhoneNo.getText().equals(null) || txtPhoneNo.getText().trim().isEmpty())
@@ -354,6 +363,7 @@ public class PharmacistSignUp extends javax.swing.JPanel {
         if(!txtPhoneNo.getText().equals(null) && !txtPhoneNo.getText().trim().isEmpty())
         {
             txtPhoneNo.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+             emptyValidationStatus= true;
         }
         
         if(txtDateOfBirth.getText().equals(null) || txtDateOfBirth.getText().trim().isEmpty())
@@ -365,6 +375,7 @@ public class PharmacistSignUp extends javax.swing.JPanel {
         if(!txtDateOfBirth.getText().equals(null) && !txtDateOfBirth.getText().trim().isEmpty())
         {
             txtDateOfBirth.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+             emptyValidationStatus= true;
         }
         
         if(txtAddress.getText().equals(null)|| txtAddress.getText().trim().isEmpty())
@@ -376,6 +387,7 @@ public class PharmacistSignUp extends javax.swing.JPanel {
         if(!txtAddress.getText().equals(null) && !txtAddress.getText().trim().isEmpty())
         {
             txtAddress.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+             emptyValidationStatus= true;
            
         }
         
@@ -388,7 +400,7 @@ public class PharmacistSignUp extends javax.swing.JPanel {
         if(!txtCity.getText().equals(null) && !txtCity.getText().trim().isEmpty())
         {
             txtCity.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
-           
+            emptyValidationStatus= true;
         }
         
          if(txtState.getText().equals(null) || txtState.getText().trim().isEmpty())
@@ -400,6 +412,7 @@ public class PharmacistSignUp extends javax.swing.JPanel {
         if(!txtState.getText().equals(null) && !txtState.getText().trim().isEmpty())
         {
             txtState.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+             emptyValidationStatus= true;
         }
 
            if(txtZipcode.getText().equals(null) || txtZipcode.getText().trim().isEmpty())
@@ -411,7 +424,9 @@ public class PharmacistSignUp extends javax.swing.JPanel {
         if(!txtZipcode.getText().equals(null) && !txtZipcode.getText().trim().isEmpty())
         {
             txtZipcode.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+             emptyValidationStatus= true;
         }
+        
 
         return emptyValidationStatus;
 
@@ -428,7 +443,6 @@ public class PharmacistSignUp extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSignUp;
     private javax.swing.JComboBox<String> cboxGender;
-    private javax.swing.JComboBox<String> cboxSpeciality;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel lblAddress;
@@ -438,7 +452,6 @@ public class PharmacistSignUp extends javax.swing.JPanel {
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblOrgName;
     private javax.swing.JLabel lblPhoneNo;
-    private javax.swing.JLabel lblSpeciality;
     private javax.swing.JLabel lblState;
     private javax.swing.JLabel lblUsername;
     private javax.swing.JLabel lblZipCode;

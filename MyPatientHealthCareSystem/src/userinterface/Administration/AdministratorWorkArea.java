@@ -82,7 +82,7 @@ public class AdministratorWorkArea extends javax.swing.JFrame {
                 btnLogoutActionPerformed(evt);
             }
         });
-        controlPanel.add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 562, 102, -1));
+        controlPanel.add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 530, 102, -1));
 
         jLabel1.setFont(new java.awt.Font("Georgia", 0, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);

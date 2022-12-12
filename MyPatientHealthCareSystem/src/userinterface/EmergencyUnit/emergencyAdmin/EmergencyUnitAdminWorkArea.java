@@ -144,9 +144,9 @@ public class EmergencyUnitAdminWorkArea extends javax.swing.JFrame {
                 .addComponent(btnAddAmbulanceHandler2, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(Org_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(btnLogout)
-                .addContainerGap())
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         jSplitPane1.setLeftComponent(jPanel1);

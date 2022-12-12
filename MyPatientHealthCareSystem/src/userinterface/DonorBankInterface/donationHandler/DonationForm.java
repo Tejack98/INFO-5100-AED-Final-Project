@@ -426,6 +426,7 @@ public class DonationForm extends javax.swing.JPanel {
         if(txtDonorName.getText().matches("^[a-zA-Z ]+$"))
         {
             txtDonorName.setBorder(BorderFactory.createLineBorder(Color.BLUE, 0));
+            validationCheck=true;
         }
         
         if(!txtPhone.getText().matches("\\d{10}"))
@@ -438,6 +439,7 @@ public class DonationForm extends javax.swing.JPanel {
         if(txtPhone.getText().matches("\\d{10}"))
         {
             txtPhone.setBorder(BorderFactory.createLineBorder(Color.BLUE, 0));
+            validationCheck=true;
         }
         
         if(!txtEmail.getText().matches("^[A-Za-z0-9+_.-]+@(.+)$"))
@@ -450,6 +452,7 @@ public class DonationForm extends javax.swing.JPanel {
         if(txtEmail.getText().matches("^[A-Za-z0-9+_.-]+@(.+)$"))
         {
             txtEmail.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+             validationCheck=true;
         }
         
         if(!txtOccupation.getText().matches("^[a-zA-Z ]+$"))
@@ -462,6 +465,7 @@ public class DonationForm extends javax.swing.JPanel {
         if(txtOccupation.getText().matches("^[a-zA-Z ]+$"))
         {
             txtOccupation.setBorder(BorderFactory.createLineBorder(Color.BLUE, 0));
+             validationCheck=true;
         }
         
         
@@ -475,6 +479,7 @@ public class DonationForm extends javax.swing.JPanel {
         if(txtDateofBirth.getText().matches("^(1[0-2]|0[1-9])/(3[01]" + "|[12][0-9]|0[1-9])/[0-9]{4}$"))
         {
             txtDateofBirth.setBorder(BorderFactory.createLineBorder(Color.BLUE, 0));
+             validationCheck=true;
         }
     
         return validationCheck;
@@ -498,6 +503,7 @@ public class DonationForm extends javax.swing.JPanel {
         if(!txtDonorName.getText().equals(null) && ! txtDonorName.getText().trim().isEmpty() )
         {
              txtDonorName.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+             emptyValidationStatus= true;
         }
         
         if( txtEmail.getText().equals(null) || txtEmail.getText().trim().isEmpty() )
@@ -510,6 +516,7 @@ public class DonationForm extends javax.swing.JPanel {
         if( !txtEmail.getText().equals(null) || txtEmail.getText().trim().isEmpty() )
         {
             txtEmail.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+            emptyValidationStatus= true;
         }
       
         if( txtOccupation.getText().equals(null) || txtOccupation.getText().trim().isEmpty() )
@@ -522,6 +529,7 @@ public class DonationForm extends javax.swing.JPanel {
         if( !txtOccupation.getText().equals(null) || txtOccupation.getText().trim().isEmpty() )
         {
             txtOccupation.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+            emptyValidationStatus= true;
         }
         
         if( txtDateofBirth.getText().equals(null) || txtDateofBirth.getText().trim().isEmpty() )
@@ -534,6 +542,7 @@ public class DonationForm extends javax.swing.JPanel {
         if( !txtDateofBirth.getText().equals(null) || txtDateofBirth.getText().trim().isEmpty() )
         {
             txtDateofBirth.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+            emptyValidationStatus= true;
         }
       
         if( txtPhone.getText().equals(null) || txtPhone.getText().trim().isEmpty() )
@@ -546,6 +555,7 @@ public class DonationForm extends javax.swing.JPanel {
         if( !txtPhone.getText().equals(null) || txtPhone.getText().trim().isEmpty() )
         {
             txtPhone.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+            emptyValidationStatus= true;
         }
       
         return emptyValidationStatus;

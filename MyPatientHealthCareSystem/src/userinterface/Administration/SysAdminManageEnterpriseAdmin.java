@@ -264,7 +264,7 @@ public class SysAdminManageEnterpriseAdmin extends javax.swing.JPanel {
         populateTable();
                 }}}
         catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Doctor not registered, Try again");
+            JOptionPane.showMessageDialog(this, "HealthCare Admin not registered, Try again");
             System.out.println(e.toString());
             emptyValidationStatus = true;
         }
@@ -282,6 +282,7 @@ public class SysAdminManageEnterpriseAdmin extends javax.swing.JPanel {
         if(nameJTextField.getText().matches("^[a-zA-Z ]+$"))
         {
             nameJTextField.setBorder(BorderFactory.createLineBorder(Color.BLUE, 0));
+            validationCheck = true;
         }
 
         if(!txtEmail.getText().matches("^[A-Za-z0-9+_.-]+@(.+)$"))
@@ -294,6 +295,7 @@ public class SysAdminManageEnterpriseAdmin extends javax.swing.JPanel {
         if(txtEmail.getText().matches("^[A-Za-z0-9+_.-]+@(.+)$"))
         {
             txtEmail.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+            validationCheck = true;
         }
         
 
@@ -311,6 +313,7 @@ public class SysAdminManageEnterpriseAdmin extends javax.swing.JPanel {
         if(!txtEmail.getText().equals(null) && !txtEmail.getText().trim().isEmpty())
         {
             txtEmail.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+            emptyValidationStatus = true;
         }
         
         if(nameJTextField.getText().equals(null) || nameJTextField.getText().trim().isEmpty() )
@@ -322,6 +325,7 @@ public class SysAdminManageEnterpriseAdmin extends javax.swing.JPanel {
         if(!nameJTextField.getText().equals(null) && !nameJTextField.getText().trim().isEmpty() )
         {
             nameJTextField.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+            emptyValidationStatus = true;
         }
 
         
