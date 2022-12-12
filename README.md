@@ -36,4 +36,6 @@ Vaccination
 
 ## UML Diagram - https://drive.google.com/file/d/1atElnP9_3qRGIwEr_H3CynEChUfLA02-/view?usp=sharing
 
-## Class Diagram - https://drive.google.com/file/d/1uW_8VBmEdvWCS6S6GLhVXk9CEwsJaYdB/view?usp=share_link
+## Module Diagram - https://drive.google.com/file/d/1uW_8VBmEdvWCS6S6GLhVXk9CEwsJaYdB/view?usp=share_link
+
+## Class Diagram - https://drive.google.com/file/d/1P_3SctbyC9k6HCuIGoXvQvaMLNWyBBFR/view?usp=share_link
