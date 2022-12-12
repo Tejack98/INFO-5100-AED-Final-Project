@@ -70,22 +70,23 @@ public class DonationHandlerSignUp extends javax.swing.JPanel {
         txtPhoneNo = new javax.swing.JTextField();
         lblOrgName = new javax.swing.JLabel();
         organizationJComboBox = new javax.swing.JComboBox();
+        jLabel1 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 204, 204));
+        setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblDateOfBirth.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblDateOfBirth.setText("Date Of Birth");
-        add(lblDateOfBirth, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 250, -1, -1));
-        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(331, 69, 230, -1));
-        add(txtDateOfBirth, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 250, 230, -1));
-        add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(331, 109, 230, -1));
+        add(lblDateOfBirth, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 380, -1, -1));
+        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 200, 230, -1));
+        add(txtDateOfBirth, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 380, 230, -1));
+        add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 240, 230, -1));
 
         lblTitle.setFont(new java.awt.Font("Georgia", 1, 24)); // NOI18N
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitle.setText("Create Handler Profile");
-        add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 23, 740, -1));
-        add(txtZipcode, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 410, 230, -1));
+        add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 90, 610, 30));
+        add(txtZipcode, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 540, 230, -1));
 
         btnSignUp.setText("Sign Up");
         btnSignUp.addActionListener(new java.awt.event.ActionListener() {
@@ -93,80 +94,83 @@ public class DonationHandlerSignUp extends javax.swing.JPanel {
                 btnSignUpActionPerformed(evt);
             }
         });
-        add(btnSignUp, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 460, -1, -1));
+        add(btnSignUp, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 590, -1, -1));
 
         lblPhoneNo.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblPhoneNo.setText("Phone No.");
-        add(lblPhoneNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, -1, -1));
+        add(lblPhoneNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 340, -1, -1));
 
         lblName.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblName.setText("Name");
-        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(276, 72, -1, -1));
+        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 200, -1, -1));
 
         lblUsername.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblUsername.setText("Email");
-        add(lblUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(276, 112, -1, -1));
+        add(lblUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 240, -1, -1));
 
         lblGender.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblGender.setText("Gender");
-        add(lblGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(267, 172, -1, -1));
+        add(lblGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 300, -1, -1));
 
         cboxGender.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         cboxGender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female", "Other" }));
-        add(cboxGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(331, 171, 230, -1));
+        add(cboxGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 300, 230, -1));
 
         lblState.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblState.setText("State");
-        add(lblState, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 370, -1, -1));
+        add(lblState, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 500, -1, -1));
 
         txtCity.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCityActionPerformed(evt);
             }
         });
-        add(txtCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 330, 230, -1));
+        add(txtCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 460, 230, -1));
 
         lblCity.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblCity.setText("City");
-        add(lblCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 330, -1, -1));
+        add(lblCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 460, -1, -1));
 
         lblZipCode.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblZipCode.setText("Zipcode");
-        add(lblZipCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 410, -1, -1));
+        add(lblZipCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 540, -1, -1));
 
         txtAddress.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtAddressActionPerformed(evt);
             }
         });
-        add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 290, 230, -1));
+        add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 420, 230, -1));
 
         txtState.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtStateActionPerformed(evt);
             }
         });
-        add(txtState, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 370, 230, -1));
+        add(txtState, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 500, 230, -1));
 
         lblAddress.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblAddress.setText("Address");
-        add(lblAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 290, -1, -1));
+        add(lblAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 420, -1, -1));
 
         txtPhoneNo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtPhoneNoActionPerformed(evt);
             }
         });
-        add(txtPhoneNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 210, 230, -1));
+        add(txtPhoneNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 340, 230, -1));
 
         lblOrgName.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblOrgName.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         lblOrgName.setText("Organization Name");
-        add(lblOrgName, new org.netbeans.lib.awtextra.AbsoluteConstraints(179, 140, 134, -1));
+        add(lblOrgName, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 270, 134, -1));
 
         organizationJComboBox.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         organizationJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Doctor", "Nurse", "Patient" }));
-        add(organizationJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(331, 139, 230, -1));
+        add(organizationJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 270, 230, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/DonorCreate.png"))); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, -1, 710));
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtCityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCityActionPerformed
@@ -443,6 +447,7 @@ public class DonationHandlerSignUp extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSignUp;
     private javax.swing.JComboBox<String> cboxGender;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblAddress;
     private javax.swing.JLabel lblCity;
     private javax.swing.JLabel lblDateOfBirth;

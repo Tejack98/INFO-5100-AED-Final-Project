@@ -81,17 +81,21 @@ public class ProcessVaccinationRequest extends javax.swing.JPanel {
         jLabel6.setText("jLabel6");
 
         setBackground(new java.awt.Color(255, 204, 204));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Georgia", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Vaccination Request Details");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 6, 789, 42));
 
+        btnSendResults.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         btnSendResults.setText("Process And Send Results");
         btnSendResults.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSendResultsActionPerformed(evt);
             }
         });
+        add(btnSendResults, new org.netbeans.lib.awtextra.AbsoluteConstraints(289, 433, 254, -1));
 
         txtPatientName.setEditable(false);
         txtPatientName.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
@@ -101,10 +105,12 @@ public class ProcessVaccinationRequest extends javax.swing.JPanel {
                 txtPatientNameActionPerformed(evt);
             }
         });
+        add(txtPatientName, new org.netbeans.lib.awtextra.AbsoluteConstraints(352, 99, 205, -1));
 
         jLabel12.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel12.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel12.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jLabel12.setText("Request By");
+        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 101, 126, -1));
 
         chkPnem.setBackground(new java.awt.Color(255, 204, 204));
         chkPnem.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
@@ -115,6 +121,7 @@ public class ProcessVaccinationRequest extends javax.swing.JPanel {
                 chkPnemActionPerformed(evt);
             }
         });
+        add(chkPnem, new org.netbeans.lib.awtextra.AbsoluteConstraints(455, 153, -1, -1));
 
         chkAde.setBackground(new java.awt.Color(255, 204, 204));
         chkAde.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
@@ -125,6 +132,7 @@ public class ProcessVaccinationRequest extends javax.swing.JPanel {
                 chkAdeActionPerformed(evt);
             }
         });
+        add(chkAde, new org.netbeans.lib.awtextra.AbsoluteConstraints(336, 153, -1, -1));
 
         chkTdap.setBackground(new java.awt.Color(255, 204, 204));
         chkTdap.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
@@ -135,6 +143,7 @@ public class ProcessVaccinationRequest extends javax.swing.JPanel {
                 chkTdapActionPerformed(evt);
             }
         });
+        add(chkTdap, new org.netbeans.lib.awtextra.AbsoluteConstraints(213, 153, -1, -1));
 
         chkPolio.setBackground(new java.awt.Color(255, 204, 204));
         chkPolio.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
@@ -145,6 +154,7 @@ public class ProcessVaccinationRequest extends javax.swing.JPanel {
                 chkPolioActionPerformed(evt);
             }
         });
+        add(chkPolio, new org.netbeans.lib.awtextra.AbsoluteConstraints(213, 201, -1, -1));
 
         chkMMR.setBackground(new java.awt.Color(255, 204, 204));
         chkMMR.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
@@ -155,6 +165,7 @@ public class ProcessVaccinationRequest extends javax.swing.JPanel {
                 chkMMRActionPerformed(evt);
             }
         });
+        add(chkMMR, new org.netbeans.lib.awtextra.AbsoluteConstraints(213, 251, -1, -1));
 
         chkVar.setBackground(new java.awt.Color(255, 204, 204));
         chkVar.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
@@ -165,6 +176,7 @@ public class ProcessVaccinationRequest extends javax.swing.JPanel {
                 chkVarActionPerformed(evt);
             }
         });
+        add(chkVar, new org.netbeans.lib.awtextra.AbsoluteConstraints(213, 299, -1, -1));
 
         chkCov.setBackground(new java.awt.Color(255, 204, 204));
         chkCov.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
@@ -175,6 +187,7 @@ public class ProcessVaccinationRequest extends javax.swing.JPanel {
                 chkCovActionPerformed(evt);
             }
         });
+        add(chkCov, new org.netbeans.lib.awtextra.AbsoluteConstraints(213, 349, -1, -1));
 
         chkPert.setBackground(new java.awt.Color(255, 204, 204));
         chkPert.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
@@ -185,6 +198,7 @@ public class ProcessVaccinationRequest extends javax.swing.JPanel {
                 chkPertActionPerformed(evt);
             }
         });
+        add(chkPert, new org.netbeans.lib.awtextra.AbsoluteConstraints(336, 349, -1, -1));
 
         chkDipth.setBackground(new java.awt.Color(255, 204, 204));
         chkDipth.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
@@ -195,6 +209,7 @@ public class ProcessVaccinationRequest extends javax.swing.JPanel {
                 chkDipthActionPerformed(evt);
             }
         });
+        add(chkDipth, new org.netbeans.lib.awtextra.AbsoluteConstraints(336, 299, -1, -1));
 
         chkCho.setBackground(new java.awt.Color(255, 204, 204));
         chkCho.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
@@ -205,6 +220,7 @@ public class ProcessVaccinationRequest extends javax.swing.JPanel {
                 chkChoActionPerformed(evt);
             }
         });
+        add(chkCho, new org.netbeans.lib.awtextra.AbsoluteConstraints(336, 251, -1, -1));
 
         chkAnt.setBackground(new java.awt.Color(255, 204, 204));
         chkAnt.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
@@ -215,6 +231,7 @@ public class ProcessVaccinationRequest extends javax.swing.JPanel {
                 chkAntActionPerformed(evt);
             }
         });
+        add(chkAnt, new org.netbeans.lib.awtextra.AbsoluteConstraints(336, 201, -1, -1));
 
         chkRab.setBackground(new java.awt.Color(255, 204, 204));
         chkRab.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
@@ -225,6 +242,7 @@ public class ProcessVaccinationRequest extends javax.swing.JPanel {
                 chkRabActionPerformed(evt);
             }
         });
+        add(chkRab, new org.netbeans.lib.awtextra.AbsoluteConstraints(455, 201, -1, -1));
 
         chkRota.setBackground(new java.awt.Color(255, 204, 204));
         chkRota.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
@@ -235,6 +253,7 @@ public class ProcessVaccinationRequest extends javax.swing.JPanel {
                 chkRotaActionPerformed(evt);
             }
         });
+        add(chkRota, new org.netbeans.lib.awtextra.AbsoluteConstraints(455, 251, -1, -1));
 
         chksma.setBackground(new java.awt.Color(255, 204, 204));
         chksma.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
@@ -245,6 +264,7 @@ public class ProcessVaccinationRequest extends javax.swing.JPanel {
                 chksmaActionPerformed(evt);
             }
         });
+        add(chksma, new org.netbeans.lib.awtextra.AbsoluteConstraints(455, 299, -1, -1));
 
         chkMen.setBackground(new java.awt.Color(255, 204, 204));
         chkMen.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
@@ -255,92 +275,7 @@ public class ProcessVaccinationRequest extends javax.swing.JPanel {
                 chkMenActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(309, Short.MAX_VALUE)
-                .addComponent(btnSendResults, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(226, 226, 226))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(220, 220, 220)
-                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(txtPatientName, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(232, Short.MAX_VALUE)))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(213, 213, 213)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(chkMMR)
-                        .addComponent(chkPolio)
-                        .addComponent(chkTdap)
-                        .addComponent(chkCov)
-                        .addComponent(chkVar))
-                    .addGap(35, 35, 35)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(chkCho)
-                        .addComponent(chkAnt)
-                        .addComponent(chkAde)
-                        .addComponent(chkPert)
-                        .addComponent(chkDipth))
-                    .addGap(24, 24, 24)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(chkRota)
-                        .addComponent(chkRab)
-                        .addComponent(chkPnem)
-                        .addComponent(chkMen)
-                        .addComponent(chksma))
-                    .addContainerGap(214, Short.MAX_VALUE)))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(382, 382, 382)
-                .addComponent(btnSendResults)
-                .addContainerGap(71, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(99, 99, 99)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel12)
-                        .addComponent(txtPatientName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addContainerGap(404, Short.MAX_VALUE)))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(153, 153, 153)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(chkPnem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(chkTdap, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(chkAde, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGap(27, 27, 27)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(chkPolio)
-                        .addComponent(chkAnt)
-                        .addComponent(chkRab))
-                    .addGap(29, 29, 29)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(chkMMR)
-                        .addComponent(chkCho)
-                        .addComponent(chkRota))
-                    .addGap(27, 27, 27)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(chkVar)
-                        .addComponent(chkDipth)
-                        .addComponent(chksma))
-                    .addGap(29, 29, 29)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(chkCov)
-                        .addComponent(chkPert)
-                        .addComponent(chkMen))
-                    .addContainerGap(154, Short.MAX_VALUE)))
-        );
+        add(chkMen, new org.netbeans.lib.awtextra.AbsoluteConstraints(455, 349, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSendResultsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSendResultsActionPerformed
