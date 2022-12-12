@@ -69,7 +69,7 @@ public class EmergencyUnitViewAmbulance extends javax.swing.JPanel {
         jPanel6 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(255, 204, 204));
 
         supplierChainVehicleJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

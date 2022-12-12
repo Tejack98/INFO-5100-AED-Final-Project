@@ -103,11 +103,11 @@ public class NurseSignUp extends javax.swing.JPanel {
 
         lblName.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblName.setText("Name");
-        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 180, -1, -1));
+        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 170, -1, -1));
 
         lblUsername.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblUsername.setText("Email");
-        add(lblUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 220, -1, -1));
+        add(lblUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 210, -1, -1));
         add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 350, 238, -1));
 
         btnSignUp.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N

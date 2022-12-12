@@ -63,10 +63,11 @@ public class EmergencyUnitAdminWorkArea extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 204, 204));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Georgia", 1, 16)); // NOI18N
         jLabel1.setText("Emergency Unit Admin");
 
         btnAddAmbulance.setBackground(new java.awt.Color(153, 204, 255));
+        btnAddAmbulance.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         btnAddAmbulance.setText("Add Ambulance");
         btnAddAmbulance.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -75,6 +76,7 @@ public class EmergencyUnitAdminWorkArea extends javax.swing.JFrame {
         });
 
         btnAddAmbulanceHandler.setBackground(new java.awt.Color(153, 204, 255));
+        btnAddAmbulanceHandler.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         btnAddAmbulanceHandler.setText("Add Ambulance Handler");
         btnAddAmbulanceHandler.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -82,7 +84,8 @@ public class EmergencyUnitAdminWorkArea extends javax.swing.JFrame {
             }
         });
 
-        btnLogout.setBackground(new java.awt.Color(255, 204, 204));
+        btnLogout.setBackground(new java.awt.Color(153, 204, 255));
+        btnLogout.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         btnLogout.setText("Logout");
         btnLogout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -91,6 +94,7 @@ public class EmergencyUnitAdminWorkArea extends javax.swing.JFrame {
         });
 
         Org_Name.setBackground(new java.awt.Color(153, 204, 255));
+        Org_Name.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         Org_Name.setText("Orgainzation");
         Org_Name.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -99,6 +103,7 @@ public class EmergencyUnitAdminWorkArea extends javax.swing.JFrame {
         });
 
         btnAddAmbulanceHandler1.setBackground(new java.awt.Color(153, 204, 255));
+        btnAddAmbulanceHandler1.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         btnAddAmbulanceHandler1.setText("View Handlers");
         btnAddAmbulanceHandler1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -107,6 +112,7 @@ public class EmergencyUnitAdminWorkArea extends javax.swing.JFrame {
         });
 
         btnAddAmbulanceHandler2.setBackground(new java.awt.Color(153, 204, 255));
+        btnAddAmbulanceHandler2.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         btnAddAmbulanceHandler2.setText("View Ambulance");
         btnAddAmbulanceHandler2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -146,7 +152,7 @@ public class EmergencyUnitAdminWorkArea extends javax.swing.JFrame {
                 .addComponent(Org_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnLogout)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         jSplitPane1.setLeftComponent(jPanel1);

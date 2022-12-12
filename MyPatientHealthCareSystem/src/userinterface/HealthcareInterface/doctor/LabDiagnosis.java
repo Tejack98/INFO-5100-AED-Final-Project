@@ -137,6 +137,7 @@ public class LabDiagnosis extends javax.swing.JPanel {
 
         solutionByLabtxt.setEditable(false);
 
+        diagnosisbtn.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         diagnosisbtn.setText("Add Diagnosis");
         diagnosisbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -88,6 +88,7 @@ public class ProcessPharmaRequest extends javax.swing.JPanel {
         jLabel1.setText("Pharma Request Details");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 6, 777, 42));
 
+        btnSendResults.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         btnSendResults.setText("Process And Send Results");
         btnSendResults.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

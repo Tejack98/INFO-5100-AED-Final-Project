@@ -102,7 +102,7 @@ public class RequestSupplierForMedicinePanel extends javax.swing.JPanel {
         jLabel1.setText("For Pharmacy");
 
         requestbtn.setBackground(new java.awt.Color(153, 204, 255));
-        requestbtn.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        requestbtn.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
         requestbtn.setText("Request Supplier");
         requestbtn.setBorder(null);
         requestbtn.addActionListener(new java.awt.event.ActionListener() {

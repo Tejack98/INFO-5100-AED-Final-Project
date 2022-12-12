@@ -92,6 +92,7 @@ public class HandlerSignUp extends javax.swing.JPanel {
         });
         add(txtZipcode, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 510, 230, -1));
 
+        btnSignUp.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         btnSignUp.setText("Sign Up");
         btnSignUp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -116,6 +117,7 @@ public class HandlerSignUp extends javax.swing.JPanel {
         lblGender.setText("Gender");
         add(lblGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 270, 50, 20));
 
+        cboxGender.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         cboxGender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female", "Others" }));
         add(cboxGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 270, 230, -1));
 
@@ -162,7 +164,7 @@ public class HandlerSignUp extends javax.swing.JPanel {
         lblOrgName.setText("Organization Name");
         add(lblOrgName, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 240, 134, 20));
 
-        organizationJComboBox.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        organizationJComboBox.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         organizationJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Doctor", "Nurse", "Patient" }));
         add(organizationJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 240, 230, -1));
 

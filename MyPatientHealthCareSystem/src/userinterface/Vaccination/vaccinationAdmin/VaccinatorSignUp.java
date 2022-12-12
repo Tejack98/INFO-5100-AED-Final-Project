@@ -88,6 +88,7 @@ public class VaccinatorSignUp extends javax.swing.JPanel {
         add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 80, 340, -1));
         add(txtZipcode, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 490, 230, -1));
 
+        btnSignUp.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         btnSignUp.setText("Sign Up");
         btnSignUp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

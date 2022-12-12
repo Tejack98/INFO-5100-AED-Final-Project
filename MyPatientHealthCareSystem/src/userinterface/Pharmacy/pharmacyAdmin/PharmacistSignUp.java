@@ -86,6 +86,7 @@ public class PharmacistSignUp extends javax.swing.JPanel {
         });
         add(txtCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 400, 230, -1));
 
+        btnSignUp.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         btnSignUp.setText("Sign Up");
         btnSignUp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

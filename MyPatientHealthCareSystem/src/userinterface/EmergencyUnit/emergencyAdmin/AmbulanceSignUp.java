@@ -57,90 +57,57 @@ public class AmbulanceSignUp extends javax.swing.JPanel {
         txtVehicleType = new javax.swing.JTextField();
         lblTitle = new javax.swing.JLabel();
         txtDescription = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 204, 204));
+        setBackground(new java.awt.Color(255, 255, 255));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblVehicleName.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblVehicleName.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         lblVehicleName.setText("Ambulance Name");
+        add(lblVehicleName, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 120, 127, -1));
+        add(txtVehicleNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 240, 230, -1));
 
         lblVehicleType.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblVehicleType.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         lblVehicleType.setText("Ambulance Type");
+        add(lblVehicleType, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 160, 127, -1));
 
+        btnSignUp.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         btnSignUp.setText("Sign Up");
         btnSignUp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSignUpActionPerformed(evt);
             }
         });
+        add(btnSignUp, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 280, -1, -1));
 
         lblVehicleNumber.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblVehicleNumber.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         lblVehicleNumber.setText("Ambulance Number");
+        add(lblVehicleNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 240, -1, -1));
 
         lblDescription.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblDescription.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         lblDescription.setText("Description");
+        add(lblDescription, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 200, 127, -1));
+        add(txtVehicleName, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 120, 230, -1));
 
         txtVehicleType.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtVehicleTypeActionPerformed(evt);
             }
         });
+        add(txtVehicleType, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 160, 230, -1));
 
         lblTitle.setFont(new java.awt.Font("Georgia", 1, 24)); // NOI18N
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitle.setText("Create Ambulance");
+        add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 70, 243, -1));
+        add(txtDescription, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 200, 230, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(149, 149, 149)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSignUp)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(lblVehicleNumber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lblVehicleType, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lblVehicleName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lblDescription, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtVehicleName, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtVehicleNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtDescription, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtVehicleType, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(167, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(lblTitle)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblVehicleName)
-                    .addComponent(txtVehicleName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblVehicleType)
-                    .addComponent(txtVehicleType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblDescription)
-                    .addComponent(txtDescription, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblVehicleNumber)
-                    .addComponent(txtVehicleNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(btnSignUp)
-                .addContainerGap(245, Short.MAX_VALUE))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/CreateVehicle.png"))); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 350, -1, 540));
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtVehicleTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtVehicleTypeActionPerformed
@@ -265,6 +232,7 @@ public class AmbulanceSignUp extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSignUp;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblDescription;
     private javax.swing.JLabel lblTitle;
     private javax.swing.JLabel lblVehicleName;

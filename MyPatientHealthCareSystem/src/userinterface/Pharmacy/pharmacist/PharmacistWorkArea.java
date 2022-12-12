@@ -65,6 +65,7 @@ public class PharmacistWorkArea extends javax.swing.JFrame {
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 6, 282, 76));
 
         btnViewRequests.setBackground(new java.awt.Color(255, 204, 204));
+        btnViewRequests.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         btnViewRequests.setText("View Requests");
         btnViewRequests.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -74,6 +75,7 @@ public class PharmacistWorkArea extends javax.swing.JFrame {
         jPanel1.add(btnViewRequests, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, 128, 77));
 
         btnRequestSupplier.setBackground(new java.awt.Color(255, 204, 204));
+        btnRequestSupplier.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         btnRequestSupplier.setText("Request Supplier");
         btnRequestSupplier.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -83,6 +85,7 @@ public class PharmacistWorkArea extends javax.swing.JFrame {
         jPanel1.add(btnRequestSupplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, 128, 77));
 
         btnLogout.setBackground(new java.awt.Color(255, 204, 204));
+        btnLogout.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         btnLogout.setText("Logout");
         btnLogout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -66,6 +66,7 @@ public class DoctorWorkArea extends javax.swing.JFrame {
         controlPanel.setPreferredSize(new java.awt.Dimension(200, 600));
 
         btnLogout.setBackground(new java.awt.Color(255, 204, 204));
+        btnLogout.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         btnLogout.setText("Logout");
         btnLogout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -73,11 +74,12 @@ public class DoctorWorkArea extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Georgia", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Doctor");
 
         Appointment_req_btn.setBackground(new java.awt.Color(255, 204, 204));
+        Appointment_req_btn.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         Appointment_req_btn.setText("Appointment Requests");
         Appointment_req_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -86,6 +88,7 @@ public class DoctorWorkArea extends javax.swing.JFrame {
         });
 
         btnDocDashboard1.setBackground(new java.awt.Color(255, 204, 204));
+        btnDocDashboard1.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         btnDocDashboard1.setText("Statistics");
         btnDocDashboard1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -117,7 +120,7 @@ public class DoctorWorkArea extends javax.swing.JFrame {
                 .addComponent(Appointment_req_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(46, 46, 46)
                 .addComponent(btnDocDashboard1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 236, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 238, Short.MAX_VALUE)
                 .addComponent(btnLogout)
                 .addGap(54, 54, 54))
         );

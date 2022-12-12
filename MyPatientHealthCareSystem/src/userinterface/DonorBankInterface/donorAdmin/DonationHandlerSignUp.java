@@ -88,6 +88,7 @@ public class DonationHandlerSignUp extends javax.swing.JPanel {
         add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 90, 610, 30));
         add(txtZipcode, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 540, 230, -1));
 
+        btnSignUp.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         btnSignUp.setText("Sign Up");
         btnSignUp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

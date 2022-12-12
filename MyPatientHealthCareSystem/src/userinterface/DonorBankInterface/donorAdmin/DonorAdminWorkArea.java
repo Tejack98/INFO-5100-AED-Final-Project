@@ -73,7 +73,7 @@ public class DonorAdminWorkArea extends javax.swing.JFrame {
                 btnLogoutActionPerformed(evt);
             }
         });
-        controlPanel.add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 630, -1, 30));
+        controlPanel.add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 520, -1, 30));
 
         jLabel1.setFont(new java.awt.Font("Georgia", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
