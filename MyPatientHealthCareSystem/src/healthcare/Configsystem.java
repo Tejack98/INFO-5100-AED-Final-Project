@@ -78,9 +78,7 @@ public class Configsystem {
         Organization orgDonor = enterprise2.getOrganizationDirectory().createNewOrganization(Organization.OrganizationType.DonorBank);
         Organization orgpharmacy = enterprise5.getOrganizationDirectory().createNewOrganization(Organization.OrganizationType.Pharmacy);
         Organization orgsupplier = enterprise6.getOrganizationDirectory().createNewOrganization(Organization.OrganizationType.Supplier);
-        Organization orgvehicle = enterprise6.getOrganizationDirectory().createNewOrganization(Organization.OrganizationType.Vehicle);
         Organization orgEmergUnit = enterprise3.getOrganizationDirectory().createNewOrganization(Organization.OrganizationType.EmergencyUnit);
-        Organization orgAmbulnce = enterprise3.getOrganizationDirectory().createNewOrganization(Organization.OrganizationType.Ambulance);
         Organization orgVacc = enterprise7.getOrganizationDirectory().createNewOrganization(Organization.OrganizationType.Vaccination);
         
         

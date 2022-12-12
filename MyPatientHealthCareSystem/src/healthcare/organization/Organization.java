@@ -81,9 +81,7 @@ public abstract class Organization {
         Lab("Lab Organization", Enterprise.EnterpriseType.Lab),
         Pharmacy("Pharmacy Organization", Enterprise.EnterpriseType.Pharmacy),
         Supplier("SupplyChain Organization", Enterprise.EnterpriseType.SupplyChain),
-        Vehicle("Vehicle Organization",Enterprise.EnterpriseType.SupplyChain),
         EmergencyUnit("Emergency Unit Organization",Enterprise.EnterpriseType.EmergencyUnit),
-        Ambulance("Ambulance Organization",Enterprise.EnterpriseType.EmergencyUnit),
         DonorBank("DonorBank Organization",Enterprise.EnterpriseType.DonorBank),
         Vaccination("Vaccination Organization",Enterprise.EnterpriseType.Vaccination);
         
